@@ -274,8 +274,7 @@
         },
         "assertionPredicate": {
             "description": "A recursive combination of text based assertion statements combined using AND or OR operators",
-            "oneOf": [
-                {
+            "oneOf": [{
                     "type": "string"
                 },
                 {
@@ -310,10 +309,9 @@
         },
         "testCaseStep": {
             "description": "A single step in a test case",
-            "oneOf": [
-                {
+            "oneOf": [{
                     "type": "object",
-                    "description": "Wait for a period of time"
+                    "description": "Wait for a period of time",
                     "required": [
                         "type",
                         "period"
@@ -331,7 +329,7 @@
                 },
                 {
                     "type": "object",
-                    "description": "Delay until a condition has been met"
+                    "description": "Delay until a condition has been met",
                     "required": [
                         "type",
                         "period"
@@ -348,7 +346,7 @@
                 },
                 {
                     "type": "object",
-                    "description": "Perform an action"
+                    "description": "Perform an action",
                     "required": [
                         "type",
                         "action"
@@ -365,7 +363,7 @@
                 },
                 {
                     "type": "object",
-                    "description": "Assert that a condition is true"
+                    "description": "Assert that a condition is true",
                     "required": [
                         "type",
                         "assertion"
@@ -383,8 +381,7 @@
         },
         "testCasePredicate": {
             "description": "A recursive combination of pre-defined assertions combined using AND or OR operators",
-            "oneOf": [
-                {
+            "oneOf": [{
                     "type": "string",
                     "format": "^A\\.[A-Z]{3}\\.[0-9]{3}$"
                 },
@@ -420,10 +417,9 @@
         },
         "scenarioAction": {
             "description": "A single action the sequence of execution for a test scenario",
-            "oneOf": [
-                {
+            "oneOf": [{
                     "type": "object",
-                    "description": "Do some setup to prepare the test"
+                    "description": "Do some setup to prepare the test",
                     "required": [
                         "type",
                         "action"
@@ -440,7 +436,7 @@
                 },
                 {
                     "type": "object",
-                    "description": "Perform a clean up action to reset state after the last test case"
+                    "description": "Perform a clean up action to reset state after the last test case",
                     "required": [
                         "type",
                         "action"
@@ -457,7 +453,7 @@
                 },
                 {
                     "type": "object",
-                    "description": "Execute a test case"
+                    "description": "Execute a test case",
                     "required": [
                         "type",
                         "testCase"
