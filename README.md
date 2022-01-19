@@ -1,6 +1,6 @@
 # Consumer Data Right Testing Documentation
 
-This repository contains test case definitions that can be used to validate the compliance of an implementation of the API Standards and Information Security profile created for the [Consumer Data Right](https://treasury.gov.au/consumer-data-right "Treasury's Consumer Data Right webpage") legislation and the subsequent regulatory rules.
+This repository contains test case definitions that can be used to validate the compliance of an implementation of the API Standards and Information Security profile created for the [Consumer Data Right](https://treasury.gov.au/consumer-data-right "Treasury's Consumer Data Right webpage") legislation and the subsequent regulatory rules. 
 
 The standards, and these test cases, are maintained by the Data Standards Body (DSB), with the Data Standards Chair as the decision maker.  The Data Standards Body is part of the [Treasury](https://www.directory.gov.au/portfolios/treasury/data-standards-body "Data Standards Body"). The work of standards development is conducted in consultation with the [Australian Competition and Consumer Commission (ACCC)](https://www.accc.gov.au/focus-areas/consumer-data-right-cdr-0 "ACCC's CDR webpage") as co-regulator of the Consumer Data Right, along with the [Office of the Australian Information Commissioner (OAIC)](https://www.oaic.gov.au/consumer-data-right/about-the-consumer-data-right/ "OAIC CDR webpage").
 
