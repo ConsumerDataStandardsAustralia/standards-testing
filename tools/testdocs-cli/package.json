@@ -1,6 +1,6 @@
 {
   "name": "@cds-au/testdocs-cli",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Tools for managing the presentation of test case documentation for the Australian Consumer Data Right regime",
   "main": "index.js",
   "scripts": {
