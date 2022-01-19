@@ -1,7 +1,7 @@
 import { Arguments, CommandBuilder } from 'yargs';
 import cdr_test_schema from '../schema/cdr-test-schema.0.0.1.json';
 
-const schema_version = '0.0.2';
+const schema_version = '0.0.1';
 
 type Options = {
   version: boolean | undefined;
