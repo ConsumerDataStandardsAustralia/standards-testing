@@ -1,4 +1,4 @@
-import type { Arguments, CommandBuilder } from 'yargs';
+import { Arguments, CommandBuilder } from 'yargs';
 
 type Options = {
   filename: string;

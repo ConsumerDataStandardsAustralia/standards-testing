@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "tslint -p .",
-    "build": "rm -rf ./build/ && tsc && chmod +x ./build/cli.js"
+    "build": "cp ../../schema/*.json src/schema && rm -rf ./build/ && tsc && chmod +x ./build/cli.js"
   },
   "author": "Data Standards Body",
   "license": "MIT",

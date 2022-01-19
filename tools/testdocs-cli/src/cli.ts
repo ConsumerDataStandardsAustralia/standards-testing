@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import yargs from 'yargs';
-import { hideBin } from 'yargs/helpers';
+const hideBin = require('yargs/helpers');
 
 yargs(hideBin(process.argv))
   // Use the commands directory to scaffold.
@@ -11,6 +11,8 @@ yargs(hideBin(process.argv))
   // Useful aliases.
   .alias({
     h: 'help',
-    v: 'validate'
+    v: 'validate',
+    s: 'schema'
   })
+
   .argv;
