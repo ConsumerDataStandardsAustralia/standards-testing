@@ -2,8 +2,8 @@
 .env
 
 # Dependency directory
-node_modules
-bower_components
+**/node_modules
+**/bower_components
 
 # Editors
 .idea
@@ -14,8 +14,8 @@ bower_components
 Thumbs.db
 
 # Ignore built ts files
-dist
-build
+**/dist
+**/build
 
 # ignore yarn.lock
 yarn.lock
