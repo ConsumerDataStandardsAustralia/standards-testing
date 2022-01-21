@@ -1,89 +1,13 @@
 {
-    "fileVersion": "0.0.1",
-    "title": "",
-    "description": "",
-    "conditions": {
-        "C.001": {
-            "title": "",
-            "description": "",
-
-        }
-    },
-    "assertions": {
-        "A.A.CMN.001": {
-            "1": {
-                "title": "",
-                "description": "",
-                "references": [""],
-                "severity": "FAIL",
-                "given": ["", ""],
-                "when": "",
-                "then": and or single
-            }
-        }
-    },
-    "testCases": {
-        "T.A.CMN.001": {
-            "1": {
-                "title": "",
-                "description": "",
-                "story": "",
-                "negative": false,
-                "references": [""],
-                "setup": ["", ""],
-                "preConditions": ["", ""],
-                "steps": [
-                    {
-                        "type": "WAIT",
-                        "period": "1000",
-                    },
-                    {
-                        "type": "UNTIL",
-                        "condition": ""
-                    },
-                    {
-                        "type": "ACTION",
-                        "action": ""
-                    },
-                    {
-                        "type": "ASSERTION",
-                        "action": "",
-                        "assertion": and or single
-                    }
-                ]
-            }
-        }
-    },
-    "scenarios": {
-        "S.001": {
-            "title": "",
-            "description": "",
-            "epic": "",
-            "purpose": "",
-            "negative": false,
-            "references": [""],
-            "sequence": [
-                {
-                    "type": "SETUP",
-                    "action": "",
-                },
-                {
-                    "type": "CLEANUP",
-                    "action": "",
-                },
-                {
-                    "type": "TEST",
-                    "testCase": ""
-                }
-            ]
-        }
-    },
-    "suites": {
-        "title": "",
-        "description": "",
-        "purpose": "",
-        "negative": false,
-        "references": [""],
-        "scenarios": ["", ""]
-    }
+	"fileVersion": "0.0.1",
+  "standardsVersion": "1.15.0",
+	"title": "",
+	"description": "",
+	"assertions": {
+		"A.CMN.001": {
+			"title": "",
+			"description": "",
+			"severity": "FAIL"
+		}
+	}
 }

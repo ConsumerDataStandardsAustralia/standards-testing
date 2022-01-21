@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 import yargs from 'yargs';
-const hideBin = require('yargs/helpers');
+import { commands } from './commands';
 
-yargs(hideBin(process.argv))
+const argv = yargs
   // Use the commands directory to scaffold.
-  .commandDir('commands')
+  .command(commands as any)
   // Enable strict mode.
   .strict()
   // Useful aliases.
@@ -14,5 +14,4 @@ yargs(hideBin(process.argv))
     v: 'validate',
     s: 'schema'
   })
-
   .argv;

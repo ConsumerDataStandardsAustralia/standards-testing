@@ -247,7 +247,7 @@
                     "description": "An array of scenarios (reference by scenario ID) included in the suite",
                     "items": {
                         "type": "string",
-                        "format": "^S\\.[A-Z]{3}\\.[0-9]{3}$"
+                        "pattern": "^S\\.[A-Z]{3}\\.[0-9]{3}$"
                     }
                 }
             }
@@ -383,7 +383,7 @@
             "description": "A recursive combination of pre-defined assertions combined using AND or OR operators",
             "oneOf": [{
                     "type": "string",
-                    "format": "^A\\.[A-Z]{3}\\.[0-9]{3}$"
+                    "pattern": "^A\\.[A-Z]{3}\\.[0-9]{3}$"
                 },
                 {
                     "type": "object",
@@ -465,7 +465,7 @@
                         "testCase": {
                             "type": "string",
                             "description": "The ID of the test case to execute",
-                            "format": "^T\\.[A-Z]{3}\\.[0-9]{3}$"
+                            "pattern": "^T\\.[A-Z]{3}\\.[0-9]{3}$"
                         }
                     }
                 }
