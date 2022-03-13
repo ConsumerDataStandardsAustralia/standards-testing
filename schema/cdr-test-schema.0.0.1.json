@@ -76,12 +76,17 @@
             "description": "A single atomic test assertion",
             "additionalProperties": false,
             "required": [
+                "id",
                 "title",
                 "given",
                 "when",
                 "then"
             ],
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "A Unique assertion identifier"
+                },
                 "title": {
                     "type": "string",
                     "description": "A short title of the assertion"
@@ -96,6 +101,11 @@
                     "items": {
                         "$ref": "#/$defs/reference"
                     }
+                },
+                "negative": {
+                    "type": "boolean",
+                    "description": "Indicates if this is a negative assertion.  False if absent",
+                    "default": false
                 },
                 "severity": {
                     "type": "string",
@@ -116,7 +126,7 @@
                 },
                 "when": {
                     "type": "array",
-                    "description": "An array of 'given' statements describing the context",
+                    "description": "An array of 'given' statements describing the context"
 
                 },
                 "then": {
@@ -125,16 +135,20 @@
             }
         },
         "testCase": {
+            
             "type": "object",
             "description": "A test case defined using Behaviour Driven Development principles",
             "additionalProperties": false,
             "required": [
+                "id",
                 "title",
-                "given",
-                "when",
-                "then"
+                "steps"
             ],
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "A Unique test case identifier"
+                },
                 "title": {
                     "type": "string",
                     "description": "A short title of the test case"
@@ -171,6 +185,14 @@
                     "description": "An array of steps to execute the test case",
                     "items": {
                         "$ref": "#/$defs/testCaseStep"
+                    }
+                },
+                "assertions": {
+                    "type": "array",
+                    "description": "An array assertion identifiers associated with this test case",
+                    "items": {
+                        "type": "string",
+                        "description": "The unique assertion identifier"      
                     }
                 }
             }
