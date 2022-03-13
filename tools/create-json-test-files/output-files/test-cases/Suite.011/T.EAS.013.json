@@ -1,0 +1,32 @@
+{
+  "id": "T.EAS.013",
+  "title": "DH call to SDH: Get Usage for Service Points - oldest date",
+  "description": "Obtain a list of electricity usage data constrained by oldest date from a particular service point owned by the consumer that has authorised the current session",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point"
+    },
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#common-field-types"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    " <oldest-date> query parameters is provided",
+    "AND <oldest-date> is a valid DateTime string"
+  ],
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
+    }
+  ],
+  "assertions": [
+    "A.CVN.001",
+    "A.EAS.005",
+    "A.CVM.001",
+    "A.CFA.010",
+    "A.CFA.011",
+    "A.CFA.012"
+  ]
+}

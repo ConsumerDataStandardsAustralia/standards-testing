@@ -1,0 +1,30 @@
+{
+  "id": "T.EAS.033",
+  "title": "DH call to SDH: Get DER for Specific Service Points - unsupported version",
+  "description": "Ensure that the endpoint returns version compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points"
+    }
+  ],
+  "negative": true,
+  "preConditions": [
+    "the value <x-v> is set in the request header to a version not supported by the DH",
+    "AND the value for <x-v> is in a valid  format"
+  ],
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /energy/electricity/servicepoints/der"
+    }
+  ],
+  "assertions": [
+    "A.CFA.010",
+    "A.CFA.011",
+    "A.CFA.012",
+    "A.CVN.001",
+    "A.CVN.002",
+    "A.CVN.004",
+    "A.CPG.005"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "A.CVN.001",
+  "title": "Validate version - valid version number [x-v]",
+  "given": [
+    "the <x-v> header is included in a get request"
+  ],
+  "when": [
+    "the value for the <x-v> is a positive integer"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 200",
+      " <x-v> is in the repsonse header",
+      " <x-v> is a positive integer"
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
+    }
+  ],
+  "negative": false
+}

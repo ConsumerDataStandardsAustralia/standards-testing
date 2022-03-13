@@ -1,0 +1,27 @@
+{
+  "id": "T.EAS.003",
+  "title": "DH call to SDH: Get Service Points - unsupported version",
+  "description": "DH call to SDH: Ensure that the endpoint returns version compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
+    }
+  ],
+  "negative": true,
+  "preConditions": [
+    "The value <x-v> is set in the request header to a version not supported by the DH"
+  ],
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/electricity/servicepoints"
+    }
+  ],
+  "assertions": [
+    "A.CFA.011",
+    "A.CFA.010",
+    "A.CFA.012",
+    "A.CVN.002",
+    "A.CVN.003"
+  ]
+}

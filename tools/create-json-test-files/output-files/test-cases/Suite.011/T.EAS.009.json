@@ -1,0 +1,28 @@
+{
+  "id": "T.EAS.009",
+  "title": "DH call to SDH: Get Usage for Service Point Detail - no pagination",
+  "description": "Obtain a list of electricity usage data from a particular service point owned by the consumer that has authorised the current session",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "Neither <page-size> or <page> query parameters are provided"
+  ],
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
+    }
+  ],
+  "assertions": [
+    "A.CVN.001",
+    "A.EAS.005",
+    "A.CVM.001",
+    "A.CFA.010",
+    "A.CFA.011",
+    "A.CFA.012"
+  ]
+}

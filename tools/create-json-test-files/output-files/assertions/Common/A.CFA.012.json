@@ -1,0 +1,17 @@
+{
+  "id": "A.CFA.012",
+  "title": "No<x-cds-client-header> in header (Energy specific)",
+  "given": [
+    "the call is from a DH to a SDH"
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": "the <x-cds-client-header> is NOT present in the response header",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#energy"
+    }
+  ],
+  "negative": false
+}

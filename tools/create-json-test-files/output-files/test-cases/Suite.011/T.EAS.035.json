@@ -1,0 +1,29 @@
+{
+  "id": "T.EAS.035",
+  "title": "DH call to SDH: Get DER for Specific Service Points - invalid body values",
+  "description": "Ensure that the endpoint returns body compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points"
+    }
+  ],
+  "negative": true,
+  "preConditions": [
+    "The body is correctly formatted",
+    "AND the body values are invalid"
+  ],
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /energy/electricity/servicepoints/der"
+    }
+  ],
+  "assertions": [
+    "A.CVN.001",
+    "A.EAS.009",
+    "A.CVM.001",
+    "A.CFA.010",
+    "A.CFA.011",
+    "A.CFA.012"
+  ]
+}

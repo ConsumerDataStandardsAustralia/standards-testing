@@ -1,0 +1,30 @@
+{
+  "id": "A.CFA.003",
+  "title": "Validate FAPI Auth date - invalid format",
+  "given": [
+    "the called API is a resource call and does require authentication"
+  ],
+  "when": [
+    "the <x-fapi-auth-date> is  in the request header",
+    "AND is NOT in a valid format"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 400",
+      " the response body has ErrorListReponse object",
+      " error code is \"Header/invalid\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
+    },
+    {
+      "uri": "https://openid.net/specs/openid-financial-api-part-1-ID2.html"
+    },
+    {
+      "uri": "https://datatracker.ietf.org/doc/html/rfc7231#page-90"
+    }
+  ],
+  "negative": false
+}

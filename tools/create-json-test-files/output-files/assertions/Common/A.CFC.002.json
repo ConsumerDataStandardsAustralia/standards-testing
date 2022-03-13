@@ -1,0 +1,27 @@
+{
+  "id": "A.CFC.002",
+  "title": "Validate FAPI Customer IP Address - invalid format",
+  "given": [
+    "the called API requires authentication"
+  ],
+  "when": [
+    "the <x-fapi-customer-ip-address> in present the request header",
+    "AND is NEITHER  in a valid IPv4 or IPv6 format"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 400",
+      " the response body has ErrorListReponse object",
+      " error code is \"Header/invalid\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
+    },
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#authentication-flows"
+    }
+  ],
+  "negative": false
+}

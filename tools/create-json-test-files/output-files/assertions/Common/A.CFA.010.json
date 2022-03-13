@@ -1,0 +1,17 @@
+{
+  "id": "A.CFA.010",
+  "title": "No<x-fapi-auth-date> in header (Energy specific)",
+  "given": [
+    "the call is from a DH to a SDH"
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": "the <x-fapi-auth-date> is NOT present in the response header",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#energy"
+    }
+  ],
+  "negative": false
+}

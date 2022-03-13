@@ -1,0 +1,23 @@
+{
+  "id": "A.CVM.002",
+  "title": "Validate minimum version - validate <x-v-min> format",
+  "given": [
+    "the <x-v-min> header is included in a get request"
+  ],
+  "when": [
+    "the <x-min-v> is a not a positive integer"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 400",
+      " the response body has ErrorListReponse object",
+      " error code is \"Field/Invalid\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
+    }
+  ],
+  "negative": false
+}

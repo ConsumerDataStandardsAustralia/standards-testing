@@ -1,0 +1,23 @@
+{
+  "id": "A.EAS.003",
+  "title": "Validate service point - unavailable NMI",
+  "given": [
+    "the {servicePointId} is included in the DH to SDH request"
+  ],
+  "when": [
+    "The requested service point is temporarily unavailable. Subsequent requests for the service point may be successful."
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 404",
+      " the response body has ErrorListReponse object",
+      " error code is \"Authorisation/UnavailableServicePoint\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#energy"
+    }
+  ],
+  "negative": false
+}

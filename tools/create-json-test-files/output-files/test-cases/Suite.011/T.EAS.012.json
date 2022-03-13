@@ -1,0 +1,32 @@
+{
+  "id": "T.EAS.012",
+  "title": "DH call to SDH: Get Usage for Service Points - invalid page parameters",
+  "description": "Ensure that the endpoint returns pagination errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point"
+    }
+  ],
+  "negative": true,
+  "preConditions": [
+    "<page> OR (<page> ",
+    "AND <page-size>) query parameters are provided"
+  ],
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
+    }
+  ],
+  "assertions": [
+    "A.CVN.001",
+    "A.CVM.001",
+    "A.CFA.010",
+    "A.CFA.011",
+    "A.CFA.012",
+    "A.CPG.002",
+    "A.CPG.003",
+    "A.CPG.004",
+    "A.CPG.005"
+  ]
+}

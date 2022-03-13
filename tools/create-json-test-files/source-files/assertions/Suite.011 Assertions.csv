@@ -1,0 +1,29 @@
+,,string,array:string,array:string,assertionPredicate,string,,array:reference,
+CNT,ID,Title,Given [],When [],Then [],Severity,+/-,References,Questions
+1,A.EAS.001,Validate service point and schema - EnergyServicePointDetailResponse,the {servicePointId} is included in the DH to SDH request,the {servicePointId} value is valid ,"the response has a status of 200
+AND the response body complies with the EnergyServicePointDetailResponse schema",FAIL,POSITIVE,"uri=https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyservicepointdetailresponse
+AND
+uri=https://consumerdatastandardsaustralia.github.io/standards/#energy",
+2,A.EAS.002,Validate service point - invalid NMI value,the {servicePointId} is included in the DH to SDH request url,The requested service point is permanently unavailable. No subsequent request for the service point will be successful.,"the response has a status of 404
+AND the response body has ErrorListReponse object
+AND error code is ""Authorisation/InvalidServicePoint""",FAIL,NEGATIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#energy,
+3,A.EAS.003,Validate service point - unavailable NMI,the {servicePointId} is included in the DH to SDH request,The requested service point is temporarily unavailable. Subsequent requests for the service point may be successful.,"the response has a status of 404
+AND the response body has ErrorListReponse object
+AND error code is ""Authorisation/UnavailableServicePoint""",FAIL,NEGATIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#energy,
+4,A.EAS.004,Validate schema - EnergyServicePointListReponse,the request to call the API is formatted correctly by the DH,the SDH receives the request,"the response has a status code 200
+AND the response body complies with the EnergyServiceListResponse schema",FAIL,POSITIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyservicepointlistresponse,
+5,A.EAS.005,Validate service point and schema - EnergyUsageListResponse,the {servicePointId} is included in the DH to SDH request,"the {servicePointId} value is valid 
+AND the request is formated correctlly","the response has a status code of 200
+AND the response body complies with the EnergyUsageListResponse schema",FAIL,POSITIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/ - tocSenergyusagelistresponse,
+6,A.EAS.006,Validate servicePointIdList body and schema - EnergyUsageListResponse,"the request payload to call the API is formatted correctly 
+AND contains the mandatory fields",the SDH receives the request and interprets the Body,"the response has a status code 200
+AND the response body complies with the EnergyUsageListResponse schema",FAIL,POSITIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse,
+7,A.EAS.007,Validate service point and schema - EnergyDerDetailResponse,the {servicePointId} is included in the DH to SDH request,the {servicePointId} value is valid ,"the response has a status of 200
+AND the response body complies with the EnergyDerDetailResponse schema",FAIL,POSITIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point,
+8,A.EAS.008,Validate servicePointIdList body and schema - EnergyDerListResponse,"the request payload to call the API is formatted correctly 
+AND contains the mandatory fields",the SDH receives the request and interprets the Body,"the response has a status code 200
+AND the response body complies with the EnergyDerListResponse schema",FAIL,POSITIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyderlistresponse,
+9,A.EAS.009,Validate servicePointIdList - invalid body values,"the request payload does not contain the required fields
+OR the request payload is NOT well formatted",the SDH receives the request and interprets the Body,"the response has a status code 400
+AND the response body has ErrorListReponse
+AND error code is ""Field/Invalid""",FAIL,NEGATIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse,

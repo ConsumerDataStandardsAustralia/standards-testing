@@ -1,0 +1,28 @@
+{
+  "id": "A.EAS.001",
+  "title": "Validate service point and schema - EnergyServicePointDetailResponse",
+  "given": [
+    "the {servicePointId} is included in the DH to SDH request"
+  ],
+  "when": [
+    "the {servicePointId} value is valid "
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 200",
+      " the response body complies with the EnergyServicePointDetailResponse schema"
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyservicepointdetailresponse"
+    },
+    {
+      "uri": ""
+    },
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#energy"
+    }
+  ],
+  "negative": false
+}

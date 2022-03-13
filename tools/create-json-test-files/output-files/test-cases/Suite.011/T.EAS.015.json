@@ -1,0 +1,28 @@
+{
+  "id": "T.EAS.015",
+  "title": "DH call to SDH: Get Usage for Service Points - invalid Service Point ID",
+  "description": "Ensure the endpoint returns servicePointId compatible errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point"
+    }
+  ],
+  "negative": true,
+  "preConditions": [
+    "The {servicePointId} is set in the Path to a value that is invalid"
+  ],
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
+    }
+  ],
+  "assertions": [
+    "A.CVN.001",
+    "A.EAS.002",
+    "A.CVM.001",
+    "A.CFA.010",
+    "A.CFA.011",
+    "A.CFA.012"
+  ]
+}
