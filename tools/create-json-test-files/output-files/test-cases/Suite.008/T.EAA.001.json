@@ -1,0 +1,12 @@
+{
+  "id": "T.EAA.001",
+  "title": "",
+  "description": "",
+  "references": [],
+  "negative": false,
+  "preConditions": [],
+  "steps": [],
+  "assertions": [
+    "A.EAA.001"
+  ]
+}

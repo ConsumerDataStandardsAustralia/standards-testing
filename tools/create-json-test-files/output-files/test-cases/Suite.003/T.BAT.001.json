@@ -1,0 +1,13 @@
+{
+  "id": "T.BAT.001",
+  "title": "",
+  "description": "",
+  "references": [],
+  "negative": false,
+  "preConditions": [],
+  "steps": [],
+  "assertions": [
+    "A.COD.001",
+    "A.BAT.001"
+  ]
+}

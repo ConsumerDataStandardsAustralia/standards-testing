@@ -1,6 +1,6 @@
 {
   "id": "A.CFA.012",
-  "title": "No<x-cds-client-header> in header (Energy specific)",
+  "title": "No <x-cds-client-header> in header (Energy specific)",
   "given": [
     "the call is from a DH to a SDH"
   ],

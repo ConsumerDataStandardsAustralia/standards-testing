@@ -244,6 +244,10 @@ export interface TestCase {
  */
 export interface Scenario {
   /**
+   * A Unique scenario identifier
+   */
+  id: string;
+  /**
    * A short title of the scenario
    */
   title: string;
@@ -271,6 +275,10 @@ export interface Scenario {
  * via the `patternProperty` "^SUITE\.[a-zA-Z0-9]+$".
  */
 export interface Suite {
+  /**
+   * A Unique suite identifier
+   */
+  id: string;
   /**
    * A short title of the test suite
    */

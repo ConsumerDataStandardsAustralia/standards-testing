@@ -1,6 +1,6 @@
 {
   "id": "A.CFA.011",
-  "title": "No<x-fapi-customer-ip-address> in header (Energy specific)",
+  "title": "No <x-fapi-customer-ip-address> in header (Energy specific)",
   "given": [
     "the call is from a DH to a SDH"
   ],

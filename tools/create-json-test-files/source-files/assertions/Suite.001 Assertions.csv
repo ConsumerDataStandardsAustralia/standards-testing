@@ -1,0 +1,3 @@
+,string,string,array:string,array:string,assertionPredicate,string,array:reference
+ID,Title,Description,Given [],When [],Then [],Severity,References
+1,A.BAP.001,,,,,,

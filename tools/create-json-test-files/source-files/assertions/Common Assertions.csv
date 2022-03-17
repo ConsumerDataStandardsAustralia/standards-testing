@@ -65,8 +65,8 @@ AND error code is ""Header/invalid""",FAIL,NEGATIVE,"uri=https://consumerdatasta
 uri=https://openid.net/specs/openid-financial-api-part-1-ID2.html
 uri=https://datatracker.ietf.org/doc/html/rfc7231#page-90",
 18,A.CFA.010,No<x-fapi-auth-date> in header (Energy specific),the call is from a DH to a SDH,a response is returned,the <x-fapi-auth-date> is NOT present in the response header,FAIL,POSITIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#energy,
-19,A.CFA.011,No<x-fapi-customer-ip-address> in header (Energy specific),the call is from a DH to a SDH,a response is returned,the <x-fapi-customer-ip-address> is NOT present in the response header,FAIL,POSITIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#energy,
-20,A.CFA.012,No<x-cds-client-header> in header (Energy specific),the call is from a DH to a SDH,a response is returned,the <x-cds-client-header> is NOT present in the response header,FAIL,POSITIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#energy,
+19,A.CFA.011,No <x-fapi-customer-ip-address> in header (Energy specific),the call is from a DH to a SDH,a response is returned,the <x-fapi-customer-ip-address> is NOT present in the response header,FAIL,POSITIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#energy,
+20,A.CFA.012,No <x-cds-client-header> in header (Energy specific),the call is from a DH to a SDH,a response is returned,the <x-cds-client-header> is NOT present in the response header,FAIL,POSITIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#energy,
 21,A.CFC.001,Validate FAPI Customer IP Address - is present,the called API requires authentication,"the <x-fapi-customer-ip-address> is present in the request header
 AND is in a valid IPv4 or IPv6 format",the response has a status of 200,FAIL,POSITIVE,"uri=https://consumerdatastandardsaustralia.github.io/standards/#http-headers
 uri=https://consumerdatastandardsaustralia.github.io/standards/#authentication-flows","this is subject to dates where there is likely to be changes as the FAPI v1.0 profile is transitioned in, where should these dates be captured?"

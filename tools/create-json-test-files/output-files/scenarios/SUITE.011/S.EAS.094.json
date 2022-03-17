@@ -1,0 +1,37 @@
+{
+  "id": "S.EAS.094",
+  "title": "Get Usage For Service Point Negative SDH",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.011"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.012"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.013"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.015"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.016"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.017"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.018"
+    }
+  ]
+}

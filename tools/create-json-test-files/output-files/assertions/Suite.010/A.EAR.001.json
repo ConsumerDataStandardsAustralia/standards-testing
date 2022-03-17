@@ -1,0 +1,17 @@
+{
+  "id": "A.EAR.001",
+  "title": "Schema compliance - EnergyServicePointListReponse",
+  "given": [
+    ""
+  ],
+  "when": [
+    "a 2xx status code is returned"
+  ],
+  "then": "the  response body complies with the EnergyServiceListReponse schema",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyservicepointlistresponse"
+    }
+  ],
+  "negative": false
+}

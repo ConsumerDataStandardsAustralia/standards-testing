@@ -202,11 +202,16 @@
             "description": "A test scenario made up of a sequence of test cases and additonal actions to prepare for the tests",
             "additionalProperties": false,
             "required": [
+                "id",
                 "title",
                 "purpose",
                 "sequence"
             ],
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "A Unique scenario identifier"
+                },
                 "title": {
                     "type": "string",
                     "description": "A short title of the scenario"
@@ -240,11 +245,16 @@
             "description": "A suite of test scenarios that are bundled to achieve a specific testing purpose",
             "additionalProperties": false,
             "required": [
+                "id",
                 "title",
                 "purpose",
                 "scenarios"
             ],
             "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "A Unique suite identifier"
+                },
                 "title": {
                     "type": "string",
                     "description": "A short title of the test suite"

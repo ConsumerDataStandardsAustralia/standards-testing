@@ -3,10 +3,23 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as readline from 'readline';
 import * as events from 'events';
-import { TestCase, Reference, TestCaseStep, Assertion, AssertionPredicate } from './test-schema-definitions';
+import { TestCase, Reference, TestCaseStep, Assertion, AssertionPredicate, Suite, Scenario, ScenarioAction } from './test-schema-definitions';
 
 const lineReader = require('line-reader');
 
+const SUITE_ID_INDEX: number = 1;
+const SUITE_TITLE_INDEX: number = 2;
+const SUITE_PURPOSE_INDEX: number = 3;
+
+const SCENARIO_ID_INDEX: number = 3;
+const SCENARIO_SUITE_INDEX: number = 5;
+const SCENARIO_TITLE_INDEX: number = 7;
+const SCENARIO_DESCRIPTION_INDEX: number = 8;
+const SCENARIO_PURPOSE_INDEX: number = 9;
+const SCENARIO_REFERENCES_INDEX: number = 10;
+const SCENARIO_SETUP_INDEX: number = 11;
+const SCENARIO_CLEANUP_INDEX: number = 12;
+const SCENARIO_TEST_CASES: number = 13;
 
 const TEST_ID_INDEX: number = 1;
 const TEST_TITLE_INDEX: number = 4;
@@ -33,8 +46,8 @@ const app = express();
 const port = 3000;
 
 // set to whatever you need to
-const baseSourceDirectory: string = './source-files';
-const baseSinkDirectory: string = './output-files'
+const baseSourceDirectory: string = 'D:/_codeRepos/codeDataStandards/standards-testing/tools/create-json-test-files/source-files';
+const baseSinkDirectory: string = 'D:/_codeRepos/codeDataStandards/standards-testing/tools/create-json-test-files/output-files'
 
 const testCaseDirectorySourcePath = path.join(baseSourceDirectory, '/test-cases/' );
 const testCaseDirectorySinkPath = path.join(baseSinkDirectory, '/test-cases/' );
@@ -45,8 +58,67 @@ const assertionDirectorySinkPath = path.join(baseSinkDirectory, '/assertions/' )
 const scenarioDirectorySourcePath = path.join(baseSourceDirectory, '/scenarios/' );
 const scenarioDirectorySinkPath = path.join(baseSinkDirectory, '/scenarios/' );
 
+const suiteDirectorySourcePath = path.join(baseSourceDirectory, '/test-suites/' );
+
 var testCaseFiles = fs.readdirSync(testCaseDirectorySourcePath);
 var assertionFiles = fs.readdirSync(assertionDirectorySourcePath);
+var suiteFiles = fs.readdirSync(suiteDirectorySourcePath);
+var scenarioFiles = fs.readdirSync(scenarioDirectorySourcePath);
+
+
+// Process the scenario case files: input is csv (from Excel) => output is json in specified schema
+for (let i = 0; i < scenarioFiles.length; i++) {
+  var filePath = path.join(scenarioDirectorySourcePath, scenarioFiles[i]);
+  console.log("Processing: " + scenarioFiles[i]);
+  let lineCount = 0;
+  let linesForScenario = 0;
+  let currentScenario = '';
+  let lastScenario = '';
+  lineReader.eachLine(filePath, {separator: '\r\n'}, function(line:string, last: boolean) {
+      lineCount++;
+      // ignore the first four lines    
+      if (lineCount > 4)
+      {
+          var arr: Array<string> = splitCSVButIgnoreCommasInDoublequotes(line);
+          if (arr[SCENARIO_ID_INDEX] != null && arr[SCENARIO_ID_INDEX].indexOf('S.') > -1)
+          {
+              var suiteDir: string = arr[SCENARIO_SUITE_INDEX];
+              var filePath = path.join(scenarioDirectorySinkPath + '/', suiteDir);
+              processScenario(arr, arr[SCENARIO_ID_INDEX], filePath);
+              currentScenario = arr[SCENARIO_ID_INDEX];
+              lastScenario = currentScenario;
+              linesForScenario = 0;
+              scenarioFiles = [];
+          }
+        }
+      }    
+  ); 
+}
+
+// Process the suite files: input is csv (from Excel) => output is json in specified schema
+for (let i = 0; i < suiteFiles.length; i++) {
+  var filePath = path.join(suiteDirectorySourcePath, suiteFiles[i]);
+ 
+  console.log("Processing: " + suiteFiles[i]);
+  let lineCount = 0;
+  let lastTestSuite = '';
+  lineReader.eachLine(filePath, {separator: '\r\n'}, function(line:string, last: boolean) {
+    lineCount++;
+    // ignore the first two lines  
+    var fileWritePath = path.join(baseSinkDirectory,'suites') + '/';  
+    if (lineCount > 1)
+    {
+        let arr = line.split(',');
+        if (arr != null && (arr[1] != null && arr[1].indexOf('SUITE.') > -1))
+        {
+            processSuite(arr, arr[1], fileWritePath);
+        }
+        if (last == true){
+          processSuite(arr, lastTestSuite, fileWritePath);  
+        } 
+    }    
+}); 
+}
 
 // Process the test case files: input is csv (from Excel) => output is json in specified schema
 for (let i = 0; i < testCaseFiles.length; i++) {
@@ -136,6 +208,30 @@ for (let i = 0; i < assertionFiles.length; i++) {
 
 
 /******************* Utility function section ************************/
+function processScenario(arr:Array<string>, scenarioName: string, fileWritePath: string) {
+  let cnt = arr.length;
+  if (cnt > 0) {
+      var scenario = processFirstScenarioLine(arr);
+      var data = JSON.stringify(scenario, null, 2);
+      writeDataToFile(data, fileWritePath, scenarioName);
+    }
+}
+
+function processSuite(arr: Array<string>, suiteName: string, fileWritePath: string){
+  if (suiteName == '')
+    return;
+
+  let suite: Suite = {
+    id: arr[SUITE_ID_INDEX],
+    title: arr[SUITE_TITLE_INDEX],
+    purpose: arr[SUITE_PURPOSE_INDEX],
+    scenarios: []
+  }
+  var data = JSON.stringify(suite, null, 2);
+  writeDataToFile(data, fileWritePath, suiteName);
+
+}
+
 function processTestCase(arr: Array<Array<string>>, testCaseName: string, fileWritePath: string) {
   let cnt = arr.length;
   if (cnt > 0) {
@@ -194,7 +290,7 @@ function writeDataToFile(json: string, fileWritePath: string, fileName: string) 
   fs.mkdir(fileWritePath, { recursive: true }, (err) => {
     if (err) throw err;
   });
-  var fileName = fileWritePath  + fileName + '.json' 
+  var fileName = path.join(fileWritePath, fileName + '.json'); 
   fs.writeFile( fileName, json, (err) => {
     if (err) console.error(err);
   });
@@ -305,6 +401,76 @@ function processFirstTestLine(header: Array<string>): TestCase {
     assertions: assertions
   }
   return testCase;
+}
+
+function processFirstScenarioLine(header: Array<string>): Scenario {
+  
+  let maxCnt = header.length;
+  var actions: ScenarioAction[]= [];
+  if (header[SCENARIO_SETUP_INDEX] != null && header[SCENARIO_SETUP_INDEX] != '') {
+    let scenarioAction: ScenarioAction = {
+        type: "SETUP",
+        action: header[SCENARIO_SETUP_INDEX] 
+    } 
+    actions.push(scenarioAction);
+  }
+  if (header[SCENARIO_CLEANUP_INDEX] != null  && header[SCENARIO_CLEANUP_INDEX] != '') {
+    let scenarioAction: ScenarioAction = {
+      type: "CLEANUP",
+      action: header[SCENARIO_CLEANUP_INDEX] 
+    } 
+    actions.push(scenarioAction);    
+  }
+  for(let i = SCENARIO_TEST_CASES; i < maxCnt; i++) {
+      if (header[i] != undefined && header[i] != '') {
+        let testAction: ScenarioAction = {
+          type: "TEST",
+          testCase: header[i] 
+        } 
+        actions.push(testAction);   
+      }
+  }
+  let scenario: Scenario = {
+    id: header[SCENARIO_ID_INDEX],
+    title: header[SCENARIO_TITLE_INDEX],
+    purpose: header[SCENARIO_PURPOSE_INDEX],
+    description: header[SCENARIO_DESCRIPTION_INDEX],
+    references: processReferences(header[SCENARIO_REFERENCES_INDEX], header[SCENARIO_ID_INDEX]),
+    sequence: actions
+  }
+  return scenario;
+}
+
+function processOtherScenarioLines(line: Array<string>, scenario: Scenario){
+  // let steps = scenario.steps == null ? [] : scenario.steps;
+  // if (line[TEST_STEP_TYPE_INDEX] != null) {
+  //     let step: TestCaseStep; 
+  //     let stepType = line[TEST_STEP_TYPE_INDEX];
+  //     if (stepType == "ACTION" ) {
+  //      step = {
+  //         type: "ACTION", 
+  //         action: line[TEST_STEP_VALUE_INDEX]
+  //       }
+  //       steps.push(step);
+  //     }
+  //     if (stepType == "WAIT" ) {
+  //       step = {
+  //          type: "WAIT", 
+  //          period: parseInt(line[TEST_STEP_VALUE_INDEX])
+  //        }
+  //        steps.push(step);
+  //      }
+
+  //      if (stepType == "UNTIL" ) {
+  //       step = {
+  //          type: "UNTIL", 
+  //          condition: line[TEST_STEP_VALUE_INDEX]
+  //        }
+  //        steps.push(step);
+  //      }
+  // }  
+  // testCase.steps = steps; 
+
 }
 
 function processPreConditions(preconditions: string, id: string): Array<string> {

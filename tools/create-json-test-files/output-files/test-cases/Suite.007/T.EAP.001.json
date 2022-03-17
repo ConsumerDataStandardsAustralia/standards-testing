@@ -1,0 +1,15 @@
+{
+  "id": "T.EAP.001",
+  "title": "",
+  "description": "",
+  "references": [],
+  "negative": false,
+  "preConditions": [],
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": ""
+    }
+  ],
+  "assertions": []
+}

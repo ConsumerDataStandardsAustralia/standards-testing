@@ -1,0 +1,17 @@
+{
+  "id": "A.BAN.001",
+  "title": "Call Accounts - no query aprameters",
+  "given": [
+    ""
+  ],
+  "when": [
+    "no query parameters are specified"
+  ],
+  "then": "result set is not empty",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-accounts"
+    }
+  ],
+  "negative": false
+}

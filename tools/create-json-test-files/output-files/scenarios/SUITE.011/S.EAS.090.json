@@ -1,0 +1,25 @@
+{
+  "id": "S.EAS.090",
+  "title": "Get Service Points Negative SDH",
+  "purpose": "",
+  "description": "Test errors and edge cases for Get Service Points ",
+  "references": [
+    {
+      "uri": "<https://consumerdatastandardsaustralia.github.io/standards/#get-service-points> "
+    },
+    {
+      "uri": "",
+      "alt": "<https://consumerdatastandardsaustralia.github.io/standards/#shared-responsibility>"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.003"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.004"
+    }
+  ]
+}

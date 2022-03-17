@@ -1,0 +1,22 @@
+{
+  "id": "A.BAN.003",
+  "title": "Call Accounts - with status",
+  "given": [
+    ""
+  ],
+  "when": [
+    "<open-status> is set in query string"
+  ],
+  "then": {
+    "and": [
+      "<open-status> is valid",
+      " result set is not empty"
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-accounts"
+    }
+  ],
+  "negative": false
+}

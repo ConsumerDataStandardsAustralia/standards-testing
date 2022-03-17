@@ -1,0 +1,29 @@
+{
+  "id": "S.EAS.100",
+  "title": "Get DER For Specific Service Points Negative SDH",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.034"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.035"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.036"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.037"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.038"
+    }
+  ]
+}
