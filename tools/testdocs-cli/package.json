@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "tslint -p .",
-    "sync-schema": "rm -f ./schema/* && cp ../../schema/*.json src/schema && node ./src/utils/create-schema-definitions.js",
+    "sync-schema": "rm -f ./src/schema/* && cp ../../schema/*.json ./src/schema && node ./utils/create-schema-definitions.js",
     "build": "rm -rf ./build/ && tsc && chmod +x ./build/cli.js",
     "publish": "npm publish --access public"
   },
@@ -21,6 +21,7 @@
     "ajv": "^8.9.0",
     "ajv-formats": "^2.1.1",
     "better-ajv-errors": "^1.1.2",
+    "csv-parse": "^5.0.4",
     "json-schema-to-typescript": "^10.1.5",
     "yargs": "^17.3.1"
   }
