@@ -8,7 +8,7 @@ body {
   padding-bottom: 4em;
 }
 
-body div:first-of-type h1:first-of-type {
+div.content div:first-of-type h1:first-of-type {
   margin-top: 0px;
 }
 
@@ -96,6 +96,74 @@ td {
 tbody tr:nth-child(even) {
   background-color: #fbfcfd;
 }
+
 tbody tr:nth-child(odd) {
   background-color: white;
+}
+
+div.content {
+  margin-left: 230px;
+  position: relative;
+  z-index: 10;
+  min-height: 100%;
+  padding-bottom: 1px;
+}
+
+div.toc {
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 230px;
+  background-color: #000000;
+  font-size: 13px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+div.toc div {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+div.toc div a {
+  color: #2FB787;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+div.toc1 a {
+  font-size: 13px;
+  font-weight: bold;
+  width: 210px;
+}
+
+div.toc1 {
+  padding-left: 10px;
+}
+
+div.toc2 a {
+  font-size: 10px;
+  font-weight: bold;
+  width: 200px;
+}
+
+div.toc2 {
+  padding-left: 20px;
+}
+
+div.toc3 a {
+  font-size: 9px;
+  font-weight: normal;
+  width: 190px;
+}
+
+div.toc3 {
+  padding-left: 30px;
 }
