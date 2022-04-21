@@ -31,7 +31,7 @@ export const handler = (argv: Arguments<Options>): void => {
       result = generators.html(src as string, dst as string);
       break;
     case 'markdown':
-      //XXXX
+      result = generators.markdown(src as string, dst as string);
       break;
   }
 
