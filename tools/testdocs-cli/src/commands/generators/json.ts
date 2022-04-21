@@ -47,12 +47,6 @@ const ASSERTION_SEVERITY_INDEX: number = 6;
 const ASSERTION_POLARITY_INDEX: number = 7;
 const ASSERTION_REFERENCE_INDEX: number = 8;
 
-export function json2(source: string, destination: string): number {
-  console.log(source);
-  return 1;
-}
-
-
 export function json(source: string, destination: string): number {
   const baseSourceDirectory: string = source;
   const baseSinkDirectory: string = destination;
@@ -281,13 +275,9 @@ function processAssertion(arr: Array<string>, assertionName: string, fileWritePa
 }
 
 function writeDataToFile(json: string, fileWritePath: string, fileName: string) {
-  fs.mkdir(fileWritePath, { recursive: true }, (err) => {
-    if (err) throw err;
-  });
+  fs.mkdirSync(fileWritePath, { recursive: true });
   var fileName = path.join(fileWritePath, fileName + '.json');
-  fs.writeFile( fileName, json, (err) => {
-    if (err) console.error(err);
-  });
+  fs.writeFileSync(fileName, json);
 }
 
 function processMultiLineToArray(multiLineInput: string): string[] {
@@ -580,7 +570,7 @@ function processReferences(references: string, id: string): Array<Reference> {
           }
        }
     })
-    returnArray.push(newReference)
+    if (newReference.uri && newReference.uri !== '') returnArray.push(newReference)
   })
   return returnArray;
 }

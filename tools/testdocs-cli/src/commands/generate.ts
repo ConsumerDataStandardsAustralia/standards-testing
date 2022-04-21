@@ -7,6 +7,8 @@ type Options = {
   destination: string;
 };
 
+// TODO: Add ability to set additional options per media type such as CSS for HTML or version for JSON
+
 export const command: string = 'generate <type> <src> <dst>';
 export const desc: string = 'Generate various forms of output.';
 
@@ -26,7 +28,7 @@ export const handler = (argv: Arguments<Options>): void => {
       result = generators.json(src as string, dst as string);
       break;
     case 'html':
-      //XXXX
+      result = generators.html(src as string, dst as string);
       break;
     case 'markdown':
       //XXXX
