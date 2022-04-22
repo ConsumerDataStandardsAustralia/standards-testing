@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import Ajv2020 from 'ajv/dist/2020';
 import betterAjvErrors from 'better-ajv-errors';
 import addFormats from 'ajv-formats';
-import cdr_test_schema from '../schema/cdr-test-schema.0.0.1.json';
+import cdr_test_schema from '../schema/cdr-test-schema.0.0.3.json';
 
 type Options = {
   filename: string;
