@@ -2,16 +2,16 @@
 
 ## Overview
 
-The testdocs-cli can be used to validate and render test case documentation documented in JSON that is compliant with the CDR test documentation JSON schema.
+The testdocs CLI can be used to validate and render test case documentation documented in JSON that is compliant with the CDR test documentation JSON schema.
 
 This tool has been created by the [Data Standards Body](https://consumerdatastandards.gov.au/) to support participants implementing of the [technical standards](https://github.com/ConsumerDataStandardsAustralia/standards) developed for the Australian Consumer Data Right regime.
 
-The goal of the testdocs-cli the corresonding testdocs library is to provide tooling for the documentation of tests so that CDR participants can test their implementations with confidence that they are conformant with the standards.
+The goal of the testdocs CLI is to provide tooling for the documentation of tests so that CDR participants can test their implementations with confidence that they are conformant with the standards.
 
 ## CLI Usage
 
-To install the testdocs command line tool (`testdocs-cli`) you need to have npm installed.  With npm installed run the following command:
-`npm install @cds-au/testdocs-cli -g`
+To install the testdocs command line tool (`testdocs`) you need to have npm installed.  With npm installed run the following command:
+`npm install @cds-au/testdocs -g`
 
 This will make the CLI available globally.
 
@@ -34,10 +34,10 @@ None
 
 #### Examples
 
-`testdocs-cli doc-schema`
+`testdocs doc-schema`
 Output the current test doc schema to stdout
 
-`testdocs-cli doc-schema --version`
+`testdocs doc-schema --version`
 Output the version of test doc schema to stdout
 
 ### Validate Documentation Command
@@ -59,15 +59,15 @@ None
 
 #### Examples
 
-`testdocs-cli validate doc.json`
+`testdocs validate doc.json`
 Validate `doc.json` and output any validation errors to stderr
 
 
-### Generate Output Command
+### Document Generation Command
 
 #### Command
 
-`generate <type> <src> <dst>`
+`gendocs <type> <src> <dst>`
 Read in the specified source and generate output according to the type specified.  Can be used to generate human readable versions of the test documentation data in various formats.
 
 #### Arguments
@@ -84,13 +84,13 @@ None
 
 #### Examples
 
-`testdocs-cli generate json ./csvfiles/ ./doc.json`
+`testdocs gendocs json ./csvfiles/ ./doc.json`
 Convert a folder structure containing a series of CSV files each containing different aspects of the test documentation into a single JSON file containing test documentation aligned to the test doc schema.  Note that schema compliance for the output is dependent on the validity of the data in the CSV files.
 
-`testdocs-cli generate html ./doc.json ./doc.html`
+`testdocs gendocs html ./doc.json ./doc.html`
 Convert the documentation in `doc.json` into standalone HTML and output to `doc.html`.  All CSS and JS will be inline in the resulting HTML file.
 
-`testdocs-cli generate markdown ./doc.json ./doc.md`
+`testdocs gendocs markdown ./doc.json ./doc.md`
 Convert the documentation in `doc.json` into Markdown and output to `doc.md`.  Note that some HTML statements will be included in the markdown so a markdown renderer that supports inline HTML is expected to be used to view the resulting output.
 
 ## Maintenance
