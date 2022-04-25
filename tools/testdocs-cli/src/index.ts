@@ -1,3 +1,7 @@
-export * as schema from './logic/schema';
-export * as generators from './logic/generators';
-export * as validate from './logic/validate';
+export * from './logic/schema';
+export * from './logic/validate';
+export {
+  markdown as markdownGenerator,
+  html as htmlGenerator,
+  json as jsonGeneratot
+} from './logic/generators';
