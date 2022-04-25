@@ -1,7 +1,5 @@
 import { Arguments, CommandBuilder } from 'yargs';
-import cdr_test_schema from '../schema/cdr-test-schema.0.0.3.json';
-
-const schema_version = '0.0.3';
+import * as schema from '../logic/schema';
 
 type Options = {
   version: boolean | undefined;
@@ -20,9 +18,9 @@ export const handler = (argv: Arguments<Options>): void => {
   const { vonly } = argv;
 
   if (vonly) {
-    process.stdout.write(`${schema_version}\n`);
+    process.stdout.write(`${schema.testDocVersion}\n`);
   } else {
-    process.stdout.write(`${JSON.stringify(cdr_test_schema, null, 4)}\n`);
+    process.stdout.write(`${JSON.stringify(schema.testDocSchema, null, 4)}\n`);
   }
 
   process.exit(0);

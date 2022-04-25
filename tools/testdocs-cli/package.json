@@ -1,18 +1,17 @@
 {
   "name": "@cds-au/testdocs-cli",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Tools for managing the presentation of test case documentation for the Australian Consumer Data Right regime",
   "main": "index.js",
   "scripts": {
     "lint": "tslint -p .",
     "sync-schema": "rm -f ./src/schema/* && cp ../../schema/*.json ./src/schema && node ./utils/create-schema-definitions.js",
-    "build": "rm -rf ./build/ && tsc && chmod +x ./build/cli.js",
-    "publish": "npm publish --access public"
+    "build": "rm -rf ./build/ && tsc && chmod +x ./build/cli.js"
   },
   "author": "Data Standards Body",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^17.0.10",
+    "@types/node": "^17.0.26",
     "@types/yargs": "^17.0.8",
     "typescript": "^4.5.5"
   },

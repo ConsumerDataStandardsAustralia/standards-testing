@@ -17,19 +17,22 @@ This will make the CLI available globally.
 
 ### Documentation Schema Command
 
-**Command**
+#### Command
+
 `doc-schema`
 Print out the testdocs schema currently in use to stdout.  This will be the full JSON schema file and allows for the schema to be reused in your own tools or workflow.
 
-**Arguments**
+#### Arguments
+
 None
 
-**Options**
+#### Options
+
 |Options|Description|
 |-|-|
 |`--version`| Output only the version of the schema that the CLI is currently using|
 
-**Examples**
+#### Examples
 
 `testdocs-cli doc-schema`
 Output the current test doc schema to stdout
@@ -39,19 +42,22 @@ Output the version of test doc schema to stdout
 
 ### Validate Documentation Command
 
-**Command**
+#### Command
+
 `validate <filename>`
 Validate that the JSON file specified is a valid JSON file and also fully compliant with the current test documentation schema.  Errors will be published to stderr and a non-zero response will be provided.
 
-**Arguments**
+#### Arguments
+
 |Argument|Description|
 |-|-|
 |`<filename>`| The path to the file (expected to be a valid JSON file) to be validated.|
 
-**Options**
+#### Options
+
 None
 
-**Examples**
+#### Examples
 
 `testdocs-cli validate doc.json`
 Validate `doc.json` and output any validation errors to stderr
@@ -59,29 +65,32 @@ Validate `doc.json` and output any validation errors to stderr
 
 ### Generate Output Command
 
-**Command**
+#### Command
+
 `generate <type> <src> <dst>`
 Read in the specified source and generate output according to the type specified.  Can be used to generate human readable versions of the test documentation data in various formats.
 
-**Arguments**
+#### Arguments
+
 |Argument|Description|
 |-|-|
 |`<type>`| The type of the output to generate.  Can be `json`, `html` or `markdown`.  Note that the `json` mode converts a series of CSV files exported from Excel into JSON and is temporary until an editor capability is available.|
 |`<src>`| The source file or path to read in and generate the output from.  For `html` and `markdown` the `<src>` is expected to be a single JSON file containing test documentation compliant with the current schema.  For `json` the `<src>` is expected to be a path containing a series of CSV files that represent an export of the the test documentation from an Excel workbook.|
 |`<dst>`| The destination file for the generated output.  The type will align to the type specified in the `<type>` argument. |
 
-**Options**
+#### Options
+
 None
 
-**Examples**
+#### Examples
 
-`testdocs-cli json ./csvfiles/ ./doc.json`
+`testdocs-cli generate json ./csvfiles/ ./doc.json`
 Convert a folder structure containing a series of CSV files each containing different aspects of the test documentation into a single JSON file containing test documentation aligned to the test doc schema.  Note that schema compliance for the output is dependent on the validity of the data in the CSV files.
 
-`testdocs-cli html ./doc.json ./doc.html`
+`testdocs-cli generate html ./doc.json ./doc.html`
 Convert the documentation in `doc.json` into standalone HTML and output to `doc.html`.  All CSS and JS will be inline in the resulting HTML file.
 
-`testdocs-cli markdown ./doc.json ./doc.md`
+`testdocs-cli generate markdown ./doc.json ./doc.md`
 Convert the documentation in `doc.json` into Markdown and output to `doc.md`.  Note that some HTML statements will be included in the markdown so a markdown renderer that supports inline HTML is expected to be used to view the resulting output.
 
 ## Maintenance
@@ -101,14 +110,14 @@ To build the repository run the following scripts from a bash compliant command 
 `npm run build`
 
 To publish the repository to npm (needs permission)
-`npm run publish`
+`npm publish --access public`
 
 ## Outstanding Features
 
 The following are a list of features that are intended but yet to be added to this capability (contributions welcome):
 
-[ ] Standadalone browser based editor for modifying schema compliant Documentation
-[ ] Addition of test data generation (possibly a separate CLI)
-[ ] Refactor so that the core libraries are in a separate module for reuse
-[ ] Add additional options to output generation to allow for insertion of additional content (eg. CSS, JS)
-[ ] Unit testing to support contributions
+* Standalone browser based editor for modifying schema compliant Documentation
+* Addition of test data generation (possibly a separate CLI)
+* Refactor so that the core libraries are in a separate module for reuse
+* Add additional options to output generation to allow for insertion of additional content (eg. CSS, JS)
+* Unit testing to support contributions

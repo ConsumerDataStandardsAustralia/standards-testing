@@ -1,5 +1,5 @@
 import { Arguments, CommandBuilder } from 'yargs';
-import * as generators from './generators';
+import * as generators from '../logic/generators';
 
 type Options = {
   type: string;
@@ -25,13 +25,13 @@ export const handler = (argv: Arguments<Options>): void => {
 
   switch (type) {
     case 'json':
-      result = generators.json(src as string, dst as string);
+      result = generators.json(src as string, dst as string, process.stdout, process.stderr);
       break;
     case 'html':
-      result = generators.html(src as string, dst as string);
+      result = generators.html(src as string, dst as string, process.stdout, process.stderr);
       break;
     case 'markdown':
-      result = generators.markdown(src as string, dst as string);
+      result = generators.markdown(src as string, dst as string, process.stdout, process.stderr);
       break;
   }
 

@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { Writable } from 'stream';
 import { parse } from 'csv-parse/sync';
 import {
   TestCase,
@@ -47,7 +48,7 @@ const ASSERTION_SEVERITY_INDEX: number = 6;
 const ASSERTION_POLARITY_INDEX: number = 7;
 const ASSERTION_REFERENCE_INDEX: number = 8;
 
-export function json(source: string, destination: string): number {
+export function json(source: string, destination: string, stdout?: Writable, stderr?: Writable): number {
   const baseSourceDirectory: string = source;
   const baseSinkDirectory: string = destination;
 
@@ -102,7 +103,7 @@ export function json(source: string, destination: string): number {
     for (let i = 0; i < suiteFiles.length; i++) {
       var filePath = path.join(suiteDirectorySourcePath, suiteFiles[i]);
 
-      console.log("Processing: " + suiteFiles[i]);
+      stdout?.write("Processing: " + suiteFiles[i] + '\n');
 
       const fileData = fs.readFileSync(filePath, 'utf8');
       const records = parse(fileData, { from_line: 2 });
@@ -117,7 +118,7 @@ export function json(source: string, destination: string): number {
     // Process the scenario case files: input is csv (from Excel) => output is json in specified schema
     for (let i = 0; i < scenarioFiles.length; i++) {
       var filePath = path.join(scenarioDirectorySourcePath, scenarioFiles[i]);
-      console.log("Processing: " + scenarioFiles[i]);
+      stdout?.write("Processing: " + scenarioFiles[i] + '\n');
 
       const fileData = fs.readFileSync(filePath, 'utf8');
       const records = parse(fileData, { from_line: 5 });
@@ -141,7 +142,7 @@ export function json(source: string, destination: string): number {
     for (let i = 0; i < testCaseFiles.length; i++) {
       var filePath = path.join(testCaseDirectorySourcePath, testCaseFiles[i]);
 
-      console.log("Processing: " + testCaseFiles[i]);
+      stdout?.write("Processing: " + testCaseFiles[i] + '\n');
 
       // Break down the lines into test cases
       let currentTestCase: any | undefined;
@@ -176,7 +177,7 @@ export function json(source: string, destination: string): number {
     for (let i = 0; i < assertionFiles.length; i++) {
       var filePath = path.join(assertionDirectorySourcePath, assertionFiles[i]);
 
-      console.log("Processing: " + assertionFiles[i]);
+      stdout?.write("Processing: " + assertionFiles[i] + '\n');
 
       const fileData = fs.readFileSync(filePath, 'utf8');
       const records = parse(fileData, { from_line: 3 });
@@ -188,11 +189,11 @@ export function json(source: string, destination: string): number {
       }
     }
 
-    console.log("Output full test file");
+    stdout?.write("Output full test file\n");
     writeDataToFile(JSON.stringify(fullOutput, null, 2), baseSinkDirectory + '/', 'full-test-suite')
 
   } catch (err: any) {
-    console.error((err.message) ? err.message : err);
+    stderr?.write(((err.message) ? err.message : err) + '\n');
     return 1;
   }
 
