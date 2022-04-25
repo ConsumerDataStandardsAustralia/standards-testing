@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import { Writable } from 'stream';
 import {
   TestCasePredicate,
   AssertionPredicate,
@@ -13,7 +14,7 @@ import {
 // Exports
 // ----------------------------------------------------------------------------
 
-export function html(source: string, destination: string): number {
+export function html(source: string, destination: string, stdout?: Writable, stderr?: Writable): number {
 
   // Check that the source path exists and is a file
   if (!fs.existsSync(source) || !fs.lstatSync(source).isFile()) {
@@ -36,7 +37,7 @@ export function html(source: string, destination: string): number {
     fs.writeFileSync(destination, result);
 
   } catch (err: any) {
-    console.error((err.message) ? err.message : err);
+    stderr?.write(((err.message) ? err.message : err) + '\n');
     return 1;
   }
 
