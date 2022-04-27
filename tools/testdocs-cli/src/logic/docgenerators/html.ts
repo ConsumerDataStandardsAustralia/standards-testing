@@ -622,7 +622,12 @@ function predicateInner(text: string): string {
 
 function processNewlines(text: string | undefined): string {
   let result = '';
-  if (text) result = text.replace(/\n/, '</br>');
+  if (text){
+    result = text.replace(/\n/, '</br>');
+    result = text.replace(/\n/, '</br>');
+    result = text.replace(">", '&gt;');
+    result = text.replace("<", '&lt;');
+  }
   return result;
 }
 
