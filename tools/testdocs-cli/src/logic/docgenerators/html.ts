@@ -378,12 +378,14 @@ function generateAssertionsSection(testDocs: ConsumerDataRightTestCaseJSONSchema
         given += clause;
       }
       result += tableRow(['Given', processNewlines(given)]);
+
       let when = '';
       for (const clause of assertion.when) {
         if (when) when += '\n';
         when += clause;
-      }
+      }     
       result += tableRow(['When', processNewlines(when)]);
+
       result += tableRow(['Then', processAssertionPredicate(testDocs, assertion.then)]);
 
       result += endTable();
@@ -450,17 +452,19 @@ function processTestCasePredicate(testDocs: ConsumerDataRightTestCaseJSONSchema,
 
 function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema, predicate: AssertionPredicate): string {
   let result = '';
-
   if (typeof predicate === 'string') {
-    result += predicate;
+    //result += predicate;
+    result += processSpecialCharacters(predicate);    
   } else if (predicate.and) {
     const terms = predicate.and as AssertionPredicate[];
     if (terms.length > 0) {
       let innerResult = '';
+      //innerResult += processNewlines(innerResult);
       for (let i = 0; i < terms.length; i++) {
-        innerResult += processAssertionPredicate(testDocs, terms[i]);
+        innerResult = processAssertionPredicate(testDocs, terms[i]);
       }
       result += predicateOuter('AND (');
+      //innerResult = processSpecialCharacters(innerResult)
       result += predicateInner(innerResult);
       result += predicateOuter(')');
     }
@@ -476,7 +480,6 @@ function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema
       result += predicateOuter(')');
     }
   }
-
   return result;
 }
 
@@ -617,16 +620,29 @@ function predicateOuter(text: string): string {
 }
 
 function predicateInner(text: string): string {
+  // let result = '';
+  // let stList = text.split(',');
+  // stList.forEach(st => {
+  //   result += `<div class="predicate inner" style="margin-left:2em">${text}</div>\n`
+  // })
+  // return result;
   return `<div class="predicate inner" style="margin-left:2em">${text}</div>\n`;
+}
+
+function processSpecialCharacters(text: string | undefined): string {
+  let result = '';
+  if (text){
+    result = text.replaceAll(">", '&gt;');
+    result = result.replaceAll("<", '&lt;');
+  }
+  return result; 
 }
 
 function processNewlines(text: string | undefined): string {
   let result = '';
   if (text){
-    result = text.replace(/\n/, '</br>');
-    result = text.replace(/\n/, '</br>');
-    result = text.replace(">", '&gt;');
-    result = text.replace("<", '&lt;');
+    result = processSpecialCharacters(text);
+    result = result.replace(/\n/, '</br>');
   }
   return result;
 }
