@@ -620,12 +620,6 @@ function predicateOuter(text: string): string {
 }
 
 function predicateInner(text: string): string {
-  // let result = '';
-  // let stList = text.split(',');
-  // stList.forEach(st => {
-  //   result += `<div class="predicate inner" style="margin-left:2em">${text}</div>\n`
-  // })
-  // return result;
   return `<div class="predicate inner" style="margin-left:2em">${text}</div>\n`;
 }
 
