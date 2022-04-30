@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "generate-json": "cd ./tools/testdocs-cli; tsc; node ./dist/cli.js gendocs json ../../working/source-files/ ../../working/output-files",
-        "generate-html": "cd ./tools/testdocs-cli; tsc; node ./dist/cli.js gendocs json ../../working/source-files/ ../../working/output-files; node ./dist/cli.js gendocs html ../../working/output-files/full-test-suite.json ../../docs/index.html"
-     } 
+        "generate-json": "cd ./tools/testdocs-cli; tsc; node ./dist/cli.js generate json ../../working/source-files/ ../../working/output-files",
+        "generate-html": "cd ./tools/testdocs-cli; tsc; node ./dist/cli.js generate json ../../working/source-files/ ../../working/output-files; node ./dist/cli.js generate html ../../working/output-files/full-test-suite.json ../../docs/index.html"
+     }
 }
