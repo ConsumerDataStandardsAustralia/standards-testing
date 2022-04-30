@@ -1,7 +1,7 @@
 {
-  "name": "@cds-au/testdocs",
-  "version": "0.0.13",
-  "description": "Tools for managing the presentation of test case documentation for the Australian Consumer Data Right regime",
+  "name": "@cds-au/testdata",
+  "version": "0.0.1",
+  "description": "Tools for the creation of manufactured test data for the Australian Consumer Data Right regime",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": "dist/cli.js",
@@ -24,7 +24,6 @@
     "ajv": "^8.9.0",
     "ajv-formats": "^2.1.1",
     "better-ajv-errors": "^1.1.2",
-    "csv-parse": "^5.0.4",
     "json-schema-to-typescript": "^10.1.5",
     "yargs": "^17.3.1"
   }

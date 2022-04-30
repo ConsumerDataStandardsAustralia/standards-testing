@@ -12,7 +12,7 @@ import {
   Scenario,
   ScenarioAction,
   ConsumerDataRightTestCaseJSONSchema
-} from '../schema';
+} from '../../schema/cdr-test-schema.0.0.3';
 
 const SUITE_ID_INDEX: number = 1;
 const SUITE_TITLE_INDEX: number = 2;

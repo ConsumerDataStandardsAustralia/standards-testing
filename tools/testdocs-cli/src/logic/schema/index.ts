@@ -1,4 +1,5 @@
-import cdr_test_schema from '../../schema/cdr-test-schema.0.0.3.json';
+import cdr_test_schema from '../../schema/cdr-test-doc-schema.0.0.3.json';
+export * from '../../schema/cdr-test-doc-schema.0.0.3';
 
 const schema_version = '0.0.3';
 

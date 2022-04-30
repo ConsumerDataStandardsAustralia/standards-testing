@@ -4,23 +4,23 @@ import {
   TestCasePredicate,
   AssertionPredicate,
   ConsumerDataRightTestCaseJSONSchema
-} from '../schema';
+} from '../../schema/cdr-test-schema.0.0.3';
 
 
 // TODO: Validate source file
-// TODO: Add support for additional options
+// TODO: Add support for additional options (like css)
 
 // ----------------------------------------------------------------------------
 // Exports
 // ----------------------------------------------------------------------------
 
-export function markdown(source: string, destination: string, stdout?: Writable, stderr?: Writable): number {
+export function html(source: string, destination: string, stdout?: Writable, stderr?: Writable): number {
 
   // Check that the source path exists and is a file
   if (!fs.existsSync(source) || !fs.lstatSync(source).isFile()) {
-    throw 'If generate type of "markdown" is selected then the <source> parameter ' +
+    throw 'If generate type of "html" is selected then the <source> parameter ' +
           'must be a JSON file that currently exists containing the tests to ' +
-          'generate the markdown from'
+          'generate the HTML from'
   }
 
   try {
@@ -30,8 +30,8 @@ export function markdown(source: string, destination: string, stdout?: Writable,
     // Parse the supplied JSON file
     const testDocs = JSON.parse(fileData) as ConsumerDataRightTestCaseJSONSchema;
 
-    // Create the markdown output
-    const result = generateMarkdown(testDocs);
+    // Create the html output
+    const result = generateHtml(testDocs);
 
     // Output the result to the destination file
     fs.writeFileSync(destination, result);
@@ -47,22 +47,29 @@ export function markdown(source: string, destination: string, stdout?: Writable,
 
 
 // ----------------------------------------------------------------------------
-// Markdown generation functions
+// HTML generation functions
 // ----------------------------------------------------------------------------
 
-function generateMarkdown(testDocs: ConsumerDataRightTestCaseJSONSchema): string {
+const toc: any[] = [];
+
+function generateHtml(testDocs: ConsumerDataRightTestCaseJSONSchema): string {
   const summary = generateSummarySection(testDocs);
   const suites = generateSuitesSection(testDocs);
   const scenarios = generateScenariosSection(testDocs);
   const testCases = generateTestCasesSection(testDocs);
   const assertions = generateAssertionsSection(testDocs);
 
+  const toc = generateTableOfContents();
+
   const fullHtml = startDoc() +
+                   toc +
+                   startContent() +
                    summary +
                    suites +
                    scenarios +
                    testCases +
                    assertions +
+                   endContent() +
                    endDoc();
 
   return fullHtml;
@@ -189,7 +196,7 @@ function generateScenariosSection(testDocs: ConsumerDataRightTestCaseJSONSchema)
           // Format the scenario sequence action
           switch (action.type) {
             case 'SETUP':
-              result += tableRow([(i+1).toString(), 'Setup', processNewlinesHtml(action.action)]);
+              result += tableRow([(i+1).toString(), 'Setup', processNewlines(action.action)]);
               break;
             case 'TEST':
               let testCaseName = action.testCase;
@@ -197,7 +204,7 @@ function generateScenariosSection(testDocs: ConsumerDataRightTestCaseJSONSchema)
               result += tableRow([(i+1).toString(), 'Execute Test', link('#' + createSlug('testcase', action.testCase), testCaseName)]);
               break;
             case 'CLEANUP':
-              result += tableRow([(i+1).toString(), 'Clean Up', processNewlinesHtml(action.action)]);
+              result += tableRow([(i+1).toString(), 'Clean Up', processNewlines(action.action)]);
               break;
           }
         }
@@ -279,10 +286,10 @@ function generateTestCasesSection(testDocs: ConsumerDataRightTestCaseJSONSchema)
               result += tableRow([(i+1).toString(), 'Wait', `${step.period} seconds`]);
               break;
             case 'UNTIL':
-              result += tableRow([(i+1).toString(), 'Wait Until', processNewlinesHtml(step.condition)]);
+              result += tableRow([(i+1).toString(), 'Wait Until', processNewlines(step.condition)]);
               break;
             case 'ACTION':
-              result += tableRow([(i+1).toString(), 'Action', processNewlinesHtml(step.action)]);
+              result += tableRow([(i+1).toString(), 'Action', processNewlines(step.action)]);
               break;
             case 'ASSERTION':
               result += tableRow([(i+1).toString(), 'Assertion', processTestCasePredicate(testDocs, step.assertion)]);
@@ -363,20 +370,20 @@ function generateAssertionsSection(testDocs: ConsumerDataRightTestCaseJSONSchema
 
       result += header3('Assertion Logic:');
 
-      result += startTable(['', '']);
+      result += startTable([]);
 
       let given = '';
       for (const clause of assertion.given) {
         if (given) given += '\n';
         given += clause;
       }
-      result += tableRow(['Given', processNewlinesHtml(given)]);
+      result += tableRow(['Given', processNewlines(given)]);
       let when = '';
       for (const clause of assertion.when) {
         if (when) when += '\n';
         when += clause;
       }
-      result += tableRow(['When', processNewlinesHtml(when)]);
+      result += tableRow(['When', processNewlines(when)]);
       result += tableRow(['Then', processAssertionPredicate(testDocs, assertion.then)]);
 
       result += endTable();
@@ -392,6 +399,20 @@ function generateAssertionsSection(testDocs: ConsumerDataRightTestCaseJSONSchema
   return result;
 }
 
+function generateTableOfContents(): string {
+  let result = '';
+
+  result += startSection('toc');
+
+  for (const tocItem of toc) {
+    result += tocHeading(tocItem.level, tocItem.anchor, tocItem.text);
+  }
+
+  result += endSection();
+
+  return result;
+}
+
 function processTestCasePredicate(testDocs: ConsumerDataRightTestCaseJSONSchema, predicate: TestCasePredicate): string {
   let result = '';
 
@@ -399,7 +420,7 @@ function processTestCasePredicate(testDocs: ConsumerDataRightTestCaseJSONSchema,
     const assertionId = predicate;
     let assertionName = assertionId;
     if (testDocs.assertions && testDocs.assertions[assertionId]) assertionName += ': ' + testDocs.assertions[assertionId].title;
-    result += linkHtml('#' + createSlug('assertion', assertionId), assertionName);
+    result += link('#' + createSlug('assertion', assertionId), assertionName);
   } else if (predicate.and) {
     const terms = predicate.and as TestCasePredicate[];
     if (terms.length > 0) {
@@ -431,7 +452,7 @@ function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema
   let result = '';
 
   if (typeof predicate === 'string') {
-    result += processNewlinesHtml(predicate);
+    result += predicate;
   } else if (predicate.and) {
     const terms = predicate.and as AssertionPredicate[];
     if (terms.length > 0) {
@@ -466,19 +487,28 @@ function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema
 // ----------------------------------------------------------------------------
 
 function startDoc(): string {
-  return ``;
+  return `<html><head><style>${defaultCss}</style></head><body>\n`;
+  // return `<html><head><link rel="stylesheet" href="out.css"></head><body>\n`;
 }
 
 function endDoc(): string {
-  return ``;
+  return `</body></html>\n`;
+}
+
+function startContent(): string {
+  return startSection('content');
+}
+
+function endContent(): string {
+  return endSection();
 }
 
 function startSection(id: string): string {
-  return ``;
+  return `<div class="${id}">\n`;
 }
 
 function endSection(): string {
-  return ``;
+  return `</div>\n`;
 }
 
 
@@ -486,11 +516,21 @@ function createSlug(prefix: string, id: string): string {
   return `${prefix}-${id}`.toLowerCase();
 }
 
+function tocHeading(level:number, anchor: string, text: string): string {
+  let result = '';
+
+  result += `<div class="toc${level}"><a href="#${anchor}">${text}</a></div>`;
+
+  return result;
+}
+
 function header1(text: string | undefined, anchor?: string): string {
   let result = '';
   if (!text) text = '';
-  if (anchor) result += `\n<a id="${anchor}"></a>`;
-  result += `\n# ${text}\n`;
+  if (anchor) result += `<a id="${anchor}"></a>`;
+  result += `<h1 class="h1">${text}</h1>\n`;
+
+  if (anchor) toc.push({level: 1, anchor, text})
 
   return result;
 }
@@ -498,8 +538,10 @@ function header1(text: string | undefined, anchor?: string): string {
 function header2(text: string | undefined, anchor?: string): string {
   let result = '';
   if (!text) text = '';
-  if (anchor) result += `\n<a id="${anchor}"></a>`;
-  result += `\n## ${text}\n`;
+  if (anchor) result += `<a id="${anchor}"></a>`;
+  result += `<h2 class="h2">${text}</h2>\n`;
+
+  if (anchor) toc.push({level: 2, anchor, text})
 
   return result;
 }
@@ -507,68 +549,61 @@ function header2(text: string | undefined, anchor?: string): string {
 function header3(text: string | undefined, anchor?: string): string {
   let result = '';
   if (!text) text = '';
-  if (anchor) result += `\n<a id="${anchor}"></a>`;
-  result += `\n### ${text}\n`;
+  if (anchor) result += `<a id="${anchor}"></a>`;
+  result += `<h3 class="h3">${text}</h3>\n`;
+
+  if (anchor) toc.push({level: 3, anchor, text})
 
   return result;
 }
 
 function text(text: string | undefined): string {
   let result = '';
-  if (text) result += '\n' + text + '\n';
+  if (text) result += `<p class="p">${text}</p>\n`;
   return result;
 }
 
 function startUnorderedList(): string {
-  return '\n';
+  return '<ul>\n';
 }
 
 function unorderedListItem(text: string | undefined): string {
   let result = '';
-  if (text) result += `* ${text}\n`;
+  if (text) result += `<li>${text}</li>\n`;
   return result;
 }
 
 function endUnorderedList(): string {
-  return '\n';
+  return '</ul>\n';
 }
 
 function startTable(columns: string[]): string {
-  let result = '\n'
+  let result = '<table>\n'
   if (columns.length > 0) {
-    let subHeader = '';
+    result += '<thead><tr>';
     for (const column of columns) {
-      result += `|${column}`;
-      subHeader += '|-';
+      result += `<th>${column}</th>`;
     }
-    result += '|\n' + subHeader + '|\n';
+    result += '</tr></thead>\n';
   }
+  result += '<tbody>\n';
   return result;
 }
 
 function tableRow(elements: string[]): string {
-  let result = '';
+  let result = '<tr>';
   for (const element of elements) {
-    result += `|${element}`;
+    result += `<td>${element}</td>`;
   }
-  result += `|\n`;
+  result += `</tr>\n`;
   return result;
 }
 
 function endTable(): string {
-  return '\n';
+  return '</tbody>\n</table>\n';
 }
 
 function link(href: string | undefined, text: string | undefined): string {
-  let result = '';
-  if (href) {
-    if (!text) text = href;
-    result += `[${text}](${href})`;
-  }
-  return result;
-}
-
-function linkHtml(href: string | undefined, text: string | undefined): string {
   let result = '';
   if (href) {
     if (!text) text = href;
@@ -578,20 +613,14 @@ function linkHtml(href: string | undefined, text: string | undefined): string {
 }
 
 function predicateOuter(text: string): string {
-  return `<div class="predicate outer">${text}</div>`;
+  return `<div class="predicate outer">${text}</div>\n`;
 }
 
 function predicateInner(text: string): string {
-  return `<div class="predicate inner" style="margin-left:2em">${text}</div>`;
+  return `<div class="predicate inner" style="margin-left:2em">${text}</div>\n`;
 }
 
 function processNewlines(text: string | undefined): string {
-  let result = '';
-  if (text) result = text;
-  return result;
-}
-
-function processNewlinesHtml(text: string | undefined): string {
   let result = '';
   if (text) result = text.replace(/\n/, '</br>');
   return result;

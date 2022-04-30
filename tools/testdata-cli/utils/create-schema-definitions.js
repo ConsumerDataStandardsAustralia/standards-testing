@@ -2,7 +2,7 @@ const jtt = require('json-schema-to-typescript')
 const fs = require('fs')
 const path = require('path');
 
-const fileParseRegEx = /cdr-test-doc-schema\.(\d+\.\d+\.\d+)\.json/;
+const fileParseRegEx = /cdr-test-data-schema\.(\d+\.\d+\.\d+)\.json/;
 
 const srcPath = '../../schema/';
 const dstPath = './src/schema/';

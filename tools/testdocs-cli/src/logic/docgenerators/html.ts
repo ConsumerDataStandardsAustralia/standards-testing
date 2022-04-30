@@ -4,7 +4,7 @@ import {
   TestCasePredicate,
   AssertionPredicate,
   ConsumerDataRightTestCaseJSONSchema
-} from '../../schema/cdr-test-schema.0.0.3';
+} from '../schema';
 
 
 // TODO: Validate source file
