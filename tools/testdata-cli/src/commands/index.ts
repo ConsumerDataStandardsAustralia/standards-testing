@@ -1,8 +1,6 @@
-import * as docSchema from './docSchema';
+import * as schema from './schema';
 import * as validate from './validate';
-import * as generate from './generate';
 export const commands = [
-  docSchema,
-  validate,
-  generate
+  schema,
+  validate
 ];

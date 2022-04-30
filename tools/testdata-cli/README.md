@@ -32,14 +32,14 @@ None
 
 |Options|Description|
 |-|-|
-|`--version`| Output only the version of the schema that the CLI is currently using|
+|`--vonly`| Output only the version of the schema that the CLI is currently using|
 
 #### Examples
 
 `testdocs doc-schema`
 Output the current test doc schema to stdout
 
-`testdocs doc-schema --version`
+`testdocs doc-schema --vonly`
 Output the version of test doc schema to stdout
 
 ### Validate Documentation Command

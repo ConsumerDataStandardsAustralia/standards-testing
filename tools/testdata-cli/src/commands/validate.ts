@@ -7,7 +7,7 @@ type Options = {
 };
 
 export const command: string = 'validate <filename>';
-export const desc: string = 'Validate the tests in <filename> against the current testdocs schema';
+export const desc: string = 'Validate the tests in <filename> against the current testdata schema';
 
 export const builder: CommandBuilder<Options, Options> = (yargs) =>
   yargs
@@ -19,7 +19,7 @@ export const builder: CommandBuilder<Options, Options> = (yargs) =>
 export const handler = (argv: Arguments<Options>): void => {
   const { filename, verbose } = argv;
 
-  if (schemaValidate.validateTestDocSchema(filename, verbose, process.stdout, process.stderr)) {
+  if (schemaValidate.validateTestDataSchema(filename, verbose, process.stdout, process.stderr)) {
     process.exit(1);
   } else {
     process.exit(0);

@@ -3,10 +3,10 @@ import { Writable } from 'stream';
 import Ajv2020 from 'ajv/dist/2020';
 import betterAjvErrors from 'better-ajv-errors';
 import addFormats from 'ajv-formats';
-import { testDocSchema } from '../schema';
+import { testDataSchema } from '../schema';
 
-export function validateTestDocSchema(filename: string, verbose?: boolean, stdout?: Writable, stderr?: Writable): boolean {
-  const cdr_test_schema = testDocSchema();
+export function validateTestDataSchema(filename: string, verbose?: boolean, stdout?: Writable, stderr?: Writable): boolean {
+  const cdr_test_schema = testDataSchema();
 
   if (verbose) stdout?.write(`Validating "${filename}"\n`);
 
@@ -31,7 +31,7 @@ export function validateTestDocSchema(filename: string, verbose?: boolean, stdou
     return false;
   }
 
-  // Compile the testdocs schema so it can be used for validation
+  // Compile the testdata schema so it can be used for validation
   let validate: any;
   try {
     const ajv = new Ajv2020();
@@ -45,7 +45,7 @@ export function validateTestDocSchema(filename: string, verbose?: boolean, stdou
   }
 
   // Validete the input file and report errors or success
-  if (verbose) stdout?.write(`    Validating against testdocs schema\n`);
+  if (verbose) stdout?.write(`    Validating against testdata schema\n`);
   if (validate(data)) {
     stdout?.write(`"${filename}" validated successfully\n`);
   } else {
