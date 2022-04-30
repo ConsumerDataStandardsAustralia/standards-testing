@@ -110,6 +110,9 @@ To build the repository run the following scripts from a bash compliant command 
 `npm run build`
 
 To publish the repository to npm (needs permission)
+1. Build for release
+`npm run build-prod`
+2. Publish
 `npm publish --access public`
 
 ## Outstanding Features
