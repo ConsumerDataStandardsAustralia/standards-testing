@@ -385,9 +385,9 @@ function generateAssertionsSection(testDocs: ConsumerDataRightTestCaseJSONSchema
         when += clause;
       }     
       result += tableRow(['When', processNewlines(when)]);
-
+      
       result += tableRow(['Then', processAssertionPredicate(testDocs, assertion.then)]);
-
+      
       result += endTable();
 
       result += endSection();
@@ -453,18 +453,18 @@ function processTestCasePredicate(testDocs: ConsumerDataRightTestCaseJSONSchema,
 function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema, predicate: AssertionPredicate): string {
   let result = '';
   if (typeof predicate === 'string') {
-    //result += predicate;
-    result += processSpecialCharacters(predicate);    
+    if (predicate.indexOf("<div>") == -1)
+      result += processSpecialCharacters(predicate);       
   } else if (predicate.and) {
     const terms = predicate.and as AssertionPredicate[];
     if (terms.length > 0) {
       let innerResult = '';
-      //innerResult += processNewlines(innerResult);
       for (let i = 0; i < terms.length; i++) {
-        innerResult = processAssertionPredicate(testDocs, terms[i]);
-      }
+        innerResult += processAssertionPredicate(testDocs, terms[i]);
+        innerResult += "\n";
+      }     
       result += predicateOuter('AND (');
-      //innerResult = processSpecialCharacters(innerResult)
+      innerResult = processNewlinesOnly(innerResult);
       result += predicateInner(innerResult);
       result += predicateOuter(')');
     }
@@ -637,6 +637,14 @@ function processNewlines(text: string | undefined): string {
   if (text){
     result = processSpecialCharacters(text);
     result = result.replace(/\n/, '</br>');
+  }
+  return result;
+}
+
+function processNewlinesOnly(text: string | undefined): string {
+  let result = '';
+  if (text){
+    result = text.replaceAll("\n", '</br>');
   }
   return result;
 }
