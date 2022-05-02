@@ -6384,7 +6384,7 @@
 <tr><td>Given</td><td>the page parameter is included in a GET request</td></tr>
 <tr><td>When</td><td>the page value is a number and page-size is [1,25,1000,null]</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> "meta"/"totalRecords" is greater than or equal to &lt;page number&gt; * &lt;page size&gt;</div>
+<div class="predicate inner" style="margin-left:2em">the nominated &lt;page number&gt; is returned</br> the response has a status of 200</br> the "first" link has page=1</br> the "last" link is greater than or equal to 1</br> the "self" link has page=&lt;page number&gt;</br> the "prev" link has page equal to 1 or &lt;page number&gt; - 1</br> the "prev" link has page equal to "last" or &lt;page number&gt; + 1</br> "meta"/"totalPages" is greater than or equal to &lt;page number&gt;</br> "meta"/"totalRecords" is greater than or equal to &lt;page number&gt; * &lt;page size&gt;</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6404,7 +6404,7 @@
 <tr><td>Given</td><td>the &lt;page-size&gt; parameter is specified in a GET request</td></tr>
 <tr><td>When</td><td>the value for &lt;page-size&gt; is outside the range [1..1000]</br>OR the &lt;page-size&gt; is a not a positive integer</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Field/InvalidPageSize"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/InvalidPageSize"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6424,7 +6424,7 @@
 <tr><td>Given</td><td>the &lt;page&gt; parameter is included in a GET request</td></tr>
 <tr><td>When</td><td>the &lt;page&gt; is a not a positive integer</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Field/Invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6444,7 +6444,7 @@
 <tr><td>Given</td><td>the &lt;page&gt; parameter is included in a GET request</td></tr>
 <tr><td>When</td><td>the &lt;page&gt; value is greater than the number of pages available </td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the error code is "Field/InvalidPage"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 422</br> the response body has ErrorListReponse object</br> the error code is "Field/InvalidPage"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6464,7 +6464,7 @@
 <tr><td>Given</td><td>the &lt;page-size&gt; parameter is included in a GET request</td></tr>
 <tr><td>When</td><td>the page size parameter value is not a positive integer (number)</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Field/Invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6484,7 +6484,7 @@
 <tr><td>Given</td><td>the &lt;x-v&gt; header is included in a get request</td></tr>
 <tr><td>When</td><td>the value for the &lt;x-v&gt; is a positive integer</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> &lt;x-v&gt; is a positive integer</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> &lt;x-v&gt; is in the repsonse header</br> &lt;x-v&gt; is a positive integer</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6504,7 +6504,7 @@
 <tr><td>Given</td><td>the version parameter is included in a GET request</td></tr>
 <tr><td>When</td><td>the version value is not a valid number is [-1,0,1001]</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Field/Invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6524,7 +6524,7 @@
 <tr><td>Given</td><td>the version parameter is included in a GET request</td></tr>
 <tr><td>When</td><td>the verison value is not a valid number is an alpha (e.g. "foo")</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Field/Invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6544,7 +6544,7 @@
 <tr><td>Given</td><td>the &lt;x-v&gt;  is included in a  request header</br>AND &lt;x-v-min&gt; is NOT included</td></tr>
 <tr><td>When</td><td>the request version &lt;x-v&gt; is not supported</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Header/UnsupportedVersion"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 406</br> the response body has ErrorListReponse object</br> error code is "Header/UnsupportedVersion"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6564,7 +6564,7 @@
 <tr><td>Given</td><td>the &lt;x-v&gt;  is included in a  request header</br>AND  &lt;x-v-min&gt;  is included</td></tr>
 <tr><td>When</td><td>no version between &lt;x-v&gt; and &lt;x-min-v&gt; is supported</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Header/UnsupportedVersion"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 406</br> the response body has ErrorListReponse object</br> error code is "Header/UnsupportedVersion"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6584,7 +6584,7 @@
 <tr><td>Given</td><td>the &lt;x-v-min&gt; header is included in a get request</td></tr>
 <tr><td>When</td><td>the value for the &lt;x-v-min&gt;  is a positive integer</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> &lt;x-v&gt; is a positive integer</div>
+<div class="predicate inner" style="margin-left:2em">&lt;x-v&gt; is in the repsonse header</br>  &lt;x-v&gt; = [&lt;x-v-min&gt;, &lt;x-v&gt;]</br> &lt;x-v&gt; is a positive integer</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6604,7 +6604,7 @@
 <tr><td>Given</td><td>the &lt;x-v-min&gt; header is included in a get request</td></tr>
 <tr><td>When</td><td>the &lt;x-min-v&gt; is a not a positive integer</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Field/Invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6624,7 +6624,7 @@
 <tr><td>Given</td><td>the &lt;x-fapi-interaction-id&gt; is included in the header of the request</td></tr>
 <tr><td>When</td><td>the &lt;x-fapi-interaction-id&gt; is in a valid format </td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the Data Holder has returned the &lt;x-fapi-interaction-id&gt; from the request in the response header</div>
+<div class="predicate inner" style="margin-left:2em"> the Data Holder has returned the &lt;x-fapi-interaction-id&gt; from the request in the response header</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6662,7 +6662,7 @@
 <tr><td>Given</td><td>the &lt;x-fapi-interaction-id&gt; is included in the GET request</td></tr>
 <tr><td>When</td><td>the &lt;x-fapi-interaction-id&gt; is not in a valid format </td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Header/invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6703,7 +6703,7 @@
 <tr><td>Given</td><td>the called API is a resource call and does require authentication</td></tr>
 <tr><td>When</td><td>the &lt;x-fapi-auth-date&gt; is NOT present  in the request header</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Header/missing"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> error code is "Header/missing"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6725,7 +6725,7 @@
 <tr><td>Given</td><td>the called API is a resource call and does require authentication</td></tr>
 <tr><td>When</td><td>the &lt;x-fapi-auth-date&gt; is  in the request header</br>AND is NOT in a valid format</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Header/invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6781,7 +6781,7 @@
 <tr><td>Given</td><td>the called API requires authentication</td></tr>
 <tr><td>When</td><td>the &lt;x-fapi-customer-ip-address&gt; is NOT present in the request header</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Header/Missing"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/Missing"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6802,7 +6802,7 @@
 <tr><td>Given</td><td>the called API requires authentication</td></tr>
 <tr><td>When</td><td>the &lt;x-fapi-customer-ip-address&gt; in present the request header</br>AND is NEITHER  in a valid IPv4 or IPv6 format</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Header/invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6860,7 +6860,7 @@
 <tr><td>Given</td><td>the called API requires authentication</br>AND the call is an attended, ie customer present, call</td></tr>
 <tr><td>When</td><td>the &lt;x-cds-client-headers&gt; is NOT present in the request header</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Header/missing"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/missing"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6882,7 +6882,7 @@
 <tr><td>Given</td><td>the called API requires authentication</br>AND the call is an attended, ie customer present, call</td></tr>
 <tr><td>When</td><td>the &lt;x-cds-client-headers&gt;  present the request header</br>AND is Not Base64 encoded</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Header/Invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/Invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6938,7 +6938,7 @@
 <tr><td>Given</td><td>the call is from a DH to a SDH</td></tr>
 <tr><td>When</td><td>the &lt;x-cds-arrangement&gt; is NOT present in the request header</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Header/Missing"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/Missing"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6959,7 +6959,7 @@
 <tr><td>Given</td><td>the call is from a DH to a SDH</td></tr>
 <tr><td>When</td><td>the &lt;x-cds-arrangement&gt; is present in the request header</br>AND is NOT in a valid format</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Header/Invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/Invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6975,7 +6975,7 @@
 <tr><td>Given</td><td>the &lt;oldest-date&gt; is included as a query parameter</td></tr>
 <tr><td>When</td><td>the &lt;oldest-date&gt; is in a valid DateString format</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the data is constrained by the date supplied</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the data is constrained by the date supplied</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -6995,7 +6995,7 @@
 <tr><td>Given</td><td>the &lt;oldest-date&gt; is included as a query parameter</td></tr>
 <tr><td>When</td><td>the &lt;oldest-date&gt; is not in a DateString valid format</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Field/invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7011,7 +7011,7 @@
 <tr><td>Given</td><td>the &lt;newest-date&gt; is included as a query parameter</td></tr>
 <tr><td>When</td><td>the &lt;newest-date&gt; is in a valid DateString format</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the data is constrained by the date supplied</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the data is constrained by the date supplied</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7031,7 +7031,7 @@
 <tr><td>Given</td><td>the &lt;newest-date&gt; is included as a query parameter</td></tr>
 <tr><td>When</td><td>the &lt;newest-date&gt; is not in a valid DateString format</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Field/Invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7052,7 +7052,7 @@
 <tr><td>Given</td><td>the request is a POST request</td></tr>
 <tr><td>When</td><td>the request body is not in a valid JSON format, ie it is malformed</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Field/Invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7111,7 +7111,7 @@
 <tr><td>Given</td><td>no query parameters are specified</td></tr>
 <tr><td>When</td><td>result set is not empty</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response has a status of 200</div>
+<div class="predicate inner" style="margin-left:2em">All accounts are returned</br> the response has a status of 200</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7205,7 +7205,7 @@
 <tr><td>Given</td><td>the {servicePointId} is included in the ADR to DH request</td></tr>
 <tr><td>When</td><td>the {servicePointId} value is valid </td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyServicePointDetailResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the EnergyServicePointDetailResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7225,7 +7225,7 @@
 <tr><td>Given</td><td>the {servicePointId} is included in the ADR to DH request url</td></tr>
 <tr><td>When</td><td>The requested service point is permanently unavailable. (No subsequent request for the service point will be successful.)</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Authorisation/InvalidServicePoint"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 404</br> the response body has ErrorListReponse object</br> error code is "Authorisation/InvalidServicePoint"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7245,7 +7245,7 @@
 <tr><td>Given</td><td>the {servicePointId} is included in the ADR to DH request</td></tr>
 <tr><td>When</td><td>The requested service point is temporarily unavailable. (Subsequent requests for the service point may be successful.)</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Authorisation/UnavailableServicePoint"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 404</br> the response body has ErrorListReponse object</br> error code is "Authorisation/UnavailableServicePoint"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7265,7 +7265,7 @@
 <tr><td>Given</td><td>the request to call the API is formatted correctly by the ADR</td></tr>
 <tr><td>When</td><td>the DH receives the request</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyServiceListResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyServiceListResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7285,7 +7285,7 @@
 <tr><td>Given</td><td>the {servicePointId} is included in the ADR to DH request</td></tr>
 <tr><td>When</td><td>the {servicePointId} value is valid </br>AND the request is formated correctlly</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyUsageListResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status code of 200</br> the response body complies with the EnergyUsageListResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7305,7 +7305,7 @@
 <tr><td>Given</td><td>the request payload to call the API is formatted correctly </br>AND contains the mandatory fields</td></tr>
 <tr><td>When</td><td>the DH receives the request </br>AND interprets the Body</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyUsageListResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyUsageListResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7325,7 +7325,7 @@
 <tr><td>Given</td><td>the {servicePointId} is included in the ADR to DH request</td></tr>
 <tr><td>When</td><td>the {servicePointId} value is valid </td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyDerDetailResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the EnergyDerDetailResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7345,7 +7345,7 @@
 <tr><td>Given</td><td>the request payload to call the API is formatted correctly </br>AND contains the mandatory fields</td></tr>
 <tr><td>When</td><td>the DH receives the request</br>AND interprets the Body</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyDerListResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyDerListResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7365,7 +7365,7 @@
 <tr><td>Given</td><td>the request payload does not contain the required fields</br>OR the request payload is NOT well formatted</td></tr>
 <tr><td>When</td><td>the DH receives the request </br>AND interprets the Body</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Field/Invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status code 400</br> the response body has ErrorListReponse</br> error code is "Field/Invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7385,7 +7385,7 @@
 <tr><td>Given</td><td>the request to call the API is formatted correctly by the ADR</td></tr>
 <tr><td>When</td><td>the DH receives the request</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyUsageListResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyUsageListResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7405,7 +7405,7 @@
 <tr><td>Given</td><td>the request to call the API is formatted correctly by the ADR</td></tr>
 <tr><td>When</td><td>the DH receives the request</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyDerListResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyDerListResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7426,7 +7426,7 @@
 <tr><td>Given</td><td>the {servicePointId} is included in the DH to SDH request</td></tr>
 <tr><td>When</td><td>the {servicePointId} value is valid </td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyServicePointDetailResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the EnergyServicePointDetailResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7446,7 +7446,7 @@
 <tr><td>Given</td><td>the {servicePointId} is included in the DH to SDH request url</td></tr>
 <tr><td>When</td><td>The requested service point is permanently unavailable. No subsequent request for the service point will be successful.</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Authorisation/InvalidServicePoint"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 404</br> the response body has ErrorListReponse object</br> error code is "Authorisation/InvalidServicePoint"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7466,7 +7466,7 @@
 <tr><td>Given</td><td>the {servicePointId} is included in the DH to SDH request</td></tr>
 <tr><td>When</td><td>The requested service point is temporarily unavailable. Subsequent requests for the service point may be successful.</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Authorisation/UnavailableServicePoint"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 404</br> the response body has ErrorListReponse object</br> error code is "Authorisation/UnavailableServicePoint"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7486,7 +7486,7 @@
 <tr><td>Given</td><td>the request to call the API is formatted correctly by the DH</td></tr>
 <tr><td>When</td><td>the SDH receives the request</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyServiceListResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyServiceListResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7506,7 +7506,7 @@
 <tr><td>Given</td><td>the {servicePointId} is included in the DH to SDH request</td></tr>
 <tr><td>When</td><td>the {servicePointId} value is valid </br>AND the request is formated correctlly</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyUsageListResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status code of 200</br> the response body complies with the EnergyUsageListResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7526,7 +7526,7 @@
 <tr><td>Given</td><td>the request payload to call the API is formatted correctly </br>AND contains the mandatory fields</td></tr>
 <tr><td>When</td><td>the SDH receives the request and interprets the Body</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyUsageListResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyUsageListResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7546,7 +7546,7 @@
 <tr><td>Given</td><td>the {servicePointId} is included in the DH to SDH request</td></tr>
 <tr><td>When</td><td>the {servicePointId} value is valid </td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyDerDetailResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the EnergyDerDetailResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7566,7 +7566,7 @@
 <tr><td>Given</td><td>the request payload to call the API is formatted correctly </br>AND contains the mandatory fields</td></tr>
 <tr><td>When</td><td>the SDH receives the request and interprets the Body</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> the response body complies with the EnergyDerListResponse schema</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyDerListResponse schema</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
@@ -7586,7 +7586,7 @@
 <tr><td>Given</td><td>the request payload does not contain the required fields</br>OR the request payload is NOT well formatted</td></tr>
 <tr><td>When</td><td>the SDH receives the request and interprets the Body</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
-<div class="predicate inner" style="margin-left:2em"> error code is "Field/Invalid"</div>
+<div class="predicate inner" style="margin-left:2em">the response has a status code 400</br> the response body has ErrorListReponse</br> error code is "Field/Invalid"</br></div>
 <div class="predicate outer">)</div>
 </td></tr>
 </tbody>
