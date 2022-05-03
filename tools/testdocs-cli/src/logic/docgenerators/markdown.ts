@@ -189,7 +189,7 @@ function generateScenariosSection(testDocs: ConsumerDataRightTestCaseJSONSchema)
           // Format the scenario sequence action
           switch (action.type) {
             case 'SETUP':
-              result += tableRow([(i+1).toString(), 'Setup', processNewlinesHtml(action.action)]);
+              result += tableRow([(i+1).toString(), 'Setup', processNewlines(action.action)]);
               break;
             case 'TEST':
               let testCaseName = action.testCase;
@@ -197,7 +197,7 @@ function generateScenariosSection(testDocs: ConsumerDataRightTestCaseJSONSchema)
               result += tableRow([(i+1).toString(), 'Execute Test', link('#' + createSlug('testcase', action.testCase), testCaseName)]);
               break;
             case 'CLEANUP':
-              result += tableRow([(i+1).toString(), 'Clean Up', processNewlinesHtml(action.action)]);
+              result += tableRow([(i+1).toString(), 'Clean Up', processNewlines(action.action)]);
               break;
           }
         }
@@ -279,10 +279,10 @@ function generateTestCasesSection(testDocs: ConsumerDataRightTestCaseJSONSchema)
               result += tableRow([(i+1).toString(), 'Wait', `${step.period} seconds`]);
               break;
             case 'UNTIL':
-              result += tableRow([(i+1).toString(), 'Wait Until', processNewlinesHtml(step.condition)]);
+              result += tableRow([(i+1).toString(), 'Wait Until', processNewlines(step.condition)]);
               break;
             case 'ACTION':
-              result += tableRow([(i+1).toString(), 'Action', processNewlinesHtml(step.action)]);
+              result += tableRow([(i+1).toString(), 'Action', processNewlines(step.action)]);
               break;
             case 'ASSERTION':
               result += tableRow([(i+1).toString(), 'Assertion', processTestCasePredicate(testDocs, step.assertion)]);
@@ -372,13 +372,13 @@ function generateAssertionsSection(testDocs: ConsumerDataRightTestCaseJSONSchema
         }
         given += clause;
       }
-      result += tableRow(['Given', processNewlinesHtml(given)]);
+      result += tableRow(['Given', processNewlines(given)]);
       let when = '';
       for (const clause of assertion.when) {
         if (when) when += '\n';
         when += clause;
       }
-      result += tableRow(['When', processNewlinesHtml(when)]);
+      result += tableRow(['When', processNewlines(when)]);
       result += tableRow(['Then', processAssertionPredicate(testDocs, assertion.then)]);
 
       result += endTable();
@@ -620,19 +620,6 @@ function predicateInner(text: string): string {
   return `<div class="predicate inner" style="margin-left:2em">${text}</div>`;
 }
 
-function processNewlines(text: string | undefined): string {
-  let result = '';
-  if (text) result = text;
-  return result;
-}
-
-function processNewlinesHtml(text: string | undefined): string {
-  let result = '';
-  if (text) result = text.replace(/\n/, '</br>');
-  return result;
-}
-
-
 function processSpecialCharacters(text: string | undefined): string {
   let result = '';
   if (text){
@@ -641,6 +628,45 @@ function processSpecialCharacters(text: string | undefined): string {
   }
   return result; 
 }
+
+function processNewlines(text: string | undefined): string {
+  let result = '';
+  if (text){
+    result = processSpecialCharacters(text);
+    result = result.replace(/\n/, '</br>');
+  }
+  return result;
+}
+
+function processNewlinesOnly(text: string | undefined): string {
+  let result = '';
+  if (text){
+    result = text.replaceAll("\n", '</br>');
+  }
+  return result;
+}
+
+// function processNewlines(text: string | undefined): string {
+//   let result = '';
+//   if (text) result = text;
+//   return result;
+// }
+
+// function processNewlinesHtml(text: string | undefined): string {
+//   let result = '';
+//   if (text) result = text.replace(/\n/, '</br>');
+//   return result;
+// }
+
+
+// function processSpecialCharacters(text: string | undefined): string {
+//   let result = '';
+//   if (text){
+//     result = text.replaceAll(">", '&gt;');
+//     result = result.replaceAll("<", '&lt;');
+//   }
+//   return result; 
+// }
 
 // function processNewlines(text: string | undefined): string {
 //   let result = '';
@@ -651,13 +677,13 @@ function processSpecialCharacters(text: string | undefined): string {
 //   return result;
 // }
 
-function processNewlinesOnly(text: string | undefined): string {
-  let result = '';
-  if (text){
-    result = text.replaceAll("\n", '</br>');
-  }
-  return result;
-}
+// function processNewlinesOnly(text: string | undefined): string {
+//   let result = '';
+//   if (text){
+//     result = text.replaceAll("\n", '</br>');
+//   }
+//   return result;
+// }
 
 // This is the minified version of default.css
 const defaultCss = 'body{background-color:#f3f7f9;color:#333;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:14px;margin:0;padding:0;padding-bottom:4em}div.content div:first-of-type h1:first-of-type{margin-top:0}div{margin-top:0;padding-top:0}h1{font-size:25px;padding-top:.5em;padding-bottom:.5em;padding-left:28px;padding-right:28px;margin-bottom:21px;margin-top:2em;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color:#fdfdfd}h2{font-size:19px;margin-top:2em;margin-bottom:0;padding-left:28px;padding-right:28px;border-top:1px solid #ccc;padding-top:1.2em;padding-bottom:.6em}h3{font-size:16px;font-weight:700;margin-bottom:0;padding-left:28px;padding-right:28px;padding-top:.8em;padding-bottom:0}p{padding-left:28px;padding-right:28px}ul li{margin-left:28px;padding-right:28px}table{margin-top:10px;margin-bottom:10px;margin-left:28px;font-size:14px;border-collapse:collapse}th{padding-left:1em;padding-right:1em;padding-top:.3em;padding-bottom:.3em;text-align:left;vertical-align:bottom}table tr:last-child{border-bottom:1px solid #ccc}td{padding-left:1em;padding-right:1em;padding-top:.6em;padding-bottom:.6em;border:0;margin:0;border-top:1px solid #eee;vertical-align:top}tbody tr:nth-child(even){background-color:#fbfcfd}tbody tr:nth-child(odd){background-color:#fff}div.content{margin-left:230px;position:relative;z-index:10;min-height:100%;padding-bottom:1px}div.toc{overflow-y:auto;overflow-x:hidden;position:fixed;z-index:30;top:0;left:0;bottom:0;width:230px;background-color:#000;font-size:13px;font-weight:700;padding-top:10px}div.toc div{padding-top:5px;padding-bottom:5px}div.toc div a{color:#2fb787;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}div.toc1 a{font-size:13px;font-weight:700;width:210px}div.toc1{padding-left:10px}div.toc2 a{font-size:10px;font-weight:700;width:200px}div.toc2{padding-left:20px}div.toc3 a{font-size:9px;font-weight:400;width:190px}div.toc3{padding-left:30px}';

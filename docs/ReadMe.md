@@ -593,7 +593,7 @@ Obtain a list of service points owned by the consumer that has authorised the cu
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -631,7 +631,7 @@ Obtain a paginated list of service points owned by the consumer that has authori
 
 ### Execution Pre-conditions:
 
-*  <page-size> and<page> query parameters are provided
+*  &lt;page-size&gt; and&lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -669,7 +669,7 @@ DH call to SDH: Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The value <x-v> is set in the request header to a version not supported by the DH
+* The value &lt;x-v&gt; is set in the request header to a version not supported by the DH
 
 
 ### Execution Steps:
@@ -702,8 +702,8 @@ Ensure that the endpoint returns pagination errors
 
 ### Execution Pre-conditions:
 
-* <page> OR (<page> 
-* AND <page-size>) query parameters are provided
+* &lt;page&gt; OR (&lt;page&gt; 
+* AND &lt;page-size&gt;) query parameters are provided
 
 
 ### Execution Steps:
@@ -739,7 +739,7 @@ Ensure that the endpoint returns FAPI Interaction ID errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-interaction-id> format is invalid 
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
 
 
 ### Execution Steps:
@@ -771,7 +771,7 @@ Obtain the details of a service point owned by the consumer that has authorised 
 ### Execution Pre-conditions:
 
 * The {servicePointId} is set in the Path 
-* AND value <x-v> is set in the request header to a version supported by the DH
+* AND value &lt;x-v&gt; is set in the request header to a version supported by the DH
 
 
 ### Execution Steps:
@@ -809,8 +809,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the value for <x-v> is in a valid  format
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the value for &lt;x-v&gt; is in a valid  format
 
 
 ### Execution Steps:
@@ -843,7 +843,7 @@ Ensure the endpoint returns servicePointId compatible errors
 
 ### Execution Pre-conditions:
 
-* The <{servicePointId}> is set in the Path to a value that is 
+* The &lt;{servicePointId}&gt; is set in the Path to a value that is 
 
 
 ### Execution Steps:
@@ -909,7 +909,7 @@ Ensure that the endpoint returns FAPI Interaction ID errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-interaction-id> format is invalid 
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
 
 
 ### Execution Steps:
@@ -940,7 +940,7 @@ Obtain a list of electricity usage data from a particular service point owned by
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -978,7 +978,7 @@ Obtain a paginated list of electricity usage data from a particular service poin
 
 ### Execution Pre-conditions:
 
-*  <page-size> and<page> query parameters are provided
+*  &lt;page-size&gt; and&lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -1016,7 +1016,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The value <x-v> is set in the request header to a version not supported by the DH
+* The value &lt;x-v&gt; is set in the request header to a version not supported by the DH
 
 
 ### Execution Steps:
@@ -1049,8 +1049,8 @@ Ensure that the endpoint returns pagination errors
 
 ### Execution Pre-conditions:
 
-* <page> OR (<page> 
-* AND <page-size>) query parameters are provided
+* &lt;page&gt; OR (&lt;page&gt; 
+* AND &lt;page-size&gt;) query parameters are provided
 
 
 ### Execution Steps:
@@ -1087,8 +1087,8 @@ Obtain a list of electricity usage data constrained by oldest date from a partic
 
 ### Execution Pre-conditions:
 
-*  <oldest-date> query parameters is provided
-* AND <oldest-date> is a valid DateTime string
+*  &lt;oldest-date&gt; query parameters is provided
+* AND &lt;oldest-date&gt; is a valid DateTime string
 
 
 ### Execution Steps:
@@ -1127,8 +1127,8 @@ Obtain a list of service points owned by the consumer that has authorised the cu
 
 ### Execution Pre-conditions:
 
-* <newest-date> query parameter is provided
-* AND <newest-date> is a valid DateTime string
+* &lt;newest-date&gt; query parameter is provided
+* AND &lt;newest-date&gt; is a valid DateTime string
 
 
 ### Execution Steps:
@@ -1233,7 +1233,7 @@ Ensure the endpoint returns servicePointId compatible errors
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -1266,7 +1266,7 @@ Ensure the endpoint returns servicePointId compatible errors
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -1299,7 +1299,7 @@ Ensure that the endpoint returns FAPI Interaction ID errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-interaction-id> format is invalid 
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
 
 
 ### Execution Steps:
@@ -1330,7 +1330,7 @@ Obtain the electricity usage data for a specific set of service points owned by 
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -1368,7 +1368,7 @@ Obtain the electricity usage data for a specific set of service points owned by 
 
 ### Execution Pre-conditions:
 
-*  <page-size> and<page> query parameters are provided
+*  &lt;page-size&gt; and&lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -1406,7 +1406,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The value <x-v> is set in the request header to a version not supported by the DH
+* The value &lt;x-v&gt; is set in the request header to a version not supported by the DH
 
 
 ### Execution Steps:
@@ -1439,8 +1439,8 @@ Ensure that the endpoint returns pagination errors
 
 ### Execution Pre-conditions:
 
-* <page> OR (<page> 
-* AND <page-size>) query parameters are provided
+* &lt;page&gt; OR (&lt;page&gt; 
+* AND &lt;page-size&gt;) query parameters are provided
 
 
 ### Execution Steps:
@@ -1476,7 +1476,7 @@ Obtain the electricity usage data for a specific set of service points owned by 
 
 ### Execution Pre-conditions:
 
-*  <oldest-date> query parameters is provided
+*  &lt;oldest-date&gt; query parameters is provided
 
 
 ### Execution Steps:
@@ -1515,7 +1515,7 @@ Obtain the electricity usage data for a specific set of service points owned by 
 
 ### Execution Pre-conditions:
 
-* <newest-date> query parameter is provided
+* &lt;newest-date&gt; query parameter is provided
 
 
 ### Execution Steps:
@@ -1554,7 +1554,7 @@ Ensure the endpoint returns oldest-date compatible errors
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -1587,7 +1587,7 @@ Ensure the endpoint returns newest-date compatible errors
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -1620,7 +1620,7 @@ Ensure that the endpoint returns FAPI Interaction ID errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-interaction-id> format is invalid 
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
 
 
 ### Execution Steps:
@@ -1719,7 +1719,7 @@ Obtain a list of DER data from a particular service point owned by the consumer 
 ### Execution Pre-conditions:
 
 * The {servicePointId} is set in the Path 
-* AND value <x-v> is set in the request header to a version supported by the DH
+* AND value &lt;x-v&gt; is set in the request header to a version supported by the DH
 
 
 ### Execution Steps:
@@ -1757,8 +1757,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the value for <x-v> is in a valid  format
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the value for &lt;x-v&gt; is in a valid  format
 
 
 ### Execution Steps:
@@ -1791,7 +1791,7 @@ Ensure the endpoint returns servicePointId compatible errors
 
 ### Execution Pre-conditions:
 
-* The <{servicePointId}> is set in the Path to a value that is 
+* The &lt;{servicePointId}&gt; is set in the Path to a value that is 
 
 
 ### Execution Steps:
@@ -1857,7 +1857,7 @@ Ensure that the endpoint returns FAPI Interaction ID errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-interaction-id> format is invalid 
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
 
 
 ### Execution Steps:
@@ -1888,7 +1888,7 @@ Obtain DER data for a specific set of service points owned by the consumer that 
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -1926,7 +1926,7 @@ Obtain DER data for a specific set of service points owned by the consumer that 
 
 ### Execution Pre-conditions:
 
-*  <page-size> and<page> query parameters are provided
+*  &lt;page-size&gt; and&lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -1964,8 +1964,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the value for <x-v> is in a valid  format
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the value for &lt;x-v&gt; is in a valid  format
 
 
 ### Execution Steps:
@@ -1998,8 +1998,8 @@ Ensure that the endpoint returns pagination errors
 
 ### Execution Pre-conditions:
 
-* <page> OR (<page> 
-* AND <page-size>) query parameters are provided
+* &lt;page&gt; OR (&lt;page&gt; 
+* AND &lt;page-size&gt;) query parameters are provided
 
 
 ### Execution Steps:
@@ -2102,7 +2102,7 @@ Ensure that the endpoint returns FAPI Interaction ID errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-interaction-id> format is invalid 
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
 
 
 ### Execution Steps:
@@ -2133,7 +2133,7 @@ Obtain the electricity usage data for all service points owned by the consumer t
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -2171,7 +2171,7 @@ Obtain the electricity usage data for all service points owned by the consumer t
 
 ### Execution Pre-conditions:
 
-*  <page-size> and<page> query parameters are provided
+*  &lt;page-size&gt; and&lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -2209,7 +2209,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The value <x-v> is set in the request header to a version not supported by the DH
+* The value &lt;x-v&gt; is set in the request header to a version not supported by the DH
 
 
 ### Execution Steps:
@@ -2242,8 +2242,8 @@ Ensure that the endpoint returns pagination errors
 
 ### Execution Pre-conditions:
 
-* <page> OR (<page> 
-* AND <page-size>) query parameters are provided
+* &lt;page&gt; OR (&lt;page&gt; 
+* AND &lt;page-size&gt;) query parameters are provided
 
 
 ### Execution Steps:
@@ -2279,7 +2279,7 @@ Obtain the electricity usage data for all service points owned by the consumer t
 
 ### Execution Pre-conditions:
 
-*  <oldest-date> query parameters is provided
+*  &lt;oldest-date&gt; query parameters is provided
 
 
 ### Execution Steps:
@@ -2318,7 +2318,7 @@ Obtain the electricity usage data for all service points owned by the consumer t
 
 ### Execution Pre-conditions:
 
-* <newest-date> query parameter is provided
+* &lt;newest-date&gt; query parameter is provided
 
 
 ### Execution Steps:
@@ -2357,7 +2357,7 @@ Ensure the endpoint returns oldest-date compatible errors
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -2390,7 +2390,7 @@ Ensure the endpoint returns newest-date compatible errors
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -2423,7 +2423,7 @@ Ensure that the endpoint returns FAPI Interaction ID errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-interaction-id> format is invalid 
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
 
 
 ### Execution Steps:
@@ -2454,7 +2454,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> is not present in the header
+* The &lt;x-fapi-auth-date&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -2487,7 +2487,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> format is invalid
+* The &lt;x-fapi-auth-date&gt; format is invalid
 
 
 ### Execution Steps:
@@ -2520,7 +2520,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  is not present in the header
+* The &lt;x-fapi-customer-ip-address&gt;  is not present in the header
 
 
 ### Execution Steps:
@@ -2553,7 +2553,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  format is invalid
+* The &lt;x-fapi-customer-ip-address&gt;  format is invalid
 
 
 ### Execution Steps:
@@ -2586,7 +2586,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> is not present in the header
+* The &lt;x-cds-client-header&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -2619,7 +2619,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> format is invalid
+* The &lt;x-cds-client-header&gt; format is invalid
 
 
 ### Execution Steps:
@@ -2652,7 +2652,7 @@ Obtain the electricity usage data for all service points owned by the consumer t
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -2690,7 +2690,7 @@ Obtain the electricity usage data for all service points owned by the consumer t
 
 ### Execution Pre-conditions:
 
-*  <page-size> and<page> query parameters are provided
+*  &lt;page-size&gt; and&lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -2728,7 +2728,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The value <x-v> is set in the request header to a version not supported by the DH
+* The value &lt;x-v&gt; is set in the request header to a version not supported by the DH
 
 
 ### Execution Steps:
@@ -2761,8 +2761,8 @@ Ensure that the endpoint returns pagination errors
 
 ### Execution Pre-conditions:
 
-* <page> OR (<page> 
-* AND <page-size>) query parameters are provided
+* &lt;page&gt; OR (&lt;page&gt; 
+* AND &lt;page-size&gt;) query parameters are provided
 
 
 ### Execution Steps:
@@ -2798,7 +2798,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> is not present in the header
+* The &lt;x-fapi-auth-date&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -2831,7 +2831,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> format is invalid
+* The &lt;x-fapi-auth-date&gt; format is invalid
 
 
 ### Execution Steps:
@@ -2864,7 +2864,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  is not present in the header
+* The &lt;x-fapi-customer-ip-address&gt;  is not present in the header
 
 
 ### Execution Steps:
@@ -2897,7 +2897,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  format is invalid
+* The &lt;x-fapi-customer-ip-address&gt;  format is invalid
 
 
 ### Execution Steps:
@@ -2930,7 +2930,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> is not present in the header
+* The &lt;x-cds-client-header&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -2963,7 +2963,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> format is invalid
+* The &lt;x-cds-client-header&gt; format is invalid
 
 
 ### Execution Steps:
@@ -2996,7 +2996,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> format is invalid
+* The &lt;x-fapi-auth-date&gt; format is invalid
 
 
 ### Execution Steps:
@@ -3029,7 +3029,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  is not present in the header
+* The &lt;x-fapi-customer-ip-address&gt;  is not present in the header
 
 
 ### Execution Steps:
@@ -3062,7 +3062,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  format is invalid
+* The &lt;x-fapi-customer-ip-address&gt;  format is invalid
 
 
 ### Execution Steps:
@@ -3095,7 +3095,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> is not present in the header
+* The &lt;x-fapi-auth-date&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -3128,7 +3128,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> format is invalid
+* The &lt;x-fapi-auth-date&gt; format is invalid
 
 
 ### Execution Steps:
@@ -3161,7 +3161,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  is not present in the header
+* The &lt;x-fapi-customer-ip-address&gt;  is not present in the header
 
 
 ### Execution Steps:
@@ -3194,7 +3194,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  format is invalid
+* The &lt;x-fapi-customer-ip-address&gt;  format is invalid
 
 
 ### Execution Steps:
@@ -3227,7 +3227,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> is not present in the header
+* The &lt;x-cds-client-header&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -3260,7 +3260,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> format is invalid
+* The &lt;x-cds-client-header&gt; format is invalid
 
 
 ### Execution Steps:
@@ -3293,7 +3293,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> is not present in the header
+* The &lt;x-fapi-auth-date&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -3326,7 +3326,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> format is invalid
+* The &lt;x-fapi-auth-date&gt; format is invalid
 
 
 ### Execution Steps:
@@ -3359,7 +3359,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  is not present in the header
+* The &lt;x-fapi-customer-ip-address&gt;  is not present in the header
 
 
 ### Execution Steps:
@@ -3392,7 +3392,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  format is invalid
+* The &lt;x-fapi-customer-ip-address&gt;  format is invalid
 
 
 ### Execution Steps:
@@ -3425,7 +3425,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> is not present in the header
+* The &lt;x-cds-client-header&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -3458,7 +3458,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> format is invalid
+* The &lt;x-cds-client-header&gt; format is invalid
 
 
 ### Execution Steps:
@@ -3491,7 +3491,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> is not present in the header
+* The &lt;x-fapi-auth-date&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -3524,7 +3524,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> format is invalid
+* The &lt;x-fapi-auth-date&gt; format is invalid
 
 
 ### Execution Steps:
@@ -3557,7 +3557,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  is not present in the header
+* The &lt;x-fapi-customer-ip-address&gt;  is not present in the header
 
 
 ### Execution Steps:
@@ -3590,7 +3590,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  format is invalid
+* The &lt;x-fapi-customer-ip-address&gt;  format is invalid
 
 
 ### Execution Steps:
@@ -3623,7 +3623,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> is not present in the header
+* The &lt;x-cds-client-header&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -3656,7 +3656,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> format is invalid
+* The &lt;x-cds-client-header&gt; format is invalid
 
 
 ### Execution Steps:
@@ -3689,7 +3689,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> is not present in the header
+* The &lt;x-fapi-auth-date&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -3722,7 +3722,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> format is invalid
+* The &lt;x-fapi-auth-date&gt; format is invalid
 
 
 ### Execution Steps:
@@ -3755,7 +3755,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  is not present in the header
+* The &lt;x-fapi-customer-ip-address&gt;  is not present in the header
 
 
 ### Execution Steps:
@@ -3788,7 +3788,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  format is invalid
+* The &lt;x-fapi-customer-ip-address&gt;  format is invalid
 
 
 ### Execution Steps:
@@ -3821,7 +3821,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> is not present in the header
+* The &lt;x-cds-client-header&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -3854,7 +3854,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> format is invalid
+* The &lt;x-cds-client-header&gt; format is invalid
 
 
 ### Execution Steps:
@@ -3887,7 +3887,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> is not present in the header
+* The &lt;x-fapi-auth-date&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -3920,7 +3920,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> format is invalid
+* The &lt;x-fapi-auth-date&gt; format is invalid
 
 
 ### Execution Steps:
@@ -3953,7 +3953,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  is not present in the header
+* The &lt;x-fapi-customer-ip-address&gt;  is not present in the header
 
 
 ### Execution Steps:
@@ -3986,7 +3986,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  format is invalid
+* The &lt;x-fapi-customer-ip-address&gt;  format is invalid
 
 
 ### Execution Steps:
@@ -4019,7 +4019,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> is not present in the header
+* The &lt;x-cds-client-header&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -4052,7 +4052,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> format is invalid
+* The &lt;x-cds-client-header&gt; format is invalid
 
 
 ### Execution Steps:
@@ -4085,7 +4085,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> is not present in the header
+* The &lt;x-fapi-auth-date&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -4118,7 +4118,7 @@ Ensure that the endpoint returns FAPI Auth date errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-auth-date> format is invalid
+* The &lt;x-fapi-auth-date&gt; format is invalid
 
 
 ### Execution Steps:
@@ -4151,7 +4151,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  is not present in the header
+* The &lt;x-fapi-customer-ip-address&gt;  is not present in the header
 
 
 ### Execution Steps:
@@ -4184,7 +4184,7 @@ Ensure that the endpoint returns FAPI Customer IP address errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-customer-ip-address>  format is invalid
+* The &lt;x-fapi-customer-ip-address&gt;  format is invalid
 
 
 ### Execution Steps:
@@ -4217,7 +4217,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> is not present in the header
+* The &lt;x-cds-client-header&gt; is not present in the header
 
 
 ### Execution Steps:
@@ -4250,7 +4250,7 @@ Ensure that the endpoint returns CDS Client Header errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-client-header> format is invalid
+* The &lt;x-cds-client-header&gt; format is invalid
 
 
 ### Execution Steps:
@@ -4283,7 +4283,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -4316,7 +4316,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -4349,7 +4349,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -4382,7 +4382,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -4415,7 +4415,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -4448,7 +4448,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -4481,7 +4481,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -4514,7 +4514,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -4547,7 +4547,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -4580,7 +4580,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -4613,7 +4613,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -4646,7 +4646,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -4679,7 +4679,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -4712,7 +4712,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -4745,7 +4745,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -4778,7 +4778,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -4811,8 +4811,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -4845,8 +4845,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -4879,8 +4879,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -4913,8 +4913,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -4947,8 +4947,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -4981,8 +4981,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -5015,8 +5015,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -5049,8 +5049,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -5083,7 +5083,7 @@ Obtain a list of service points owned by the consumer that has authorised the cu
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -5122,7 +5122,7 @@ Obtain a paginated list of service points owned by the consumer that has authori
 
 ### Execution Pre-conditions:
 
-*  <page-size> and<page> query parameters are provided
+*  &lt;page-size&gt; and&lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -5162,8 +5162,8 @@ DH call to SDH: Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The value <x-v> is set in the request header to a version
-* AND the value for <x-v> is in a valid  format not supported by the DH
+* The value &lt;x-v&gt; is set in the request header to a version
+* AND the value for &lt;x-v&gt; is in a valid  format not supported by the DH
 
 
 ### Execution Steps:
@@ -5196,8 +5196,8 @@ Ensure that the endpoint returns pagination errors
 
 ### Execution Pre-conditions:
 
-* <page> OR (<page> 
-* AND <page-size>) query parameters are provided
+* &lt;page&gt; OR (&lt;page&gt; 
+* AND &lt;page-size&gt;) query parameters are provided
 
 
 ### Execution Steps:
@@ -5234,7 +5234,7 @@ Obtain the details of a service point owned by the consumer that has authorised 
 ### Execution Pre-conditions:
 
 * The {servicePointId} is set in the Path 
-* AND value <x-v> is set in the request header to a version supported by the DH
+* AND value &lt;x-v&gt; is set in the request header to a version supported by the DH
 
 
 ### Execution Steps:
@@ -5273,8 +5273,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the value for <x-v> is in a valid  format
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the value for &lt;x-v&gt; is in a valid  format
 
 
 ### Execution Steps:
@@ -5307,7 +5307,7 @@ Ensure the endpoint returns servicePointId compatible errors
 
 ### Execution Pre-conditions:
 
-* The <{servicePointId}> is set in the Path to a value that is 
+* The &lt;{servicePointId}&gt; is set in the Path to a value that is 
 
 
 ### Execution Steps:
@@ -5373,7 +5373,7 @@ Obtain a list of electricity usage data from a particular service point owned by
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -5412,7 +5412,7 @@ Obtain a paginated list of electricity usage data from a particular service poin
 
 ### Execution Pre-conditions:
 
-*  <page-size> and<page> query parameters are provided
+*  &lt;page-size&gt; and&lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -5452,8 +5452,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The value <x-v> is set in the request header to a version not supported by the DH
-* AND the value for <x-v> is in a valid  format
+* The value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the value for &lt;x-v&gt; is in a valid  format
 
 
 ### Execution Steps:
@@ -5486,8 +5486,8 @@ Ensure that the endpoint returns pagination errors
 
 ### Execution Pre-conditions:
 
-* <page> OR (<page> 
-* AND <page-size>) query parameters are provided
+* &lt;page&gt; OR (&lt;page&gt; 
+* AND &lt;page-size&gt;) query parameters are provided
 
 
 ### Execution Steps:
@@ -5524,8 +5524,8 @@ Obtain a list of electricity usage data constrained by oldest date from a partic
 
 ### Execution Pre-conditions:
 
-*  <oldest-date> query parameters is provided
-* AND <oldest-date> is a valid DateTime string
+*  &lt;oldest-date&gt; query parameters is provided
+* AND &lt;oldest-date&gt; is a valid DateTime string
 
 
 ### Execution Steps:
@@ -5565,8 +5565,8 @@ Obtain a list of service points owned by the consumer that has authorised the cu
 
 ### Execution Pre-conditions:
 
-* <newest-date> query parameter is provided
-* AND <newest-date> is a valid DateTime string
+* &lt;newest-date&gt; query parameter is provided
+* AND &lt;newest-date&gt; is a valid DateTime string
 
 
 ### Execution Steps:
@@ -5672,7 +5672,7 @@ Ensure the endpoint returns servicePointId compatible errors
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -5705,7 +5705,7 @@ Ensure the endpoint returns servicePointId compatible errors
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -5738,7 +5738,7 @@ Obtain the electricity usage data for a specific set of service points owned by 
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -5777,7 +5777,7 @@ Obtain the electricity usage data for a specific set of service points owned by 
 
 ### Execution Pre-conditions:
 
-*  <page-size> and<page> query parameters are provided
+*  &lt;page-size&gt; and&lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -5817,8 +5817,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The value <x-v> is set in the request header to a version not supported by the DH
-* AND the value for <x-v> is in a valid  format
+* The value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the value for &lt;x-v&gt; is in a valid  format
 
 
 ### Execution Steps:
@@ -5851,8 +5851,8 @@ Ensure that the endpoint returns pagination errors
 
 ### Execution Pre-conditions:
 
-* <page> OR (<page> 
-* AND <page-size>) query parameters are provided
+* &lt;page&gt; OR (&lt;page&gt; 
+* AND &lt;page-size&gt;) query parameters are provided
 
 
 ### Execution Steps:
@@ -5888,7 +5888,7 @@ Obtain the electricity usage data for a specific set of service points owned by 
 
 ### Execution Pre-conditions:
 
-*  <oldest-date> query parameters is provided
+*  &lt;oldest-date&gt; query parameters is provided
 
 
 ### Execution Steps:
@@ -5927,7 +5927,7 @@ Obtain the electricity usage data for a specific set of service points owned by 
 
 ### Execution Pre-conditions:
 
-* <newest-date> query parameter is provided
+* &lt;newest-date&gt; query parameter is provided
 
 
 ### Execution Steps:
@@ -5967,7 +5967,7 @@ Ensure the endpoint returns oldest-date compatible errors
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -6000,7 +6000,7 @@ Ensure the endpoint returns newest-date compatible errors
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -6034,7 +6034,7 @@ Obtain a list of DER data from a particular service point owned by the consumer 
 ### Execution Pre-conditions:
 
 * The {servicePointId} is set in the Path 
-* AND value <x-v> is set in the request header to a version supported by the DH
+* AND value &lt;x-v&gt; is set in the request header to a version supported by the DH
 
 
 ### Execution Steps:
@@ -6073,8 +6073,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the value for <x-v> is in a valid  format
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the value for &lt;x-v&gt; is in a valid  format
 
 
 ### Execution Steps:
@@ -6107,7 +6107,7 @@ Ensure the endpoint returns servicePointId compatible errors
 
 ### Execution Pre-conditions:
 
-* The <{servicePointId}> is set in the Path to a value that is 
+* The &lt;{servicePointId}&gt; is set in the Path to a value that is 
 
 
 ### Execution Steps:
@@ -6173,7 +6173,7 @@ Obtain DER data for a specific set of service points owned by the consumer that 
 
 ### Execution Pre-conditions:
 
-* Neither <page-size> or <page> query parameters are provided
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -6212,7 +6212,7 @@ Obtain DER data for a specific set of service points owned by the consumer that 
 
 ### Execution Pre-conditions:
 
-*  <page-size> and<page> query parameters are provided
+*  &lt;page-size&gt; and&lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -6252,8 +6252,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the value for <x-v> is in a valid  format
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the value for &lt;x-v&gt; is in a valid  format
 
 
 ### Execution Steps:
@@ -6286,8 +6286,8 @@ Ensure that the endpoint returns pagination errors
 
 ### Execution Pre-conditions:
 
-* <page> OR (<page> 
-* AND <page-size>) query parameters are provided
+* &lt;page&gt; OR (&lt;page&gt; 
+* AND &lt;page-size&gt;) query parameters are provided
 
 
 ### Execution Steps:
@@ -6457,7 +6457,7 @@ Ensure that the endpoint returns FAPI Interaction ID errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-interaction-id> format is invalid 
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
 
 
 ### Execution Steps:
@@ -6488,7 +6488,7 @@ Ensure that the endpoint returns FAPI Interaction ID errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-interaction-id> format is invalid 
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
 
 
 ### Execution Steps:
@@ -6519,7 +6519,7 @@ Ensure that the endpoint returns FAPI Interaction ID errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-interaction-id> format is invalid 
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
 
 
 ### Execution Steps:
@@ -6550,7 +6550,7 @@ Ensure that the endpoint returns FAPI Interaction ID errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-interaction-id> format is invalid 
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
 
 
 ### Execution Steps:
@@ -6581,7 +6581,7 @@ Ensure that the endpoint returns FAPI Interaction ID errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-interaction-id> format is invalid 
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
 
 
 ### Execution Steps:
@@ -6612,7 +6612,7 @@ Ensure that the endpoint returns FAPI Interaction ID errors
 
 ### Execution Pre-conditions:
 
-* The <x-fapi-interaction-id> format is invalid 
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
 
 
 ### Execution Steps:
@@ -6643,7 +6643,7 @@ Ensure that the endpoint returns arrangement id errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-arrangement> is missing 
+* The &lt;x-cds-arrangement&gt; is missing 
 
 
 ### Execution Steps:
@@ -6676,7 +6676,7 @@ Ensure that the endpoint returns arrangement id errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-arrangement> is present but invalid
+* The &lt;x-cds-arrangement&gt; is present but invalid
 
 
 ### Execution Steps:
@@ -6709,7 +6709,7 @@ Ensure that the endpoint returns arrangement id errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-arrangement> is missing 
+* The &lt;x-cds-arrangement&gt; is missing 
 
 
 ### Execution Steps:
@@ -6742,7 +6742,7 @@ Ensure that the endpoint returns arrangement id errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-arrangement> is present but invalid
+* The &lt;x-cds-arrangement&gt; is present but invalid
 
 
 ### Execution Steps:
@@ -6775,7 +6775,7 @@ Ensure that the endpoint returns arrangement id errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-arrangement> is missing 
+* The &lt;x-cds-arrangement&gt; is missing 
 
 
 ### Execution Steps:
@@ -6808,7 +6808,7 @@ Ensure that the endpoint returns arrangement id errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-arrangement> is present but invalid
+* The &lt;x-cds-arrangement&gt; is present but invalid
 
 
 ### Execution Steps:
@@ -6841,7 +6841,7 @@ Ensure that the endpoint returns arrangement id errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-arrangement> is missing 
+* The &lt;x-cds-arrangement&gt; is missing 
 
 
 ### Execution Steps:
@@ -6874,7 +6874,7 @@ Ensure that the endpoint returns arrangement id errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-arrangement> is present but invalid
+* The &lt;x-cds-arrangement&gt; is present but invalid
 
 
 ### Execution Steps:
@@ -6907,7 +6907,7 @@ Ensure that the endpoint returns arrangement id errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-arrangement> is missing 
+* The &lt;x-cds-arrangement&gt; is missing 
 
 
 ### Execution Steps:
@@ -6940,7 +6940,7 @@ Ensure that the endpoint returns arrangement id errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-arrangement> is present but invalid
+* The &lt;x-cds-arrangement&gt; is present but invalid
 
 
 ### Execution Steps:
@@ -6973,7 +6973,7 @@ Ensure that the endpoint returns arrangement id errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-arrangement> is missing 
+* The &lt;x-cds-arrangement&gt; is missing 
 
 
 ### Execution Steps:
@@ -7006,7 +7006,7 @@ Ensure that the endpoint returns arrangement id errors
 
 ### Execution Pre-conditions:
 
-* The <x-cds-arrangement> is present but invalid
+* The &lt;x-cds-arrangement&gt; is present but invalid
 
 
 ### Execution Steps:
@@ -7039,7 +7039,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -7072,7 +7072,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -7105,7 +7105,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -7138,7 +7138,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -7171,7 +7171,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -7204,7 +7204,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -7237,7 +7237,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -7270,7 +7270,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -7303,7 +7303,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -7336,7 +7336,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -7369,7 +7369,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> version is not a valid number
+* The &lt;x-v&gt; version is not a valid number
 
 
 ### Execution Steps:
@@ -7402,7 +7402,7 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* The <x-v> format is not valid 
+* The &lt;x-v&gt; format is not valid 
 
 
 ### Execution Steps:
@@ -7435,8 +7435,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -7469,8 +7469,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -7503,8 +7503,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -7537,8 +7537,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -7571,8 +7571,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -7605,8 +7605,8 @@ Ensure that the endpoint returns version compatibility errors
 
 ### Execution Pre-conditions:
 
-* the value <x-v> is set in the request header to a version not supported by the DH
-* AND the <x-v-min> is included
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-v-min&gt; is included
 
 
 ### Execution Steps:
@@ -7665,8 +7665,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <page-size> parameter is specified in a GET request|
-|When|the value for <page-size> is outside the range [1..1000]</br>OR the <page-size> is a not a positive integer|
+|Given|the &lt;page-size&gt; parameter is specified in a GET request|
+|When|the value for &lt;page-size&gt; is outside the range [1..1000]</br>OR the &lt;page-size&gt; is a not a positive integer|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/InvalidPageSize"</br></div><div class="predicate outer">)</div>|
 
 
@@ -7686,8 +7686,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <page> parameter is included in a GET request|
-|When|the <page> is a not a positive integer|
+|Given|the &lt;page&gt; parameter is included in a GET request|
+|When|the &lt;page&gt; is a not a positive integer|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -7707,8 +7707,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <page> parameter is included in a GET request|
-|When|the <page> value is greater than the number of pages available |
+|Given|the &lt;page&gt; parameter is included in a GET request|
+|When|the &lt;page&gt; value is greater than the number of pages available |
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 422</br> the response body has ErrorListReponse object</br> the error code is "Field/InvalidPage"</br></div><div class="predicate outer">)</div>|
 
 
@@ -7728,7 +7728,7 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <page-size> parameter is included in a GET request|
+|Given|the &lt;page-size&gt; parameter is included in a GET request|
 |When|the page size parameter value is not a positive integer (number)|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
@@ -7749,8 +7749,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <x-v> header is included in a get request|
-|When|the value for the <x-v> is a positive integer|
+|Given|the &lt;x-v&gt; header is included in a get request|
+|When|the value for the &lt;x-v&gt; is a positive integer|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> &lt;x-v&gt; is in the repsonse header</br> &lt;x-v&gt; is a positive integer</br></div><div class="predicate outer">)</div>|
 
 
@@ -7812,8 +7812,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <x-v>  is included in a  request header</br>AND <x-v-min> is NOT included|
-|When|the request version <x-v> is not supported|
+|Given|the &lt;x-v&gt;  is included in a  request header</br>AND &lt;x-v-min&gt; is NOT included|
+|When|the request version &lt;x-v&gt; is not supported|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 406</br> the response body has ErrorListReponse object</br> error code is "Header/UnsupportedVersion"</br></div><div class="predicate outer">)</div>|
 
 
@@ -7833,8 +7833,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <x-v>  is included in a  request header</br>AND  <x-v-min>  is included|
-|When|no version between <x-v> and <x-min-v> is supported|
+|Given|the &lt;x-v&gt;  is included in a  request header</br>AND  &lt;x-v-min&gt;  is included|
+|When|no version between &lt;x-v&gt; and &lt;x-min-v&gt; is supported|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 406</br> the response body has ErrorListReponse object</br> error code is "Header/UnsupportedVersion"</br></div><div class="predicate outer">)</div>|
 
 
@@ -7854,8 +7854,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <x-v-min> header is included in a get request|
-|When|the value for the <x-v-min>  is a positive integer|
+|Given|the &lt;x-v-min&gt; header is included in a get request|
+|When|the value for the &lt;x-v-min&gt;  is a positive integer|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">&lt;x-v&gt; is in the repsonse header</br>  &lt;x-v&gt; = [&lt;x-v-min&gt;, &lt;x-v&gt;]</br> &lt;x-v&gt; is a positive integer</br></div><div class="predicate outer">)</div>|
 
 
@@ -7875,8 +7875,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <x-v-min> header is included in a get request|
-|When|the <x-min-v> is a not a positive integer|
+|Given|the &lt;x-v-min&gt; header is included in a get request|
+|When|the &lt;x-min-v&gt; is a not a positive integer|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -7896,8 +7896,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <x-fapi-interaction-id> is included in the header of the request|
-|When|the <x-fapi-interaction-id> is in a valid format |
+|Given|the &lt;x-fapi-interaction-id&gt; is included in the header of the request|
+|When|the &lt;x-fapi-interaction-id&gt; is in a valid format |
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em"> the Data Holder has returned the &lt;x-fapi-interaction-id&gt; from the request in the response header</br></div><div class="predicate outer">)</div>|
 
 
@@ -7917,7 +7917,7 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <x-fapi-interaction-id> is NOT included in the header of the request|
+|Given|the &lt;x-fapi-interaction-id&gt; is NOT included in the header of the request|
 |When|a response is returned|
 |Then|the Data Holder has returned an &lt;x-fapi-interaction-id&gt; in the response header|
 
@@ -7939,8 +7939,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <x-fapi-interaction-id> is included in the GET request|
-|When|the <x-fapi-interaction-id> is not in a valid format |
+|Given|the &lt;x-fapi-interaction-id&gt; is included in the GET request|
+|When|the &lt;x-fapi-interaction-id&gt; is not in a valid format |
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -7963,7 +7963,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the called API is a resource call and does require authentication|
-|When|the <x-fapi-auth-date> is present in the request header</br>AND is in a valid format|
+|When|the &lt;x-fapi-auth-date&gt; is present in the request header</br>AND is in a valid format|
 |Then|the response has a status of 200|
 
 
@@ -7986,7 +7986,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the called API is a resource call and does require authentication|
-|When|the <x-fapi-auth-date> is NOT present  in the request header|
+|When|the &lt;x-fapi-auth-date&gt; is NOT present  in the request header|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> error code is "Header/missing"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8009,7 +8009,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the called API is a resource call and does require authentication|
-|When|the <x-fapi-auth-date> is  in the request header</br>AND is NOT in a valid format|
+|When|the &lt;x-fapi-auth-date&gt; is  in the request header</br>AND is NOT in a valid format|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8052,7 +8052,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the called API requires authentication|
-|When|the <x-fapi-customer-ip-address> is present in the request header</br>AND is in a valid IPv4 or IPv6 format|
+|When|the &lt;x-fapi-customer-ip-address&gt; is present in the request header</br>AND is in a valid IPv4 or IPv6 format|
 |Then|the response has a status of 200|
 
 
@@ -8074,7 +8074,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the called API requires authentication|
-|When|the <x-fapi-customer-ip-address> is NOT present in the request header|
+|When|the &lt;x-fapi-customer-ip-address&gt; is NOT present in the request header|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/Missing"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8096,7 +8096,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the called API requires authentication|
-|When|the <x-fapi-customer-ip-address> in present the request header</br>AND is NEITHER  in a valid IPv4 or IPv6 format|
+|When|the &lt;x-fapi-customer-ip-address&gt; in present the request header</br>AND is NEITHER  in a valid IPv4 or IPv6 format|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8140,7 +8140,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the called API requires authentication</br>AND the call is an attended, ie customer present, call|
-|When|the <x-cds-client-headers> is present in the request header</br>AND is Base64 encoded|
+|When|the &lt;x-cds-client-headers&gt; is present in the request header</br>AND is Base64 encoded|
 |Then|the response has a status of 200|
 
 
@@ -8163,7 +8163,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the called API requires authentication</br>AND the call is an attended, ie customer present, call|
-|When|the <x-cds-client-headers> is NOT present in the request header|
+|When|the &lt;x-cds-client-headers&gt; is NOT present in the request header|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/missing"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8186,7 +8186,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the called API requires authentication</br>AND the call is an attended, ie customer present, call|
-|When|the <x-cds-client-headers>  present the request header</br>AND is Not Base64 encoded|
+|When|the &lt;x-cds-client-headers&gt;  present the request header</br>AND is Not Base64 encoded|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8229,7 +8229,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the call is from a DH to a SDH|
-|When|the <x-cds-arrangement> is present in the request header</br>AND is in a valid format|
+|When|the &lt;x-cds-arrangement&gt; is present in the request header</br>AND is in a valid format|
 |Then|the response has a status of 200|
 
 
@@ -8251,7 +8251,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the call is from a DH to a SDH|
-|When|the <x-cds-arrangement> is NOT present in the request header|
+|When|the &lt;x-cds-arrangement&gt; is NOT present in the request header|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/Missing"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8273,7 +8273,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the call is from a DH to a SDH|
-|When|the <x-cds-arrangement> is present in the request header</br>AND is NOT in a valid format|
+|When|the &lt;x-cds-arrangement&gt; is present in the request header</br>AND is NOT in a valid format|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8288,8 +8288,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <oldest-date> is included as a query parameter|
-|When|the <oldest-date> is in a valid DateString format|
+|Given|the &lt;oldest-date&gt; is included as a query parameter|
+|When|the &lt;oldest-date&gt; is in a valid DateString format|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the data is constrained by the date supplied</br></div><div class="predicate outer">)</div>|
 
 
@@ -8309,8 +8309,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <oldest-date> is included as a query parameter|
-|When|the <oldest-date> is not in a DateString valid format|
+|Given|the &lt;oldest-date&gt; is included as a query parameter|
+|When|the &lt;oldest-date&gt; is not in a DateString valid format|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8325,8 +8325,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <newest-date> is included as a query parameter|
-|When|the <newest-date> is in a valid DateString format|
+|Given|the &lt;newest-date&gt; is included as a query parameter|
+|When|the &lt;newest-date&gt; is in a valid DateString format|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the data is constrained by the date supplied</br></div><div class="predicate outer">)</div>|
 
 
@@ -8346,8 +8346,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the <newest-date> is included as a query parameter|
-|When|the <newest-date> is not in a valid DateString format|
+|Given|the &lt;newest-date&gt; is included as a query parameter|
+|When|the &lt;newest-date&gt; is not in a valid DateString format|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8458,8 +8458,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|<product-category> is set in query string|
-|When|<product-category> is valid</br>AND result set is not empty|
+|Given|&lt;product-category&gt; is set in query string|
+|When|&lt;product-category&gt; is valid</br>AND result set is not empty|
 |Then|only account of &lt;product-category&gt; are returned|
 
 
@@ -8479,8 +8479,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|<open-status> is set in query string|
-|When|<open-status> is valid</br>AND result set is not empty|
+|Given|&lt;open-status&gt; is set in query string|
+|When|&lt;open-status&gt; is valid</br>AND result set is not empty|
 |Then|only account of &lt;open-status&gt; are returned|
 
 
