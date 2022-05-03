@@ -427,19 +427,59 @@ function processTestCasePredicate(testDocs: ConsumerDataRightTestCaseJSONSchema,
   return result;
 }
 
+// function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema, predicate: AssertionPredicate): string {
+//   let result = '';
+
+//   if (typeof predicate === 'string') {
+//     result += processNewlinesHtml(predicate);
+//   } else if (predicate.and) {
+//     const terms = predicate.and as AssertionPredicate[];
+//     if (terms.length > 0) {
+//       let innerResult = '';
+//       for (let i = 0; i < terms.length; i++) {
+//         innerResult += processAssertionPredicate(testDocs, terms[i]);
+//       }
+//       result += predicateOuter('AND (');
+//       result += predicateInner(innerResult);
+//       result += predicateOuter(')');
+//     }
+//   } else if (predicate.or) {
+//     const terms = predicate.or as AssertionPredicate[];
+//     if (terms.length > 0) {
+//       let innerResult = '';
+//       for (let i = 0; i < terms.length; i++) {
+//         innerResult += processAssertionPredicate(testDocs, terms[i]);
+//       }
+//       result += predicateOuter('OR (');
+//       result += predicateInner(innerResult);
+//       result += predicateOuter(')');
+//     }
+//   }
+
+//   return result;
+// }
+
+
+
+// ----------------------------------------------------------------------------
+// Helper functions
+// ----------------------------------------------------------------------------
+
 function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema, predicate: AssertionPredicate): string {
   let result = '';
-
   if (typeof predicate === 'string') {
-    result += processNewlinesHtml(predicate);
+    if (predicate.indexOf("<div>") == -1)
+      result += processSpecialCharacters(predicate);       
   } else if (predicate.and) {
     const terms = predicate.and as AssertionPredicate[];
     if (terms.length > 0) {
       let innerResult = '';
       for (let i = 0; i < terms.length; i++) {
         innerResult += processAssertionPredicate(testDocs, terms[i]);
-      }
+        innerResult += "\n";
+      }     
       result += predicateOuter('AND (');
+      innerResult = processNewlinesOnly(innerResult);
       result += predicateInner(innerResult);
       result += predicateOuter(')');
     }
@@ -455,15 +495,8 @@ function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema
       result += predicateOuter(')');
     }
   }
-
   return result;
 }
-
-
-
-// ----------------------------------------------------------------------------
-// Helper functions
-// ----------------------------------------------------------------------------
 
 function startDoc(): string {
   return ``;
@@ -594,6 +627,33 @@ function processNewlines(text: string | undefined): string {
 function processNewlinesHtml(text: string | undefined): string {
   let result = '';
   if (text) result = text.replace(/\n/, '</br>');
+  return result;
+}
+
+
+function processSpecialCharacters(text: string | undefined): string {
+  let result = '';
+  if (text){
+    result = text.replaceAll(">", '&gt;');
+    result = result.replaceAll("<", '&lt;');
+  }
+  return result; 
+}
+
+// function processNewlines(text: string | undefined): string {
+//   let result = '';
+//   if (text){
+//     result = processSpecialCharacters(text);
+//     result = result.replace(/\n/, '</br>');
+//   }
+//   return result;
+// }
+
+function processNewlinesOnly(text: string | undefined): string {
+  let result = '';
+  if (text){
+    result = text.replaceAll("\n", '</br>');
+  }
   return result;
 }
 
