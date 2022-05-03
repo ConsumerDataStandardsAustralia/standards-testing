@@ -367,7 +367,9 @@ function generateAssertionsSection(testDocs: ConsumerDataRightTestCaseJSONSchema
 
       let given = '';
       for (const clause of assertion.given) {
-        if (given) given += '\n';
+        if (given) {
+          given += '\n';
+        }
         given += clause;
       }
       result += tableRow(['Given', processNewlinesHtml(given)]);
