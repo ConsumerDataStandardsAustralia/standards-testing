@@ -1,8 +1,8 @@
 {
     "scripts": {
-        "generate-json": "cd ./tools/testdocs-cli; tsc; node ./dist/cli.js gendocs json ../../working/source-files/ ../../working/output-files",
-        "generate-html-clean": "cd ./tools/testdocs-cli; tsc; node ./dist/cli.js gendocs json ../../working/source-files/ ../../working/output-files; node ./dist/cli.js gendocs html ../../working/output-files/full-test-suite.json ../../docs/index.html",
+        "generate-json": "cd ./tools/testdocs-cli; tsc; node ./dist/cli.js gendocs json ../../working/source-files ../../working/output-files",
+        "generate-html-clean": "cd ./tools/testdocs-cli; tsc; node ./dist/cli.js gendocs json ../../working/source-files ../../working/output-files; node ./dist/cli.js gendocs html ../../working/output-files/full-test-suite.json ../../docs/index.html",
         "generate-html": "cd ./tools/testdocs-cli; node ./dist/cli.js gendocs html ../../working/output-files/full-test-suite.json ../../docs/index.html",
-        "generate-md-clean": "cd ./tools/testdocs-cli; tsc; node ./dist/cli.js gendocs json ../../working/source-files/ ../../working/output-files; node ./dist/cli.js gendocs markdown ../../working/output-files/full-test-suite.json ../../docs/index.md"        
+        "generate-markdown-clean": "cd ./tools/testdocs-cli; tsc; node ./dist/cli.js gendocs json ../../working/source-files ../../working/output-files; node ./dist/cli.js gendocs markdown ../../working/output-files/full-test-suite.json ../../docs/ReadMe.md"        
      } 
 }
