@@ -148,7 +148,7 @@ export function json(source: string, destination: string, stdout?: Writable, std
       let currentTestCase: any | undefined;
       const testCases: any = [];
       const fileData = fs.readFileSync(filePath, 'utf8');
-      const records = parse(fileData, { from_line: 5 });
+      const records = parse(fileData, { from_line: 4 });
       for (const arr of records) {
         // Is this the first line of a test case
         if (arr[1] != null && arr[1].indexOf('T.') > -1) {
@@ -366,15 +366,22 @@ function processFirstTestLine(header: Array<string>): TestCase {
   let assertions: string[] = [];
   let commonAss: string = header[TEST_COMMON_ASSERTION_INDEX];
   let suiteAss: string = header[TEST_SUITE_ASSERTION_INDEX];
+  var tt: Array<string> = [];
   if (commonAss != null && commonAss.indexOf('A.') >= 0) {
+
       assertions.push(...FixString(commonAss).split(/\n/));
+      
   }
   if (suiteAss != null && suiteAss.indexOf('A.') >= 0) {
     assertions.push(...FixString(suiteAss).split(/\n/));
   }
   //header[TEST_SUITE_ASSERTION_INDEX] != null  && header[TEST_SUITE_ASSERTION_INDEX].indexOf('A.') >= 0 ? assertions.push(header[TEST_SUITE_ASSERTION_INDEX]) : null;
   //header[TEST_COMMON_ASSERTION_INDEX] != null && header[TEST_COMMON_ASSERTION_INDEX].indexOf('A.') >= 0? assertions.push(header[TEST_COMMON_ASSERTION_INDEX]) : null;
-
+  let  cleanAssertion: string[] = [];
+  assertions.forEach(x  => {
+    x = x.replace(/\n|\r/g, "");
+    cleanAssertion.push(x);
+  });;
   let testCase: TestCase = {
     id: header[TEST_ID_INDEX],
     title: header[TEST_TITLE_INDEX],
@@ -383,7 +390,7 @@ function processFirstTestLine(header: Array<string>): TestCase {
     negative: header[TEST_POLARITY_INDEX] == 'TRUE'? true: false,
     preConditions: processPreConditions(header[TEST_PRECONDITION_INDEX], header[TEST_ID_INDEX]),
     steps: [],
-    assertions: assertions
+    assertions: cleanAssertion
   }
   return testCase;
 }
@@ -426,37 +433,6 @@ function processFirstScenarioLine(header: Array<string>): Scenario {
   return scenario;
 }
 
-function processOtherScenarioLines(line: Array<string>, scenario: Scenario){
-  // let steps = scenario.steps == null ? [] : scenario.steps;
-  // if (line[TEST_STEP_TYPE_INDEX] != null) {
-  //     let step: TestCaseStep;
-  //     let stepType = line[TEST_STEP_TYPE_INDEX];
-  //     if (stepType == "ACTION" ) {
-  //      step = {
-  //         type: "ACTION",
-  //         action: line[TEST_STEP_VALUE_INDEX]
-  //       }
-  //       steps.push(step);
-  //     }
-  //     if (stepType == "WAIT" ) {
-  //       step = {
-  //          type: "WAIT",
-  //          period: parseInt(line[TEST_STEP_VALUE_INDEX])
-  //        }
-  //        steps.push(step);
-  //      }
-
-  //      if (stepType == "UNTIL" ) {
-  //       step = {
-  //          type: "UNTIL",
-  //          condition: line[TEST_STEP_VALUE_INDEX]
-  //        }
-  //        steps.push(step);
-  //      }
-  // }
-  // testCase.steps = steps;
-
-}
 
 function processPreConditions(preconditions: string, id: string): Array<string> {
   if (preconditions == null || preconditions =='')
