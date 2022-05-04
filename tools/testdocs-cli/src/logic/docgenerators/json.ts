@@ -151,7 +151,7 @@ export function json(source: string, destination: string, stdout?: Writable, std
       const records = parse(fileData, { from_line: 4 });
       for (const arr of records) {
         // Is this the first line of a test case
-        if (arr[1] != null && arr[1].indexOf('T.') > -1) {
+        if (arr[1] != null && arr[1]?.indexOf('T.') > -1 && arr[2]?.length > 0) {
            if (currentTestCase) {
              testCases.push(currentTestCase);
            }
@@ -166,7 +166,9 @@ export function json(source: string, destination: string, stdout?: Writable, std
 
       // Process the test cases
       for (const testCaseRaw of testCases) {
-        if (testCaseRaw[0] && testCaseRaw[0][1] && testCaseRaw[0][1].indexOf('T.') > -1) {
+        if (testCaseRaw[0] && testCaseRaw[0][TEST_ID_INDEX]
+          && testCaseRaw[0][TEST_ID_INDEX]?.indexOf('T.') > -1
+          && testCaseRaw[0][TEST_TITLE_INDEX]?.length > 0) {
           const testCase = processTestCase(testCaseRaw, testCaseRaw[0][1], testCaseDirectorySinkPath);
           if (testCase && fullOutput.testCases) fullOutput.testCases[testCase.id] = testCase;
         }
@@ -182,7 +184,7 @@ export function json(source: string, destination: string, stdout?: Writable, std
       const fileData = fs.readFileSync(filePath, 'utf8');
       const records = parse(fileData, { from_line: 3 });
       for (const arr of records) {
-        if (arr != null && (arr[1] != null && arr[1].indexOf('A.') > -1)) {
+        if (arr != null && (arr[1] != null && arr[1]?.indexOf('A.') > -1 && arr[2]?.length > 0)) {
           const assertion = processAssertion(arr, arr[1], assertionDirectorySinkPath);
           if (assertion && fullOutput.assertions) fullOutput.assertions[assertion.id] = assertion;
         }
@@ -203,6 +205,7 @@ export function json(source: string, destination: string, stdout?: Writable, std
 
 /******************* Utility function section ************************/
 function processScenario(arr:Array<string>, scenarioName: string, fileWritePath: string): Scenario | undefined {
+  if (scenarioName === '') return;
   let cnt = arr.length;
   if (cnt > 0) {
     var scenario = processFirstScenarioLine(arr);
@@ -228,6 +231,7 @@ function processSuite(arr: Array<string>, suiteName: string, fileWritePath: stri
 }
 
 function processTestCase(arr: Array<Array<string>>, testCaseName: string, fileWritePath: string): TestCase | undefined {
+  if (testCaseName === '') return;
   let cnt = arr.length;
   if (cnt > 0) {
     var testCase = processFirstTestLine(arr[0]);

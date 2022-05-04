@@ -555,28 +555,6 @@ Test errors and edge cases for Get Service Points
 <a id="testcases"></a>
 # Test Cases
 
-<a id="testcase-t.eap.001"></a>
-## T.EAP.001: 
-
-Positive test case
-
-### Story:
-
-### Execution Pre-conditions:
-
-No pre-conditions for this test case
-
-### Execution Steps:
-
-|Action No.|Action Type|Detail|
-|-|-|-|
-|1|Action||
-
-
-### End State Assertions:
-
-No end state ssertions defined for this test case
-
 <a id="testcase-t.ear.001"></a>
 ## T.EAR.001: ADR call to DH: Get Service Points - no pagination
 
@@ -8373,54 +8351,6 @@ Critical (Test Fails)
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
-<a id="assertion-a.bap.001"></a>
-## A.BAP.001: 
-
-### Severity:
-
-Critical (Test Fails)
-
-### Assertion Logic:
-
-|||
-|-|-|
-|Given||
-|When||
-|Then||
-
-
-<a id="assertion-a.bap.002"></a>
-## A.BAP.002: 
-
-### Severity:
-
-Critical (Test Fails)
-
-### Assertion Logic:
-
-|||
-|-|-|
-|Given||
-|When||
-|Then||
-
-
-<a id="assertion-a.bap.003"></a>
-## A.BAP.003: 
-
-### Severity:
-
-Critical (Test Fails)
-
-### Assertion Logic:
-
-|||
-|-|-|
-|Given||
-|When||
-|Then||
-
-
 <a id="assertion-a.ban.001"></a>
 ## A.BAN.001: Call Accounts - no query aprameters
 
@@ -8482,54 +8412,6 @@ Critical (Test Fails)
 |Given|&lt;open-status&gt; is set in query string|
 |When|&lt;open-status&gt; is valid</br>AND result set is not empty|
 |Then|only account of &lt;open-status&gt; are returned|
-
-
-<a id="assertion-a.bat.001"></a>
-## A.BAT.001: 
-
-### Severity:
-
-Critical (Test Fails)
-
-### Assertion Logic:
-
-|||
-|-|-|
-|Given||
-|When||
-|Then||
-
-
-<a id="assertion-a.bad.001"></a>
-## A.BAD.001: 
-
-### Severity:
-
-Critical (Test Fails)
-
-### Assertion Logic:
-
-|||
-|-|-|
-|Given||
-|When||
-|Then||
-
-
-<a id="assertion-a.aaa.001"></a>
-## A.AAA.001: 
-
-### Severity:
-
-Critical (Test Fails)
-
-### Assertion Logic:
-
-|||
-|-|-|
-|Given||
-|When||
-|Then||
 
 
 <a id="assertion-a.ear.001"></a>
