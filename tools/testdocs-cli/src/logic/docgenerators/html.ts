@@ -310,7 +310,7 @@ function generateTestCasesSection(testDocs: ConsumerDataRightTestCaseJSONSchema)
         for (const assertionId of testCase.assertions) {
           let assertionName = assertionId;
           if (testDocs.assertions && testDocs.assertions[assertionId]) assertionName += ': ' + testDocs.assertions[assertionId].title;
-          result += unorderedListItem(link('#' + createSlug('assertion', assertionId), assertionName));
+          result += unorderedListItem(link('#' + createSlug('assertion', assertionId), processSpecialCharacters(assertionName)));
         }
         result += endUnorderedList();
       } else {
@@ -343,8 +343,8 @@ function generateAssertionsSection(testDocs: ConsumerDataRightTestCaseJSONSchema
 
       result += startSection('assertion');
 
-      result += header2(assertionId + ': ' + assertion.title, createSlug('assertion', assertionId));
-      result += text(processNewlines(assertion.description));
+      result += header2(assertionId + ': ' + processSpecialCharacters(assertion.title), createSlug('assertion', assertionId));
+      result += text(processNewlines(processSpecialCharacters(assertion.description)));
 
       if (assertion.references && assertion.references.length > 0) {
         result += header3('References:');
