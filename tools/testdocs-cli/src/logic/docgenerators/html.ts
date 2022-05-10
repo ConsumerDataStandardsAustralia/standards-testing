@@ -5,6 +5,7 @@ import {
   AssertionPredicate,
   ConsumerDataRightTestCaseJSONSchema
 } from '../../schema/cdr-test-schema.0.0.3';
+import { JsonGeneratorConfig } from './json-generator-config';
 
 
 // TODO: Validate source file

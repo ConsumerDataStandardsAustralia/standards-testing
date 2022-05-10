@@ -11,7 +11,8 @@
   "scripts": {
     "lint": "tslint -p .",
     "sync-schema": "rm -f ./src/schema/* && cp ../../schema/*.json ./src/schema && node ./utils/create-schema-definitions.js",
-    "build": "rm -rf ./dist/ && tsc && chmod +x ./dist/cli.js"
+    "build": "rm -rf ./dist/ && tsc && chmod +x ./dist/cli.js && npm run copy-addtional",
+    "copy-addtional": "cp ./config.json ./dist/commands"
   },
   "author": "Data Standards Body",
   "license": "MIT",
@@ -26,6 +27,6 @@
     "better-ajv-errors": "^1.1.2",
     "csv-parse": "^5.0.4",
     "json-schema-to-typescript": "^10.1.5",
-    "yargs": "^17.3.1"
+    "yargs": "^17.4.1"
   }
 }
