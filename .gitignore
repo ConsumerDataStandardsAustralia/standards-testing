@@ -8,6 +8,7 @@ bower_components
 # Editors
 .idea
 *.iml
+.vscode
 
 # OS metadata
 .DS_Store
@@ -19,3 +20,6 @@ build
 
 # ignore yarn.lock
 yarn.lock
+
+# ignore yarn.lock
+working
