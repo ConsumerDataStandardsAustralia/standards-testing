@@ -1,12 +1,12 @@
 
 <a id="introduction"></a>
-# Sample title
+# The CDR Test Documentation
 
-File version: 0.0.1
+File version: 1.0.0
 
-Compliant with CDR standards version 0.0.1
+Compliant with CDR standards version 1.16.0
 
-Sample description
+This documentation has been  created by the DSB to assist participants in the development of compliant APIs
 
 <a id="suites"></a>
 # Test Suites

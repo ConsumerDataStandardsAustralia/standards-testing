@@ -13,6 +13,7 @@ import {
   ScenarioAction,
   ConsumerDataRightTestCaseJSONSchema
 } from '../../schema/cdr-test-schema.0.0.3';
+import { JsonGeneratorConfig } from './json-generator-config';
 
 const SUITE_ID_INDEX: number = 1;
 const SUITE_TITLE_INDEX: number = 2;
@@ -48,7 +49,7 @@ const ASSERTION_SEVERITY_INDEX: number = 6;
 const ASSERTION_POLARITY_INDEX: number = 7;
 const ASSERTION_REFERENCE_INDEX: number = 8;
 
-export function json(source: string, destination: string, stdout?: Writable, stderr?: Writable): number {
+export function json(source: string, destination: string, config: JsonGeneratorConfig, stdout?: Writable, stderr?: Writable): number {
   const baseSourceDirectory: string = source;
   const baseSinkDirectory: string = destination;
 
@@ -89,10 +90,10 @@ export function json(source: string, destination: string, stdout?: Writable, std
 
     // Initialise the master output file
     const fullOutput: ConsumerDataRightTestCaseJSONSchema = {
-      fileVersion: '0.0.1',
-      standardsVersion: '0.0.1',
-      title: 'Sample title',
-      description: 'Sample description',
+      fileVersion: config.docVersion,
+      standardsVersion: config.cdrVersion,
+      title: config?.title,
+      description: config?.description,
       assertions: {},
       testCases: {},
       scenarios: {},
