@@ -4241,7 +4241,7 @@
 <div class="testcase">
 <a id="testcase-t.eas.001"></a><h2 class="h2">T.EAS.001: DH call to SDH: Get Service Points - no pagination</h2>
 <p class="p">Negative test case</p>
-<p class="p">Obtain a list of service points owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain a list of service points requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -4263,7 +4263,6 @@
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
@@ -4274,7 +4273,7 @@
 <div class="testcase">
 <a id="testcase-t.eas.002"></a><h2 class="h2">T.EAS.002: DH call to SDH: Get Service Points - with pagination</h2>
 <p class="p">Negative test case</p>
-<p class="p">Obtain a paginated list of service points owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain a paginated list of service points requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -4296,12 +4295,11 @@
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
-<li><a href="#assertion-a.cpg.001">A.CPG.001: Validate pagination - LinksPaginated </a></li>
 <li><a href="#assertion-a.cai.001">A.CAI.001: CDS arrangement id - present and valid (SR specific)</a></li>
+<li><a href="#assertion-a.cpg.001">A.CPG.001: Validate pagination - LinksPaginated </a></li>
 <li><a href="#assertion-a.eas.004">A.EAS.004: Validate schema - EnergyServicePointListReponse</a></li>
 </ul>
 </div>
@@ -4330,7 +4328,6 @@
 <ul>
 <li><a href="#assertion-a.cvn.004">A.CVN.004: Validate version - unsupported version without &lt;x-v-min&gt;</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
@@ -4361,13 +4358,12 @@
 <li><a href="#assertion-a.cpg.004">A.CPG.004: Validate pagination - Max record limit exceeded</a></li>
 <li><a href="#assertion-a.cpg.005">A.CPG.005: Validate pagination - Non-numeric &lt;page-size&gt;</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.005"></a><h2 class="h2">T.EAS.005: DH call to SDH: Get Service Point Detail </h2>
 <p class="p">Negative test case</p>
-<p class="p">Obtain the details of a service point owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain the details of a service point requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -4390,7 +4386,6 @@
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
@@ -4423,7 +4418,6 @@
 <ul>
 <li><a href="#assertion-a.cvn.004">A.CVN.004: Validate version - unsupported version without &lt;x-v-min&gt;</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
@@ -4437,7 +4431,7 @@
 </ul>
 <h3 class="h3">Execution Pre-conditions:</h3>
 <ul>
-<li>The &lt;{servicePointId}&gt; is set in the Path to a value that is </li>
+<li>The &lt;{servicePointId}&gt; is set in the Path to a value that is invalid</li>
 </ul>
 <h3 class="h3">Execution Steps:</h3>
 <table>
@@ -4449,7 +4443,6 @@
 <h3 class="h3">End State Assertions:</h3>
 <ul>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.eas.002">A.EAS.002: Validate service point - invalid NMI value</a></li>
 </ul>
 </div>
@@ -4476,14 +4469,13 @@
 <h3 class="h3">End State Assertions:</h3>
 <ul>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.eas.003">A.EAS.003: Validate service point - unavailable NMI</a></li>
 </ul>
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.009"></a><h2 class="h2">T.EAS.009: DH call to SDH: Get Usage for Service Point Detail - no pagination</h2>
 <p class="p">Negative test case</p>
-<p class="p">Obtain a list of electricity usage data from a particular service point owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain a list of electricity usage data from a particular service point requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -4505,7 +4497,6 @@
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
@@ -4516,7 +4507,7 @@
 <div class="testcase">
 <a id="testcase-t.eas.010"></a><h2 class="h2">T.EAS.010: DH call to SDH: Get Usage for Service Points - with pagination</h2>
 <p class="p">Negative test case</p>
-<p class="p">Obtain a paginated list of electricity usage data from a particular service point owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain a paginated list of electricity usage data from a particular service requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -4535,15 +4526,14 @@
 </table>
 <h3 class="h3">End State Assertions:</h3>
 <ul>
-<li><a href="#assertion-a.cpg.001">A.CPG.001: Validate pagination - LinksPaginated </a></li>
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cai.001">A.CAI.001: CDS arrangement id - present and valid (SR specific)</a></li>
+<li><a href="#assertion-a.cpg.001">A.CPG.001: Validate pagination - LinksPaginated </a></li>
 <li><a href="#assertion-a.eas.005">A.EAS.005: Validate service point and schema - EnergyUsageListResponse</a></li>
 </ul>
 </div>
@@ -4572,7 +4562,6 @@
 <ul>
 <li><a href="#assertion-a.cvn.004">A.CVN.004: Validate version - unsupported version without &lt;x-v-min&gt;</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
@@ -4603,13 +4592,12 @@
 <li><a href="#assertion-a.cpg.004">A.CPG.004: Validate pagination - Max record limit exceeded</a></li>
 <li><a href="#assertion-a.cpg.005">A.CPG.005: Validate pagination - Non-numeric &lt;page-size&gt;</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.013"></a><h2 class="h2">T.EAS.013: DH call to SDH: Get Usage for Service Points - oldest date</h2>
 <p class="p">Negative test case</p>
-<p class="p">Obtain a list of electricity usage data constrained by oldest date from a particular service point owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain a list of electricity usage data constrained by oldest date from a particular service point requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -4633,19 +4621,18 @@
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
-<li><a href="#assertion-a.cod.001">A.COD.001: Validate the Oldest Date parameter - valid format</a></li>
 <li><a href="#assertion-a.cai.001">A.CAI.001: CDS arrangement id - present and valid (SR specific)</a></li>
+<li><a href="#assertion-a.cod.001">A.COD.001: Validate the Oldest Date parameter - valid format</a></li>
 <li><a href="#assertion-a.eas.005">A.EAS.005: Validate service point and schema - EnergyUsageListResponse</a></li>
 </ul>
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.014"></a><h2 class="h2">T.EAS.014: DH call to SDH: Get Usage for Service Points - newest date</h2>
 <p class="p">Negative test case</p>
-<p class="p">Obtain a list of service points owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain a list of service points requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -4668,12 +4655,11 @@
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
-<li><a href="#assertion-a.cnd.001">A.CND.001: Validate the Newest Date parameter - valid format</a></li>
 <li><a href="#assertion-a.cai.001">A.CAI.001: CDS arrangement id - present and valid (SR specific)</a></li>
+<li><a href="#assertion-a.cnd.001">A.CND.001: Validate the Newest Date parameter - valid format</a></li>
 <li><a href="#assertion-a.eas.005">A.EAS.005: Validate service point and schema - EnergyUsageListResponse</a></li>
 </ul>
 </div>
@@ -4700,7 +4686,6 @@
 <h3 class="h3">End State Assertions:</h3>
 <ul>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.eas.002">A.EAS.002: Validate service point - invalid NMI value</a></li>
 </ul>
 </div>
@@ -4727,7 +4712,6 @@
 <h3 class="h3">End State Assertions:</h3>
 <ul>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.eas.003">A.EAS.003: Validate service point - unavailable NMI</a></li>
 </ul>
 </div>
@@ -4755,7 +4739,6 @@
 <ul>
 <li><a href="#assertion-a.cod.002">A.COD.002: Validation the Oldest Date parameter - invalid format</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
@@ -4782,13 +4765,12 @@
 <ul>
 <li><a href="#assertion-a.cnd.002">A.CND.002: Validation the Newest Date parameter - invalid format</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.019"></a><h2 class="h2">T.EAS.019: DH call to SDH: Get Usage for Specific Service Points - no pagination</h2>
 <p class="p">Negative test case</p>
-<p class="p">Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain the electricity usage data for a specific set of service points requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -4810,7 +4792,6 @@
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
@@ -4821,7 +4802,7 @@
 <div class="testcase">
 <a id="testcase-t.eas.020"></a><h2 class="h2">T.EAS.020: DH call to SDH: Get Usage for Specific Service Points - with pagination</h2>
 <p class="p">Negative test case</p>
-<p class="p">Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain the electricity usage data for a specific set of service points requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -4840,15 +4821,14 @@
 </table>
 <h3 class="h3">End State Assertions:</h3>
 <ul>
-<li><a href="#assertion-a.cpg.001">A.CPG.001: Validate pagination - LinksPaginated </a></li>
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cai.001">A.CAI.001: CDS arrangement id - present and valid (SR specific)</a></li>
+<li><a href="#assertion-a.cpg.001">A.CPG.001: Validate pagination - LinksPaginated </a></li>
 <li><a href="#assertion-a.eas.006">A.EAS.006: Validate servicePointIdList body and schema - EnergyUsageListResponse</a></li>
 </ul>
 </div>
@@ -4877,7 +4857,6 @@
 <ul>
 <li><a href="#assertion-a.cvn.004">A.CVN.004: Validate version - unsupported version without &lt;x-v-min&gt;</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
@@ -4908,13 +4887,12 @@
 <li><a href="#assertion-a.cpg.004">A.CPG.004: Validate pagination - Max record limit exceeded</a></li>
 <li><a href="#assertion-a.cpg.005">A.CPG.005: Validate pagination - Non-numeric &lt;page-size&gt;</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.023"></a><h2 class="h2">T.EAS.023: DH call to SDH: Get Usage for Specific Service Points - oldest date</h2>
 <p class="p">Positive test case</p>
-<p class="p">Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain the electricity usage data for a specific set of service points requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -4936,10 +4914,10 @@
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
+<li><a href="#assertion-a.cai.001">A.CAI.001: CDS arrangement id - present and valid (SR specific)</a></li>
 <li><a href="#assertion-a.cod.001">A.COD.001: Validate the Oldest Date parameter - valid format</a></li>
 <li><a href="#assertion-a.eas.006">A.EAS.006: Validate servicePointIdList body and schema - EnergyUsageListResponse</a></li>
 </ul>
@@ -4947,7 +4925,7 @@
 <div class="testcase">
 <a id="testcase-t.eas.024"></a><h2 class="h2">T.EAS.024: DH call to SDH: Get Usage for Specific Service Points - newest date</h2>
 <p class="p">Negative test case</p>
-<p class="p">Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain the electricity usage data for a specific set of service points requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -4969,12 +4947,11 @@
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
-<li><a href="#assertion-a.cnd.001">A.CND.001: Validate the Newest Date parameter - valid format</a></li>
 <li><a href="#assertion-a.cai.001">A.CAI.001: CDS arrangement id - present and valid (SR specific)</a></li>
+<li><a href="#assertion-a.cnd.001">A.CND.001: Validate the Newest Date parameter - valid format</a></li>
 <li><a href="#assertion-a.eas.006">A.EAS.006: Validate servicePointIdList body and schema - EnergyUsageListResponse</a></li>
 </ul>
 </div>
@@ -5002,7 +4979,6 @@
 <ul>
 <li><a href="#assertion-a.cod.002">A.COD.002: Validation the Oldest Date parameter - invalid format</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
@@ -5029,13 +5005,12 @@
 <ul>
 <li><a href="#assertion-a.cnd.002">A.CND.002: Validation the Newest Date parameter - invalid format</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.027"></a><h2 class="h2">T.EAS.027: DH call to SDH: Get DER for Service Point </h2>
 <p class="p">Negative test case</p>
-<p class="p">Obtain a list of DER data from a particular service point owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain a list of DER data from a particular service point requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -5058,7 +5033,6 @@
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
@@ -5091,7 +5065,6 @@
 <ul>
 <li><a href="#assertion-a.cvn.004">A.CVN.004: Validate version - unsupported version without &lt;x-v-min&gt;</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
@@ -5117,7 +5090,6 @@
 <h3 class="h3">End State Assertions:</h3>
 <ul>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.eas.002">A.EAS.002: Validate service point - invalid NMI value</a></li>
 </ul>
 </div>
@@ -5144,14 +5116,13 @@
 <h3 class="h3">End State Assertions:</h3>
 <ul>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.eas.003">A.EAS.003: Validate service point - unavailable NMI</a></li>
 </ul>
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.031"></a><h2 class="h2">T.EAS.031: DH call to SDH: Get DER for Specific Service Points - no pagination</h2>
 <p class="p">Negative test case</p>
-<p class="p">Obtain DER data for a specific set of service points owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain DER data for a specific set of service points requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -5173,7 +5144,6 @@
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
@@ -5184,7 +5154,7 @@
 <div class="testcase">
 <a id="testcase-t.eas.032"></a><h2 class="h2">T.EAS.032: DH call to SDH: Get DER for Specific Service Points - with pagination</h2>
 <p class="p">Negative test case</p>
-<p class="p">Obtain DER data for a specific set of service points owned by the consumer that has authorised the current session</p>
+<p class="p">Obtain DER data for a specific set of service points requested by the DH</p>
 <h3 class="h3">Story:</h3>
 <h3 class="h3">References:</h3>
 <ul>
@@ -5203,15 +5173,14 @@
 </table>
 <h3 class="h3">End State Assertions:</h3>
 <ul>
-<li><a href="#assertion-a.cpg.001">A.CPG.001: Validate pagination - LinksPaginated </a></li>
 <li><a href="#assertion-a.cvn.001">A.CVN.001: Validate version - valid version number [x-v]</a></li>
 <li><a href="#assertion-a.cvm.001">A.CVM.001: Validate version - &lt;x-v-min&gt; is provided</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfa.004">A.CFA.004: No &lt;x-fapi-auth-date&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cfc.004">A.CFC.004: No &lt;x-fapi-customer-ip-address&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cch.004">A.CCH.004: No &lt;x-cds-client-header&gt; in header (SR specific)</a></li>
 <li><a href="#assertion-a.cai.001">A.CAI.001: CDS arrangement id - present and valid (SR specific)</a></li>
+<li><a href="#assertion-a.cpg.001">A.CPG.001: Validate pagination - LinksPaginated </a></li>
 <li><a href="#assertion-a.eas.008">A.EAS.008: Validate servicePointIdList body and schema - EnergyDerListResponse</a></li>
 </ul>
 </div>
@@ -5240,7 +5209,6 @@
 <ul>
 <li><a href="#assertion-a.cvn.004">A.CVN.004: Validate version - unsupported version without &lt;x-v-min&gt;</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
@@ -5271,7 +5239,6 @@
 <li><a href="#assertion-a.cpg.004">A.CPG.004: Validate pagination - Max record limit exceeded</a></li>
 <li><a href="#assertion-a.cpg.005">A.CPG.005: Validate pagination - Non-numeric &lt;page-size&gt;</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 </ul>
 </div>
 <div class="testcase">
@@ -5298,7 +5265,6 @@
 <h3 class="h3">End State Assertions:</h3>
 <ul>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.eas.009">A.EAS.009: Validate servicePointIdList - invalid body values</a></li>
 </ul>
 </div>
@@ -5325,7 +5291,6 @@
 <h3 class="h3">End State Assertions:</h3>
 <ul>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cbd.001">A.CBD.001: Validation of the POST body - malformed body</a></li>
 </ul>
 </div>
@@ -5353,7 +5318,6 @@
 <h3 class="h3">End State Assertions:</h3>
 <ul>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.eas.009">A.EAS.009: Validate servicePointIdList - invalid body values</a></li>
 </ul>
 </div>
@@ -5380,7 +5344,6 @@
 <h3 class="h3">End State Assertions:</h3>
 <ul>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cbd.001">A.CBD.001: Validation of the POST body - malformed body</a></li>
 </ul>
 </div>
@@ -5556,9 +5519,8 @@
 </table>
 <h3 class="h3">End State Assertions:</h3>
 <ul>
-<li><a href="#assertion-a.cai.002">A.CAI.002: CDS arrangement id - missing from header (SR specific)</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
+<li><a href="#assertion-a.cai.002">A.CAI.002: CDS arrangement id - missing from header (SR specific)</a></li>
 </ul>
 </div>
 <div class="testcase">
@@ -5583,9 +5545,8 @@
 </table>
 <h3 class="h3">End State Assertions:</h3>
 <ul>
-<li><a href="#assertion-a.cai.003">A.CAI.003: CDS arrangement id - present but invalid (SR specific)</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
+<li><a href="#assertion-a.cai.003">A.CAI.003: CDS arrangement id - present but invalid (SR specific)</a></li>
 </ul>
 </div>
 <div class="testcase">
@@ -5610,9 +5571,8 @@
 </table>
 <h3 class="h3">End State Assertions:</h3>
 <ul>
-<li><a href="#assertion-a.cai.002">A.CAI.002: CDS arrangement id - missing from header (SR specific)</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
+<li><a href="#assertion-a.cai.002">A.CAI.002: CDS arrangement id - missing from header (SR specific)</a></li>
 </ul>
 </div>
 <div class="testcase">
@@ -5637,9 +5597,8 @@
 </table>
 <h3 class="h3">End State Assertions:</h3>
 <ul>
-<li><a href="#assertion-a.cai.003">A.CAI.003: CDS arrangement id - present but invalid (SR specific)</a></li>
 <li><a href="#assertion-a.cfi.001">A.CFI.001: Validate FAPI Interation ID - included in request</a></li>
-<li><a href="#assertion-a.cfi.002">A.CFI.002: Validate FAPI Interaction ID - not in request</a></li>
+<li><a href="#assertion-a.cai.003">A.CAI.003: CDS arrangement id - present but invalid (SR specific)</a></li>
 </ul>
 </div>
 <div class="testcase">
@@ -7181,7 +7140,7 @@
 <a id="assertion-a.ear.005"></a><h2 class="h2">A.EAR.005: Validate service point and schema - EnergyUsageListResponse</h2>
 <h3 class="h3">References:</h3>
 <ul>
-<li><a href="https://consumerdatastandardsaustralia.github.io/standards/ - tocSenergyusagelistresponse">https://consumerdatastandardsaustralia.github.io/standards/ - tocSenergyusagelistresponse</a></li>
+<li><a href="https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse">https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse</a></li>
 </ul>
 <h3 class="h3">Severity:</h3>
 <p class="p">Critical (Test Fails)</p>
@@ -7402,7 +7361,7 @@
 <a id="assertion-a.eas.005"></a><h2 class="h2">A.EAS.005: Validate service point and schema - EnergyUsageListResponse</h2>
 <h3 class="h3">References:</h3>
 <ul>
-<li><a href="https://consumerdatastandardsaustralia.github.io/standards/ - tocSenergyusagelistresponse">https://consumerdatastandardsaustralia.github.io/standards/ - tocSenergyusagelistresponse</a></li>
+<li><a href="https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse">https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse</a></li>
 </ul>
 <h3 class="h3">Severity:</h3>
 <p class="p">Critical (Test Fails)</p>

@@ -627,8 +627,8 @@ function predicateInner(text: string): string {
 function processSpecialCharacters(text: string | undefined): string {
   let result = '';
   if (text){
-    result = text.replaceAll(">", '&gt;');
-    result = result.replaceAll("<", '&lt;');
+    result = text.replace(/>/g, '&gt;');
+    result = result.replace(/</g, '&lt;');
   }
   return result; 
 }
@@ -645,7 +645,7 @@ function processNewlines(text: string | undefined): string {
 function processNewlinesOnly(text: string | undefined): string {
   let result = '';
   if (text){
-    result = text.replaceAll("\n", '</br>');
+    result = text.replace(/\n/g, '</br>');
   }
   return result;
 }

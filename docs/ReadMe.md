@@ -5050,7 +5050,7 @@ Ensure that the endpoint returns version compatibility errors
 
 Negative test case
 
-Obtain a list of service points owned by the consumer that has authorised the current session
+Obtain a list of service points requested by the DH
 
 ### Story:
 
@@ -5076,7 +5076,6 @@ Obtain a list of service points owned by the consumer that has authorised the cu
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -5089,7 +5088,7 @@ Obtain a list of service points owned by the consumer that has authorised the cu
 
 Negative test case
 
-Obtain a paginated list of service points owned by the consumer that has authorised the current session
+Obtain a paginated list of service points requested by the DH
 
 ### Story:
 
@@ -5115,12 +5114,11 @@ Obtain a paginated list of service points owned by the consumer that has authori
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
-* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.CAI.001: CDS arrangement id - present and valid (SR specific)](#assertion-a.cai.001)
+* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.EAS.004: Validate schema - EnergyServicePointListReponse](#assertion-a.eas.004)
 
 
@@ -5155,7 +5153,6 @@ DH call to SDH: Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.004: Validate version - unsupported version without <x-v-min>](#assertion-a.cvn.004)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.004"></a>
@@ -5192,7 +5189,6 @@ Ensure that the endpoint returns pagination errors
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.005"></a>
@@ -5200,7 +5196,7 @@ Ensure that the endpoint returns pagination errors
 
 Negative test case
 
-Obtain the details of a service point owned by the consumer that has authorised the current session
+Obtain the details of a service point requested by the DH
 
 ### Story:
 
@@ -5227,7 +5223,6 @@ Obtain the details of a service point owned by the consumer that has authorised 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -5266,7 +5261,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.004: Validate version - unsupported version without <x-v-min>](#assertion-a.cvn.004)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.007"></a>
@@ -5285,7 +5279,7 @@ Ensure the endpoint returns servicePointId compatible errors
 
 ### Execution Pre-conditions:
 
-* The &lt;{servicePointId}&gt; is set in the Path to a value that is 
+* The &lt;{servicePointId}&gt; is set in the Path to a value that is invalid
 
 
 ### Execution Steps:
@@ -5298,7 +5292,6 @@ Ensure the endpoint returns servicePointId compatible errors
 ### End State Assertions:
 
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAS.002: Validate service point - invalid NMI value](#assertion-a.eas.002)
 
 
@@ -5331,7 +5324,6 @@ Ensure the endpoint returns servicePointId compatible errors
 ### End State Assertions:
 
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAS.003: Validate service point - unavailable NMI](#assertion-a.eas.003)
 
 
@@ -5340,7 +5332,7 @@ Ensure the endpoint returns servicePointId compatible errors
 
 Negative test case
 
-Obtain a list of electricity usage data from a particular service point owned by the consumer that has authorised the current session
+Obtain a list of electricity usage data from a particular service point requested by the DH
 
 ### Story:
 
@@ -5366,7 +5358,6 @@ Obtain a list of electricity usage data from a particular service point owned by
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -5379,7 +5370,7 @@ Obtain a list of electricity usage data from a particular service point owned by
 
 Negative test case
 
-Obtain a paginated list of electricity usage data from a particular service point owned by the consumer that has authorised the current session
+Obtain a paginated list of electricity usage data from a particular service requested by the DH
 
 ### Story:
 
@@ -5402,15 +5393,14 @@ Obtain a paginated list of electricity usage data from a particular service poin
 
 ### End State Assertions:
 
-* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
 * [A.CAI.001: CDS arrangement id - present and valid (SR specific)](#assertion-a.cai.001)
+* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.EAS.005: Validate service point and schema - EnergyUsageListResponse](#assertion-a.eas.005)
 
 
@@ -5445,7 +5435,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.004: Validate version - unsupported version without <x-v-min>](#assertion-a.cvn.004)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.012"></a>
@@ -5482,7 +5471,6 @@ Ensure that the endpoint returns pagination errors
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.013"></a>
@@ -5490,7 +5478,7 @@ Ensure that the endpoint returns pagination errors
 
 Negative test case
 
-Obtain a list of electricity usage data constrained by oldest date from a particular service point owned by the consumer that has authorised the current session
+Obtain a list of electricity usage data constrained by oldest date from a particular service point requested by the DH
 
 ### Story:
 
@@ -5518,12 +5506,11 @@ Obtain a list of electricity usage data constrained by oldest date from a partic
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
-* [A.COD.001: Validate the Oldest Date parameter - valid format](#assertion-a.cod.001)
 * [A.CAI.001: CDS arrangement id - present and valid (SR specific)](#assertion-a.cai.001)
+* [A.COD.001: Validate the Oldest Date parameter - valid format](#assertion-a.cod.001)
 * [A.EAS.005: Validate service point and schema - EnergyUsageListResponse](#assertion-a.eas.005)
 
 
@@ -5532,7 +5519,7 @@ Obtain a list of electricity usage data constrained by oldest date from a partic
 
 Negative test case
 
-Obtain a list of service points owned by the consumer that has authorised the current session
+Obtain a list of service points requested by the DH
 
 ### Story:
 
@@ -5559,12 +5546,11 @@ Obtain a list of service points owned by the consumer that has authorised the cu
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
-* [A.CND.001: Validate the Newest Date parameter - valid format](#assertion-a.cnd.001)
 * [A.CAI.001: CDS arrangement id - present and valid (SR specific)](#assertion-a.cai.001)
+* [A.CND.001: Validate the Newest Date parameter - valid format](#assertion-a.cnd.001)
 * [A.EAS.005: Validate service point and schema - EnergyUsageListResponse](#assertion-a.eas.005)
 
 
@@ -5597,7 +5583,6 @@ Ensure the endpoint returns servicePointId compatible errors
 ### End State Assertions:
 
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAS.002: Validate service point - invalid NMI value](#assertion-a.eas.002)
 
 
@@ -5630,7 +5615,6 @@ Ensure the endpoint returns servicePointId compatible errors
 ### End State Assertions:
 
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAS.003: Validate service point - unavailable NMI](#assertion-a.eas.003)
 
 
@@ -5664,7 +5648,6 @@ Ensure the endpoint returns servicePointId compatible errors
 
 * [A.COD.002: Validation the Oldest Date parameter - invalid format](#assertion-a.cod.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.018"></a>
@@ -5697,7 +5680,6 @@ Ensure the endpoint returns servicePointId compatible errors
 
 * [A.CND.002: Validation the Newest Date parameter - invalid format](#assertion-a.cnd.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.019"></a>
@@ -5705,7 +5687,7 @@ Ensure the endpoint returns servicePointId compatible errors
 
 Negative test case
 
-Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session
+Obtain the electricity usage data for a specific set of service points requested by the DH
 
 ### Story:
 
@@ -5731,7 +5713,6 @@ Obtain the electricity usage data for a specific set of service points owned by 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -5744,7 +5725,7 @@ Obtain the electricity usage data for a specific set of service points owned by 
 
 Negative test case
 
-Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session
+Obtain the electricity usage data for a specific set of service points requested by the DH
 
 ### Story:
 
@@ -5767,15 +5748,14 @@ Obtain the electricity usage data for a specific set of service points owned by 
 
 ### End State Assertions:
 
-* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
 * [A.CAI.001: CDS arrangement id - present and valid (SR specific)](#assertion-a.cai.001)
+* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.EAS.006: Validate servicePointIdList body and schema - EnergyUsageListResponse](#assertion-a.eas.006)
 
 
@@ -5810,7 +5790,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.004: Validate version - unsupported version without <x-v-min>](#assertion-a.cvn.004)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.022"></a>
@@ -5847,7 +5826,6 @@ Ensure that the endpoint returns pagination errors
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.023"></a>
@@ -5855,7 +5833,7 @@ Ensure that the endpoint returns pagination errors
 
 Positive test case
 
-Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session
+Obtain the electricity usage data for a specific set of service points requested by the DH
 
 ### Story:
 
@@ -5881,10 +5859,10 @@ Obtain the electricity usage data for a specific set of service points owned by 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
+* [A.CAI.001: CDS arrangement id - present and valid (SR specific)](#assertion-a.cai.001)
 * [A.COD.001: Validate the Oldest Date parameter - valid format](#assertion-a.cod.001)
 * [A.EAS.006: Validate servicePointIdList body and schema - EnergyUsageListResponse](#assertion-a.eas.006)
 
@@ -5894,7 +5872,7 @@ Obtain the electricity usage data for a specific set of service points owned by 
 
 Negative test case
 
-Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session
+Obtain the electricity usage data for a specific set of service points requested by the DH
 
 ### Story:
 
@@ -5920,12 +5898,11 @@ Obtain the electricity usage data for a specific set of service points owned by 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
-* [A.CND.001: Validate the Newest Date parameter - valid format](#assertion-a.cnd.001)
 * [A.CAI.001: CDS arrangement id - present and valid (SR specific)](#assertion-a.cai.001)
+* [A.CND.001: Validate the Newest Date parameter - valid format](#assertion-a.cnd.001)
 * [A.EAS.006: Validate servicePointIdList body and schema - EnergyUsageListResponse](#assertion-a.eas.006)
 
 
@@ -5959,7 +5936,6 @@ Ensure the endpoint returns oldest-date compatible errors
 
 * [A.COD.002: Validation the Oldest Date parameter - invalid format](#assertion-a.cod.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.026"></a>
@@ -5992,7 +5968,6 @@ Ensure the endpoint returns newest-date compatible errors
 
 * [A.CND.002: Validation the Newest Date parameter - invalid format](#assertion-a.cnd.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.027"></a>
@@ -6000,7 +5975,7 @@ Ensure the endpoint returns newest-date compatible errors
 
 Negative test case
 
-Obtain a list of DER data from a particular service point owned by the consumer that has authorised the current session
+Obtain a list of DER data from a particular service point requested by the DH
 
 ### Story:
 
@@ -6027,7 +6002,6 @@ Obtain a list of DER data from a particular service point owned by the consumer 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -6066,7 +6040,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.004: Validate version - unsupported version without <x-v-min>](#assertion-a.cvn.004)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.029"></a>
@@ -6098,7 +6071,6 @@ Ensure the endpoint returns servicePointId compatible errors
 ### End State Assertions:
 
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAS.002: Validate service point - invalid NMI value](#assertion-a.eas.002)
 
 
@@ -6131,7 +6103,6 @@ Ensure the endpoint returns servicePointId compatible errors
 ### End State Assertions:
 
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAS.003: Validate service point - unavailable NMI](#assertion-a.eas.003)
 
 
@@ -6140,7 +6111,7 @@ Ensure the endpoint returns servicePointId compatible errors
 
 Negative test case
 
-Obtain DER data for a specific set of service points owned by the consumer that has authorised the current session
+Obtain DER data for a specific set of service points requested by the DH
 
 ### Story:
 
@@ -6166,7 +6137,6 @@ Obtain DER data for a specific set of service points owned by the consumer that 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -6179,7 +6149,7 @@ Obtain DER data for a specific set of service points owned by the consumer that 
 
 Negative test case
 
-Obtain DER data for a specific set of service points owned by the consumer that has authorised the current session
+Obtain DER data for a specific set of service points requested by the DH
 
 ### Story:
 
@@ -6202,15 +6172,14 @@ Obtain DER data for a specific set of service points owned by the consumer that 
 
 ### End State Assertions:
 
-* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
 * [A.CAI.001: CDS arrangement id - present and valid (SR specific)](#assertion-a.cai.001)
+* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.EAS.008: Validate servicePointIdList body and schema - EnergyDerListResponse](#assertion-a.eas.008)
 
 
@@ -6245,7 +6214,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.004: Validate version - unsupported version without <x-v-min>](#assertion-a.cvn.004)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.034"></a>
@@ -6282,7 +6250,6 @@ Ensure that the endpoint returns pagination errors
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.035"></a>
@@ -6315,7 +6282,6 @@ Ensure that the endpoint returns body compatibility errors
 ### End State Assertions:
 
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAS.009: Validate servicePointIdList - invalid body values](#assertion-a.eas.009)
 
 
@@ -6348,7 +6314,6 @@ Ensure that the endpoint returns body compatibility errors
 ### End State Assertions:
 
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CBD.001: Validation of the POST body - malformed body](#assertion-a.cbd.001)
 
 
@@ -6382,7 +6347,6 @@ Ensure that the endpoint returns body compatibility errors
 ### End State Assertions:
 
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAS.009: Validate servicePointIdList - invalid body values](#assertion-a.eas.009)
 
 
@@ -6415,7 +6379,6 @@ Ensure that the endpoint returns body compatibility errors
 ### End State Assertions:
 
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CBD.001: Validation of the POST body - malformed body](#assertion-a.cbd.001)
 
 
@@ -6633,9 +6596,8 @@ Ensure that the endpoint returns arrangement id errors
 
 ### End State Assertions:
 
-* [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
 
 
 <a id="testcase-t.eas.046"></a>
@@ -6666,9 +6628,8 @@ Ensure that the endpoint returns arrangement id errors
 
 ### End State Assertions:
 
-* [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
 
 
 <a id="testcase-t.eas.047"></a>
@@ -6699,9 +6660,8 @@ Ensure that the endpoint returns arrangement id errors
 
 ### End State Assertions:
 
-* [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
 
 
 <a id="testcase-t.eas.048"></a>
@@ -6732,9 +6692,8 @@ Ensure that the endpoint returns arrangement id errors
 
 ### End State Assertions:
 
-* [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
 
 
 <a id="testcase-t.eas.049"></a>
@@ -8504,7 +8463,7 @@ Critical (Test Fails)
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/ - tocSenergyusagelistresponse](https://consumerdatastandardsaustralia.github.io/standards/ - tocSenergyusagelistresponse)
+* [https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse](https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse)
 
 
 ### Severity:
@@ -8736,7 +8695,7 @@ Critical (Test Fails)
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/ - tocSenergyusagelistresponse](https://consumerdatastandardsaustralia.github.io/standards/ - tocSenergyusagelistresponse)
+* [https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse)
 
 
 ### Severity:
