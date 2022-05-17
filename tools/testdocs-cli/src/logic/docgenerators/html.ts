@@ -250,8 +250,8 @@ function generateTestCasesSection(testDocs: ConsumerDataRightTestCaseJSONSchema)
       result += text(testCase.negative ? 'Negative test case' : 'Positive test case');
       result += text(processNewlines(testCase.description));
 
-      result += header3('Story:');
-      result += text(processNewlines(testCase.story));
+      result += header3('Purpose:');
+      result += text(processNewlines(testCase.purpose));
 
       if (testCase.references && testCase.references.length > 0) {
         result += header3('References:');

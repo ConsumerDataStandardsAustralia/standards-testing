@@ -222,7 +222,7 @@ export interface TestCase {
   /**
    * A description of the test case defined as a testable story in 'As A... I Want... Such That...' format
    */
-  story?: string;
+  purpose?: string;
   /**
    * An array of conditions that must be met before the test case is executed
    */

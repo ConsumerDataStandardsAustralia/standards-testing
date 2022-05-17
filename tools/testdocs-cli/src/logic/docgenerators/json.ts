@@ -33,6 +33,7 @@ const TEST_ID_INDEX: number = 1;
 const TEST_TITLE_INDEX: number = 4;
 const TEST_REFERENCE_INDEX: number = 5;
 const TEST_POLARITY_INDEX: number = 6;
+const TEST_PURPOSE_INDEX: number = 7;
 const TEST_PRECONDITION_INDEX: number = 8;
 const TEST_DESCRIPTION_INDEX: number = 9;
 const TEST_STEP_TYPE_INDEX: number = 10;
@@ -393,7 +394,8 @@ function processFirstTestLine(header: Array<string>): TestCase {
     description: header[TEST_DESCRIPTION_INDEX],
     references: processReferences(header[TEST_REFERENCE_INDEX], header[TEST_ID_INDEX]),
     negative: header[TEST_POLARITY_INDEX] == 'TRUE'? true: false,
-    preConditions: processPreConditions(header[TEST_PRECONDITION_INDEX], header[TEST_ID_INDEX]),
+    preConditions: processMultiLineString(header[TEST_PRECONDITION_INDEX], header[TEST_ID_INDEX]),
+    purpose: FixString(header[TEST_PURPOSE_INDEX]),
     steps: [],
     assertions: cleanAssertion
   }
@@ -439,7 +441,7 @@ function processFirstScenarioLine(header: Array<string>): Scenario {
 }
 
 
-function processPreConditions(preconditions: string, id: string): Array<string> {
+function processMultiLineString(preconditions: string, id: string): Array<string> {
   if (preconditions == null || preconditions =='')
       return [];
   preconditions = FixString(preconditions);
@@ -447,6 +449,7 @@ function processPreConditions(preconditions: string, id: string): Array<string> 
   returnArray= preconditions.split('\n');
   return returnArray;
 }
+
 
 function cleanStringOfDoubleQuotes(strIn: string): string {
   let idx: number = strIn.indexOf('""');
