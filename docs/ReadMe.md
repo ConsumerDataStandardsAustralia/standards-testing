@@ -4,15 +4,150 @@
 
 File version: 1.0.0
 
-Compliant with CDR standards version 1.16.0
+Compliant with CDR standards version 1.16.1
 
 This documentation has been  created by the DSB to assist participants in the development of compliant APIs
 
 <a id="suites"></a>
 # Test Suites
 
+<a id="suite-suite.001"></a>
+## SUITE.001: APIs - Banking PRD
+
+### Test Scenarios:
+
+* [S.BAP.001: Get Products](#scenario-s.bap.001)
+* [S.BAP.002: Get Products Negative ](#scenario-s.bap.002)
+* [S.BAP.003: Get Product Detail](#scenario-s.bap.003)
+* [S.BAP.004: Get Product Detail Negative](#scenario-s.bap.004)
+
+
+<a id="suite-suite.002"></a>
+## SUITE.002: APIs - Banking Accounts
+
+### Test Scenarios:
+
+* [S.BAA.005: Get Accounts](#scenario-s.baa.005)
+* [S.BAA.006: Get Accounts Negative](#scenario-s.baa.006)
+* [S.BAA.007: Get Bulk Balances](#scenario-s.baa.007)
+* [S.BAA.008: Get Bulk Balances Negative](#scenario-s.baa.008)
+* [S.BAA.009: Get Balances for Specific Accounts](#scenario-s.baa.009)
+* [S.BAA.010: Get Balances for Specific Accounts Negative](#scenario-s.baa.010)
+* [S.BAA.011: Get Account Balance](#scenario-s.baa.011)
+* [S.BAA.012: Get Account Balance Negative](#scenario-s.baa.012)
+* [S.BAA.013: Get Account Detail](#scenario-s.baa.013)
+* [S.BAA.014: Get Account Detail Negative](#scenario-s.baa.014)
+* [S.BAA.015: Get Direct Debits for Account](#scenario-s.baa.015)
+* [S.BAA.016: Get Direct Debits for Account Negative](#scenario-s.baa.016)
+* [S.BAA.017: Get Bulk Direct Debits](#scenario-s.baa.017)
+* [S.BAA.018: Get Bulk Direct Debits Negative](#scenario-s.baa.018)
+* [S.BAA.019: Get Direct Debits for Specific Accounts](#scenario-s.baa.019)
+* [S.BAA.020: Get Direct Debits for Specific Accounts Negative](#scenario-s.baa.020)
+
+
+<a id="suite-suite.003"></a>
+## SUITE.003: APIs - Banking Transactions
+
+### Test Scenarios:
+
+* [S.BAT.021: Get Transactions For Account](#scenario-s.bat.021)
+* [S.BAT.022: Get Transactions For Account Negative](#scenario-s.bat.022)
+* [S.BAT.023: Get Transaction Detail](#scenario-s.bat.023)
+* [S.BAT.024: Get Transaction Detail Negative](#scenario-s.bat.024)
+
+
+<a id="suite-suite.004"></a>
+## SUITE.004: APIs - Banking Scheduled Payments and Payees
+
+### Test Scenarios:
+
+* [S.BAS.025: Get Scheduled Payments For Account](#scenario-s.bas.025)
+* [S.BAS.026: Get Scheduled Payments For Account Negative](#scenario-s.bas.026)
+* [S.BAS.027: Get Scheduled Payments Bulk](#scenario-s.bas.027)
+* [S.BAS.028: Get Scheduled Payments Bulk Negative](#scenario-s.bas.028)
+* [S.BAS.029: Get Scheduled Payments For Specific Account](#scenario-s.bas.029)
+* [S.BAS.030: Get Scheduled Payments For Specific Account Negative](#scenario-s.bas.030)
+* [S.BAS.031: Get Payees](#scenario-s.bas.031)
+* [S.BAS.032: Get Payees Negative](#scenario-s.bas.032)
+* [S.BAS.033: Get Payee Detail](#scenario-s.bas.033)
+* [S.BAS.034: Get Payee Detail Negative](#scenario-s.bas.034)
+
+
+<a id="suite-suite.005"></a>
+## SUITE.005: APIs - Common Admin
+
+### Test Scenarios:
+
+* [S.AAA.035: Get status](#scenario-s.aaa.035)
+* [S.AAA.036: Get status Negative](#scenario-s.aaa.036)
+* [S.AAA.037: Get outages](#scenario-s.aaa.037)
+* [S.AAA.038: Get outages Negative](#scenario-s.aaa.038)
+
+
+<a id="suite-suite.006"></a>
+## SUITE.006: APIs - Common Customer
+
+### Test Scenarios:
+
+* [S.CAC.039: Get customer](#scenario-s.cac.039)
+* [S.CAC.040: Get customer Negative](#scenario-s.cac.040)
+* [S.CAC.041: Get customer detail](#scenario-s.cac.041)
+* [S.CAC.042: Get customer detail Negative](#scenario-s.cac.042)
+
+
+<a id="suite-suite.007"></a>
+## SUITE.007: APIs - Energy Tariffs
+
+### Test Scenarios:
+
+* [S.EAP.043: Get Generic Plans](#scenario-s.eap.043)
+* [S.EAP.044: Get Generic Plans Negative](#scenario-s.eap.044)
+* [S.EAP.045: Get Generic Plan Detail](#scenario-s.eap.045)
+* [S.EAP.046: Get Generic Plan Detail Negative](#scenario-s.eap.046)
+
+
+<a id="suite-suite.008"></a>
+## SUITE.008: APIs - Energy Accounts
+
+### Test Scenarios:
+
+* [S.EAA.047: Get Energy Accounts](#scenario-s.eaa.047)
+* [S.EAA.048: Get Energy Accounts Negative](#scenario-s.eaa.048)
+* [S.EAA.049: Get Energy Account Detail](#scenario-s.eaa.049)
+* [S.EAA.050: Get Energy Account Detail Negative](#scenario-s.eaa.050)
+* [S.EAA.051: Get Agreed Payment Schedule](#scenario-s.eaa.051)
+* [S.EAA.052: Get Agreed Payment Schedule Negative](#scenario-s.eaa.052)
+* [S.EAA.053: Get Concessions](#scenario-s.eaa.053)
+* [S.EAA.054: Get Concessions Negative](#scenario-s.eaa.054)
+
+
+<a id="suite-suite.009"></a>
+## SUITE.009: APIs - Energy Invoices and Billing
+
+### Test Scenarios:
+
+* [S.EAB.055: Get Balance For Energy Account](#scenario-s.eab.055)
+* [S.EAB.056: Get Balance For Energy Account Negative](#scenario-s.eab.056)
+* [S.EAB.057: Get Bulk Balances For Energy](#scenario-s.eab.057)
+* [S.EAB.058: Get Bulk Balances For Energy Negative](#scenario-s.eab.058)
+* [S.EAB.059: Get Balances For Specific Energy Accounts](#scenario-s.eab.059)
+* [S.EAB.060: Get Balances For Specific Energy Accounts Negative](#scenario-s.eab.060)
+* [S.EAB.061: Get Invoices For Account](#scenario-s.eab.061)
+* [S.EAB.062: Get Invoices For Account Negative](#scenario-s.eab.062)
+* [S.EAB.063: Get Bulk Invoices](#scenario-s.eab.063)
+* [S.EAB.064: Get Bulk Invoices Negative](#scenario-s.eab.064)
+* [S.EAB.065: Get Invoices For Specific Accounts](#scenario-s.eab.065)
+* [S.EAB.066: Get Invoices For Specific Accounts Negative](#scenario-s.eab.066)
+* [S.EAB.067: Get Billing For Account](#scenario-s.eab.067)
+* [S.EAB.068: Get Billing For Account Negative](#scenario-s.eab.068)
+* [S.EAB.069: Get Bulk Billing](#scenario-s.eab.069)
+* [S.EAB.070: Get Bulk Billing Negative](#scenario-s.eab.070)
+* [S.EAB.071: Get Billing For Specific Accounts](#scenario-s.eab.071)
+* [S.EAB.072: Get Billing For Specific Accounts Negative](#scenario-s.eab.072)
+
+
 <a id="suite-suite.010"></a>
-## SUITE.010: APIs - Energy Shared Responsibility ADR-DH
+## SUITE.010: APIs - Energy Standing Data, Usage and DER
 
 ### Test Scenarios:
 
@@ -35,26 +170,38 @@ This documentation has been  created by the DSB to assist participants in the de
 
 
 <a id="suite-suite.011"></a>
-## SUITE.011: APIs - Energy Shared Responsibility DH-SDH
+## SUITE.011: APIs - Energy Standing Data, Usage and DER SR
 
 ### Test Scenarios:
 
-* [S.EAS.089: Get Service Points SDH](#scenario-s.eas.089)
-* [S.EAS.090: Get Service Points Negative SDH](#scenario-s.eas.090)
-* [S.EAS.091: Get Service Point Detail SDH](#scenario-s.eas.091)
-* [S.EAS.092: Get Service Point Detail Negative SDH](#scenario-s.eas.092)
-* [S.EAS.093: Get Usage For Service Point SDH](#scenario-s.eas.093)
-* [S.EAS.094: Get Usage For Service Point Negative SDH](#scenario-s.eas.094)
-* [S.EAS.095: Get Usage For Specific Service Points SDH](#scenario-s.eas.095)
-* [S.EAS.096: Get Usage For Specific Service Points Negative SDH](#scenario-s.eas.096)
-* [S.EAS.097: Get DER for Service Point SDH](#scenario-s.eas.097)
-* [S.EAS.098: Get DER for Service Point Negative SDH](#scenario-s.eas.098)
-* [S.EAS.099: Get DER For Specific Service Points SDH](#scenario-s.eas.099)
-* [S.EAS.100: Get DER For Specific Service Points Negative SDH](#scenario-s.eas.100)
+* [S.EAS.089: Get Service Points SR](#scenario-s.eas.089)
+* [S.EAS.090: Get Service Points Negative SR](#scenario-s.eas.090)
+* [S.EAS.091: Get Service Point Detail SR](#scenario-s.eas.091)
+* [S.EAS.092: Get Service Point Detail Negative SR](#scenario-s.eas.092)
+* [S.EAS.093: Get Usage For Service Point SR](#scenario-s.eas.093)
+* [S.EAS.094: Get Usage For Service Point Negative SR](#scenario-s.eas.094)
+* [S.EAS.095: Get Usage For Specific Service Points SR](#scenario-s.eas.095)
+* [S.EAS.096: Get Usage For Specific Service Points Negative SR](#scenario-s.eas.096)
+* [S.EAS.097: Get DER for Service Point SR](#scenario-s.eas.097)
+* [S.EAS.098: Get DER for Service Point Negative SR](#scenario-s.eas.098)
+* [S.EAS.099: Get DER For Specific Service Points SR](#scenario-s.eas.099)
+* [S.EAS.100: Get DER For Specific Service Points Negative SR](#scenario-s.eas.100)
 
 
 <a id="scenarios"></a>
 # Test Scenarios
+
+<a id="scenario-s.baa.005"></a>
+## S.BAA.005: Get Accounts
+
+Test the Get Accounts endpoint
+
+### Testing Sequence:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Setup|Authentication|
+
 
 <a id="scenario-s.ear.073"></a>
 ## S.EAR.073: Get Service Points
@@ -357,7 +504,7 @@ Test cases which will return codes other than 2xx
 
 
 <a id="scenario-s.eas.089"></a>
-## S.EAS.089: Get Service Points SDH
+## S.EAS.089: Get Service Points SR
 
 Test the Happy Path for Get Service Points
 
@@ -375,7 +522,7 @@ Test the Happy Path for Get Service Points
 
 
 <a id="scenario-s.eas.090"></a>
-## S.EAS.090: Get Service Points Negative SDH
+## S.EAS.090: Get Service Points Negative SR
 
 Test errors and edge cases for Get Service Points 
 
@@ -396,10 +543,13 @@ Test errors and edge cases for Get Service Points
 |6|Execute Test|[T.EAS.057: DH call to SDH: Get Service Points - invalid version value](#testcase-t.eas.057)|
 |7|Execute Test|[T.EAS.058: DH call to SDH: Get Service Points - invalid version format](#testcase-t.eas.058)|
 |8|Execute Test|[T.EAS.069: DH call to SDH: Get Service Points - unsupported version when x-v-min is included](#testcase-t.eas.069)|
+|9|Execute Test|[T.EAS.075: DH call to SDH: Get Service Points - missing servicePointId in body](#testcase-t.eas.075)|
+|10|Execute Test|[T.EAS.076: DH call to SDH: Get Service Points - invalid servicePointId in body](#testcase-t.eas.076)|
+|11|Execute Test|[T.EAS.077: DH call to SDH: Get Service Points - unavailable servicePointId in body](#testcase-t.eas.077)|
 
 
 <a id="scenario-s.eas.091"></a>
-## S.EAS.091: Get Service Point Detail SDH
+## S.EAS.091: Get Service Point Detail SR
 
 ### Testing Sequence:
 
@@ -409,7 +559,7 @@ Test errors and edge cases for Get Service Points
 
 
 <a id="scenario-s.eas.092"></a>
-## S.EAS.092: Get Service Point Detail Negative SDH
+## S.EAS.092: Get Service Point Detail Negative SR
 
 ### Testing Sequence:
 
@@ -427,7 +577,7 @@ Test errors and edge cases for Get Service Points
 
 
 <a id="scenario-s.eas.093"></a>
-## S.EAS.093: Get Usage For Service Point SDH
+## S.EAS.093: Get Usage For Service Point SR
 
 ### Testing Sequence:
 
@@ -439,7 +589,7 @@ Test errors and edge cases for Get Service Points
 
 
 <a id="scenario-s.eas.094"></a>
-## S.EAS.094: Get Usage For Service Point Negative SDH
+## S.EAS.094: Get Usage For Service Point Negative SR
 
 ### Testing Sequence:
 
@@ -461,7 +611,7 @@ Test errors and edge cases for Get Service Points
 
 
 <a id="scenario-s.eas.095"></a>
-## S.EAS.095: Get Usage For Specific Service Points SDH
+## S.EAS.095: Get Usage For Specific Service Points SR
 
 ### Testing Sequence:
 
@@ -469,11 +619,12 @@ Test errors and edge cases for Get Service Points
 |-|-|-|
 |1|Execute Test|[T.EAS.019: DH call to SDH: Get Usage for Specific Service Points - no pagination](#testcase-t.eas.019)|
 |2|Execute Test|[T.EAS.020: DH call to SDH: Get Usage for Specific Service Points - with pagination](#testcase-t.eas.020)|
-|3|Execute Test|[T.EAS.024: DH call to SDH: Get Usage for Specific Service Points - newest date](#testcase-t.eas.024)|
+|3|Execute Test|[T.EAS.023: DH call to SDH: Get Usage for Specific Service Points - oldest date](#testcase-t.eas.023)|
+|4|Execute Test|[T.EAS.024: DH call to SDH: Get Usage for Specific Service Points - newest date](#testcase-t.eas.024)|
 
 
 <a id="scenario-s.eas.096"></a>
-## S.EAS.096: Get Usage For Specific Service Points Negative SDH
+## S.EAS.096: Get Usage For Specific Service Points Negative SR
 
 ### Testing Sequence:
 
@@ -481,31 +632,30 @@ Test errors and edge cases for Get Service Points
 |-|-|-|
 |1|Execute Test|[T.EAS.021: DH call to SDH: Get Usage for Specific Service Points - unsupported version without x-v-min included](#testcase-t.eas.021)|
 |2|Execute Test|[T.EAS.022: DH call to SDH: Get Usage for Specific Service Points - invalid page parameters](#testcase-t.eas.022)|
-|3|Execute Test|[T.EAS.023: DH call to SDH: Get Usage for Specific Service Points - oldest date](#testcase-t.eas.023)|
-|4|Execute Test|[T.EAS.025: DH call to SDH: Get Usage for Specific Service Points - invalid format oldest date ](#testcase-t.eas.025)|
-|5|Execute Test|[T.EAS.026: DH call to SDH: Get Usage for Specific Service Points - invalid format newest date](#testcase-t.eas.026)|
-|6|Execute Test|[T.EAS.037: DH call to SDH: Get Usage for Specific Service Points - invalid body values](#testcase-t.eas.037)|
-|7|Execute Test|[T.EAS.038: DH call to SDH: Get Usage for Specific Service Points - invalid body format](#testcase-t.eas.038)|
-|8|Execute Test|[T.EAS.042: DH call to SDH: Get Usage For Specific Service Points - invalid FAPI Interaction ID format](#testcase-t.eas.042)|
-|9|Execute Test|[T.EAS.051: DH call to SDH: Get Usage For Specific Service Points - no arragement id ](#testcase-t.eas.051)|
-|10|Execute Test|[T.EAS.052: DH call to SDH: Get Usage For Specific Service Points - arrangement ID invalid](#testcase-t.eas.052)|
-|11|Execute Test|[T.EAS.063: DH call to SDH: Get Usage For Specific Service Points - invalid version value](#testcase-t.eas.063)|
-|12|Execute Test|[T.EAS.064: DH call to SDH: Get Usage For Specific Service Points - invalid version format](#testcase-t.eas.064)|
-|13|Execute Test|[T.EAS.072: DH call to SDH: Get Usage for Specific Service Points - unsupported version when x-v-min is included](#testcase-t.eas.072)|
+|3|Execute Test|[T.EAS.025: DH call to SDH: Get Usage for Specific Service Points - invalid format oldest date ](#testcase-t.eas.025)|
+|4|Execute Test|[T.EAS.026: DH call to SDH: Get Usage for Specific Service Points - invalid format newest date](#testcase-t.eas.026)|
+|5|Execute Test|[T.EAS.037: DH call to SDH: Get Usage for Specific Service Points - invalid body values](#testcase-t.eas.037)|
+|6|Execute Test|[T.EAS.038: DH call to SDH: Get Usage for Specific Service Points - invalid body format](#testcase-t.eas.038)|
+|7|Execute Test|[T.EAS.042: DH call to SDH: Get Usage For Specific Service Points - invalid FAPI Interaction ID format](#testcase-t.eas.042)|
+|8|Execute Test|[T.EAS.051: DH call to SDH: Get Usage For Specific Service Points - no arragement id ](#testcase-t.eas.051)|
+|9|Execute Test|[T.EAS.052: DH call to SDH: Get Usage For Specific Service Points - arrangement ID invalid](#testcase-t.eas.052)|
+|10|Execute Test|[T.EAS.063: DH call to SDH: Get Usage For Specific Service Points - invalid version value](#testcase-t.eas.063)|
+|11|Execute Test|[T.EAS.064: DH call to SDH: Get Usage For Specific Service Points - invalid version format](#testcase-t.eas.064)|
+|12|Execute Test|[T.EAS.072: DH call to SDH: Get Usage for Specific Service Points - unsupported version when x-v-min is included](#testcase-t.eas.072)|
 
 
 <a id="scenario-s.eas.097"></a>
-## S.EAS.097: Get DER for Service Point SDH
+## S.EAS.097: Get DER for Service Point SR
 
 ### Testing Sequence:
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Execute Test|[T.EAS.027: DH call to SDH: Get DER for Service Point ](#testcase-t.eas.027)|
+|1|Execute Test|[T.EAS.027](#testcase-t.eas.027)|
 
 
 <a id="scenario-s.eas.098"></a>
-## S.EAS.098: Get DER for Service Point Negative SDH
+## S.EAS.098: Get DER for Service Point Negative SR
 
 ### Testing Sequence:
 
@@ -523,7 +673,7 @@ Test errors and edge cases for Get Service Points
 
 
 <a id="scenario-s.eas.099"></a>
-## S.EAS.099: Get DER For Specific Service Points SDH
+## S.EAS.099: Get DER For Specific Service Points SR
 
 ### Testing Sequence:
 
@@ -534,7 +684,7 @@ Test errors and edge cases for Get Service Points
 
 
 <a id="scenario-s.eas.100"></a>
-## S.EAS.100: Get DER For Specific Service Points Negative SDH
+## S.EAS.100: Get DER For Specific Service Points Negative SR
 
 ### Testing Sequence:
 
@@ -562,7 +712,9 @@ Negative test case
 
 Obtain a list of service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -600,7 +752,9 @@ Negative test case
 
 Obtain a paginated list of service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API with pagination partameters
 
 ### References:
 
@@ -638,7 +792,9 @@ Positive test case
 
 DH call to SDH: Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -671,7 +827,9 @@ Positive test case
 
 Ensure that the endpoint returns pagination errors
 
-### Story:
+### Purpose:
+
+Test API with invalid pagination parameters
 
 ### References:
 
@@ -708,7 +866,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Interaction ID errors
 
-### Story:
+### Purpose:
+
+Test API where FAPI Interaction ID format is invalid
 
 ### References:
 
@@ -739,7 +899,9 @@ Negative test case
 
 Obtain the details of a service point owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API with a vaild service point and version
 
 ### References:
 
@@ -778,7 +940,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -812,7 +976,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an invalid servicePointId
 
 ### References:
 
@@ -845,7 +1011,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an unavailable servicePointId
 
 ### References:
 
@@ -878,7 +1046,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Interaction ID errors
 
-### Story:
+### Purpose:
+
+Test API where FAPI Interaction ID fomat is invalid
 
 ### References:
 
@@ -909,7 +1079,9 @@ Negative test case
 
 Obtain a list of electricity usage data from a particular service point owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -947,7 +1119,9 @@ Negative test case
 
 Obtain a paginated list of electricity usage data from a particular service point owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API with pagination partameters
 
 ### References:
 
@@ -985,7 +1159,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -1018,7 +1194,9 @@ Positive test case
 
 Ensure that the endpoint returns pagination errors
 
-### Story:
+### Purpose:
+
+Test API with invalid pagination parameters
 
 ### References:
 
@@ -1055,7 +1233,9 @@ Negative test case
 
 Obtain a list of electricity usage data constrained by oldest date from a particular service point owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API with &lt;oldest date&gt; parameter
 
 ### References:
 
@@ -1096,7 +1276,9 @@ Negative test case
 
 Obtain a list of service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -1136,7 +1318,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an invalid servicePointId
 
 ### References:
 
@@ -1169,7 +1353,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an unavailable servicePointId
 
 ### References:
 
@@ -1202,7 +1388,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with &lt;oldest date&gt;  parameter
 
 ### References:
 
@@ -1235,7 +1423,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -1268,7 +1458,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Interaction ID errors
 
-### Story:
+### Purpose:
+
+Test API where FAPI Interaction ID fomat is invalid
 
 ### References:
 
@@ -1299,7 +1491,9 @@ Negative test case
 
 Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -1337,7 +1531,9 @@ Negative test case
 
 Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API with pagination partameters
 
 ### References:
 
@@ -1375,7 +1571,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -1408,7 +1606,9 @@ Positive test case
 
 Ensure that the endpoint returns pagination errors
 
-### Story:
+### Purpose:
+
+Test API with invalid pagination parameters
 
 ### References:
 
@@ -1445,7 +1645,9 @@ Negative test case
 
 Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API with oldest date parameter
 
 ### References:
 
@@ -1484,7 +1686,9 @@ Negative test case
 
 Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -1523,7 +1727,9 @@ Positive test case
 
 Ensure the endpoint returns oldest-date compatible errors
 
-### Story:
+### Purpose:
+
+Test API with oldest date parameter
 
 ### References:
 
@@ -1556,7 +1762,9 @@ Positive test case
 
 Ensure the endpoint returns newest-date compatible errors
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -1589,7 +1797,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Interaction ID errors
 
-### Story:
+### Purpose:
+
+Test API where FAPI Interaction ID fomat is invalid
 
 ### References:
 
@@ -1620,7 +1830,9 @@ Positive test case
 
 Ensure that the endpoint returns body compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid body values
 
 ### References:
 
@@ -1654,7 +1866,9 @@ Positive test case
 
 Ensure that the endpoint returns body compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a malformed body
 
 ### References:
 
@@ -1687,7 +1901,9 @@ Negative test case
 
 Obtain a list of DER data from a particular service point owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API with a vaild service point and version
 
 ### References:
 
@@ -1726,7 +1942,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -1760,7 +1978,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an invalid servicePointId
 
 ### References:
 
@@ -1793,7 +2013,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an unavailable servicePointId
 
 ### References:
 
@@ -1826,7 +2048,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Interaction ID errors
 
-### Story:
+### Purpose:
+
+Test API where FAPI Interaction ID fomat is invalid
 
 ### References:
 
@@ -1857,7 +2081,9 @@ Negative test case
 
 Obtain DER data for a specific set of service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -1895,7 +2121,9 @@ Negative test case
 
 Obtain DER data for a specific set of service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API with pagination partameters
 
 ### References:
 
@@ -1933,7 +2161,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -1967,7 +2197,9 @@ Positive test case
 
 Ensure that the endpoint returns pagination errors
 
-### Story:
+### Purpose:
+
+Test API with invalid pagination parameters
 
 ### References:
 
@@ -2004,7 +2236,9 @@ Positive test case
 
 Ensure that the endpoint returns body compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid body values
 
 ### References:
 
@@ -2038,7 +2272,9 @@ Positive test case
 
 Ensure that the endpoint returns body compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a malformed body
 
 ### References:
 
@@ -2071,7 +2307,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Interaction ID errors
 
-### Story:
+### Purpose:
+
+Test API where FAPI Interaction ID fomat is invalid
 
 ### References:
 
@@ -2102,7 +2340,9 @@ Negative test case
 
 Obtain the electricity usage data for all service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -2140,7 +2380,9 @@ Negative test case
 
 Obtain the electricity usage data for all service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API with pagination partameters
 
 ### References:
 
@@ -2178,7 +2420,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -2211,7 +2455,9 @@ Positive test case
 
 Ensure that the endpoint returns pagination errors
 
-### Story:
+### Purpose:
+
+Test API with invalid pagination parameters
 
 ### References:
 
@@ -2248,7 +2494,9 @@ Negative test case
 
 Obtain the electricity usage data for all service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API with oldest date parameter
 
 ### References:
 
@@ -2287,7 +2535,9 @@ Negative test case
 
 Obtain the electricity usage data for all service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -2326,7 +2576,9 @@ Positive test case
 
 Ensure the endpoint returns oldest-date compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an invalid oldest date parameter
 
 ### References:
 
@@ -2359,7 +2611,9 @@ Positive test case
 
 Ensure the endpoint returns newest-date compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an invalid newest date parameter
 
 ### References:
 
@@ -2392,7 +2646,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Interaction ID errors
 
-### Story:
+### Purpose:
+
+Test API where FAPI Interaction ID fomat is invalid
 
 ### References:
 
@@ -2423,7 +2679,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is missing from the header
 
 ### References:
 
@@ -2456,7 +2714,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is present but the format is invalid
 
 ### References:
 
@@ -2489,7 +2749,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is missing from the header
 
 ### References:
 
@@ -2522,7 +2784,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### References:
 
@@ -2555,7 +2819,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is missing from the header
 
 ### References:
 
@@ -2588,7 +2854,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is present but the format is invalid
 
 ### References:
 
@@ -2621,7 +2889,9 @@ Negative test case
 
 Obtain the electricity usage data for all service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -2659,7 +2929,9 @@ Negative test case
 
 Obtain the electricity usage data for all service points owned by the consumer that has authorised the current session
 
-### Story:
+### Purpose:
+
+Test API with pagination partameters
 
 ### References:
 
@@ -2697,7 +2969,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -2730,7 +3004,9 @@ Positive test case
 
 Ensure that the endpoint returns pagination errors
 
-### Story:
+### Purpose:
+
+Test API with invalid pagination parameters
 
 ### References:
 
@@ -2767,7 +3043,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is missing from the header
 
 ### References:
 
@@ -2800,7 +3078,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is present but the format is invalid
 
 ### References:
 
@@ -2833,7 +3113,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is missing from the header
 
 ### References:
 
@@ -2866,7 +3148,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### References:
 
@@ -2899,7 +3183,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is missing from the header
 
 ### References:
 
@@ -2932,7 +3218,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is present but the format is invalid
 
 ### References:
 
@@ -2965,7 +3253,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is present but the format is invalid
 
 ### References:
 
@@ -2998,7 +3288,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is missing from the header
 
 ### References:
 
@@ -3031,7 +3323,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### References:
 
@@ -3064,7 +3358,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is missing from the header
 
 ### References:
 
@@ -3097,7 +3393,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is present but the format is invalid
 
 ### References:
 
@@ -3130,7 +3428,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is missing from the header
 
 ### References:
 
@@ -3163,7 +3463,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### References:
 
@@ -3196,7 +3498,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is missing from the header
 
 ### References:
 
@@ -3229,7 +3533,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is present but the format is invalid
 
 ### References:
 
@@ -3262,7 +3568,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is missing from the header
 
 ### References:
 
@@ -3295,7 +3603,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is present but the format is invalid
 
 ### References:
 
@@ -3328,7 +3638,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is missing from the header
 
 ### References:
 
@@ -3361,7 +3673,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### References:
 
@@ -3394,7 +3708,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is missing from the header
 
 ### References:
 
@@ -3427,7 +3743,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is present but the format is invalid
 
 ### References:
 
@@ -3460,7 +3778,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is missing from the header
 
 ### References:
 
@@ -3493,7 +3813,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is present but the format is invalid
 
 ### References:
 
@@ -3526,7 +3848,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is missing from the header
 
 ### References:
 
@@ -3559,7 +3883,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### References:
 
@@ -3592,7 +3918,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is missing from the header
 
 ### References:
 
@@ -3625,7 +3953,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is present but the format is invalid
 
 ### References:
 
@@ -3658,7 +3988,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is missing from the header
 
 ### References:
 
@@ -3691,7 +4023,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is present but the format is invalid
 
 ### References:
 
@@ -3724,7 +4058,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is missing from the header
 
 ### References:
 
@@ -3757,7 +4093,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### References:
 
@@ -3790,7 +4128,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is missing from the header
 
 ### References:
 
@@ -3823,7 +4163,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is present but the format is invalid
 
 ### References:
 
@@ -3856,7 +4198,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is missing from the header
 
 ### References:
 
@@ -3889,7 +4233,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is present but the format is invalid
 
 ### References:
 
@@ -3922,7 +4268,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is missing from the header
 
 ### References:
 
@@ -3955,7 +4303,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### References:
 
@@ -3988,7 +4338,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is missing from the header
 
 ### References:
 
@@ -4021,7 +4373,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is present but the format is invalid
 
 ### References:
 
@@ -4054,7 +4408,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is missing from the header
 
 ### References:
 
@@ -4087,7 +4443,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Auth date errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Auth date is present but the format is invalid
 
 ### References:
 
@@ -4120,7 +4478,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is missing from the header
 
 ### References:
 
@@ -4153,7 +4513,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Customer IP address errors 
 
-### Story:
+### Purpose:
+
+Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### References:
 
@@ -4186,7 +4548,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is missing from the header
 
 ### References:
 
@@ -4219,7 +4583,9 @@ Positive test case
 
 Ensure that the endpoint returns CDS Client Header errors 
 
-### Story:
+### Purpose:
+
+Test API when CDS Client Header is present but the format is invalid
 
 ### References:
 
@@ -4252,7 +4618,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -4285,7 +4653,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -4318,7 +4688,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -4351,7 +4723,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -4384,7 +4758,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -4417,7 +4793,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -4450,7 +4828,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -4483,7 +4863,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -4516,7 +4898,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -4549,7 +4933,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -4582,7 +4968,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -4615,7 +5003,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -4648,7 +5038,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -4681,7 +5073,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -4714,7 +5108,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -4747,7 +5143,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -4780,7 +5178,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -4814,7 +5214,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -4848,7 +5250,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -4882,7 +5286,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -4916,7 +5322,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -4950,7 +5358,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -4984,7 +5394,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -5018,7 +5430,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -5052,7 +5466,9 @@ Negative test case
 
 Obtain a list of service points requested by the DH
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -5090,7 +5506,9 @@ Negative test case
 
 Obtain a paginated list of service points requested by the DH
 
-### Story:
+### Purpose:
+
+Test API with pagination partameters
 
 ### References:
 
@@ -5129,7 +5547,9 @@ Positive test case
 
 DH call to SDH: Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH 
 
 ### References:
 
@@ -5162,7 +5582,9 @@ Positive test case
 
 Ensure that the endpoint returns pagination errors
 
-### Story:
+### Purpose:
+
+Test API with invalid pagination parameters
 
 ### References:
 
@@ -5198,7 +5620,9 @@ Negative test case
 
 Obtain the details of a service point requested by the DH
 
-### Story:
+### Purpose:
+
+Test API with a vaild service point and version
 
 ### References:
 
@@ -5237,7 +5661,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -5270,7 +5696,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an invalid servicePointId
 
 ### References:
 
@@ -5302,7 +5730,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an unavailable servicePointId
 
 ### References:
 
@@ -5334,7 +5764,9 @@ Negative test case
 
 Obtain a list of electricity usage data from a particular service point requested by the DH
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -5372,7 +5804,9 @@ Negative test case
 
 Obtain a paginated list of electricity usage data from a particular service requested by the DH
 
-### Story:
+### Purpose:
+
+Test API with pagination partameters
 
 ### References:
 
@@ -5411,7 +5845,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -5444,7 +5880,9 @@ Positive test case
 
 Ensure that the endpoint returns pagination errors
 
-### Story:
+### Purpose:
+
+Test API with invalid pagination parameters
 
 ### References:
 
@@ -5480,7 +5918,9 @@ Negative test case
 
 Obtain a list of electricity usage data constrained by oldest date from a particular service point requested by the DH
 
-### Story:
+### Purpose:
+
+Test API with &lt;oldest date&gt; parameter
 
 ### References:
 
@@ -5521,7 +5961,9 @@ Negative test case
 
 Obtain a list of service points requested by the DH
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -5561,7 +6003,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an invalid servicePointId
 
 ### References:
 
@@ -5593,7 +6037,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an unavailable servicePointId
 
 ### References:
 
@@ -5625,7 +6071,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with &lt;oldest date&gt;  parameter
 
 ### References:
 
@@ -5657,7 +6105,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -5689,7 +6139,9 @@ Negative test case
 
 Obtain the electricity usage data for a specific set of service points requested by the DH
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -5727,7 +6179,9 @@ Negative test case
 
 Obtain the electricity usage data for a specific set of service points requested by the DH
 
-### Story:
+### Purpose:
+
+Test API with pagination partameters
 
 ### References:
 
@@ -5766,7 +6220,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -5799,7 +6255,9 @@ Positive test case
 
 Ensure that the endpoint returns pagination errors
 
-### Story:
+### Purpose:
+
+Test API with invalid pagination parameters
 
 ### References:
 
@@ -5835,7 +6293,9 @@ Positive test case
 
 Obtain the electricity usage data for a specific set of service points requested by the DH
 
-### Story:
+### Purpose:
+
+Test API with oldest date parameter
 
 ### References:
 
@@ -5874,7 +6334,9 @@ Negative test case
 
 Obtain the electricity usage data for a specific set of service points requested by the DH
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -5913,7 +6375,9 @@ Positive test case
 
 Ensure the endpoint returns oldest-date compatible errors
 
-### Story:
+### Purpose:
+
+Test API with oldest date parameter
 
 ### References:
 
@@ -5945,7 +6409,9 @@ Positive test case
 
 Ensure the endpoint returns newest-date compatible errors
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -5962,51 +6428,13 @@ Ensure the endpoint returns newest-date compatible errors
 |Action No.|Action Type|Detail|
 |-|-|-|
 |1|Action|POST /secondary/energy/electricity/servicepoints/usage|
+|2|Action|GET /secondary/energy/electricity/servicepoints/{servicePointId}/der|
 
 
 ### End State Assertions:
 
 * [A.CND.002: Validation the Newest Date parameter - invalid format](#assertion-a.cnd.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-
-
-<a id="testcase-t.eas.027"></a>
-## T.EAS.027: DH call to SDH: Get DER for Service Point 
-
-Negative test case
-
-Obtain a list of DER data from a particular service point requested by the DH
-
-### Story:
-
-### References:
-
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point-sr)
-
-
-### Execution Pre-conditions:
-
-* The {servicePointId} is set in the Path 
-* AND value &lt;x-v&gt; is set in the request header to a version supported by the DH
-
-
-### Execution Steps:
-
-|Action No.|Action Type|Detail|
-|-|-|-|
-|1|Action|GET /secondary/energy/electricity/servicepoints/{servicePointId}/der|
-
-
-### End State Assertions:
-
-* [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
-* [A.CVM.001: Validate version - <x-v-min> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
-* [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
-* [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
-* [A.CAI.001: CDS arrangement id - present and valid (SR specific)](#assertion-a.cai.001)
-* [A.EAS.007: Validate service point and schema - EnergyDerDetailResponse](#assertion-a.eas.007)
 
 
 <a id="testcase-t.eas.028"></a>
@@ -6016,7 +6444,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -6049,7 +6479,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an invalid servicePointId
 
 ### References:
 
@@ -6081,7 +6513,9 @@ Positive test case
 
 Ensure the endpoint returns servicePointId compatible errors
 
-### Story:
+### Purpose:
+
+Test API with an unavailable servicePointId
 
 ### References:
 
@@ -6113,7 +6547,9 @@ Negative test case
 
 Obtain DER data for a specific set of service points requested by the DH
 
-### Story:
+### Purpose:
+
+Test API without any pagination partameters
 
 ### References:
 
@@ -6151,7 +6587,9 @@ Negative test case
 
 Obtain DER data for a specific set of service points requested by the DH
 
-### Story:
+### Purpose:
+
+Test API with pagination partameters
 
 ### References:
 
@@ -6190,7 +6628,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -6223,7 +6663,9 @@ Positive test case
 
 Ensure that the endpoint returns pagination errors
 
-### Story:
+### Purpose:
+
+Test API with invalid pagination parameters
 
 ### References:
 
@@ -6259,7 +6701,9 @@ Positive test case
 
 Ensure that the endpoint returns body compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid body values
 
 ### References:
 
@@ -6292,7 +6736,9 @@ Positive test case
 
 Ensure that the endpoint returns body compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a malformed body
 
 ### References:
 
@@ -6324,7 +6770,9 @@ Positive test case
 
 Ensure that the endpoint returns body compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid body values
 
 ### References:
 
@@ -6357,7 +6805,9 @@ Positive test case
 
 Ensure that the endpoint returns body compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a malformed body
 
 ### References:
 
@@ -6389,7 +6839,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Interaction ID errors
 
-### Story:
+### Purpose:
+
+Test API where FAPI Interaction ID format is invalid
 
 ### References:
 
@@ -6420,7 +6872,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Interaction ID errors
 
-### Story:
+### Purpose:
+
+Test API where FAPI Interaction ID fomat is invalid
 
 ### References:
 
@@ -6451,7 +6905,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Interaction ID errors
 
-### Story:
+### Purpose:
+
+Test API where FAPI Interaction ID fomat is invalid
 
 ### References:
 
@@ -6482,7 +6938,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Interaction ID errors
 
-### Story:
+### Purpose:
+
+Test API where FAPI Interaction ID fomat is invalid
 
 ### References:
 
@@ -6513,7 +6971,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Interaction ID errors
 
-### Story:
+### Purpose:
+
+Test API where FAPI Interaction ID fomat is invalid
 
 ### References:
 
@@ -6544,7 +7004,9 @@ Positive test case
 
 Ensure that the endpoint returns FAPI Interaction ID errors
 
-### Story:
+### Purpose:
+
+Test API where FAPI Interaction ID fomat is invalid
 
 ### References:
 
@@ -6575,7 +7037,9 @@ Positive test case
 
 Ensure that the endpoint returns arrangement id errors
 
-### Story:
+### Purpose:
+
+Test API to ensure the arrangement ID is included 
 
 ### References:
 
@@ -6607,7 +7071,9 @@ Positive test case
 
 Ensure that the endpoint returns arrangement id errors
 
-### Story:
+### Purpose:
+
+Test API to ensure the arrangement ID is valid
 
 ### References:
 
@@ -6639,7 +7105,9 @@ Positive test case
 
 Ensure that the endpoint returns arrangement id errors
 
-### Story:
+### Purpose:
+
+Test API to ensure the arrangement ID is included 
 
 ### References:
 
@@ -6671,7 +7139,9 @@ Positive test case
 
 Ensure that the endpoint returns arrangement id errors
 
-### Story:
+### Purpose:
+
+Test API to ensure the arrangement ID is valid
 
 ### References:
 
@@ -6703,7 +7173,9 @@ Positive test case
 
 Ensure that the endpoint returns arrangement id errors
 
-### Story:
+### Purpose:
+
+Test API to ensure the arrangement ID is included 
 
 ### References:
 
@@ -6725,7 +7197,6 @@ Ensure that the endpoint returns arrangement id errors
 ### End State Assertions:
 
 * [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
 
 
@@ -6736,7 +7207,9 @@ Positive test case
 
 Ensure that the endpoint returns arrangement id errors
 
-### Story:
+### Purpose:
+
+Test API to ensure the arrangement ID is valid
 
 ### References:
 
@@ -6759,7 +7232,6 @@ Ensure that the endpoint returns arrangement id errors
 
 * [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.051"></a>
@@ -6769,7 +7241,9 @@ Positive test case
 
 Ensure that the endpoint returns arrangement id errors
 
-### Story:
+### Purpose:
+
+Test API to ensure the arrangement ID is included 
 
 ### References:
 
@@ -6791,7 +7265,6 @@ Ensure that the endpoint returns arrangement id errors
 ### End State Assertions:
 
 * [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
 
 
@@ -6802,7 +7275,9 @@ Positive test case
 
 Ensure that the endpoint returns arrangement id errors
 
-### Story:
+### Purpose:
+
+Test API to ensure the arrangement ID is valid
 
 ### References:
 
@@ -6825,7 +7300,6 @@ Ensure that the endpoint returns arrangement id errors
 
 * [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.053"></a>
@@ -6835,7 +7309,9 @@ Positive test case
 
 Ensure that the endpoint returns arrangement id errors
 
-### Story:
+### Purpose:
+
+Test API to ensure the arrangement ID is included 
 
 ### References:
 
@@ -6857,7 +7333,6 @@ Ensure that the endpoint returns arrangement id errors
 ### End State Assertions:
 
 * [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
 
 
@@ -6868,7 +7343,9 @@ Positive test case
 
 Ensure that the endpoint returns arrangement id errors
 
-### Story:
+### Purpose:
+
+Test API to ensure the arrangement ID is valid
 
 ### References:
 
@@ -6891,7 +7368,6 @@ Ensure that the endpoint returns arrangement id errors
 
 * [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.055"></a>
@@ -6901,7 +7377,9 @@ Positive test case
 
 Ensure that the endpoint returns arrangement id errors
 
-### Story:
+### Purpose:
+
+Test API to ensure the arrangement ID is included 
 
 ### References:
 
@@ -6923,7 +7401,6 @@ Ensure that the endpoint returns arrangement id errors
 ### End State Assertions:
 
 * [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
 
 
@@ -6934,7 +7411,9 @@ Positive test case
 
 Ensure that the endpoint returns arrangement id errors
 
-### Story:
+### Purpose:
+
+Test API to ensure the arrangement ID is valid
 
 ### References:
 
@@ -6957,7 +7436,6 @@ Ensure that the endpoint returns arrangement id errors
 
 * [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.057"></a>
@@ -6967,7 +7445,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -6990,7 +7470,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.058"></a>
@@ -7000,7 +7479,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -7023,7 +7504,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.059"></a>
@@ -7033,7 +7513,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -7056,7 +7538,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.060"></a>
@@ -7066,7 +7547,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -7089,7 +7572,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.061"></a>
@@ -7099,7 +7581,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -7122,7 +7606,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.062"></a>
@@ -7132,7 +7615,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -7155,7 +7640,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.063"></a>
@@ -7165,7 +7649,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -7188,7 +7674,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.064"></a>
@@ -7198,7 +7683,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -7221,7 +7708,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.065"></a>
@@ -7231,7 +7717,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -7254,7 +7742,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.066"></a>
@@ -7264,7 +7751,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -7287,7 +7776,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.067"></a>
@@ -7297,7 +7785,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version value
 
 ### References:
 
@@ -7320,7 +7810,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.068"></a>
@@ -7330,7 +7819,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with invalid version format
 
 ### References:
 
@@ -7353,7 +7844,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.069"></a>
@@ -7363,7 +7853,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -7387,7 +7879,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.005: Validate version - unsupported version with <x-v-min>](#assertion-a.cvn.005)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.070"></a>
@@ -7397,7 +7888,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -7421,7 +7914,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.005: Validate version - unsupported version with <x-v-min>](#assertion-a.cvn.005)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.071"></a>
@@ -7431,7 +7923,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -7455,7 +7949,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.005: Validate version - unsupported version with <x-v-min>](#assertion-a.cvn.005)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.072"></a>
@@ -7465,7 +7958,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -7489,7 +7984,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.005: Validate version - unsupported version with <x-v-min>](#assertion-a.cvn.005)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.073"></a>
@@ -7499,7 +7993,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -7523,7 +8019,6 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.005: Validate version - unsupported version with <x-v-min>](#assertion-a.cvn.005)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
 <a id="testcase-t.eas.074"></a>
@@ -7533,7 +8028,9 @@ Positive test case
 
 Ensure that the endpoint returns version compatibility errors
 
-### Story:
+### Purpose:
+
+Test API with a version that is not supported by the DH
 
 ### References:
 
@@ -7557,7 +8054,108 @@ Ensure that the endpoint returns version compatibility errors
 
 * [A.CVN.005: Validate version - unsupported version with <x-v-min>](#assertion-a.cvn.005)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eas.075"></a>
+## T.EAS.075: DH call to SDH: Get Service Points - missing servicePointId in body
+
+Negative test case
+
+Ensure the endpoint returns servicePointId compatible errors
+
+### Purpose:
+
+Test API with a missing servicePointId
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+
+
+### Execution Pre-conditions:
+
+* The {servicePointId} in the body is missing
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|POST /secondary/energy/electricity/servicepoints|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.EAS.009: Validate servicePointIdList - invalid body values](#assertion-a.eas.009)
+
+
+<a id="testcase-t.eas.076"></a>
+## T.EAS.076: DH call to SDH: Get Service Points - invalid servicePointId in body
+
+Negative test case
+
+Ensure the endpoint returns servicePointId compatible errors
+
+### Purpose:
+
+Test API with an invalid servicePointId 
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+
+
+### Execution Pre-conditions:
+
+* The {servicePointId} in the body is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|POST /secondary/energy/electricity/servicepoints|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.EAS.010: Validate servicePointIdList - invalid servicePointId in body ](#assertion-a.eas.010)
+
+
+<a id="testcase-t.eas.077"></a>
+## T.EAS.077: DH call to SDH: Get Service Points - unavailable servicePointId in body
+
+Negative test case
+
+Ensure the endpoint returns servicePointId compatible errors
+
+### Purpose:
+
+Test API with an unavailable servicePointId
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+
+
+### Execution Pre-conditions:
+
+* The {servicePointId} in the body is unavailable
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|POST /secondary/energy/electricity/servicepoints|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.EAS.011: Validate servicePointIdList - unavailable servicePointId in body ](#assertion-a.eas.011)
 
 
 No test cases defined
@@ -8560,7 +9158,7 @@ Critical (Test Fails)
 |-|-|
 |Given|the request payload does not contain the required fields</br>OR the request payload is NOT well formatted|
 |When|the DH receives the request </br>AND interprets the Body|
-|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 400</br> the response body has ErrorListReponse</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 422</br> the response body has ErrorListReponse</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
 <a id="assertion-a.ear.010"></a>
@@ -8779,7 +9377,8 @@ Critical (Test Fails)
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse)
+* [https://consumerdatastandardsaustralia.github.io/standards/#tocSerrorlistresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSerrorlistresponse)
+* [https://consumerdatastandardsaustralia.github.io/standards/#error-codes](https://consumerdatastandardsaustralia.github.io/standards/#error-codes)
 
 
 ### Severity:
@@ -8792,5 +9391,49 @@ Critical (Test Fails)
 |-|-|
 |Given|the request payload does not contain the required fields</br>OR the request payload is NOT well formatted|
 |When|the SDH receives the request and interprets the Body|
-|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 400</br> the response body has ErrorListReponse</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 400</br> the response body complies with the ErrorListReponse schema</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
+
+
+<a id="assertion-a.eas.010"></a>
+## A.EAS.010: Validate servicePointIdList - invalid servicePointId in body 
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#tocSerrorlistresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSerrorlistresponse)
+* [https://consumerdatastandardsaustralia.github.io/standards/#error-codes](https://consumerdatastandardsaustralia.github.io/standards/#error-codes)
+
+
+### Severity:
+
+Critical (Test Fails)
+
+### Assertion Logic:
+
+|||
+|-|-|
+|Given|the request payload contains an invalid servicePointID |
+|When|the SDH receives the request and interprets the Body|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 422</br> the response body complies with the ErrorListReponse schema</br> error code is "Authorisation/InvalidServicePoint"</br></div><div class="predicate outer">)</div>|
+
+
+<a id="assertion-a.eas.011"></a>
+## A.EAS.011: Validate servicePointIdList - unavailable servicePointId in body 
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#tocSerrorlistresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSerrorlistresponse)
+* [https://consumerdatastandardsaustralia.github.io/standards/#error-codes](https://consumerdatastandardsaustralia.github.io/standards/#error-codes)
+
+
+### Severity:
+
+Critical (Test Fails)
+
+### Assertion Logic:
+
+|||
+|-|-|
+|Given|the request payload contains a valid servicePointID that is unavailable|
+|When|the SDH receives the request and interprets the Body|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 422</br> the response body complies with the ErrorListReponse schema</br> error code is "Authorisation/UnavailableServicePoint"</br></div><div class="predicate outer">)</div>|
 
