@@ -75,7 +75,7 @@ function generateSummarySection(testDocs: ConsumerDataRightTestCaseJSONSchema): 
 
   result += header1(testDocs.title, 'introduction');
   result += text('File version: ' + testDocs.fileVersion);
-  result += text('Compliant with CDR standards version ' + testDocs.standardsVersion);
+  //result += text('Compliant with CDR standards version ' + testDocs.standardsVersion);
   result += text(testDocs.description);
 
   result += endSection();

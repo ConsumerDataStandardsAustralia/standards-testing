@@ -83,7 +83,7 @@ function generateSummarySection(testDocs: ConsumerDataRightTestCaseJSONSchema): 
 
   result += header1(testDocs.title, 'introduction');
   result += text('File version: ' + testDocs.fileVersion);
-  result += text('Compliant with CDR standards version ' + testDocs.standardsVersion);
+  //result += text('Compliant with CDR standards version ' + testDocs.standardsVersion);
   result += text(testDocs.description);
 
   result += endSection();
@@ -491,7 +491,7 @@ function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema
 // ----------------------------------------------------------------------------
 
 function startDoc(): string {
-  return `<html><head><style>${defaultCss}</style></head><body>\n`;
+  return `<html><head><title>CDR Test Documentation</title><style>${defaultCss}</style></head><body>\n`;
   // return `<html><head><link rel="stylesheet" href="out.css"></head><body>\n`;
 }
 
