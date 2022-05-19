@@ -45,7 +45,7 @@ The references listed for each test case and assertion are important and should 
 
 -   Each Test Case links to a series of Assertions which are either specific to the Suite or Common to many Suites.
 
-**Coverage**
+## Coverage
 
 Our intention is to write test cases for all resource APIs for Banking and Energy in addition to Common and Admin.  Energy is the current priority given approaching obligation dates.
 
