@@ -8,11 +8,11 @@ The Standards, and this Test Documentation, are maintained by the Data Standards
 
 The repository is available here: [https://consumerdatastandardsaustralia.github.io/standards-testing/latest/ - introduction](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/#introduction)
 
-## What it’s designed to do?
+## What it is designed to do?
 
 The aim is to provide the community with a resource they can use to create their own test suites to verify a CDR implementation aligns with the standards. It consolidates many references within the standards, including normative references, that apply to a single API, to help people interpret and understand the standards.
 
-## What it’s not designed to do?
+## What it is not designed to do?
 
 This repository:
 
