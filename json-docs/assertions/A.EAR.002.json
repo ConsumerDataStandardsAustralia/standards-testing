@@ -1,0 +1,23 @@
+{
+  "id": "A.EAR.002",
+  "title": "Validate service point - invalid value",
+  "given": [
+    "the {servicePointId} is included in the ADR to DH request url"
+  ],
+  "when": [
+    "The requested service point is permanently unavailable. (No subsequent request for the service point will be successful.)"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 404",
+      " the response body has ErrorListReponse object",
+      " error code is \"Authorisation/InvalidServicePoint\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#energy"
+    }
+  ],
+  "negative": false
+}

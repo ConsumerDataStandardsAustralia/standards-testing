@@ -1,17 +1,12 @@
-# Consumer Data Right Testing Documentation
+# Consumer Data Right Testing Documentation - Json Docs
 
 This repository contains test case definitions that can be used to validate the compliance of an implementation of the API Standards and Information Security profile created for the [Consumer Data Right](https://treasury.gov.au/consumer-data-right "Treasury's Consumer Data Right webpage") legislation and the subsequent regulatory rules. 
 
+The definitions are in json format and are validated against the `cdr-test-schema.x.x.x.json` and then used to generate the html page which is published [here](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/).
+The process used to generate this is available in the `testdocs-cli` maintained in this repository and published as an npm package available [here](https://www.npmjs.com/package/@cds-au/testdocs) 
+
 The standards, and these test cases, are maintained by the Data Standards Body (DSB), with the Data Standards Chair as the decision maker.  The Data Standards Body is part of the [Treasury](https://www.directory.gov.au/portfolios/treasury/data-standards-body "Data Standards Body"). The work of standards development is conducted in consultation with the [Australian Competition and Consumer Commission (ACCC)](https://www.accc.gov.au/focus-areas/consumer-data-right-cdr-0 "ACCC's CDR webpage") as co-regulator of the Consumer Data Right, along with the [Office of the Australian Information Commissioner (OAIC)](https://www.oaic.gov.au/consumer-data-right/about-the-consumer-data-right/ "OAIC CDR webpage").
 
-The repository has the following structure
-
-| Folder | Description |
-| --- | ----------- |
-| docs | Contains the published html document accessible [here](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/) |
-| json-docs | The definitions for scenarios, test case, suites, and assertions which form the basis of the published documentation |
-| tools | The toolset used to generate the the published dcumentaion html and markdown files. This toolset is published as an npm package available [here](https://www.npmjs.com/package/@cds-au/testdocs) |
-| schema | The json schema definition against which the suites, scenarios, test cases and assertions are validated |
 
 ## Additional Information
 

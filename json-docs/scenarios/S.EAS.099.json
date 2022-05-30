@@ -1,0 +1,17 @@
+{
+  "id": "S.EAS.099",
+  "title": "Get DER For Specific Service Points SR",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.031"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.032"
+    }
+  ]
+}

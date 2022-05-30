@@ -1,0 +1,26 @@
+{
+  "id": "T.EAS.069",
+  "title": "DH call to SDH: Get Service Points - unsupported version when x-v-min is included",
+  "description": "Ensure that the endpoint returns version compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "the value <x-v> is set in the request header to a version not supported by the DH",
+    "AND the <x-v-min> is included"
+  ],
+  "purpose": "Test API with a version that is not supported by the DH",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /secondary/energy/electricity/servicepoints"
+    }
+  ],
+  "assertions": [
+    "A.CVN.005",
+    "A.CFI.001"
+  ]
+}

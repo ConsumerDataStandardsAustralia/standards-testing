@@ -1,0 +1,25 @@
+{
+  "id": "T.EAS.055",
+  "title": "DH call to Get DER For Specific Service Points - no arragement id ",
+  "description": "Ensure that the endpoint returns arrangement id errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points-sr"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-cds-arrangement> is missing "
+  ],
+  "purpose": "Test API to ensure the arrangement ID is included ",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /secondary/energy/electricity/servicepoints/der"
+    }
+  ],
+  "assertions": [
+    "A.CAI.002",
+    "A.CFI.001"
+  ]
+}

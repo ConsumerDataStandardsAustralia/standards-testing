@@ -1,0 +1,32 @@
+{
+  "id": "T.EAS.010",
+  "title": "DH call to SDH: Get Usage for Service Points - with pagination",
+  "description": "Obtain a paginated list of electricity usage data from a particular service requested by the DH",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point-sr"
+    }
+  ],
+  "negative": true,
+  "preConditions": [
+    " <page-size> and<page> query parameters are provided"
+  ],
+  "purpose": "Test API with pagination partameters",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
+    }
+  ],
+  "assertions": [
+    "A.CVN.001",
+    "A.CVM.001",
+    "A.CFI.001",
+    "A.CFA.004",
+    "A.CFC.004",
+    "A.CCH.004",
+    "A.CAI.001",
+    "A.CPG.001",
+    "A.EAS.005"
+  ]
+}

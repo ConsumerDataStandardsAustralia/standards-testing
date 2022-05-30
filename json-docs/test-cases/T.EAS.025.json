@@ -1,0 +1,25 @@
+{
+  "id": "T.EAS.025",
+  "title": "DH call to SDH: Get Usage for Specific Service Points - invalid format oldest date ",
+  "description": "Ensure the endpoint returns oldest-date compatible errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points-sr"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "Neither <page-size> or <page> query parameters are provided"
+  ],
+  "purpose": "Test API with oldest date parameter",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /secondary/energy/electricity/servicepoints/usage"
+    }
+  ],
+  "assertions": [
+    "A.COD.002",
+    "A.CFI.001"
+  ]
+}

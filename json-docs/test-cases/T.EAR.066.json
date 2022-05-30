@@ -1,0 +1,26 @@
+{
+  "id": "T.EAR.066",
+  "title": "ADR call to DH: Get Bulk DER - missing FAPI Customer IP Address",
+  "description": "Ensure that the endpoint returns FAPI Customer IP address errors ",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-fapi-customer-ip-address>  is not present in the header"
+  ],
+  "purpose": "Test API when FAPI Customer IP Address is missing from the header",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/electricity/servicepoints/der"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.CFC.002"
+  ]
+}

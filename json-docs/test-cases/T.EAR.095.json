@@ -1,0 +1,26 @@
+{
+  "id": "T.EAR.095",
+  "title": "ADR call to DH: Get Usage for Specific Service Points - missing CDS Client Header",
+  "description": "Ensure that the endpoint returns CDS Client Header errors ",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-cds-client-header> is not present in the header"
+  ],
+  "purpose": "Test API when CDS Client Header is missing from the header",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /energy/electricity/servicepoints/usage"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.CCH.002"
+  ]
+}

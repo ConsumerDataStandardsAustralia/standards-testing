@@ -1,0 +1,22 @@
+{
+  "id": "A.EAS.007",
+  "title": "Validate service point and schema - EnergyDerDetailResponse",
+  "given": [
+    "the {servicePointId} is included in the DH to SDH request"
+  ],
+  "when": [
+    "the {servicePointId} value is valid "
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 200",
+      " the response body complies with the EnergyDerDetailResponse schema"
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point"
+    }
+  ],
+  "negative": false
+}

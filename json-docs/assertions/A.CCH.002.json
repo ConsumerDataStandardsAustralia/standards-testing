@@ -1,0 +1,30 @@
+{
+  "id": "A.CCH.002",
+  "title": "Validate the client headers - missing from header",
+  "given": [
+    "the called API requires authentication",
+    "AND the call is an attended, ie customer present, call"
+  ],
+  "when": [
+    "the <x-cds-client-headers> is NOT present in the request header"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 400",
+      " the response body has ErrorListReponse object",
+      " error code is \"Header/missing\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
+    },
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#authentication-flows"
+    },
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#common-field-types"
+    }
+  ],
+  "negative": false
+}

@@ -1,0 +1,18 @@
+{
+  "id": "A.BAN.002",
+  "title": "Call Accounts - with category",
+  "given": [
+    "<product-category> is set in query string"
+  ],
+  "when": [
+    "<product-category> is valid",
+    "AND result set is not empty"
+  ],
+  "then": "only account of <product-category> are returned",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-accounts"
+    }
+  ],
+  "negative": false
+}

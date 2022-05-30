@@ -1,0 +1,26 @@
+{
+  "id": "T.EAS.037",
+  "title": "DH call to SDH: Get Usage for Specific Service Points - invalid body values",
+  "description": "Ensure that the endpoint returns body compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points-sr"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The request body is correctly formatted",
+    "AND request payload has missing or invalid values"
+  ],
+  "purpose": "Test API with invalid body values",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /secondary/energy/electricity/servicepoints/usage"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.EAS.009"
+  ]
+}

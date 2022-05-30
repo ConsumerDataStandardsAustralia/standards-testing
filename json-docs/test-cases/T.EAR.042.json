@@ -1,0 +1,27 @@
+{
+  "id": "T.EAR.042",
+  "title": "ADR call to DH: Get DER for Specific Service Points - invalid body values",
+  "description": "Ensure that the endpoint returns body compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The request body is correctly formatted",
+    "AND request payload has missing or invalid values"
+  ],
+  "purpose": "Test API with invalid body values",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /energy/electricity/servicepoints/der"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.EAR.009"
+  ]
+}

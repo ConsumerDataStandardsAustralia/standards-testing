@@ -1,0 +1,18 @@
+{
+  "id": "A.CND.001",
+  "title": "Validate the Newest Date parameter - valid format",
+  "given": [
+    "the <newest-date> is included as a query parameter"
+  ],
+  "when": [
+    "the <newest-date> is in a valid DateString format"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 200",
+      " the data is constrained by the date supplied"
+    ]
+  },
+  "references": [],
+  "negative": false
+}

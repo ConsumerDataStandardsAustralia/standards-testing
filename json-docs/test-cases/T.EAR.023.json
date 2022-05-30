@@ -1,0 +1,31 @@
+{
+  "id": "T.EAR.023",
+  "title": "ADR call to DH: Get Usage for Specific Service Points - with pagination",
+  "description": "Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points"
+    }
+  ],
+  "negative": true,
+  "preConditions": [
+    " <page-size> and<page> query parameters are provided"
+  ],
+  "purpose": "Test API with pagination partameters",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /energy/electricity/servicepoints/usage"
+    }
+  ],
+  "assertions": [
+    "A.CVN.001",
+    "A.CVM.001",
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.CFA.001",
+    "A.CFC.001",
+    "A.CCH.001",
+    "A.EAR.006"
+  ]
+}

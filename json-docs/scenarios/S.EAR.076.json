@@ -1,0 +1,61 @@
+{
+  "id": "S.EAR.076",
+  "title": "Get Service Point Detail Negative",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.007"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.008"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.009"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.010"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.079"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.080"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.081"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.082"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.083"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.084"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.111"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.112"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.126"
+    }
+  ]
+}

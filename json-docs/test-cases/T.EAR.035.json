@@ -1,0 +1,26 @@
+{
+  "id": "T.EAR.035",
+  "title": "ADR call to DH: Get Service Point Detail - invalid format of Service Point ID",
+  "description": "Ensure the endpoint returns servicePointId compatible errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <{servicePointId}> is set in the Path to a value that is "
+  ],
+  "purpose": "Test API with an invalid servicePointId",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.EAR.002"
+  ]
+}

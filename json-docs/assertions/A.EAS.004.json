@@ -1,0 +1,22 @@
+{
+  "id": "A.EAS.004",
+  "title": "Validate schema - EnergyServicePointListReponse",
+  "given": [
+    "the request to call the API is formatted correctly by the DH"
+  ],
+  "when": [
+    "the SDH receives the request"
+  ],
+  "then": {
+    "and": [
+      "the response has a status code 200",
+      " the response body complies with the EnergyServiceListResponse schema"
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyservicepointlistresponse"
+    }
+  ],
+  "negative": false
+}

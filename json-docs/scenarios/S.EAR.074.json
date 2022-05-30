@@ -1,0 +1,65 @@
+{
+  "id": "S.EAR.074",
+  "title": "Get Service Points Negative",
+  "purpose": "Test cases which will return codes other than 2xx",
+  "description": "As a DH I return appropriate codes and messages for failed or invalid requests",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "SETUP",
+      "action": "Authorise session"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.003"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.004"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.005"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.073"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.074"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.075"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.076"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.077"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.078"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.109"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.110"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.125"
+    }
+  ]
+}
