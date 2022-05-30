@@ -4,147 +4,10 @@
 
 File version: 1.0.0
 
-Compliant with CDR standards version 1.16.1
-
 This documentation has been  created by the DSB to assist participants in the development of compliant APIs
 
 <a id="suites"></a>
 # Test Suites
-
-<a id="suite-suite.001"></a>
-## SUITE.001: APIs - Banking PRD
-
-### Test Scenarios:
-
-* [S.BAP.001: Get Products](#scenario-s.bap.001)
-* [S.BAP.002: Get Products Negative ](#scenario-s.bap.002)
-* [S.BAP.003: Get Product Detail](#scenario-s.bap.003)
-* [S.BAP.004: Get Product Detail Negative](#scenario-s.bap.004)
-
-
-<a id="suite-suite.002"></a>
-## SUITE.002: APIs - Banking Accounts
-
-### Test Scenarios:
-
-* [S.BAA.005: Get Accounts](#scenario-s.baa.005)
-* [S.BAA.006: Get Accounts Negative](#scenario-s.baa.006)
-* [S.BAA.007: Get Bulk Balances](#scenario-s.baa.007)
-* [S.BAA.008: Get Bulk Balances Negative](#scenario-s.baa.008)
-* [S.BAA.009: Get Balances for Specific Accounts](#scenario-s.baa.009)
-* [S.BAA.010: Get Balances for Specific Accounts Negative](#scenario-s.baa.010)
-* [S.BAA.011: Get Account Balance](#scenario-s.baa.011)
-* [S.BAA.012: Get Account Balance Negative](#scenario-s.baa.012)
-* [S.BAA.013: Get Account Detail](#scenario-s.baa.013)
-* [S.BAA.014: Get Account Detail Negative](#scenario-s.baa.014)
-* [S.BAA.015: Get Direct Debits for Account](#scenario-s.baa.015)
-* [S.BAA.016: Get Direct Debits for Account Negative](#scenario-s.baa.016)
-* [S.BAA.017: Get Bulk Direct Debits](#scenario-s.baa.017)
-* [S.BAA.018: Get Bulk Direct Debits Negative](#scenario-s.baa.018)
-* [S.BAA.019: Get Direct Debits for Specific Accounts](#scenario-s.baa.019)
-* [S.BAA.020: Get Direct Debits for Specific Accounts Negative](#scenario-s.baa.020)
-
-
-<a id="suite-suite.003"></a>
-## SUITE.003: APIs - Banking Transactions
-
-### Test Scenarios:
-
-* [S.BAT.021: Get Transactions For Account](#scenario-s.bat.021)
-* [S.BAT.022: Get Transactions For Account Negative](#scenario-s.bat.022)
-* [S.BAT.023: Get Transaction Detail](#scenario-s.bat.023)
-* [S.BAT.024: Get Transaction Detail Negative](#scenario-s.bat.024)
-
-
-<a id="suite-suite.004"></a>
-## SUITE.004: APIs - Banking Scheduled Payments and Payees
-
-### Test Scenarios:
-
-* [S.BAS.025: Get Scheduled Payments For Account](#scenario-s.bas.025)
-* [S.BAS.026: Get Scheduled Payments For Account Negative](#scenario-s.bas.026)
-* [S.BAS.027: Get Scheduled Payments Bulk](#scenario-s.bas.027)
-* [S.BAS.028: Get Scheduled Payments Bulk Negative](#scenario-s.bas.028)
-* [S.BAS.029: Get Scheduled Payments For Specific Account](#scenario-s.bas.029)
-* [S.BAS.030: Get Scheduled Payments For Specific Account Negative](#scenario-s.bas.030)
-* [S.BAS.031: Get Payees](#scenario-s.bas.031)
-* [S.BAS.032: Get Payees Negative](#scenario-s.bas.032)
-* [S.BAS.033: Get Payee Detail](#scenario-s.bas.033)
-* [S.BAS.034: Get Payee Detail Negative](#scenario-s.bas.034)
-
-
-<a id="suite-suite.005"></a>
-## SUITE.005: APIs - Common Admin
-
-### Test Scenarios:
-
-* [S.AAA.035: Get status](#scenario-s.aaa.035)
-* [S.AAA.036: Get status Negative](#scenario-s.aaa.036)
-* [S.AAA.037: Get outages](#scenario-s.aaa.037)
-* [S.AAA.038: Get outages Negative](#scenario-s.aaa.038)
-
-
-<a id="suite-suite.006"></a>
-## SUITE.006: APIs - Common Customer
-
-### Test Scenarios:
-
-* [S.CAC.039: Get customer](#scenario-s.cac.039)
-* [S.CAC.040: Get customer Negative](#scenario-s.cac.040)
-* [S.CAC.041: Get customer detail](#scenario-s.cac.041)
-* [S.CAC.042: Get customer detail Negative](#scenario-s.cac.042)
-
-
-<a id="suite-suite.007"></a>
-## SUITE.007: APIs - Energy Tariffs
-
-### Test Scenarios:
-
-* [S.EAP.043: Get Generic Plans](#scenario-s.eap.043)
-* [S.EAP.044: Get Generic Plans Negative](#scenario-s.eap.044)
-* [S.EAP.045: Get Generic Plan Detail](#scenario-s.eap.045)
-* [S.EAP.046: Get Generic Plan Detail Negative](#scenario-s.eap.046)
-
-
-<a id="suite-suite.008"></a>
-## SUITE.008: APIs - Energy Accounts
-
-### Test Scenarios:
-
-* [S.EAA.047: Get Energy Accounts](#scenario-s.eaa.047)
-* [S.EAA.048: Get Energy Accounts Negative](#scenario-s.eaa.048)
-* [S.EAA.049: Get Energy Account Detail](#scenario-s.eaa.049)
-* [S.EAA.050: Get Energy Account Detail Negative](#scenario-s.eaa.050)
-* [S.EAA.051: Get Agreed Payment Schedule](#scenario-s.eaa.051)
-* [S.EAA.052: Get Agreed Payment Schedule Negative](#scenario-s.eaa.052)
-* [S.EAA.053: Get Concessions](#scenario-s.eaa.053)
-* [S.EAA.054: Get Concessions Negative](#scenario-s.eaa.054)
-
-
-<a id="suite-suite.009"></a>
-## SUITE.009: APIs - Energy Invoices and Billing
-
-### Test Scenarios:
-
-* [S.EAB.055: Get Balance For Energy Account](#scenario-s.eab.055)
-* [S.EAB.056: Get Balance For Energy Account Negative](#scenario-s.eab.056)
-* [S.EAB.057: Get Bulk Balances For Energy](#scenario-s.eab.057)
-* [S.EAB.058: Get Bulk Balances For Energy Negative](#scenario-s.eab.058)
-* [S.EAB.059: Get Balances For Specific Energy Accounts](#scenario-s.eab.059)
-* [S.EAB.060: Get Balances For Specific Energy Accounts Negative](#scenario-s.eab.060)
-* [S.EAB.061: Get Invoices For Account](#scenario-s.eab.061)
-* [S.EAB.062: Get Invoices For Account Negative](#scenario-s.eab.062)
-* [S.EAB.063: Get Bulk Invoices](#scenario-s.eab.063)
-* [S.EAB.064: Get Bulk Invoices Negative](#scenario-s.eab.064)
-* [S.EAB.065: Get Invoices For Specific Accounts](#scenario-s.eab.065)
-* [S.EAB.066: Get Invoices For Specific Accounts Negative](#scenario-s.eab.066)
-* [S.EAB.067: Get Billing For Account](#scenario-s.eab.067)
-* [S.EAB.068: Get Billing For Account Negative](#scenario-s.eab.068)
-* [S.EAB.069: Get Bulk Billing](#scenario-s.eab.069)
-* [S.EAB.070: Get Bulk Billing Negative](#scenario-s.eab.070)
-* [S.EAB.071: Get Billing For Specific Accounts](#scenario-s.eab.071)
-* [S.EAB.072: Get Billing For Specific Accounts Negative](#scenario-s.eab.072)
-
 
 <a id="suite-suite.010"></a>
 ## SUITE.010: APIs - Energy Standing Data, Usage and DER
@@ -190,18 +53,6 @@ This documentation has been  created by the DSB to assist participants in the de
 
 <a id="scenarios"></a>
 # Test Scenarios
-
-<a id="scenario-s.baa.005"></a>
-## S.BAA.005: Get Accounts
-
-Test the Get Accounts endpoint
-
-### Testing Sequence:
-
-|Action No.|Action Type|Detail|
-|-|-|-|
-|1|Setup|Authentication|
-
 
 <a id="scenario-s.ear.073"></a>
 ## S.EAR.073: Get Service Points
@@ -510,7 +361,7 @@ Test the Happy Path for Get Service Points
 
 ### References:
 
-* [<https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr> ](<https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr> )
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
 
 
 ### Testing Sequence:
@@ -528,7 +379,7 @@ Test errors and edge cases for Get Service Points
 
 ### References:
 
-* [<https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr> ](<https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr> )
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
 
 
 ### Testing Sequence:
@@ -9061,7 +8912,7 @@ Critical (Test Fails)
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse](https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse)
+* [https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse)
 
 
 ### Severity:
