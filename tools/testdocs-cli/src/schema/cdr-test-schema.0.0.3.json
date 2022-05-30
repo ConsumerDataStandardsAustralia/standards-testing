@@ -169,7 +169,7 @@
                     "description": "Indicates if this is a negative test case.  False if absent",
                     "default": false
                 },
-                "story": {
+                "purpose": {
                     "type": "string",
                     "description": "A description of the test case defined as a testable story in 'As A... I Want... Such That...' format"
                 },
