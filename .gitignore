@@ -5,6 +5,9 @@
 node_modules
 bower_components
 
+# Working files
+working
+
 # Editors
 .idea
 *.iml

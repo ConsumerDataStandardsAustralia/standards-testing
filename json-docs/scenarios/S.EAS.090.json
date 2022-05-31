@@ -1,0 +1,57 @@
+{
+  "id": "S.EAS.090",
+  "title": "Get Service Points Negative SR",
+  "purpose": "",
+  "description": "Test errors and edge cases for Get Service Points ",
+  "references": [
+    {
+      "uri": "<https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr> "
+    }
+  ],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.003"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.004"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.039"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.045"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.046"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.057"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.058"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.069"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.075"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.076"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.077"
+    }
+  ]
+}

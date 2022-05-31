@@ -12,6 +12,7 @@ const argv = yargs
   .alias({
     h: 'help',
     v: 'validate',
+    g: 'generate',
     s: 'schema'
   })
   .argv;

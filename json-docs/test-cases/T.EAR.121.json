@@ -1,0 +1,26 @@
+{
+  "id": "T.EAR.121",
+  "title": "ADR call to DH: Get Bulk DER - invalid version value",
+  "description": "Ensure that the endpoint returns version compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-v> version is not a valid number"
+  ],
+  "purpose": "Test API with invalid version value",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/electricity/servicepoints/der"
+    }
+  ],
+  "assertions": [
+    "A.CVN.002",
+    "A.CFI.001",
+    "A.CFI.002"
+  ]
+}

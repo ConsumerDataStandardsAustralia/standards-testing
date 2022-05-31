@@ -1,0 +1,8 @@
+,TESTCASE,,,,,,,,,,,,
+,,,,string,array:reference,,string,string,string,testCaseStep,,,
+,ID,Scenario,Step,Title,References[],Negative,Story,PreConditions,Description,Type,Value,Suite Assertion,Common Assertion
+1,T.BAA.001,Get Direct Debits for Account Negative,,,,,,,,,,,
+1,,,1,,,,,,,,,,
+1,,,2,,,,,,,,,,
+1,,,3,,,,,,,,,,
+1,,,4,,,,,,,,,,

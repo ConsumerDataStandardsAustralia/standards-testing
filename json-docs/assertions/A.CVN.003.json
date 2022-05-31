@@ -1,0 +1,23 @@
+{
+  "id": "A.CVN.003",
+  "title": "Validate version - validate [x-v] format",
+  "given": [
+    "the version parameter is included in a GET request"
+  ],
+  "when": [
+    "the verison value is not a valid number is an alpha (e.g. \"foo\")"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 400",
+      " the response body has ErrorListReponse object",
+      " error code is \"Field/Invalid\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
+    }
+  ],
+  "negative": false
+}

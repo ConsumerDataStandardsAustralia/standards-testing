@@ -1,0 +1,21 @@
+{
+  "id": "A.CFC.001",
+  "title": "Validate FAPI Customer IP Address - is present",
+  "given": [
+    "the called API requires authentication"
+  ],
+  "when": [
+    "the <x-fapi-customer-ip-address> is present in the request header",
+    "AND is in a valid IPv4 or IPv6 format"
+  ],
+  "then": "the response has a status of 200",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
+    },
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#authentication-flows"
+    }
+  ],
+  "negative": false
+}

@@ -1,0 +1,13 @@
+{
+  "id": "S.EAR.083",
+  "title": "Get DER for Service Point",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.033"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "T.EAS.047",
+  "title": "DH call to SDH: Get Service Point Detail - no arragement id ",
+  "description": "Ensure that the endpoint returns arrangement id errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail-sr"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-cds-arrangement> is missing "
+  ],
+  "purpose": "Test API to ensure the arrangement ID is included ",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CAI.002"
+  ]
+}

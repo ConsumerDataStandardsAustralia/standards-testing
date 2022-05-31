@@ -1,0 +1,26 @@
+{
+  "id": "T.EAR.054",
+  "title": "ADR call to DH: Get Bulk Usage - missing FAPI Auth Date",
+  "description": "Ensure that the endpoint returns FAPI Auth date errors ",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-fapi-auth-date> is not present in the header"
+  ],
+  "purpose": "Test API when FAPI Auth date is missing from the header",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/electricity/servicepoints/usage"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.CFA.002"
+  ]
+}

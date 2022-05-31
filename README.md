@@ -4,7 +4,20 @@
 
 The CDR Test Documentation is a repository of Test Cases and Assertions that describe the way the standards can be tested.  These are logically grouped into Suites and Scenarios for each Sector and API to validate an API against the Consumer Data Standards.
 
+
+The repository has the following structure
+
+| Folder | Description |
+| --- | ----------- |
+| docs | Contains the published html document accessible [here](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/) |
+| json-docs | The definitions for scenarios, test case, suites, and assertions which form the basis of the published documentation |
+| tools | The toolset used to generate the the published dcumentaion html and markdown files. This toolset is published as an npm package available [here](https://www.npmjs.com/package/@cds-au/testdocs) |
+| schema | The json schema definition against which the suites, scenarios, test cases and assertions are validated |
+
+## Additional Information
+=======
 The Standards, and this Test Documentation, are maintained by the Data Standards Body (DSB), with the Data Standards Chair as the decision maker. The Data Standards Body is part of the [Treasury](https://www.directory.gov.au/portfolios/treasury/data-standards-body). The work of standards development is conducted in consultation with the [Australian Competition and Consumer Commission (ACCC)](https://www.accc.gov.au/focus-areas/consumer-data-right-cdr-0) as co-regulator of the Consumer Data Right, along with the [Office of the Australian Information Commissioner (OAIC)](https://www.oaic.gov.au/consumer-data-right/about-the-consumer-data-right/).
+
 
 The repository is available here: [https://consumerdatastandardsaustralia.github.io/standards-testing/latest/ - introduction](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/#introduction)
 

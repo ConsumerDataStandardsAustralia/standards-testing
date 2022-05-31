@@ -1,0 +1,28 @@
+{
+  "id": "A.CFA.002",
+  "title": "Validate FAPI Auth date - missing from header",
+  "given": [
+    "the called API is a resource call and does require authentication"
+  ],
+  "when": [
+    "the <x-fapi-auth-date> is NOT present  in the request header"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 400",
+      " error code is \"Header/missing\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
+    },
+    {
+      "uri": "https://openid.net/specs/openid-financial-api-part-1-ID2.html"
+    },
+    {
+      "uri": "https://datatracker.ietf.org/doc/html/rfc7231#page-90"
+    }
+  ],
+  "negative": false
+}

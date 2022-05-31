@@ -1,0 +1,24 @@
+{
+  "id": "T.EAS.039",
+  "title": "DH call to SDH: Get Service Points - invalid FAPI Interaction ID format ",
+  "description": "Ensure that the endpoint returns FAPI Interaction ID errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-fapi-interaction-id> format is invalid "
+  ],
+  "purpose": "Test API where FAPI Interaction ID format is invalid",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /secondary/energy/electricity/servicepoints"
+    }
+  ],
+  "assertions": [
+    "A.CFI.003"
+  ]
+}

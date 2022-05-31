@@ -1,0 +1,45 @@
+{
+  "id": "S.EAS.098",
+  "title": "Get DER for Service Point Negative SR",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.028"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.029"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.030"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.043"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.053"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.054"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.065"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.066"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.073"
+    }
+  ]
+}

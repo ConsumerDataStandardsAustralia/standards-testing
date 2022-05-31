@@ -1,0 +1,21 @@
+{
+  "id": "A.CFI.001",
+  "title": "Validate FAPI Interation ID - included in request",
+  "given": [
+    "the <x-fapi-interaction-id> is included in the header of the request"
+  ],
+  "when": [
+    "the <x-fapi-interaction-id> is in a valid format "
+  ],
+  "then": {
+    "and": [
+      " the Data Holder has returned the <x-fapi-interaction-id> from the request in the response header"
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
+    }
+  ],
+  "negative": false
+}

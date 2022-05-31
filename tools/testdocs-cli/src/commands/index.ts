@@ -1,6 +1,8 @@
-import * as schema from './schema';
+import * as docSchema from './docSchema';
 import * as validate from './validate';
+import * as gendocs from './gendocs';
 export const commands = [
-  schema,
-  validate
+  docSchema,
+  validate,
+  gendocs
 ];
