@@ -15,7 +15,7 @@ The repository has the following structure
 | schema | The json schema definition against which the suites, scenarios, test cases and assertions are validated |
 
 ## Additional Information
-=======
+
 The Standards, and this Test Documentation, are maintained by the Data Standards Body (DSB), with the Data Standards Chair as the decision maker. The Data Standards Body is part of the [Treasury](https://www.directory.gov.au/portfolios/treasury/data-standards-body). The work of standards development is conducted in consultation with the [Australian Competition and Consumer Commission (ACCC)](https://www.accc.gov.au/focus-areas/consumer-data-right-cdr-0) as co-regulator of the Consumer Data Right, along with the [Office of the Australian Information Commissioner (OAIC)](https://www.oaic.gov.au/consumer-data-right/about-the-consumer-data-right/).
 
 
