@@ -1,26 +1,21 @@
-# Consumer Data Right Testing Documentation - Json Docs
+# CDR Test Documentation - json docs
 
 This repository contains test case definitions that can be used to validate the compliance of an implementation of the API Standards and Information Security profile created for the [Consumer Data Right](https://treasury.gov.au/consumer-data-right "Treasury's Consumer Data Right webpage") legislation and the subsequent regulatory rules. 
 
 The definitions are in json format and are validated against the `cdr-test-schema.x.x.x.json` and then used to generate the html page which is published [here](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/).
 The process used to generate this is available in the `testdocs-cli` maintained in this repository and published as an npm package available [here](https://www.npmjs.com/package/@cds-au/testdocs) 
 
-The standards, and these test cases, are maintained by the Data Standards Body (DSB), with the Data Standards Chair as the decision maker.  The Data Standards Body is part of the [Treasury](https://www.directory.gov.au/portfolios/treasury/data-standards-body "Data Standards Body"). The work of standards development is conducted in consultation with the [Australian Competition and Consumer Commission (ACCC)](https://www.accc.gov.au/focus-areas/consumer-data-right-cdr-0 "ACCC's CDR webpage") as co-regulator of the Consumer Data Right, along with the [Office of the Australian Information Commissioner (OAIC)](https://www.oaic.gov.au/consumer-data-right/about-the-consumer-data-right/ "OAIC CDR webpage").
+## Contributing and providing feedback
 
+The CDR Test Documentation is a concept we’d like to test with the community and welcome your feedback.  We have developed this based on our interpretation of earlier feedback received from the community to clarify ambiguity in the standards and to assist with implementation.
 
-## Additional Information
+To provide feedback you need to raise an ‘issue’ or a ‘pull request’ on this repository in the same way you would on the DSB standards. We welcome feedback on:
 
-* [Data Standards Body Web Site](https://consumerdatastandards.gov.au/) - Contains additional information on the CDR and the DSB as well as notifications of the latest developments in the regime.
-* [Formal Standards Site](https://consumerdatastandardsaustralia.github.io/standards/) - The published contents of the standards in this repository.  This is the formal documentation of the binding standards.
-* [The Standards GitHub Repo](https://github.com/ConsumerDataStandardsAustralia/standards/) - The repository containing the raw standards content.  This repository is also used to manage consultations and change to the standards.
+ 1. a request to add tests to clarify aspects of the standards that are not covered in this document; or
+ 2. where test cases or assertions that appear to be incorrect; or
+ 3. suggested improvements to the user interface or instructions on how to use this repository.
 
-
-## Contributing To These Test Cases
-
-The purpose of the content in this repository is to document test case definitions that can be used to create test suite implementations that can verify that an implementation is compliant with the CDR standards.
-
-If any test cases are missing or appear to be incorrect please raise an issue or a pull request and these will be responded to by the DSB team.
-
+The team at DSB will address issues as they are raised and add or correct test cases as needed.
 
 ## Rules of engagement for this repository
 
