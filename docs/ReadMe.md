@@ -1,10 +1,8 @@
 
 <a id="introduction"></a>
-# The CDR Test Documentation
+# 
 
-File version: 1.0.0
-
-This documentation has been  created by the DSB to assist participants in the development of compliant APIs
+File version: 
 
 <a id="suites"></a>
 # Test Suites
@@ -361,7 +359,7 @@ Test the Happy Path for Get Service Points
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+* [<https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr> ](<https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr> )
 
 
 ### Testing Sequence:
@@ -379,7 +377,7 @@ Test errors and edge cases for Get Service Points
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+* [<https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr> ](<https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr> )
 
 
 ### Testing Sequence:
@@ -8912,7 +8910,7 @@ Critical (Test Fails)
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse)
+* [https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse](https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse)
 
 
 ### Severity:
