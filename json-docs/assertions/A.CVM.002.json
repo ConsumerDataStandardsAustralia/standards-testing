@@ -1,8 +1,8 @@
 {
   "id": "A.CVM.002",
-  "title": "Validate minimum version - validate <x-v-min> format",
+  "title": "Validate minimum version - validate <x-min-v> format",
   "given": [
-    "the <x-v-min> header is included in a get request"
+    "the <x-min-v> header is included in a get request"
   ],
   "when": [
     "the <x-min-v> is a not a positive integer"

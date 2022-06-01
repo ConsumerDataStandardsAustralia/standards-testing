@@ -1,11 +1,11 @@
 {
   "id": "S.EAS.089",
-  "title": "Get Service Points SR",
+  "title": "Get Service Points SR v1",
   "purpose": "",
   "description": "Test the Happy Path for Get Service Points",
   "references": [
     {
-      "uri": "<https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr> "
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr"
     }
   ],
   "sequence": [

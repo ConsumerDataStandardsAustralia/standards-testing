@@ -1,16 +1,16 @@
 {
   "id": "A.CVM.001",
-  "title": "Validate version - <x-v-min> is provided",
+  "title": "Validate version - <x-min-v> is provided",
   "given": [
-    "the <x-v-min> header is included in a get request"
+    "the <x-min-v> header is included in a get request"
   ],
   "when": [
-    "the value for the <x-v-min>  is a positive integer"
+    "the value for the <x-min-v>  is a positive integer"
   ],
   "then": {
     "and": [
       "<x-v> is in the repsonse header",
-      "  <x-v> = [<x-v-min>, <x-v>]",
+      "  <x-v> = [<x-min-v>, <x-v>]",
       " <x-v> is a positive integer"
     ]
   },

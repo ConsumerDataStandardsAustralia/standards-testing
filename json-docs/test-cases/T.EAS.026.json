@@ -16,10 +16,6 @@
     {
       "type": "ACTION",
       "action": "POST /secondary/energy/electricity/servicepoints/usage"
-    },
-    {
-      "type": "ACTION",
-      "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
     }
   ],
   "assertions": [

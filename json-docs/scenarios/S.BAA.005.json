@@ -1,0 +1,13 @@
+{
+  "id": "S.BAA.005",
+  "title": "Get Accounts",
+  "purpose": "",
+  "description": "Test the Get Accounts endpoint",
+  "references": [],
+  "sequence": [
+    {
+      "type": "SETUP",
+      "action": "Authentication"
+    }
+  ]
+}

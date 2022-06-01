@@ -1,9 +1,9 @@
 {
   "id": "A.CVN.005",
-  "title": "Validate version - unsupported version with <x-v-min>",
+  "title": "Validate version - unsupported version with <x-min-v>",
   "given": [
     "the <x-v>  is included in a  request header",
-    "AND  <x-v-min>  is included"
+    "AND  <x-min-v>  is included"
   ],
   "when": [
     "no version between <x-v> and <x-min-v> is supported"

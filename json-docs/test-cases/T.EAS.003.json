@@ -1,6 +1,6 @@
 {
   "id": "T.EAS.003",
-  "title": "DH call to SDH: Get Service Points - unsupported version without x-v-min included",
+  "title": "DH call to SDH: Get Service Points - unsupported version without x-min-v included",
   "description": "DH call to SDH: Ensure that the endpoint returns version compatibility errors",
   "references": [
     {

@@ -8862,7 +8862,7 @@ Critical (Test Fails)
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse)
+* [https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse](https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse)
 
 
 ### Severity:

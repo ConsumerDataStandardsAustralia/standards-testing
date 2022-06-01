@@ -16,6 +16,10 @@
     {
       "type": "ACTION",
       "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
+    },
+    {
+      "type": "ACTION",
+      "action": "POST /secondary/energy/electricity/servicepoints/usage"
     }
   ],
   "assertions": [

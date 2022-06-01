@@ -1,6 +1,6 @@
 {
-  "fileVersion": "1.0.0",
-  "standardsVersion": "1.16.1",
+  "fileVersion": "1.0.1",
+  "standardsVersion": "1.17.0",
   "title": "The CDR Test Documentation",
   "description": "This documentation has been  created by the DSB to assist participants in the development of compliant APIs",
   "assertions": {
@@ -197,10 +197,10 @@
     },
     "A.CVN.004": {
       "id": "A.CVN.004",
-      "title": "Validate version - unsupported version without <x-v-min>",
+      "title": "Validate version - unsupported version without <x-min-v>",
       "given": [
         "the <x-v>  is included in a  request header",
-        "AND <x-v-min> is NOT included"
+        "AND <x-min-v> is NOT included"
       ],
       "when": [
         "the request version <x-v> is not supported"
@@ -221,10 +221,10 @@
     },
     "A.CVN.005": {
       "id": "A.CVN.005",
-      "title": "Validate version - unsupported version with <x-v-min>",
+      "title": "Validate version - unsupported version with <x-min-v>",
       "given": [
         "the <x-v>  is included in a  request header",
-        "AND  <x-v-min>  is included"
+        "AND  <x-min-v>  is included"
       ],
       "when": [
         "no version between <x-v> and <x-min-v> is supported"
@@ -245,17 +245,17 @@
     },
     "A.CVM.001": {
       "id": "A.CVM.001",
-      "title": "Validate version - <x-v-min> is provided",
+      "title": "Validate version - <x-min-v> is provided",
       "given": [
-        "the <x-v-min> header is included in a get request"
+        "the <x-min-v> header is included in a get request"
       ],
       "when": [
-        "the value for the <x-v-min>  is a positive integer"
+        "the value for the <x-min-v>  is a positive integer"
       ],
       "then": {
         "and": [
           "<x-v> is in the repsonse header",
-          "  <x-v> = [<x-v-min>, <x-v>]",
+          "  <x-v> = [<x-min-v>, <x-v>]",
           " <x-v> is a positive integer"
         ]
       },
@@ -268,9 +268,9 @@
     },
     "A.CVM.002": {
       "id": "A.CVM.002",
-      "title": "Validate minimum version - validate <x-v-min> format",
+      "title": "Validate minimum version - validate <x-min-v> format",
       "given": [
-        "the <x-v-min> header is included in a get request"
+        "the <x-min-v> header is included in a get request"
       ],
       "when": [
         "the <x-min-v> is a not a positive integer"
@@ -828,64 +828,6 @@
       ],
       "negative": false
     },
-    "A.BAN.001": {
-      "id": "A.BAN.001",
-      "title": "Call Accounts - no query aprameters",
-      "given": [
-        "no query parameters are specified"
-      ],
-      "when": [
-        "result set is not empty"
-      ],
-      "then": {
-        "and": [
-          "All accounts are returned",
-          " the response has a status of 200"
-        ]
-      },
-      "references": [
-        {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-accounts"
-        }
-      ],
-      "negative": false
-    },
-    "A.BAN.002": {
-      "id": "A.BAN.002",
-      "title": "Call Accounts - with category",
-      "given": [
-        "<product-category> is set in query string"
-      ],
-      "when": [
-        "<product-category> is valid",
-        "AND result set is not empty"
-      ],
-      "then": "only account of <product-category> are returned",
-      "references": [
-        {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-accounts"
-        }
-      ],
-      "negative": false
-    },
-    "A.BAN.003": {
-      "id": "A.BAN.003",
-      "title": "Call Accounts - with status",
-      "given": [
-        "<open-status> is set in query string"
-      ],
-      "when": [
-        "<open-status> is valid",
-        "AND result set is not empty"
-      ],
-      "then": "only account of <open-status> are returned",
-      "references": [
-        {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-accounts"
-        }
-      ],
-      "negative": false
-    },
     "A.EAR.001": {
       "id": "A.EAR.001",
       "title": "Validate service point and schema - EnergyServicePointDetailResponse",
@@ -997,7 +939,7 @@
       },
       "references": [
         {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse"
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse"
         }
       ],
       "negative": false
@@ -5039,7 +4981,7 @@
     },
     "T.EAS.003": {
       "id": "T.EAS.003",
-      "title": "DH call to SDH: Get Service Points - unsupported version without x-v-min included",
+      "title": "DH call to SDH: Get Service Points - unsupported version without x-min-v included",
       "description": "DH call to SDH: Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -5126,7 +5068,7 @@
     },
     "T.EAS.006": {
       "id": "T.EAS.006",
-      "title": "DH call to SDH: Get Service Point Detail - unsupported version without x-v-min included",
+      "title": "DH call to SDH: Get Service Point Detail - unsupported version without x-min-v included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -5135,7 +5077,7 @@
       ],
       "negative": false,
       "preConditions": [
-        "the value <x-v> is set in the request header to a version not supported by the DH",
+        "The value <x-v> is set in the request header to a version not supported by the DH",
         "AND the value for <x-v> is in a valid  format"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
@@ -5265,7 +5207,7 @@
     },
     "T.EAS.011": {
       "id": "T.EAS.011",
-      "title": "DH call to SDH: Get Usage for Service Points - unsupported version without x-v-min included",
+      "title": "DH call to SDH: Get Usage for Service Points - unsupported version without x-min-v included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -5480,42 +5422,15 @@
         {
           "type": "ACTION",
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
-        }
-      ],
-      "assertions": [
-        "A.CND.002",
-        "A.CFI.001"
-      ]
-    },
-    "T.EAS.019": {
-      "id": "T.EAS.019",
-      "title": "DH call to SDH: Get Usage for Specific Service Points - no pagination",
-      "description": "Obtain the electricity usage data for a specific set of service points requested by the DH",
-      "references": [
-        {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points-sr"
-        }
-      ],
-      "negative": true,
-      "preConditions": [
-        "Neither <page-size> or <page> query parameters are provided"
-      ],
-      "purpose": "Test API without any pagination partameters",
-      "steps": [
+        },
         {
           "type": "ACTION",
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
       "assertions": [
-        "A.CVN.001",
-        "A.CVM.001",
-        "A.CFI.001",
-        "A.CFA.004",
-        "A.CFC.004",
-        "A.CCH.004",
-        "A.CAI.001",
-        "A.EAS.006"
+        "A.CND.002",
+        "A.CFI.001"
       ]
     },
     "T.EAS.020": {
@@ -5552,7 +5467,7 @@
     },
     "T.EAS.021": {
       "id": "T.EAS.021",
-      "title": "DH call to SDH: Get Usage for Specific Service Points - unsupported version without x-v-min included",
+      "title": "DH call to SDH: Get Usage for Specific Service Points - unsupported version without x-min-v included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -5712,10 +5627,6 @@
         {
           "type": "ACTION",
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
-        },
-        {
-          "type": "ACTION",
-          "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
       "assertions": [
@@ -5723,9 +5634,41 @@
         "A.CFI.001"
       ]
     },
+    "T.EAS.027": {
+      "id": "T.EAS.027",
+      "title": "DH call to SDH: Get DER for Service Point ",
+      "description": "Obtain a list of DER data from a particular service point requested by the DH",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point-sr"
+        }
+      ],
+      "negative": true,
+      "preConditions": [
+        "The {servicePointId} is set in the Path ",
+        "AND value <x-v> is set in the request header to a version supported by the DH"
+      ],
+      "purpose": "Test API with a vaild service point and version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
+        }
+      ],
+      "assertions": [
+        "A.CVN.001",
+        "A.CVM.001",
+        "A.CFI.001",
+        "A.CFA.004",
+        "A.CFC.004",
+        "A.CCH.004",
+        "A.CAI.001",
+        "A.EAS.007"
+      ]
+    },
     "T.EAS.028": {
       "id": "T.EAS.028",
-      "title": "DH call to SDH: Get Service Point Detail - unsupported version without x-v-min included",
+      "title": "DH call to SDH: Get Service Point Detail - unsupported version without x-min-v included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -5864,7 +5807,7 @@
     },
     "T.EAS.033": {
       "id": "T.EAS.033",
-      "title": "DH call to SDH: Get DER for Specific Service Points - unsupported version without x-v-min included",
+      "title": "DH call to SDH: Get DER for Specific Service Points - unsupported version without x-min-v included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -6765,7 +6708,7 @@
     },
     "T.EAS.069": {
       "id": "T.EAS.069",
-      "title": "DH call to SDH: Get Service Points - unsupported version when x-v-min is included",
+      "title": "DH call to SDH: Get Service Points - unsupported version when x-min-v is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -6775,7 +6718,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -6791,7 +6734,7 @@
     },
     "T.EAS.070": {
       "id": "T.EAS.070",
-      "title": "DH call to SDH: Get Service Point Detail - unsupported version when x-v-min is included",
+      "title": "DH call to SDH: Get Service Point Detail - unsupported version when x-min-v is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -6801,7 +6744,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -6817,7 +6760,7 @@
     },
     "T.EAS.071": {
       "id": "T.EAS.071",
-      "title": "DH call to SDH: Get Usage for Service Points - unsupported version when x-v-min is included",
+      "title": "DH call to SDH: Get Usage for Service Points - unsupported version when x-min-v is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -6827,7 +6770,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -6843,7 +6786,7 @@
     },
     "T.EAS.072": {
       "id": "T.EAS.072",
-      "title": "DH call to SDH: Get Usage for Specific Service Points - unsupported version when x-v-min is included",
+      "title": "DH call to SDH: Get Usage for Specific Service Points - unsupported version when x-min-v  is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -6853,7 +6796,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -6869,7 +6812,7 @@
     },
     "T.EAS.073": {
       "id": "T.EAS.073",
-      "title": "DH call to SDH: Get Service Point Detail - unsupported version when x-v-min is included",
+      "title": "DH call to SDH: Get Service Point Detail - unsupported version when x-min-v is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -6879,7 +6822,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -6895,7 +6838,7 @@
     },
     "T.EAS.074": {
       "id": "T.EAS.074",
-      "title": "DH call to SDH: Get DER for Specific Service Points - unsupported version when x-v-min is included",
+      "title": "DH call to SDH: Get DER for Specific Service Points - unsupported version when x-min-v is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -6905,7 +6848,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -6996,9 +6939,590 @@
     }
   },
   "scenarios": {
+    "S.BAP.001": {
+      "id": "S.BAP.001",
+      "title": "Get Products",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAP.002": {
+      "id": "S.BAP.002",
+      "title": "Get Products Negative ",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAP.003": {
+      "id": "S.BAP.003",
+      "title": "Get Product Detail",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAP.004": {
+      "id": "S.BAP.004",
+      "title": "Get Product Detail Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.005": {
+      "id": "S.BAA.005",
+      "title": "Get Accounts",
+      "purpose": "",
+      "description": "Test the Get Accounts endpoint",
+      "references": [],
+      "sequence": [
+        {
+          "type": "SETUP",
+          "action": "Authentication"
+        }
+      ]
+    },
+    "S.BAA.006": {
+      "id": "S.BAA.006",
+      "title": "Get Accounts Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.007": {
+      "id": "S.BAA.007",
+      "title": "Get Bulk Balances",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.008": {
+      "id": "S.BAA.008",
+      "title": "Get Bulk Balances Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.009": {
+      "id": "S.BAA.009",
+      "title": "Get Balances for Specific Accounts",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.010": {
+      "id": "S.BAA.010",
+      "title": "Get Balances for Specific Accounts Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.011": {
+      "id": "S.BAA.011",
+      "title": "Get Account Balance",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.012": {
+      "id": "S.BAA.012",
+      "title": "Get Account Balance Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.013": {
+      "id": "S.BAA.013",
+      "title": "Get Account Detail",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.014": {
+      "id": "S.BAA.014",
+      "title": "Get Account Detail Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.015": {
+      "id": "S.BAA.015",
+      "title": "Get Direct Debits for Account",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.016": {
+      "id": "S.BAA.016",
+      "title": "Get Direct Debits for Account Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.017": {
+      "id": "S.BAA.017",
+      "title": "Get Bulk Direct Debits",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.018": {
+      "id": "S.BAA.018",
+      "title": "Get Bulk Direct Debits Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.019": {
+      "id": "S.BAA.019",
+      "title": "Get Direct Debits for Specific Accounts",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAA.020": {
+      "id": "S.BAA.020",
+      "title": "Get Direct Debits for Specific Accounts Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAT.021": {
+      "id": "S.BAT.021",
+      "title": "Get Transactions For Account",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAT.022": {
+      "id": "S.BAT.022",
+      "title": "Get Transactions For Account Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAT.023": {
+      "id": "S.BAT.023",
+      "title": "Get Transaction Detail",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAT.024": {
+      "id": "S.BAT.024",
+      "title": "Get Transaction Detail Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAS.025": {
+      "id": "S.BAS.025",
+      "title": "Get Scheduled Payments For Account",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAS.026": {
+      "id": "S.BAS.026",
+      "title": "Get Scheduled Payments For Account Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAS.027": {
+      "id": "S.BAS.027",
+      "title": "Get Scheduled Payments Bulk",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAS.028": {
+      "id": "S.BAS.028",
+      "title": "Get Scheduled Payments Bulk Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAS.029": {
+      "id": "S.BAS.029",
+      "title": "Get Scheduled Payments For Specific Account",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAS.030": {
+      "id": "S.BAS.030",
+      "title": "Get Scheduled Payments For Specific Account Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAS.031": {
+      "id": "S.BAS.031",
+      "title": "Get Payees",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAS.032": {
+      "id": "S.BAS.032",
+      "title": "Get Payees Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAS.033": {
+      "id": "S.BAS.033",
+      "title": "Get Payee Detail",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.BAS.034": {
+      "id": "S.BAS.034",
+      "title": "Get Payee Detail Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.AAA.035": {
+      "id": "S.AAA.035",
+      "title": "Get status",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.AAA.036": {
+      "id": "S.AAA.036",
+      "title": "Get status Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.AAA.037": {
+      "id": "S.AAA.037",
+      "title": "Get outages",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.AAA.038": {
+      "id": "S.AAA.038",
+      "title": "Get outages Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.CAC.039": {
+      "id": "S.CAC.039",
+      "title": "Get customer",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.CAC.040": {
+      "id": "S.CAC.040",
+      "title": "Get customer Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.CAC.041": {
+      "id": "S.CAC.041",
+      "title": "Get customer detail",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.CAC.042": {
+      "id": "S.CAC.042",
+      "title": "Get customer detail Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAP.043": {
+      "id": "S.EAP.043",
+      "title": "Get Generic Plans",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAP.044": {
+      "id": "S.EAP.044",
+      "title": "Get Generic Plans Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAP.045": {
+      "id": "S.EAP.045",
+      "title": "Get Generic Plan Detail",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAP.046": {
+      "id": "S.EAP.046",
+      "title": "Get Generic Plan Detail Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAA.047": {
+      "id": "S.EAA.047",
+      "title": "Get Energy Accounts",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAA.048": {
+      "id": "S.EAA.048",
+      "title": "Get Energy Accounts Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAA.049": {
+      "id": "S.EAA.049",
+      "title": "Get Energy Account Detail",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAA.050": {
+      "id": "S.EAA.050",
+      "title": "Get Energy Account Detail Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAA.051": {
+      "id": "S.EAA.051",
+      "title": "Get Agreed Payment Schedule",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAA.052": {
+      "id": "S.EAA.052",
+      "title": "Get Agreed Payment Schedule Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAA.053": {
+      "id": "S.EAA.053",
+      "title": "Get Concessions",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAA.054": {
+      "id": "S.EAA.054",
+      "title": "Get Concessions Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.055": {
+      "id": "S.EAB.055",
+      "title": "Get Balance For Energy Account",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.056": {
+      "id": "S.EAB.056",
+      "title": "Get Balance For Energy Account Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.057": {
+      "id": "S.EAB.057",
+      "title": "Get Bulk Balances For Energy",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.058": {
+      "id": "S.EAB.058",
+      "title": "Get Bulk Balances For Energy Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.059": {
+      "id": "S.EAB.059",
+      "title": "Get Balances For Specific Energy Accounts",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.060": {
+      "id": "S.EAB.060",
+      "title": "Get Balances For Specific Energy Accounts Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.061": {
+      "id": "S.EAB.061",
+      "title": "Get Invoices For Account",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.062": {
+      "id": "S.EAB.062",
+      "title": "Get Invoices For Account Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.063": {
+      "id": "S.EAB.063",
+      "title": "Get Bulk Invoices",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.064": {
+      "id": "S.EAB.064",
+      "title": "Get Bulk Invoices Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.065": {
+      "id": "S.EAB.065",
+      "title": "Get Invoices For Specific Accounts",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.066": {
+      "id": "S.EAB.066",
+      "title": "Get Invoices For Specific Accounts Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.067": {
+      "id": "S.EAB.067",
+      "title": "Get Billing For Account",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.068": {
+      "id": "S.EAB.068",
+      "title": "Get Billing For Account Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.069": {
+      "id": "S.EAB.069",
+      "title": "Get Bulk Billing",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.070": {
+      "id": "S.EAB.070",
+      "title": "Get Bulk Billing Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.071": {
+      "id": "S.EAB.071",
+      "title": "Get Billing For Specific Accounts",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
+    "S.EAB.072": {
+      "id": "S.EAB.072",
+      "title": "Get Billing For Specific Accounts Negative",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": []
+    },
     "S.EAR.073": {
       "id": "S.EAR.073",
-      "title": "Get Service Points",
+      "title": "Get Service Points v1",
       "purpose": "Test cases which will return a 2xx status code",
       "description": "As a DH I provide an API which exposes information about the service points",
       "references": [
@@ -7023,7 +7547,7 @@
     },
     "S.EAR.074": {
       "id": "S.EAR.074",
-      "title": "Get Service Points Negative",
+      "title": "Get Service Points Negative v1",
       "purpose": "Test cases which will return codes other than 2xx",
       "description": "As a DH I return appropriate codes and messages for failed or invalid requests",
       "references": [
@@ -7088,7 +7612,7 @@
     },
     "S.EAR.075": {
       "id": "S.EAR.075",
-      "title": "Get Service Point Detail",
+      "title": "Get Service Point Detail v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7101,7 +7625,7 @@
     },
     "S.EAR.076": {
       "id": "S.EAR.076",
-      "title": "Get Service Point Detail Negative",
+      "title": "Get Service Point Detail Negative v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7162,7 +7686,7 @@
     },
     "S.EAR.077": {
       "id": "S.EAR.077",
-      "title": "Get Usage For Service Point",
+      "title": "Get Usage For Service Point v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7187,7 +7711,7 @@
     },
     "S.EAR.078": {
       "id": "S.EAR.078",
-      "title": "Get Usage For Service Point Negative",
+      "title": "Get Usage For Service Point Negative v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7260,7 +7784,7 @@
     },
     "S.EAR.079": {
       "id": "S.EAR.079",
-      "title": "Get Bulk Usage",
+      "title": "Get Bulk Usage v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7285,7 +7809,7 @@
     },
     "S.EAR.080": {
       "id": "S.EAR.080",
-      "title": "Get Bulk Usage Negative",
+      "title": "Get Bulk Usage Negative v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7350,7 +7874,7 @@
     },
     "S.EAR.081": {
       "id": "S.EAR.081",
-      "title": "Get Usage For Specific Service Points",
+      "title": "Get Usage For Specific Service Points v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7375,7 +7899,7 @@
     },
     "S.EAR.082": {
       "id": "S.EAR.082",
-      "title": "Get Usage For Specific Service Points Negative",
+      "title": "Get Usage For Specific Service Points Negative v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7448,7 +7972,7 @@
     },
     "S.EAR.083": {
       "id": "S.EAR.083",
-      "title": "Get DER for Service Point",
+      "title": "Get DER for Service Point v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7461,7 +7985,7 @@
     },
     "S.EAR.084": {
       "id": "S.EAR.084",
-      "title": "Get DER for Service Point Negative",
+      "title": "Get DER for Service Point Negative v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7522,7 +8046,7 @@
     },
     "S.EAR.085": {
       "id": "S.EAR.085",
-      "title": "Get Bulk DER",
+      "title": "Get Bulk DER v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7539,7 +8063,7 @@
     },
     "S.EAR.086": {
       "id": "S.EAR.086",
-      "title": "Get Bulk DER Negative",
+      "title": "Get Bulk DER Negative v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7604,7 +8128,7 @@
     },
     "S.EAR.087": {
       "id": "S.EAR.087",
-      "title": "Get DER For Specific Service Points",
+      "title": "Get DER For Specific Service Points v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7621,7 +8145,7 @@
     },
     "S.EAR.088": {
       "id": "S.EAR.088",
-      "title": "Get DER For Specific Service Points Negative ",
+      "title": "Get DER For Specific Service Points Negative  v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7686,7 +8210,7 @@
     },
     "S.EAS.089": {
       "id": "S.EAS.089",
-      "title": "Get Service Points SR",
+      "title": "Get Service Points SR v1",
       "purpose": "",
       "description": "Test the Happy Path for Get Service Points",
       "references": [
@@ -7707,7 +8231,7 @@
     },
     "S.EAS.090": {
       "id": "S.EAS.090",
-      "title": "Get Service Points Negative SR",
+      "title": "Get Service Points Negative SR v1",
       "purpose": "",
       "description": "Test errors and edge cases for Get Service Points ",
       "references": [
@@ -7764,7 +8288,7 @@
     },
     "S.EAS.091": {
       "id": "S.EAS.091",
-      "title": "Get Service Point Detail SR",
+      "title": "Get Service Point Detail SR v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7777,7 +8301,7 @@
     },
     "S.EAS.092": {
       "id": "S.EAS.092",
-      "title": "Get Service Point Detail Negative SR",
+      "title": "Get Service Point Detail Negative SR v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7822,7 +8346,7 @@
     },
     "S.EAS.093": {
       "id": "S.EAS.093",
-      "title": "Get Usage For Service Point SR",
+      "title": "Get Usage For Service Point SR v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7843,7 +8367,7 @@
     },
     "S.EAS.094": {
       "id": "S.EAS.094",
-      "title": "Get Usage For Service Point Negative SR",
+      "title": "Get Usage For Service Point Negative SR v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7904,7 +8428,7 @@
     },
     "S.EAS.095": {
       "id": "S.EAS.095",
-      "title": "Get Usage For Specific Service Points SR",
+      "title": "Get Usage For Specific Service Points SR v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7929,7 +8453,7 @@
     },
     "S.EAS.096": {
       "id": "S.EAS.096",
-      "title": "Get Usage For Specific Service Points Negative SR",
+      "title": "Get Usage For Specific Service Points Negative SR v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7986,7 +8510,7 @@
     },
     "S.EAS.097": {
       "id": "S.EAS.097",
-      "title": "Get DER for Service Point SR",
+      "title": "Get DER for Service Point SR v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -7999,7 +8523,7 @@
     },
     "S.EAS.098": {
       "id": "S.EAS.098",
-      "title": "Get DER for Service Point Negative SR",
+      "title": "Get DER for Service Point Negative SR v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -8044,7 +8568,7 @@
     },
     "S.EAS.099": {
       "id": "S.EAS.099",
-      "title": "Get DER For Specific Service Points SR",
+      "title": "Get DER For Specific Service Points SR v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -8061,7 +8585,7 @@
     },
     "S.EAS.100": {
       "id": "S.EAS.100",
-      "title": "Get DER For Specific Service Points Negative SR",
+      "title": "Get DER For Specific Service Points Negative SR v1",
       "purpose": "",
       "description": "",
       "references": [],
@@ -8110,60 +8634,6 @@
     }
   },
   "suites": {
-    "SUITE.001": {
-      "id": "SUITE.001",
-      "title": "APIs - Banking PRD",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.002": {
-      "id": "SUITE.002",
-      "title": "APIs - Banking Accounts",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.003": {
-      "id": "SUITE.003",
-      "title": "APIs - Banking Transactions",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.004": {
-      "id": "SUITE.004",
-      "title": "APIs - Banking Scheduled Payments and Payees",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.005": {
-      "id": "SUITE.005",
-      "title": "APIs - Common Admin",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.006": {
-      "id": "SUITE.006",
-      "title": "APIs - Common Customer",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.007": {
-      "id": "SUITE.007",
-      "title": "APIs - Energy Tariffs",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.008": {
-      "id": "SUITE.008",
-      "title": "APIs - Energy Accounts",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.009": {
-      "id": "SUITE.009",
-      "title": "APIs - Energy Invoices and Billing",
-      "purpose": "",
-      "scenarios": []
-    },
     "SUITE.010": {
       "id": "SUITE.010",
       "title": "APIs - Energy Standing Data, Usage and DER",
@@ -8205,60 +8675,6 @@
         "S.EAS.099",
         "S.EAS.100"
       ]
-    },
-    "SUITE.012": {
-      "id": "SUITE.012",
-      "title": "Security - Dynamic Client Registration",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.013": {
-      "id": "SUITE.013",
-      "title": "Security - Consent Establishment",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.014": {
-      "id": "SUITE.014",
-      "title": "Security - Consent Establishment CX",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.015": {
-      "id": "SUITE.015",
-      "title": "Security - Consent Management",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.016": {
-      "id": "SUITE.016",
-      "title": "Security - Consent Management CX",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.017": {
-      "id": "SUITE.017",
-      "title": "Security - FAPI Compliance",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.018": {
-      "id": "SUITE.018",
-      "title": "Register - Data Holder Status",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.019": {
-      "id": "SUITE.019",
-      "title": "Register - ADR Status",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.020": {
-      "id": "SUITE.020",
-      "title": "NFRs",
-      "purpose": "",
-      "scenarios": []
     }
   }
 }
