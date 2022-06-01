@@ -27,7 +27,7 @@ const SCENARIO_PURPOSE_INDEX: number = 9;
 const SCENARIO_REFERENCES_INDEX: number = 10;
 const SCENARIO_SETUP_INDEX: number = 11;
 const SCENARIO_CLEANUP_INDEX: number = 12;
-const SCENARIO_TEST_CASES: number = 13;
+const SCENARIO_TEST_CASES: number = 15;
 
 const TEST_ID_INDEX: number = 1;
 const TEST_TITLE_INDEX: number = 4;
