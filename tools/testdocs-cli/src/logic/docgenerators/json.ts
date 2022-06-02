@@ -57,14 +57,14 @@ export function json(source: string, destination: string, config: JsonGeneratorC
   const testCaseDirectorySourcePath = path.join(baseSourceDirectory, '/test-cases/' );
   const testCaseDirectorySinkPath = path.join(baseSinkDirectory, '/test-cases/' );
 
-  const assertionDirectorySourcePath = path.join(baseSourceDirectory, '/assertions/' );
-  const assertionDirectorySinkPath = path.join(baseSinkDirectory, '/assertions/' );
+  const assertionDirectorySourcePath = path.join(baseSourceDirectory, '/test-assertions/' );
+  const assertionDirectorySinkPath = path.join(baseSinkDirectory, 'test-assertions/' );
 
-  const scenarioDirectorySourcePath = path.join(baseSourceDirectory, '/scenarios/' );
-  const scenarioDirectorySinkPath = path.join(baseSinkDirectory, '/scenarios/' );
+  const scenarioDirectorySourcePath = path.join(baseSourceDirectory, '/test-scenarios/' );
+  const scenarioDirectorySinkPath = path.join(baseSinkDirectory, '/test-scenarios/' );
 
   const suiteDirectorySourcePath = path.join(baseSourceDirectory, '/test-suites/' );
-  const suiteDirectorySinkPath = path.join(baseSinkDirectory, '/suites/' );
+  const suiteDirectorySinkPath = path.join(baseSinkDirectory, '/test-suites/' );
 
   // Check that the source path exists and is a directory
   if (!fs.existsSync(baseSourceDirectory) || !fs.lstatSync(baseSourceDirectory).isDirectory()) {
