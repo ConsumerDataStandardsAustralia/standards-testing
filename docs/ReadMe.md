@@ -54,18 +54,6 @@ This documentation has been  created by the DSB to assist participants in the de
 <a id="scenarios"></a>
 # Test Scenarios
 
-<a id="scenario-s.baa.005"></a>
-## S.BAA.005: Get Accounts
-
-Test the Get Accounts endpoint
-
-### Testing Sequence:
-
-|Action No.|Action Type|Detail|
-|-|-|-|
-|1|Setup|Authentication|
-
-
 <a id="scenario-s.ear.073"></a>
 ## S.EAR.073: Get Service Points v1
 
@@ -84,7 +72,7 @@ Test cases which will return a 2xx status code
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Setup|Authorise session</br>AND x-v is set in header|
+|1|Setup|Authorise session</br>AND x-v is set in header|
 |2|Execute Test|[T.EAR.001: ADR call to DH: Get Service Points - no pagination](#testcase-t.ear.001)|
 |3|Execute Test|[T.EAR.002: ADR call to DH: Get Service Points - with pagination](#testcase-t.ear.002)|
 
@@ -373,7 +361,7 @@ Test the Happy Path for Get Service Points
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
 
 
 ### Testing Sequence:
@@ -391,7 +379,7 @@ Test errors and edge cases for Get Service Points
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
 
 
 ### Testing Sequence:
