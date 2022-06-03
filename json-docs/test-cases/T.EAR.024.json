@@ -1,6 +1,6 @@
 {
   "id": "T.EAR.024",
-  "title": "ADR call to DH: Get Usage for Specific Service Points - unsupported version without x-v-min included",
+  "title": "ADR call to DH: Get Usage for Specific Service Points - unsupported version without x-min-v included",
   "description": "Ensure that the endpoint returns version compatibility errors",
   "references": [
     {

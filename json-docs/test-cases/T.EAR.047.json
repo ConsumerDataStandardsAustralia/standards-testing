@@ -1,6 +1,6 @@
 {
   "id": "T.EAR.047",
-  "title": "ADR call to DH: Get Bulk Usage - unsupported version without x-v-min included",
+  "title": "ADR call to DH: Get Bulk Usage - unsupported version without x-min-v included",
   "description": "Ensure that the endpoint returns version compatibility errors",
   "references": [
     {

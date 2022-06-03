@@ -29,7 +29,7 @@ This documentation has been  created by the DSB to assist participants in the de
 * [S.EAR.085: Get Bulk DER v1](#scenario-s.ear.085)
 * [S.EAR.086: Get Bulk DER Negative v1](#scenario-s.ear.086)
 * [S.EAR.087: Get DER For Specific Service Points v1](#scenario-s.ear.087)
-* [S.EAR.088: Get DER For Specific Service Points Negative  v1](#scenario-s.ear.088)
+* [S.EAR.088: Get DER For Specific Service Points Negative v1](#scenario-s.ear.088)
 
 
 <a id="suite-suite.011"></a>
@@ -96,7 +96,7 @@ Test cases which will return codes other than 2xx
 |Action No.|Action Type|Detail|
 |-|-|-|
 |1|Setup|Authorise session|
-|2|Execute Test|[T.EAR.003: ADR call to DH: Get Service Points - unsupported version without x-v-min included](#testcase-t.ear.003)|
+|2|Execute Test|[T.EAR.003: ADR call to DH: Get Service Points - unsupported version without x-min-v included](#testcase-t.ear.003)|
 |3|Execute Test|[T.EAR.004: ADR call to DH: Get Service Points - invalid page parameters](#testcase-t.ear.004)|
 |4|Execute Test|[T.EAR.005: ADR call to DH: Get Service Points - invalid FAPI Interaction ID format ](#testcase-t.ear.005)|
 |5|Execute Test|[T.EAR.073: ADR call to DH: Get Service Points - missing FAPI Auth Date](#testcase-t.ear.073)|
@@ -107,7 +107,7 @@ Test cases which will return codes other than 2xx
 |10|Execute Test|[T.EAR.078: ADR call to DH: Get Service Points - invalid CDS Client Header](#testcase-t.ear.078)|
 |11|Execute Test|[T.EAR.109: ADR call to DH: Get Service Points - invalid version value](#testcase-t.ear.109)|
 |12|Execute Test|[T.EAR.110: ADR call to DH: Get Service Points - invalid version format](#testcase-t.ear.110)|
-|13|Execute Test|[T.EAR.125: ADR call to DH: Get Service Points - unsupported version when x-v-min is included](#testcase-t.ear.125)|
+|13|Execute Test|[T.EAR.125: ADR call to DH: Get Service Points - unsupported version when x-min-v is included](#testcase-t.ear.125)|
 
 
 <a id="scenario-s.ear.075"></a>
@@ -127,7 +127,7 @@ Test cases which will return codes other than 2xx
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Execute Test|[T.EAR.007: ADR call to DH: Get Service Point Detail - unsupported version without x-v-min included](#testcase-t.ear.007)|
+|1|Execute Test|[T.EAR.007: ADR call to DH: Get Service Point Detail - unsupported version without x-min-v included](#testcase-t.ear.007)|
 |2|Execute Test|[T.EAR.008: ADR call to DH: Get Service Point Detail - invalid format of Service Point ID](#testcase-t.ear.008)|
 |3|Execute Test|[T.EAR.009: ADR call to DH: Get Service Point Detail - unavailable Service Point ID](#testcase-t.ear.009)|
 |4|Execute Test|[T.EAR.010: ADR call to DH: Get Service Point Detail - invalid FAPI Interaction ID format ](#testcase-t.ear.010)|
@@ -139,7 +139,7 @@ Test cases which will return codes other than 2xx
 |10|Execute Test|[T.EAR.084: ADR call to DH: Get Service Point - invalid CDS Client Header](#testcase-t.ear.084)|
 |11|Execute Test|[T.EAR.111: ADR call to DH: Get Service Point - invalid version value](#testcase-t.ear.111)|
 |12|Execute Test|[T.EAR.112: ADR call to DH: Get Service Point - invalid version format](#testcase-t.ear.112)|
-|13|Execute Test|[T.EAR.126: ADR call to DH: Get Service Point - unsupported version when x-v-min is included](#testcase-t.ear.126)|
+|13|Execute Test|[T.EAR.126: ADR call to DH: Get Service Point - unsupported version when x-min-v is included](#testcase-t.ear.126)|
 
 
 <a id="scenario-s.ear.077"></a>
@@ -162,7 +162,7 @@ Test cases which will return codes other than 2xx
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Execute Test|[T.EAR.013: ADR call to DH: Get Usage for Service Points - unsupported version without x-v-min included](#testcase-t.ear.013)|
+|1|Execute Test|[T.EAR.013: ADR call to DH: Get Usage for Service Points - unsupported version without x-min-v included](#testcase-t.ear.013)|
 |2|Execute Test|[T.EAR.014: ADR call to DH: Get Usage for Service Points - invalid page parameters](#testcase-t.ear.014)|
 |3|Execute Test|[T.EAR.017: ADR call to DH: Get Usage for Service Points - invalid Service Point ID](#testcase-t.ear.017)|
 |4|Execute Test|[T.EAR.018: ADR call to DH: Get Usage for Service Points - unavailable Service Point ID](#testcase-t.ear.018)|
@@ -177,7 +177,7 @@ Test cases which will return codes other than 2xx
 |13|Execute Test|[T.EAR.090: ADR call to DH: Get Usage For Service Point - invalid CDS Client Header](#testcase-t.ear.090)|
 |14|Execute Test|[T.EAR.113: ADR call to DH: Get Usage For Service Point - invalid version value](#testcase-t.ear.113)|
 |15|Execute Test|[T.EAR.114: ADR call to DH: Get Usage For Service Point - invalid version format](#testcase-t.ear.114)|
-|16|Execute Test|[T.EAR.127: ADR call to DH: Get Usage For Service Point - unsupported version when x-v-min is included](#testcase-t.ear.127)|
+|16|Execute Test|[T.EAR.127: ADR call to DH: Get Usage For Service Point - unsupported version when x-min-v is included](#testcase-t.ear.127)|
 
 
 <a id="scenario-s.ear.079"></a>
@@ -200,7 +200,7 @@ Test cases which will return codes other than 2xx
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Execute Test|[T.EAR.047: ADR call to DH: Get Bulk Usage - unsupported version without x-v-min included](#testcase-t.ear.047)|
+|1|Execute Test|[T.EAR.047: ADR call to DH: Get Bulk Usage - unsupported version without x-min-v included](#testcase-t.ear.047)|
 |2|Execute Test|[T.EAR.048: ADR call to DH: Get Bulk Usage - invalid page parameters](#testcase-t.ear.048)|
 |3|Execute Test|[T.EAR.051: ADR call to DH: Get Bulk Usage - invalid format oldest date ](#testcase-t.ear.051)|
 |4|Execute Test|[T.EAR.052: ADR call to DH: Get Bulk Usage - invalid format newest date](#testcase-t.ear.052)|
@@ -213,7 +213,7 @@ Test cases which will return codes other than 2xx
 |11|Execute Test|[T.EAR.059: ADR call to DH: Get Bulk Usage - invalid CDS Client Header](#testcase-t.ear.059)|
 |12|Execute Test|[T.EAR.115: ADR call to DH: Get Bulk Usage - invalid version value](#testcase-t.ear.115)|
 |13|Execute Test|[T.EAR.116: ADR call to DH: Get Bulk Usage - invalid version format](#testcase-t.ear.116)|
-|14|Execute Test|[T.EAR.128: ADR call to DH: Get Bulk Usage - unsupported version when x-v-min is included](#testcase-t.ear.128)|
+|14|Execute Test|[T.EAR.128: ADR call to DH: Get Bulk Usage - unsupported version when x-min-v is included](#testcase-t.ear.128)|
 
 
 <a id="scenario-s.ear.081"></a>
@@ -236,7 +236,7 @@ Test cases which will return codes other than 2xx
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Execute Test|[T.EAR.024: ADR call to DH: Get Usage for Specific Service Points - unsupported version without x-v-min included](#testcase-t.ear.024)|
+|1|Execute Test|[T.EAR.024: ADR call to DH: Get Usage for Specific Service Points - unsupported version without x-min-v included](#testcase-t.ear.024)|
 |2|Execute Test|[T.EAR.025: ADR call to DH: Get Usage for Specific Service Points - invalid page parameters](#testcase-t.ear.025)|
 |3|Execute Test|[T.EAR.028: ADR call to DH: Get Usage for Specific Service Points - invalid format oldest date ](#testcase-t.ear.028)|
 |4|Execute Test|[T.EAR.029: ADR call to DH: Get Usage for Specific Service Points - invalid format newest date](#testcase-t.ear.029)|
@@ -251,7 +251,7 @@ Test cases which will return codes other than 2xx
 |13|Execute Test|[T.EAR.096: ADR call to DH: Get Usage for Specific Service Points - invalid CDS Client Header](#testcase-t.ear.096)|
 |14|Execute Test|[T.EAR.117: ADR call to DH: Get Usage for Specific Service Points - invalid version value](#testcase-t.ear.117)|
 |15|Execute Test|[T.EAR.118: ADR call to DH: Get Usage for Specific Service Points - invalid version format](#testcase-t.ear.118)|
-|16|Execute Test|[T.EAR.129: ADR call to DH: Get Usage for Specific Service Points - unsupported version when x-v-min is included](#testcase-t.ear.129)|
+|16|Execute Test|[T.EAR.129: ADR call to DH: Get Usage for Specific Service Points - unsupported version when x-min-v is included](#testcase-t.ear.129)|
 
 
 <a id="scenario-s.ear.083"></a>
@@ -271,7 +271,7 @@ Test cases which will return codes other than 2xx
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Execute Test|[T.EAR.034: ADR call to DH: Get Service Point Detail - unsupported version without x-v-min included](#testcase-t.ear.034)|
+|1|Execute Test|[T.EAR.034: ADR call to DH: Get Service Point Detail - unsupported version without x-min-v included](#testcase-t.ear.034)|
 |2|Execute Test|[T.EAR.035: ADR call to DH: Get Service Point Detail - invalid format of Service Point ID](#testcase-t.ear.035)|
 |3|Execute Test|[T.EAR.036: ADR call to DH: Get Service Point Detail - unavailable Service Point ID](#testcase-t.ear.036)|
 |4|Execute Test|[T.EAR.037: ADR call to DH: Get DER for Service Point - invalid FAPI Interaction ID format](#testcase-t.ear.037)|
@@ -283,7 +283,7 @@ Test cases which will return codes other than 2xx
 |10|Execute Test|[T.EAR.102: ADR call to DH: Get DER for Service Point - invalid CDS Client Header](#testcase-t.ear.102)|
 |11|Execute Test|[T.EAR.119: ADR call to DH: Get DER for Service Point - invalid version value](#testcase-t.ear.119)|
 |12|Execute Test|[T.EAR.120: ADR call to DH: Get DER for Service Point - invalid version format](#testcase-t.ear.120)|
-|13|Execute Test|[T.EAR.130: ADR call to DH: Get DER for Service Point - unsupported version when x-v-min is included](#testcase-t.ear.130)|
+|13|Execute Test|[T.EAR.130: ADR call to DH: Get DER for Service Point - unsupported version when x-min-v is included](#testcase-t.ear.130)|
 
 
 <a id="scenario-s.ear.085"></a>
@@ -304,7 +304,7 @@ Test cases which will return codes other than 2xx
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Execute Test|[T.EAR.062: ADR call to DH: Get Bulk DER - unsupported version without x-v-min included](#testcase-t.ear.062)|
+|1|Execute Test|[T.EAR.062: ADR call to DH: Get Bulk DER - unsupported version without x-min-v included](#testcase-t.ear.062)|
 |2|Execute Test|[T.EAR.063: ADR call to DH: Get Bulk DER - invalid page parameters](#testcase-t.ear.063)|
 |3|Execute Test|[T.EAR.064: ADR call to DH: Get Bulk DER - missing FAPI Auth Date](#testcase-t.ear.064)|
 |4|Execute Test|[T.EAR.065: ADR call to DH: DHGet Bulk DER - invalid FAPI Auth Date](#testcase-t.ear.065)|
@@ -317,7 +317,7 @@ Test cases which will return codes other than 2xx
 |11|Execute Test|[T.EAR.072: ADR call to DH: Get Bulk DER - invalid FAPI Customer IP Address](#testcase-t.ear.072)|
 |12|Execute Test|[T.EAR.121: ADR call to DH: Get Bulk DER - invalid version value](#testcase-t.ear.121)|
 |13|Execute Test|[T.EAR.122: ADR call to DH: Get Bulk DER - invalid version format](#testcase-t.ear.122)|
-|14|Execute Test|[T.EAR.131: ADR call to DH: Get Bulk DER - unsupported version when x-v-min is included](#testcase-t.ear.131)|
+|14|Execute Test|[T.EAR.131: ADR call to DH: Get Bulk DER - unsupported version when x-min-v is included](#testcase-t.ear.131)|
 
 
 <a id="scenario-s.ear.087"></a>
@@ -332,13 +332,13 @@ Test cases which will return codes other than 2xx
 
 
 <a id="scenario-s.ear.088"></a>
-## S.EAR.088: Get DER For Specific Service Points Negative  v1
+## S.EAR.088: Get DER For Specific Service Points Negative v1
 
 ### Testing Sequence:
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Execute Test|[T.EAR.040: ADR call to DH: Get DER for Specific Service Points - unsupported version without x-v-min included](#testcase-t.ear.040)|
+|1|Execute Test|[T.EAR.040: ADR call to DH: Get DER for Specific Service Points - unsupported version without x-min-v included](#testcase-t.ear.040)|
 |2|Execute Test|[T.EAR.041: ADR call to DH: Get DER for Specific Service Points - invalid page parameters](#testcase-t.ear.041)|
 |3|Execute Test|[T.EAR.042: ADR call to DH: Get DER for Specific Service Points - invalid body values](#testcase-t.ear.042)|
 |4|Execute Test|[T.EAR.043: ADR call to DH: Get DER for Specific Service Points - invalid body format](#testcase-t.ear.043)|
@@ -351,7 +351,7 @@ Test cases which will return codes other than 2xx
 |11|Execute Test|[T.EAR.108: ADR call to DH: Get DER For Specific Service Points - invalid CDS Client Header](#testcase-t.ear.108)|
 |12|Execute Test|[T.EAR.123: ADR call to DH: Get DER For Specific Service Points - invalid version value](#testcase-t.ear.123)|
 |13|Execute Test|[T.EAR.124: ADR call to DH: Get DER For Specific Service Points - invalid version format](#testcase-t.ear.124)|
-|14|Execute Test|[T.EAR.132: ADR call to DH: Get DER For Specific Service Points - unsupported version when x-v-min is included](#testcase-t.ear.132)|
+|14|Execute Test|[T.EAR.132: ADR call to DH: Get DER For Specific Service Points - unsupported version when x-min-v is included](#testcase-t.ear.132)|
 
 
 <a id="scenario-s.eas.089"></a>
@@ -468,7 +468,7 @@ Test errors and edge cases for Get Service Points
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Execute Test|[T.EAS.019](#testcase-t.eas.019)|
+|1|Execute Test|[T.EAS.019: DH call to SDH: Get Usage for Specific Service Points - no pagination](#testcase-t.eas.019)|
 |2|Execute Test|[T.EAS.020: DH call to SDH: Get Usage for Specific Service Points - with pagination](#testcase-t.eas.020)|
 |3|Execute Test|[T.EAS.023: DH call to SDH: Get Usage for Specific Service Points - oldest date](#testcase-t.eas.023)|
 |4|Execute Test|[T.EAS.024: DH call to SDH: Get Usage for Specific Service Points - newest date](#testcase-t.eas.024)|
@@ -637,7 +637,7 @@ Test API with pagination partameters
 
 
 <a id="testcase-t.ear.003"></a>
-## T.EAR.003: ADR call to DH: Get Service Points - unsupported version without x-v-min included
+## T.EAR.003: ADR call to DH: Get Service Points - unsupported version without x-min-v included
 
 Positive test case
 
@@ -785,7 +785,7 @@ Test API with a vaild service point and version
 
 
 <a id="testcase-t.ear.007"></a>
-## T.EAR.007: ADR call to DH: Get Service Point Detail - unsupported version without x-v-min included
+## T.EAR.007: ADR call to DH: Get Service Point Detail - unsupported version without x-min-v included
 
 Positive test case
 
@@ -1004,7 +1004,7 @@ Test API with pagination partameters
 
 
 <a id="testcase-t.ear.013"></a>
-## T.EAR.013: ADR call to DH: Get Usage for Service Points - unsupported version without x-v-min included
+## T.EAR.013: ADR call to DH: Get Usage for Service Points - unsupported version without x-min-v included
 
 Positive test case
 
@@ -1416,7 +1416,7 @@ Test API with pagination partameters
 
 
 <a id="testcase-t.ear.024"></a>
-## T.EAR.024: ADR call to DH: Get Usage for Specific Service Points - unsupported version without x-v-min included
+## T.EAR.024: ADR call to DH: Get Usage for Specific Service Points - unsupported version without x-min-v included
 
 Positive test case
 
@@ -1787,7 +1787,7 @@ Test API with a vaild service point and version
 
 
 <a id="testcase-t.ear.034"></a>
-## T.EAR.034: ADR call to DH: Get Service Point Detail - unsupported version without x-v-min included
+## T.EAR.034: ADR call to DH: Get Service Point Detail - unsupported version without x-min-v included
 
 Positive test case
 
@@ -2006,7 +2006,7 @@ Test API with pagination partameters
 
 
 <a id="testcase-t.ear.040"></a>
-## T.EAR.040: ADR call to DH: Get DER for Specific Service Points - unsupported version without x-v-min included
+## T.EAR.040: ADR call to DH: Get DER for Specific Service Points - unsupported version without x-min-v included
 
 Positive test case
 
@@ -2265,7 +2265,7 @@ Test API with pagination partameters
 
 
 <a id="testcase-t.ear.047"></a>
-## T.EAR.047: ADR call to DH: Get Bulk Usage - unsupported version without x-v-min included
+## T.EAR.047: ADR call to DH: Get Bulk Usage - unsupported version without x-min-v included
 
 Positive test case
 
@@ -2814,7 +2814,7 @@ Test API with pagination partameters
 
 
 <a id="testcase-t.ear.062"></a>
-## T.EAR.062: ADR call to DH: Get Bulk DER - unsupported version without x-v-min included
+## T.EAR.062: ADR call to DH: Get Bulk DER - unsupported version without x-min-v included
 
 Positive test case
 
@@ -5023,7 +5023,7 @@ Test API with invalid version format
 
 
 <a id="testcase-t.ear.125"></a>
-## T.EAR.125: ADR call to DH: Get Service Points - unsupported version when x-v-min is included
+## T.EAR.125: ADR call to DH: Get Service Points - unsupported version when x-min-v is included
 
 Positive test case
 
@@ -5041,7 +5041,7 @@ Test API with a version that is not supported by the DH
 ### Execution Pre-conditions:
 
 * the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
-* AND the &lt;x-v-min&gt; is included
+* AND the &lt;x-min-v&gt; is included
 
 
 ### Execution Steps:
@@ -5059,7 +5059,7 @@ Test API with a version that is not supported by the DH
 
 
 <a id="testcase-t.ear.126"></a>
-## T.EAR.126: ADR call to DH: Get Service Point - unsupported version when x-v-min is included
+## T.EAR.126: ADR call to DH: Get Service Point - unsupported version when x-min-v is included
 
 Positive test case
 
@@ -5077,7 +5077,7 @@ Test API with a version that is not supported by the DH
 ### Execution Pre-conditions:
 
 * the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
-* AND the &lt;x-v-min&gt; is included
+* AND the &lt;x-min-v&gt; is included
 
 
 ### Execution Steps:
@@ -5095,7 +5095,7 @@ Test API with a version that is not supported by the DH
 
 
 <a id="testcase-t.ear.127"></a>
-## T.EAR.127: ADR call to DH: Get Usage For Service Point - unsupported version when x-v-min is included
+## T.EAR.127: ADR call to DH: Get Usage For Service Point - unsupported version when x-min-v is included
 
 Positive test case
 
@@ -5113,7 +5113,7 @@ Test API with a version that is not supported by the DH
 ### Execution Pre-conditions:
 
 * the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
-* AND the &lt;x-v-min&gt; is included
+* AND the &lt;x-min-v&gt; is included
 
 
 ### Execution Steps:
@@ -5131,7 +5131,7 @@ Test API with a version that is not supported by the DH
 
 
 <a id="testcase-t.ear.128"></a>
-## T.EAR.128: ADR call to DH: Get Bulk Usage - unsupported version when x-v-min is included
+## T.EAR.128: ADR call to DH: Get Bulk Usage - unsupported version when x-min-v is included
 
 Positive test case
 
@@ -5149,7 +5149,7 @@ Test API with a version that is not supported by the DH
 ### Execution Pre-conditions:
 
 * the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
-* AND the &lt;x-v-min&gt; is included
+* AND the &lt;x-min-v&gt; is included
 
 
 ### Execution Steps:
@@ -5167,7 +5167,7 @@ Test API with a version that is not supported by the DH
 
 
 <a id="testcase-t.ear.129"></a>
-## T.EAR.129: ADR call to DH: Get Usage for Specific Service Points - unsupported version when x-v-min is included
+## T.EAR.129: ADR call to DH: Get Usage for Specific Service Points - unsupported version when x-min-v is included
 
 Positive test case
 
@@ -5185,7 +5185,7 @@ Test API with a version that is not supported by the DH
 ### Execution Pre-conditions:
 
 * the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
-* AND the &lt;x-v-min&gt; is included
+* AND the &lt;x-min-v&gt; is included
 
 
 ### Execution Steps:
@@ -5203,7 +5203,7 @@ Test API with a version that is not supported by the DH
 
 
 <a id="testcase-t.ear.130"></a>
-## T.EAR.130: ADR call to DH: Get DER for Service Point - unsupported version when x-v-min is included
+## T.EAR.130: ADR call to DH: Get DER for Service Point - unsupported version when x-min-v is included
 
 Positive test case
 
@@ -5221,7 +5221,7 @@ Test API with a version that is not supported by the DH
 ### Execution Pre-conditions:
 
 * the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
-* AND the &lt;x-v-min&gt; is included
+* AND the &lt;x-min-v&gt; is included
 
 
 ### Execution Steps:
@@ -5239,7 +5239,7 @@ Test API with a version that is not supported by the DH
 
 
 <a id="testcase-t.ear.131"></a>
-## T.EAR.131: ADR call to DH: Get Bulk DER - unsupported version when x-v-min is included
+## T.EAR.131: ADR call to DH: Get Bulk DER - unsupported version when x-min-v is included
 
 Positive test case
 
@@ -5257,7 +5257,7 @@ Test API with a version that is not supported by the DH
 ### Execution Pre-conditions:
 
 * the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
-* AND the &lt;x-v-min&gt; is included
+* AND the &lt;x-min-v&gt; is included
 
 
 ### Execution Steps:
@@ -5275,7 +5275,7 @@ Test API with a version that is not supported by the DH
 
 
 <a id="testcase-t.ear.132"></a>
-## T.EAR.132: ADR call to DH: Get DER For Specific Service Points - unsupported version when x-v-min is included
+## T.EAR.132: ADR call to DH: Get DER For Specific Service Points - unsupported version when x-min-v is included
 
 Positive test case
 
@@ -5293,7 +5293,7 @@ Test API with a version that is not supported by the DH
 ### Execution Pre-conditions:
 
 * the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
-* AND the &lt;x-v-min&gt; is included
+* AND the &lt;x-min-v&gt; is included
 
 
 ### Execution Steps:
@@ -5975,13 +5975,52 @@ Test API without any pagination partameters
 |Action No.|Action Type|Detail|
 |-|-|-|
 |1|Action|GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage|
-|2|Action|POST /secondary/energy/electricity/servicepoints/usage|
 
 
 ### End State Assertions:
 
 * [A.CND.002: Validation the Newest Date parameter - invalid format](#assertion-a.cnd.002)
 * [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+
+
+<a id="testcase-t.eas.019"></a>
+## T.EAS.019: DH call to SDH: Get Usage for Specific Service Points - no pagination
+
+Negative test case
+
+Obtain the electricity usage data for a specific set of service points requested by the DH
+
+### Purpose:
+
+Test API without any pagination partameters
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points-sr)
+
+
+### Execution Pre-conditions:
+
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|POST /secondary/energy/electricity/servicepoints/usage|
+
+
+### End State Assertions:
+
+* [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
+* [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
+* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
+* [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
+* [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
+* [A.CAI.001: CDS arrangement id - present and valid (SR specific)](#assertion-a.cai.001)
+* [A.EAS.006: Validate servicePointIdList body and schema - EnergyUsageListResponse](#assertion-a.eas.006)
 
 
 <a id="testcase-t.eas.020"></a>
@@ -8850,7 +8889,7 @@ Critical (Test Fails)
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse](https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse)
+* [https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse)
 
 
 ### Severity:

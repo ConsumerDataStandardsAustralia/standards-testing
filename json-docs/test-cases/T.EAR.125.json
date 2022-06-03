@@ -1,6 +1,6 @@
 {
   "id": "T.EAR.125",
-  "title": "ADR call to DH: Get Service Points - unsupported version when x-v-min is included",
+  "title": "ADR call to DH: Get Service Points - unsupported version when x-min-v is included",
   "description": "Ensure that the endpoint returns version compatibility errors",
   "references": [
     {
@@ -10,7 +10,7 @@
   "negative": false,
   "preConditions": [
     "the value <x-v> is set in the request header to a version not supported by the DH",
-    "AND the <x-v-min> is included"
+    "AND the <x-min-v> is included"
   ],
   "purpose": "Test API with a version that is not supported by the DH",
   "steps": [

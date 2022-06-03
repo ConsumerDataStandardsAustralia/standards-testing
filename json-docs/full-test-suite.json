@@ -939,7 +939,7 @@
       },
       "references": [
         {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/# tocSenergyusagelistresponse"
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse"
         }
       ],
       "negative": false
@@ -1412,7 +1412,7 @@
     },
     "T.EAR.003": {
       "id": "T.EAR.003",
-      "title": "ADR call to DH: Get Service Points - unsupported version without x-v-min included",
+      "title": "ADR call to DH: Get Service Points - unsupported version without x-min-v included",
       "description": "DH call to SDH: Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -1524,7 +1524,7 @@
     },
     "T.EAR.007": {
       "id": "T.EAR.007",
-      "title": "ADR call to DH: Get Service Point Detail - unsupported version without x-v-min included",
+      "title": "ADR call to DH: Get Service Point Detail - unsupported version without x-min-v included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -1689,7 +1689,7 @@
     },
     "T.EAR.013": {
       "id": "T.EAR.013",
-      "title": "ADR call to DH: Get Usage for Service Points - unsupported version without x-v-min included",
+      "title": "ADR call to DH: Get Usage for Service Points - unsupported version without x-min-v included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -2004,7 +2004,7 @@
     },
     "T.EAR.024": {
       "id": "T.EAR.024",
-      "title": "ADR call to DH: Get Usage for Specific Service Points - unsupported version without x-v-min included",
+      "title": "ADR call to DH: Get Usage for Specific Service Points - unsupported version without x-min-v included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -2285,7 +2285,7 @@
     },
     "T.EAR.034": {
       "id": "T.EAR.034",
-      "title": "ADR call to DH: Get Service Point Detail - unsupported version without x-v-min included",
+      "title": "ADR call to DH: Get Service Point Detail - unsupported version without x-min-v included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -2450,7 +2450,7 @@
     },
     "T.EAR.040": {
       "id": "T.EAR.040",
-      "title": "ADR call to DH: Get DER for Specific Service Points - unsupported version without x-v-min included",
+      "title": "ADR call to DH: Get DER for Specific Service Points - unsupported version without x-min-v included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -2646,7 +2646,7 @@
     },
     "T.EAR.047": {
       "id": "T.EAR.047",
-      "title": "ADR call to DH: Get Bulk Usage - unsupported version without x-v-min included",
+      "title": "ADR call to DH: Get Bulk Usage - unsupported version without x-min-v included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -3060,7 +3060,7 @@
     },
     "T.EAR.062": {
       "id": "T.EAR.062",
-      "title": "ADR call to DH: Get Bulk DER - unsupported version without x-v-min included",
+      "title": "ADR call to DH: Get Bulk DER - unsupported version without x-min-v included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -4702,7 +4702,7 @@
     },
     "T.EAR.125": {
       "id": "T.EAR.125",
-      "title": "ADR call to DH: Get Service Points - unsupported version when x-v-min is included",
+      "title": "ADR call to DH: Get Service Points - unsupported version when x-min-v is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -4712,7 +4712,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -4729,7 +4729,7 @@
     },
     "T.EAR.126": {
       "id": "T.EAR.126",
-      "title": "ADR call to DH: Get Service Point - unsupported version when x-v-min is included",
+      "title": "ADR call to DH: Get Service Point - unsupported version when x-min-v is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -4739,7 +4739,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -4756,7 +4756,7 @@
     },
     "T.EAR.127": {
       "id": "T.EAR.127",
-      "title": "ADR call to DH: Get Usage For Service Point - unsupported version when x-v-min is included",
+      "title": "ADR call to DH: Get Usage For Service Point - unsupported version when x-min-v is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -4766,7 +4766,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -4783,7 +4783,7 @@
     },
     "T.EAR.128": {
       "id": "T.EAR.128",
-      "title": "ADR call to DH: Get Bulk Usage - unsupported version when x-v-min is included",
+      "title": "ADR call to DH: Get Bulk Usage - unsupported version when x-min-v is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -4793,7 +4793,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -4810,7 +4810,7 @@
     },
     "T.EAR.129": {
       "id": "T.EAR.129",
-      "title": "ADR call to DH: Get Usage for Specific Service Points - unsupported version when x-v-min is included",
+      "title": "ADR call to DH: Get Usage for Specific Service Points - unsupported version when x-min-v is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -4820,7 +4820,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -4837,7 +4837,7 @@
     },
     "T.EAR.130": {
       "id": "T.EAR.130",
-      "title": "ADR call to DH: Get DER for Service Point - unsupported version when x-v-min is included",
+      "title": "ADR call to DH: Get DER for Service Point - unsupported version when x-min-v is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -4847,7 +4847,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -4864,7 +4864,7 @@
     },
     "T.EAR.131": {
       "id": "T.EAR.131",
-      "title": "ADR call to DH: Get Bulk DER - unsupported version when x-v-min is included",
+      "title": "ADR call to DH: Get Bulk DER - unsupported version when x-min-v is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -4874,7 +4874,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -4891,7 +4891,7 @@
     },
     "T.EAR.132": {
       "id": "T.EAR.132",
-      "title": "ADR call to DH: Get DER For Specific Service Points - unsupported version when x-v-min is included",
+      "title": "ADR call to DH: Get DER For Specific Service Points - unsupported version when x-min-v is included",
       "description": "Ensure that the endpoint returns version compatibility errors",
       "references": [
         {
@@ -4901,7 +4901,7 @@
       "negative": false,
       "preConditions": [
         "the value <x-v> is set in the request header to a version not supported by the DH",
-        "AND the <x-v-min> is included"
+        "AND the <x-min-v> is included"
       ],
       "purpose": "Test API with a version that is not supported by the DH",
       "steps": [
@@ -5422,15 +5422,42 @@
         {
           "type": "ACTION",
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
-        },
+        }
+      ],
+      "assertions": [
+        "A.CND.002",
+        "A.CFI.001"
+      ]
+    },
+    "T.EAS.019": {
+      "id": "T.EAS.019",
+      "title": "DH call to SDH: Get Usage for Specific Service Points - no pagination",
+      "description": "Obtain the electricity usage data for a specific set of service points requested by the DH",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points-sr"
+        }
+      ],
+      "negative": true,
+      "preConditions": [
+        "Neither <page-size> or <page> query parameters are provided"
+      ],
+      "purpose": "Test API without any pagination partameters",
+      "steps": [
         {
           "type": "ACTION",
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
       "assertions": [
-        "A.CND.002",
-        "A.CFI.001"
+        "A.CVN.001",
+        "A.CVM.001",
+        "A.CFI.001",
+        "A.CFA.004",
+        "A.CFC.004",
+        "A.CCH.004",
+        "A.CAI.001",
+        "A.EAS.006"
       ]
     },
     "T.EAS.020": {
@@ -7564,7 +7591,7 @@
     },
     "S.EAR.088": {
       "id": "S.EAR.088",
-      "title": "Get DER For Specific Service Points Negative  v1",
+      "title": "Get DER For Specific Service Points Negative v1",
       "purpose": "",
       "description": "",
       "references": [],
