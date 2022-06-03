@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import * as fs from 'fs';
 import { Writable } from 'stream';
 import {
@@ -78,14 +79,16 @@ function generateHtml(testDocs: ConsumerDataRightTestCaseJSONSchema): string {
 
 function generateSummarySection(testDocs: ConsumerDataRightTestCaseJSONSchema): string {
   let result = '';
-
+  let today = dayjs();
   result += startSection('summary');
 
   result += header1(testDocs.title, 'introduction');
   result += text('File version: ' + testDocs.fileVersion);
   //result += text('Compliant with CDR standards version ' + testDocs.standardsVersion);
   result += text(testDocs.description);
-
+  result += text('Last updated ' + today.format('DD/MM/YYYY') + ' see the <a href="">change log</a> for details');
+  // result += link('https://www.google.com','change log')
+  // result += text('for details')
   result += endSection();
 
   return result;
