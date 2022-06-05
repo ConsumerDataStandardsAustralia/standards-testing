@@ -84,11 +84,8 @@ function generateSummarySection(testDocs: ConsumerDataRightTestCaseJSONSchema): 
 
   result += header1(testDocs.title, 'introduction');
   result += text('File version: ' + testDocs.fileVersion);
-  //result += text('Compliant with CDR standards version ' + testDocs.standardsVersion);
   result += text(testDocs.description);
-  result += text('Last updated ' + today.format('DD/MM/YYYY') + ' see the <a href="">change log</a> for details');
-  // result += link('https://www.google.com','change log')
-  // result += text('for details')
+  result += text('Last updated ' + today.format('DD/MM/YYYY') + ' see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v1.0.1/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx">change log</a> for details');
   result += endSection();
 
   return result;
