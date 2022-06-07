@@ -2,24 +2,20 @@
 
 ## About the CDR Test Documentation
 
-The CDR Test Documentation is a repository of Test Cases and Assertions that describe the way the standards can be tested.  These are logically grouped into Suites and Scenarios for each Sector and API to validate an API against the Consumer Data Standards.
+The CDR Test Documentation is a repository of Test Cases and Assertions that describe the way the standards can be tested.  These are logically grouped into Suites and Scenarios, for each Sector and API, to validate an API against the Consumer Data Standards.
 
+The Standards, and this Test Documentation, are maintained by the Data Standards Body (DSB), with the Data Standards Chair as the decision maker. The Data Standards Body is an independent body administered by the [Treasury](https://www.directory.gov.au/portfolios/treasury/data-standards-body). The work of standards development is conducted in consultation with the [Australian Competition and Consumer Commission (ACCC)](https://www.accc.gov.au/focus-areas/consumer-data-right-cdr-0) as co-regulator of the Consumer Data Right, along with the [Office of the Australian Information Commissioner (OAIC)](https://www.oaic.gov.au/consumer-data-right/about-the-consumer-data-right/).
 
-The repository has the following structure
+The CDR Test Documentation is available here: [https://consumerdatastandardsaustralia.github.io/standards-testing/latest/ - introduction](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/#introduction)
+
+## Repository Structure
 
 | Folder | Description |
 | --- | ----------- |
-| docs | Contains the published html document accessible [here](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/) |
-| json-docs | The definitions for scenarios, test case, suites, and assertions which form the basis of the published documentation |
-| tools | The toolset used to generate the the published dcumentaion html and markdown files. This toolset is published as an npm package available [here](https://www.npmjs.com/package/@cds-au/testdocs) |
-| schema | The json schema definition against which the suites, scenarios, test cases and assertions are validated |
-
-## Additional Information
-
-The Standards, and this Test Documentation, are maintained by the Data Standards Body (DSB), with the Data Standards Chair as the decision maker. The Data Standards Body is part of the [Treasury](https://www.directory.gov.au/portfolios/treasury/data-standards-body). The work of standards development is conducted in consultation with the [Australian Competition and Consumer Commission (ACCC)](https://www.accc.gov.au/focus-areas/consumer-data-right-cdr-0) as co-regulator of the Consumer Data Right, along with the [Office of the Australian Information Commissioner (OAIC)](https://www.oaic.gov.au/consumer-data-right/about-the-consumer-data-right/).
-
-
-The repository is available here: [https://consumerdatastandardsaustralia.github.io/standards-testing/latest/ - introduction](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/#introduction)
+| docs | Contains the published html document available [here](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/) |
+| json-docs | The definitions for Suites, Scenarios, Test Case and Assertions which form the basis of the published documentation |
+| tools | The toolset used to generate the published documentation html and markdown files. This toolset is published as an npm package available [here](https://www.npmjs.com/package/@cds-au/testdocs) |
+| schema | The json schema definition against which the Suites, Scenarios, Test Cases and Assertions are validated |
 
 ## What it is designed to do?
 
@@ -71,18 +67,6 @@ Information Security and CDR Register behaviour is currently handled in the [FAP
 
 The DSB anticipates this documentation, in time, will also reference DSBs postman collection to validate schemas.  Details of the postman collection are available here: [ConsumerDataStandardsAustralia/dsb-schema-tools (github.com)](https://github.com/ConsumerDataStandardsAustralia/dsb-schema-tools).
 
-## Disclaimer
-
-The artefacts in this repo are offered without warranty or liability, in accordance with the [MIT licence.](https://github.com/ConsumerDataStandardsAustralia/java-artefacts/blob/master/LICENSE)
-
-[The Data Standards Body](https://www.csiro.au/en/News/News-releases/2018/Data61-appointed-to-Data-Standards-Body-role) (DSB) develops these artefacts in the course of its work, in order to perform quality assurance on the Australian Consumer Data Right Standards (Data Standards).
-
-The DSB makes this repo, and its artefacts, public [on a non-commercial basis](https://github.com/ConsumerDataStandardsAustralia/java-artefacts/blob/master/LICENSE) in the interest of supporting the participants in the CDR eco-system.
-
-The resources of the DSB are primarily directed towards assisting the [Data Standards Chair](https://consumerdatastandards.gov.au/about/) for [developing the Data Standards](https://github.com/ConsumerDataStandardsAustralia/standards).
-
-Consequently, the development work provided on the artefacts in this repo is on a best-effort basis, and the DSB acknowledges the use of these tools alone is not sufficient for, nor should they be relied upon with respect to [accreditation](https://www.accc.gov.au/focus-areas/consumer-data-right-cdr-0/cdr-draft-accreditation-guidelines), conformance, or compliance purposes.
-
 ## Contributing and providing feedback
 
 The CDR Test Documentation is a concept we’d like to test with the community and welcome your feedback.  We have developed this based on our interpretation of earlier feedback received from the community to clarify ambiguity in the standards and to assist with implementation.
@@ -94,6 +78,18 @@ To provide feedback you need to raise an ‘issue’ or a ‘pull request’ on 
  3. suggested improvements to the user interface or instructions on how to use this repository.
 
 The team at DSB will address issues as they are raised and add or correct test cases as needed.
+
+## Disclaimer
+
+The artefacts in this repo are offered without warranty or liability, in accordance with the [MIT licence.](https://github.com/ConsumerDataStandardsAustralia/java-artefacts/blob/master/LICENSE)
+
+[The Data Standards Body](https://www.csiro.au/en/News/News-releases/2018/Data61-appointed-to-Data-Standards-Body-role) (DSB) develops these artefacts in the course of its work, in order to perform quality assurance on the Australian Consumer Data Right Standards (Data Standards).
+
+The DSB makes this repo, and its artefacts, public [on a non-commercial basis](https://github.com/ConsumerDataStandardsAustralia/java-artefacts/blob/master/LICENSE) in the interest of supporting the participants in the CDR eco-system.
+
+The resources of the DSB are primarily directed towards assisting the [Data Standards Chair](https://consumerdatastandards.gov.au/about/) for [developing the Data Standards](https://github.com/ConsumerDataStandardsAustralia/standards).
+
+Consequently, the development work provided on the artefacts in this repo is on a best-effort basis, and the DSB acknowledges the use of these tools alone is not sufficient for, nor should they be relied upon with respect to [accreditation](https://www.accc.gov.au/focus-areas/consumer-data-right-cdr-0/cdr-draft-accreditation-guidelines), conformance, or compliance purposes.
 
 ## Rules of engagement for this repository
 
