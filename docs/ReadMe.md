@@ -633,6 +633,7 @@ Test API with pagination partameters
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
 * [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
+* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.EAR.004: Validate schema - EnergyServicePointListReponse](#assertion-a.ear.004)
 
 
@@ -1000,6 +1001,7 @@ Test API with pagination partameters
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
 * [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
+* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.EAR.005: Validate service point and schema - EnergyUsageListResponse](#assertion-a.ear.005)
 
 
@@ -1412,6 +1414,7 @@ Test API with pagination partameters
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
 * [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
+* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.EAR.006: Validate servicePointIdList body and schema - EnergyUsageListResponse](#assertion-a.ear.006)
 
 
@@ -2002,6 +2005,7 @@ Test API with pagination partameters
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
 * [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
+* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.EAR.008: Validate servicePointIdList body and schema - EnergyDerListResponse](#assertion-a.ear.008)
 
 
@@ -2261,6 +2265,7 @@ Test API with pagination partameters
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
 * [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
+* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.EAR.010: Validate schema - 	EnergyUsageListResponse](#assertion-a.ear.010)
 
 
@@ -2810,6 +2815,7 @@ Test API with pagination partameters
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
+* [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
 * [A.EAR.011: Validate schema - EnergyDerListResponse](#assertion-a.ear.011)
 
 
