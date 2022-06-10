@@ -11,8 +11,9 @@
   "scripts": {
     "lint": "tslint -p .",
     "sync-schema": "rm -f ./src/schema/* && cp ../../schema/*.json ./src/schema && node ./utils/create-schema-definitions.js",
-    "build": "rm -rf ./dist/ && tsc && chmod +x ./dist/cli.js && npm run copy-addtional",
-    "copy-addtional": "cp ./config.json ./dist/commands"
+    "build": "rm -rf ./dist/ && tsc && chmod +x ./dist/cli.js && npm run copy-additional",
+    "copy-additional": "cp ./config.json ./dist/commands",
+    "publish": "npm publish --access public"
   },
   "author": "Data Standards Body",
   "license": "MIT",
