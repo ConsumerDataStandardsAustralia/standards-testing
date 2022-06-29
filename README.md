@@ -6,7 +6,7 @@ The CDR Test Documentation is a repository of Test Cases and Assertions that des
 
 The Standards, and this Test Documentation, are maintained by the Data Standards Body (DSB), with the Data Standards Chair as the decision maker. The Data Standards Body is an independent body administered by the [Treasury](https://www.directory.gov.au/portfolios/treasury/data-standards-body). The work of standards development is conducted in consultation with the [Australian Competition and Consumer Commission (ACCC)](https://www.accc.gov.au/focus-areas/consumer-data-right-cdr-0) as co-regulator of the Consumer Data Right, along with the [Office of the Australian Information Commissioner (OAIC)](https://www.oaic.gov.au/consumer-data-right/about-the-consumer-data-right/).
 
-The CDR Test Documentation is available here: [https://consumerdatastandardsaustralia.github.io/standards-testing/latest/ - introduction](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/#introduction)
+The CDR Test Documentation is available at [https://consumerdatastandardsaustralia.github.io/standards-testing/latest/ - introduction](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/#introduction)
 
 ## Repository Structure
 
