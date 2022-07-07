@@ -7,7 +7,8 @@
       "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage"
     },
     {
-      "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c4624ec7-7ef3-4dbd-b1a1-c1d63a020346"
+      "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c4624ec7-7ef3-4dbd-b1a1-c1d63a020346",
+      "alt": "Postman Example"
     }
   ],
   "negative": true,

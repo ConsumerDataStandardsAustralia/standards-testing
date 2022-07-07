@@ -7,7 +7,8 @@
       "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail"
     },
     {
-      "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-f9fc2c7c-db2b-444d-9340-a317884f3bdc"
+      "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-f9fc2c7c-db2b-444d-9340-a317884f3bdc",
+      "alt": "Postman Example"
     }
   ],
   "negative": true,

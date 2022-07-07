@@ -3,7 +3,7 @@
   "standardsVersion": "1.17.0",
   "title": "The CDR Test Documentation",
   "description": "This documentation has been  created by the DSB to assist participants in the development of compliant APIs",
-  "changeLogUrl": "/Users/tomasschier/CDRTestDocumentation/TESTChangeLog.xlsx",
+  "changeLogUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/main/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx",
   "githubRepoUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing",
   "assertions": {
     "A.CPG.001": {
@@ -830,86 +830,6 @@
       ],
       "negative": false
     },
-    "A.BAN.001": {
-      "id": "A.BAN.001",
-      "title": "Call Accounts - no query aprameters",
-      "given": [
-        "no query parameters are specified"
-      ],
-      "when": [
-        "result set is not empty"
-      ],
-      "then": {
-        "and": [
-          "All accounts are returned",
-          " the response has a status of 200"
-        ]
-      },
-      "references": [
-        {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-accounts"
-        }
-      ],
-      "negative": false
-    },
-    "A.BAN.002": {
-      "id": "A.BAN.002",
-      "title": "Call Accounts - with category",
-      "given": [
-        "<product-category> is set in query string"
-      ],
-      "when": [
-        "<product-category> is valid",
-        "AND result set is not empty"
-      ],
-      "then": "only account of <product-category> are returned",
-      "references": [
-        {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-accounts"
-        }
-      ],
-      "negative": false
-    },
-    "A.BAN.003": {
-      "id": "A.BAN.003",
-      "title": "Call Accounts - with status",
-      "given": [
-        "<open-status> is set in query string"
-      ],
-      "when": [
-        "<open-status> is valid",
-        "AND result set is not empty"
-      ],
-      "then": "only account of <open-status> are returned",
-      "references": [
-        {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-accounts"
-        }
-      ],
-      "negative": false
-    },
-    "A.EAA.001": {
-      "id": "A.EAA.001",
-      "title": "Validate schema - EnergyAccountListResponse",
-      "given": [
-        "the request to call the API is formatted correctly by the ADR"
-      ],
-      "when": [
-        "the DH receives the request"
-      ],
-      "then": {
-        "and": [
-          "the response has a status of 200",
-          " the response body complies with the EnergyAccountListResponse schema"
-        ]
-      },
-      "references": [
-        {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyaccountlistresponse"
-        }
-      ],
-      "negative": false
-    },
     "A.EAR.001": {
       "id": "A.EAR.001",
       "title": "Validate service point and schema - EnergyServicePointDetailResponse",
@@ -1430,37 +1350,6 @@
     }
   },
   "testCases": {
-    "T.EAA.001": {
-      "id": "T.EAA.001",
-      "title": "Get Energy Accounts - no pagination",
-      "description": "Obtain a list of accounts owned by the consumer that has authorised the current session",
-      "references": [
-        {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
-        }
-      ],
-      "negative": true,
-      "preConditions": [
-        "Neither <page-size> or <page> query parameters are provided"
-      ],
-      "purpose": "Test API without any pagination partameters",
-      "steps": [
-        {
-          "type": "ACTION",
-          "action": "GET /energy/accounts"
-        }
-      ],
-      "assertions": [
-        "A.CVN.001",
-        "A.CVM.001",
-        "A.CFI.001",
-        "A.CFI.002",
-        "A.CFA.001",
-        "A.CFC.001",
-        "A.CCH.001",
-        "A.EAA.001"
-      ]
-    },
     "T.EAR.001": {
       "id": "T.EAR.001",
       "title": "ADR call to DH: Get Service Points - no pagination",
@@ -1471,7 +1360,7 @@
         },
         {
           "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62",
-          "alt": "\"Postman Example\""
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -1506,7 +1395,7 @@
         },
         {
           "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62",
-          "alt": "\"Postman Example\""
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -1621,7 +1510,8 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-f9fc2c7c-db2b-444d-9340-a317884f3bdc"
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-f9fc2c7c-db2b-444d-9340-a317884f3bdc",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -1790,7 +1680,8 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-8365f6ba-ed9b-4e43-87a1-a54d9d49b8e1"
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-8365f6ba-ed9b-4e43-87a1-a54d9d49b8e1",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -2109,7 +2000,8 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-e9c11ed2-1fe4-448b-b474-b233c27d5767"
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-e9c11ed2-1fe4-448b-b474-b233c27d5767",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -2393,7 +2285,8 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c008a5a9-00a7-4144-85a0-6832e23f837a"
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c008a5a9-00a7-4144-85a0-6832e23f837a",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -2560,6 +2453,10 @@
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points"
+        },
+        {
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-3d96d13a-360d-4930-a46c-6cb0c2450a86",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -2728,7 +2625,8 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c4624ec7-7ef3-4dbd-b1a1-c1d63a020346"
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c4624ec7-7ef3-4dbd-b1a1-c1d63a020346",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -3175,6 +3073,10 @@
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der"
+        },
+        {
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-1aee91c2-9186-47d1-b15c-1996c49b3259",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -4435,7 +4337,8 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c881aa2f-f154-47eb-9a7f-1117bf168a47"
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-7db0a312-af47-452a-8a44-d4002b3c71e8",
+          "alt": "Postman Example"
         }
       ],
       "negative": false,
@@ -7111,612 +7014,6 @@
     }
   },
   "scenarios": {
-    "S.BAP.001": {
-      "id": "S.BAP.001",
-      "title": "Get Products",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAP.002": {
-      "id": "S.BAP.002",
-      "title": "Get Products Negative ",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAP.003": {
-      "id": "S.BAP.003",
-      "title": "Get Product Detail",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAP.004": {
-      "id": "S.BAP.004",
-      "title": "Get Product Detail Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.005": {
-      "id": "S.BAA.005",
-      "title": "Get Accounts",
-      "purpose": "",
-      "description": "Test the Get Accounts endpoint",
-      "references": [],
-      "sequence": [
-        {
-          "type": "SETUP",
-          "action": "Authentication"
-        }
-      ]
-    },
-    "S.BAA.006": {
-      "id": "S.BAA.006",
-      "title": "Get Accounts Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.007": {
-      "id": "S.BAA.007",
-      "title": "Get Bulk Balances",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.008": {
-      "id": "S.BAA.008",
-      "title": "Get Bulk Balances Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.009": {
-      "id": "S.BAA.009",
-      "title": "Get Balances for Specific Accounts",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.010": {
-      "id": "S.BAA.010",
-      "title": "Get Balances for Specific Accounts Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.011": {
-      "id": "S.BAA.011",
-      "title": "Get Account Balance",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.012": {
-      "id": "S.BAA.012",
-      "title": "Get Account Balance Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.013": {
-      "id": "S.BAA.013",
-      "title": "Get Account Detail",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.014": {
-      "id": "S.BAA.014",
-      "title": "Get Account Detail Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.015": {
-      "id": "S.BAA.015",
-      "title": "Get Direct Debits for Account",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.016": {
-      "id": "S.BAA.016",
-      "title": "Get Direct Debits for Account Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.017": {
-      "id": "S.BAA.017",
-      "title": "Get Bulk Direct Debits",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.018": {
-      "id": "S.BAA.018",
-      "title": "Get Bulk Direct Debits Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.019": {
-      "id": "S.BAA.019",
-      "title": "Get Direct Debits for Specific Accounts",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAA.020": {
-      "id": "S.BAA.020",
-      "title": "Get Direct Debits for Specific Accounts Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAT.021": {
-      "id": "S.BAT.021",
-      "title": "Get Transactions For Account",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAT.022": {
-      "id": "S.BAT.022",
-      "title": "Get Transactions For Account Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAT.023": {
-      "id": "S.BAT.023",
-      "title": "Get Transaction Detail",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAT.024": {
-      "id": "S.BAT.024",
-      "title": "Get Transaction Detail Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAS.025": {
-      "id": "S.BAS.025",
-      "title": "Get Scheduled Payments For Account",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAS.026": {
-      "id": "S.BAS.026",
-      "title": "Get Scheduled Payments For Account Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAS.027": {
-      "id": "S.BAS.027",
-      "title": "Get Scheduled Payments Bulk",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAS.028": {
-      "id": "S.BAS.028",
-      "title": "Get Scheduled Payments Bulk Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAS.029": {
-      "id": "S.BAS.029",
-      "title": "Get Scheduled Payments For Specific Account",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAS.030": {
-      "id": "S.BAS.030",
-      "title": "Get Scheduled Payments For Specific Account Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAS.031": {
-      "id": "S.BAS.031",
-      "title": "Get Payees",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAS.032": {
-      "id": "S.BAS.032",
-      "title": "Get Payees Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAS.033": {
-      "id": "S.BAS.033",
-      "title": "Get Payee Detail",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.BAS.034": {
-      "id": "S.BAS.034",
-      "title": "Get Payee Detail Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.AAA.035": {
-      "id": "S.AAA.035",
-      "title": "Get status",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.AAA.036": {
-      "id": "S.AAA.036",
-      "title": "Get status Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.AAA.037": {
-      "id": "S.AAA.037",
-      "title": "Get outages",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.AAA.038": {
-      "id": "S.AAA.038",
-      "title": "Get outages Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.CAC.039": {
-      "id": "S.CAC.039",
-      "title": "Get customer",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.CAC.040": {
-      "id": "S.CAC.040",
-      "title": "Get customer Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.CAC.041": {
-      "id": "S.CAC.041",
-      "title": "Get customer detail",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.CAC.042": {
-      "id": "S.CAC.042",
-      "title": "Get customer detail Negative",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAP.043": {
-      "id": "S.EAP.043",
-      "title": "Get Generic Plans v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAP.044": {
-      "id": "S.EAP.044",
-      "title": "Get Generic Plans Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAP.045": {
-      "id": "S.EAP.045",
-      "title": "Get Generic Plan Detail v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAP.046": {
-      "id": "S.EAP.046",
-      "title": "Get Generic Plan Detail Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAA.047": {
-      "id": "S.EAA.047",
-      "title": "Get Energy Accounts v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAA.048": {
-      "id": "S.EAA.048",
-      "title": "Get Energy Accounts Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAA.049": {
-      "id": "S.EAA.049",
-      "title": "Get Energy Account Detail v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAA.050": {
-      "id": "S.EAA.050",
-      "title": "Get Energy Account Detail Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAA.051": {
-      "id": "S.EAA.051",
-      "title": "Get Agreed Payment Schedule v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAA.052": {
-      "id": "S.EAA.052",
-      "title": "Get Agreed Payment Schedule Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAA.053": {
-      "id": "S.EAA.053",
-      "title": "Get Concessions v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAA.054": {
-      "id": "S.EAA.054",
-      "title": "Get Concessions Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.055": {
-      "id": "S.EAB.055",
-      "title": "Get Balance For Energy Account v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.056": {
-      "id": "S.EAB.056",
-      "title": "Get Balance For Energy Account Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.057": {
-      "id": "S.EAB.057",
-      "title": "Get Bulk Balances For Energy v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.058": {
-      "id": "S.EAB.058",
-      "title": "Get Bulk Balances For Energy Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.059": {
-      "id": "S.EAB.059",
-      "title": "Get Balances For Specific Energy Accounts v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.060": {
-      "id": "S.EAB.060",
-      "title": "Get Balances For Specific Energy Accounts Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.061": {
-      "id": "S.EAB.061",
-      "title": "Get Invoices For Account v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.062": {
-      "id": "S.EAB.062",
-      "title": "Get Invoices For Account Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.063": {
-      "id": "S.EAB.063",
-      "title": "Get Bulk Invoices v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.064": {
-      "id": "S.EAB.064",
-      "title": "Get Bulk Invoices Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.065": {
-      "id": "S.EAB.065",
-      "title": "Get Invoices For Specific Accounts v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.066": {
-      "id": "S.EAB.066",
-      "title": "Get Invoices For Specific Accounts Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.067": {
-      "id": "S.EAB.067",
-      "title": "Get Billing For Account v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.068": {
-      "id": "S.EAB.068",
-      "title": "Get Billing For Account Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.069": {
-      "id": "S.EAB.069",
-      "title": "Get Bulk Billing v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.070": {
-      "id": "S.EAB.070",
-      "title": "Get Bulk Billing Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.071": {
-      "id": "S.EAB.071",
-      "title": "Get Billing For Specific Accounts v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAB.072": {
-      "id": "S.EAB.072",
-      "title": "Get Billing For Specific Accounts Negative v1",
-      "purpose": "",
-      "description": "",
-      "references": [],
-      "sequence": []
-    },
-    "S.EAR.073": {
-      "id": "S.EAR.073",
-      "title": "Get Service Points v1",
-      "purpose": "Test cases which will return a 2xx status code",
-      "description": "As a DH I provide an API which exposes information about the service points",
-      "references": [
-        {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
-        }
-      ],
-      "sequence": [
-        {
-          "type": "SETUP",
-          "action": "Authorise session\nAND x-v is set in header"
-        },
-        {
-          "type": "TEST",
-          "testCase": "T.EAR.001"
-        },
-        {
-          "type": "TEST",
-          "testCase": "T.EAR.002"
-        }
-      ]
-    },
     "S.EAR.074": {
       "id": "S.EAR.074",
       "title": "Get Service Points Negative v1",
@@ -8806,147 +8103,11 @@
     }
   },
   "suites": {
-    "SUITE.001": {
-      "id": "SUITE.001",
-      "title": "APIs - Banking PRD",
-      "purpose": "",
-      "scenarios": [
-        "S.BAP.001",
-        "S.BAP.002",
-        "S.BAP.003",
-        "S.BAP.004"
-      ]
-    },
-    "SUITE.002": {
-      "id": "SUITE.002",
-      "title": "APIs - Banking Accounts",
-      "purpose": "",
-      "scenarios": [
-        "S.BAA.005",
-        "S.BAA.006",
-        "S.BAA.007",
-        "S.BAA.008",
-        "S.BAA.009",
-        "S.BAA.010",
-        "S.BAA.011",
-        "S.BAA.012",
-        "S.BAA.013",
-        "S.BAA.014",
-        "S.BAA.015",
-        "S.BAA.016",
-        "S.BAA.017",
-        "S.BAA.018",
-        "S.BAA.019",
-        "S.BAA.020"
-      ]
-    },
-    "SUITE.003": {
-      "id": "SUITE.003",
-      "title": "APIs - Banking Transactions",
-      "purpose": "",
-      "scenarios": [
-        "S.BAT.021",
-        "S.BAT.022",
-        "S.BAT.023",
-        "S.BAT.024"
-      ]
-    },
-    "SUITE.004": {
-      "id": "SUITE.004",
-      "title": "APIs - Banking Scheduled Payments and Payees",
-      "purpose": "",
-      "scenarios": [
-        "S.BAS.025",
-        "S.BAS.026",
-        "S.BAS.027",
-        "S.BAS.028",
-        "S.BAS.029",
-        "S.BAS.030",
-        "S.BAS.031",
-        "S.BAS.032",
-        "S.BAS.033",
-        "S.BAS.034"
-      ]
-    },
-    "SUITE.005": {
-      "id": "SUITE.005",
-      "title": "APIs - Common Admin",
-      "purpose": "",
-      "scenarios": [
-        "S.AAA.035",
-        "S.AAA.036",
-        "S.AAA.037",
-        "S.AAA.038"
-      ]
-    },
-    "SUITE.006": {
-      "id": "SUITE.006",
-      "title": "APIs - Common Customer",
-      "purpose": "",
-      "scenarios": [
-        "S.CAC.039",
-        "S.CAC.040",
-        "S.CAC.041",
-        "S.CAC.042"
-      ]
-    },
-    "SUITE.007": {
-      "id": "SUITE.007",
-      "title": "APIs - Energy Tariffs",
-      "purpose": "",
-      "scenarios": [
-        "S.EAP.043",
-        "S.EAP.044",
-        "S.EAP.045",
-        "S.EAP.046"
-      ]
-    },
-    "SUITE.008": {
-      "id": "SUITE.008",
-      "title": "APIs - Energy Accounts",
-      "purpose": "",
-      "scenarios": [
-        "S.EAA.047",
-        "S.EAA.048",
-        "S.EAA.049",
-        "S.EAA.050",
-        "S.EAA.051",
-        "S.EAA.052",
-        "S.EAA.053",
-        "S.EAA.054"
-      ]
-    },
-    "SUITE.009": {
-      "id": "SUITE.009",
-      "title": "APIs - Energy Invoices and Billing",
-      "purpose": "",
-      "scenarios": [
-        "S.EAB.055",
-        "S.EAB.056",
-        "S.EAB.057",
-        "S.EAB.058",
-        "S.EAB.059",
-        "S.EAB.060",
-        "S.EAB.061",
-        "S.EAB.062",
-        "S.EAB.063",
-        "S.EAB.064",
-        "S.EAB.065",
-        "S.EAB.066",
-        "S.EAB.067",
-        "S.EAB.068",
-        "S.EAB.069",
-        "S.EAB.070",
-        "S.EAB.071",
-        "S.EAB.072"
-      ]
-    },
     "SUITE.010": {
       "id": "SUITE.010",
       "title": "APIs - Energy Standing Data, Usage and DER",
       "purpose": "",
       "scenarios": [
-        "S.EAR.073",
         "S.EAR.074",
         "S.EAR.075",
         "S.EAR.076",
@@ -8982,60 +8143,6 @@
         "S.EAS.099",
         "S.EAS.100"
       ]
-    },
-    "SUITE.012": {
-      "id": "SUITE.012",
-      "title": "Security - Dynamic Client Registration",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.013": {
-      "id": "SUITE.013",
-      "title": "Security - Consent Establishment",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.014": {
-      "id": "SUITE.014",
-      "title": "Security - Consent Establishment CX",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.015": {
-      "id": "SUITE.015",
-      "title": "Security - Consent Management",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.016": {
-      "id": "SUITE.016",
-      "title": "Security - Consent Management CX",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.017": {
-      "id": "SUITE.017",
-      "title": "Security - FAPI Compliance",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.018": {
-      "id": "SUITE.018",
-      "title": "Register - Data Holder Status",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.019": {
-      "id": "SUITE.019",
-      "title": "Register - ADR Status",
-      "purpose": "",
-      "scenarios": []
-    },
-    "SUITE.020": {
-      "id": "SUITE.020",
-      "title": "NFRs",
-      "purpose": "",
-      "scenarios": []
     }
   }
 }
