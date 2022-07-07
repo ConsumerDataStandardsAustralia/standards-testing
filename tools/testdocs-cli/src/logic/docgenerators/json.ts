@@ -95,7 +95,7 @@ export function json(source: string, destination: string, config: JsonGeneratorC
       standardsVersion: config.cdrVersion,
       title: config?.title,
       description: config?.description,
-      changeLogUrl: config?.changeLogUrl ? config?.changeLogUrl : 'https://github.com/ConsumerDataStandardsAustralia/standards-testing/blob/main/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx',
+      changeLogUrl: config?.changeLogUrl ? config?.changeLogUrl : 'https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/main/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx',
       githubRepoUrl: config?.githubRepoUrl ? config?.githubRepoUrl : 'https://github.com/ConsumerDataStandardsAustralia/standards-testing',
       assertions: {},
       testCases: {},
