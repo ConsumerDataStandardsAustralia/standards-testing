@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import dayjs from 'dayjs';
 import { Writable } from 'stream';
 import {
   TestCasePredicate,
@@ -69,15 +70,16 @@ function generateMarkdown(testDocs: ConsumerDataRightTestCaseJSONSchema): string
 }
 
 function generateSummarySection(testDocs: ConsumerDataRightTestCaseJSONSchema): string {
-  let result = '';
 
+  let result = '';
+  let today = dayjs();
   result += startSection('summary');
 
   result += header1(testDocs.title, 'introduction');
   result += text('File version: ' + testDocs.fileVersion);
-  //result += text('Compliant with CDR standards version ' + testDocs.standardsVersion);
   result += text(testDocs.description);
-
+  result += text('For more details see the CDS <a href="' + testDocs.githubRepoUrl + '">standards-testing repository</a> for details');
+  result += text('Last updated ' + today.format('DD/MM/YYYY') + ' see the <a href="' + testDocs.changeLogUrl + '">change log</a> for details');
   result += endSection();
 
   return result;
