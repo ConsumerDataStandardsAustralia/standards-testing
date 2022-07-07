@@ -13,147 +13,11 @@ Last updated 07/07/2022 see the <a href="https://github.com/ConsumerDataStandard
 <a id="suites"></a>
 # Test Suites
 
-<a id="suite-suite.001"></a>
-## SUITE.001: APIs - Banking PRD
-
-### Test Scenarios:
-
-* [S.BAP.001: Get Products](#scenario-s.bap.001)
-* [S.BAP.002: Get Products Negative ](#scenario-s.bap.002)
-* [S.BAP.003: Get Product Detail](#scenario-s.bap.003)
-* [S.BAP.004: Get Product Detail Negative](#scenario-s.bap.004)
-
-
-<a id="suite-suite.002"></a>
-## SUITE.002: APIs - Banking Accounts
-
-### Test Scenarios:
-
-* [S.BAA.005: Get Accounts](#scenario-s.baa.005)
-* [S.BAA.006: Get Accounts Negative](#scenario-s.baa.006)
-* [S.BAA.007: Get Bulk Balances](#scenario-s.baa.007)
-* [S.BAA.008: Get Bulk Balances Negative](#scenario-s.baa.008)
-* [S.BAA.009: Get Balances for Specific Accounts](#scenario-s.baa.009)
-* [S.BAA.010: Get Balances for Specific Accounts Negative](#scenario-s.baa.010)
-* [S.BAA.011: Get Account Balance](#scenario-s.baa.011)
-* [S.BAA.012: Get Account Balance Negative](#scenario-s.baa.012)
-* [S.BAA.013: Get Account Detail](#scenario-s.baa.013)
-* [S.BAA.014: Get Account Detail Negative](#scenario-s.baa.014)
-* [S.BAA.015: Get Direct Debits for Account](#scenario-s.baa.015)
-* [S.BAA.016: Get Direct Debits for Account Negative](#scenario-s.baa.016)
-* [S.BAA.017: Get Bulk Direct Debits](#scenario-s.baa.017)
-* [S.BAA.018: Get Bulk Direct Debits Negative](#scenario-s.baa.018)
-* [S.BAA.019: Get Direct Debits for Specific Accounts](#scenario-s.baa.019)
-* [S.BAA.020: Get Direct Debits for Specific Accounts Negative](#scenario-s.baa.020)
-
-
-<a id="suite-suite.003"></a>
-## SUITE.003: APIs - Banking Transactions
-
-### Test Scenarios:
-
-* [S.BAT.021: Get Transactions For Account](#scenario-s.bat.021)
-* [S.BAT.022: Get Transactions For Account Negative](#scenario-s.bat.022)
-* [S.BAT.023: Get Transaction Detail](#scenario-s.bat.023)
-* [S.BAT.024: Get Transaction Detail Negative](#scenario-s.bat.024)
-
-
-<a id="suite-suite.004"></a>
-## SUITE.004: APIs - Banking Scheduled Payments and Payees
-
-### Test Scenarios:
-
-* [S.BAS.025: Get Scheduled Payments For Account](#scenario-s.bas.025)
-* [S.BAS.026: Get Scheduled Payments For Account Negative](#scenario-s.bas.026)
-* [S.BAS.027: Get Scheduled Payments Bulk](#scenario-s.bas.027)
-* [S.BAS.028: Get Scheduled Payments Bulk Negative](#scenario-s.bas.028)
-* [S.BAS.029: Get Scheduled Payments For Specific Account](#scenario-s.bas.029)
-* [S.BAS.030: Get Scheduled Payments For Specific Account Negative](#scenario-s.bas.030)
-* [S.BAS.031: Get Payees](#scenario-s.bas.031)
-* [S.BAS.032: Get Payees Negative](#scenario-s.bas.032)
-* [S.BAS.033: Get Payee Detail](#scenario-s.bas.033)
-* [S.BAS.034: Get Payee Detail Negative](#scenario-s.bas.034)
-
-
-<a id="suite-suite.005"></a>
-## SUITE.005: APIs - Common Admin
-
-### Test Scenarios:
-
-* [S.AAA.035: Get status](#scenario-s.aaa.035)
-* [S.AAA.036: Get status Negative](#scenario-s.aaa.036)
-* [S.AAA.037: Get outages](#scenario-s.aaa.037)
-* [S.AAA.038: Get outages Negative](#scenario-s.aaa.038)
-
-
-<a id="suite-suite.006"></a>
-## SUITE.006: APIs - Common Customer
-
-### Test Scenarios:
-
-* [S.CAC.039: Get customer](#scenario-s.cac.039)
-* [S.CAC.040: Get customer Negative](#scenario-s.cac.040)
-* [S.CAC.041: Get customer detail](#scenario-s.cac.041)
-* [S.CAC.042: Get customer detail Negative](#scenario-s.cac.042)
-
-
-<a id="suite-suite.007"></a>
-## SUITE.007: APIs - Energy Tariffs
-
-### Test Scenarios:
-
-* [S.EAP.043: Get Generic Plans v1](#scenario-s.eap.043)
-* [S.EAP.044: Get Generic Plans Negative v1](#scenario-s.eap.044)
-* [S.EAP.045: Get Generic Plan Detail v1](#scenario-s.eap.045)
-* [S.EAP.046: Get Generic Plan Detail Negative v1](#scenario-s.eap.046)
-
-
-<a id="suite-suite.008"></a>
-## SUITE.008: APIs - Energy Accounts
-
-### Test Scenarios:
-
-* [S.EAA.047: Get Energy Accounts v1](#scenario-s.eaa.047)
-* [S.EAA.048: Get Energy Accounts Negative v1](#scenario-s.eaa.048)
-* [S.EAA.049: Get Energy Account Detail v1](#scenario-s.eaa.049)
-* [S.EAA.050: Get Energy Account Detail Negative v1](#scenario-s.eaa.050)
-* [S.EAA.051: Get Agreed Payment Schedule v1](#scenario-s.eaa.051)
-* [S.EAA.052: Get Agreed Payment Schedule Negative v1](#scenario-s.eaa.052)
-* [S.EAA.053: Get Concessions v1](#scenario-s.eaa.053)
-* [S.EAA.054: Get Concessions Negative v1](#scenario-s.eaa.054)
-
-
-<a id="suite-suite.009"></a>
-## SUITE.009: APIs - Energy Invoices and Billing
-
-### Test Scenarios:
-
-* [S.EAB.055: Get Balance For Energy Account v1](#scenario-s.eab.055)
-* [S.EAB.056: Get Balance For Energy Account Negative v1](#scenario-s.eab.056)
-* [S.EAB.057: Get Bulk Balances For Energy v1](#scenario-s.eab.057)
-* [S.EAB.058: Get Bulk Balances For Energy Negative v1](#scenario-s.eab.058)
-* [S.EAB.059: Get Balances For Specific Energy Accounts v1](#scenario-s.eab.059)
-* [S.EAB.060: Get Balances For Specific Energy Accounts Negative v1](#scenario-s.eab.060)
-* [S.EAB.061: Get Invoices For Account v1](#scenario-s.eab.061)
-* [S.EAB.062: Get Invoices For Account Negative v1](#scenario-s.eab.062)
-* [S.EAB.063: Get Bulk Invoices v1](#scenario-s.eab.063)
-* [S.EAB.064: Get Bulk Invoices Negative v1](#scenario-s.eab.064)
-* [S.EAB.065: Get Invoices For Specific Accounts v1](#scenario-s.eab.065)
-* [S.EAB.066: Get Invoices For Specific Accounts Negative v1](#scenario-s.eab.066)
-* [S.EAB.067: Get Billing For Account v1](#scenario-s.eab.067)
-* [S.EAB.068: Get Billing For Account Negative v1](#scenario-s.eab.068)
-* [S.EAB.069: Get Bulk Billing v1](#scenario-s.eab.069)
-* [S.EAB.070: Get Bulk Billing Negative v1](#scenario-s.eab.070)
-* [S.EAB.071: Get Billing For Specific Accounts v1](#scenario-s.eab.071)
-* [S.EAB.072: Get Billing For Specific Accounts Negative v1](#scenario-s.eab.072)
-
-
 <a id="suite-suite.010"></a>
 ## SUITE.010: APIs - Energy Standing Data, Usage and DER
 
 ### Test Scenarios:
 
-* [S.EAR.073: Get Service Points v1](#scenario-s.ear.073)
 * [S.EAR.074: Get Service Points Negative v1](#scenario-s.ear.074)
 * [S.EAR.075: Get Service Point Detail v1](#scenario-s.ear.075)
 * [S.EAR.076: Get Service Point Detail Negative v1](#scenario-s.ear.076)
@@ -192,41 +56,6 @@ Last updated 07/07/2022 see the <a href="https://github.com/ConsumerDataStandard
 
 <a id="scenarios"></a>
 # Test Scenarios
-
-<a id="scenario-s.baa.005"></a>
-## S.BAA.005: Get Accounts
-
-Test the Get Accounts endpoint
-
-### Testing Sequence:
-
-|Action No.|Action Type|Detail|
-|-|-|-|
-|1|Setup|Authentication|
-
-
-<a id="scenario-s.ear.073"></a>
-## S.EAR.073: Get Service Points v1
-
-As a DH I provide an API which exposes information about the service points
-
-### Purpose:
-
-Test cases which will return a 2xx status code
-
-### References:
-
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
-
-
-### Testing Sequence:
-
-|Action No.|Action Type|Detail|
-|-|-|-|
-|1|Setup|Authorise session</br>AND x-v is set in header|
-|2|Execute Test|[T.EAR.001: ADR call to DH: Get Service Points - no pagination](#testcase-t.ear.001)|
-|3|Execute Test|[T.EAR.002: ADR call to DH: Get Service Points - with pagination](#testcase-t.ear.002)|
-
 
 <a id="scenario-s.ear.074"></a>
 ## S.EAR.074: Get Service Points Negative v1
@@ -707,46 +536,6 @@ Test errors and edge cases for Get Service Points
 <a id="testcases"></a>
 # Test Cases
 
-<a id="testcase-t.eaa.001"></a>
-## T.EAA.001: Get Energy Accounts - no pagination
-
-Negative test case
-
-Obtain a list of accounts owned by the consumer that has authorised the current session
-
-### Purpose:
-
-Test API without any pagination partameters
-
-### References:
-
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
-
-
-### Execution Pre-conditions:
-
-* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
-
-
-### Execution Steps:
-
-|Action No.|Action Type|Detail|
-|-|-|-|
-|1|Action|GET /energy/accounts|
-
-
-### End State Assertions:
-
-* [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
-* [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
-* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
-* [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
-* [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
-* [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
-* [A.EAA.001: Validate schema - EnergyAccountListResponse](#assertion-a.eaa.001)
-
-
 <a id="testcase-t.ear.001"></a>
 ## T.EAR.001: ADR call to DH: Get Service Points - no pagination
 
@@ -761,7 +550,7 @@ Test API without any pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
-* ["Postman Example"](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62)
 
 
 ### Execution Pre-conditions:
@@ -802,7 +591,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
-* ["Postman Example"](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62)
 
 
 ### Execution Pre-conditions:
@@ -951,7 +740,7 @@ Test API with a vaild service point and version
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail)
-* [https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-f9fc2c7c-db2b-444d-9340-a317884f3bdc](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-f9fc2c7c-db2b-444d-9340-a317884f3bdc)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-f9fc2c7c-db2b-444d-9340-a317884f3bdc)
 
 
 ### Execution Pre-conditions:
@@ -1172,7 +961,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point](https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point)
-* [https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-8365f6ba-ed9b-4e43-87a1-a54d9d49b8e1](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-8365f6ba-ed9b-4e43-87a1-a54d9d49b8e1)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-8365f6ba-ed9b-4e43-87a1-a54d9d49b8e1)
 
 
 ### Execution Pre-conditions:
@@ -1586,7 +1375,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points)
-* [https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-e9c11ed2-1fe4-448b-b474-b233c27d5767](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-e9c11ed2-1fe4-448b-b474-b233c27d5767)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-e9c11ed2-1fe4-448b-b474-b233c27d5767)
 
 
 ### Execution Pre-conditions:
@@ -1958,7 +1747,7 @@ Test API with a vaild service point and version
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point](https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point)
-* [https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c008a5a9-00a7-4144-85a0-6832e23f837a](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c008a5a9-00a7-4144-85a0-6832e23f837a)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c008a5a9-00a7-4144-85a0-6832e23f837a)
 
 
 ### Execution Pre-conditions:
@@ -2179,6 +1968,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-3d96d13a-360d-4930-a46c-6cb0c2450a86)
 
 
 ### Execution Pre-conditions:
@@ -2399,7 +2189,7 @@ Test API without any pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage](https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage)
-* [https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c4624ec7-7ef3-4dbd-b1a1-c1d63a020346](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c4624ec7-7ef3-4dbd-b1a1-c1d63a020346)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c4624ec7-7ef3-4dbd-b1a1-c1d63a020346)
 
 
 ### Execution Pre-conditions:
@@ -2990,6 +2780,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der](https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-1aee91c2-9186-47d1-b15c-1996c49b3259)
 
 
 ### Execution Pre-conditions:
@@ -4680,7 +4471,7 @@ Test API with invalid version value
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
-* [https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c881aa2f-f154-47eb-9a7f-1117bf168a47](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c881aa2f-f154-47eb-9a7f-1117bf168a47)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-7db0a312-af47-452a-8a44-d4002b3c71e8)
 
 
 ### Execution Pre-conditions:
@@ -9002,90 +8793,6 @@ Critical (Test Fails)
 |Given|the request is a POST request|
 |When|the request body is not in a valid JSON format, ie it is malformed|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
-
-
-<a id="assertion-a.ban.001"></a>
-## A.BAN.001: Call Accounts - no query aprameters
-
-### References:
-
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-accounts)
-
-
-### Severity:
-
-Critical (Test Fails)
-
-### Assertion Logic:
-
-|||
-|-|-|
-|Given|no query parameters are specified|
-|When|result set is not empty|
-|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">All accounts are returned</br> the response has a status of 200</br></div><div class="predicate outer">)</div>|
-
-
-<a id="assertion-a.ban.002"></a>
-## A.BAN.002: Call Accounts - with category
-
-### References:
-
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-accounts)
-
-
-### Severity:
-
-Critical (Test Fails)
-
-### Assertion Logic:
-
-|||
-|-|-|
-|Given|&lt;product-category&gt; is set in query string|
-|When|&lt;product-category&gt; is valid</br>AND result set is not empty|
-|Then|only account of &lt;product-category&gt; are returned|
-
-
-<a id="assertion-a.ban.003"></a>
-## A.BAN.003: Call Accounts - with status
-
-### References:
-
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-accounts)
-
-
-### Severity:
-
-Critical (Test Fails)
-
-### Assertion Logic:
-
-|||
-|-|-|
-|Given|&lt;open-status&gt; is set in query string|
-|When|&lt;open-status&gt; is valid</br>AND result set is not empty|
-|Then|only account of &lt;open-status&gt; are returned|
-
-
-<a id="assertion-a.eaa.001"></a>
-## A.EAA.001: Validate schema - EnergyAccountListResponse
-
-### References:
-
-* [https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyaccountlistresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyaccountlistresponse)
-
-
-### Severity:
-
-Critical (Test Fails)
-
-### Assertion Logic:
-
-|||
-|-|-|
-|Given|the request to call the API is formatted correctly by the ADR|
-|When|the DH receives the request|
-|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the EnergyAccountListResponse schema</br></div><div class="predicate outer">)</div>|
 
 
 <a id="assertion-a.ear.001"></a>
