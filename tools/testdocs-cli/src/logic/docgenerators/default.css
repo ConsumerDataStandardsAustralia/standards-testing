@@ -56,6 +56,12 @@ p {
   padding-right: 28px;
 }
 
+.p1 {
+  color: red;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
 ul li {
   margin-left: 28px;
   padding-right: 28px;
