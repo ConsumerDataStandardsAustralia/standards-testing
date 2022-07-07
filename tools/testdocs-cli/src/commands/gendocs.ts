@@ -27,7 +27,7 @@ export const builder: CommandBuilder<TestDocsOptions, TestDocsOptions> = (yargs)
 export const handler = (argv: Arguments<TestDocsOptions>): void => {
   const { type, src, dst, cfg } = argv;
 
-  let config: JsonGeneratorConfig = { title: '', description: '', cdrVersion: '', docVersion: ''};
+  let config: JsonGeneratorConfig = { title: '', description: '', cdrVersion: '', docVersion: '', changeLogUrl: '', githubRepoUrl: ''};
   if (cfg != null) {
     config = getConfiguration(cfg as string);
   }

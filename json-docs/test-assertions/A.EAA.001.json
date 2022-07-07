@@ -1,0 +1,22 @@
+{
+  "id": "A.EAA.001",
+  "title": "Validate schema - EnergyAccountListResponse",
+  "given": [
+    "the request to call the API is formatted correctly by the ADR"
+  ],
+  "when": [
+    "the DH receives the request"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 200",
+      " the response body complies with the EnergyAccountListResponse schema"
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyaccountlistresponse"
+    }
+  ],
+  "negative": false
+}

@@ -1,6 +1,8 @@
 {
     "title": "The CDR Test Documentation",
     "description": "This documentation has been  created by the DSB to assist participants in the development of compliant APIs",
-    "docVersion": "1.0.1",
-    "cdrVersion": "1.17.0"
+    "docVersion": "1.0.2",
+    "cdrVersion": "1.17.0",
+    "changeLogUrl": "",
+    "githubRepoUrl": ""
 }
