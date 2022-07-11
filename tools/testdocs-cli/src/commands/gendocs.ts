@@ -19,8 +19,8 @@ export const desc: string = 'Generate various forms of output.';
 export const builder: CommandBuilder<TestDocsOptions, TestDocsOptions> = (yargs) =>
   yargs
     .positional('type', { choices: ['json', 'html', 'markdown'], demandOption: true })
-    .positional('source', { type: 'string', demandOption: true })
-    .positional('destination', { type: 'string', demandOption: true})
+    .positional('source', { type: 'string', description: 'The path and filename to the json file describing the test suite (full-test-suite.json)', demandOption: true })
+    .positional('destination', { type: 'string', description: 'The path and filename for the generated output file',  demandOption: true})
     .option('cfg', { type: 'string', alias: 'c', description: 'The path and filename to the configuration file', demandOption: false})
     
 
