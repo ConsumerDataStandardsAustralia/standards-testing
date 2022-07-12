@@ -102,10 +102,10 @@ The numbering convention is as follows.
 </thead>
 <tbody>
 <tr>
-<td style="{vertical-align:top;}">Meaning of alpha character</td>
-<td style="{vertical-align:top;}">A: Admin <br> B: Banking <br> C: Common <br> D: DCR <br>  E: Energy <br> R: Register <br> T: Telecommunication</td>
-<td style="{vertical-align:top;}">A: API (A) <br> U: UX</td>
-<td style="{vertical-align:top;}">Uses characters like B: Balance or <br> P: Product where the character <br> has not been used before</td>
+<td style="vertical-align:top;">Meaning of alpha character</td>
+<td style="vertical-align:top;">A: Admin <br> B: Banking <br> C: Common <br> D: DCR <br>  E: Energy <br> R: Register <br> T: Telecommunication</td>
+<td style="vertical-align:top;">A: API (A) <br> U: UX</td>
+<td style="vertical-align:top;">Uses characters like B: Balance or <br> P: Product where the character <br> has not been used before</td>
 </tr>
 </tbody>
 </table>
