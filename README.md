@@ -91,10 +91,24 @@ The numbering convention is as follows.
 **Assertion**: A.aaa.nnn
 
 
-Scenario, Test Case and Assertion alpha character codes
-|Alpha position| 1: Sector | 2: Type | 3: Subtype |
-|---|---|---|---|
-|Meaning of alpha character | A: Admin <br> B: Banking <br> C: Common <br> D: DCR <br>  E: Energy <br> R: Register <br> T: Telecommunication | A: API (A) <br> U: UX  | Uses characters like B: Balance or <br> P: Product where the character <br> has not been used before |
+<table>
+<thead>
+<tr>
+<th>Alpha position</th>
+<th>1: Sector</th>
+<th>2: Type</th>
+<th>3: Subtype</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td vertical-align="top">Meaning of alpha character</td>
+<td vertical-align="top">A: Admin <br> B: Banking <br> C: Common <br> D: DCR <br>  E: Energy <br> R: Register <br> T: Telecommunication</td>
+<td vertical-align="top">A: API (A) <br> U: UX</td>
+<td vertical-align="top">Uses characters like B: Balance or <br> P: Product where the character <br> has not been used before</td>
+</tr>
+</tbody>
+</table>
 
 	
 Example: T.EAR.002: Test Case for Energy API R number 2
