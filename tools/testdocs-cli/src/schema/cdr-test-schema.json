@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://cds.gov.au/cdr-test-schema.0.0.3.json",
+    "$id": "https://cds.gov.au/cdr-test-schema.0.0.4.json",
     "title": "Consumer Data Right Test Case JSON Schema",
     "description": "A JSON schema for defining test cases to be used to document test cases for compliance with the Consumer Data Right data standards",
     "type": "object",
@@ -28,6 +28,14 @@
         "description": {
             "type": "string",
             "description": "An optional description of the test case file to identify its purpose"
+        },
+        "githubRepoUrl": {
+            "type": "string",
+            "description": "An optional url for the public GitHub repository"
+        },
+        "changeLogUrl": {
+            "type": "string",
+            "description": "An optional url for the change log"
         },
         "assertions": {
             "type": "object",

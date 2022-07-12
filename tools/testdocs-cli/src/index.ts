@@ -1,4 +1,4 @@
-export * from './logic/schema';
+//export * from './logic/schema';
 export * from './logic/validate';
 export {
   markdown as markdownDocGenerator,

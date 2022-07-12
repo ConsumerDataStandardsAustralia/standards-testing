@@ -1,10 +1,11 @@
 import * as fs from 'fs';
+import dayjs from 'dayjs';
 import { Writable } from 'stream';
 import {
   TestCasePredicate,
   AssertionPredicate,
   ConsumerDataRightTestCaseJSONSchema
-} from '../../schema/cdr-test-schema.0.0.3';
+} from '../../schema/cdr-test-schema';
 
 
 // TODO: Validate source file
@@ -69,15 +70,16 @@ function generateMarkdown(testDocs: ConsumerDataRightTestCaseJSONSchema): string
 }
 
 function generateSummarySection(testDocs: ConsumerDataRightTestCaseJSONSchema): string {
-  let result = '';
 
+  let result = '';
+  let today = dayjs();
   result += startSection('summary');
 
   result += header1(testDocs.title, 'introduction');
   result += text('File version: ' + testDocs.fileVersion);
-  //result += text('Compliant with CDR standards version ' + testDocs.standardsVersion);
   result += text(testDocs.description);
-
+  result += text('For more details see the CDS <a href="' + testDocs.githubRepoUrl + '">standards-testing repository</a> for details');
+  result += text('Last updated ' + today.format('DD/MM/YYYY') + ' see the <a href="' + testDocs.changeLogUrl + '">change log</a> for details');
   result += endSection();
 
   return result;

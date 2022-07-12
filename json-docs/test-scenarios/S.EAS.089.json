@@ -5,7 +5,7 @@
   "description": "Test the Happy Path for Get Service Points",
   "references": [
     {
-      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr\r"
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr"
     }
   ],
   "sequence": [

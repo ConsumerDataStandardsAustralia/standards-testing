@@ -2,9 +2,13 @@
 <a id="introduction"></a>
 # The CDR Test Documentation
 
-File version: 1.0.1
+File version: 1.0.2
 
 This documentation has been  created by the DSB to assist participants in the development of compliant APIs
+
+For more details see the CDS <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing">standards-testing repository</a> for details
+
+Last updated 12/07/2022 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/main/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx">change log</a> for details
 
 <a id="suites"></a>
 # Test Suites
@@ -14,7 +18,6 @@ This documentation has been  created by the DSB to assist participants in the de
 
 ### Test Scenarios:
 
-* [S.EAR.073: Get Service Points v1](#scenario-s.ear.073)
 * [S.EAR.074: Get Service Points Negative v1](#scenario-s.ear.074)
 * [S.EAR.075: Get Service Point Detail v1](#scenario-s.ear.075)
 * [S.EAR.076: Get Service Point Detail Negative v1](#scenario-s.ear.076)
@@ -53,29 +56,6 @@ This documentation has been  created by the DSB to assist participants in the de
 
 <a id="scenarios"></a>
 # Test Scenarios
-
-<a id="scenario-s.ear.073"></a>
-## S.EAR.073: Get Service Points v1
-
-As a DH I provide an API which exposes information about the service points
-
-### Purpose:
-
-Test cases which will return a 2xx status code
-
-### References:
-
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
-
-
-### Testing Sequence:
-
-|Action No.|Action Type|Detail|
-|-|-|-|
-|1|Setup|Authorise session</br>AND x-v is set in header|
-|2|Execute Test|[T.EAR.001: ADR call to DH: Get Service Points - no pagination](#testcase-t.ear.001)|
-|3|Execute Test|[T.EAR.002: ADR call to DH: Get Service Points - with pagination](#testcase-t.ear.002)|
-
 
 <a id="scenario-s.ear.074"></a>
 ## S.EAR.074: Get Service Points Negative v1
@@ -361,7 +341,7 @@ Test the Happy Path for Get Service Points
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
 
 
 ### Testing Sequence:
@@ -379,7 +359,7 @@ Test errors and edge cases for Get Service Points
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
 
 
 ### Testing Sequence:
@@ -570,6 +550,7 @@ Test API without any pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62)
 
 
 ### Execution Pre-conditions:
@@ -610,6 +591,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62)
 
 
 ### Execution Pre-conditions:
@@ -758,6 +740,7 @@ Test API with a vaild service point and version
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-f9fc2c7c-db2b-444d-9340-a317884f3bdc)
 
 
 ### Execution Pre-conditions:
@@ -978,6 +961,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point](https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-8365f6ba-ed9b-4e43-87a1-a54d9d49b8e1)
 
 
 ### Execution Pre-conditions:
@@ -1391,6 +1375,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-e9c11ed2-1fe4-448b-b474-b233c27d5767)
 
 
 ### Execution Pre-conditions:
@@ -1762,6 +1747,7 @@ Test API with a vaild service point and version
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point](https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c008a5a9-00a7-4144-85a0-6832e23f837a)
 
 
 ### Execution Pre-conditions:
@@ -1982,6 +1968,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-3d96d13a-360d-4930-a46c-6cb0c2450a86)
 
 
 ### Execution Pre-conditions:
@@ -2202,6 +2189,7 @@ Test API without any pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage](https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c4624ec7-7ef3-4dbd-b1a1-c1d63a020346)
 
 
 ### Execution Pre-conditions:
@@ -2792,6 +2780,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der](https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-1aee91c2-9186-47d1-b15c-1996c49b3259)
 
 
 ### Execution Pre-conditions:
@@ -4482,6 +4471,7 @@ Test API with invalid version value
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-7db0a312-af47-452a-8a44-d4002b3c71e8)
 
 
 ### Execution Pre-conditions:

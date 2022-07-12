@@ -5,6 +5,10 @@
   "references": [
     {
       "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
+    },
+    {
+      "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-7db0a312-af47-452a-8a44-d4002b3c71e8",
+      "alt": "Postman Example"
     }
   ],
   "negative": false,

@@ -1,8 +1,10 @@
 {
-  "fileVersion": "1.0.1",
+  "fileVersion": "1.0.2",
   "standardsVersion": "1.17.0",
   "title": "The CDR Test Documentation",
   "description": "This documentation has been  created by the DSB to assist participants in the development of compliant APIs",
+  "changeLogUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/main/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx",
+  "githubRepoUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing",
   "assertions": {
     "A.CPG.001": {
       "id": "A.CPG.001",
@@ -1355,6 +1357,10 @@
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
+        },
+        {
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -1386,6 +1392,10 @@
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
+        },
+        {
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -1498,6 +1508,10 @@
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail"
+        },
+        {
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-f9fc2c7c-db2b-444d-9340-a317884f3bdc",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -1664,6 +1678,10 @@
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point"
+        },
+        {
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-8365f6ba-ed9b-4e43-87a1-a54d9d49b8e1",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -1980,6 +1998,10 @@
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points"
+        },
+        {
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-e9c11ed2-1fe4-448b-b474-b233c27d5767",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -2261,6 +2283,10 @@
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point"
+        },
+        {
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c008a5a9-00a7-4144-85a0-6832e23f837a",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -2427,6 +2453,10 @@
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points"
+        },
+        {
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-3d96d13a-360d-4930-a46c-6cb0c2450a86",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -2593,6 +2623,10 @@
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage"
+        },
+        {
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c4624ec7-7ef3-4dbd-b1a1-c1d63a020346",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -3039,6 +3073,10 @@
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der"
+        },
+        {
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-1aee91c2-9186-47d1-b15c-1996c49b3259",
+          "alt": "Postman Example"
         }
       ],
       "negative": true,
@@ -4297,6 +4335,10 @@
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
+        },
+        {
+          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-7db0a312-af47-452a-8a44-d4002b3c71e8",
+          "alt": "Postman Example"
         }
       ],
       "negative": false,
@@ -6972,31 +7014,6 @@
     }
   },
   "scenarios": {
-    "S.EAR.073": {
-      "id": "S.EAR.073",
-      "title": "Get Service Points v1",
-      "purpose": "Test cases which will return a 2xx status code",
-      "description": "As a DH I provide an API which exposes information about the service points",
-      "references": [
-        {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
-        }
-      ],
-      "sequence": [
-        {
-          "type": "SETUP",
-          "action": "Authorise session\r\nAND x-v is set in header"
-        },
-        {
-          "type": "TEST",
-          "testCase": "T.EAR.001"
-        },
-        {
-          "type": "TEST",
-          "testCase": "T.EAR.002"
-        }
-      ]
-    },
     "S.EAR.074": {
       "id": "S.EAR.074",
       "title": "Get Service Points Negative v1",
@@ -7667,7 +7684,7 @@
       "description": "Test the Happy Path for Get Service Points",
       "references": [
         {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr\r"
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr"
         }
       ],
       "sequence": [
@@ -7688,7 +7705,7 @@
       "description": "Test errors and edge cases for Get Service Points ",
       "references": [
         {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr\r"
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr"
         }
       ],
       "sequence": [
@@ -8091,7 +8108,6 @@
       "title": "APIs - Energy Standing Data, Usage and DER",
       "purpose": "",
       "scenarios": [
-        "S.EAR.073",
         "S.EAR.074",
         "S.EAR.075",
         "S.EAR.076",

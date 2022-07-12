@@ -12,7 +12,7 @@ import {
   Scenario,
   ScenarioAction,
   ConsumerDataRightTestCaseJSONSchema
-} from '../../schema/cdr-test-schema.0.0.3';
+} from '../../schema/cdr-test-schema';
 import { JsonGeneratorConfig } from './json-generator-config';
 
 const SUITE_ID_INDEX: number = 1;
@@ -95,6 +95,8 @@ export function json(source: string, destination: string, config: JsonGeneratorC
       standardsVersion: config.cdrVersion,
       title: config?.title,
       description: config?.description,
+      changeLogUrl: config?.changeLogUrl ? config?.changeLogUrl : 'https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/main/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx',
+      githubRepoUrl: config?.githubRepoUrl ? config?.githubRepoUrl : 'https://github.com/ConsumerDataStandardsAustralia/standards-testing',
       assertions: {},
       testCases: {},
       scenarios: {},
