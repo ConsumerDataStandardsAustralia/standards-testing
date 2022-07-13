@@ -94,11 +94,11 @@ Scenario, Test Case and Assertion alpha character codes
 
 |Alpha position | 1: Sector | 2: Type | 3: Subtype |
 |---------------|-----------|---------|------------|
-|Meaning of alpha character | A: Admin <br> B: Banking <br> C: Common <br> D: DCR <br>  E: Energy <br> R: Register <br> T: Telecommunication |  A: API (A) <br> U: UX | | Unique character to distinguish subtype:<br>B: Balance<br> P: Product<br>R: unique subtype ID<br>S: unique subtype ID|
+|Meaning of alpha character | A: Admin <br> B: Banking <br> C: Common <br> D: DCR <br>  E: Energy <br> R: Register <br> T: Telecommunication |  A: API (A) <br> U: UX |  Unique character to distinguish subtype:<br>B: Balance<br> P: Product<br>R: unique subtype ID<br>S: unique subtype ID|
 
 
 	
-Example: T.EAR.002: Test Case for Energy API R number 2
+Example: T.EAR.002: Test Case for Energy API subtype R number 2
 
 For Common Assertions the three alpha characters are used as follows:
 * Position 1 is always C for Common
