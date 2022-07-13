@@ -2,10 +2,11 @@
   "id": "A.EAR.002",
   "title": "Validate service point - invalid value",
   "given": [
-    "the {servicePointId} is included in the ADR to DH request url"
+    "the {servicePointId} is included ",
+    "AND the requested service point is permanently unavailable. (No subsequent request for the service point will be successful.)"
   ],
   "when": [
-    "The requested service point is permanently unavailable. (No subsequent request for the service point will be successful.)"
+    "a response is returned"
   ],
   "then": {
     "and": [

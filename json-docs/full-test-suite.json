@@ -10,15 +10,16 @@
       "id": "A.CPG.001",
       "title": "Validate pagination - LinksPaginated ",
       "given": [
-        "the page parameter is included in a GET request"
+        "the page parameter is included in a GET request",
+        "AND the page value is a number and page-size is [1,25,1000,null]"
       ],
       "when": [
-        "the page value is a number and page-size is [1,25,1000,null]"
+        "a response is returned",
+        "AND the response has a status of 200"
       ],
       "then": {
         "and": [
           "the nominated <page number> is returned",
-          " the response has a status of 200",
           " the \"first\" link has page=1",
           " the \"last\" link is greater than or equal to 1",
           " the \"self\" link has page=<page number>",
@@ -39,11 +40,12 @@
       "id": "A.CPG.002",
       "title": "Validate pagination - Invalid page size value",
       "given": [
-        "the <page-size> parameter is specified in a GET request"
+        "the <page-size> parameter is specified",
+        "AND the value for <page-size> is outside the range [1..1000]",
+        "OR the <page-size> is a not a positive integer"
       ],
       "when": [
-        "the value for <page-size> is outside the range [1..1000]",
-        "OR the <page-size> is a not a positive integer"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -63,10 +65,11 @@
       "id": "A.CPG.003",
       "title": "Validate pagination - Non-numeric <page>",
       "given": [
-        "the <page> parameter is included in a GET request"
+        "the <page> parameter is included ",
+        "AND the <page> is a not a positive integer"
       ],
       "when": [
-        "the <page> is a not a positive integer"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -86,10 +89,11 @@
       "id": "A.CPG.004",
       "title": "Validate pagination - Max record limit exceeded",
       "given": [
-        "the <page> parameter is included in a GET request"
+        "the <page> parameter is included",
+        "AND the <page> value is greater than the number of pages available "
       ],
       "when": [
-        "the <page> value is greater than the number of pages available "
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -109,10 +113,11 @@
       "id": "A.CPG.005",
       "title": "Validate pagination - Non-numeric <page-size>",
       "given": [
-        "the <page-size> parameter is included in a GET request"
+        "the <page-size> parameter is included ",
+        "AND the page size parameter value is not a positive integer (number)"
       ],
       "when": [
-        "the page size parameter value is not a positive integer (number)"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -132,15 +137,16 @@
       "id": "A.CVN.001",
       "title": "Validate version - valid version number [x-v]",
       "given": [
-        "the <x-v> header is included in a get request"
+        "the <x-v> header is included ",
+        "AND the value for the <x-v> is a positive integer"
       ],
       "when": [
-        "the value for the <x-v> is a positive integer"
+        "a response is returned",
+        "AND the response has a status of 200"
       ],
       "then": {
         "and": [
-          "the response has a status of 200",
-          " <x-v> is in the repsonse header",
+          " <x-v> is in the response header",
           " <x-v> is a positive integer"
         ]
       },
@@ -155,10 +161,11 @@
       "id": "A.CVN.002",
       "title": "Validate version - invalid version value [x-v]",
       "given": [
-        "the version parameter is included in a GET request"
+        "the version parameter is included ",
+        "AND the version value is not a valid number is [-1,0,1001]"
       ],
       "when": [
-        "the version value is not a valid number is [-1,0,1001]"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -178,10 +185,11 @@
       "id": "A.CVN.003",
       "title": "Validate version - validate [x-v] format",
       "given": [
-        "the version parameter is included in a GET request"
+        "the version parameter is included",
+        "AND the version value is not a valid number is an alpha (e.g. \"foo\")"
       ],
       "when": [
-        "the verison value is not a valid number is an alpha (e.g. \"foo\")"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -202,10 +210,11 @@
       "title": "Validate version - unsupported version without <x-min-v>",
       "given": [
         "the <x-v>  is included in a  request header",
-        "AND <x-min-v> is NOT included"
+        "AND <x-min-v> is NOT included",
+        "AND the request version <x-v> is not supported"
       ],
       "when": [
-        "the request version <x-v> is not supported"
+        "and a response is returned"
       ],
       "then": {
         "and": [
@@ -226,10 +235,11 @@
       "title": "Validate version - unsupported version with <x-min-v>",
       "given": [
         "the <x-v>  is included in a  request header",
-        "AND  <x-min-v>  is included"
+        "AND  <x-min-v>  is included",
+        "AND no version between <x-v> and <x-min-v> is supported"
       ],
       "when": [
-        "no version between <x-v> and <x-min-v> is supported"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -249,14 +259,16 @@
       "id": "A.CVM.001",
       "title": "Validate version - <x-min-v> is provided",
       "given": [
-        "the <x-min-v> header is included in a get request"
+        "the <x-min-v> header is included ",
+        "AND the value for the <x-min-v>  is a positive integer"
       ],
       "when": [
-        "the value for the <x-min-v>  is a positive integer"
+        "a response is returned",
+        "AND the response has a status of 200"
       ],
       "then": {
         "and": [
-          "<x-v> is in the repsonse header",
+          "<x-v> is in the response header",
           "  <x-v> = [<x-min-v>, <x-v>]",
           " <x-v> is a positive integer"
         ]
@@ -272,10 +284,11 @@
       "id": "A.CVM.002",
       "title": "Validate minimum version - validate <x-min-v> format",
       "given": [
-        "the <x-min-v> header is included in a get request"
+        "the <x-min-v> header is included ",
+        "AND the <x-min-v> is a not a positive integer"
       ],
       "when": [
-        "the <x-min-v> is a not a positive integer"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -293,18 +306,15 @@
     },
     "A.CFI.001": {
       "id": "A.CFI.001",
-      "title": "Validate FAPI Interation ID - included in request",
+      "title": "Validate FAPI Interaction ID - included in request",
       "given": [
-        "the <x-fapi-interaction-id> is included in the header of the request"
+        "the <x-fapi-interaction-id> is included in the header of the request",
+        "AND the <x-fapi-interaction-id> is in a valid format "
       ],
       "when": [
-        "the <x-fapi-interaction-id> is in a valid format "
+        "a response is returned"
       ],
-      "then": {
-        "and": [
-          " the Data Holder has returned the <x-fapi-interaction-id> from the request in the response header"
-        ]
-      },
+      "then": "the Data Holder has returned the <x-fapi-interaction-id> from the request in the response header",
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
@@ -331,12 +341,13 @@
     },
     "A.CFI.003": {
       "id": "A.CFI.003",
-      "title": "Validate FAPI Interation ID - invalid format",
+      "title": "Validate FAPI Interaction ID - invalid format",
       "given": [
-        "the <x-fapi-interaction-id> is included in the GET request"
+        "the <x-fapi-interaction-id> is included ",
+        "AND the <x-fapi-interaction-id> is not in a valid format "
       ],
       "when": [
-        "the <x-fapi-interaction-id> is not in a valid format "
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -359,13 +370,18 @@
       "id": "A.CFA.001",
       "title": "Validate FAPI Auth date - valid format",
       "given": [
-        "the called API is a resource call and does require authentication"
+        "the API requires authentication"
       ],
       "when": [
-        "the <x-fapi-auth-date> is present in the request header",
-        "AND is in a valid format"
+        "a response is returned ",
+        "AND the response has a status of 200"
       ],
-      "then": "the response has a status of 200",
+      "then": {
+        "and": [
+          "the <x-fapi-auth-date> is present in the request header",
+          " is in a valid format"
+        ]
+      },
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
@@ -383,14 +399,16 @@
       "id": "A.CFA.002",
       "title": "Validate FAPI Auth date - missing from header",
       "given": [
-        "the called API is a resource call and does require authentication"
+        "the API requires authentication",
+        "AND the <x-fapi-auth-date> is NOT present  in the request header"
       ],
       "when": [
-        "the <x-fapi-auth-date> is NOT present  in the request header"
+        "a response is returned"
       ],
       "then": {
         "and": [
           "the response has a status of 400",
+          " the response body has ErrorListReponse object",
           " error code is \"Header/missing\""
         ]
       },
@@ -411,11 +429,12 @@
       "id": "A.CFA.003",
       "title": "Validate FAPI Auth date - invalid format",
       "given": [
-        "the called API is a resource call and does require authentication"
+        "the API requires authentication",
+        "AND the <x-fapi-auth-date> is in the request header",
+        "AND is NOT in a valid format"
       ],
       "when": [
-        "the <x-fapi-auth-date> is  in the request header",
-        "AND is NOT in a valid format"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -441,10 +460,12 @@
       "id": "A.CFA.004",
       "title": "No <x-fapi-auth-date> in header (SR specific)",
       "given": [
-        "the call is from a DH to a SDH"
+        "the API requires authentication ",
+        "AND the call is from a DH to a SDH"
       ],
       "when": [
-        "a response is returned"
+        "a response is returned",
+        "AND the response has a status of 200"
       ],
       "then": "the <x-fapi-auth-date> is NOT present in the response header",
       "references": [
@@ -458,13 +479,18 @@
       "id": "A.CFC.001",
       "title": "Validate FAPI Customer IP Address - is present",
       "given": [
-        "the called API requires authentication"
+        "the API requires authentication"
       ],
       "when": [
-        "the <x-fapi-customer-ip-address> is present in the request header",
-        "AND is in a valid IPv4 or IPv6 format"
+        "a response is returned",
+        "AND the response has a status of 200"
       ],
-      "then": "the response has a status of 200",
+      "then": {
+        "and": [
+          "the <x-fapi-customer-ip-address> is present in the request header",
+          " is in a valid IPv4 or IPv6 format"
+        ]
+      },
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
@@ -479,10 +505,11 @@
       "id": "A.CFC.002",
       "title": "Validate FAPI Customer IP Address - missing from header",
       "given": [
-        "the called API requires authentication"
+        "the API requires authentication",
+        "AND the <x-fapi-customer-ip-address> is NOT present in the request header"
       ],
       "when": [
-        "the <x-fapi-customer-ip-address> is NOT present in the request header"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -505,11 +532,12 @@
       "id": "A.CFC.003",
       "title": "Validate FAPI Customer IP Address - invalid format",
       "given": [
-        "the called API requires authentication"
+        "the API requires authentication",
+        "AND \"the <x-fapi-customer-ip-address> is in present the request header",
+        "AND is NEITHER in a valid IPv4 or IPv6 format\""
       ],
       "when": [
-        "the <x-fapi-customer-ip-address> in present the request header",
-        "AND is NEITHER  in a valid IPv4 or IPv6 format"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -549,14 +577,19 @@
       "id": "A.CCH.001",
       "title": "Validate the client headers - valid format",
       "given": [
-        "the called API requires authentication",
-        "AND the call is an attended, ie customer present, call"
+        "the API requires authentication",
+        "AND the call is an attended, i.e. customer present, call"
       ],
       "when": [
-        "the <x-cds-client-headers> is present in the request header",
-        "AND is Base64 encoded"
+        "a response is returned ",
+        "AND the response has a status of 200"
       ],
-      "then": "the response has a status of 200",
+      "then": {
+        "and": [
+          "the <x-cds-client-headers> is present in the request header",
+          " is Base64 encoded"
+        ]
+      },
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
@@ -574,11 +607,12 @@
       "id": "A.CCH.002",
       "title": "Validate the client headers - missing from header",
       "given": [
-        "the called API requires authentication",
-        "AND the call is an attended, ie customer present, call"
+        "the API requires authentication",
+        "AND the <x-cds-client-headers> is mandatory",
+        "AND the <x-cds-client-headers> is NOT present in the request header"
       ],
       "when": [
-        "the <x-cds-client-headers> is NOT present in the request header"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -604,12 +638,11 @@
       "id": "A.CCH.003",
       "title": "Validate the client headers - invalid format",
       "given": [
-        "the called API requires authentication",
-        "AND the call is an attended, ie customer present, call"
-      ],
-      "when": [
         "the <x-cds-client-headers>  present the request header",
         "AND is Not Base64 encoded"
+      ],
+      "when": [
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -655,10 +688,15 @@
         "the call is from a DH to a SDH"
       ],
       "when": [
-        "the <x-cds-arrangement> is present in the request header",
-        "AND is in a valid format"
+        "a response is returned ",
+        "AND the response has a status of 200"
       ],
-      "then": "the response has a status of 200",
+      "then": {
+        "and": [
+          "the <x-cds-arrangement> is present in the request header",
+          " is in a valid format"
+        ]
+      },
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#energy"
@@ -673,10 +711,11 @@
       "id": "A.CAI.002",
       "title": "CDS arrangement id - missing from header (SR specific)",
       "given": [
-        "the call is from a DH to a SDH"
+        "the call is from a DH to a SDH",
+        "AND the <x-cds-arrangement> is NOT present in the request header"
       ],
       "when": [
-        "the <x-cds-arrangement> is NOT present in the request header"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -702,8 +741,7 @@
         "the call is from a DH to a SDH"
       ],
       "when": [
-        "the <x-cds-arrangement> is present in the request header",
-        "AND is NOT in a valid format"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -726,17 +764,14 @@
       "id": "A.COD.001",
       "title": "Validate the Oldest Date parameter - valid format",
       "given": [
-        "the <oldest-date> is included as a query parameter"
+        "the <oldest-date> is included as a query parameter",
+        "AND the <oldest-date> is in a valid DateString format"
       ],
       "when": [
-        "the <oldest-date> is in a valid DateString format"
+        "a response is returned",
+        "AND the response has a status of 200"
       ],
-      "then": {
-        "and": [
-          "the response has a status of 200",
-          " the data is constrained by the date supplied"
-        ]
-      },
+      "then": "the data is constrained by the date supplied",
       "references": [],
       "negative": false
     },
@@ -744,10 +779,11 @@
       "id": "A.COD.002",
       "title": "Validation the Oldest Date parameter - invalid format",
       "given": [
-        "the <oldest-date> is included as a query parameter"
+        "the <oldest-date> is included as a query parameter",
+        "AND the <oldest-date> is not in a DateString valid format"
       ],
       "when": [
-        "the <oldest-date> is not in a DateString valid format"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -767,17 +803,14 @@
       "id": "A.CND.001",
       "title": "Validate the Newest Date parameter - valid format",
       "given": [
-        "the <newest-date> is included as a query parameter"
+        "the <newest-date> is included as a query parameter",
+        "AND the <newest-date> is in a valid DateString format"
       ],
       "when": [
-        "the <newest-date> is in a valid DateString format"
+        "a response is returned",
+        "AND the response has a status of 200"
       ],
-      "then": {
-        "and": [
-          "the response has a status of 200",
-          " the data is constrained by the date supplied"
-        ]
-      },
+      "then": "the data is constrained by the date supplied",
       "references": [],
       "negative": false
     },
@@ -785,10 +818,11 @@
       "id": "A.CND.002",
       "title": "Validation the Newest Date parameter - invalid format",
       "given": [
-        "the <newest-date> is included as a query parameter"
+        "the <newest-date> is included as a query parameter",
+        "AND the <newest-date> is not in a valid DateString format"
       ],
       "when": [
-        "the <newest-date> is not in a valid DateString format"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -808,10 +842,11 @@
       "id": "A.CBD.001",
       "title": "Validation of the POST body - malformed body",
       "given": [
-        "the request is a POST request"
+        "the request is a POST request",
+        "AND the request body is not in a valid JSON format, i.e. it is malformed"
       ],
       "when": [
-        "the request body is not in a valid JSON format, ie it is malformed"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -834,10 +869,11 @@
       "id": "A.EAR.001",
       "title": "Validate service point and schema - EnergyServicePointDetailResponse",
       "given": [
-        "the {servicePointId} is included in the ADR to DH request"
+        "the {servicePointId} is included ",
+        "AND the {servicePointId} value is valid "
       ],
       "when": [
-        "the {servicePointId} value is valid "
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -859,10 +895,11 @@
       "id": "A.EAR.002",
       "title": "Validate service point - invalid value",
       "given": [
-        "the {servicePointId} is included in the ADR to DH request url"
+        "the {servicePointId} is included ",
+        "AND the requested service point is permanently unavailable. (No subsequent request for the service point will be successful.)"
       ],
       "when": [
-        "The requested service point is permanently unavailable. (No subsequent request for the service point will be successful.)"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -882,10 +919,11 @@
       "id": "A.EAR.003",
       "title": "Validate service point - unavailable",
       "given": [
-        "the {servicePointId} is included in the ADR to DH request"
+        "the {servicePointId} is included",
+        "AND the requested service point is temporarily unavailable. (Subsequent requests for the service point may be successful.)"
       ],
       "when": [
-        "The requested service point is temporarily unavailable. (Subsequent requests for the service point may be successful.)"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -905,10 +943,10 @@
       "id": "A.EAR.004",
       "title": "Validate schema - EnergyServicePointListReponse",
       "given": [
-        "the request to call the API is formatted correctly by the ADR"
+        "the request to call the API is formatted correctly"
       ],
       "when": [
-        "the DH receives the request"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -927,11 +965,12 @@
       "id": "A.EAR.005",
       "title": "Validate service point and schema - EnergyUsageListResponse",
       "given": [
-        "the {servicePointId} is included in the ADR to DH request"
+        "the {servicePointId} is included",
+        "AND the {servicePointId} value is valid ",
+        "AND the request is formatted correctly"
       ],
       "when": [
-        "the {servicePointId} value is valid ",
-        "AND the request is formated correctlly"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -954,8 +993,7 @@
         "AND contains the mandatory fields"
       ],
       "when": [
-        "the DH receives the request ",
-        "AND interprets the Body"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -974,10 +1012,11 @@
       "id": "A.EAR.007",
       "title": "Validate service point and schema - EnergyDerDetailResponse",
       "given": [
-        "the {servicePointId} is included in the ADR to DH request"
+        "the {servicePointId} is included ",
+        "AND the {servicePointId} value is valid "
       ],
       "when": [
-        "the {servicePointId} value is valid "
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1000,8 +1039,7 @@
         "AND contains the mandatory fields"
       ],
       "when": [
-        "the DH receives the request",
-        "AND interprets the Body"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1024,8 +1062,7 @@
         "OR the request payload is NOT well formatted"
       ],
       "when": [
-        "the DH receives the request ",
-        "AND interprets the Body"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1045,10 +1082,10 @@
       "id": "A.EAR.010",
       "title": "Validate schema - \tEnergyUsageListResponse",
       "given": [
-        "the request to call the API is formatted correctly by the ADR"
+        "the request to call the API is formatted correctly"
       ],
       "when": [
-        "the DH receives the request"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1067,10 +1104,10 @@
       "id": "A.EAR.011",
       "title": "Validate schema - EnergyDerListResponse",
       "given": [
-        "the request to call the API is formatted correctly by the ADR"
+        "the request to call the API is formatted correctly"
       ],
       "when": [
-        "the DH receives the request"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1089,10 +1126,11 @@
       "id": "A.EAS.001",
       "title": "Validate service point and schema - EnergyServicePointDetailResponse",
       "given": [
-        "the {servicePointId} is included in the DH to SDH request"
+        "the {servicePointId} is included ",
+        "AND the {servicePointId} value is valid "
       ],
       "when": [
-        "the {servicePointId} value is valid "
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1114,10 +1152,11 @@
       "id": "A.EAS.002",
       "title": "Validate service point - invalid NMI value",
       "given": [
-        "the {servicePointId} is included in the DH to SDH request url"
+        "the {servicePointId} is included ",
+        "AND the requested service point is permanently unavailable. No subsequent request for the service point will be successful."
       ],
       "when": [
-        "The requested service point is permanently unavailable. No subsequent request for the service point will be successful."
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1137,10 +1176,11 @@
       "id": "A.EAS.003",
       "title": "Validate service point - unavailable NMI",
       "given": [
-        "the {servicePointId} is included in the DH to SDH request"
+        "the {servicePointId} is included ",
+        "AND the requested service point is temporarily unavailable. Subsequent requests for the service point may be successful."
       ],
       "when": [
-        "The requested service point is temporarily unavailable. Subsequent requests for the service point may be successful."
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1160,10 +1200,10 @@
       "id": "A.EAS.004",
       "title": "Validate schema - EnergyServicePointListReponse",
       "given": [
-        "the request to call the API is formatted correctly by the DH"
+        "the request to call the API is formatted correctly"
       ],
       "when": [
-        "the SDH receives the request"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1182,11 +1222,12 @@
       "id": "A.EAS.005",
       "title": "Validate service point and schema - EnergyUsageListResponse",
       "given": [
-        "the {servicePointId} is included in the DH to SDH request"
+        "the {servicePointId} is included ",
+        "AND the {servicePointId} value is valid ",
+        "AND the request is formatted correctly"
       ],
       "when": [
-        "the {servicePointId} value is valid ",
-        "AND the request is formated correctlly"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1209,7 +1250,7 @@
         "AND contains the mandatory fields"
       ],
       "when": [
-        "the SDH receives the request and interprets the Body"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1228,10 +1269,11 @@
       "id": "A.EAS.007",
       "title": "Validate service point and schema - EnergyDerDetailResponse",
       "given": [
-        "the {servicePointId} is included in the DH to SDH request"
+        "the {servicePointId} is included ",
+        "AND the {servicePointId} value is valid "
       ],
       "when": [
-        "the {servicePointId} value is valid "
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1254,7 +1296,7 @@
         "AND contains the mandatory fields"
       ],
       "when": [
-        "the SDH receives the request and interprets the Body"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1277,7 +1319,7 @@
         "OR the request payload is NOT well formatted"
       ],
       "when": [
-        "the SDH receives the request and interprets the Body"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1303,7 +1345,7 @@
         "the request payload contains an invalid servicePointID "
       ],
       "when": [
-        "the SDH receives the request and interprets the Body"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -1329,7 +1371,7 @@
         "the request payload contains a valid servicePointID that is unavailable"
       ],
       "when": [
-        "the SDH receives the request and interprets the Body"
+        "a response is returned"
       ],
       "then": {
         "and": [
@@ -7014,6 +7056,31 @@
     }
   },
   "scenarios": {
+    "S.EAR.073": {
+      "id": "S.EAR.073",
+      "title": "Get Service Points v1",
+      "purpose": "Test cases which will return a 2xx status code",
+      "description": "As a DH I provide an API which exposes information about the service points",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
+        }
+      ],
+      "sequence": [
+        {
+          "type": "SETUP",
+          "action": "Authorise session\r\nAND x-v is set in header"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAR.001"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAR.002"
+        }
+      ]
+    },
     "S.EAR.074": {
       "id": "S.EAR.074",
       "title": "Get Service Points Negative v1",
@@ -7684,7 +7751,7 @@
       "description": "Test the Happy Path for Get Service Points",
       "references": [
         {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr"
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr\r"
         }
       ],
       "sequence": [
@@ -7705,7 +7772,7 @@
       "description": "Test errors and edge cases for Get Service Points ",
       "references": [
         {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr"
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr\r"
         }
       ],
       "sequence": [
@@ -8108,6 +8175,7 @@
       "title": "APIs - Energy Standing Data, Usage and DER",
       "purpose": "",
       "scenarios": [
+        "S.EAR.073",
         "S.EAR.074",
         "S.EAR.075",
         "S.EAR.076",

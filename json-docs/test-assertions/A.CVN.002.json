@@ -2,10 +2,11 @@
   "id": "A.CVN.002",
   "title": "Validate version - invalid version value [x-v]",
   "given": [
-    "the version parameter is included in a GET request"
+    "the version parameter is included ",
+    "AND the version value is not a valid number is [-1,0,1001]"
   ],
   "when": [
-    "the version value is not a valid number is [-1,0,1001]"
+    "a response is returned"
   ],
   "then": {
     "and": [

@@ -2,10 +2,11 @@
   "id": "A.CBD.001",
   "title": "Validation of the POST body - malformed body",
   "given": [
-    "the request is a POST request"
+    "the request is a POST request",
+    "AND the request body is not in a valid JSON format, i.e. it is malformed"
   ],
   "when": [
-    "the request body is not in a valid JSON format, ie it is malformed"
+    "a response is returned"
   ],
   "then": {
     "and": [

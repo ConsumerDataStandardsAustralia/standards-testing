@@ -3,10 +3,11 @@
   "title": "Validate version - unsupported version without <x-min-v>",
   "given": [
     "the <x-v>  is included in a  request header",
-    "AND <x-min-v> is NOT included"
+    "AND <x-min-v> is NOT included",
+    "AND the request version <x-v> is not supported"
   ],
   "when": [
-    "the request version <x-v> is not supported"
+    "and a response is returned"
   ],
   "then": {
     "and": [

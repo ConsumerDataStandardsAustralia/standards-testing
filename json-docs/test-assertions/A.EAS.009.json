@@ -6,7 +6,7 @@
     "OR the request payload is NOT well formatted"
   ],
   "when": [
-    "the SDH receives the request and interprets the Body"
+    "a response is returned"
   ],
   "then": {
     "and": [

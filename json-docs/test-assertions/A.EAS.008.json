@@ -6,7 +6,7 @@
     "AND contains the mandatory fields"
   ],
   "when": [
-    "the SDH receives the request and interprets the Body"
+    "a response is returned"
   ],
   "then": {
     "and": [

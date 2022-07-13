@@ -2,11 +2,12 @@
   "id": "A.EAS.005",
   "title": "Validate service point and schema - EnergyUsageListResponse",
   "given": [
-    "the {servicePointId} is included in the DH to SDH request"
+    "the {servicePointId} is included ",
+    "AND the {servicePointId} value is valid ",
+    "AND the request is formatted correctly"
   ],
   "when": [
-    "the {servicePointId} value is valid ",
-    "AND the request is formated correctlly"
+    "a response is returned"
   ],
   "then": {
     "and": [

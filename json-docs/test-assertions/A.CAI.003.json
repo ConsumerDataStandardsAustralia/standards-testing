@@ -5,8 +5,7 @@
     "the call is from a DH to a SDH"
   ],
   "when": [
-    "the <x-cds-arrangement> is present in the request header",
-    "AND is NOT in a valid format"
+    "a response is returned"
   ],
   "then": {
     "and": [

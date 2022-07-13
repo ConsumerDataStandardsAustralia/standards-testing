@@ -2,10 +2,11 @@
   "id": "A.CPG.003",
   "title": "Validate pagination - Non-numeric <page>",
   "given": [
-    "the <page> parameter is included in a GET request"
+    "the <page> parameter is included ",
+    "AND the <page> is a not a positive integer"
   ],
   "when": [
-    "the <page> is a not a positive integer"
+    "a response is returned"
   ],
   "then": {
     "and": [

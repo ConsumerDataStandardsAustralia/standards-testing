@@ -2,10 +2,11 @@
   "id": "A.EAR.001",
   "title": "Validate service point and schema - EnergyServicePointDetailResponse",
   "given": [
-    "the {servicePointId} is included in the ADR to DH request"
+    "the {servicePointId} is included ",
+    "AND the {servicePointId} value is valid "
   ],
   "when": [
-    "the {servicePointId} value is valid "
+    "a response is returned"
   ],
   "then": {
     "and": [

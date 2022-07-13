@@ -2,15 +2,16 @@
   "id": "A.CPG.001",
   "title": "Validate pagination - LinksPaginated ",
   "given": [
-    "the page parameter is included in a GET request"
+    "the page parameter is included in a GET request",
+    "AND the page value is a number and page-size is [1,25,1000,null]"
   ],
   "when": [
-    "the page value is a number and page-size is [1,25,1000,null]"
+    "a response is returned",
+    "AND the response has a status of 200"
   ],
   "then": {
     "and": [
       "the nominated <page number> is returned",
-      " the response has a status of 200",
       " the \"first\" link has page=1",
       " the \"last\" link is greater than or equal to 1",
       " the \"self\" link has page=<page number>",

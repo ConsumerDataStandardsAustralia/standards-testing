@@ -2,10 +2,11 @@
   "id": "A.CPG.004",
   "title": "Validate pagination - Max record limit exceeded",
   "given": [
-    "the <page> parameter is included in a GET request"
+    "the <page> parameter is included",
+    "AND the <page> value is greater than the number of pages available "
   ],
   "when": [
-    "the <page> value is greater than the number of pages available "
+    "a response is returned"
   ],
   "then": {
     "and": [
