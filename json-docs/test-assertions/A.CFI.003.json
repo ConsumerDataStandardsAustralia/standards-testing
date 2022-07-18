@@ -1,11 +1,12 @@
 {
   "id": "A.CFI.003",
-  "title": "Validate FAPI Interation ID - invalid format",
+  "title": "Validate FAPI Interaction ID - invalid format",
   "given": [
-    "the <x-fapi-interaction-id> is included in the GET request"
+    "the <x-fapi-interaction-id> is included ",
+    "AND the <x-fapi-interaction-id> is not in a valid format "
   ],
   "when": [
-    "the <x-fapi-interaction-id> is not in a valid format "
+    "a response is returned"
   ],
   "then": {
     "and": [

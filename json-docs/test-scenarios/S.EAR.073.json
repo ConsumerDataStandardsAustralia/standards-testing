@@ -2,7 +2,7 @@
   "id": "S.EAR.073",
   "title": "Get Service Points v1",
   "purpose": "Test cases which will return a 2xx status code",
-  "description": "As a DH I provide an API which exposes information about the service points",
+  "description": "",
   "references": [
     {
       "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
@@ -11,7 +11,7 @@
   "sequence": [
     {
       "type": "SETUP",
-      "action": "Authorise session\r\nAND x-v is set in header"
+      "action": "Authorise session\nAND x-v is set in header"
     },
     {
       "type": "TEST",

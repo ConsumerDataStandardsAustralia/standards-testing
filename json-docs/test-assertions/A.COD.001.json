@@ -2,17 +2,14 @@
   "id": "A.COD.001",
   "title": "Validate the Oldest Date parameter - valid format",
   "given": [
-    "the <oldest-date> is included as a query parameter"
+    "the <oldest-date> is included as a query parameter",
+    "AND the <oldest-date> is in a valid DateString format"
   ],
   "when": [
-    "the <oldest-date> is in a valid DateString format"
+    "a response is returned",
+    "AND the response has a status of 200"
   ],
-  "then": {
-    "and": [
-      "the response has a status of 200",
-      " the data is constrained by the date supplied"
-    ]
-  },
+  "then": "the data is constrained by the date supplied",
   "references": [],
   "negative": false
 }

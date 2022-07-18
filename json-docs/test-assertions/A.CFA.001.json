@@ -2,13 +2,18 @@
   "id": "A.CFA.001",
   "title": "Validate FAPI Auth date - valid format",
   "given": [
-    "the called API is a resource call and does require authentication"
+    "the API requires authentication"
   ],
   "when": [
-    "the <x-fapi-auth-date> is present in the request header",
-    "AND is in a valid format"
+    "a response is returned ",
+    "AND the response has a status of 200"
   ],
-  "then": "the response has a status of 200",
+  "then": {
+    "and": [
+      "the <x-fapi-auth-date> is present in the request header",
+      " is in a valid format"
+    ]
+  },
   "references": [
     {
       "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"

@@ -2,9 +2,13 @@
 <a id="introduction"></a>
 # The CDR Test Documentation
 
-File version: 1.0.1
+File version: 1.0.2
 
 This documentation has been  created by the DSB to assist participants in the development of compliant APIs
+
+For more details see the CDS <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing">standards-testing repository</a> for details
+
+Last updated 18/07/2022 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v1.0.2/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx">change log</a> for details
 
 <a id="suites"></a>
 # Test Suites
@@ -57,8 +61,6 @@ This documentation has been  created by the DSB to assist participants in the de
 <a id="scenario-s.ear.073"></a>
 ## S.EAR.073: Get Service Points v1
 
-As a DH I provide an API which exposes information about the service points
-
 ### Purpose:
 
 Test cases which will return a 2xx status code
@@ -72,15 +74,13 @@ Test cases which will return a 2xx status code
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Setup|Authorise session</br>AND x-v is set in header|
+|1|Setup|Authorise session</br>AND x-v is set in header|
 |2|Execute Test|[T.EAR.001: ADR call to DH: Get Service Points - no pagination](#testcase-t.ear.001)|
 |3|Execute Test|[T.EAR.002: ADR call to DH: Get Service Points - with pagination](#testcase-t.ear.002)|
 
 
 <a id="scenario-s.ear.074"></a>
 ## S.EAR.074: Get Service Points Negative v1
-
-As a DH I return appropriate codes and messages for failed or invalid requests
 
 ### Purpose:
 
@@ -357,11 +357,9 @@ Test cases which will return codes other than 2xx
 <a id="scenario-s.eas.089"></a>
 ## S.EAS.089: Get Service Points SR v1
 
-Test the Happy Path for Get Service Points
-
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
 
 
 ### Testing Sequence:
@@ -375,11 +373,9 @@ Test the Happy Path for Get Service Points
 <a id="scenario-s.eas.090"></a>
 ## S.EAS.090: Get Service Points Negative SR v1
 
-Test errors and edge cases for Get Service Points 
-
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
 
 
 ### Testing Sequence:
@@ -570,6 +566,7 @@ Test API without any pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62)
 
 
 ### Execution Pre-conditions:
@@ -588,7 +585,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -610,6 +607,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62)
 
 
 ### Execution Pre-conditions:
@@ -628,7 +626,7 @@ Test API with pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -668,7 +666,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -707,7 +705,7 @@ Test API with invalid pagination parameters
 * [A.CPG.003: Validate pagination - Non-numeric <page>](#assertion-a.cpg.003)
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -741,7 +739,7 @@ Test API where FAPI Interaction ID format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.003: Validate FAPI Interation ID - invalid format](#assertion-a.cfi.003)
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
 
 
 <a id="testcase-t.ear.006"></a>
@@ -758,6 +756,7 @@ Test API with a vaild service point and version
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-f9fc2c7c-db2b-444d-9340-a317884f3bdc)
 
 
 ### Execution Pre-conditions:
@@ -777,7 +776,7 @@ Test API with a vaild service point and version
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -817,7 +816,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -851,7 +850,7 @@ Test API with an invalid servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAR.002: Validate service point - invalid value](#assertion-a.ear.002)
 
@@ -886,7 +885,7 @@ Test API with an unavailable servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAR.003: Validate service point - unavailable](#assertion-a.ear.003)
 
@@ -921,7 +920,7 @@ Test API where FAPI Interaction ID fomat is invalid
 
 ### End State Assertions:
 
-* [A.CFI.003: Validate FAPI Interation ID - invalid format](#assertion-a.cfi.003)
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
 
 
 <a id="testcase-t.ear.011"></a>
@@ -956,7 +955,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -978,6 +977,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point](https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-8365f6ba-ed9b-4e43-87a1-a54d9d49b8e1)
 
 
 ### Execution Pre-conditions:
@@ -996,7 +996,7 @@ Test API with pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -1036,7 +1036,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -1075,7 +1075,7 @@ Test API with invalid pagination parameters
 * [A.CPG.003: Validate pagination - Non-numeric <page>](#assertion-a.cpg.003)
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -1113,7 +1113,7 @@ Test API with &lt;oldest date&gt; parameter
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -1155,7 +1155,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -1194,7 +1194,7 @@ Test API with an invalid servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAR.002: Validate service point - invalid value](#assertion-a.ear.002)
 
@@ -1229,7 +1229,7 @@ Test API with an unavailable servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAR.003: Validate service point - unavailable](#assertion-a.ear.003)
 
@@ -1265,7 +1265,7 @@ Test API with &lt;oldest date&gt;  parameter
 ### End State Assertions:
 
 * [A.COD.002: Validation the Oldest Date parameter - invalid format](#assertion-a.cod.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -1300,7 +1300,7 @@ Test API without any pagination partameters
 ### End State Assertions:
 
 * [A.CND.002: Validation the Newest Date parameter - invalid format](#assertion-a.cnd.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -1334,7 +1334,7 @@ Test API where FAPI Interaction ID fomat is invalid
 
 ### End State Assertions:
 
-* [A.CFI.003: Validate FAPI Interation ID - invalid format](#assertion-a.cfi.003)
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
 
 
 <a id="testcase-t.ear.022"></a>
@@ -1369,7 +1369,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -1391,6 +1391,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-e9c11ed2-1fe4-448b-b474-b233c27d5767)
 
 
 ### Execution Pre-conditions:
@@ -1409,7 +1410,7 @@ Test API with pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -1449,7 +1450,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -1488,7 +1489,7 @@ Test API with invalid pagination parameters
 * [A.CPG.003: Validate pagination - Non-numeric <page>](#assertion-a.cpg.003)
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -1524,7 +1525,7 @@ Test API with oldest date parameter
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -1565,7 +1566,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -1605,7 +1606,7 @@ Test API with oldest date parameter
 ### End State Assertions:
 
 * [A.COD.002: Validation the Oldest Date parameter - invalid format](#assertion-a.cod.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -1640,7 +1641,7 @@ Test API without any pagination partameters
 ### End State Assertions:
 
 * [A.CND.002: Validation the Newest Date parameter - invalid format](#assertion-a.cnd.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -1674,7 +1675,7 @@ Test API where FAPI Interaction ID fomat is invalid
 
 ### End State Assertions:
 
-* [A.CFI.003: Validate FAPI Interation ID - invalid format](#assertion-a.cfi.003)
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
 
 
 <a id="testcase-t.ear.031"></a>
@@ -1708,7 +1709,7 @@ Test API with invalid body values
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAR.009: Validate servicePointIdList - invalid body values](#assertion-a.ear.009)
 
@@ -1743,7 +1744,7 @@ Test API with a malformed body
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CBD.001: Validation of the POST body - malformed body](#assertion-a.cbd.001)
 
@@ -1762,6 +1763,7 @@ Test API with a vaild service point and version
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point](https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c008a5a9-00a7-4144-85a0-6832e23f837a)
 
 
 ### Execution Pre-conditions:
@@ -1781,7 +1783,7 @@ Test API with a vaild service point and version
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -1821,7 +1823,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -1855,7 +1857,7 @@ Test API with an invalid servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAR.002: Validate service point - invalid value](#assertion-a.ear.002)
 
@@ -1890,7 +1892,7 @@ Test API with an unavailable servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAR.003: Validate service point - unavailable](#assertion-a.ear.003)
 
@@ -1925,7 +1927,7 @@ Test API where FAPI Interaction ID fomat is invalid
 
 ### End State Assertions:
 
-* [A.CFI.003: Validate FAPI Interation ID - invalid format](#assertion-a.cfi.003)
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
 
 
 <a id="testcase-t.ear.038"></a>
@@ -1960,7 +1962,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -1982,6 +1984,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-3d96d13a-360d-4930-a46c-6cb0c2450a86)
 
 
 ### Execution Pre-conditions:
@@ -2000,7 +2003,7 @@ Test API with pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -2041,7 +2044,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -2080,7 +2083,7 @@ Test API with invalid pagination parameters
 * [A.CPG.003: Validate pagination - Non-numeric <page>](#assertion-a.cpg.003)
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -2115,7 +2118,7 @@ Test API with invalid body values
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.EAR.009: Validate servicePointIdList - invalid body values](#assertion-a.ear.009)
 
@@ -2150,7 +2153,7 @@ Test API with a malformed body
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CBD.001: Validation of the POST body - malformed body](#assertion-a.cbd.001)
 
@@ -2185,7 +2188,7 @@ Test API where FAPI Interaction ID fomat is invalid
 
 ### End State Assertions:
 
-* [A.CFI.003: Validate FAPI Interation ID - invalid format](#assertion-a.cfi.003)
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
 
 
 <a id="testcase-t.ear.045"></a>
@@ -2202,6 +2205,7 @@ Test API without any pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage](https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c4624ec7-7ef3-4dbd-b1a1-c1d63a020346)
 
 
 ### Execution Pre-conditions:
@@ -2220,7 +2224,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -2260,7 +2264,7 @@ Test API with pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -2300,7 +2304,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -2339,7 +2343,7 @@ Test API with invalid pagination parameters
 * [A.CPG.003: Validate pagination - Non-numeric <page>](#assertion-a.cpg.003)
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -2375,7 +2379,7 @@ Test API with oldest date parameter
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
@@ -2416,7 +2420,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
@@ -2456,7 +2460,7 @@ Test API with an invalid oldest date parameter
 ### End State Assertions:
 
 * [A.COD.002: Validation the Oldest Date parameter - invalid format](#assertion-a.cod.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -2491,7 +2495,7 @@ Test API with an invalid newest date parameter
 ### End State Assertions:
 
 * [A.CND.002: Validation the Newest Date parameter - invalid format](#assertion-a.cnd.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -2525,7 +2529,7 @@ Test API where FAPI Interaction ID fomat is invalid
 
 ### End State Assertions:
 
-* [A.CFI.003: Validate FAPI Interation ID - invalid format](#assertion-a.cfi.003)
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
 
 
 <a id="testcase-t.ear.054"></a>
@@ -2558,7 +2562,7 @@ Test API when FAPI Auth date is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.002: Validate FAPI Auth date - missing from header](#assertion-a.cfa.002)
 
@@ -2593,7 +2597,7 @@ Test API when FAPI Auth date is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.003: Validate FAPI Auth date - invalid format](#assertion-a.cfa.003)
 
@@ -2628,7 +2632,7 @@ Test API when FAPI Customer IP Address is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.002: Validate FAPI Customer IP Address - missing from header](#assertion-a.cfc.002)
 
@@ -2663,7 +2667,7 @@ Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.003: Validate FAPI Customer IP Address - invalid format](#assertion-a.cfc.003)
 
@@ -2698,7 +2702,7 @@ Test API when CDS Client Header is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.002: Validate the client headers - missing from header](#assertion-a.cch.002)
 
@@ -2733,7 +2737,7 @@ Test API when CDS Client Header is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.003: Validate the client headers - invalid format](#assertion-a.cch.003)
 
@@ -2770,7 +2774,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
 * [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
@@ -2792,6 +2796,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der](https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-1aee91c2-9186-47d1-b15c-1996c49b3259)
 
 
 ### Execution Pre-conditions:
@@ -2811,7 +2816,7 @@ Test API with pagination partameters
 * [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
 * [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
@@ -2850,7 +2855,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -2889,7 +2894,7 @@ Test API with invalid pagination parameters
 * [A.CPG.003: Validate pagination - Non-numeric <page>](#assertion-a.cpg.003)
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -2923,7 +2928,7 @@ Test API when FAPI Auth date is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.002: Validate FAPI Auth date - missing from header](#assertion-a.cfa.002)
 
@@ -2958,7 +2963,7 @@ Test API when FAPI Auth date is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.003: Validate FAPI Auth date - invalid format](#assertion-a.cfa.003)
 
@@ -2993,7 +2998,7 @@ Test API when FAPI Customer IP Address is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.002: Validate FAPI Customer IP Address - missing from header](#assertion-a.cfc.002)
 
@@ -3028,7 +3033,7 @@ Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.003: Validate FAPI Customer IP Address - invalid format](#assertion-a.cfc.003)
 
@@ -3063,7 +3068,7 @@ Test API when CDS Client Header is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.002: Validate the client headers - missing from header](#assertion-a.cch.002)
 
@@ -3098,7 +3103,7 @@ Test API when CDS Client Header is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.003: Validate the client headers - invalid format](#assertion-a.cch.003)
 
@@ -3133,7 +3138,7 @@ Test API when FAPI Auth date is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.003: Validate FAPI Auth date - invalid format](#assertion-a.cfa.003)
 
@@ -3168,7 +3173,7 @@ Test API when FAPI Customer IP Address is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.002: Validate FAPI Customer IP Address - missing from header](#assertion-a.cfc.002)
 
@@ -3203,7 +3208,7 @@ Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.003: Validate FAPI Customer IP Address - invalid format](#assertion-a.cfc.003)
 
@@ -3238,7 +3243,7 @@ Test API when FAPI Auth date is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.002: Validate FAPI Auth date - missing from header](#assertion-a.cfa.002)
 
@@ -3273,7 +3278,7 @@ Test API when FAPI Auth date is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.003: Validate FAPI Auth date - invalid format](#assertion-a.cfa.003)
 
@@ -3308,7 +3313,7 @@ Test API when FAPI Customer IP Address is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.002: Validate FAPI Customer IP Address - missing from header](#assertion-a.cfc.002)
 
@@ -3343,7 +3348,7 @@ Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.003: Validate FAPI Customer IP Address - invalid format](#assertion-a.cfc.003)
 
@@ -3378,7 +3383,7 @@ Test API when CDS Client Header is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.002: Validate the client headers - missing from header](#assertion-a.cch.002)
 
@@ -3413,7 +3418,7 @@ Test API when CDS Client Header is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.003: Validate the client headers - invalid format](#assertion-a.cch.003)
 
@@ -3448,7 +3453,7 @@ Test API when FAPI Auth date is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.002: Validate FAPI Auth date - missing from header](#assertion-a.cfa.002)
 
@@ -3483,7 +3488,7 @@ Test API when FAPI Auth date is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.003: Validate FAPI Auth date - invalid format](#assertion-a.cfa.003)
 
@@ -3518,7 +3523,7 @@ Test API when FAPI Customer IP Address is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.002: Validate FAPI Customer IP Address - missing from header](#assertion-a.cfc.002)
 
@@ -3553,7 +3558,7 @@ Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.003: Validate FAPI Customer IP Address - invalid format](#assertion-a.cfc.003)
 
@@ -3588,7 +3593,7 @@ Test API when CDS Client Header is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.002: Validate the client headers - missing from header](#assertion-a.cch.002)
 
@@ -3623,7 +3628,7 @@ Test API when CDS Client Header is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.003: Validate the client headers - invalid format](#assertion-a.cch.003)
 
@@ -3658,7 +3663,7 @@ Test API when FAPI Auth date is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.002: Validate FAPI Auth date - missing from header](#assertion-a.cfa.002)
 
@@ -3693,7 +3698,7 @@ Test API when FAPI Auth date is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.003: Validate FAPI Auth date - invalid format](#assertion-a.cfa.003)
 
@@ -3728,7 +3733,7 @@ Test API when FAPI Customer IP Address is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.002: Validate FAPI Customer IP Address - missing from header](#assertion-a.cfc.002)
 
@@ -3763,7 +3768,7 @@ Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.003: Validate FAPI Customer IP Address - invalid format](#assertion-a.cfc.003)
 
@@ -3798,7 +3803,7 @@ Test API when CDS Client Header is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.002: Validate the client headers - missing from header](#assertion-a.cch.002)
 
@@ -3833,7 +3838,7 @@ Test API when CDS Client Header is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.003: Validate the client headers - invalid format](#assertion-a.cch.003)
 
@@ -3868,7 +3873,7 @@ Test API when FAPI Auth date is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.002: Validate FAPI Auth date - missing from header](#assertion-a.cfa.002)
 
@@ -3903,7 +3908,7 @@ Test API when FAPI Auth date is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.003: Validate FAPI Auth date - invalid format](#assertion-a.cfa.003)
 
@@ -3938,7 +3943,7 @@ Test API when FAPI Customer IP Address is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.002: Validate FAPI Customer IP Address - missing from header](#assertion-a.cfc.002)
 
@@ -3973,7 +3978,7 @@ Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.003: Validate FAPI Customer IP Address - invalid format](#assertion-a.cfc.003)
 
@@ -4008,7 +4013,7 @@ Test API when CDS Client Header is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.002: Validate the client headers - missing from header](#assertion-a.cch.002)
 
@@ -4043,7 +4048,7 @@ Test API when CDS Client Header is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.003: Validate the client headers - invalid format](#assertion-a.cch.003)
 
@@ -4078,7 +4083,7 @@ Test API when FAPI Auth date is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.002: Validate FAPI Auth date - missing from header](#assertion-a.cfa.002)
 
@@ -4113,7 +4118,7 @@ Test API when FAPI Auth date is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.003: Validate FAPI Auth date - invalid format](#assertion-a.cfa.003)
 
@@ -4148,7 +4153,7 @@ Test API when FAPI Customer IP Address is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.002: Validate FAPI Customer IP Address - missing from header](#assertion-a.cfc.002)
 
@@ -4183,7 +4188,7 @@ Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.003: Validate FAPI Customer IP Address - invalid format](#assertion-a.cfc.003)
 
@@ -4218,7 +4223,7 @@ Test API when CDS Client Header is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.002: Validate the client headers - missing from header](#assertion-a.cch.002)
 
@@ -4253,7 +4258,7 @@ Test API when CDS Client Header is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.003: Validate the client headers - invalid format](#assertion-a.cch.003)
 
@@ -4288,7 +4293,7 @@ Test API when FAPI Auth date is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.002: Validate FAPI Auth date - missing from header](#assertion-a.cfa.002)
 
@@ -4323,7 +4328,7 @@ Test API when FAPI Auth date is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFA.003: Validate FAPI Auth date - invalid format](#assertion-a.cfa.003)
 
@@ -4358,7 +4363,7 @@ Test API when FAPI Customer IP Address is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.002: Validate FAPI Customer IP Address - missing from header](#assertion-a.cfc.002)
 
@@ -4393,7 +4398,7 @@ Test API when FAPI Customer IP Address is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CFC.003: Validate FAPI Customer IP Address - invalid format](#assertion-a.cfc.003)
 
@@ -4428,7 +4433,7 @@ Test API when CDS Client Header is missing from the header
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.002: Validate the client headers - missing from header](#assertion-a.cch.002)
 
@@ -4463,7 +4468,7 @@ Test API when CDS Client Header is present but the format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 * [A.CCH.003: Validate the client headers - invalid format](#assertion-a.cch.003)
 
@@ -4482,6 +4487,7 @@ Test API with invalid version value
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
+* [Postman Example](https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-7db0a312-af47-452a-8a44-d4002b3c71e8)
 
 
 ### Execution Pre-conditions:
@@ -4499,7 +4505,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4534,7 +4540,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4569,7 +4575,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4604,7 +4610,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4639,7 +4645,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4674,7 +4680,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4709,7 +4715,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4744,7 +4750,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4779,7 +4785,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4814,7 +4820,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4849,7 +4855,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4884,7 +4890,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4919,7 +4925,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4954,7 +4960,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -4989,7 +4995,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -5024,7 +5030,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -5060,7 +5066,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -5096,7 +5102,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -5132,7 +5138,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -5168,7 +5174,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -5204,7 +5210,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -5240,7 +5246,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -5276,7 +5282,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -5312,7 +5318,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
 
 
@@ -5348,7 +5354,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -5388,7 +5394,7 @@ Test API with pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -5429,7 +5435,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.004"></a>
@@ -5467,7 +5473,7 @@ Test API with invalid pagination parameters
 * [A.CPG.003: Validate pagination - Non-numeric <page>](#assertion-a.cpg.003)
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.005"></a>
@@ -5503,7 +5509,7 @@ Test API with a vaild service point and version
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -5543,7 +5549,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.007"></a>
@@ -5576,7 +5582,7 @@ Test API with an invalid servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.EAS.002: Validate service point - invalid NMI value](#assertion-a.eas.002)
 
 
@@ -5610,7 +5616,7 @@ Test API with an unavailable servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.EAS.003: Validate service point - unavailable NMI](#assertion-a.eas.003)
 
 
@@ -5646,7 +5652,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -5686,7 +5692,7 @@ Test API with pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -5727,7 +5733,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.012"></a>
@@ -5765,7 +5771,7 @@ Test API with invalid pagination parameters
 * [A.CPG.003: Validate pagination - Non-numeric <page>](#assertion-a.cpg.003)
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.013"></a>
@@ -5802,7 +5808,7 @@ Test API with &lt;oldest date&gt; parameter
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -5844,7 +5850,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -5883,7 +5889,7 @@ Test API with an invalid servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.EAS.002: Validate service point - invalid NMI value](#assertion-a.eas.002)
 
 
@@ -5917,7 +5923,7 @@ Test API with an unavailable servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.EAS.003: Validate service point - unavailable NMI](#assertion-a.eas.003)
 
 
@@ -5952,7 +5958,7 @@ Test API with &lt;oldest date&gt;  parameter
 ### End State Assertions:
 
 * [A.COD.002: Validation the Oldest Date parameter - invalid format](#assertion-a.cod.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.018"></a>
@@ -5986,7 +5992,7 @@ Test API without any pagination partameters
 ### End State Assertions:
 
 * [A.CND.002: Validation the Newest Date parameter - invalid format](#assertion-a.cnd.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.019"></a>
@@ -6021,7 +6027,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -6061,7 +6067,7 @@ Test API with pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -6102,7 +6108,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.022"></a>
@@ -6140,7 +6146,7 @@ Test API with invalid pagination parameters
 * [A.CPG.003: Validate pagination - Non-numeric <page>](#assertion-a.cpg.003)
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.023"></a>
@@ -6175,7 +6181,7 @@ Test API with oldest date parameter
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -6216,7 +6222,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -6256,7 +6262,7 @@ Test API with oldest date parameter
 ### End State Assertions:
 
 * [A.COD.002: Validation the Oldest Date parameter - invalid format](#assertion-a.cod.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.026"></a>
@@ -6290,7 +6296,7 @@ Test API without any pagination partameters
 ### End State Assertions:
 
 * [A.CND.002: Validation the Newest Date parameter - invalid format](#assertion-a.cnd.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.027"></a>
@@ -6326,7 +6332,7 @@ Test API with a vaild service point and version
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -6366,7 +6372,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.029"></a>
@@ -6399,7 +6405,7 @@ Test API with an invalid servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.EAS.002: Validate service point - invalid NMI value](#assertion-a.eas.002)
 
 
@@ -6433,7 +6439,7 @@ Test API with an unavailable servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.EAS.003: Validate service point - unavailable NMI](#assertion-a.eas.003)
 
 
@@ -6469,7 +6475,7 @@ Test API without any pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -6509,7 +6515,7 @@ Test API with pagination partameters
 
 * [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
 * [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CFA.004: No <x-fapi-auth-date> in header (SR specific)](#assertion-a.cfa.004)
 * [A.CFC.004: No <x-fapi-customer-ip-address> in header (SR specific)](#assertion-a.cfc.004)
 * [A.CCH.004: No <x-cds-client-header> in header (SR specific)](#assertion-a.cch.004)
@@ -6550,7 +6556,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.034"></a>
@@ -6588,7 +6594,7 @@ Test API with invalid pagination parameters
 * [A.CPG.003: Validate pagination - Non-numeric <page>](#assertion-a.cpg.003)
 * [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
 * [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.035"></a>
@@ -6622,7 +6628,7 @@ Test API with invalid body values
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.EAS.009: Validate servicePointIdList - invalid body values](#assertion-a.eas.009)
 
 
@@ -6656,7 +6662,7 @@ Test API with a malformed body
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CBD.001: Validation of the POST body - malformed body](#assertion-a.cbd.001)
 
 
@@ -6691,7 +6697,7 @@ Test API with invalid body values
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.EAS.009: Validate servicePointIdList - invalid body values](#assertion-a.eas.009)
 
 
@@ -6725,7 +6731,7 @@ Test API with a malformed body
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CBD.001: Validation of the POST body - malformed body](#assertion-a.cbd.001)
 
 
@@ -6759,7 +6765,7 @@ Test API where FAPI Interaction ID format is invalid
 
 ### End State Assertions:
 
-* [A.CFI.003: Validate FAPI Interation ID - invalid format](#assertion-a.cfi.003)
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
 
 
 <a id="testcase-t.eas.040"></a>
@@ -6792,7 +6798,7 @@ Test API where FAPI Interaction ID fomat is invalid
 
 ### End State Assertions:
 
-* [A.CFI.003: Validate FAPI Interation ID - invalid format](#assertion-a.cfi.003)
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
 
 
 <a id="testcase-t.eas.041"></a>
@@ -6825,7 +6831,7 @@ Test API where FAPI Interaction ID fomat is invalid
 
 ### End State Assertions:
 
-* [A.CFI.003: Validate FAPI Interation ID - invalid format](#assertion-a.cfi.003)
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
 
 
 <a id="testcase-t.eas.042"></a>
@@ -6858,7 +6864,7 @@ Test API where FAPI Interaction ID fomat is invalid
 
 ### End State Assertions:
 
-* [A.CFI.003: Validate FAPI Interation ID - invalid format](#assertion-a.cfi.003)
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
 
 
 <a id="testcase-t.eas.043"></a>
@@ -6891,7 +6897,7 @@ Test API where FAPI Interaction ID fomat is invalid
 
 ### End State Assertions:
 
-* [A.CFI.003: Validate FAPI Interation ID - invalid format](#assertion-a.cfi.003)
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
 
 
 <a id="testcase-t.eas.044"></a>
@@ -6924,7 +6930,7 @@ Test API where FAPI Interaction ID fomat is invalid
 
 ### End State Assertions:
 
-* [A.CFI.003: Validate FAPI Interation ID - invalid format](#assertion-a.cfi.003)
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
 
 
 <a id="testcase-t.eas.045"></a>
@@ -6957,7 +6963,7 @@ Test API to ensure the arrangement ID is included
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
 
 
@@ -6991,7 +6997,7 @@ Test API to ensure the arrangement ID is valid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
 
 
@@ -7025,7 +7031,7 @@ Test API to ensure the arrangement ID is included
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
 
 
@@ -7059,7 +7065,7 @@ Test API to ensure the arrangement ID is valid
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
 
 
@@ -7094,7 +7100,7 @@ Test API to ensure the arrangement ID is included
 ### End State Assertions:
 
 * [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.050"></a>
@@ -7128,7 +7134,7 @@ Test API to ensure the arrangement ID is valid
 ### End State Assertions:
 
 * [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.051"></a>
@@ -7162,7 +7168,7 @@ Test API to ensure the arrangement ID is included
 ### End State Assertions:
 
 * [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.052"></a>
@@ -7196,7 +7202,7 @@ Test API to ensure the arrangement ID is valid
 ### End State Assertions:
 
 * [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.053"></a>
@@ -7230,7 +7236,7 @@ Test API to ensure the arrangement ID is included
 ### End State Assertions:
 
 * [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.054"></a>
@@ -7264,7 +7270,7 @@ Test API to ensure the arrangement ID is valid
 ### End State Assertions:
 
 * [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.055"></a>
@@ -7298,7 +7304,7 @@ Test API to ensure the arrangement ID is included
 ### End State Assertions:
 
 * [A.CAI.002: CDS arrangement id - missing from header (SR specific)](#assertion-a.cai.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.056"></a>
@@ -7332,7 +7338,7 @@ Test API to ensure the arrangement ID is valid
 ### End State Assertions:
 
 * [A.CAI.003: CDS arrangement id - present but invalid (SR specific)](#assertion-a.cai.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.057"></a>
@@ -7366,7 +7372,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.058"></a>
@@ -7400,7 +7406,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.059"></a>
@@ -7434,7 +7440,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.060"></a>
@@ -7468,7 +7474,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.061"></a>
@@ -7502,7 +7508,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.062"></a>
@@ -7536,7 +7542,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.063"></a>
@@ -7570,7 +7576,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.064"></a>
@@ -7604,7 +7610,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.065"></a>
@@ -7638,7 +7644,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.066"></a>
@@ -7672,7 +7678,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.067"></a>
@@ -7706,7 +7712,7 @@ Test API with invalid version value
 ### End State Assertions:
 
 * [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.068"></a>
@@ -7740,7 +7746,7 @@ Test API with invalid version format
 ### End State Assertions:
 
 * [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.069"></a>
@@ -7775,7 +7781,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.070"></a>
@@ -7810,7 +7816,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.071"></a>
@@ -7845,7 +7851,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.072"></a>
@@ -7880,7 +7886,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.073"></a>
@@ -7915,7 +7921,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.074"></a>
@@ -7950,7 +7956,7 @@ Test API with a version that is not supported by the DH
 ### End State Assertions:
 
 * [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 
 
 <a id="testcase-t.eas.075"></a>
@@ -7983,7 +7989,7 @@ Test API with a missing servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.EAS.009: Validate servicePointIdList - invalid body values](#assertion-a.eas.009)
 
 
@@ -8017,7 +8023,7 @@ Test API with an invalid servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.EAS.010: Validate servicePointIdList - invalid servicePointId in body ](#assertion-a.eas.010)
 
 
@@ -8051,7 +8057,7 @@ Test API with an unavailable servicePointId
 
 ### End State Assertions:
 
-* [A.CFI.001: Validate FAPI Interation ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
 * [A.EAS.011: Validate servicePointIdList - unavailable servicePointId in body ](#assertion-a.eas.011)
 
 
@@ -8076,9 +8082,9 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the page parameter is included in a GET request|
-|When|the page value is a number and page-size is [1,25,1000,null]|
-|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the nominated &lt;page number&gt; is returned</br> the response has a status of 200</br> the "first" link has page=1</br> the "last" link is greater than or equal to 1</br> the "self" link has page=&lt;page number&gt;</br> the "prev" link has page equal to 1 or &lt;page number&gt; - 1</br> the "prev" link has page equal to "last" or &lt;page number&gt; + 1</br> "meta"/"totalPages" is greater than or equal to &lt;page number&gt;</br> "meta"/"totalRecords" is greater than or equal to &lt;page number&gt; * &lt;page size&gt;</br></div><div class="predicate outer">)</div>|
+|Given|the page parameter is included in a GET request</br>AND the page value is a number and page-size is [1,25,1000,null]|
+|When|a response is returned</br>AND the response has a status of 200|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the nominated &lt;page number&gt; is returned</br> the "first" link has page=1</br> the "last" link is greater than or equal to 1</br> the "self" link has page=&lt;page number&gt;</br> the "prev" link has page equal to 1 or &lt;page number&gt; - 1</br> the "prev" link has page equal to "last" or &lt;page number&gt; + 1</br> "meta"/"totalPages" is greater than or equal to &lt;page number&gt;</br> "meta"/"totalRecords" is greater than or equal to &lt;page number&gt; * &lt;page size&gt;</br></div><div class="predicate outer">)</div>|
 
 
 <a id="assertion-a.cpg.002"></a>
@@ -8097,8 +8103,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;page-size&gt; parameter is specified in a GET request|
-|When|the value for &lt;page-size&gt; is outside the range [1..1000]</br>OR the &lt;page-size&gt; is a not a positive integer|
+|Given|the &lt;page-size&gt; parameter is specified</br>AND the value for &lt;page-size&gt; is outside the range [1..1000]</br>OR the &lt;page-size&gt; is a not a positive integer|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/InvalidPageSize"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8118,8 +8124,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;page&gt; parameter is included in a GET request|
-|When|the &lt;page&gt; is a not a positive integer|
+|Given|the &lt;page&gt; parameter is included </br>AND the &lt;page&gt; is a not a positive integer|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8139,8 +8145,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;page&gt; parameter is included in a GET request|
-|When|the &lt;page&gt; value is greater than the number of pages available |
+|Given|the &lt;page&gt; parameter is included</br>AND the &lt;page&gt; value is greater than the number of pages available |
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 422</br> the response body has ErrorListReponse object</br> the error code is "Field/InvalidPage"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8160,8 +8166,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;page-size&gt; parameter is included in a GET request|
-|When|the page size parameter value is not a positive integer (number)|
+|Given|the &lt;page-size&gt; parameter is included </br>AND the page size parameter value is not a positive integer (number)|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8181,9 +8187,9 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;x-v&gt; header is included in a get request|
-|When|the value for the &lt;x-v&gt; is a positive integer|
-|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> &lt;x-v&gt; is in the repsonse header</br> &lt;x-v&gt; is a positive integer</br></div><div class="predicate outer">)</div>|
+|Given|the &lt;x-v&gt; header is included </br>AND the value for the &lt;x-v&gt; is a positive integer|
+|When|a response is returned</br>AND the response has a status of 200|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em"> &lt;x-v&gt; is in the response header</br> &lt;x-v&gt; is a positive integer</br></div><div class="predicate outer">)</div>|
 
 
 <a id="assertion-a.cvn.002"></a>
@@ -8202,8 +8208,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the version parameter is included in a GET request|
-|When|the version value is not a valid number is [-1,0,1001]|
+|Given|the version parameter is included </br>AND the version value is not a valid number is [-1,0,1001]|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8223,8 +8229,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the version parameter is included in a GET request|
-|When|the verison value is not a valid number is an alpha (e.g. "foo")|
+|Given|the version parameter is included</br>AND the version value is not a valid number is an alpha (e.g. "foo")|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8244,8 +8250,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;x-v&gt;  is included in a  request header</br>AND &lt;x-min-v&gt; is NOT included|
-|When|the request version &lt;x-v&gt; is not supported|
+|Given|the &lt;x-v&gt;  is included in a  request header</br>AND &lt;x-min-v&gt; is NOT included</br>AND the request version &lt;x-v&gt; is not supported|
+|When|and a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 406</br> the response body has ErrorListReponse object</br> error code is "Header/UnsupportedVersion"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8265,8 +8271,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;x-v&gt;  is included in a  request header</br>AND  &lt;x-min-v&gt;  is included|
-|When|no version between &lt;x-v&gt; and &lt;x-min-v&gt; is supported|
+|Given|the &lt;x-v&gt;  is included in a  request header</br>AND  &lt;x-min-v&gt;  is included</br>AND no version between &lt;x-v&gt; and &lt;x-min-v&gt; is supported|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 406</br> the response body has ErrorListReponse object</br> error code is "Header/UnsupportedVersion"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8286,9 +8292,9 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;x-min-v&gt; header is included in a get request|
-|When|the value for the &lt;x-min-v&gt;  is a positive integer|
-|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">&lt;x-v&gt; is in the repsonse header</br>  &lt;x-v&gt; = [&lt;x-min-v&gt;, &lt;x-v&gt;]</br> &lt;x-v&gt; is a positive integer</br></div><div class="predicate outer">)</div>|
+|Given|the &lt;x-min-v&gt; header is included </br>AND the value for the &lt;x-min-v&gt;  is a positive integer|
+|When|a response is returned</br>AND the response has a status of 200|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">&lt;x-v&gt; is in the response header</br>  &lt;x-v&gt; = [&lt;x-min-v&gt;, &lt;x-v&gt;]</br> &lt;x-v&gt; is a positive integer</br></div><div class="predicate outer">)</div>|
 
 
 <a id="assertion-a.cvm.002"></a>
@@ -8307,13 +8313,13 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;x-min-v&gt; header is included in a get request|
-|When|the &lt;x-min-v&gt; is a not a positive integer|
+|Given|the &lt;x-min-v&gt; header is included </br>AND the &lt;x-min-v&gt; is a not a positive integer|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
 <a id="assertion-a.cfi.001"></a>
-## A.CFI.001: Validate FAPI Interation ID - included in request
+## A.CFI.001: Validate FAPI Interaction ID - included in request
 
 ### References:
 
@@ -8328,9 +8334,9 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;x-fapi-interaction-id&gt; is included in the header of the request|
-|When|the &lt;x-fapi-interaction-id&gt; is in a valid format |
-|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em"> the Data Holder has returned the &lt;x-fapi-interaction-id&gt; from the request in the response header</br></div><div class="predicate outer">)</div>|
+|Given|the &lt;x-fapi-interaction-id&gt; is included in the header of the request</br>AND the &lt;x-fapi-interaction-id&gt; is in a valid format |
+|When|a response is returned|
+|Then|the Data Holder has returned the &lt;x-fapi-interaction-id&gt; from the request in the response header|
 
 
 <a id="assertion-a.cfi.002"></a>
@@ -8355,7 +8361,7 @@ Critical (Test Fails)
 
 
 <a id="assertion-a.cfi.003"></a>
-## A.CFI.003: Validate FAPI Interation ID - invalid format
+## A.CFI.003: Validate FAPI Interaction ID - invalid format
 
 ### References:
 
@@ -8371,8 +8377,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;x-fapi-interaction-id&gt; is included in the GET request|
-|When|the &lt;x-fapi-interaction-id&gt; is not in a valid format |
+|Given|the &lt;x-fapi-interaction-id&gt; is included </br>AND the &lt;x-fapi-interaction-id&gt; is not in a valid format |
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8394,9 +8400,9 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the called API is a resource call and does require authentication|
-|When|the &lt;x-fapi-auth-date&gt; is present in the request header</br>AND is in a valid format|
-|Then|the response has a status of 200|
+|Given|the API requires authentication|
+|When|a response is returned </br>AND the response has a status of 200|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the &lt;x-fapi-auth-date&gt; is present in the request header</br> is in a valid format</br></div><div class="predicate outer">)</div>|
 
 
 <a id="assertion-a.cfa.002"></a>
@@ -8417,9 +8423,9 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the called API is a resource call and does require authentication|
-|When|the &lt;x-fapi-auth-date&gt; is NOT present  in the request header|
-|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> error code is "Header/missing"</br></div><div class="predicate outer">)</div>|
+|Given|the API requires authentication</br>AND the &lt;x-fapi-auth-date&gt; is NOT present  in the request header|
+|When|a response is returned|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/missing"</br></div><div class="predicate outer">)</div>|
 
 
 <a id="assertion-a.cfa.003"></a>
@@ -8440,8 +8446,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the called API is a resource call and does require authentication|
-|When|the &lt;x-fapi-auth-date&gt; is  in the request header</br>AND is NOT in a valid format|
+|Given|the API requires authentication</br>AND the &lt;x-fapi-auth-date&gt; is in the request header</br>AND is NOT in a valid format|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8461,8 +8467,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the call is from a DH to a SDH|
-|When|a response is returned|
+|Given|the API requires authentication </br>AND the call is from a DH to a SDH|
+|When|a response is returned</br>AND the response has a status of 200|
 |Then|the &lt;x-fapi-auth-date&gt; is NOT present in the response header|
 
 
@@ -8483,9 +8489,9 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the called API requires authentication|
-|When|the &lt;x-fapi-customer-ip-address&gt; is present in the request header</br>AND is in a valid IPv4 or IPv6 format|
-|Then|the response has a status of 200|
+|Given|the API requires authentication|
+|When|a response is returned</br>AND the response has a status of 200|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the &lt;x-fapi-customer-ip-address&gt; is present in the request header</br> is in a valid IPv4 or IPv6 format</br></div><div class="predicate outer">)</div>|
 
 
 <a id="assertion-a.cfc.002"></a>
@@ -8505,8 +8511,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the called API requires authentication|
-|When|the &lt;x-fapi-customer-ip-address&gt; is NOT present in the request header|
+|Given|the API requires authentication</br>AND the &lt;x-fapi-customer-ip-address&gt; is NOT present in the request header|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/Missing"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8527,8 +8533,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the called API requires authentication|
-|When|the &lt;x-fapi-customer-ip-address&gt; in present the request header</br>AND is NEITHER  in a valid IPv4 or IPv6 format|
+|Given|the API requires authentication</br>AND the &lt;x-fapi-customer-ip-address&gt; is in present the request header</br>AND is NEITHER in a valid IPv4 or IPv6 format|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8571,9 +8577,9 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the called API requires authentication</br>AND the call is an attended, ie customer present, call|
-|When|the &lt;x-cds-client-headers&gt; is present in the request header</br>AND is Base64 encoded|
-|Then|the response has a status of 200|
+|Given|the API requires authentication</br>AND the call is an attended, i.e. customer present, call|
+|When|a response is returned </br>AND the response has a status of 200|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the &lt;x-cds-client-headers&gt; is present in the request header</br> is Base64 encoded</br></div><div class="predicate outer">)</div>|
 
 
 <a id="assertion-a.cch.002"></a>
@@ -8594,8 +8600,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the called API requires authentication</br>AND the call is an attended, ie customer present, call|
-|When|the &lt;x-cds-client-headers&gt; is NOT present in the request header|
+|Given|the API requires authentication</br>AND the &lt;x-cds-client-headers&gt; is mandatory</br>AND the &lt;x-cds-client-headers&gt; is NOT present in the request header|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/missing"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8617,8 +8623,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the called API requires authentication</br>AND the call is an attended, ie customer present, call|
-|When|the &lt;x-cds-client-headers&gt;  present the request header</br>AND is Not Base64 encoded|
+|Given|the &lt;x-cds-client-headers&gt;  present the request header</br>AND is Not Base64 encoded|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8661,8 +8667,8 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the call is from a DH to a SDH|
-|When|the &lt;x-cds-arrangement&gt; is present in the request header</br>AND is in a valid format|
-|Then|the response has a status of 200|
+|When|a response is returned </br>AND the response has a status of 200|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the &lt;x-cds-arrangement&gt; is present in the request header</br> is in a valid format</br></div><div class="predicate outer">)</div>|
 
 
 <a id="assertion-a.cai.002"></a>
@@ -8682,8 +8688,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the call is from a DH to a SDH|
-|When|the &lt;x-cds-arrangement&gt; is NOT present in the request header|
+|Given|the call is from a DH to a SDH</br>AND the &lt;x-cds-arrangement&gt; is NOT present in the request header|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/Missing"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8705,7 +8711,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the call is from a DH to a SDH|
-|When|the &lt;x-cds-arrangement&gt; is present in the request header</br>AND is NOT in a valid format|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8720,9 +8726,9 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;oldest-date&gt; is included as a query parameter|
-|When|the &lt;oldest-date&gt; is in a valid DateString format|
-|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the data is constrained by the date supplied</br></div><div class="predicate outer">)</div>|
+|Given|the &lt;oldest-date&gt; is included as a query parameter</br>AND the &lt;oldest-date&gt; is in a valid DateString format|
+|When|a response is returned</br>AND the response has a status of 200|
+|Then|the data is constrained by the date supplied|
 
 
 <a id="assertion-a.cod.002"></a>
@@ -8741,8 +8747,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;oldest-date&gt; is included as a query parameter|
-|When|the &lt;oldest-date&gt; is not in a DateString valid format|
+|Given|the &lt;oldest-date&gt; is included as a query parameter</br>AND the &lt;oldest-date&gt; is not in a DateString valid format|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8757,9 +8763,9 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;newest-date&gt; is included as a query parameter|
-|When|the &lt;newest-date&gt; is in a valid DateString format|
-|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the data is constrained by the date supplied</br></div><div class="predicate outer">)</div>|
+|Given|the &lt;newest-date&gt; is included as a query parameter</br>AND the &lt;newest-date&gt; is in a valid DateString format|
+|When|a response is returned</br>AND the response has a status of 200|
+|Then|the data is constrained by the date supplied|
 
 
 <a id="assertion-a.cnd.002"></a>
@@ -8778,8 +8784,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;newest-date&gt; is included as a query parameter|
-|When|the &lt;newest-date&gt; is not in a valid DateString format|
+|Given|the &lt;newest-date&gt; is included as a query parameter</br>AND the &lt;newest-date&gt; is not in a valid DateString format|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8800,8 +8806,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the request is a POST request|
-|When|the request body is not in a valid JSON format, ie it is malformed|
+|Given|the request is a POST request</br>AND the request body is not in a valid JSON format, i.e. it is malformed|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8822,8 +8828,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the {servicePointId} is included in the ADR to DH request|
-|When|the {servicePointId} value is valid |
+|Given|the {servicePointId} is included </br>AND the {servicePointId} value is valid |
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the EnergyServicePointDetailResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -8843,8 +8849,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the {servicePointId} is included in the ADR to DH request url|
-|When|The requested service point is permanently unavailable. (No subsequent request for the service point will be successful.)|
+|Given|the {servicePointId} is included </br>AND the requested service point is permanently unavailable. (No subsequent request for the service point will be successful.)|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 404</br> the response body has ErrorListReponse object</br> error code is "Authorisation/InvalidServicePoint"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8864,8 +8870,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the {servicePointId} is included in the ADR to DH request|
-|When|The requested service point is temporarily unavailable. (Subsequent requests for the service point may be successful.)|
+|Given|the {servicePointId} is included</br>AND the requested service point is temporarily unavailable. (Subsequent requests for the service point may be successful.)|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 404</br> the response body has ErrorListReponse object</br> error code is "Authorisation/UnavailableServicePoint"</br></div><div class="predicate outer">)</div>|
 
 
@@ -8885,8 +8891,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the request to call the API is formatted correctly by the ADR|
-|When|the DH receives the request|
+|Given|the request to call the API is formatted correctly|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyServiceListResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -8906,8 +8912,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the {servicePointId} is included in the ADR to DH request|
-|When|the {servicePointId} value is valid </br>AND the request is formated correctlly|
+|Given|the {servicePointId} is included</br>AND the {servicePointId} value is valid </br>AND the request is formatted correctly|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code of 200</br> the response body complies with the EnergyUsageListResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -8928,7 +8934,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the request payload to call the API is formatted correctly </br>AND contains the mandatory fields|
-|When|the DH receives the request </br>AND interprets the Body|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyUsageListResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -8948,8 +8954,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the {servicePointId} is included in the ADR to DH request|
-|When|the {servicePointId} value is valid |
+|Given|the {servicePointId} is included </br>AND the {servicePointId} value is valid |
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the EnergyDerDetailResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -8970,7 +8976,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the request payload to call the API is formatted correctly </br>AND contains the mandatory fields|
-|When|the DH receives the request</br>AND interprets the Body|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyDerListResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -8991,7 +8997,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the request payload does not contain the required fields</br>OR the request payload is NOT well formatted|
-|When|the DH receives the request </br>AND interprets the Body|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 422</br> the response body has ErrorListReponse</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -9011,8 +9017,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the request to call the API is formatted correctly by the ADR|
-|When|the DH receives the request|
+|Given|the request to call the API is formatted correctly|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyUsageListResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -9032,8 +9038,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the request to call the API is formatted correctly by the ADR|
-|When|the DH receives the request|
+|Given|the request to call the API is formatted correctly|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyDerListResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -9054,8 +9060,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the {servicePointId} is included in the DH to SDH request|
-|When|the {servicePointId} value is valid |
+|Given|the {servicePointId} is included </br>AND the {servicePointId} value is valid |
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the EnergyServicePointDetailResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -9075,8 +9081,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the {servicePointId} is included in the DH to SDH request url|
-|When|The requested service point is permanently unavailable. No subsequent request for the service point will be successful.|
+|Given|the {servicePointId} is included </br>AND the requested service point is permanently unavailable. No subsequent request for the service point will be successful.|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 404</br> the response body has ErrorListReponse object</br> error code is "Authorisation/InvalidServicePoint"</br></div><div class="predicate outer">)</div>|
 
 
@@ -9096,8 +9102,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the {servicePointId} is included in the DH to SDH request|
-|When|The requested service point is temporarily unavailable. Subsequent requests for the service point may be successful.|
+|Given|the {servicePointId} is included </br>AND the requested service point is temporarily unavailable. Subsequent requests for the service point may be successful.|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 404</br> the response body has ErrorListReponse object</br> error code is "Authorisation/UnavailableServicePoint"</br></div><div class="predicate outer">)</div>|
 
 
@@ -9117,8 +9123,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the request to call the API is formatted correctly by the DH|
-|When|the SDH receives the request|
+|Given|the request to call the API is formatted correctly|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyServiceListResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -9138,8 +9144,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the {servicePointId} is included in the DH to SDH request|
-|When|the {servicePointId} value is valid </br>AND the request is formated correctlly|
+|Given|the {servicePointId} is included </br>AND the {servicePointId} value is valid </br>AND the request is formatted correctly|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code of 200</br> the response body complies with the EnergyUsageListResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -9160,7 +9166,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the request payload to call the API is formatted correctly </br>AND contains the mandatory fields|
-|When|the SDH receives the request and interprets the Body|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyUsageListResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -9180,8 +9186,8 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the {servicePointId} is included in the DH to SDH request|
-|When|the {servicePointId} value is valid |
+|Given|the {servicePointId} is included </br>AND the {servicePointId} value is valid |
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the EnergyDerDetailResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -9202,7 +9208,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the request payload to call the API is formatted correctly </br>AND contains the mandatory fields|
-|When|the SDH receives the request and interprets the Body|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 200</br> the response body complies with the EnergyDerListResponse schema</br></div><div class="predicate outer">)</div>|
 
 
@@ -9224,7 +9230,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the request payload does not contain the required fields</br>OR the request payload is NOT well formatted|
-|When|the SDH receives the request and interprets the Body|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 400</br> the response body complies with the ErrorListReponse schema</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
 
 
@@ -9246,7 +9252,7 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the request payload contains an invalid servicePointID |
-|When|the SDH receives the request and interprets the Body|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 422</br> the response body complies with the ErrorListReponse schema</br> error code is "Authorisation/InvalidServicePoint"</br></div><div class="predicate outer">)</div>|
 
 
@@ -9268,6 +9274,6 @@ Critical (Test Fails)
 |||
 |-|-|
 |Given|the request payload contains a valid servicePointID that is unavailable|
-|When|the SDH receives the request and interprets the Body|
+|When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code 422</br> the response body complies with the ErrorListReponse schema</br> error code is "Authorisation/UnavailableServicePoint"</br></div><div class="predicate outer">)</div>|
 

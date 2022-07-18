@@ -2,10 +2,11 @@
   "id": "A.CFC.002",
   "title": "Validate FAPI Customer IP Address - missing from header",
   "given": [
-    "the called API requires authentication"
+    "the API requires authentication",
+    "AND the <x-fapi-customer-ip-address> is NOT present in the request header"
   ],
   "when": [
-    "the <x-fapi-customer-ip-address> is NOT present in the request header"
+    "a response is returned"
   ],
   "then": {
     "and": [

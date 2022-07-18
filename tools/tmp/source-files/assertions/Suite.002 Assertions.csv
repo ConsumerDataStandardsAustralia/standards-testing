@@ -1,8 +1,0 @@
-,,string,string,array:string,array:string,assertionPredicate,string,array:reference
-,ID,Title,Description,Given [],When [],Then [],Severity,References
-1,A.BAN.001,Call Accounts - no query aprameters,,no query parameters are specified,result set is not empty,"All accounts are returned
-AND the response has a status of 200",FAIL,uri=https://consumerdatastandardsaustralia.github.io/standards/#get-accounts
-2,A.BAN.002,Call Accounts - with category,,<product-category> is set in query string,"<product-category> is valid
-AND result set is not empty",only account of <product-category> are returned,FAIL,uri=https://consumerdatastandardsaustralia.github.io/standards/#get-accounts
-3,A.BAN.003,Call Accounts - with status,,<open-status> is set in query string,"<open-status> is valid
-AND result set is not empty",only account of <open-status> are returned,FAIL,uri=https://consumerdatastandardsaustralia.github.io/standards/#get-accounts

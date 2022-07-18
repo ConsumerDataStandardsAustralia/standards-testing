@@ -1,8 +1,0 @@
-,TESTCASE,,,,,,,,,,,,
-,,,,string,array:reference,,string,string,string,testCaseStep,,,
-,ID,Scenario,Step,Title,References[],Negative,Story,PreConditions,Description,Type,Value,Suite Assertion,Common Assertion
-1,T.CAC.001,Get customer,,,,,,,,,,,
-1,,,1,,,,,,,,,,
-1,,,2,,,,,,,,,,
-1,,,3,,,,,,,,,,
-1,,,4,,,,,,,,,,

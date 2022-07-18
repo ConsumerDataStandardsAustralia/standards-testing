@@ -2,10 +2,10 @@
   "id": "A.EAR.004",
   "title": "Validate schema - EnergyServicePointListReponse",
   "given": [
-    "the request to call the API is formatted correctly by the ADR"
+    "the request to call the API is formatted correctly"
   ],
   "when": [
-    "the DH receives the request"
+    "a response is returned"
   ],
   "then": {
     "and": [

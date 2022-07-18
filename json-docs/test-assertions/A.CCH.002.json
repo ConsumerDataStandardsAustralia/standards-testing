@@ -2,11 +2,12 @@
   "id": "A.CCH.002",
   "title": "Validate the client headers - missing from header",
   "given": [
-    "the called API requires authentication",
-    "AND the call is an attended, ie customer present, call"
+    "the API requires authentication",
+    "AND the <x-cds-client-headers> is mandatory",
+    "AND the <x-cds-client-headers> is NOT present in the request header"
   ],
   "when": [
-    "the <x-cds-client-headers> is NOT present in the request header"
+    "a response is returned"
   ],
   "then": {
     "and": [

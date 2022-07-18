@@ -114,6 +114,14 @@ export interface ConsumerDataRightTestCaseJSONSchema {
    */
   description?: string;
   /**
+   * An optional url for the public GitHub repository
+   */
+  githubRepoUrl?: string;
+  /**
+   * An optional url for the change log
+   */
+  changeLogUrl?: string;
+  /**
    * A set of assertions named with the ID of the assertion in format 'A.XXX.000' where XXX is category and 000 is the unique identifier
    */
   assertions?: {

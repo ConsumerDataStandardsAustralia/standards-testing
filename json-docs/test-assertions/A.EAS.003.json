@@ -2,10 +2,11 @@
   "id": "A.EAS.003",
   "title": "Validate service point - unavailable NMI",
   "given": [
-    "the {servicePointId} is included in the DH to SDH request"
+    "the {servicePointId} is included ",
+    "AND the requested service point is temporarily unavailable. Subsequent requests for the service point may be successful."
   ],
   "when": [
-    "The requested service point is temporarily unavailable. Subsequent requests for the service point may be successful."
+    "a response is returned"
   ],
   "then": {
     "and": [

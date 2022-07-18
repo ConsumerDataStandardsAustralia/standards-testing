@@ -2,12 +2,11 @@
   "id": "A.CCH.003",
   "title": "Validate the client headers - invalid format",
   "given": [
-    "the called API requires authentication",
-    "AND the call is an attended, ie customer present, call"
-  ],
-  "when": [
     "the <x-cds-client-headers>  present the request header",
     "AND is Not Base64 encoded"
+  ],
+  "when": [
+    "a response is returned"
   ],
   "then": {
     "and": [

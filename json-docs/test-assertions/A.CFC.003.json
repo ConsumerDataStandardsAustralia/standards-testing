@@ -2,11 +2,12 @@
   "id": "A.CFC.003",
   "title": "Validate FAPI Customer IP Address - invalid format",
   "given": [
-    "the called API requires authentication"
+    "the API requires authentication",
+    "AND the <x-fapi-customer-ip-address> is in present the request header",
+    "AND is NEITHER in a valid IPv4 or IPv6 format"
   ],
   "when": [
-    "the <x-fapi-customer-ip-address> in present the request header",
-    "AND is NEITHER  in a valid IPv4 or IPv6 format"
+    "a response is returned"
   ],
   "then": {
     "and": [

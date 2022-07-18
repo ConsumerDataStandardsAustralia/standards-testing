@@ -2,10 +2,11 @@
   "id": "A.CAI.002",
   "title": "CDS arrangement id - missing from header (SR specific)",
   "given": [
-    "the call is from a DH to a SDH"
+    "the call is from a DH to a SDH",
+    "AND the <x-cds-arrangement> is NOT present in the request header"
   ],
   "when": [
-    "the <x-cds-arrangement> is NOT present in the request header"
+    "a response is returned"
   ],
   "then": {
     "and": [

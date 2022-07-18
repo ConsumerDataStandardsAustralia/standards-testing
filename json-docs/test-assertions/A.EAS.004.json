@@ -2,10 +2,10 @@
   "id": "A.EAS.004",
   "title": "Validate schema - EnergyServicePointListReponse",
   "given": [
-    "the request to call the API is formatted correctly by the DH"
+    "the request to call the API is formatted correctly"
   ],
   "when": [
-    "the SDH receives the request"
+    "a response is returned"
   ],
   "then": {
     "and": [

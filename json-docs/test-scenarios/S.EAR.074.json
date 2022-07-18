@@ -2,7 +2,7 @@
   "id": "S.EAR.074",
   "title": "Get Service Points Negative v1",
   "purpose": "Test cases which will return codes other than 2xx",
-  "description": "As a DH I return appropriate codes and messages for failed or invalid requests",
+  "description": "",
   "references": [
     {
       "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"

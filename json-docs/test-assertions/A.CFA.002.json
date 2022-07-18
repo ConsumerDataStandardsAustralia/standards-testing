@@ -2,14 +2,16 @@
   "id": "A.CFA.002",
   "title": "Validate FAPI Auth date - missing from header",
   "given": [
-    "the called API is a resource call and does require authentication"
+    "the API requires authentication",
+    "AND the <x-fapi-auth-date> is NOT present  in the request header"
   ],
   "when": [
-    "the <x-fapi-auth-date> is NOT present  in the request header"
+    "a response is returned"
   ],
   "then": {
     "and": [
       "the response has a status of 400",
+      " the response body has ErrorListReponse object",
       " error code is \"Header/missing\""
     ]
   },

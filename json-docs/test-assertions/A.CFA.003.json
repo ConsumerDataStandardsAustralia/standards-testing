@@ -2,11 +2,12 @@
   "id": "A.CFA.003",
   "title": "Validate FAPI Auth date - invalid format",
   "given": [
-    "the called API is a resource call and does require authentication"
+    "the API requires authentication",
+    "AND the <x-fapi-auth-date> is in the request header",
+    "AND is NOT in a valid format"
   ],
   "when": [
-    "the <x-fapi-auth-date> is  in the request header",
-    "AND is NOT in a valid format"
+    "a response is returned"
   ],
   "then": {
     "and": [

@@ -2,11 +2,12 @@
   "id": "A.CPG.002",
   "title": "Validate pagination - Invalid page size value",
   "given": [
-    "the <page-size> parameter is specified in a GET request"
+    "the <page-size> parameter is specified",
+    "AND the value for <page-size> is outside the range [1..1000]",
+    "OR the <page-size> is a not a positive integer"
   ],
   "when": [
-    "the value for <page-size> is outside the range [1..1000]",
-    "OR the <page-size> is a not a positive integer"
+    "a response is returned"
   ],
   "then": {
     "and": [

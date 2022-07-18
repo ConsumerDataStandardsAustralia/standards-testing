@@ -6,8 +6,7 @@
     "OR the request payload is NOT well formatted"
   ],
   "when": [
-    "the DH receives the request ",
-    "AND interprets the Body"
+    "a response is returned"
   ],
   "then": {
     "and": [
