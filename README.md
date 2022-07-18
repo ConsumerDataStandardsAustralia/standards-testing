@@ -1,5 +1,3 @@
-EDIT Required
-
 # CDR Test Documentation
 
 ## About the CDR Test Documentation
@@ -46,14 +44,13 @@ The references listed for each test case and assertion should be read in conjunc
 
 ## Getting Started – How it is structured?
 
--   CDS sector specific APIs (Banking, Energy, Common and Admin (resources)) have been logically grouped into Suites.  Each Suite is made up of a number of Scenarios where each API has a positive (happy path) and negative scenario.
+-   CDS sector specific APIs (Banking, Energy, Common and Admin (resources)) have been logically grouped into Suites.  Each Suite is made up of a number of Scenarios where each API has a positive and negative scenario.
 
 	-  	‘Scenario’ in this context implies a group of tests to validate a single API.  A Scenario is not a complete end to end sequence of API calls that might be needed to test a single use case.
 
--   Each Scenario has a series of Test Cases attached to it.
-
-	-   The test cases both positive and negative, are expressed as Happy Path: TRUE (positive) or FALSE (negative)
-
+-   Each Scenario has a series of Test Cases attached to it:
+	- positive test cases indicates a 200 response with a valid schema is expected.
+	- negative test cases are intended to generate an error response.
 -   Each Test Case links to a series of Assertions which are either specific to the Suite or Common to many Suites.
 
 ## Coverage
@@ -121,12 +118,6 @@ For Common Assertions the three alpha characters are used as follows:
 |CVM	|Minimum Version 	|x-min-v |
 |CVN 	|Version Number	|x-v |
 
-## Happy Path
-The term ‘Happy Path’ describes a scenario that produces a successful result for a valid API call. 
-
-Happy Path = TRUE indicates a 200 response with a valid schema is expected.
-
-Happy Path = FALSE indicates the Scenario and Test Cases are intended to generate an error response.
 
 ## Contributing and providing feedback
 
