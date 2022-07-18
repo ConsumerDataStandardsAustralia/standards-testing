@@ -36,19 +36,21 @@ This documentation can be used in many ways. You can follow the scenarios listed
 
 A simple way to use it is to:
 
- 1. identify the data or API that needs to be tested;
- 2. select the scenario for the API, either positive or negative
- 3. follow the links to each test case and assertion to validate your own tests.
+- identify the data or API to be tested;
+- select the scenario for the data or API;
+- follow the links to each test case and assertion to validate your own tests.
 
 The references listed for each test case and assertion should be read in conjunction with this documentation.
 
 ## Getting Started – How it is structured?
 
--   CDS sector specific APIs (Banking, Energy, Common and Admin (resources)) have been logically grouped into Suites.  Each Suite is made up of a number of Scenarios where each API has a positive and negative scenario.
+-   CDS sector specific APIs (Banking, Energy, Common and Admin) have been logically grouped into Suites.  Each Suite is made up of a number of Scenarios where each API has a positive and negative scenario.
+	- positive scenarios, e.g. 'Get Billing for Account v1', are intended to generate a response with a 200 ok status code and a valid schema.
+	- negative scenarios, e.g. 'Get Billing for Account Negative v1' are intended to generate a response with an error status code.
 
-	-  	‘Scenario’ in this context implies a group of tests to validate a single API.  A Scenario is not a complete end to end sequence of API calls that might be needed to test a single use case.
+- ‘Scenario’ in this context implies a group of test cases to validate a single API.  A Scenario is not a complete end to end sequence of API calls that might be needed to test a single use case.
 
--   Each Scenario has a series of Test Cases attached to it. A scenario with "Negative" in the title contains negative test cases, which are intended to generate a response with an error status.
+-   Each Scenario has a series of Test Cases attached to it. 
 -   Each Test Case links to a series of Assertions which are either specific to the Suite or Common to many Suites.
 
 ## Coverage
