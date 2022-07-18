@@ -125,7 +125,7 @@ export function json(source: string, destination: string, config: JsonGeneratorC
       stdout?.write("Processing: " + scenarioFiles[i] + '\n');
 
       const fileData = fs.readFileSync(filePath, 'utf8');
-      const records = parse(fileData, { from_line: 5 });
+      const records = parse(fileData, { from_line: 4 });
       for (const arr of records) {
         if (arr[SCENARIO_ID_INDEX] != null && arr[SCENARIO_ID_INDEX].indexOf('S.') > -1) {
           const scenario = processScenario(arr, arr[SCENARIO_ID_INDEX], scenarioDirectorySinkPath);

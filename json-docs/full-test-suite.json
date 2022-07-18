@@ -533,8 +533,8 @@
       "title": "Validate FAPI Customer IP Address - invalid format",
       "given": [
         "the API requires authentication",
-        "AND \"the <x-fapi-customer-ip-address> is in present the request header",
-        "AND is NEITHER in a valid IPv4 or IPv6 format\""
+        "AND the <x-fapi-customer-ip-address> is in present the request header",
+        "AND is NEITHER in a valid IPv4 or IPv6 format"
       ],
       "when": [
         "a response is returned"
@@ -7060,7 +7060,7 @@
       "id": "S.EAR.073",
       "title": "Get Service Points v1",
       "purpose": "Test cases which will return a 2xx status code",
-      "description": "As a DH I provide an API which exposes information about the service points",
+      "description": "",
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
@@ -7069,7 +7069,7 @@
       "sequence": [
         {
           "type": "SETUP",
-          "action": "Authorise session\r\nAND x-v is set in header"
+          "action": "Authorise session\nAND x-v is set in header"
         },
         {
           "type": "TEST",
@@ -7085,7 +7085,7 @@
       "id": "S.EAR.074",
       "title": "Get Service Points Negative v1",
       "purpose": "Test cases which will return codes other than 2xx",
-      "description": "As a DH I return appropriate codes and messages for failed or invalid requests",
+      "description": "",
       "references": [
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
@@ -7748,10 +7748,10 @@
       "id": "S.EAS.089",
       "title": "Get Service Points SR v1",
       "purpose": "",
-      "description": "Test the Happy Path for Get Service Points",
+      "description": "",
       "references": [
         {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr\r"
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr"
         }
       ],
       "sequence": [
@@ -7769,10 +7769,10 @@
       "id": "S.EAS.090",
       "title": "Get Service Points Negative SR v1",
       "purpose": "",
-      "description": "Test errors and edge cases for Get Service Points ",
+      "description": "",
       "references": [
         {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr\r"
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr"
         }
       ],
       "sequence": [

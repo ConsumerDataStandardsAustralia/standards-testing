@@ -7,7 +7,7 @@
 <p class="p">File version: 1.0.2</p>
 <p class="p">This documentation has been  created by the DSB to assist participants in the development of compliant APIs</p>
 <p class="p">For more details see the CDS <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing">standards-testing repository</a> for details</p>
-<p class="p">Last updated 13/07/2022 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v1.0.2/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx">change log</a> for details</p>
+<p class="p">Last updated 18/07/2022 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v1.0.2/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx">change log</a> for details</p>
 </div>
 <div class="suites">
 <a id="suites"></a><h1 class="h1">Test Suites</h1>
@@ -56,7 +56,6 @@
 <a id="scenarios"></a><h1 class="h1">Test Scenarios</h1>
 <div class="scenario">
 <a id="scenario-s.ear.073"></a><h2 class="h2">S.EAR.073: Get Service Points v1</h2>
-<p class="p">As a DH I provide an API which exposes information about the service points</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test cases which will return a 2xx status code</p>
 <h3 class="h3">References:</h3>
@@ -67,7 +66,7 @@
 <table>
 <thead><tr><th>Action No.</th><th>Action Type</th><th>Detail</th></tr></thead>
 <tbody>
-<tr><td>1</td><td>Setup</td><td>Authorise session</br>AND x-v is set in header</td></tr>
+<tr><td>1</td><td>Setup</td><td>Authorise session</br>AND x-v is set in header</td></tr>
 <tr><td>2</td><td>Execute Test</td><td><a href="#testcase-t.ear.001">T.EAR.001: ADR call to DH: Get Service Points - no pagination</a></td></tr>
 <tr><td>3</td><td>Execute Test</td><td><a href="#testcase-t.ear.002">T.EAR.002: ADR call to DH: Get Service Points - with pagination</a></td></tr>
 </tbody>
@@ -75,7 +74,6 @@
 </div>
 <div class="scenario">
 <a id="scenario-s.ear.074"></a><h2 class="h2">S.EAR.074: Get Service Points Negative v1</h2>
-<p class="p">As a DH I return appropriate codes and messages for failed or invalid requests</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test cases which will return codes other than 2xx</p>
 <h3 class="h3">References:</h3>
@@ -348,10 +346,9 @@
 </div>
 <div class="scenario">
 <a id="scenario-s.eas.089"></a><h2 class="h2">S.EAS.089: Get Service Points SR v1</h2>
-<p class="p">Test the Happy Path for Get Service Points</p>
 <h3 class="h3">References:</h3>
 <ul>
-<li><a href="https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr">https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr</a></li>
+<li><a href="https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr">https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr</a></li>
 </ul>
 <h3 class="h3">Testing Sequence:</h3>
 <table>
@@ -364,10 +361,9 @@
 </div>
 <div class="scenario">
 <a id="scenario-s.eas.090"></a><h2 class="h2">S.EAS.090: Get Service Points Negative SR v1</h2>
-<p class="p">Test errors and edge cases for Get Service Points </p>
 <h3 class="h3">References:</h3>
 <ul>
-<li><a href="https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr">https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr</a></li>
+<li><a href="https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr">https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr</a></li>
 </ul>
 <h3 class="h3">Testing Sequence:</h3>
 <table>
@@ -546,7 +542,7 @@
 <a id="testcases"></a><h1 class="h1">Test Cases</h1>
 <div class="testcase">
 <a id="testcase-t.ear.001"></a><h2 class="h2">T.EAR.001: ADR call to DH: Get Service Points - no pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a list of service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -580,7 +576,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.002"></a><h2 class="h2">T.EAR.002: ADR call to DH: Get Service Points - with pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a paginated list of service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with pagination partameters</p>
@@ -615,7 +611,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.003"></a><h2 class="h2">T.EAR.003: ADR call to DH: Get Service Points - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">DH call to SDH: Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -643,7 +639,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.004"></a><h2 class="h2">T.EAR.004: ADR call to DH: Get Service Points - invalid page parameters</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns pagination errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid pagination parameters</p>
@@ -675,7 +671,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.005"></a><h2 class="h2">T.EAR.005: ADR call to DH: Get Service Points - invalid FAPI Interaction ID format </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Interaction ID errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API where FAPI Interaction ID format is invalid</p>
@@ -701,7 +697,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.006"></a><h2 class="h2">T.EAR.006: ADR call to DH: Get Service Point Detail </h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the details of a service point owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a vaild service point and version</p>
@@ -736,7 +732,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.007"></a><h2 class="h2">T.EAR.007: ADR call to DH: Get Service Point Detail - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -765,7 +761,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.008"></a><h2 class="h2">T.EAR.008: ADR call to DH: Get Service Point Detail - invalid format of Service Point ID</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an invalid servicePointId</p>
@@ -793,7 +789,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.009"></a><h2 class="h2">T.EAR.009: ADR call to DH: Get Service Point Detail - unavailable Service Point ID</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an unavailable servicePointId</p>
@@ -821,7 +817,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.010"></a><h2 class="h2">T.EAR.010: ADR call to DH: Get Service Point Detail - invalid FAPI Interaction ID format </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Interaction ID errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API where FAPI Interaction ID fomat is invalid</p>
@@ -847,7 +843,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.011"></a><h2 class="h2">T.EAR.011: ADR call to DH: Get Usage for Service Point Detail - no pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a list of electricity usage data from a particular service point owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -880,7 +876,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.012"></a><h2 class="h2">T.EAR.012: ADR call to DH: Get Usage for Service Points - with pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a paginated list of electricity usage data from a particular service point owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with pagination partameters</p>
@@ -915,7 +911,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.013"></a><h2 class="h2">T.EAR.013: ADR call to DH: Get Usage for Service Points - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -943,7 +939,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.014"></a><h2 class="h2">T.EAR.014: ADR call to DH: Get Usage for Service Points - invalid page parameters</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns pagination errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid pagination parameters</p>
@@ -975,7 +971,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.015"></a><h2 class="h2">T.EAR.015: ADR call to DH: Get Usage for Service Points - oldest date</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a list of electricity usage data constrained by oldest date from a particular service point owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with &lt;oldest date&gt; parameter</p>
@@ -1011,7 +1007,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.016"></a><h2 class="h2">T.EAR.016: ADR call to DH: Get Usage for Service Points - newest date</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a list of service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -1046,7 +1042,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.017"></a><h2 class="h2">T.EAR.017: ADR call to DH: Get Usage for Service Points - invalid Service Point ID</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an invalid servicePointId</p>
@@ -1074,7 +1070,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.018"></a><h2 class="h2">T.EAR.018: ADR call to DH: Get Usage for Service Points - unavailable Service Point ID</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an unavailable servicePointId</p>
@@ -1102,7 +1098,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.019"></a><h2 class="h2">T.EAR.019: ADR call to DH: Get Usage for Service Points - invalid format oldest date </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with &lt;oldest date&gt;  parameter</p>
@@ -1130,7 +1126,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.020"></a><h2 class="h2">T.EAR.020: ADR call to DH: Get Usage for Service Points - invalid format newest date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -1158,7 +1154,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.021"></a><h2 class="h2">T.EAR.021: ADR call to DH: Get Usage For Service Point - invalid FAPI Interaction ID format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Interaction ID errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API where FAPI Interaction ID fomat is invalid</p>
@@ -1184,7 +1180,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.022"></a><h2 class="h2">T.EAR.022: ADR call to DH: Get Usage for Specific Service Points - no pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -1217,7 +1213,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.023"></a><h2 class="h2">T.EAR.023: ADR call to DH: Get Usage for Specific Service Points - with pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with pagination partameters</p>
@@ -1252,7 +1248,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.024"></a><h2 class="h2">T.EAR.024: ADR call to DH: Get Usage for Specific Service Points - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -1280,7 +1276,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.025"></a><h2 class="h2">T.EAR.025: ADR call to DH: Get Usage for Specific Service Points - invalid page parameters</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns pagination errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid pagination parameters</p>
@@ -1312,7 +1308,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.026"></a><h2 class="h2">T.EAR.026: ADR call to DH: Get Usage for Specific Service Points - oldest date</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with oldest date parameter</p>
@@ -1346,7 +1342,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.027"></a><h2 class="h2">T.EAR.027: ADR call to DH: Get Usage for Specific Service Points - newest date</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the electricity usage data for a specific set of service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -1380,7 +1376,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.028"></a><h2 class="h2">T.EAR.028: ADR call to DH: Get Usage for Specific Service Points - invalid format oldest date </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns oldest-date compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with oldest date parameter</p>
@@ -1408,7 +1404,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.029"></a><h2 class="h2">T.EAR.029: ADR call to DH: Get Usage for Specific Service Points - invalid format newest date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns newest-date compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -1436,7 +1432,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.030"></a><h2 class="h2">T.EAR.030: ADR call to DH: Get Usage For Specific Service Points - invalid FAPI Interaction ID format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Interaction ID errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API where FAPI Interaction ID fomat is invalid</p>
@@ -1462,7 +1458,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.031"></a><h2 class="h2">T.EAR.031: ADR call to DH: Get Usage for Specific Service Points - invalid body values</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns body compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid body values</p>
@@ -1491,7 +1487,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.032"></a><h2 class="h2">T.EAR.032: ADR call to DH: Get Usage for Specific Service Points - invalid body format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns body compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a malformed body</p>
@@ -1519,7 +1515,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.033"></a><h2 class="h2">T.EAR.033: ADR call to DH: Get DER for Service Point </h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a list of DER data from a particular service point owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a vaild service point and version</p>
@@ -1554,7 +1550,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.034"></a><h2 class="h2">T.EAR.034: ADR call to DH: Get Service Point Detail - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -1583,7 +1579,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.035"></a><h2 class="h2">T.EAR.035: ADR call to DH: Get Service Point Detail - invalid format of Service Point ID</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an invalid servicePointId</p>
@@ -1611,7 +1607,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.036"></a><h2 class="h2">T.EAR.036: ADR call to DH: Get Service Point Detail - unavailable Service Point ID</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an unavailable servicePointId</p>
@@ -1639,7 +1635,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.037"></a><h2 class="h2">T.EAR.037: ADR call to DH: Get DER for Service Point - invalid FAPI Interaction ID format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Interaction ID errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API where FAPI Interaction ID fomat is invalid</p>
@@ -1665,7 +1661,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.038"></a><h2 class="h2">T.EAR.038: ADR call to DH: Get DER for Specific Service Points - no pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain DER data for a specific set of service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -1698,7 +1694,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.039"></a><h2 class="h2">T.EAR.039: ADR call to DH: Get DER for Specific Service Points - with pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain DER data for a specific set of service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with pagination partameters</p>
@@ -1733,7 +1729,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.040"></a><h2 class="h2">T.EAR.040: ADR call to DH: Get DER for Specific Service Points - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -1762,7 +1758,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.041"></a><h2 class="h2">T.EAR.041: ADR call to DH: Get DER for Specific Service Points - invalid page parameters</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns pagination errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid pagination parameters</p>
@@ -1794,7 +1790,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.042"></a><h2 class="h2">T.EAR.042: ADR call to DH: Get DER for Specific Service Points - invalid body values</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns body compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid body values</p>
@@ -1823,7 +1819,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.043"></a><h2 class="h2">T.EAR.043: ADR call to DH: Get DER for Specific Service Points - invalid body format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns body compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a malformed body</p>
@@ -1851,7 +1847,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.044"></a><h2 class="h2">T.EAR.044: ADR call to DH: Get DER For Specific Service Points - invalid FAPI Interaction ID format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Interaction ID errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API where FAPI Interaction ID fomat is invalid</p>
@@ -1877,7 +1873,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.045"></a><h2 class="h2">T.EAR.045: ADR call to DH: Get Bulk Usage </h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the electricity usage data for all service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -1911,7 +1907,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.046"></a><h2 class="h2">T.EAR.046: ADR call to DH: Get Bulk Usage - with pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the electricity usage data for all service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with pagination partameters</p>
@@ -1945,7 +1941,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.047"></a><h2 class="h2">T.EAR.047: ADR call to DH: Get Bulk Usage - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -1973,7 +1969,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.048"></a><h2 class="h2">T.EAR.048: ADR call to DH: Get Bulk Usage - invalid page parameters</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns pagination errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid pagination parameters</p>
@@ -2005,7 +2001,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.049"></a><h2 class="h2">T.EAR.049: ADR call to DH: Get Bulk Usage - oldest date</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the electricity usage data for all service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with oldest date parameter</p>
@@ -2039,7 +2035,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.050"></a><h2 class="h2">T.EAR.050: ADR call to DH: Get Bulk Usage - newest date</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the electricity usage data for all service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -2073,7 +2069,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.051"></a><h2 class="h2">T.EAR.051: ADR call to DH: Get Bulk Usage - invalid format oldest date </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns oldest-date compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an invalid oldest date parameter</p>
@@ -2101,7 +2097,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.052"></a><h2 class="h2">T.EAR.052: ADR call to DH: Get Bulk Usage - invalid format newest date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns newest-date compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an invalid newest date parameter</p>
@@ -2129,7 +2125,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.053"></a><h2 class="h2">T.EAR.053: ADR call to DH: Get Bulk Usage - invalid FAPI Interaction ID format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Interaction ID errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API where FAPI Interaction ID fomat is invalid</p>
@@ -2155,7 +2151,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.054"></a><h2 class="h2">T.EAR.054: ADR call to DH: Get Bulk Usage - missing FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is missing from the header</p>
@@ -2183,7 +2179,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.055"></a><h2 class="h2">T.EAR.055: ADR call to DH: Get Bulk Usage - invalid FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is present but the format is invalid</p>
@@ -2211,7 +2207,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.056"></a><h2 class="h2">T.EAR.056: ADR call to DH: Get Bulk Usage - missing FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is missing from the header</p>
@@ -2239,7 +2235,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.057"></a><h2 class="h2">T.EAR.057: ADR call to DH: Get Bulk Usage - invalid FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is present but the format is invalid</p>
@@ -2267,7 +2263,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.058"></a><h2 class="h2">T.EAR.058: ADR call to DH: Get Bulk Usage - missing CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is missing from the header</p>
@@ -2295,7 +2291,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.059"></a><h2 class="h2">T.EAR.059: ADR call to DH: Get Bulk Usage - invalid CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is present but the format is invalid</p>
@@ -2323,7 +2319,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.060"></a><h2 class="h2">T.EAR.060: ADR call to DH: Get Bulk DER </h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the electricity usage data for all service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -2356,7 +2352,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.061"></a><h2 class="h2">T.EAR.061: ADR call to DH: Get Bulk DER - with pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the electricity usage data for all service points owned by the consumer that has authorised the current session</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with pagination partameters</p>
@@ -2391,7 +2387,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.062"></a><h2 class="h2">T.EAR.062: ADR call to DH: Get Bulk DER - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -2419,7 +2415,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.063"></a><h2 class="h2">T.EAR.063: ADR call to DH: Get Bulk DER - invalid page parameters</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns pagination errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid pagination parameters</p>
@@ -2451,7 +2447,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.064"></a><h2 class="h2">T.EAR.064: ADR call to DH: Get Bulk DER - missing FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is missing from the header</p>
@@ -2479,7 +2475,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.065"></a><h2 class="h2">T.EAR.065: ADR call to DH: DHGet Bulk DER - invalid FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is present but the format is invalid</p>
@@ -2507,7 +2503,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.066"></a><h2 class="h2">T.EAR.066: ADR call to DH: Get Bulk DER - missing FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is missing from the header</p>
@@ -2535,7 +2531,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.067"></a><h2 class="h2">T.EAR.067: ADR call to DH: DH: Get Bulk DER - invalid FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is present but the format is invalid</p>
@@ -2563,7 +2559,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.068"></a><h2 class="h2">T.EAR.068: ADR call to DH: Get Bulk DER - missing CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is missing from the header</p>
@@ -2591,7 +2587,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.069"></a><h2 class="h2">T.EAR.069: ADR call to DH: Get Bulk DER - invalid CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is present but the format is invalid</p>
@@ -2619,7 +2615,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.070"></a><h2 class="h2">T.EAR.070: ADR call to DH: Get Bulk DER - invalid FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is present but the format is invalid</p>
@@ -2647,7 +2643,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.071"></a><h2 class="h2">T.EAR.071: ADR call to DH: Get Bulk DER - missing FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is missing from the header</p>
@@ -2675,7 +2671,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.072"></a><h2 class="h2">T.EAR.072: ADR call to DH: Get Bulk DER - invalid FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is present but the format is invalid</p>
@@ -2703,7 +2699,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.073"></a><h2 class="h2">T.EAR.073: ADR call to DH: Get Service Points - missing FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is missing from the header</p>
@@ -2731,7 +2727,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.074"></a><h2 class="h2">T.EAR.074: ADR call to DH: Get Service Points - invalid FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is present but the format is invalid</p>
@@ -2759,7 +2755,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.075"></a><h2 class="h2">T.EAR.075: ADR call to DH: Get Service Points - missing FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is missing from the header</p>
@@ -2787,7 +2783,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.076"></a><h2 class="h2">T.EAR.076: ADR call to DH: Get Service Points - invalid FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is present but the format is invalid</p>
@@ -2815,7 +2811,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.077"></a><h2 class="h2">T.EAR.077: ADR call to DH: Get Service Points - missing CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is missing from the header</p>
@@ -2843,7 +2839,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.078"></a><h2 class="h2">T.EAR.078: ADR call to DH: Get Service Points - invalid CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is present but the format is invalid</p>
@@ -2871,7 +2867,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.079"></a><h2 class="h2">T.EAR.079: ADR call to DH: Get Service Point - missing FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is missing from the header</p>
@@ -2899,7 +2895,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.080"></a><h2 class="h2">T.EAR.080: ADR call to DH: Get Service Point - invalid FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is present but the format is invalid</p>
@@ -2927,7 +2923,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.081"></a><h2 class="h2">T.EAR.081: ADR call to DH: Get Service Point - missing FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is missing from the header</p>
@@ -2955,7 +2951,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.082"></a><h2 class="h2">T.EAR.082: ADR call to DH: Get Service Point - invalid FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is present but the format is invalid</p>
@@ -2983,7 +2979,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.083"></a><h2 class="h2">T.EAR.083: ADR call to DH: Get Service Point - missing CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is missing from the header</p>
@@ -3011,7 +3007,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.084"></a><h2 class="h2">T.EAR.084: ADR call to DH: Get Service Point - invalid CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is present but the format is invalid</p>
@@ -3039,7 +3035,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.085"></a><h2 class="h2">T.EAR.085: ADR call to DH: Get Usage For Service Point - missing FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is missing from the header</p>
@@ -3067,7 +3063,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.086"></a><h2 class="h2">T.EAR.086: ADR call to DH: Get Usage For Service Point - invalid FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is present but the format is invalid</p>
@@ -3095,7 +3091,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.087"></a><h2 class="h2">T.EAR.087: ADR call to DH: Get Usage For Service Point - missing FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is missing from the header</p>
@@ -3123,7 +3119,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.088"></a><h2 class="h2">T.EAR.088: ADR call to DH: Get Usage For Service Point - invalid FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is present but the format is invalid</p>
@@ -3151,7 +3147,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.089"></a><h2 class="h2">T.EAR.089: ADR call to DH: Get Usage For Service Point - missing CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is missing from the header</p>
@@ -3179,7 +3175,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.090"></a><h2 class="h2">T.EAR.090: ADR call to DH: Get Usage For Service Point - invalid CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is present but the format is invalid</p>
@@ -3207,7 +3203,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.091"></a><h2 class="h2">T.EAR.091: ADR call to DH: Get Usage for Specific Service Points - missing FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is missing from the header</p>
@@ -3235,7 +3231,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.092"></a><h2 class="h2">T.EAR.092: ADR call to DH: Get Usage for Specific Service Points - invalid FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is present but the format is invalid</p>
@@ -3263,7 +3259,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.093"></a><h2 class="h2">T.EAR.093: ADR call to DH: Get Usage for Specific Service Points - missing FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is missing from the header</p>
@@ -3291,7 +3287,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.094"></a><h2 class="h2">T.EAR.094: ADR call to DH: Get Usage for Specific Service Points - invalid FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is present but the format is invalid</p>
@@ -3319,7 +3315,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.095"></a><h2 class="h2">T.EAR.095: ADR call to DH: Get Usage for Specific Service Points - missing CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is missing from the header</p>
@@ -3347,7 +3343,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.096"></a><h2 class="h2">T.EAR.096: ADR call to DH: Get Usage for Specific Service Points - invalid CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is present but the format is invalid</p>
@@ -3375,7 +3371,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.097"></a><h2 class="h2">T.EAR.097: ADR call to DH: Get DER for Service Point - missing FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is missing from the header</p>
@@ -3403,7 +3399,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.098"></a><h2 class="h2">T.EAR.098: ADR call to DH: Get DER for Service Point - invalid FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is present but the format is invalid</p>
@@ -3431,7 +3427,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.099"></a><h2 class="h2">T.EAR.099: ADR call to DH: Get DER for Service Point - missing FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is missing from the header</p>
@@ -3459,7 +3455,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.100"></a><h2 class="h2">T.EAR.100: ADR call to DH: Get DER for Service Point - invalid FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is present but the format is invalid</p>
@@ -3487,7 +3483,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.101"></a><h2 class="h2">T.EAR.101: ADR call to DH: Get DER for Service Point - missing CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is missing from the header</p>
@@ -3515,7 +3511,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.102"></a><h2 class="h2">T.EAR.102: ADR call to DH: Get DER for Service Point - invalid CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is present but the format is invalid</p>
@@ -3543,7 +3539,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.103"></a><h2 class="h2">T.EAR.103: ADR call to DH: Get DER For Specific Service Points - missing FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is missing from the header</p>
@@ -3571,7 +3567,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.104"></a><h2 class="h2">T.EAR.104: ADR call to DH: Get DER For Specific Service Points - invalid FAPI Auth Date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Auth date errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Auth date is present but the format is invalid</p>
@@ -3599,7 +3595,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.105"></a><h2 class="h2">T.EAR.105: ADR call to DH: Get DER For Specific Service Points - missing FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is missing from the header</p>
@@ -3627,7 +3623,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.106"></a><h2 class="h2">T.EAR.106: ADR call to DH: Get DER For Specific Service Points - invalid FAPI Customer IP Address</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Customer IP address errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when FAPI Customer IP Address is present but the format is invalid</p>
@@ -3655,7 +3651,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.107"></a><h2 class="h2">T.EAR.107: ADR call to DH: Get DER For Specific Service Points - missing CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is missing from the header</p>
@@ -3683,7 +3679,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.108"></a><h2 class="h2">T.EAR.108: ADR call to DH: Get DER For Specific Service Points - invalid CDS Client Header</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns CDS Client Header errors </p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API when CDS Client Header is present but the format is invalid</p>
@@ -3711,7 +3707,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.109"></a><h2 class="h2">T.EAR.109: ADR call to DH: Get Service Points - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -3740,7 +3736,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.110"></a><h2 class="h2">T.EAR.110: ADR call to DH: Get Service Points - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -3768,7 +3764,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.111"></a><h2 class="h2">T.EAR.111: ADR call to DH: Get Service Point - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -3796,7 +3792,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.112"></a><h2 class="h2">T.EAR.112: ADR call to DH: Get Service Point - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -3824,7 +3820,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.113"></a><h2 class="h2">T.EAR.113: ADR call to DH: Get Usage For Service Point - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -3852,7 +3848,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.114"></a><h2 class="h2">T.EAR.114: ADR call to DH: Get Usage For Service Point - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -3880,7 +3876,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.115"></a><h2 class="h2">T.EAR.115: ADR call to DH: Get Bulk Usage - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -3908,7 +3904,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.116"></a><h2 class="h2">T.EAR.116: ADR call to DH: Get Bulk Usage - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -3936,7 +3932,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.117"></a><h2 class="h2">T.EAR.117: ADR call to DH: Get Usage for Specific Service Points - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -3964,7 +3960,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.118"></a><h2 class="h2">T.EAR.118: ADR call to DH: Get Usage for Specific Service Points - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -3992,7 +3988,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.119"></a><h2 class="h2">T.EAR.119: ADR call to DH: Get DER for Service Point - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -4020,7 +4016,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.120"></a><h2 class="h2">T.EAR.120: ADR call to DH: Get DER for Service Point - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -4048,7 +4044,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.121"></a><h2 class="h2">T.EAR.121: ADR call to DH: Get Bulk DER - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -4076,7 +4072,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.122"></a><h2 class="h2">T.EAR.122: ADR call to DH: Get Bulk DER - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -4104,7 +4100,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.123"></a><h2 class="h2">T.EAR.123: ADR call to DH: Get DER For Specific Service Points - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -4132,7 +4128,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.124"></a><h2 class="h2">T.EAR.124: ADR call to DH: Get DER For Specific Service Points - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -4160,7 +4156,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.125"></a><h2 class="h2">T.EAR.125: ADR call to DH: Get Service Points - unsupported version when x-min-v is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -4189,7 +4185,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.126"></a><h2 class="h2">T.EAR.126: ADR call to DH: Get Service Point - unsupported version when x-min-v is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -4218,7 +4214,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.127"></a><h2 class="h2">T.EAR.127: ADR call to DH: Get Usage For Service Point - unsupported version when x-min-v is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -4247,7 +4243,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.128"></a><h2 class="h2">T.EAR.128: ADR call to DH: Get Bulk Usage - unsupported version when x-min-v is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -4276,7 +4272,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.129"></a><h2 class="h2">T.EAR.129: ADR call to DH: Get Usage for Specific Service Points - unsupported version when x-min-v is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -4305,7 +4301,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.130"></a><h2 class="h2">T.EAR.130: ADR call to DH: Get DER for Service Point - unsupported version when x-min-v is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -4334,7 +4330,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.131"></a><h2 class="h2">T.EAR.131: ADR call to DH: Get Bulk DER - unsupported version when x-min-v is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -4363,7 +4359,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.ear.132"></a><h2 class="h2">T.EAR.132: ADR call to DH: Get DER For Specific Service Points - unsupported version when x-min-v is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -4392,7 +4388,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.001"></a><h2 class="h2">T.EAS.001: DH call to SDH: Get Service Points - no pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a list of service points requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -4425,7 +4421,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.002"></a><h2 class="h2">T.EAS.002: DH call to SDH: Get Service Points - with pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a paginated list of service points requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with pagination partameters</p>
@@ -4459,7 +4455,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.003"></a><h2 class="h2">T.EAS.003: DH call to SDH: Get Service Points - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">DH call to SDH: Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH </p>
@@ -4487,7 +4483,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.004"></a><h2 class="h2">T.EAS.004: DH call to SDH: Get Service Points - invalid page parameters</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns pagination errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid pagination parameters</p>
@@ -4518,7 +4514,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.005"></a><h2 class="h2">T.EAS.005: DH call to SDH: Get Service Point Detail </h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the details of a service point requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a vaild service point and version</p>
@@ -4552,7 +4548,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.006"></a><h2 class="h2">T.EAS.006: DH call to SDH: Get Service Point Detail - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -4580,7 +4576,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.007"></a><h2 class="h2">T.EAS.007: DH call to SDH: Get Service Point Detail - invalid format of Service Point ID</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an invalid servicePointId</p>
@@ -4607,7 +4603,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.008"></a><h2 class="h2">T.EAS.008: DH call to SDH: Get Service Point Detail - unavailable Service Point ID</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an unavailable servicePointId</p>
@@ -4634,7 +4630,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.009"></a><h2 class="h2">T.EAS.009: DH call to SDH: Get Usage for Service Point Detail - no pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a list of electricity usage data from a particular service point requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -4667,7 +4663,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.010"></a><h2 class="h2">T.EAS.010: DH call to SDH: Get Usage for Service Points - with pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a paginated list of electricity usage data from a particular service requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with pagination partameters</p>
@@ -4701,7 +4697,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.011"></a><h2 class="h2">T.EAS.011: DH call to SDH: Get Usage for Service Points - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -4729,7 +4725,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.012"></a><h2 class="h2">T.EAS.012: DH call to SDH: Get Usage for Service Points - invalid page parameters</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns pagination errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid pagination parameters</p>
@@ -4760,7 +4756,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.013"></a><h2 class="h2">T.EAS.013: DH call to SDH: Get Usage for Service Points - oldest date</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a list of electricity usage data constrained by oldest date from a particular service point requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with &lt;oldest date&gt; parameter</p>
@@ -4796,7 +4792,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.014"></a><h2 class="h2">T.EAS.014: DH call to SDH: Get Usage for Service Points - newest date</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a list of service points requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -4831,7 +4827,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.015"></a><h2 class="h2">T.EAS.015: DH call to SDH: Get Usage for Service Points - invalid Service Point ID</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an invalid servicePointId</p>
@@ -4858,7 +4854,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.016"></a><h2 class="h2">T.EAS.016: DH call to SDH: Get Usage for Service Points - unavailable Service Point ID</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an unavailable servicePointId</p>
@@ -4885,7 +4881,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.017"></a><h2 class="h2">T.EAS.017: DH call to SDH: Get Usage for Service Points - invalid format oldest date </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with &lt;oldest date&gt;  parameter</p>
@@ -4912,7 +4908,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.018"></a><h2 class="h2">T.EAS.018: DH call to SDH: Get Usage for Service Points - invalid format newest date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -4939,7 +4935,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.019"></a><h2 class="h2">T.EAS.019: DH call to SDH: Get Usage for Specific Service Points - no pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the electricity usage data for a specific set of service points requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -4972,7 +4968,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.020"></a><h2 class="h2">T.EAS.020: DH call to SDH: Get Usage for Specific Service Points - with pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the electricity usage data for a specific set of service points requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with pagination partameters</p>
@@ -5006,7 +5002,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.021"></a><h2 class="h2">T.EAS.021: DH call to SDH: Get Usage for Specific Service Points - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -5034,7 +5030,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.022"></a><h2 class="h2">T.EAS.022: DH call to SDH: Get Usage for Specific Service Points - invalid page parameters</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns pagination errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid pagination parameters</p>
@@ -5065,7 +5061,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.023"></a><h2 class="h2">T.EAS.023: DH call to SDH: Get Usage for Specific Service Points - oldest date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Obtain the electricity usage data for a specific set of service points requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with oldest date parameter</p>
@@ -5099,7 +5095,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.024"></a><h2 class="h2">T.EAS.024: DH call to SDH: Get Usage for Specific Service Points - newest date</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain the electricity usage data for a specific set of service points requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -5133,7 +5129,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.025"></a><h2 class="h2">T.EAS.025: DH call to SDH: Get Usage for Specific Service Points - invalid format oldest date </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns oldest-date compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with oldest date parameter</p>
@@ -5160,7 +5156,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.026"></a><h2 class="h2">T.EAS.026: DH call to SDH: Get Usage for Specific Service Points - invalid format newest date</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns newest-date compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -5187,7 +5183,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.027"></a><h2 class="h2">T.EAS.027: DH call to SDH: Get DER for Service Point </h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain a list of DER data from a particular service point requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a vaild service point and version</p>
@@ -5221,7 +5217,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.028"></a><h2 class="h2">T.EAS.028: DH call to SDH: Get Service Point Detail - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -5249,7 +5245,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.029"></a><h2 class="h2">T.EAS.029: DH call to SDH: Get Service Point Detail - invalid format of Service Point ID</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an invalid servicePointId</p>
@@ -5276,7 +5272,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.030"></a><h2 class="h2">T.EAS.030: DH call to SDH: Get Service Point Detail - unavailable Service Point ID</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an unavailable servicePointId</p>
@@ -5303,7 +5299,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.031"></a><h2 class="h2">T.EAS.031: DH call to SDH: Get DER for Specific Service Points - no pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain DER data for a specific set of service points requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API without any pagination partameters</p>
@@ -5336,7 +5332,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.032"></a><h2 class="h2">T.EAS.032: DH call to SDH: Get DER for Specific Service Points - with pagination</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Obtain DER data for a specific set of service points requested by the DH</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with pagination partameters</p>
@@ -5370,7 +5366,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.033"></a><h2 class="h2">T.EAS.033: DH call to SDH: Get DER for Specific Service Points - unsupported version without x-min-v included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -5398,7 +5394,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.034"></a><h2 class="h2">T.EAS.034: DH call to SDH: Get DER for Specific Service Points - invalid page parameters</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns pagination errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid pagination parameters</p>
@@ -5429,7 +5425,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.035"></a><h2 class="h2">T.EAS.035: DH call to SDH: Get DER for Specific Service Points - invalid body values</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns body compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid body values</p>
@@ -5457,7 +5453,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.036"></a><h2 class="h2">T.EAS.036: DH call to SDH: Get DER for Specific Service Points - invalid body format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns body compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a malformed body</p>
@@ -5484,7 +5480,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.037"></a><h2 class="h2">T.EAS.037: DH call to SDH: Get Usage for Specific Service Points - invalid body values</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns body compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid body values</p>
@@ -5512,7 +5508,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.038"></a><h2 class="h2">T.EAS.038: DH call to SDH: Get Usage for Specific Service Points - invalid body format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns body compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a malformed body</p>
@@ -5539,7 +5535,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.039"></a><h2 class="h2">T.EAS.039: DH call to SDH: Get Service Points - invalid FAPI Interaction ID format </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Interaction ID errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API where FAPI Interaction ID format is invalid</p>
@@ -5565,7 +5561,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.040"></a><h2 class="h2">T.EAS.040: DH call to SDH: Get Service Point Detail - invalid FAPI Interaction ID format </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Interaction ID errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API where FAPI Interaction ID fomat is invalid</p>
@@ -5591,7 +5587,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.041"></a><h2 class="h2">T.EAS.041: DH call to SDH: Get Usage For Service Point - invalid FAPI Interaction ID format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Interaction ID errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API where FAPI Interaction ID fomat is invalid</p>
@@ -5617,7 +5613,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.042"></a><h2 class="h2">T.EAS.042: DH call to SDH: Get Usage For Specific Service Points - invalid FAPI Interaction ID format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Interaction ID errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API where FAPI Interaction ID fomat is invalid</p>
@@ -5643,7 +5639,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.043"></a><h2 class="h2">T.EAS.043: DH call to SDH: Get DER for Service Point - invalid FAPI Interaction ID format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Interaction ID errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API where FAPI Interaction ID fomat is invalid</p>
@@ -5669,7 +5665,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.044"></a><h2 class="h2">T.EAS.044: DH call to SDH: Get DER For Specific Service Points - invalid FAPI Interaction ID format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns FAPI Interaction ID errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API where FAPI Interaction ID fomat is invalid</p>
@@ -5695,7 +5691,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.045"></a><h2 class="h2">T.EAS.045: DH call to SDH: Get Service Points - no arragement id </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns arrangement id errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API to ensure the arrangement ID is included </p>
@@ -5722,7 +5718,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.046"></a><h2 class="h2">T.EAS.046: DH call to SDH: Get Service Points - arrangement ID invalid</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns arrangement id errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API to ensure the arrangement ID is valid</p>
@@ -5749,7 +5745,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.047"></a><h2 class="h2">T.EAS.047: DH call to SDH: Get Service Point Detail - no arragement id </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns arrangement id errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API to ensure the arrangement ID is included </p>
@@ -5776,7 +5772,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.048"></a><h2 class="h2">T.EAS.048: DH call to SDH: Get Service Point Detail - arrangement ID invalid</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns arrangement id errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API to ensure the arrangement ID is valid</p>
@@ -5803,7 +5799,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.049"></a><h2 class="h2">T.EAS.049: DH call to Get Usage For Service Point - no arragement id </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns arrangement id errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API to ensure the arrangement ID is included </p>
@@ -5830,7 +5826,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.050"></a><h2 class="h2">T.EAS.050: DH call to SDH: Get Usage For Service Point - arrangement ID invalid</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns arrangement id errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API to ensure the arrangement ID is valid</p>
@@ -5857,7 +5853,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.051"></a><h2 class="h2">T.EAS.051: DH call to SDH: Get Usage For Specific Service Points - no arragement id </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns arrangement id errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API to ensure the arrangement ID is included </p>
@@ -5884,7 +5880,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.052"></a><h2 class="h2">T.EAS.052: DH call to SDH: Get Usage For Specific Service Points - arrangement ID invalid</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns arrangement id errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API to ensure the arrangement ID is valid</p>
@@ -5911,7 +5907,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.053"></a><h2 class="h2">T.EAS.053: DH call to SDH: Get DER for Service Point - no arragement id </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns arrangement id errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API to ensure the arrangement ID is included </p>
@@ -5938,7 +5934,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.054"></a><h2 class="h2">T.EAS.054: DH call to SDH: Get DER for Service Point - arrangement ID invalid</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns arrangement id errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API to ensure the arrangement ID is valid</p>
@@ -5965,7 +5961,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.055"></a><h2 class="h2">T.EAS.055: DH call to Get DER For Specific Service Points - no arragement id </h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns arrangement id errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API to ensure the arrangement ID is included </p>
@@ -5992,7 +5988,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.056"></a><h2 class="h2">T.EAS.056: DH call to SDH: Get DER For Specific Service Points - arrangement ID invalid</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns arrangement id errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API to ensure the arrangement ID is valid</p>
@@ -6019,7 +6015,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.057"></a><h2 class="h2">T.EAS.057: DH call to SDH: Get Service Points - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -6046,7 +6042,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.058"></a><h2 class="h2">T.EAS.058: DH call to SDH: Get Service Points - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -6073,7 +6069,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.059"></a><h2 class="h2">T.EAS.059: DH call to SDH: Get Service Point Detail - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -6100,7 +6096,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.060"></a><h2 class="h2">T.EAS.060: DH call to SDH: Get Service Point Detail - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -6127,7 +6123,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.061"></a><h2 class="h2">T.EAS.061: DH call to SDH: Get Usage For Service Point - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -6154,7 +6150,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.062"></a><h2 class="h2">T.EAS.062: DH call to SDH: Get Usage For Service Point - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -6181,7 +6177,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.063"></a><h2 class="h2">T.EAS.063: DH call to SDH: Get Usage For Specific Service Points - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -6208,7 +6204,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.064"></a><h2 class="h2">T.EAS.064: DH call to SDH: Get Usage For Specific Service Points - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -6235,7 +6231,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.065"></a><h2 class="h2">T.EAS.065: DH call to SDH: Get DER for Service Point - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -6262,7 +6258,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.066"></a><h2 class="h2">T.EAS.066: DH call to SDH: Get DER for Service Point - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -6289,7 +6285,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.067"></a><h2 class="h2">T.EAS.067: DH call to SDH: Get DER For Specific Service Points - invalid version value</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version value</p>
@@ -6316,7 +6312,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.068"></a><h2 class="h2">T.EAS.068: DH call to SDH: Get DER For Specific Service Points - invalid version format</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with invalid version format</p>
@@ -6343,7 +6339,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.069"></a><h2 class="h2">T.EAS.069: DH call to SDH: Get Service Points - unsupported version when x-min-v is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -6371,7 +6367,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.070"></a><h2 class="h2">T.EAS.070: DH call to SDH: Get Service Point Detail - unsupported version when x-min-v is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -6399,7 +6395,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.071"></a><h2 class="h2">T.EAS.071: DH call to SDH: Get Usage for Service Points - unsupported version when x-min-v is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -6427,7 +6423,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.072"></a><h2 class="h2">T.EAS.072: DH call to SDH: Get Usage for Specific Service Points - unsupported version when x-min-v  is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -6455,7 +6451,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.073"></a><h2 class="h2">T.EAS.073: DH call to SDH: Get Service Point Detail - unsupported version when x-min-v is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -6483,7 +6479,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.074"></a><h2 class="h2">T.EAS.074: DH call to SDH: Get DER for Specific Service Points - unsupported version when x-min-v is included</h2>
-<p class="p">Positive test case</p>
+<p class="p">Negative test case</p>
 <p class="p">Ensure that the endpoint returns version compatibility errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a version that is not supported by the DH</p>
@@ -6511,7 +6507,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.075"></a><h2 class="h2">T.EAS.075: DH call to SDH: Get Service Points - missing servicePointId in body</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with a missing servicePointId</p>
@@ -6538,7 +6534,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.076"></a><h2 class="h2">T.EAS.076: DH call to SDH: Get Service Points - invalid servicePointId in body</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an invalid servicePointId </p>
@@ -6565,7 +6561,7 @@
 </div>
 <div class="testcase">
 <a id="testcase-t.eas.077"></a><h2 class="h2">T.EAS.077: DH call to SDH: Get Service Points - unavailable servicePointId in body</h2>
-<p class="p">Negative test case</p>
+<p class="p">Positive test case</p>
 <p class="p">Ensure the endpoint returns servicePointId compatible errors</p>
 <h3 class="h3">Purpose:</h3>
 <p class="p">Test API with an unavailable servicePointId</p>
@@ -6625,8 +6621,7 @@
 <h3 class="h3">Assertion Logic:</h3>
 <table>
 <tbody>
-<tr><td>Given</td><td>the &lt;page-size&gt; parameter is specified</br>AND the value for &lt;page-size&gt; is outside the range [1..1000]
-OR the &lt;page-size&gt; is a not a positive integer</td></tr>
+<tr><td>Given</td><td>the &lt;page-size&gt; parameter is specified</br>AND the value for &lt;page-size&gt; is outside the range [1..1000]</br>OR the &lt;page-size&gt; is a not a positive integer</td></tr>
 <tr><td>When</td><td>a response is returned</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
 <div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/InvalidPageSize"</br></div>
@@ -6766,8 +6761,7 @@ OR the &lt;page-size&gt; is a not a positive integer</td></tr>
 <h3 class="h3">Assertion Logic:</h3>
 <table>
 <tbody>
-<tr><td>Given</td><td>the &lt;x-v&gt;  is included in a  request header</br>AND &lt;x-min-v&gt; is NOT included
-AND the request version &lt;x-v&gt; is not supported</td></tr>
+<tr><td>Given</td><td>the &lt;x-v&gt;  is included in a  request header</br>AND &lt;x-min-v&gt; is NOT included</br>AND the request version &lt;x-v&gt; is not supported</td></tr>
 <tr><td>When</td><td>and a response is returned</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
 <div class="predicate inner" style="margin-left:2em">the response has a status of 406</br> the response body has ErrorListReponse object</br> error code is "Header/UnsupportedVersion"</br></div>
@@ -6787,8 +6781,7 @@ AND the request version &lt;x-v&gt; is not supported</td></tr>
 <h3 class="h3">Assertion Logic:</h3>
 <table>
 <tbody>
-<tr><td>Given</td><td>the &lt;x-v&gt;  is included in a  request header</br>AND  &lt;x-min-v&gt;  is included
-AND no version between &lt;x-v&gt; and &lt;x-min-v&gt; is supported</td></tr>
+<tr><td>Given</td><td>the &lt;x-v&gt;  is included in a  request header</br>AND  &lt;x-min-v&gt;  is included</br>AND no version between &lt;x-v&gt; and &lt;x-min-v&gt; is supported</td></tr>
 <tr><td>When</td><td>a response is returned</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
 <div class="predicate inner" style="margin-left:2em">the response has a status of 406</br> the response body has ErrorListReponse object</br> error code is "Header/UnsupportedVersion"</br></div>
@@ -6949,8 +6942,7 @@ AND no version between &lt;x-v&gt; and &lt;x-min-v&gt; is supported</td></tr>
 <h3 class="h3">Assertion Logic:</h3>
 <table>
 <tbody>
-<tr><td>Given</td><td>the API requires authentication</br>AND the &lt;x-fapi-auth-date&gt; is in the request header
-AND is NOT in a valid format</td></tr>
+<tr><td>Given</td><td>the API requires authentication</br>AND the &lt;x-fapi-auth-date&gt; is in the request header</br>AND is NOT in a valid format</td></tr>
 <tr><td>When</td><td>a response is returned</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
 <div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/invalid"</br></div>
@@ -7030,8 +7022,7 @@ AND is NOT in a valid format</td></tr>
 <h3 class="h3">Assertion Logic:</h3>
 <table>
 <tbody>
-<tr><td>Given</td><td>the API requires authentication</br>AND "the &lt;x-fapi-customer-ip-address&gt; is in present the request header
-AND is NEITHER in a valid IPv4 or IPv6 format"</td></tr>
+<tr><td>Given</td><td>the API requires authentication</br>AND the &lt;x-fapi-customer-ip-address&gt; is in present the request header</br>AND is NEITHER in a valid IPv4 or IPv6 format</td></tr>
 <tr><td>When</td><td>a response is returned</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
 <div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/invalid"</br></div>
@@ -7092,8 +7083,7 @@ AND is NEITHER in a valid IPv4 or IPv6 format"</td></tr>
 <h3 class="h3">Assertion Logic:</h3>
 <table>
 <tbody>
-<tr><td>Given</td><td>the API requires authentication</br>AND the &lt;x-cds-client-headers&gt; is mandatory
-AND the &lt;x-cds-client-headers&gt; is NOT present in the request header</td></tr>
+<tr><td>Given</td><td>the API requires authentication</br>AND the &lt;x-cds-client-headers&gt; is mandatory</br>AND the &lt;x-cds-client-headers&gt; is NOT present in the request header</td></tr>
 <tr><td>When</td><td>a response is returned</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
 <div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/missing"</br></div>
@@ -7383,8 +7373,7 @@ AND the &lt;x-cds-client-headers&gt; is NOT present in the request header</td></
 <h3 class="h3">Assertion Logic:</h3>
 <table>
 <tbody>
-<tr><td>Given</td><td>the {servicePointId} is included</br>AND the {servicePointId} value is valid 
-AND the request is formatted correctly</td></tr>
+<tr><td>Given</td><td>the {servicePointId} is included</br>AND the {servicePointId} value is valid </br>AND the request is formatted correctly</td></tr>
 <tr><td>When</td><td>a response is returned</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
 <div class="predicate inner" style="margin-left:2em">the response has a status code of 200</br> the response body complies with the EnergyUsageListResponse schema</br></div>
@@ -7605,8 +7594,7 @@ AND the request is formatted correctly</td></tr>
 <h3 class="h3">Assertion Logic:</h3>
 <table>
 <tbody>
-<tr><td>Given</td><td>the {servicePointId} is included </br>AND the {servicePointId} value is valid 
-AND the request is formatted correctly</td></tr>
+<tr><td>Given</td><td>the {servicePointId} is included </br>AND the {servicePointId} value is valid </br>AND the request is formatted correctly</td></tr>
 <tr><td>When</td><td>a response is returned</td></tr>
 <tr><td>Then</td><td><div class="predicate outer">AND (</div>
 <div class="predicate inner" style="margin-left:2em">the response has a status code of 200</br> the response body complies with the EnergyUsageListResponse schema</br></div>

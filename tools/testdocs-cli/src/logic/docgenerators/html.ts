@@ -247,7 +247,7 @@ function generateTestCasesSection(testDocs: ConsumerDataRightTestCaseJSONSchema)
       result += startSection('testcase');
 
       result += header2(testCaseId + ': ' + testCase.title, createSlug('testcase', testCaseId));
-      result += text(testCase.negative ? 'Negative test case' : 'Positive test case');
+      result += text(testCase.negative ? 'Positive test case' : 'Negative test case');
       result += text(processNewlines(testCase.description));
 
       result += header3('Purpose:');
@@ -340,7 +340,10 @@ function generateAssertionsSection(testDocs: ConsumerDataRightTestCaseJSONSchema
     // Document each individual assertion
     for (const assertionId of Object.keys(testDocs.assertions)) {
       const assertion = testDocs.assertions[assertionId];
-
+      if (assertionId == 'A.CCH.001')
+      {
+        let y = 8;
+      }
       result += startSection('assertion');
 
       result += header2(assertionId + ': ' + processSpecialCharacters(assertion.title), createSlug('assertion', assertionId));
@@ -374,6 +377,7 @@ function generateAssertionsSection(testDocs: ConsumerDataRightTestCaseJSONSchema
       result += startTable([]);
 
       let given = '';
+
       for (const clause of assertion.given) {
         if (given) given += '\n';
         given += clause;
@@ -647,7 +651,7 @@ function processNewlines(text: string | undefined): string {
   let result = '';
   if (text){
     result = processSpecialCharacters(text);
-    result = result.replace(/\n/, '</br>');
+    result = result.replace(/\n/g,'</br>');
   }
   return result;
 }

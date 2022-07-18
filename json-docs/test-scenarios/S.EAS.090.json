@@ -2,10 +2,10 @@
   "id": "S.EAS.090",
   "title": "Get Service Points Negative SR v1",
   "purpose": "",
-  "description": "Test errors and edge cases for Get Service Points ",
+  "description": "",
   "references": [
     {
-      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr\r"
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr"
     }
   ],
   "sequence": [

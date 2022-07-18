@@ -8,7 +8,7 @@ This documentation has been  created by the DSB to assist participants in the de
 
 For more details see the CDS <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing">standards-testing repository</a> for details
 
-Last updated 13/07/2022 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v1.0.2/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx">change log</a> for details
+Last updated 18/07/2022 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v1.0.2/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx">change log</a> for details
 
 <a id="suites"></a>
 # Test Suites
@@ -61,8 +61,6 @@ Last updated 13/07/2022 see the <a href="https://github.com/ConsumerDataStandard
 <a id="scenario-s.ear.073"></a>
 ## S.EAR.073: Get Service Points v1
 
-As a DH I provide an API which exposes information about the service points
-
 ### Purpose:
 
 Test cases which will return a 2xx status code
@@ -76,15 +74,13 @@ Test cases which will return a 2xx status code
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Setup|Authorise session</br>AND x-v is set in header|
+|1|Setup|Authorise session</br>AND x-v is set in header|
 |2|Execute Test|[T.EAR.001: ADR call to DH: Get Service Points - no pagination](#testcase-t.ear.001)|
 |3|Execute Test|[T.EAR.002: ADR call to DH: Get Service Points - with pagination](#testcase-t.ear.002)|
 
 
 <a id="scenario-s.ear.074"></a>
 ## S.EAR.074: Get Service Points Negative v1
-
-As a DH I return appropriate codes and messages for failed or invalid requests
 
 ### Purpose:
 
@@ -361,11 +357,9 @@ Test cases which will return codes other than 2xx
 <a id="scenario-s.eas.089"></a>
 ## S.EAS.089: Get Service Points SR v1
 
-Test the Happy Path for Get Service Points
-
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
 
 
 ### Testing Sequence:
@@ -379,11 +373,9 @@ Test the Happy Path for Get Service Points
 <a id="scenario-s.eas.090"></a>
 ## S.EAS.090: Get Service Points Negative SR v1
 
-Test errors and edge cases for Get Service Points 
-
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
 
 
 ### Testing Sequence:
@@ -8111,8 +8103,7 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;page-size&gt; parameter is specified</br>AND the value for &lt;page-size&gt; is outside the range [1..1000]
-OR the &lt;page-size&gt; is a not a positive integer|
+|Given|the &lt;page-size&gt; parameter is specified</br>AND the value for &lt;page-size&gt; is outside the range [1..1000]</br>OR the &lt;page-size&gt; is a not a positive integer|
 |When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/InvalidPageSize"</br></div><div class="predicate outer">)</div>|
 
@@ -8259,8 +8250,7 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;x-v&gt;  is included in a  request header</br>AND &lt;x-min-v&gt; is NOT included
-AND the request version &lt;x-v&gt; is not supported|
+|Given|the &lt;x-v&gt;  is included in a  request header</br>AND &lt;x-min-v&gt; is NOT included</br>AND the request version &lt;x-v&gt; is not supported|
 |When|and a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 406</br> the response body has ErrorListReponse object</br> error code is "Header/UnsupportedVersion"</br></div><div class="predicate outer">)</div>|
 
@@ -8281,8 +8271,7 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the &lt;x-v&gt;  is included in a  request header</br>AND  &lt;x-min-v&gt;  is included
-AND no version between &lt;x-v&gt; and &lt;x-min-v&gt; is supported|
+|Given|the &lt;x-v&gt;  is included in a  request header</br>AND  &lt;x-min-v&gt;  is included</br>AND no version between &lt;x-v&gt; and &lt;x-min-v&gt; is supported|
 |When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 406</br> the response body has ErrorListReponse object</br> error code is "Header/UnsupportedVersion"</br></div><div class="predicate outer">)</div>|
 
@@ -8457,8 +8446,7 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the API requires authentication</br>AND the &lt;x-fapi-auth-date&gt; is in the request header
-AND is NOT in a valid format|
+|Given|the API requires authentication</br>AND the &lt;x-fapi-auth-date&gt; is in the request header</br>AND is NOT in a valid format|
 |When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/invalid"</br></div><div class="predicate outer">)</div>|
 
@@ -8545,8 +8533,7 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the API requires authentication</br>AND "the &lt;x-fapi-customer-ip-address&gt; is in present the request header
-AND is NEITHER in a valid IPv4 or IPv6 format"|
+|Given|the API requires authentication</br>AND the &lt;x-fapi-customer-ip-address&gt; is in present the request header</br>AND is NEITHER in a valid IPv4 or IPv6 format|
 |When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/invalid"</br></div><div class="predicate outer">)</div>|
 
@@ -8613,8 +8600,7 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the API requires authentication</br>AND the &lt;x-cds-client-headers&gt; is mandatory
-AND the &lt;x-cds-client-headers&gt; is NOT present in the request header|
+|Given|the API requires authentication</br>AND the &lt;x-cds-client-headers&gt; is mandatory</br>AND the &lt;x-cds-client-headers&gt; is NOT present in the request header|
 |When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Header/missing"</br></div><div class="predicate outer">)</div>|
 
@@ -8926,8 +8912,7 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the {servicePointId} is included</br>AND the {servicePointId} value is valid 
-AND the request is formatted correctly|
+|Given|the {servicePointId} is included</br>AND the {servicePointId} value is valid </br>AND the request is formatted correctly|
 |When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code of 200</br> the response body complies with the EnergyUsageListResponse schema</br></div><div class="predicate outer">)</div>|
 
@@ -9159,8 +9144,7 @@ Critical (Test Fails)
 
 |||
 |-|-|
-|Given|the {servicePointId} is included </br>AND the {servicePointId} value is valid 
-AND the request is formatted correctly|
+|Given|the {servicePointId} is included </br>AND the {servicePointId} value is valid </br>AND the request is formatted correctly|
 |When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status code of 200</br> the response body complies with the EnergyUsageListResponse schema</br></div><div class="predicate outer">)</div>|
 

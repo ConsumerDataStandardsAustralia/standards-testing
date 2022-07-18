@@ -635,7 +635,7 @@ function processNewlines(text: string | undefined): string {
   let result = '';
   if (text){
     result = processSpecialCharacters(text);
-    result = result.replace(/\n/, '</br>');
+    result = result.replace(/\n/g, '</br>');
   }
   return result;
 }
