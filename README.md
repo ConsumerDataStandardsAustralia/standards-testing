@@ -48,9 +48,7 @@ The references listed for each test case and assertion should be read in conjunc
 
 	-  	‘Scenario’ in this context implies a group of tests to validate a single API.  A Scenario is not a complete end to end sequence of API calls that might be needed to test a single use case.
 
--   Each Scenario has a series of Test Cases attached to it:
-	- positive test cases indicates a 200 response with a valid schema is expected.
-	- negative test cases are intended to generate an error response.
+-   Each Scenario has a series of Test Cases attached to it. A scenario with "Negative" in the title contains negative test cases, which are intended to generate a response with an error status.
 -   Each Test Case links to a series of Assertions which are either specific to the Suite or Common to many Suites.
 
 ## Coverage
