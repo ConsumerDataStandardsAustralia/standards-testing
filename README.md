@@ -68,13 +68,13 @@ The DSB anticipates this documentation, in time, will also reference DSBs postma
 
 ## Numbering convention
 
-The tests are organised by Suite, Scenario, Case and Assertion.
+The tests are organised by Suite, Scenario, Test Case and Assertion.
 -   One Suite can have many Scenarios
 -   One Scenario can have many Test Cases
 -   One Test Case can have many Assertions
 -   Common Assertions can belong to many Test Cases
 
-Assertions are expressed using the Behaviour Driven Development (BDD) methodology, in the format “GIVEN...WHEN...THEN...
+Assertions are expressed using the Behaviour Driven Development (BDD) methodology, in the format “GIVEN...WHEN...THEN..."
 
 Each Suite, Scenario, Test Case and Assertion has a unique identifier in the format a.aaa.nnn, where ‘a’ represents an alpha character and 'n' represents a numeric character.
 
