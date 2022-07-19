@@ -84,7 +84,7 @@ function generateSummarySection(testDocs: ConsumerDataRightTestCaseJSONSchema): 
   result += header1(testDocs.title, 'introduction');
   result += text('File version: ' + testDocs.fileVersion);
   result += text(testDocs.description);
-  result += text('For more details see the CDS <a href="' + testDocs.githubRepoUrl + '">standards-testing repository</a> for details');
+  result += text('For more details see the CDS <a href="' + testDocs.githubRepoUrl + '">standards-testing repository</a>');
   result += text('Last updated ' + today.format('DD/MM/YYYY') + ' see the <a href="' + testDocs.changeLogUrl + '">change log</a> for details');
   result += endSection();
 
