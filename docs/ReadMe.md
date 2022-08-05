@@ -2,16 +2,56 @@
 <a id="introduction"></a>
 # The CDR Test Documentation
 
-File version: 1.0.2
+File version: 1.0.3
 
 This documentation has been  created by the DSB to assist participants in the development of compliant APIs
 
 For more details see the CDS <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing">standards-testing repository</a> for details
 
-Last updated 18/07/2022 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v1.0.2/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx">change log</a> for details
+Last updated 05/08/2022 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v1.0.3/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx">change log</a> for details
 
 <a id="suites"></a>
 # Test Suites
+
+<a id="suite-suite.008"></a>
+## SUITE.008: APIs - Energy Accounts
+
+### Test Scenarios:
+
+* [S.EAA.047: Get Energy Accounts v1](#scenario-s.eaa.047)
+* [S.EAA.048: Get Energy Accounts Negative v1](#scenario-s.eaa.048)
+* [S.EAA.049: Get Energy Account Detail v1](#scenario-s.eaa.049)
+* [S.EAA.050: Get Energy Account Detail Negative v1](#scenario-s.eaa.050)
+* [S.EAA.051: Get Agreed Payment Schedule v1](#scenario-s.eaa.051)
+* [S.EAA.052: Get Agreed Payment Schedule Negative v1](#scenario-s.eaa.052)
+* [S.EAA.053: Get Concessions v1](#scenario-s.eaa.053)
+* [S.EAA.054: Get Concessions Negative v1](#scenario-s.eaa.054)
+
+
+<a id="suite-suite.009"></a>
+## SUITE.009: APIs - Energy Invoices and Billing
+
+### Test Scenarios:
+
+* [S.EAB.055: Get Balance For Energy Account v1](#scenario-s.eab.055)
+* [S.EAB.056: Get Balance For Energy Account Negative v1](#scenario-s.eab.056)
+* [S.EAB.057: Get Bulk Balances For Energy v1](#scenario-s.eab.057)
+* [S.EAB.058: Get Bulk Balances For Energy Negative v1](#scenario-s.eab.058)
+* [S.EAB.059: Get Balances For Specific Energy Accounts v1](#scenario-s.eab.059)
+* [S.EAB.060: Get Balances For Specific Energy Accounts Negative v1](#scenario-s.eab.060)
+* [S.EAB.061: Get Invoices For Account v1](#scenario-s.eab.061)
+* [S.EAB.062: Get Invoices For Account Negative v1](#scenario-s.eab.062)
+* [S.EAB.063: Get Bulk Invoices v1](#scenario-s.eab.063)
+* [S.EAB.064: Get Bulk Invoices Negative v1](#scenario-s.eab.064)
+* [S.EAB.065: Get Invoices For Specific Accounts v1](#scenario-s.eab.065)
+* [S.EAB.066: Get Invoices For Specific Accounts Negative v1](#scenario-s.eab.066)
+* [S.EAB.067: Get Billing For Account v1](#scenario-s.eab.067)
+* [S.EAB.068: Get Billing For Account Negative v1](#scenario-s.eab.068)
+* [S.EAB.069: Get Bulk Billing v1](#scenario-s.eab.069)
+* [S.EAB.070: Get Bulk Billing Negative v1](#scenario-s.eab.070)
+* [S.EAB.071: Get Billing For Specific Accounts v1](#scenario-s.eab.071)
+* [S.EAB.072: Get Billing For Specific Accounts Negative v1](#scenario-s.eab.072)
+
 
 <a id="suite-suite.010"></a>
 ## SUITE.010: APIs - Energy Standing Data, Usage and DER
@@ -58,6 +98,134 @@ Last updated 18/07/2022 see the <a href="https://github.com/ConsumerDataStandard
 <a id="scenarios"></a>
 # Test Scenarios
 
+<a id="scenario-s.eaa.047"></a>
+## S.EAA.047: Get Energy Accounts v1
+
+### Testing Sequence:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Execute Test|[T.EAA.001: Get Energy Accounts - no pagination](#testcase-t.eaa.001)|
+|2|Execute Test|[T.EAA.002: Get Energy Accounts - with pagination](#testcase-t.eaa.002)|
+
+
+<a id="scenario-s.eaa.048"></a>
+## S.EAA.048: Get Energy Accounts Negative v1
+
+### Testing Sequence:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Execute Test|[T.EAA.003: Get Energy Accounts - invalid page parameters](#testcase-t.eaa.003)|
+|2|Execute Test|[T.EAA.004: Get Energy Accounts - unsupported version without x-min-v included](#testcase-t.eaa.004)|
+|3|Execute Test|[T.EAA.005: Get Energy Accounts - invalid version value](#testcase-t.eaa.005)|
+|4|Execute Test|[T.EAA.006: Get Energy Accounts - invalid version format](#testcase-t.eaa.006)|
+|5|Execute Test|[T.EAA.007: Get Energy Accounts - unsupported version when x-min-v is included](#testcase-t.eaa.007)|
+|6|Execute Test|[T.EAA.008: Get Energy Accounts - invalid FAPI Interaction ID format ](#testcase-t.eaa.008)|
+|7|Execute Test|[T.EAA.009: Get Energy Accounts - missing FAPI Auth Date](#testcase-t.eaa.009)|
+|8|Execute Test|[T.EAA.010: Get Energy Accounts -  invalid FAPI Auth Date](#testcase-t.eaa.010)|
+|9|Execute Test|[T.EAA.011: Get Energy Accounts - missing FAPI Customer IP Address](#testcase-t.eaa.011)|
+|10|Execute Test|[T.EAA.012: Get Energy Accounts - invalid FAPI Customer IP Address](#testcase-t.eaa.012)|
+|11|Execute Test|[T.EAA.013: Get Energy Accounts - missing CDS Client Header](#testcase-t.eaa.013)|
+|12|Execute Test|[T.EAA.014: Get Energy Accounts - invalid CDS Client Header](#testcase-t.eaa.014)|
+
+
+<a id="scenario-s.eaa.049"></a>
+## S.EAA.049: Get Energy Account Detail v1
+
+### Testing Sequence:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Execute Test|[T.EAA.015: Get Energy Account Detail ](#testcase-t.eaa.015)|
+
+
+<a id="scenario-s.eaa.050"></a>
+## S.EAA.050: Get Energy Account Detail Negative v1
+
+### Testing Sequence:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Execute Test|[T.EAA.016: Get Energy Account Detail - invalid account id format](#testcase-t.eaa.016)|
+|2|Execute Test|[T.EAA.017: Get Energy Account Detail - unavailable account id ](#testcase-t.eaa.017)|
+|3|Execute Test|[T.EAA.018: Get Energy Account Detail - unsupported version without x-min-v included](#testcase-t.eaa.018)|
+|4|Execute Test|[T.EAA.019: Get Energy Account Detail - invalid version value](#testcase-t.eaa.019)|
+|5|Execute Test|[T.EAA.020: Get Energy Account Detail - invalid version format](#testcase-t.eaa.020)|
+|6|Execute Test|[T.EAA.021: Get Energy Account Detail - unsupported version when x-min-v is included](#testcase-t.eaa.021)|
+|7|Execute Test|[T.EAA.022: Get Energy Account Detail - invalid FAPI Interaction ID format ](#testcase-t.eaa.022)|
+|8|Execute Test|[T.EAA.023: Get Energy Account Detail - missing FAPI Auth Date](#testcase-t.eaa.023)|
+|9|Execute Test|[T.EAA.024: Get Energy Account Detail -  invalid FAPI Auth Date](#testcase-t.eaa.024)|
+|10|Execute Test|[T.EAA.025: Get Energy Account Detail - missing FAPI Customer IP Address](#testcase-t.eaa.025)|
+|11|Execute Test|[T.EAA.026: Get Energy Account Detail - invalid FAPI Customer IP Address](#testcase-t.eaa.026)|
+|12|Execute Test|[T.EAA.027: Get Energy Account Detail - missing CDS Client Header](#testcase-t.eaa.027)|
+|13|Execute Test|[T.EAA.028: Get Energy Account Detail - invalid CDS Client Header](#testcase-t.eaa.028)|
+
+
+<a id="scenario-s.eaa.051"></a>
+## S.EAA.051: Get Agreed Payment Schedule v1
+
+### Testing Sequence:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Execute Test|[T.EAA.029: Get Agreed Payment Schedule](#testcase-t.eaa.029)|
+
+
+<a id="scenario-s.eaa.052"></a>
+## S.EAA.052: Get Agreed Payment Schedule Negative v1
+
+### Testing Sequence:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Execute Test|[T.EAA.030: Get Agreed Payment Schedule - invalid account id format](#testcase-t.eaa.030)|
+|2|Execute Test|[T.EAA.031: Get Agreed Payment Schedule - unavailable account id ](#testcase-t.eaa.031)|
+|3|Execute Test|[T.EAA.032: Get Agreed Payment Schedule - unsupported version without x-min-v included](#testcase-t.eaa.032)|
+|4|Execute Test|[T.EAA.033: Get Agreed Payment Schedule - invalid version value](#testcase-t.eaa.033)|
+|5|Execute Test|[T.EAA.034: Get Agreed Payment Schedule - invalid version format](#testcase-t.eaa.034)|
+|6|Execute Test|[T.EAA.035: Get Agreed Payment Schedule - unsupported version when x-min-v is included](#testcase-t.eaa.035)|
+|7|Execute Test|[T.EAA.036: Get Agreed Payment Schedule - invalid FAPI Interaction ID format ](#testcase-t.eaa.036)|
+|8|Execute Test|[T.EAA.037: Get Agreed Payment Schedule - missing FAPI Auth Date](#testcase-t.eaa.037)|
+|9|Execute Test|[T.EAA.038: Get Agreed Payment Schedule -  invalid FAPI Auth Date](#testcase-t.eaa.038)|
+|10|Execute Test|[T.EAA.039: Get Agreed Payment Schedule - missing FAPI Customer IP Address](#testcase-t.eaa.039)|
+|11|Execute Test|[T.EAA.040: Get Agreed Payment Schedule - invalid FAPI Customer IP Address](#testcase-t.eaa.040)|
+|12|Execute Test|[T.EAA.041: Get Agreed Payment Schedule - missing CDS Client Header](#testcase-t.eaa.041)|
+|13|Execute Test|[T.EAA.042: Get Agreed Payment Schedule - invalid CDS Client Header](#testcase-t.eaa.042)|
+
+
+<a id="scenario-s.eaa.053"></a>
+## S.EAA.053: Get Concessions v1
+
+### Testing Sequence:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Execute Test|[T.EAA.043: Get Concessions ](#testcase-t.eaa.043)|
+
+
+<a id="scenario-s.eaa.054"></a>
+## S.EAA.054: Get Concessions Negative v1
+
+### Testing Sequence:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Execute Test|[T.EAA.044: Get Concessions - invalid account id format](#testcase-t.eaa.044)|
+|2|Execute Test|[T.EAA.045: Get Concessions - unavailable account id ](#testcase-t.eaa.045)|
+|3|Execute Test|[T.EAA.046: Get Concessions - unsupported version without x-min-v included](#testcase-t.eaa.046)|
+|4|Execute Test|[T.EAA.047: Get Concessions - invalid version value](#testcase-t.eaa.047)|
+|5|Execute Test|[T.EAA.048: Get Concessions - invalid version format](#testcase-t.eaa.048)|
+|6|Execute Test|[T.EAA.049: Get Concessions - unsupported version when x-min-v is included](#testcase-t.eaa.049)|
+|7|Execute Test|[T.EAA.050: Get Concessions - invalid FAPI Interaction ID format ](#testcase-t.eaa.050)|
+|8|Execute Test|[T.EAA.051: Get Concessions - missing FAPI Auth Date](#testcase-t.eaa.051)|
+|9|Execute Test|[T.EAA.052: Get Concessions - invalid FAPI Auth Date](#testcase-t.eaa.052)|
+|10|Execute Test|[T.EAA.053: Get Concessions - missing FAPI Customer IP Address](#testcase-t.eaa.053)|
+|11|Execute Test|[T.EAA.054: Get Concessions - invalid FAPI Customer IP Address](#testcase-t.eaa.054)|
+|12|Execute Test|[T.EAA.055: Get Concessions - missing CDS Client Header](#testcase-t.eaa.055)|
+|13|Execute Test|[T.EAA.056: Get Concessions - invalid CDS Client Header](#testcase-t.eaa.056)|
+
+
 <a id="scenario-s.ear.073"></a>
 ## S.EAR.073: Get Service Points v1
 
@@ -74,7 +242,7 @@ Test cases which will return a 2xx status code
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Setup|Authorise session</br>AND x-v is set in header|
+|1|Setup|Authorise session</br>AND x-v is set in header|
 |2|Execute Test|[T.EAR.001: ADR call to DH: Get Service Points - no pagination](#testcase-t.ear.001)|
 |3|Execute Test|[T.EAR.002: ADR call to DH: Get Service Points - with pagination](#testcase-t.ear.002)|
 
@@ -359,7 +527,7 @@ Test cases which will return codes other than 2xx
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
 
 
 ### Testing Sequence:
@@ -375,7 +543,7 @@ Test cases which will return codes other than 2xx
 
 ### References:
 
-* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr)
 
 
 ### Testing Sequence:
@@ -552,6 +720,1995 @@ Test cases which will return codes other than 2xx
 <a id="testcases"></a>
 # Test Cases
 
+<a id="testcase-t.eaa.001"></a>
+## T.EAA.001: Get Energy Accounts - no pagination
+
+Negative test case
+
+Obtain the list of energy accounts available under the authorised consent 
+
+### Purpose:
+
+Test API without any pagination partameters
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* Neither &lt;page-size&gt; or &lt;page&gt; query parameters are provided
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
+* [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
+* [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
+* [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
+* [A.EAA.001: Validate schema - EnergyAccountListResponse](#assertion-a.eaa.001)
+
+
+<a id="testcase-t.eaa.002"></a>
+## T.EAA.002: Get Energy Accounts - with pagination
+
+Negative test case
+
+Obtain the list of energy accounts available under the authorised con
+
+### Purpose:
+
+Test API with pagination partameters
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* &lt;page-size&gt; and &lt;page&gt; query parameters are provided
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
+* [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
+* [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
+* [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
+* [A.CPG.001: Validate pagination - LinksPaginated ](#assertion-a.cpg.001)
+* [A.EAA.001: Validate schema - EnergyAccountListResponse](#assertion-a.eaa.001)
+
+
+<a id="testcase-t.eaa.003"></a>
+## T.EAA.003: Get Energy Accounts - invalid page parameters
+
+Positive test case
+
+Ensure the endpoint returns pagination errors
+
+### Purpose:
+
+Test API with invalid pagination parameters
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* &lt;page&gt; OR (&lt;page&gt; 
+* AND &lt;page-size&gt;) query parameters are provided
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CPG.002: Validate pagination - Invalid page size value](#assertion-a.cpg.002)
+* [A.CPG.003: Validate pagination - Non-numeric <page>](#assertion-a.cpg.003)
+* [A.CPG.004: Validate pagination - Max record limit exceeded](#assertion-a.cpg.004)
+* [A.CPG.005: Validate pagination - Non-numeric <page-size>](#assertion-a.cpg.005)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.004"></a>
+## T.EAA.004: Get Energy Accounts - unsupported version without x-min-v included
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with a version that is not supported by the DH
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* The value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.005"></a>
+## T.EAA.005: Get Energy Accounts - invalid version value
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with invalid version value
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-v&gt; version is not a valid number
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.006"></a>
+## T.EAA.006: Get Energy Accounts - invalid version format
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with invalid version format
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-v&gt; format is not valid 
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.007"></a>
+## T.EAA.007: Get Energy Accounts - unsupported version when x-min-v is included
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with a version that is not supported by the DH
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-min-v&gt; is included
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.008"></a>
+## T.EAA.008: Get Energy Accounts - invalid FAPI Interaction ID format 
+
+Positive test case
+
+Ensure the endpoint returns FAPI Interaction ID errors
+
+### Purpose:
+
+Test API where FAPI Interaction ID format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
+
+
+<a id="testcase-t.eaa.009"></a>
+## T.EAA.009: Get Energy Accounts - missing FAPI Auth Date
+
+Positive test case
+
+Ensure the endpoint returns FAPI Auth date errors 
+
+### Purpose:
+
+Test API when FAPI Auth date is missing from the header
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-auth-date&gt; is not present in the header
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFA.002: Validate FAPI Auth date - missing from header](#assertion-a.cfa.002)
+
+
+<a id="testcase-t.eaa.010"></a>
+## T.EAA.010: Get Energy Accounts -  invalid FAPI Auth Date
+
+Positive test case
+
+Ensure the endpoint returns FAPI Auth date errors 
+
+### Purpose:
+
+Test API when FAPI Auth date is present but the format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-auth-date&gt; format is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFA.003: Validate FAPI Auth date - invalid format](#assertion-a.cfa.003)
+
+
+<a id="testcase-t.eaa.011"></a>
+## T.EAA.011: Get Energy Accounts - missing FAPI Customer IP Address
+
+Positive test case
+
+Ensure the endpoint returns FAPI Customer IP address errors 
+
+### Purpose:
+
+Test API when FAPI Customer IP Address is missing from the header
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-customer-ip-address&gt;  is not present in the header
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFC.002: Validate FAPI Customer IP Address - missing from header](#assertion-a.cfc.002)
+
+
+<a id="testcase-t.eaa.012"></a>
+## T.EAA.012: Get Energy Accounts - invalid FAPI Customer IP Address
+
+Positive test case
+
+Ensure the endpoint returns FAPI Customer IP address errors 
+
+### Purpose:
+
+Test API when FAPI Customer IP Address is present but the format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-customer-ip-address&gt;  format is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFC.003: Validate FAPI Customer IP Address - invalid format](#assertion-a.cfc.003)
+
+
+<a id="testcase-t.eaa.013"></a>
+## T.EAA.013: Get Energy Accounts - missing CDS Client Header
+
+Positive test case
+
+Ensure the endpoint returns CDS Client Header errors 
+
+### Purpose:
+
+Test API when CDS Client Header is missing from the header
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-cds-client-header&gt; is not present in the header
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CCH.002: Validate the client headers - missing from header](#assertion-a.cch.002)
+
+
+<a id="testcase-t.eaa.014"></a>
+## T.EAA.014: Get Energy Accounts - invalid CDS Client Header
+
+Positive test case
+
+Ensure the endpoint returns CDS Client Header errors 
+
+### Purpose:
+
+Test API when CDS Client Header is present but the format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-cds-client-header&gt; format is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CCH.003: Validate the client headers - invalid format](#assertion-a.cch.003)
+
+
+<a id="testcase-t.eaa.015"></a>
+## T.EAA.015: Get Energy Account Detail 
+
+Negative test case
+
+Obtain detailed information for a specific energy account
+
+### Purpose:
+
+Test API with valid account and version
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* The {accountId} is set in the Path 
+* AND value &lt;x-v&gt; is set in the request header to a version supported by the DH
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
+* [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
+* [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
+* [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
+* [A.EAA.002: Validate account and schema - EnergyAccountDetailResponse](#assertion-a.eaa.002)
+
+
+<a id="testcase-t.eaa.016"></a>
+## T.EAA.016: Get Energy Account Detail - invalid account id format
+
+Positive test case
+
+Ensure the endpoint returns accountId compatible errors
+
+### Purpose:
+
+Test API with an invalid accountId
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* The {accountId} is set in the Path to a value that is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.EAA.003: Validate account identifier - invalid value](#assertion-a.eaa.003)
+
+
+<a id="testcase-t.eaa.017"></a>
+## T.EAA.017: Get Energy Account Detail - unavailable account id 
+
+Positive test case
+
+Ensure the endpoint returns accountId compatible errors
+
+### Purpose:
+
+Test API with an unavailable accountId
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* The {accountID} is set in the Path to a value that is unavailable
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.EAA.004: Validate account identifier - unavailable account](#assertion-a.eaa.004)
+
+
+<a id="testcase-t.eaa.018"></a>
+## T.EAA.018: Get Energy Account Detail - unsupported version without x-min-v included
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with a version that is not supported by the DH
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* The value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.019"></a>
+## T.EAA.019: Get Energy Account Detail - invalid version value
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with invalid version value
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-v&gt; version is not a valid number
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.020"></a>
+## T.EAA.020: Get Energy Account Detail - invalid version format
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with invalid version format
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-v&gt; format is not valid 
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.021"></a>
+## T.EAA.021: Get Energy Account Detail - unsupported version when x-min-v is included
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with a version that is not supported by the DH
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-min-v&gt; is included
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.022"></a>
+## T.EAA.022: Get Energy Account Detail - invalid FAPI Interaction ID format 
+
+Positive test case
+
+Ensure the endpoint returns FAPI Interaction ID errors
+
+### Purpose:
+
+Test API where FAPI Interaction ID format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
+
+
+<a id="testcase-t.eaa.023"></a>
+## T.EAA.023: Get Energy Account Detail - missing FAPI Auth Date
+
+Positive test case
+
+Ensure the endpoint returns FAPI Auth date errors 
+
+### Purpose:
+
+Test API when FAPI Auth date is missing from the header
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-auth-date&gt; is not present in the header
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFA.002: Validate FAPI Auth date - missing from header](#assertion-a.cfa.002)
+
+
+<a id="testcase-t.eaa.024"></a>
+## T.EAA.024: Get Energy Account Detail -  invalid FAPI Auth Date
+
+Positive test case
+
+Ensure the endpoint returns FAPI Auth date errors 
+
+### Purpose:
+
+Test API when FAPI Auth date is present but the format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-auth-date&gt; format is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFA.003: Validate FAPI Auth date - invalid format](#assertion-a.cfa.003)
+
+
+<a id="testcase-t.eaa.025"></a>
+## T.EAA.025: Get Energy Account Detail - missing FAPI Customer IP Address
+
+Positive test case
+
+Ensure the endpoint returns FAPI Customer IP address errors 
+
+### Purpose:
+
+Test API when FAPI Customer IP Address is missing from the header
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-customer-ip-address&gt;  is not present in the header
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFC.002: Validate FAPI Customer IP Address - missing from header](#assertion-a.cfc.002)
+
+
+<a id="testcase-t.eaa.026"></a>
+## T.EAA.026: Get Energy Account Detail - invalid FAPI Customer IP Address
+
+Positive test case
+
+Ensure the endpoint returns FAPI Customer IP address errors 
+
+### Purpose:
+
+Test API when FAPI Customer IP Address is present but the format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-customer-ip-address&gt;  format is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFC.003: Validate FAPI Customer IP Address - invalid format](#assertion-a.cfc.003)
+
+
+<a id="testcase-t.eaa.027"></a>
+## T.EAA.027: Get Energy Account Detail - missing CDS Client Header
+
+Positive test case
+
+Ensure the endpoint returns CDS Client Header errors 
+
+### Purpose:
+
+Test API when CDS Client Header is missing from the header
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-cds-client-header&gt; is not present in the header
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CCH.002: Validate the client headers - missing from header](#assertion-a.cch.002)
+
+
+<a id="testcase-t.eaa.028"></a>
+## T.EAA.028: Get Energy Account Detail - invalid CDS Client Header
+
+Positive test case
+
+Ensure the endpoint returns CDS Client Header errors 
+
+### Purpose:
+
+Test API when CDS Client Header is present but the format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-cds-client-header&gt; format is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CCH.003: Validate the client headers - invalid format](#assertion-a.cch.003)
+
+
+<a id="testcase-t.eaa.029"></a>
+## T.EAA.029: Get Agreed Payment Schedule
+
+Negative test case
+
+Obtain the agreed payment schedule and details, if any, for a specific energy account
+
+### Purpose:
+
+Test API with valid account and version
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* The {accountId} is set in the Path 
+* AND value &lt;x-v&gt; is set in the request header to a version supported by the DH
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
+* [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
+* [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
+* [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
+* [A.EAA.005: validate account and schema - EnergyPaymentScheduleResponse](#assertion-a.eaa.005)
+
+
+<a id="testcase-t.eaa.030"></a>
+## T.EAA.030: Get Agreed Payment Schedule - invalid account id format
+
+Positive test case
+
+Ensure the endpoint returns accountId compatible errors
+
+### Purpose:
+
+Test API with an invalid accountId
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* The {accountId} is set in the Path to a value that is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.EAA.003: Validate account identifier - invalid value](#assertion-a.eaa.003)
+
+
+<a id="testcase-t.eaa.031"></a>
+## T.EAA.031: Get Agreed Payment Schedule - unavailable account id 
+
+Positive test case
+
+Ensure the endpoint returns accountId compatible errors
+
+### Purpose:
+
+Test API with an unavailable accountId
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* The {accountID} is set in the Path to a value that is unavailable
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.EAA.004: Validate account identifier - unavailable account](#assertion-a.eaa.004)
+
+
+<a id="testcase-t.eaa.032"></a>
+## T.EAA.032: Get Agreed Payment Schedule - unsupported version without x-min-v included
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with a version that is not supported by the DH
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* The value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.033"></a>
+## T.EAA.033: Get Agreed Payment Schedule - invalid version value
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with invalid version value
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-v&gt; version is not a valid number
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.034"></a>
+## T.EAA.034: Get Agreed Payment Schedule - invalid version format
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with invalid version format
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-v&gt; format is not valid 
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.035"></a>
+## T.EAA.035: Get Agreed Payment Schedule - unsupported version when x-min-v is included
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with a version that is not supported by the DH
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-min-v&gt; is included
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.036"></a>
+## T.EAA.036: Get Agreed Payment Schedule - invalid FAPI Interaction ID format 
+
+Positive test case
+
+Ensure the endpoint returns FAPI Interaction ID errors
+
+### Purpose:
+
+Test API where FAPI Interaction ID format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
+
+
+<a id="testcase-t.eaa.037"></a>
+## T.EAA.037: Get Agreed Payment Schedule - missing FAPI Auth Date
+
+Positive test case
+
+Ensure the endpoint returns FAPI Auth date errors 
+
+### Purpose:
+
+Test API when FAPI Auth date is missing from the header
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-auth-date&gt; is not present in the header
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFA.002: Validate FAPI Auth date - missing from header](#assertion-a.cfa.002)
+
+
+<a id="testcase-t.eaa.038"></a>
+## T.EAA.038: Get Agreed Payment Schedule -  invalid FAPI Auth Date
+
+Positive test case
+
+Ensure the endpoint returns FAPI Auth date errors 
+
+### Purpose:
+
+Test API when FAPI Auth date is present but the format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-auth-date&gt; format is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFA.003: Validate FAPI Auth date - invalid format](#assertion-a.cfa.003)
+
+
+<a id="testcase-t.eaa.039"></a>
+## T.EAA.039: Get Agreed Payment Schedule - missing FAPI Customer IP Address
+
+Positive test case
+
+Ensure the endpoint returns FAPI Customer IP address errors 
+
+### Purpose:
+
+Test API when FAPI Customer IP Address is missing from the header
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-customer-ip-address&gt;  is not present in the header
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFC.002: Validate FAPI Customer IP Address - missing from header](#assertion-a.cfc.002)
+
+
+<a id="testcase-t.eaa.040"></a>
+## T.EAA.040: Get Agreed Payment Schedule - invalid FAPI Customer IP Address
+
+Positive test case
+
+Ensure the endpoint returns FAPI Customer IP address errors 
+
+### Purpose:
+
+Test API when FAPI Customer IP Address is present but the format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-customer-ip-address&gt;  format is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFC.003: Validate FAPI Customer IP Address - invalid format](#assertion-a.cfc.003)
+
+
+<a id="testcase-t.eaa.041"></a>
+## T.EAA.041: Get Agreed Payment Schedule - missing CDS Client Header
+
+Positive test case
+
+Ensure the endpoint returns CDS Client Header errors 
+
+### Purpose:
+
+Test API when CDS Client Header is missing from the header
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-cds-client-header&gt; is not present in the header
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CCH.002: Validate the client headers - missing from header](#assertion-a.cch.002)
+
+
+<a id="testcase-t.eaa.042"></a>
+## T.EAA.042: Get Agreed Payment Schedule - invalid CDS Client Header
+
+Positive test case
+
+Ensure the endpoint returns CDS Client Header errors 
+
+### Purpose:
+
+Test API when CDS Client Header is present but the format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule](https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-cds-client-header&gt; format is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CCH.003: Validate the client headers - invalid format](#assertion-a.cch.003)
+
+
+<a id="testcase-t.eaa.043"></a>
+## T.EAA.043: Get Concessions 
+
+Negative test case
+
+Obtain the details of any concessions or arrangements applied to a specific energy account
+
+### Purpose:
+
+Test API with valid account and version
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* The {accountId} is set in the Path 
+* AND value &lt;x-v&gt; is set in the request header to a version supported by the DH
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/concessions|
+
+
+### End State Assertions:
+
+* [A.CVN.001: Validate version - valid version number [x-v]](#assertion-a.cvn.001)
+* [A.CVM.001: Validate version - <x-min-v> is provided](#assertion-a.cvm.001)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFA.001: Validate FAPI Auth date - valid format](#assertion-a.cfa.001)
+* [A.CFC.001: Validate FAPI Customer IP Address - is present](#assertion-a.cfc.001)
+* [A.CCH.001: Validate the client headers - valid format](#assertion-a.cch.001)
+* [A.EAA.006: validate account and schema -EnergyConcessionsResponse](#assertion-a.eaa.006)
+
+
+<a id="testcase-t.eaa.044"></a>
+## T.EAA.044: Get Concessions - invalid account id format
+
+Positive test case
+
+Ensure the endpoint returns accountId compatible errors
+
+### Purpose:
+
+Test API with an invalid accountId
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* The {accountId} is set in the Path to a value that is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.EAA.003: Validate account identifier - invalid value](#assertion-a.eaa.003)
+
+
+<a id="testcase-t.eaa.045"></a>
+## T.EAA.045: Get Concessions - unavailable account id 
+
+Positive test case
+
+Ensure the endpoint returns accountId compatible errors
+
+### Purpose:
+
+Test API with an unavailable accountId
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* The {accountID} is set in the Path to a value that is unavailable
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.EAA.004: Validate account identifier - unavailable account](#assertion-a.eaa.004)
+
+
+<a id="testcase-t.eaa.046"></a>
+## T.EAA.046: Get Concessions - unsupported version without x-min-v included
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with a version that is not supported by the DH
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* The value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CVN.004: Validate version - unsupported version without <x-min-v>](#assertion-a.cvn.004)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.047"></a>
+## T.EAA.047: Get Concessions - invalid version value
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with invalid version value
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-v&gt; version is not a valid number
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CVN.002: Validate version - invalid version value [x-v]](#assertion-a.cvn.002)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.048"></a>
+## T.EAA.048: Get Concessions - invalid version format
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with invalid version format
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-v&gt; format is not valid 
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CVN.003: Validate version - validate [x-v] format](#assertion-a.cvn.003)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.049"></a>
+## T.EAA.049: Get Concessions - unsupported version when x-min-v is included
+
+Positive test case
+
+Ensure the endpoint returns version compatibility errors
+
+### Purpose:
+
+Test API with a version that is not supported by the DH
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* the value &lt;x-v&gt; is set in the request header to a version not supported by the DH
+* AND the &lt;x-min-v&gt; is included
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CVN.005: Validate version - unsupported version with <x-min-v>](#assertion-a.cvn.005)
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+
+
+<a id="testcase-t.eaa.050"></a>
+## T.EAA.050: Get Concessions - invalid FAPI Interaction ID format 
+
+Positive test case
+
+Ensure the endpoint returns FAPI Interaction ID errors
+
+### Purpose:
+
+Test API where FAPI Interaction ID format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-interaction-id&gt; format is invalid 
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.003: Validate FAPI Interaction ID - invalid format](#assertion-a.cfi.003)
+
+
+<a id="testcase-t.eaa.051"></a>
+## T.EAA.051: Get Concessions - missing FAPI Auth Date
+
+Positive test case
+
+Ensure the endpoint returns FAPI Auth date errors 
+
+### Purpose:
+
+Test API when FAPI Auth date is missing from the header
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-auth-date&gt; is not present in the header
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFA.002: Validate FAPI Auth date - missing from header](#assertion-a.cfa.002)
+
+
+<a id="testcase-t.eaa.052"></a>
+## T.EAA.052: Get Concessions - invalid FAPI Auth Date
+
+Positive test case
+
+Ensure the endpoint returns FAPI Auth date errors 
+
+### Purpose:
+
+Test API when FAPI Auth date is present but the format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-auth-date&gt; format is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFA.003: Validate FAPI Auth date - invalid format](#assertion-a.cfa.003)
+
+
+<a id="testcase-t.eaa.053"></a>
+## T.EAA.053: Get Concessions - missing FAPI Customer IP Address
+
+Positive test case
+
+Ensure the endpoint returns FAPI Customer IP address errors 
+
+### Purpose:
+
+Test API when FAPI Customer IP Address is missing from the header
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-customer-ip-address&gt;  is not present in the header
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFC.002: Validate FAPI Customer IP Address - missing from header](#assertion-a.cfc.002)
+
+
+<a id="testcase-t.eaa.054"></a>
+## T.EAA.054: Get Concessions - invalid FAPI Customer IP Address
+
+Positive test case
+
+Ensure the endpoint returns FAPI Customer IP address errors 
+
+### Purpose:
+
+Test API when FAPI Customer IP Address is present but the format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-fapi-customer-ip-address&gt;  format is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CFC.003: Validate FAPI Customer IP Address - invalid format](#assertion-a.cfc.003)
+
+
+<a id="testcase-t.eaa.055"></a>
+## T.EAA.055: Get Concessions - missing CDS Client Header
+
+Positive test case
+
+Ensure the endpoint returns CDS Client Header errors 
+
+### Purpose:
+
+Test API when CDS Client Header is missing from the header
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-cds-client-header&gt; is not present in the header
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CCH.002: Validate the client headers - missing from header](#assertion-a.cch.002)
+
+
+<a id="testcase-t.eaa.056"></a>
+## T.EAA.056: Get Concessions - invalid CDS Client Header
+
+Positive test case
+
+Ensure the endpoint returns CDS Client Header errors 
+
+### Purpose:
+
+Test API when CDS Client Header is present but the format is invalid
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#get-concessions](https://consumerdatastandardsaustralia.github.io/standards/#get-concessions)
+
+
+### Execution Pre-conditions:
+
+* The &lt;x-cds-client-header&gt; format is invalid
+
+
+### Execution Steps:
+
+|Action No.|Action Type|Detail|
+|-|-|-|
+|1|Action|GET /energy/accounts/{accountId}/payment-schedule|
+
+
+### End State Assertions:
+
+* [A.CFI.001: Validate FAPI Interaction ID - included in request](#assertion-a.cfi.001)
+* [A.CFI.002: Validate FAPI Interaction ID - not in request](#assertion-a.cfi.002)
+* [A.CCH.003: Validate the client headers - invalid format](#assertion-a.cch.003)
+
+
 <a id="testcase-t.ear.001"></a>
 ## T.EAR.001: ADR call to DH: Get Service Points - no pagination
 
@@ -612,7 +2769,7 @@ Test API with pagination partameters
 
 ### Execution Pre-conditions:
 
-*  &lt;page-size&gt; and&lt;page&gt; query parameters are provided
+* &lt;page-size&gt; and&lt;page&gt; query parameters are provided
 
 
 ### Execution Steps:
@@ -838,7 +2995,7 @@ Test API with an invalid servicePointId
 
 ### Execution Pre-conditions:
 
-* The &lt;{servicePointId}&gt; is set in the Path to a value that is 
+* The {servicePointId} is set in the Path to a value that is invalid
 
 
 ### Execution Steps:
@@ -8809,6 +10966,133 @@ Critical (Test Fails)
 |Given|the request is a POST request</br>AND the request body is not in a valid JSON format, i.e. it is malformed|
 |When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
+
+
+<a id="assertion-a.eaa.001"></a>
+## A.EAA.001: Validate schema - EnergyAccountListResponse
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyaccountlistresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyaccountlistresponse)
+
+
+### Severity:
+
+Critical (Test Fails)
+
+### Assertion Logic:
+
+|||
+|-|-|
+|Given|the request to call the API is formatted correctly by the ADR|
+|When|a response is returned|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the EnergyAccountListResponse schema</br></div><div class="predicate outer">)</div>|
+
+
+<a id="assertion-a.eaa.002"></a>
+## A.EAA.002: Validate account and schema - EnergyAccountDetailResponse
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyaccountdetailresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyaccountdetailresponse)
+* [https://consumerdatastandardsaustralia.github.io/standards/#energy](https://consumerdatastandardsaustralia.github.io/standards/#energy)
+
+
+### Severity:
+
+Critical (Test Fails)
+
+### Assertion Logic:
+
+|||
+|-|-|
+|Given|the {accountID} is included </br>AND the {accountId} value is valid |
+|When|a response is returned|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the EnergyAccountDetailResponse schema</br></div><div class="predicate outer">)</div>|
+
+
+<a id="assertion-a.eaa.003"></a>
+## A.EAA.003: Validate account identifier - invalid value
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#error-404-invalid-energy-account](https://consumerdatastandardsaustralia.github.io/standards/#error-404-invalid-energy-account)
+
+
+### Severity:
+
+Critical (Test Fails)
+
+### Assertion Logic:
+
+|||
+|-|-|
+|Given|the {accountId} is included </br>AND the requested account is permanently unavailable. (No subsequent request for the account will be successful.)|
+|When|a response is returned|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 404</br> the response body has ErrorListReponse object</br> error code is "Authorisation/InvalidEnergyAccount"</br></div><div class="predicate outer">)</div>|
+
+
+<a id="assertion-a.eaa.004"></a>
+## A.EAA.004: Validate account identifier - unavailable account
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#error-404-unavailable-energy-account](https://consumerdatastandardsaustralia.github.io/standards/#error-404-unavailable-energy-account)
+
+
+### Severity:
+
+Critical (Test Fails)
+
+### Assertion Logic:
+
+|||
+|-|-|
+|Given|the {accoundId} is included</br>AND the requested account is temporarily unavailable. (Subsequent requests for the account may be successful.)|
+|When|a response is returned|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 404</br> the response body has ErrorListReponse object</br> error code is "Authorisation/UnavailableEnergyAccount"</br></div><div class="predicate outer">)</div>|
+
+
+<a id="assertion-a.eaa.005"></a>
+## A.EAA.005: validate account and schema - EnergyPaymentScheduleResponse
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#tocSenergypaymentscheduleresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSenergypaymentscheduleresponse)
+
+
+### Severity:
+
+Critical (Test Fails)
+
+### Assertion Logic:
+
+|||
+|-|-|
+|Given|the {accountID} is included </br>AND the {accountId} value is valid |
+|When|a response is returned|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the EnergyPaymentScheduleResponse schema</br></div><div class="predicate outer">)</div>|
+
+
+<a id="assertion-a.eaa.006"></a>
+## A.EAA.006: validate account and schema -EnergyConcessionsResponse
+
+### References:
+
+* [https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyconcessionsresponse](https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyconcessionsresponse)
+
+
+### Severity:
+
+Critical (Test Fails)
+
+### Assertion Logic:
+
+|||
+|-|-|
+|Given|the {accountID} is included </br>AND the {accountId} value is valid |
+|When|a response is returned|
+|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the EnergyConcessionsResponse schema</br></div><div class="predicate outer">)</div>|
 
 
 <a id="assertion-a.ear.001"></a>

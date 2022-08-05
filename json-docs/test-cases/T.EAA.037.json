@@ -1,0 +1,26 @@
+{
+  "id": "T.EAA.037",
+  "title": "Get Agreed Payment Schedule - missing FAPI Auth Date",
+  "description": "Ensure the endpoint returns FAPI Auth date errors ",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-fapi-auth-date> is not present in the header"
+  ],
+  "purpose": "Test API when FAPI Auth date is missing from the header",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/accounts/{accountId}/payment-schedule"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.CFA.002"
+  ]
+}

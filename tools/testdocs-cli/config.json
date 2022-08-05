@@ -1,8 +1,8 @@
 {
     "title": "The CDR Test Documentation",
     "description": "This documentation has been  created by the DSB to assist participants in the development of compliant APIs",
-    "docVersion": "1.0.2",
+    "docVersion": "1.0.3",
     "cdrVersion": "1.17.0",
-    "changeLogUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v1.0.2/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx",
+    "changeLogUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v1.0.3/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx",
     "githubRepoUrl": ""
 }

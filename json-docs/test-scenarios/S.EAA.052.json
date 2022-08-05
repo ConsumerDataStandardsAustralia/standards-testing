@@ -1,0 +1,61 @@
+{
+  "id": "S.EAA.052",
+  "title": "Get Agreed Payment Schedule Negative v1",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.030"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.031"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.032"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.033"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.034"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.035"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.036"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.037"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.038"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.039"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.040"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.041"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.042"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "S.EAA.054",
+  "title": "Get Concessions Negative v1",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.044"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.045"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.046"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.047"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.048"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.049"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.050"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.051"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.052"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.053"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.054"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.055"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.056"
+    }
+  ]
+}

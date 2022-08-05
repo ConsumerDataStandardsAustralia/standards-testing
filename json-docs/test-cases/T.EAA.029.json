@@ -1,0 +1,32 @@
+{
+  "id": "T.EAA.029",
+  "title": "Get Agreed Payment Schedule",
+  "description": "Obtain the agreed payment schedule and details, if any, for a specific energy account",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+    }
+  ],
+  "negative": true,
+  "preConditions": [
+    "The {accountId} is set in the Path ",
+    "AND value <x-v> is set in the request header to a version supported by the DH"
+  ],
+  "purpose": "Test API with valid account and version",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/accounts/{accountId}/payment-schedule"
+    }
+  ],
+  "assertions": [
+    "A.CVN.001",
+    "A.CVM.001",
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.CFA.001",
+    "A.CFC.001",
+    "A.CCH.001",
+    "A.EAA.005"
+  ]
+}

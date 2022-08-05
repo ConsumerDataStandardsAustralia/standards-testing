@@ -1,0 +1,13 @@
+{
+  "id": "S.EAA.053",
+  "title": "Get Concessions v1",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.043"
+    }
+  ]
+}

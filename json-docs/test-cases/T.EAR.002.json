@@ -13,7 +13,7 @@
   ],
   "negative": true,
   "preConditions": [
-    " <page-size> and<page> query parameters are provided"
+    "<page-size> and<page> query parameters are provided"
   ],
   "purpose": "Test API with pagination partameters",
   "steps": [

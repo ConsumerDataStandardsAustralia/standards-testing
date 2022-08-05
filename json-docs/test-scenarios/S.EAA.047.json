@@ -1,0 +1,17 @@
+{
+  "id": "S.EAA.047",
+  "title": "Get Energy Accounts v1",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.001"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.002"
+    }
+  ]
+}

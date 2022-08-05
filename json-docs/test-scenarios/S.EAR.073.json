@@ -11,7 +11,7 @@
   "sequence": [
     {
       "type": "SETUP",
-      "action": "Authorise session\nAND x-v is set in header"
+      "action": "Authorise session\r\nAND x-v is set in header"
     },
     {
       "type": "TEST",
