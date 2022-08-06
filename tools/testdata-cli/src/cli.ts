@@ -11,7 +11,8 @@ const argv = yargs
   // Useful aliases.
   .alias({
     h: 'help',
-    v: 'validate',
+    f: 'factory',
+    fs: 'factories',
     g: 'generate',
     s: 'schema'
   })

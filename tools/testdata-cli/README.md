@@ -40,18 +40,16 @@ Output the current test data schema to stdout
 `testdata data-schema --vonly`
 Output the version of test data schema to stdout
 
-### Validate Documentation Command
+### List Factories Command
 
 #### Command
 
-`validate <filename>`
-Validate that the JSON file specified is a valid JSON file and also fully compliant with the current test documentation schema.  Errors will be published to stderr and a non-zero response will be provided.
+`factories`
+List the factories that are currently implemented with a short description of each factory describing its purpose.
 
 #### Arguments
 
-|Argument|Description|
-|-|-|
-|`<filename>`| The path to the file (expected to be a valid JSON file) to be validated.|
+None
 
 #### Options
 
@@ -59,24 +57,22 @@ None
 
 #### Examples
 
-`testdocs validate doc.json`
-Validate `doc.json` and output any validation errors to stderr
+`testdata factories`
+List the factories implemented in this version of the CLI
 
 
-### Document Generation Command
+### Factory Documentation Command
 
 #### Command
 
-`generate <type> <src> <dst>`
-Read in the specified source and generate output according to the type specified.  Can be used to generate human readable versions of the test documentation data in various formats.
+`factory <factory-id>`
+Give detailed documentation for a specific factory including the purpose of the factory, the data that it generates or modifies and the options that it consumes.
 
 #### Arguments
 
 |Argument|Description|
 |-|-|
-|`<type>`| The type of the output to generate.  Can be `json`, `html` or `markdown`.  Note that the `json` mode converts a series of CSV files exported from Excel into JSON and is temporary until an editor capability is available.|
-|`<src>`| The source file or path to read in and generate the output from.  For `html` and `markdown` the `<src>` is expected to be a single JSON file containing test documentation compliant with the current schema.  For `json` the `<src>` is expected to be a path containing a series of CSV files that represent an export of the the test documentation from an Excel workbook.|
-|`<dst>`| The destination file for the generated output.  The type will align to the type specified in the `<type>` argument. |
+|`<factory-id>`| The ID of the factory that documentation is requested for. |
 
 #### Options
 
@@ -84,14 +80,33 @@ None
 
 #### Examples
 
-`testdocs generate json ./csvfiles/ ./doc.json`
-Convert a folder structure containing a series of CSV files each containing different aspects of the test documentation into a single JSON file containing test documentation aligned to the test doc schema.  Note that schema compliance for the output is dependent on the validity of the data in the CSV files.
+`testdata factory load-static-data`
+Output the detailed documentation for the `load-static-data` factory.
 
-`testdocs generate html ./doc.json ./doc.html`
-Convert the documentation in `doc.json` into standalone HTML and output to `doc.html`.  All CSS and JS will be inline in the resulting HTML file.
 
-`testdocs generate markdown ./doc.json ./doc.md`
-Convert the documentation in `doc.json` into Markdown and output to `doc.md`.  Note that some HTML statements will be included in the markdown so a markdown renderer that supports inline HTML is expected to be used to view the resulting output.
+### Data Generation Command
+
+#### Command
+
+`generate <options> <dst>`
+Read in the specified options file and generate a data file in the file specified as the destination.  The resulting file will contain JSON consistent with the test data schema supported by the CLI.
+
+#### Arguments
+
+|Argument|Description|
+|-|-|
+|`<options>`| The options indicating the factories to execute, in what order and with what options specified. |
+|`<dst>`| The destination file for the generated output.  The contents will always be JSON consistent with the test data schema. |
+
+#### Options
+
+None
+
+#### Examples
+
+`testdata generate options.json data.json`
+Generate test data using the options in the `options.json` file and output the resulting data to the `data.json` file.
+
 
 ## Maintenance
 
@@ -115,12 +130,30 @@ To publish the repository to npm (needs permission)
 2. Publish
 `npm publish --access public`
 
+
 ## Outstanding Features
 
 The following are a list of features that are intended but yet to be added to this capability (contributions welcome):
 
-* Standalone browser based editor for modifying schema compliant Documentation
-* Addition of test data generation (possibly a separate CLI)
-* Refactor so that the core libraries are in a separate module for reuse
-* Add additional options to output generation to allow for insertion of additional content (eg. CSS, JS)
-* Unit testing to support contributions
+* Basic factory framework implementation
+* Document process for adding additional factories
+* Detailed documentation on option file structure
+* Additional basic factories:
+ * Factory for reading in a static data file
+ * Factory for updating dates to be relative to a specific time
+ * Factory to generate a series of basic individual customers
+ * Factory to generate a series of basic business customers
+ * Factory to generate register data
+* Additional factories specific to banking
+ * Factory to generate basic retail bank account data
+ * Factory to generate basic business bank account data
+ * Factory to generate basic transaction data
+ * Factory to generate basic data for other banking data clusters
+* Additional factories specific to energy
+ * Factory to generate basic retail energy account data
+ * Factory to generate basic business energy account data
+ * Factory to generate basic billing and invoice data
+ * Factory to generate basic NMI standing data
+ * Factory to generate basic DER data
+ * Factory to generate basic usage data
+ * Factory to generate basic data for other energy data clusters
