@@ -2,27 +2,25 @@
 
 ## Overview
 
-TODO Update
-
-The testdocs CLI can be used to validate and render test case documentation documented in JSON that is compliant with the CDR test documentation JSON schema.
+The CDR testdata CLI can be used to generate manufactured test data for the Consumer Data Right standards.  This CLI allows the configuration, through an option file, of a variety of data `factories` that can be used to generate test files with different characteristics.  This project is also designed to allow for additional `factories` to be added via Pull Request to accommodate different scenarios.
 
 This tool has been created by the [Data Standards Body](https://consumerdatastandards.gov.au/) to support participants implementing of the [technical standards](https://github.com/ConsumerDataStandardsAustralia/standards) developed for the Australian Consumer Data Right regime.
 
-The goal of the testdocs CLI is to provide tooling for the documentation of tests so that CDR participants can test their implementations with confidence that they are conformant with the standards.
+The goal of the testdata CLI is to provide support for CDR participants seeking to test their implementations to ensure confidence that they have covered a wide range of possible scenarios liked to be encountered in production scenarios.
 
 ## CLI Usage
 
-To install the testdocs command line tool (`testdocs`) you need to have npm installed.  With npm installed run the following command:
-`npm install @cds-au/testdocs -g`
+To install the testdata command line tool (`testdata`) you need to have npm installed.  With npm installed run the following command:
+`npm install @cds-au/testdata -g`
 
 This will make the CLI available globally.
 
-### Documentation Schema Command
+### Test Data Schema Command
 
 #### Command
 
-`doc-schema`
-Print out the testdocs schema currently in use to stdout.  This will be the full JSON schema file and allows for the schema to be reused in your own tools or workflow.
+`data-schema`
+Print out the test data schema currently in use to stdout.  This will be the full JSON schema file and allows for the schema to be reused in your own tools or workflow.
 
 #### Arguments
 
@@ -36,11 +34,11 @@ None
 
 #### Examples
 
-`testdocs doc-schema`
-Output the current test doc schema to stdout
+`testdata data-schema`
+Output the current test data schema to stdout
 
-`testdocs doc-schema --vonly`
-Output the version of test doc schema to stdout
+`testdata data-schema --vonly`
+Output the version of test data schema to stdout
 
 ### Validate Documentation Command
 
