@@ -1,6 +1,6 @@
 {
   "name": "@cds-au/testdocs",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "description": "Tools for managing the presentation of test case documentation for the Australian Consumer Data Right regime",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,9 +10,10 @@
   ],
   "scripts": {
     "lint": "tslint -p .",
-    "sync-schema": "rm -f ./src/schema/* && node ./utils/create-schema-definitions.js",
-    "build-prod": "rm -rf ./dist/ && tsc --project tsconfig.prod.json && chmod +x ./dist/cli.js",
-    "build": "rm -rf ./dist/ && tsc && chmod +x ./dist/cli.js"
+    "sync-schema": "rm -f ./src/schema/* && cp ../../schema/*.json ./src/schema && node ./utils/create-schema-definitions.js",
+    "build": "rm -rf ./dist/ && tsc && chmod +x ./dist/cli.js && npm run copy-additional",
+    "copy-additional": "cp ./config.json ./dist/commands",
+    "publish": "npm publish --access public"
   },
   "author": "Data Standards Body",
   "license": "MIT",
@@ -26,7 +27,8 @@
     "ajv-formats": "^2.1.1",
     "better-ajv-errors": "^1.1.2",
     "csv-parse": "^5.0.4",
+    "dayjs": "^1.11.2",
     "json-schema-to-typescript": "^10.1.5",
-    "yargs": "^17.3.1"
+    "yargs": "^17.4.1"
   }
 }

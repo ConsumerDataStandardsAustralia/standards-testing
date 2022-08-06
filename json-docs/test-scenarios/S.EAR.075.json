@@ -1,0 +1,13 @@
+{
+  "id": "S.EAR.075",
+  "title": "Get Service Point Detail v1",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.006"
+    }
+  ]
+}

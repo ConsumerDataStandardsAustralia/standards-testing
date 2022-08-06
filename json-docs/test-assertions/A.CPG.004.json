@@ -1,0 +1,24 @@
+{
+  "id": "A.CPG.004",
+  "title": "Validate pagination - Max record limit exceeded",
+  "given": [
+    "the <page> parameter is included",
+    "AND the <page> value is greater than the number of pages available "
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 422",
+      " the response body has ErrorListReponse object",
+      " the error code is \"Field/InvalidPage\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#error-codes"
+    }
+  ],
+  "negative": false
+}

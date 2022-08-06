@@ -12,7 +12,8 @@ import {
   Scenario,
   ScenarioAction,
   ConsumerDataRightTestCaseJSONSchema
-} from '../schema';
+} from '../../schema/cdr-test-schema';
+import { JsonGeneratorConfig } from './json-generator-config';
 
 const SUITE_ID_INDEX: number = 1;
 const SUITE_TITLE_INDEX: number = 2;
@@ -26,12 +27,13 @@ const SCENARIO_PURPOSE_INDEX: number = 9;
 const SCENARIO_REFERENCES_INDEX: number = 10;
 const SCENARIO_SETUP_INDEX: number = 11;
 const SCENARIO_CLEANUP_INDEX: number = 12;
-const SCENARIO_TEST_CASES: number = 13;
+const SCENARIO_TEST_CASES: number = 15;
 
 const TEST_ID_INDEX: number = 1;
 const TEST_TITLE_INDEX: number = 4;
 const TEST_REFERENCE_INDEX: number = 5;
 const TEST_POLARITY_INDEX: number = 6;
+const TEST_PURPOSE_INDEX: number = 7;
 const TEST_PRECONDITION_INDEX: number = 8;
 const TEST_DESCRIPTION_INDEX: number = 9;
 const TEST_STEP_TYPE_INDEX: number = 10;
@@ -48,21 +50,21 @@ const ASSERTION_SEVERITY_INDEX: number = 6;
 const ASSERTION_POLARITY_INDEX: number = 7;
 const ASSERTION_REFERENCE_INDEX: number = 8;
 
-export function json(source: string, destination: string, stdout?: Writable, stderr?: Writable): number {
+export function json(source: string, destination: string, config: JsonGeneratorConfig, stdout?: Writable, stderr?: Writable): number {
   const baseSourceDirectory: string = source;
   const baseSinkDirectory: string = destination;
 
   const testCaseDirectorySourcePath = path.join(baseSourceDirectory, '/test-cases/' );
   const testCaseDirectorySinkPath = path.join(baseSinkDirectory, '/test-cases/' );
 
-  const assertionDirectorySourcePath = path.join(baseSourceDirectory, '/assertions/' );
-  const assertionDirectorySinkPath = path.join(baseSinkDirectory, '/assertions/' );
+  const assertionDirectorySourcePath = path.join(baseSourceDirectory, '/test-assertions/' );
+  const assertionDirectorySinkPath = path.join(baseSinkDirectory, 'test-assertions/' );
 
-  const scenarioDirectorySourcePath = path.join(baseSourceDirectory, '/scenarios/' );
-  const scenarioDirectorySinkPath = path.join(baseSinkDirectory, '/scenarios/' );
+  const scenarioDirectorySourcePath = path.join(baseSourceDirectory, '/test-scenarios/' );
+  const scenarioDirectorySinkPath = path.join(baseSinkDirectory, '/test-scenarios/' );
 
   const suiteDirectorySourcePath = path.join(baseSourceDirectory, '/test-suites/' );
-  const suiteDirectorySinkPath = path.join(baseSinkDirectory, '/suites/' );
+  const suiteDirectorySinkPath = path.join(baseSinkDirectory, '/test-suites/' );
 
   // Check that the source path exists and is a directory
   if (!fs.existsSync(baseSourceDirectory) || !fs.lstatSync(baseSourceDirectory).isDirectory()) {
@@ -89,10 +91,12 @@ export function json(source: string, destination: string, stdout?: Writable, std
 
     // Initialise the master output file
     const fullOutput: ConsumerDataRightTestCaseJSONSchema = {
-      fileVersion: '0.0.1',
-      standardsVersion: '0.0.1',
-      title: 'Sample title',
-      description: 'Sample description',
+      fileVersion: config.docVersion,
+      standardsVersion: config.cdrVersion,
+      title: config?.title,
+      description: config?.description,
+      changeLogUrl: config?.changeLogUrl ? config?.changeLogUrl : 'https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/main/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx',
+      githubRepoUrl: config?.githubRepoUrl ? config?.githubRepoUrl : 'https://github.com/ConsumerDataStandardsAustralia/standards-testing',
       assertions: {},
       testCases: {},
       scenarios: {},
@@ -121,7 +125,7 @@ export function json(source: string, destination: string, stdout?: Writable, std
       stdout?.write("Processing: " + scenarioFiles[i] + '\n');
 
       const fileData = fs.readFileSync(filePath, 'utf8');
-      const records = parse(fileData, { from_line: 5 });
+      const records = parse(fileData, { from_line: 4 });
       for (const arr of records) {
         if (arr[SCENARIO_ID_INDEX] != null && arr[SCENARIO_ID_INDEX].indexOf('S.') > -1) {
           const scenario = processScenario(arr, arr[SCENARIO_ID_INDEX], scenarioDirectorySinkPath);
@@ -148,10 +152,10 @@ export function json(source: string, destination: string, stdout?: Writable, std
       let currentTestCase: any | undefined;
       const testCases: any = [];
       const fileData = fs.readFileSync(filePath, 'utf8');
-      const records = parse(fileData, { from_line: 5 });
+      const records = parse(fileData, { from_line: 4 });
       for (const arr of records) {
         // Is this the first line of a test case
-        if (arr[1] != null && arr[1].indexOf('T.') > -1) {
+        if (arr[1] != null && arr[1]?.indexOf('T.') > -1 && arr[2]?.length > 0) {
            if (currentTestCase) {
              testCases.push(currentTestCase);
            }
@@ -166,7 +170,9 @@ export function json(source: string, destination: string, stdout?: Writable, std
 
       // Process the test cases
       for (const testCaseRaw of testCases) {
-        if (testCaseRaw[0] && testCaseRaw[0][1] && testCaseRaw[0][1].indexOf('T.') > -1) {
+        if (testCaseRaw[0] && testCaseRaw[0][TEST_ID_INDEX]
+          && testCaseRaw[0][TEST_ID_INDEX]?.indexOf('T.') > -1
+          && testCaseRaw[0][TEST_TITLE_INDEX]?.length > 0) {
           const testCase = processTestCase(testCaseRaw, testCaseRaw[0][1], testCaseDirectorySinkPath);
           if (testCase && fullOutput.testCases) fullOutput.testCases[testCase.id] = testCase;
         }
@@ -182,7 +188,7 @@ export function json(source: string, destination: string, stdout?: Writable, std
       const fileData = fs.readFileSync(filePath, 'utf8');
       const records = parse(fileData, { from_line: 3 });
       for (const arr of records) {
-        if (arr != null && (arr[1] != null && arr[1].indexOf('A.') > -1)) {
+        if (arr != null && (arr[1] != null && arr[1]?.indexOf('A.') > -1 && arr[2]?.length > 0)) {
           const assertion = processAssertion(arr, arr[1], assertionDirectorySinkPath);
           if (assertion && fullOutput.assertions) fullOutput.assertions[assertion.id] = assertion;
         }
@@ -203,6 +209,7 @@ export function json(source: string, destination: string, stdout?: Writable, std
 
 /******************* Utility function section ************************/
 function processScenario(arr:Array<string>, scenarioName: string, fileWritePath: string): Scenario | undefined {
+  if (scenarioName === '') return;
   let cnt = arr.length;
   if (cnt > 0) {
     var scenario = processFirstScenarioLine(arr);
@@ -228,6 +235,7 @@ function processSuite(arr: Array<string>, suiteName: string, fileWritePath: stri
 }
 
 function processTestCase(arr: Array<Array<string>>, testCaseName: string, fileWritePath: string): TestCase | undefined {
+  if (testCaseName === '') return;
   let cnt = arr.length;
   if (cnt > 0) {
     var testCase = processFirstTestLine(arr[0]);
@@ -366,24 +374,32 @@ function processFirstTestLine(header: Array<string>): TestCase {
   let assertions: string[] = [];
   let commonAss: string = header[TEST_COMMON_ASSERTION_INDEX];
   let suiteAss: string = header[TEST_SUITE_ASSERTION_INDEX];
+  var tt: Array<string> = [];
   if (commonAss != null && commonAss.indexOf('A.') >= 0) {
+
       assertions.push(...FixString(commonAss).split(/\n/));
+
   }
   if (suiteAss != null && suiteAss.indexOf('A.') >= 0) {
     assertions.push(...FixString(suiteAss).split(/\n/));
   }
   //header[TEST_SUITE_ASSERTION_INDEX] != null  && header[TEST_SUITE_ASSERTION_INDEX].indexOf('A.') >= 0 ? assertions.push(header[TEST_SUITE_ASSERTION_INDEX]) : null;
   //header[TEST_COMMON_ASSERTION_INDEX] != null && header[TEST_COMMON_ASSERTION_INDEX].indexOf('A.') >= 0? assertions.push(header[TEST_COMMON_ASSERTION_INDEX]) : null;
-
+  let  cleanAssertion: string[] = [];
+  assertions.forEach(x  => {
+    x = x.replace(/\n|\r/g, "");
+    cleanAssertion.push(x);
+  });;
   let testCase: TestCase = {
     id: header[TEST_ID_INDEX],
     title: header[TEST_TITLE_INDEX],
     description: header[TEST_DESCRIPTION_INDEX],
     references: processReferences(header[TEST_REFERENCE_INDEX], header[TEST_ID_INDEX]),
     negative: header[TEST_POLARITY_INDEX] == 'TRUE'? true: false,
-    preConditions: processPreConditions(header[TEST_PRECONDITION_INDEX], header[TEST_ID_INDEX]),
+    preConditions: processMultiLineString(header[TEST_PRECONDITION_INDEX], header[TEST_ID_INDEX]),
+    purpose: FixString(header[TEST_PURPOSE_INDEX]),
     steps: [],
-    assertions: assertions
+    assertions: cleanAssertion
   }
   return testCase;
 }
@@ -426,39 +442,8 @@ function processFirstScenarioLine(header: Array<string>): Scenario {
   return scenario;
 }
 
-function processOtherScenarioLines(line: Array<string>, scenario: Scenario){
-  // let steps = scenario.steps == null ? [] : scenario.steps;
-  // if (line[TEST_STEP_TYPE_INDEX] != null) {
-  //     let step: TestCaseStep;
-  //     let stepType = line[TEST_STEP_TYPE_INDEX];
-  //     if (stepType == "ACTION" ) {
-  //      step = {
-  //         type: "ACTION",
-  //         action: line[TEST_STEP_VALUE_INDEX]
-  //       }
-  //       steps.push(step);
-  //     }
-  //     if (stepType == "WAIT" ) {
-  //       step = {
-  //          type: "WAIT",
-  //          period: parseInt(line[TEST_STEP_VALUE_INDEX])
-  //        }
-  //        steps.push(step);
-  //      }
 
-  //      if (stepType == "UNTIL" ) {
-  //       step = {
-  //          type: "UNTIL",
-  //          condition: line[TEST_STEP_VALUE_INDEX]
-  //        }
-  //        steps.push(step);
-  //      }
-  // }
-  // testCase.steps = steps;
-
-}
-
-function processPreConditions(preconditions: string, id: string): Array<string> {
+function processMultiLineString(preconditions: string, id: string): Array<string> {
   if (preconditions == null || preconditions =='')
       return [];
   preconditions = FixString(preconditions);
@@ -466,6 +451,7 @@ function processPreConditions(preconditions: string, id: string): Array<string> 
   returnArray= preconditions.split('\n');
   return returnArray;
 }
+
 
 function cleanStringOfDoubleQuotes(strIn: string): string {
   let idx: number = strIn.indexOf('""');

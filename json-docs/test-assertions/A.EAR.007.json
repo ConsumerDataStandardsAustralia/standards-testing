@@ -1,0 +1,23 @@
+{
+  "id": "A.EAR.007",
+  "title": "Validate service point and schema - EnergyDerDetailResponse",
+  "given": [
+    "the {servicePointId} is included ",
+    "AND the {servicePointId} value is valid "
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 200",
+      " the response body complies with the EnergyDerDetailResponse schema"
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point"
+    }
+  ],
+  "negative": false
+}

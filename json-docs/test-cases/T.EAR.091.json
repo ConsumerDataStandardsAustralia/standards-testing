@@ -1,0 +1,26 @@
+{
+  "id": "T.EAR.091",
+  "title": "ADR call to DH: Get Usage for Specific Service Points - missing FAPI Auth Date",
+  "description": "Ensure that the endpoint returns FAPI Auth date errors ",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-fapi-auth-date> is not present in the header"
+  ],
+  "purpose": "Test API when FAPI Auth date is missing from the header",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /energy/electricity/servicepoints/usage"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.CFA.002"
+  ]
+}

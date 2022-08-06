@@ -1,0 +1,24 @@
+{
+  "id": "A.CPG.003",
+  "title": "Validate pagination - Non-numeric <page>",
+  "given": [
+    "the <page> parameter is included ",
+    "AND the <page> is a not a positive integer"
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 400",
+      " the response body has ErrorListReponse object",
+      " error code is \"Field/Invalid\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#error-codes"
+    }
+  ],
+  "negative": false
+}

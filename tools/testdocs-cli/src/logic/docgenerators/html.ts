@@ -1,10 +1,11 @@
+import dayjs from 'dayjs';
 import * as fs from 'fs';
 import { Writable } from 'stream';
 import {
   TestCasePredicate,
   AssertionPredicate,
   ConsumerDataRightTestCaseJSONSchema
-} from '../schema';
+} from '../../schema/cdr-test-schema';
 
 
 // TODO: Validate source file
@@ -77,14 +78,14 @@ function generateHtml(testDocs: ConsumerDataRightTestCaseJSONSchema): string {
 
 function generateSummarySection(testDocs: ConsumerDataRightTestCaseJSONSchema): string {
   let result = '';
-
+  let today = dayjs();
   result += startSection('summary');
 
   result += header1(testDocs.title, 'introduction');
   result += text('File version: ' + testDocs.fileVersion);
-  result += text('Compliant with CDR standards version ' + testDocs.standardsVersion);
   result += text(testDocs.description);
-
+  result += text('For more details see the CDS <a href="' + testDocs.githubRepoUrl + '">standards-testing repository</a> for details');
+  result += text('Last updated ' + today.format('DD/MM/YYYY') + ' see the <a href="' + testDocs.changeLogUrl + '">change log</a> for details');
   result += endSection();
 
   return result;
@@ -246,11 +247,11 @@ function generateTestCasesSection(testDocs: ConsumerDataRightTestCaseJSONSchema)
       result += startSection('testcase');
 
       result += header2(testCaseId + ': ' + testCase.title, createSlug('testcase', testCaseId));
-      result += text(testCase.negative ? 'Negative test case' : 'Positive test case');
+      result += text(testCase.negative ? 'Positive test case' : 'Negative test case');
       result += text(processNewlines(testCase.description));
 
-      result += header3('Story:');
-      result += text(processNewlines(testCase.story));
+      result += header3('Purpose:');
+      result += text(processNewlines(testCase.purpose));
 
       if (testCase.references && testCase.references.length > 0) {
         result += header3('References:');
@@ -309,7 +310,7 @@ function generateTestCasesSection(testDocs: ConsumerDataRightTestCaseJSONSchema)
         for (const assertionId of testCase.assertions) {
           let assertionName = assertionId;
           if (testDocs.assertions && testDocs.assertions[assertionId]) assertionName += ': ' + testDocs.assertions[assertionId].title;
-          result += unorderedListItem(link('#' + createSlug('assertion', assertionId), assertionName));
+          result += unorderedListItem(link('#' + createSlug('assertion', assertionId), processSpecialCharacters(assertionName)));
         }
         result += endUnorderedList();
       } else {
@@ -339,11 +340,14 @@ function generateAssertionsSection(testDocs: ConsumerDataRightTestCaseJSONSchema
     // Document each individual assertion
     for (const assertionId of Object.keys(testDocs.assertions)) {
       const assertion = testDocs.assertions[assertionId];
-
+      if (assertionId == 'A.CCH.001')
+      {
+        let y = 8;
+      }
       result += startSection('assertion');
 
-      result += header2(assertionId + ': ' + assertion.title, createSlug('assertion', assertionId));
-      result += text(processNewlines(assertion.description));
+      result += header2(assertionId + ': ' + processSpecialCharacters(assertion.title), createSlug('assertion', assertionId));
+      result += text(processNewlines(processSpecialCharacters(assertion.description)));
 
       if (assertion.references && assertion.references.length > 0) {
         result += header3('References:');
@@ -373,6 +377,7 @@ function generateAssertionsSection(testDocs: ConsumerDataRightTestCaseJSONSchema
       result += startTable([]);
 
       let given = '';
+
       for (const clause of assertion.given) {
         if (given) given += '\n';
         given += clause;
@@ -383,7 +388,7 @@ function generateAssertionsSection(testDocs: ConsumerDataRightTestCaseJSONSchema
       for (const clause of assertion.when) {
         if (when) when += '\n';
         when += clause;
-      }     
+      }
       result += tableRow(['When', processNewlines(when)]);
 
       result += tableRow(['Then', processAssertionPredicate(testDocs, assertion.then)]);
@@ -453,18 +458,18 @@ function processTestCasePredicate(testDocs: ConsumerDataRightTestCaseJSONSchema,
 function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema, predicate: AssertionPredicate): string {
   let result = '';
   if (typeof predicate === 'string') {
-    //result += predicate;
-    result += processSpecialCharacters(predicate);    
+    if (predicate.indexOf("<div>") == -1)
+      result += processSpecialCharacters(predicate);
   } else if (predicate.and) {
     const terms = predicate.and as AssertionPredicate[];
     if (terms.length > 0) {
       let innerResult = '';
-      //innerResult += processNewlines(innerResult);
       for (let i = 0; i < terms.length; i++) {
-        innerResult = processAssertionPredicate(testDocs, terms[i]);
+        innerResult += processAssertionPredicate(testDocs, terms[i]);
+        innerResult += "\n";
       }
       result += predicateOuter('AND (');
-      //innerResult = processSpecialCharacters(innerResult)
+      innerResult = processNewlinesOnly(innerResult);
       result += predicateInner(innerResult);
       result += predicateOuter(')');
     }
@@ -490,7 +495,7 @@ function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema
 // ----------------------------------------------------------------------------
 
 function startDoc(): string {
-  return `<html><head><style>${defaultCss}</style></head><body>\n`;
+  return `<html><head><title>CDR Test Documentation</title><style>${defaultCss}</style></head><body>\n`;
   // return `<html><head><link rel="stylesheet" href="out.css"></head><body>\n`;
 }
 
@@ -566,6 +571,16 @@ function text(text: string | undefined): string {
   return result;
 }
 
+function styledText(text: string | undefined, style: string | undefined): string {
+  let result = '';
+  if (style != null) {
+    if (text) result += `<p class="${style}">${text}</p>\n`;
+  } else {
+    if (text) result += `<p class="p">${text}</p>\n`;
+  }
+  return result;
+}
+
 function startUnorderedList(): string {
   return '<ul>\n';
 }
@@ -626,20 +641,28 @@ function predicateInner(text: string): string {
 function processSpecialCharacters(text: string | undefined): string {
   let result = '';
   if (text){
-    result = text.replaceAll(">", '&gt;');
-    result = result.replaceAll("<", '&lt;');
+    result = text.replace(/>/g, '&gt;');
+    result = result.replace(/</g, '&lt;');
   }
-  return result; 
+  return result;
 }
 
 function processNewlines(text: string | undefined): string {
   let result = '';
   if (text){
     result = processSpecialCharacters(text);
-    result = result.replace(/\n/, '</br>');
+    result = result.replace(/\n/g,'</br>');
+  }
+  return result;
+}
+
+function processNewlinesOnly(text: string | undefined): string {
+  let result = '';
+  if (text){
+    result = text.replace(/\n/g, '</br>');
   }
   return result;
 }
 
 // This is the minified version of default.css
-const defaultCss = 'body{background-color:#f3f7f9;color:#333;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:14px;margin:0;padding:0;padding-bottom:4em}div.content div:first-of-type h1:first-of-type{margin-top:0}div{margin-top:0;padding-top:0}h1{font-size:25px;padding-top:.5em;padding-bottom:.5em;padding-left:28px;padding-right:28px;margin-bottom:21px;margin-top:2em;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color:#fdfdfd}h2{font-size:19px;margin-top:2em;margin-bottom:0;padding-left:28px;padding-right:28px;border-top:1px solid #ccc;padding-top:1.2em;padding-bottom:.6em}h3{font-size:16px;font-weight:700;margin-bottom:0;padding-left:28px;padding-right:28px;padding-top:.8em;padding-bottom:0}p{padding-left:28px;padding-right:28px}ul li{margin-left:28px;padding-right:28px}table{margin-top:10px;margin-bottom:10px;margin-left:28px;font-size:14px;border-collapse:collapse}th{padding-left:1em;padding-right:1em;padding-top:.3em;padding-bottom:.3em;text-align:left;vertical-align:bottom}table tr:last-child{border-bottom:1px solid #ccc}td{padding-left:1em;padding-right:1em;padding-top:.6em;padding-bottom:.6em;border:0;margin:0;border-top:1px solid #eee;vertical-align:top}tbody tr:nth-child(even){background-color:#fbfcfd}tbody tr:nth-child(odd){background-color:#fff}div.content{margin-left:230px;position:relative;z-index:10;min-height:100%;padding-bottom:1px}div.toc{overflow-y:auto;overflow-x:hidden;position:fixed;z-index:30;top:0;left:0;bottom:0;width:230px;background-color:#000;font-size:13px;font-weight:700;padding-top:10px}div.toc div{padding-top:5px;padding-bottom:5px}div.toc div a{color:#2fb787;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}div.toc1 a{font-size:13px;font-weight:700;width:210px}div.toc1{padding-left:10px}div.toc2 a{font-size:10px;font-weight:700;width:200px}div.toc2{padding-left:20px}div.toc3 a{font-size:9px;font-weight:400;width:190px}div.toc3{padding-left:30px}';
+const defaultCss = 'body{background-color:#f3f7f9;color:#333;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:14px;margin:0;padding:0;padding-bottom:4em}div.content div:first-of-type h1:first-of-type{margin-top:0}div{margin-top:0;padding-top:0}h1{font-size:25px;padding-top:.5em;padding-bottom:.5em;padding-left:28px;padding-right:28px;margin-bottom:21px;margin-top:2em;border-top:1px solid #ccc;border-bottom:1px solid #ccc;background-color:#fdfdfd}h2{font-size:19px;margin-top:2em;margin-bottom:0;padding-left:28px;padding-right:28px;border-top:1px solid #ccc;padding-top:1.2em;padding-bottom:.6em}h3{font-size:16px;font-weight:700;margin-bottom:0;padding-left:28px;padding-right:28px;padding-top:.8em;padding-bottom:0}p{padding-left:28px;padding-right:28px} .p1{color:red;padding-left:28px;padding-right:28px}ul li{margin-left:28px;padding-right:28px}table{margin-top:10px;margin-bottom:10px;margin-left:28px;font-size:14px;border-collapse:collapse}th{padding-left:1em;padding-right:1em;padding-top:.3em;padding-bottom:.3em;text-align:left;vertical-align:bottom}table tr:last-child{border-bottom:1px solid #ccc}td{padding-left:1em;padding-right:1em;padding-top:.6em;padding-bottom:.6em;border:0;margin:0;border-top:1px solid #eee;vertical-align:top}tbody tr:nth-child(even){background-color:#fbfcfd}tbody tr:nth-child(odd){background-color:#fff}div.content{margin-left:30%;position:relative;z-index:10;min-height:100%;padding-bottom:1px}div.toc{overflow-y:auto;overflow-x:hidden;position:fixed;z-index:30;top:0;left:0;bottom:0;width:30%;background-color:#000;font-size:13px;font-weight:700;padding-top:10px}div.toc div{padding-top:5px;padding-bottom:5px}div.toc div a{color:#2fb787;text-decoration:none;white-space:nowrap;text-overflow:ellipsis;display:block}div.toc1 a{font-size:13px;font-weight:700;width:210px}div.toc1{padding-left:10px}div.toc2 a{font-size:10px;font-weight:700;width:30%}div.toc2{padding-left:20px}div.toc3 a{font-size:9px;font-weight:400;width:190px}div.toc3{padding-left:30px}';

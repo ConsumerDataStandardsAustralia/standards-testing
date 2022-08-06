@@ -1,0 +1,21 @@
+{
+  "id": "S.EAS.093",
+  "title": "Get Usage For Service Point SR v1",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.009"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.010"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.014"
+    }
+  ]
+}

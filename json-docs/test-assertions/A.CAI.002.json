@@ -1,0 +1,27 @@
+{
+  "id": "A.CAI.002",
+  "title": "CDS arrangement id - missing from header (SR specific)",
+  "given": [
+    "the call is from a DH to a SDH",
+    "AND the <x-cds-arrangement> is NOT present in the request header"
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 400",
+      " the response body has ErrorListReponse object",
+      " error code is \"Header/Missing\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#energy"
+    },
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#identifiers-and-subject-types"
+    }
+  ],
+  "negative": false
+}

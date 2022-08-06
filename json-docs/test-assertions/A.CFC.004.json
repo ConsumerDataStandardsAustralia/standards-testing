@@ -1,0 +1,17 @@
+{
+  "id": "A.CFC.004",
+  "title": "No <x-fapi-customer-ip-address> in header (SR specific)",
+  "given": [
+    "the call is from a DH to a SDH"
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": "the <x-fapi-customer-ip-address> is NOT present in the response header",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#energy"
+    }
+  ],
+  "negative": false
+}

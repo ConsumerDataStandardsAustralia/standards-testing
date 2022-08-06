@@ -1,6 +1,11 @@
 {
     "scripts": {
-        "generate-json": "cd ./tools/testdocs-cli; tsc; node ./dist/cli.js generate json ../../working/source-files/ ../../working/output-files",
-        "generate-html": "cd ./tools/testdocs-cli; tsc; node ./dist/cli.js generate json ../../working/source-files/ ../../working/output-files; node ./dist/cli.js generate html ../../working/output-files/full-test-suite.json ../../docs/index.html"
-     }
+        "generate-json": "cd ./tools/testdocs-cli; npm run build;  node ./dist/cli.js gendocs json ../../working/source-files ../../json-docs --cfg ./config.json",
+        "validate": "cd ./tools/testdocs-cli; npm run build; node ./dist/cli.js validate  ../../json-docs/full-test-suite.json",
+        "generate-html-clean": "cd ./tools/testdocs-cli; npm run build; node ./dist/cli.js gendocs json ../../working/source-files ../../json-docs --cfg ./config.json; node ./dist/cli.js gendocs html ../../json-docs/full-test-suite.json ../../docs/index.html",
+        "generate-html": "cd ./tools/testdocs-cli; node ./dist/cli.js gendocs html ../../json-docs/full-test-suite.json ../../docs/index.html",
+        "generate-markdown-clean": "cd ./tools/testdocs-cli; npm run build; node ./dist/cli.js gendocs json ../../working/source-files ../../json-docs --cfg ./config.json; node ./dist/cli.js gendocs markdown ../../json-docs/full-test-suite.json ../../docs/ReadMe.md" ,
+        "generate-markdown": "cd ./tools/testdocs-cli;  node ./dist/cli.js gendocs markdown ../../json-docs/full-test-suite.json ../../docs/ReadMe.md"
+
+     } 
 }

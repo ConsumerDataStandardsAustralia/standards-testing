@@ -1,0 +1,65 @@
+{
+  "id": "S.EAR.088",
+  "title": "Get DER For Specific Service Points Negative v1",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.040"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.041"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.042"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.043"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.044"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.103"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.104"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.105"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.106"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.107"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.108"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.123"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.124"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.132"
+    }
+  ]
+}

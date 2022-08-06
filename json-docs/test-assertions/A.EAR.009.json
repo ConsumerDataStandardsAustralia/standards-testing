@@ -1,0 +1,24 @@
+{
+  "id": "A.EAR.009",
+  "title": "Validate servicePointIdList - invalid body values",
+  "given": [
+    "the request payload does not contain the required fields",
+    "OR the request payload is NOT well formatted"
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": {
+    "and": [
+      "the response has a status code 422",
+      " the response body has ErrorListReponse",
+      " error code is \"Field/Invalid\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse"
+    }
+  ],
+  "negative": false
+}

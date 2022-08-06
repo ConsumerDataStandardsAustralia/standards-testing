@@ -1,0 +1,25 @@
+{
+  "id": "S.EAR.077",
+  "title": "Get Usage For Service Point v1",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.011"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.012"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.015"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.016"
+    }
+  ]
+}

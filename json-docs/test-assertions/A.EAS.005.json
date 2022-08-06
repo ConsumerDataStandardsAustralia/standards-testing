@@ -1,0 +1,24 @@
+{
+  "id": "A.EAS.005",
+  "title": "Validate service point and schema - EnergyUsageListResponse",
+  "given": [
+    "the {servicePointId} is included ",
+    "AND the {servicePointId} value is valid ",
+    "AND the request is formatted correctly"
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": {
+    "and": [
+      "the response has a status code of 200",
+      " the response body complies with the EnergyUsageListResponse schema"
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyusagelistresponse"
+    }
+  ],
+  "negative": false
+}

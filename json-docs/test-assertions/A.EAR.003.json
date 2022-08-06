@@ -1,0 +1,24 @@
+{
+  "id": "A.EAR.003",
+  "title": "Validate service point - unavailable",
+  "given": [
+    "the {servicePointId} is included",
+    "AND the requested service point is temporarily unavailable. (Subsequent requests for the service point may be successful.)"
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 404",
+      " the response body has ErrorListReponse object",
+      " error code is \"Authorisation/UnavailableServicePoint\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#energy"
+    }
+  ],
+  "negative": false
+}

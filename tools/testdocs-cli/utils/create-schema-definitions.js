@@ -2,12 +2,10 @@ const jtt = require('json-schema-to-typescript')
 const fs = require('fs')
 const path = require('path');
 
-const fileParseRegEx = /cdr-test-doc-schema\.(\d+\.\d+\.\d+)\.json/;
-
-const srcPath = '../../schema/';
-const dstPath = './src/schema/';
-
-const files = fs.readdirSync(srcPath);
+//const basePath = '../..';
+const sourcePath = path.join(__dirname, '../../..',  'schema');
+const destPath = path.join(__dirname, '../..',  'testdocs-cli/src/schema');
+const files = fs.readdirSync(sourcePath);
 
 files.forEach((file) => {
   if (path.basename(file).match(fileParseRegEx)) {
@@ -19,9 +17,8 @@ files.forEach((file) => {
     }
 
     try {
-      console.log(`Parsing: ${path.basename(file)}`)
-      const src = path.join(srcPath, file);
-      const dst = path.join(dstPath, path.basename(file, '.json') + '.ts');
+      const src = path.join(sourcePath, file);
+      const dst = path.join(destPath, path.basename(file, '.json') + '.ts');
 
       jtt.compileFromFile(src)
         .then(ts => fs.writeFileSync(dst, ts))

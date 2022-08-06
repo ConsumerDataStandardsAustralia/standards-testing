@@ -1,0 +1,25 @@
+{
+  "id": "T.EAS.062",
+  "title": "DH call to SDH: Get Usage For Service Point - invalid version format",
+  "description": "Ensure that the endpoint returns version compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point-sr"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-v> format is not valid "
+  ],
+  "purpose": "Test API with invalid version format",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
+    }
+  ],
+  "assertions": [
+    "A.CVN.003",
+    "A.CFI.001"
+  ]
+}

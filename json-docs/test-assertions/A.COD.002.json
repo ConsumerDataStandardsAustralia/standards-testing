@@ -1,0 +1,24 @@
+{
+  "id": "A.COD.002",
+  "title": "Validation the Oldest Date parameter - invalid format",
+  "given": [
+    "the <oldest-date> is included as a query parameter",
+    "AND the <oldest-date> is not in a DateString valid format"
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 400",
+      " the response body has ErrorListReponse object",
+      " error code is \"Field/invalid\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#error-codes"
+    }
+  ],
+  "negative": false
+}

@@ -1,0 +1,25 @@
+{
+  "id": "A.CVN.005",
+  "title": "Validate version - unsupported version with <x-min-v>",
+  "given": [
+    "the <x-v>  is included in a  request header",
+    "AND  <x-min-v>  is included",
+    "AND no version between <x-v> and <x-min-v> is supported"
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 406",
+      " the response body has ErrorListReponse object",
+      " error code is \"Header/UnsupportedVersion\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-headers"
+    }
+  ],
+  "negative": false
+}

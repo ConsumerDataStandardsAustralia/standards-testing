@@ -1,0 +1,25 @@
+{
+  "id": "T.EAS.038",
+  "title": "DH call to SDH: Get Usage for Specific Service Points - invalid body format",
+  "description": "Ensure that the endpoint returns body compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points-sr"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The body is incorrectly formatted"
+  ],
+  "purpose": "Test API with a malformed body",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /secondary/energy/electricity/servicepoints/usage"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CBD.001"
+  ]
+}

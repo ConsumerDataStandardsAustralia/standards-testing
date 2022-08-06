@@ -1,4 +1,0 @@
-,,string,array:string,array:string,assertionPredicate,string,TOMAS??,array:reference,
-CNT,ID,Title,Given [],When [],Then [],Severity,+/-,References,Questions
-1,A.EAR.001,Schema compliance - EnergyServicePointListReponse,,a 2xx status code is returned,the  response body complies with the EnergyServiceListReponse schema,FAIL,POSITIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyservicepointlistresponse,
-2,A.EAR.002,Schema compliance - EnergyServiceDetailReponse,,a 2xx status code is returned,the  response body complies with the EnergyServiceDetailReponse schema,FAIL,POSITIVE,uri=https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyservicepointdetailresponse,

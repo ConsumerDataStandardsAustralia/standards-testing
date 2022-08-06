@@ -1,0 +1,36 @@
+{
+  "id": "T.EAR.033",
+  "title": "ADR call to DH: Get DER for Service Point ",
+  "description": "Obtain a list of DER data from a particular service point owned by the consumer that has authorised the current session",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point"
+    },
+    {
+      "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c008a5a9-00a7-4144-85a0-6832e23f837a",
+      "alt": "Postman Example"
+    }
+  ],
+  "negative": true,
+  "preConditions": [
+    "The {servicePointId} is set in the Path ",
+    "AND value <x-v> is set in the request header to a version supported by the DH"
+  ],
+  "purpose": "Test API with a vaild service point and version",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
+    }
+  ],
+  "assertions": [
+    "A.CVN.001",
+    "A.CVM.001",
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.CFA.001",
+    "A.CFC.001",
+    "A.CCH.001",
+    "A.EAR.007"
+  ]
+}

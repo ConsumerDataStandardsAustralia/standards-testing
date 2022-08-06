@@ -1,0 +1,26 @@
+{
+  "id": "T.EAR.118",
+  "title": "ADR call to DH: Get Usage for Specific Service Points - invalid version format",
+  "description": "Ensure that the endpoint returns version compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-v> format is not valid "
+  ],
+  "purpose": "Test API with invalid version format",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /energy/electricity/servicepoints/usage"
+    }
+  ],
+  "assertions": [
+    "A.CVN.003",
+    "A.CFI.001",
+    "A.CFI.002"
+  ]
+}

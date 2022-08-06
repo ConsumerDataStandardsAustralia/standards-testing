@@ -1,0 +1,17 @@
+{
+  "id": "S.EAR.085",
+  "title": "Get Bulk DER v1",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.060"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.061"
+    }
+  ]
+}

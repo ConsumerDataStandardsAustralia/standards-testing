@@ -1,0 +1,515 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://cds.gov.au/cdr-test-schema.0.0.4.json",
+    "title": "Consumer Data Right Test Case JSON Schema",
+    "description": "A JSON schema for defining test cases to be used to document test cases for compliance with the Consumer Data Right data standards",
+    "type": "object",
+    "required": [
+        "fileVersion",
+        "standardsVersion",
+        "title"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "fileVersion": {
+            "type": "string",
+            "description": "The version of the file formatted using semver (without extensions)",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
+        },
+        "standardsVersion": {
+            "type": "string",
+            "description": "The version of the CDR standards that these tests are validated for.  For formatted using semver (without extensions)",
+            "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
+        },
+        "title": {
+            "type": "string",
+            "description": "A short title of the test file"
+        },
+        "description": {
+            "type": "string",
+            "description": "An optional description of the test case file to identify its purpose"
+        },
+        "githubRepoUrl": {
+            "type": "string",
+            "description": "An optional url for the public GitHub repository"
+        },
+        "changeLogUrl": {
+            "type": "string",
+            "description": "An optional url for the change log"
+        },
+        "assertions": {
+            "type": "object",
+            "description": "A set of assertions named with the ID of the assertion in format 'A.XXX.000' where XXX is category and 000 is the unique identifier",
+            "additionalProperties": false,
+            "patternProperties": {
+                "^A\\.[A-Z]{3}\\.[0-9]{3}$": {
+                    "$ref": "#/$defs/assertion"
+                }
+            }
+        },
+        "testCases": {
+            "type": "object",
+            "description": "A set of test cases named with the ID of the test case in format 'T.XXX.000' where XXX is category and 000 is the unique identifier",
+            "additionalProperties": false,
+            "patternProperties": {
+                "^T\\.[A-Z]{3}\\.[0-9]{3}$": {
+                    "$ref": "#/$defs/testCase"
+                }
+            }
+        },
+        "scenarios": {
+            "type": "object",
+            "description": "A set of test scenarios that link together multiple test cases in sequence. Named with the ID of the scenarion in format 'S.XXX.000' where XXX is category and 000 is the unique identifier",
+            "additionalProperties": false,
+            "patternProperties": {
+                "^S\\.[A-Z]{3}\\.[0-9]{3}$": {
+                    "$ref": "#/$defs/scenario"
+                }
+            }
+        },
+        "suites": {
+            "type": "object",
+            "description": "A suite of test scenarios used to bundle all of the tests for a specific domain.  Each suite is named using the format 'SUITE.TEXT' where TEXT is any name using a sequence of letters and digits that describes the suite",
+            "additionalProperties": false,
+            "patternProperties": {
+                "^SUITE\\.[a-zA-Z0-9]+$": {
+                    "$ref": "#/$defs/suite"
+                }
+            }
+        }
+    },
+    "$defs": {
+        "assertion": {
+            "type": "object",
+            "description": "A single atomic test assertion",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "title",
+                "given",
+                "when",
+                "then"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "A Unique assertion identifier"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "A short title of the assertion"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An optional description of the assertion giving additional information"
+                },
+                "references": {
+                    "type": "array",
+                    "description": "An array of references for additional relevant information",
+                    "items": {
+                        "$ref": "#/$defs/reference"
+                    }
+                },
+                "negative": {
+                    "type": "boolean",
+                    "description": "Indicates if this is a negative assertion.  False if absent",
+                    "default": false
+                },
+                "severity": {
+                    "type": "string",
+                    "description": "The implication of this assertion failing on CDR compliance",
+                    "enum": [
+                        "FAIL",
+                        "INFO",
+                        "WARN"
+                    ],
+                    "default": "FAIL"
+                },
+                "given": {
+                    "type": "array",
+                    "description": "An array of 'given' statements describing the context of the assertion",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "when": {
+                    "type": "array",
+                    "description": "An array of 'given' statements describing the context"
+
+                },
+                "then": {
+                    "$ref": "#/$defs/assertionPredicate"
+                }
+            }
+        },
+        "testCase": {
+
+            "type": "object",
+            "description": "A test case defined using Behaviour Driven Development principles",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "title",
+                "steps"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "A Unique test case identifier"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "A short title of the test case"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An optional description of the test case giving additional information"
+                },
+                "references": {
+                    "type": "array",
+                    "description": "An array of references for additional relevant information",
+                    "items": {
+                        "$ref": "#/$defs/reference"
+                    }
+                },
+                "negative": {
+                    "type": "boolean",
+                    "description": "Indicates if this is a negative test case.  False if absent",
+                    "default": false
+                },
+                "purpose": {
+                    "type": "string",
+                    "description": "A description of the test case defined as a testable story in 'As A... I Want... Such That...' format"
+                },
+                "preConditions": {
+                    "type": "array",
+                    "description": "An array of conditions that must be met before the test case is executed",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "steps": {
+                    "type": "array",
+                    "description": "An array of steps to execute the test case",
+                    "items": {
+                        "$ref": "#/$defs/testCaseStep"
+                    }
+                },
+                "assertions": {
+                    "type": "array",
+                    "description": "An array assertion identifiers associated with this test case",
+                    "items": {
+                        "type": "string",
+                        "description": "The unique assertion identifier"
+                    }
+                }
+            }
+        },
+        "scenario": {
+            "type": "object",
+            "description": "A test scenario made up of a sequence of test cases and additonal actions to prepare for the tests",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "title",
+                "purpose",
+                "sequence"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "A Unique scenario identifier"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "A short title of the scenario"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An optional description of the scenario giving additional information"
+                },
+                "references": {
+                    "type": "array",
+                    "description": "An array of references for additional relevant information",
+                    "items": {
+                        "$ref": "#/$defs/reference"
+                    }
+                },
+                "purpose": {
+                    "type": "string",
+                    "description": "A description of the purpose of this test scenario indicating what the scenario is intended to test"
+                },
+                "sequence": {
+                    "type": "array",
+                    "description": "An sequence of actions to execute the test scenario",
+                    "items": {
+                        "$ref": "#/$defs/scenarioAction"
+                    }
+                }
+            }
+        },
+        "suite": {
+            "type": "object",
+            "description": "A suite of test scenarios that are bundled to achieve a specific testing purpose",
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "title",
+                "purpose",
+                "scenarios"
+            ],
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "A Unique suite identifier"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "A short title of the test suite"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "An optional description of the suite giving additional information"
+                },
+                "references": {
+                    "type": "array",
+                    "description": "An array of references for additional relevant information",
+                    "items": {
+                        "$ref": "#/$defs/reference"
+                    }
+                },
+                "purpose": {
+                    "type": "string",
+                    "description": "A description of the purpose of this suite indicating what the suite is intended to test"
+                },
+                "scenarios": {
+                    "type": "array",
+                    "description": "An array of scenarios (reference by scenario ID) included in the suite",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^S\\.[A-Z]{3}\\.[0-9]{3}$"
+                    }
+                }
+            }
+
+        },
+        "reference": {
+            "type": "object",
+            "description": "A reference to additional information",
+            "additionalProperties": false,
+            "required": [
+                "uri"
+            ],
+            "properties": {
+                "alt": {
+                    "type": "string",
+                    "description": "Display name for the reference"
+                },
+                "uri": {
+                    "type": "string",
+                    "description": "Link to the reference",
+                    "format": "uri"
+                }
+            }
+        },
+        "assertionPredicate": {
+            "description": "A recursive combination of text based assertion statements combined using AND or OR operators",
+            "oneOf": [{
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "and"
+                    ],
+                    "properties": {
+                        "and": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/assertionPredicate"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "or"
+                    ],
+                    "properties": {
+                        "or": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/assertionPredicate"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "testCaseStep": {
+            "description": "A single step in a test case",
+            "oneOf": [{
+                    "type": "object",
+                    "description": "Wait for a period of time",
+                    "required": [
+                        "type",
+                        "period"
+                    ],
+                    "properties": {
+                        "type": {
+                            "const": "WAIT"
+                        },
+                        "period": {
+                            "type": "integer",
+                            "description": "Number of seconds to wait",
+                            "minimum": 1
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "description": "Delay until a condition has been met",
+                    "required": [
+                        "type",
+                        "period"
+                    ],
+                    "properties": {
+                        "type": {
+                            "const": "UNTIL"
+                        },
+                        "condition": {
+                            "type": "string",
+                            "description": "The condition that must be met for the step to be complete"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "description": "Perform an action",
+                    "required": [
+                        "type",
+                        "action"
+                    ],
+                    "properties": {
+                        "type": {
+                            "const": "ACTION"
+                        },
+                        "action": {
+                            "type": "string",
+                            "description": "The action to be performed"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "description": "Assert that a condition is true",
+                    "required": [
+                        "type",
+                        "assertion"
+                    ],
+                    "properties": {
+                        "type": {
+                            "const": "ASSERTION"
+                        },
+                        "assertion": {
+                            "$ref": "#/$defs/testCasePredicate"
+                        }
+                    }
+                }
+            ]
+        },
+        "testCasePredicate": {
+            "description": "A recursive combination of pre-defined assertions combined using AND or OR operators",
+            "oneOf": [{
+                    "type": "string",
+                    "pattern": "^A\\.[A-Z]{3}\\.[0-9]{3}$"
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "and"
+                    ],
+                    "properties": {
+                        "and": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/testCasePredicate"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "or"
+                    ],
+                    "properties": {
+                        "or": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/testCasePredicate"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "scenarioAction": {
+            "description": "A single action the sequence of execution for a test scenario",
+            "oneOf": [{
+                    "type": "object",
+                    "description": "Do some setup to prepare the test",
+                    "required": [
+                        "type",
+                        "action"
+                    ],
+                    "properties": {
+                        "type": {
+                            "const": "SETUP"
+                        },
+                        "action": {
+                            "type": "string",
+                            "description": "The setup action to be performed"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "description": "Perform a clean up action to reset state after the last test case",
+                    "required": [
+                        "type",
+                        "action"
+                    ],
+                    "properties": {
+                        "type": {
+                            "const": "CLEANUP"
+                        },
+                        "action": {
+                            "type": "string",
+                            "description": "The clean up action to be performed"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "description": "Execute a test case",
+                    "required": [
+                        "type",
+                        "testCase"
+                    ],
+                    "properties": {
+                        "type": {
+                            "const": "TEST"
+                        },
+                        "testCase": {
+                            "type": "string",
+                            "description": "The ID of the test case to execute",
+                            "pattern": "^T\\.[A-Z]{3}\\.[0-9]{3}$"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

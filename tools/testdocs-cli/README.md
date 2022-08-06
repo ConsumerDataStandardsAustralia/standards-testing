@@ -1,4 +1,4 @@
-# Consumer Data Right Test Documentation CLI
+# CDR Test Documentation - CLI
 
 ## Overview
 
@@ -79,12 +79,21 @@ Read in the specified source and generate output according to the type specified
 |`<dst>`| The destination file for the generated output.  The type will align to the type specified in the `<type>` argument. |
 
 #### Options
+|Options|Description|
+|-|-|
+|`--cfg or -c`| For *json* file generation the path to a configuration file (json) should  be provided to capture a description, document version, and CDR version.
 
-None
+```json
+{
+    "description": "The CDR Test Documentation",
+    "docVersion": "1.0.0",
+    "cdrVersion": "1.16.0"
+}
+```
 
 #### Examples
 
-`testdocs generate json ./csvfiles/ ./doc.json`
+`testdocs gendocs -c /Users/dsb/config.json json ./csvfiles/ ./doc.json`
 Convert a folder structure containing a series of CSV files each containing different aspects of the test documentation into a single JSON file containing test documentation aligned to the test doc schema.  Note that schema compliance for the output is dependent on the validity of the data in the CSV files.
 
 `testdocs generate html ./doc.json ./doc.html`
