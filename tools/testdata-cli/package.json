@@ -10,9 +10,9 @@
   ],
   "scripts": {
     "lint": "tslint -p .",
-    "sync-schema": "rm -f ./src/schema/* && node ./utils/create-schema-definitions.js",
-    "build-prod": "rm -rf ./dist/ && tsc --project tsconfig.prod.json && chmod +x ./dist/cli.js",
-    "build": "rm -rf ./dist/ && tsc && chmod +x ./dist/cli.js"
+    "sync-schema": "rm -f ./src/schema/* && cp ../../schema/cdr-test-data-schema.json ./src/schema && node ./utils/create-schema-definitions.js",
+    "build": "rm -rf ./dist/ && tsc && chmod +x ./dist/cli.js",
+    "publish": "npm publish --access public"
   },
   "author": "Data Standards Body",
   "license": "MIT",

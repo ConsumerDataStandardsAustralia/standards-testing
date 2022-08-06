@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "https://cds.gov.au/test-data-schema.0.0.1.json",
+	"$id": "https://cds.gov.au/test-data-schema.0.0.2.json",
 	"title": "Consumer Data Right Test Data JSON Schema",
 	"description": "A JSON schema for defining test data files that can be used to seed a mock, or test, implementation of a Data Holder for the Consumer Data Right",
 	"type": "object",

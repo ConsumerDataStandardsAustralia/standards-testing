@@ -1,5 +1,5 @@
 import { Arguments, CommandBuilder } from 'yargs';
-import * as schema from '../schema/cdr-test-schema.json';
+import * as schema from '../schema/cdr-test-doc-schema.json';
 
 type Options = {
   version: boolean | undefined;

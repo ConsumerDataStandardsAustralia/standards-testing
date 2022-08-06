@@ -12,7 +12,7 @@ import {
   Scenario,
   ScenarioAction,
   ConsumerDataRightTestCaseJSONSchema
-} from '../../schema/cdr-test-schema';
+} from '../../schema/cdr-test-doc-schema';
 import { JsonGeneratorConfig } from './json-generator-config';
 
 const SUITE_ID_INDEX: number = 1;

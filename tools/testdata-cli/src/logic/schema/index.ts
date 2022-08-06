@@ -1,6 +1,6 @@
-import cdr_data_schema from '../../schema/cdr-test-data-schema.0.0.1.json';
+import cdr_data_schema from '../../schema/cdr-test-data-schema.json';
 
-const schema_version = '0.0.1';
+const schema_version = '0.0.2';
 
 export function testDataSchema(): any {
   return cdr_data_schema;
