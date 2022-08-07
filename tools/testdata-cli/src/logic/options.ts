@@ -30,6 +30,7 @@ export type OptionsItemCount = number | OptionsRandomItemCount;
 export interface OptionsGeneral {
   fileVersion?: string,
   standardsVersion?: string,
+  title?: string,
   description?: string,
 }
 

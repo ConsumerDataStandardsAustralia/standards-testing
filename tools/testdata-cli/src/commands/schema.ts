@@ -2,7 +2,7 @@ import { Arguments, CommandBuilder } from 'yargs';
 import * as schema from '../logic/schema';
 
 type Options = {
-  version: boolean | undefined;
+  vonly: boolean | undefined;
 };
 
 export const command: string = 'schema';
