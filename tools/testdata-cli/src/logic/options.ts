@@ -36,7 +36,7 @@ export interface OptionsGeneral {
 export interface Options {
   general?: OptionsGeneral,
 
-  factories: {
+  factories?: {
     holdersFactory?: OptionsFactory,
     holders?: [
       {

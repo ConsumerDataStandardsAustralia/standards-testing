@@ -2,7 +2,7 @@ import * as schema from '../../schema/cdr-test-data-schema';
 import { OptionsGeneral } from '../options';
 
 export interface FactoryOptions {
-  general: OptionsGeneral,
+  general?: OptionsGeneral,
   count?: number,
   options?: {
     [k: string]: unknown;
