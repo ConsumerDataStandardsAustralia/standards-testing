@@ -3,7 +3,6 @@ import { OptionsGeneral } from '../options';
 
 export interface FactoryOptions {
   general?: OptionsGeneral,
-  count?: number,
   options?: {
     [k: string]: unknown;
   }
@@ -16,9 +15,14 @@ export abstract class Factory {
     this.options = options;
   }
 
+  // ID
+  public abstract get id(): string;
+
+
   // Documentation
   public abstract get briefDescription(): string;
   public abstract get detailedDescription(): string;
+
 
   // All data
   public canCreateFullData(): boolean { return false; };

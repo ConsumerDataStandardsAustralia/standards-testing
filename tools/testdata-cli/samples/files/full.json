@@ -1,3 +1,8 @@
 {
-  
+  "holders": [
+    {
+      "holder1": "xxxx",
+      "holder2": "xxxx"
+    }
+  ]
 }

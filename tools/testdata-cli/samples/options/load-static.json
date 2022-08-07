@@ -1,7 +1,7 @@
 {
   "factories": {
     "allDataFactory": {
-      "id": "load-static-file",
+      "id": "general-load-static",
       "options": {
         "source": "samples/files/full.json"
       }
