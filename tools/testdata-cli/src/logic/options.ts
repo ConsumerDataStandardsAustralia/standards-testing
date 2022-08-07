@@ -37,6 +37,8 @@ export interface Options {
   general?: OptionsGeneral,
 
   factories?: {
+    allDataFactory?: OptionsFactory,
+
     holdersFactory?: OptionsFactory,
     holders?: [
       {

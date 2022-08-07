@@ -1,3 +1,5 @@
 // Base classes
 export * from './factory';
-export * from './service';
+export * from './getFactoryIds';
+export * from './createFactory';
+export * from './generateData';

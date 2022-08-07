@@ -88,14 +88,14 @@ Output the detailed documentation for the `load-static-data` factory.
 
 #### Command
 
-`generate <options> <dst>`
+`generate <opts> <dst>`
 Read in the specified options file and generate a data file in the file specified as the destination.  The resulting file will contain JSON consistent with the test data schema supported by the CLI.
 
 #### Arguments
 
 |Argument|Description|
 |-|-|
-|`<options>`| The options indicating the factories to execute, in what order and with what options specified. |
+|`<opts>`| The options file indicating the factories to execute, in what order and with what options specified. |
 |`<dst>`| The destination file for the generated output.  The contents will always be JSON consistent with the test data schema. |
 
 #### Options

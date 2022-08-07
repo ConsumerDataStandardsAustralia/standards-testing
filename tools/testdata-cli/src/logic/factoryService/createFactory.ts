@@ -1,16 +1,6 @@
 import { Factory, FactoryOptions } from '.';
 import { factories } from '../../factories';
 
-export const getFactoryIds = (): string[] => {
-  const ids: string[] = [];
-
-  for (const id of Object.keys(factories)) {
-    ids.push(id);
-  }
-
-  return ids;
-}
-
 export const createFactory = (id: string, options: FactoryOptions): Factory | undefined => {
   try {
     if (factories[id]) {
