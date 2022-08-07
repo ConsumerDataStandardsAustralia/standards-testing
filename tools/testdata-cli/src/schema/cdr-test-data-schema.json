@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "https://cds.gov.au/test-data-schema.0.0.1.json",
+	"$id": "https://cds.gov.au/test-data-schema.0.0.2.json",
 	"title": "Consumer Data Right Test Data JSON Schema",
 	"description": "A JSON schema for defining test data files that can be used to seed a mock, or test, implementation of a Data Holder for the Consumer Data Right",
 	"type": "object",
@@ -30,6 +30,25 @@
 			"description": "An optional description of the test data file to identify its purpose"
 		},
 		"holders": {
+      "$ref": "#/$defs/holders"
+		},
+		"clientCache": {
+      "type": "array",
+      "description": "A cache of previously registered clients",
+      "items": {
+        "$ref": "#/$defs/client"
+      }
+		},
+		"registerCache": {
+      "type": "array",
+      "description": "A cache of previously loaded recipients from the CDR Register",
+      "items": {
+        "$ref": "#/$defs/recipient"
+      }
+		}
+	},
+	"$defs": {
+    "holders": {
 			"type": "object",
 			"description": "A set of data holders, and their associated data, keyed on data holder ID",
 			"additionalProperties": false,
@@ -38,41 +57,207 @@
 					"$ref": "#/$defs/holder"
 				}
 			}
-		},
-		"clientCache": {
-			"$ref": "#/$defs/clientCache"
-		},
-		"registerCache": {
-			"$ref": "#/$defs/registerCache"
-		}
-	},
-	"$defs": {
+    },
 		"holder": {
 			"type": "object",
 			"description": "Data for a single data holder",
 			"additionalProperties": false,
+      "required": [
+        "unauthenticated",
+        "authenticated"
+      ],
 			"properties": {
-				"unauthenticated": {
+        "unauthenticated": {
 					"type": "object",
-					"description": "Data for a single data holder",
+					"description": "Unauthenticated data for a single data holder",
 					"additionalProperties": false,
 					"properties": {
-						"unauthenticated": {},
+            "banking": {
+              "type": "object",
+    					"description": "Unauthenticated banking data",
+    					"additionalProperties": false,
+              "properties": {
+                "products": {
+                  "type": "array",
+    							"description": "An array of banking products",
+                  "items": {
+                    "$ref": "#/$defs/bankProduct"
+                  }
+                }
+              }
+            },
+            "energy": {
+              "type": "object",
+    					"description": "Unauthenticated energy data",
+    					"additionalProperties": false,
+              "properties": {
+                "plans": {
+                  "type": "array",
+    							"description": "An array of energy plans",
+                  "items": {
+                    "$ref": "#/$defs/energyPlan"
+                  }
+                }
+              }
+            },
+            "admin": {
+              "type": "object",
+    					"description": "Current system status",
+    					"additionalProperties": false,
+              "properties": {
+                "status": {
+                  "$ref": "#/$defs/adminStatus"
+                },
+                "outages": {
+                  "type": "array",
+    							"description": "An array of planned outages",
+                  "items": {
+                    "$ref": "#/$defs/adminOutage"
+                  }
+                }
+              }
+            }
+					}
+        },
+				"authenticated": {
+					"type": "object",
+					"description": "Authenticated data for a single data holder",
+					"additionalProperties": false,
+					"properties": {
 						"customers": {
 							"type": "array",
-							"description": "An array of customers and their data"
+							"description": "An array of customers and their data",
+              "items": {
+                "$ref": "#/$defs/customerWrapper"
+              }
 						}
 					}
 				}
       }
     },
-		"clientCache": {
+		"client": {
 			"type": "object",
-			"description": "Cache of the previously registered clients for a data holder"
+			"description": "A previously registered client aligned to the current version of the data standards"
 		},
-		"registerCache": {
+		"recipient": {
+      "type": "object",
+			"description": "A recipient record from the CDR Register aligned to the current version of the data standards"
+		},
+    "bankProduct": {
 			"type": "object",
-			"description": "Cache of the CDR Register meta data to seed the holder with"
-		}
+			"description": "A bank product aligned to the current version of the data standards"
+		},
+    "energyPlan": {
+			"type": "object",
+			"description": "An energy plan aligned to the current version of the data standards"
+		},
+    "adminStatus": {
+			"type": "object",
+			"description": "A status object for the holder"
+		},
+    "adminOutage": {
+			"type": "object",
+			"description": "A planned outage object for the holder"
+		},
+    "customerWrapper": {
+      "type": "object",
+			"description": "A wrapper for a single customer to contain all of the data related to the customer",
+      "additionalProperties": false,
+      "required": [
+        "customer",
+        "banking"
+      ],
+      "properties": {
+        "customer": {
+          "$ref": "#/$defs/customer"
+        },
+        "banking": {
+          "type": "object",
+    			"description": "Banking data for this customer",
+          "properties": {
+            "accounts": {
+              "type": "array",
+              "description": "An array of accounts and their",
+              "items": {
+                "$ref": "#/$defs/bankAccountWrapper"
+              }
+            },
+            "directDebits": {
+              "type": "array",
+              "description": "An array of direct debit authorisations",
+              "items": {
+                "$ref": "#/$defs/bankDirectDebit"
+              }
+            },
+            "payees": {
+              "type": "array",
+              "description": "An array of payees",
+              "items": {
+                "$ref": "#/$defs/bankPayee"
+              }
+            },
+            "payments": {
+              "type": "array",
+              "description": "An array of payment schedules",
+              "items": {
+                "$ref": "#/$defs/bankPaymentSchedule"
+              }
+            }
+          }
+        }
+      }
+    },
+    "customer": {
+      "type": "object",
+			"description": "A customer record aligned to the current version of the data standards"
+    },
+    "bankDirectDebit": {
+      "type": "object",
+			"description": "A direct debit authorisation aligned to the current version of the data standards"
+    },
+    "bankPayee": {
+      "type": "object",
+			"description": "A payee aligned to the current version of the data standards"
+    },
+    "bankPaymentSchedule": {
+      "type": "object",
+			"description": "A payment schedule aligned to the current version of the data standards"
+    },
+    "bankAccountWrapper": {
+      "type": "object",
+			"description": "A wrapper for a single bank account to contain all of the data related to the account",
+      "additionalProperties": false,
+      "required": [
+        "account",
+        "balance"
+      ],
+      "properties": {
+        "account": {
+          "$ref": "#/$defs/bankAccount"
+        },
+        "balance": {
+          "$ref": "#/$defs/bankAccountBalance"
+        },
+        "transactions": {
+          "type": "array",
+          "description": "An array of transactions for the account",
+          "items": {
+            "$ref": "#/$defs/bankTransaction"
+          }
+        }
+      }
+    },
+    "bankAccount": {
+      "type": "object",
+			"description": "A bank account aligned to the current version of the data standards"
+    },
+    "bankAccountBalance": {
+      "type": "object",
+			"description": "A balance for a bank account aligned to the current version of the data standards"
+    },
+    "bankTransaction": {
+      "type": "object",
+			"description": "A bank transaction aligned to the current version of the data standards"
+    }
 	}
 }

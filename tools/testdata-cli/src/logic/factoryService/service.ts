@@ -1,4 +1,4 @@
-import { Factory } from '.';
+import { Factory, FactoryOptions } from '.';
 import { factories } from '../../factories';
 
 export const getFactoryIds = (): string[] => {
@@ -11,7 +11,7 @@ export const getFactoryIds = (): string[] => {
   return ids;
 }
 
-export const createFactory = (id: string, options: any): Factory | undefined => {
+export const createFactory = (id: string, options: FactoryOptions): Factory | undefined => {
   try {
     if (factories[id]) {
       return factories[id](options);

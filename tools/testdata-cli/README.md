@@ -135,7 +135,11 @@ To publish the repository to npm (needs permission)
 
 The following are a list of features that are intended but yet to be added to this capability (contributions welcome):
 
-* Basic factory framework implementation
+* Add support for users for authentication
+* Add support for secondary user instructions
+* Add support for nominated representatives
+* Add support to schema for energy data
+* Add generate function to execute the nominated factories
 * Document process for adding additional factories
 * Detailed documentation on option file structure
 * Additional basic factories:

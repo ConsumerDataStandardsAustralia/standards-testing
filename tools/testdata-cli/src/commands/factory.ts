@@ -34,8 +34,8 @@ export const handler = (argv: Arguments<Options>): void => {
       if (factory.canCreateFullData()) output +='    generate a full data set\n';
       if (factory.canCreateHolder()) output +='    create a data holder\n';
       if (factory.canCreateHolders()) output +='    create a set of data holders\n';
-      if (factory.canCreateRecipient()) output +='    create a data recipient\n';
-      if (factory.canCreateRecipients()) output +='    create a set of data recipients\n';
+      if (factory.canCreateClients()) output +='    create clients for a client cache\n';
+      if (factory.canCreateRecipients()) output +='    create recipients for a register cache\n';
       if (factory.canCreateStatus()) output +='    create a holder status message\n';
       if (factory.canCreateOutages()) output +='    create a set of holder planned outages\n';
       if (factory.canCreateCustomer()) output +='    create a customer\n';

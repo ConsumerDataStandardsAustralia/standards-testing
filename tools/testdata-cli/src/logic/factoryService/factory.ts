@@ -1,7 +1,18 @@
-export abstract class Factory {
-  protected options: any;
+import * as schema from '../../schema/cdr-test-data-schema';
+import { OptionsGeneral } from '../options';
 
-  protected constructor(options: any) {
+export interface FactoryOptions {
+  general: OptionsGeneral,
+  count?: number,
+  options?: {
+    [k: string]: unknown;
+  }
+}
+
+export abstract class Factory {
+  protected options: FactoryOptions;
+
+  protected constructor(options: FactoryOptions) {
     this.options = options;
   }
 
@@ -11,51 +22,51 @@ export abstract class Factory {
 
   // All data
   public canCreateFullData(): boolean { return false; };
-  public generateFullData(): any | undefined { return }
+  public generateFullData(data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema | undefined { return }
 
 
   // Register
   public canCreateHolder(): boolean { return false; };
-  public generateHolder(): any | undefined { return }
+  public generateHolder(): schema.Holder | undefined { return }
 
   public canCreateHolders(): boolean { return false; };
-  public generateHolders(): any[] | undefined { return }
+  public generateHolders(): schema.Holders[] | undefined { return }
 
-  public canCreateRecipient(): boolean { return false; };
-  public generateRecipient(): any | undefined { return }
+  public canCreateClients(): boolean { return false; };
+  public generateClients(): schema.Client[] | undefined { return }
 
   public canCreateRecipients(): boolean { return false; };
-  public generateRecipients(): any[] | undefined { return }
+  public generateRecipients(): schema.Recipient[] | undefined { return }
 
 
   // Admin
   public canCreateStatus(): boolean { return false; };
-  public generateStatus(): any | undefined { return }
+  public generateStatus(): schema.AdminStatus | undefined { return }
 
   public canCreateOutages(): boolean { return false; };
-  public generateOutages(): any[] | undefined { return }
+  public generateOutages(): schema.AdminOutage[] | undefined { return }
 
 
   // Customer
   public canCreateCustomer(): boolean { return false; };
-  public generateCustomer(): any | undefined { return }
+  public generateCustomer(holder: schema.Holder): schema.Customer | undefined { return }
 
   public canCreateCustomers(): boolean { return false; };
-  public generateCustomers(): any[] | undefined { return }
+  public generateCustomers(holder: schema.Holder): schema.Customer[] | undefined { return }
 
 
   // Banking
   public canCreateBankProduct(): boolean { return false; };
-  public generateBankProduct(): any | undefined { return }
+  public generateBankProduct(): schema.BankProduct | undefined { return }
 
   public canCreateBankProducts(): boolean { return false; };
-  public generateBankProducts(): any[] | undefined { return }
+  public generateBankProducts(): schema.BankProduct[] | undefined { return }
 
   public canCreateBankAccount(): boolean { return false; };
-  public generateBankAccount(customer: any): any | undefined { return }
+  public generateBankAccount(customer: schema.Customer): any | undefined { return }
 
   public canCreateBankAccounts(): boolean { return false; };
-  public generateBankAccounts(customer: any): any[] | undefined { return }
+  public generateBankAccounts(customer: schema.Customer): any[] | undefined { return }
 
   public canCreateBankBalance(): boolean { return false; };
   public generateBankBalance(account: any): any | undefined { return }
@@ -108,7 +119,7 @@ export abstract class Factory {
   public generateEnergyAccount(): any | undefined { return }
 
   public canCreateEnergyAccounts(): boolean { return false; };
-  public generateEnergyAccounts(customer: any): any | undefined { return }
+  public generateEnergyAccounts(customer: schema.Customer): any | undefined { return }
 
   public canCreateEnergyBalance(): boolean { return false; };
   public generateEnergyBalance(account: any): any | undefined { return }

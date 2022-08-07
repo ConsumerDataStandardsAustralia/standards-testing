@@ -1,8 +1,8 @@
-import { Factory } from '../logic/factoryService'
+import { Factory, FactoryOptions } from '../logic/factoryService'
 
 export class loadStatic extends Factory {
 
-  constructor(options: any) {
+  constructor(options: FactoryOptions) {
     super(options);
   }
 
