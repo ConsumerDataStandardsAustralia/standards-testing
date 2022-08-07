@@ -12,7 +12,8 @@
     "lint": "tslint -p .",
     "sync-schema": "rm -f ./src/schema/* && cp ../../schema/cdr-test-data-schema.json ./src/schema && node ./utils/create-schema-definitions.js",
     "build": "rm -rf ./dist/ && tsc && chmod +x ./dist/cli.js",
-    "publish": "npm publish --access public"
+    "publish": "npm publish --access public",
+    "test": "node ./dist/cli.js generate samples/options/load-static.json ~/tmp/full.json"
   },
   "author": "Data Standards Body",
   "license": "MIT",
