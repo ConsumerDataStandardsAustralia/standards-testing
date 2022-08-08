@@ -1,12 +1,12 @@
 import { Arguments, CommandBuilder } from 'yargs';
-import * as schema from '../schema/cdr-test-schema.json';
+import * as schema from '../logic/schema';
 
 type Options = {
-  version: boolean | undefined;
+  vonly: boolean | undefined;
 };
 
-export const command: string = 'doc-schema';
-export const desc: string = 'Print out the testdocs schema currently in use (or it\'s version if --version is specified)';
+export const command: string = 'schema';
+export const desc: string = 'Print out the testdata schema currently in use (or it\'s version if --vonly is specified)';
 
 export const builder: CommandBuilder<Options, Options> = (yargs) =>
   yargs
@@ -18,9 +18,9 @@ export const handler = (argv: Arguments<Options>): void => {
   const { vonly } = argv;
 
   if (vonly) {
-    process.stdout.write(`${schema.properties.fileVersion}\n`);
+    process.stdout.write(`${schema.testDataVersion()}\n`);
   } else {
-     process.stdout.write(`${JSON.stringify(schema, null, 4)}\n`);
+    process.stdout.write(`${JSON.stringify(schema.testDataSchema(), null, 4)}\n`);
   }
 
   process.exit(0);

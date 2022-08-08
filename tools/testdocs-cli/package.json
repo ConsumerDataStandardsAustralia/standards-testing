@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "lint": "tslint -p .",
-    "sync-schema": "rm -f ./src/schema/* && cp ../../schema/*.json ./src/schema && node ./utils/create-schema-definitions.js",
+    "sync-schema": "rm -f ./src/schema/* && cp ../../schema/cdr-test-doc-schema.json ./src/schema && node ./utils/create-schema-definitions.js",
     "build": "rm -rf ./dist/ && tsc && chmod +x ./dist/cli.js && npm run copy-additional",
     "copy-additional": "cp ./config.json ./dist/commands",
     "publish": "npm publish --access public"

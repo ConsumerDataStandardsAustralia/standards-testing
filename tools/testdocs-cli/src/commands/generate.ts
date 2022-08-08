@@ -13,7 +13,7 @@ type TestDocsOptions = {
 
 // TODO: Add ability to set additional options per media type such as CSS for HTML or version for JSON
 
-export const command: string = 'gendocs <type> <src> <dst>';
+export const command: string = 'generate <type> <src> <dst>';
 export const desc: string = 'Generate various forms of output.';
 
 export const builder: CommandBuilder<TestDocsOptions, TestDocsOptions> = (yargs) =>

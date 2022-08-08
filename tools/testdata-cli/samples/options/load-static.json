@@ -1,0 +1,10 @@
+{
+  "factories": {
+    "allDataFactory": {
+      "id": "general-load-static",
+      "options": {
+        "source": "samples/files/full.json"
+      }
+    }
+  }
+}

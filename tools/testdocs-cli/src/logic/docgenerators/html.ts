@@ -5,7 +5,7 @@ import {
   TestCasePredicate,
   AssertionPredicate,
   ConsumerDataRightTestCaseJSONSchema
-} from '../../schema/cdr-test-schema';
+} from '../../schema/cdr-test-doc-schema';
 
 
 // TODO: Validate source file
@@ -388,11 +388,11 @@ function generateAssertionsSection(testDocs: ConsumerDataRightTestCaseJSONSchema
       for (const clause of assertion.when) {
         if (when) when += '\n';
         when += clause;
-      }     
+      }
       result += tableRow(['When', processNewlines(when)]);
-      
+
       result += tableRow(['Then', processAssertionPredicate(testDocs, assertion.then)]);
-      
+
       result += endTable();
 
       result += endSection();
@@ -459,7 +459,7 @@ function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema
   let result = '';
   if (typeof predicate === 'string') {
     if (predicate.indexOf("<div>") == -1)
-      result += processSpecialCharacters(predicate);       
+      result += processSpecialCharacters(predicate);
   } else if (predicate.and) {
     const terms = predicate.and as AssertionPredicate[];
     if (terms.length > 0) {
@@ -467,7 +467,7 @@ function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema
       for (let i = 0; i < terms.length; i++) {
         innerResult += processAssertionPredicate(testDocs, terms[i]);
         innerResult += "\n";
-      }     
+      }
       result += predicateOuter('AND (');
       innerResult = processNewlinesOnly(innerResult);
       result += predicateInner(innerResult);
@@ -644,7 +644,7 @@ function processSpecialCharacters(text: string | undefined): string {
     result = text.replace(/>/g, '&gt;');
     result = result.replace(/</g, '&lt;');
   }
-  return result; 
+  return result;
 }
 
 function processNewlines(text: string | undefined): string {

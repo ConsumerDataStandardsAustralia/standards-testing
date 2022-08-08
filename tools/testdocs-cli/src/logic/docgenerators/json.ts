@@ -12,7 +12,7 @@ import {
   Scenario,
   ScenarioAction,
   ConsumerDataRightTestCaseJSONSchema
-} from '../../schema/cdr-test-schema';
+} from '../../schema/cdr-test-doc-schema';
 import { JsonGeneratorConfig } from './json-generator-config';
 
 const SUITE_ID_INDEX: number = 1;
@@ -378,7 +378,7 @@ function processFirstTestLine(header: Array<string>): TestCase {
   if (commonAss != null && commonAss.indexOf('A.') >= 0) {
 
       assertions.push(...FixString(commonAss).split(/\n/));
-      
+
   }
   if (suiteAss != null && suiteAss.indexOf('A.') >= 0) {
     assertions.push(...FixString(suiteAss).split(/\n/));

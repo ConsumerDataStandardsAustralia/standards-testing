@@ -1,8 +1,11 @@
 import * as schema from './schema';
-import * as validate from './validate';
+import * as factory from './factory';
+import * as factories from './factories';
 import * as generate from './generate';
+
 export const commands = [
   schema,
-  validate,
+  factory,
+  factories,
   generate
 ];
