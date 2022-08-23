@@ -72,11 +72,32 @@ export interface Options {
               accounts?: {
                 count?: OptionsItemCount;
                 accountFactory?: OptionsFactory,
+                balanceFactory?: OptionsFactory,
                 transactionsFactory?: OptionsFactory,
               },
               directDebitsFactory?: OptionsFactory,
               payeesFactory?: OptionsFactory,
               paymentSchedulesFactory?: OptionsFactory
+            },
+            energy?: {
+              energyFactory?: OptionsFactory,
+              accountsFactory?: OptionsFactory,
+              accounts?: {
+                count?: OptionsItemCount;
+                accountFactory?: OptionsFactory,
+                balanceFactory?: OptionsFactory,
+                invoiceFactory?: OptionsFactory,
+                transactionsFactory?: OptionsFactory,
+                concessionsFactory?: OptionsFactory,
+                paymentScheduleFactory?: OptionsFactory
+              },
+              servicePointsFactory?: OptionsFactory,
+              servicePoints?: {
+                count?: OptionsItemCount;
+                servicePointFactory?: OptionsFactory,
+                derFactory?: OptionsFactory,
+                usageFactory?: OptionsFactory,
+              }
             }
           }
         }

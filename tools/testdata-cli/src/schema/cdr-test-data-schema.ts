@@ -6,6 +6,11 @@
  */
 
 /**
+ * An array of holders and their data
+ */
+export type Holders = HolderWrapper[];
+
+/**
  * A JSON schema for defining test data files that can be used to seed a mock, or test, implementation of a Data Holder for the Consumer Data Right
  */
 export interface ConsumerDataRightTestDataJSONSchema {
@@ -36,16 +41,17 @@ export interface ConsumerDataRightTestDataJSONSchema {
   registerCache?: Recipient[];
 }
 /**
- * A set of data holders, and their associated data, keyed on data holder ID
+ * A wrapper for a single holder to contain all of the data related to the holder
  */
-export interface Holders {
-  [k: string]: Holder;
+export interface HolderWrapper {
+  /**
+   * The unique internal ID of the holder
+   */
+  holderId: string;
+  holder: Holder;
 }
 /**
  * Data for a single data holder
- *
- * This interface was referenced by `Holders`'s JSON-Schema definition
- * via the `patternProperty` "^[a-zA-Z0-9]+$".
  */
 export interface Holder {
   /**
@@ -119,13 +125,17 @@ export interface AdminOutage {
  * A wrapper for a single customer to contain all of the data related to the customer
  */
 export interface CustomerWrapper {
+  /**
+   * The unique internal ID of the customer
+   */
+  customerId: string;
   customer: Customer;
   /**
    * Banking data for this customer
    */
   banking: {
     /**
-     * An array of accounts and their
+     * An array of accounts and their data
      */
     accounts?: BankAccountWrapper[];
     /**
@@ -140,6 +150,20 @@ export interface CustomerWrapper {
      * An array of payment schedules
      */
     payments?: BankPaymentSchedule[];
+    [k: string]: unknown;
+  };
+  /**
+   * Energy data for this customer
+   */
+  energy?: {
+    /**
+     * An array of accounts and their data
+     */
+    accounts?: EnergyAccountWrapper[];
+    /**
+     * An array of service points and their data
+     */
+    servicePoints?: EnergyServicePointWrapper[];
     [k: string]: unknown;
   };
 }
@@ -194,6 +218,91 @@ export interface BankPayee {
  * A payment schedule aligned to the current version of the data standards
  */
 export interface BankPaymentSchedule {
+  [k: string]: unknown;
+}
+/**
+ * A wrapper for a single eenrgy account to contain all of the data related to the account
+ */
+export interface EnergyAccountWrapper {
+  account: EnergyAccount;
+  balance: EnergyAccountBalance;
+  paymentSchedule?: EnergyPaymentSchedule;
+  /**
+   * An array of invoices for the account
+   */
+  invoices?: EnergyInvoice[];
+  /**
+   * An array of transactions for the account
+   */
+  transactions?: EnergyTransaction[];
+  /**
+   * An array of concessions for the account
+   */
+  concessions?: EnergyConcession[];
+}
+/**
+ * An energy account aligned to the current version of the data standards
+ */
+export interface EnergyAccount {
+  [k: string]: unknown;
+}
+/**
+ * An energy account balance structure aligned to the current version of the data standards
+ */
+export interface EnergyAccountBalance {
+  [k: string]: unknown;
+}
+/**
+ * An energy payment schedule structure aligned to the current version of the data standards
+ */
+export interface EnergyPaymentSchedule {
+  [k: string]: unknown;
+}
+/**
+ * An energy invoice aligned to the current version of the data standards
+ */
+export interface EnergyInvoice {
+  [k: string]: unknown;
+}
+/**
+ * An energy transaction aligned to the current version of the data standards
+ */
+export interface EnergyTransaction {
+  [k: string]: unknown;
+}
+/**
+ * An energy concession aligned to the current version of the data standards
+ */
+export interface EnergyConcession {
+  [k: string]: unknown;
+}
+/**
+ * An energy for a single service point (metering site) to contain all of the data related to the service point
+ */
+export interface EnergyServicePointWrapper {
+  servicePoint?: EnergyServicePoint;
+  der?: EnergyDerData;
+  /**
+   * An array of reads for the service point
+   */
+  usage?: EnergyUsageRead[];
+}
+/**
+ * Standing data for an energy service point aligned to the current version of the data standards
+ */
+export interface EnergyServicePoint {
+  [k: string]: unknown;
+}
+/**
+ * Distributed energy resources for an energy account aligned to the current version of the data standards
+ */
+export interface EnergyDerData {
+  [k: string]: unknown;
+}
+/**
+ * A usage read for a service point aligned to the current version of the data standards
+ */
+export interface EnergyUsageRead {
   [k: string]: unknown;
 }
 /**

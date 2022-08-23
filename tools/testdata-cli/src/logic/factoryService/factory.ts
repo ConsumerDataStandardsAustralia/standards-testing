@@ -53,10 +53,10 @@ export abstract class Factory {
 
   // Customer
   public canCreateCustomer(): boolean { return false; };
-  public generateCustomer(holder: schema.Holder): schema.Customer | undefined { return }
+  public generateCustomer(holder: schema.HolderWrapper): schema.CustomerWrapper | undefined { return }
 
   public canCreateCustomers(): boolean { return false; };
-  public generateCustomers(holder: schema.Holder): schema.Customer[] | undefined { return }
+  public generateCustomers(holder: schema.HolderWrapper): schema.CustomerWrapper[] | undefined { return }
 
 
   // Banking
@@ -67,76 +67,76 @@ export abstract class Factory {
   public generateBankProducts(): schema.BankProduct[] | undefined { return }
 
   public canCreateBankAccount(): boolean { return false; };
-  public generateBankAccount(customer: schema.Customer): any | undefined { return }
+  public generateBankAccount(customer: schema.CustomerWrapper): schema.BankAccountWrapper | undefined { return }
 
   public canCreateBankAccounts(): boolean { return false; };
-  public generateBankAccounts(customer: schema.Customer): any[] | undefined { return }
+  public generateBankAccounts(customer: schema.CustomerWrapper): schema.BankAccountWrapper[] | undefined { return }
 
   public canCreateBankBalance(): boolean { return false; };
-  public generateBankBalance(account: any): any | undefined { return }
+  public generateBankBalance(account: schema.BankAccountWrapper): schema.BankAccountBalance | undefined { return }
 
   public canCreateBankTransaction(): boolean { return false; };
-  public generateBankTransaction(account: any): any | undefined { return }
+  public generateBankTransaction(account: schema.BankAccountWrapper): schema.BankTransaction | undefined { return }
 
   public canCreateBankTransactions(): boolean { return false; };
-  public generateBankTransactions(account: any): any[] | undefined { return }
+  public generateBankTransactions(account: schema.BankAccountWrapper): schema.BankTransaction[] | undefined { return }
 
   public canCreateBankDirectDebits(): boolean { return false; };
-  public generateBankDirectDebits(accounts: any[]): any[] | undefined { return }
+  public generateBankDirectDebits(accounts: schema.BankAccountWrapper[]): schema.BankDirectDebit[] | undefined { return }
 
   public canCreateBankPayees(): boolean { return false; };
-  public generateBankPayees(accounts: any[]): any[] | undefined { return }
+  public generateBankPayees(accounts: schema.BankAccountWrapper[]): schema.BankPayee[] | undefined { return }
 
   public canCreateBankScheduledPayments(): boolean { return false; };
-  public generateScheduledPayments(accounts: any[]): any[] | undefined { return }
+  public generateScheduledPayments(accounts: schema.BankAccountWrapper[]): schema.BankPaymentSchedule[] | undefined { return }
 
 
   // Energy
   public canCreateEnergyPlan(): boolean { return false; };
-  public generateEnergyPLan(): any | undefined { return }
+  public generateEnergyPLan(): schema.EnergyPlan | undefined { return }
 
   public canCreateEnergyPlans(): boolean { return false; };
-  public generateEnergyPlans(): any[] | undefined { return }
+  public generateEnergyPlans(): schema.EnergyPlan[] | undefined { return }
 
   public canCreateEnergyServicePoint(): boolean { return false; };
-  public generateEnergyServicePoint(): any | undefined { return }
+  public generateEnergyServicePoint(): schema.EnergyServicePointWrapper | undefined { return }
 
   public canCreateEnergyServicePoints(): boolean { return false; };
-  public generateEnergyServicePoints(): any[] | undefined { return }
+  public generateEnergyServicePoints(): schema.EnergyServicePointWrapper[] | undefined { return }
 
   public canCreateEnergyDER(): boolean { return false; };
-  public generateEnergyDER(servicePoint: any): any[] | undefined { return }
+  public generateEnergyDER(servicePoint: schema.EnergyServicePointWrapper): schema.EnergyDerData[] | undefined { return }
 
   public canCreateEnergyUsage(): boolean { return false; };
-  public generateEnergyUsage(servicePoint: any): any[] | undefined { return }
-
-  public canCreateEnergyPaymentSchedule(): boolean { return false; };
-  public generateEnergyPaymentSchedule(): any | undefined { return }
-
-  public canCreateEnergyConcession(): boolean { return false; };
-  public generateEnergyConcession(): any | undefined { return }
-
-  public canCreateEnergyConcessions(): boolean { return false; };
-  public generateEnergyConcessions(): any[] | undefined { return }
+  public generateEnergyUsage(servicePoint: schema.EnergyServicePointWrapper): schema.EnergyUsageRead[] | undefined { return }
 
   public canCreateEnergyAccount(): boolean { return false; };
-  public generateEnergyAccount(): any | undefined { return }
+  public generateEnergyAccount(customer: schema.CustomerWrapper): schema.EnergyAccountWrapper | undefined { return }
 
   public canCreateEnergyAccounts(): boolean { return false; };
-  public generateEnergyAccounts(customer: schema.Customer): any | undefined { return }
+  public generateEnergyAccounts(customer: schema.CustomerWrapper): schema.EnergyAccountWrapper[] | undefined { return }
 
   public canCreateEnergyBalance(): boolean { return false; };
-  public generateEnergyBalance(account: any): any | undefined { return }
+  public generateEnergyBalance(account: schema.EnergyAccountWrapper): schema.EnergyAccountBalance | undefined { return }
+
+  public canCreateEnergyPaymentSchedule(): boolean { return false; };
+  public generateEnergyPaymentSchedule(account: schema.EnergyAccountWrapper): schema.EnergyPaymentSchedule | undefined { return }
+
+  public canCreateEnergyConcession(): boolean { return false; };
+  public generateEnergyConcession(account: schema.EnergyAccountWrapper): schema.EnergyConcession | undefined { return }
+
+  public canCreateEnergyConcessions(): boolean { return false; };
+  public generateEnergyConcessions(account: schema.EnergyAccountWrapper): schema.EnergyConcession[] | undefined { return }
 
   public canCreateEnergyInvoice(): boolean { return false; };
-  public generateEnergyInvoice(): any | undefined { return }
+  public generateEnergyInvoice(account: schema.EnergyAccountWrapper): schema.EnergyInvoice | undefined { return }
 
   public canCreateEnergyInvoices(): boolean { return false; };
-  public generateEnergyInvoices(): any[] | undefined { return }
+  public generateEnergyInvoices(account: schema.EnergyAccountWrapper): schema.EnergyInvoice[] | undefined { return }
 
   public canCreateEnergyTransaction(): boolean { return false; };
-  public generateEnergyTransaction(): any | undefined { return }
+  public generateEnergyTransaction(account: schema.EnergyAccountWrapper): schema.EnergyTransaction | undefined { return }
 
   public canCreateEnergyTransactions(): boolean { return false; };
-  public generateEnergyTransactions(): any[] | undefined { return }
+  public generateEnergyTransactions(account: schema.EnergyAccountWrapper): schema.EnergyTransaction[] | undefined { return }
 }

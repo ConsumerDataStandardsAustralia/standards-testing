@@ -129,35 +129,3 @@ To publish the repository to npm (needs permission)
 `npm run build-prod`
 2. Publish
 `npm publish --access public`
-
-
-## Outstanding Features
-
-The following are a list of features that are intended but yet to be added to this capability (contributions welcome):
-
-* Add support for users for authentication
-* Add support for secondary user instructions
-* Add support for nominated representatives
-* Add support to schema for energy data
-* Add generate function to execute the nominated factories
-* Document process for adding additional factories
-* Detailed documentation on option file structure
-* Additional basic factories:
- * Factory for reading in a static data file
- * Factory for updating dates to be relative to a specific time
- * Factory to generate a series of basic individual customers
- * Factory to generate a series of basic business customers
- * Factory to generate register data
-* Additional factories specific to banking
- * Factory to generate basic retail bank account data
- * Factory to generate basic business bank account data
- * Factory to generate basic transaction data
- * Factory to generate basic data for other banking data clusters
-* Additional factories specific to energy
- * Factory to generate basic retail energy account data
- * Factory to generate basic business energy account data
- * Factory to generate basic billing and invoice data
- * Factory to generate basic NMI standing data
- * Factory to generate basic DER data
- * Factory to generate basic usage data
- * Factory to generate basic data for other energy data clusters
