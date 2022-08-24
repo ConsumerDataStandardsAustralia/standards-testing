@@ -1,6 +1,6 @@
 {
   "name": "@cds-au/testdocs",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Tools for managing the presentation of test case documentation for the Australian Consumer Data Right regime",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
