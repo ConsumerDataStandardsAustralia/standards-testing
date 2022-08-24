@@ -84,7 +84,7 @@ function generateSummarySection(testDocs: ConsumerDataRightTestCaseJSONSchema): 
   result += header1(testDocs.title, 'introduction');
   result += text('File version: ' + testDocs.fileVersion);
   result += text(testDocs.description);
-  result += text('For more details see the CDS <a href="' + testDocs.githubRepoUrl + '">standards-testing repository</a> for details');
+  result += text('For more details see the CDS <a href="' + testDocs.githubRepoUrl + '">standards-testing repository</a>');
   result += text('Last updated ' + today.format('DD/MM/YYYY') + ' see the <a href="' + testDocs.changeLogUrl + '">change log</a> for details');
   result += endSection();
 
@@ -435,9 +435,9 @@ function processTestCasePredicate(testDocs: ConsumerDataRightTestCaseJSONSchema,
       for (let i = 0; i < terms.length; i++) {
         innerResult += processTestCasePredicate(testDocs, terms[i]);
       }
-      result += predicateOuter('AND (');
+      result += predicateOuter('AND ');
       result += predicateInner(innerResult);
-      result += predicateOuter(')');
+      result += predicateOuter('');
     }
   } else if (predicate.or) {
     const terms = predicate.or as TestCasePredicate[];
@@ -446,9 +446,9 @@ function processTestCasePredicate(testDocs: ConsumerDataRightTestCaseJSONSchema,
       for (let i = 0; i < terms.length; i++) {
         innerResult += processTestCasePredicate(testDocs, terms[i]);
       }
-      result += predicateOuter('OR (');
+      result += predicateOuter('OR ');
       result += predicateInner(innerResult);
-      result += predicateOuter(')');
+      result += predicateOuter('');
     }
   }
 
@@ -466,12 +466,17 @@ function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema
       let innerResult = '';
       for (let i = 0; i < terms.length; i++) {
         innerResult += processAssertionPredicate(testDocs, terms[i]);
-        innerResult += "\n";
-      }
-      result += predicateOuter('AND (');
+        if(i==terms.length - 1){
+          innerResult += "\n";
+        }
+        else{
+          innerResult += "\nAND ";
+        }
+      }     
+      //result += predicateOuter('AND ');
       innerResult = processNewlinesOnly(innerResult);
       result += predicateInner(innerResult);
-      result += predicateOuter(')');
+      result += predicateOuter('');
     }
   } else if (predicate.or) {
     const terms = predicate.or as AssertionPredicate[];
@@ -480,9 +485,9 @@ function processAssertionPredicate(testDocs: ConsumerDataRightTestCaseJSONSchema
       for (let i = 0; i < terms.length; i++) {
         innerResult += processAssertionPredicate(testDocs, terms[i]);
       }
-      result += predicateOuter('OR (');
+      result += predicateOuter('OR ');
       result += predicateInner(innerResult);
-      result += predicateOuter(')');
+      result += predicateOuter('');
     }
   }
   return result;
@@ -631,11 +636,11 @@ function link(href: string | undefined, text: string | undefined): string {
 }
 
 function predicateOuter(text: string): string {
-  return `<div class="predicate outer">${text}</div>\n`;
+  return `<div class="predicate outer">${text}</div>`;
 }
 
 function predicateInner(text: string): string {
-  return `<div class="predicate inner" style="margin-left:2em">${text}</div>\n`;
+  return `<div class="predicate inner">${text}</div>`;
 }
 
 function processSpecialCharacters(text: string | undefined): string {
