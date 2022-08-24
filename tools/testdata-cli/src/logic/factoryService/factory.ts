@@ -29,16 +29,18 @@ export abstract class Factory {
   public generateFullData(data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema | undefined { return }
 
 
-  // Register
+  // Data Holders
   public canCreateHolder(): boolean { return false; };
-  public generateHolder(): schema.Holder | undefined { return }
+  public generateHolder(): schema.HolderWrapper | undefined { return }
 
   public canCreateHolders(): boolean { return false; };
-  public generateHolders(): schema.Holders[] | undefined { return }
+  public generateHolders(): schema.HolderWrapper[] | undefined { return }
 
+  // Client Registration
   public canCreateClients(): boolean { return false; };
   public generateClients(): schema.Client[] | undefined { return }
 
+  // Register
   public canCreateRecipients(): boolean { return false; };
   public generateRecipients(): schema.Recipient[] | undefined { return }
 
@@ -93,7 +95,7 @@ export abstract class Factory {
 
   // Energy
   public canCreateEnergyPlan(): boolean { return false; };
-  public generateEnergyPLan(): schema.EnergyPlan | undefined { return }
+  public generateEnergyPlan(): schema.EnergyPlan | undefined { return }
 
   public canCreateEnergyPlans(): boolean { return false; };
   public generateEnergyPlans(): schema.EnergyPlan[] | undefined { return }

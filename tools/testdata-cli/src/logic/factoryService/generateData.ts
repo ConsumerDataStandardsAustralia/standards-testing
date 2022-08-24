@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import {
-  Factory
+  Factory,
+  Helper
 } from '.';
 import { createFactory } from '.';
 import * as schema from '../../schema/cdr-test-data-schema';
@@ -26,19 +27,19 @@ export const generateData = (options: Options, dst: string, verbose: boolean): n
 
   // Execute all data factories
   log(verbose, 'Executing global factories (if any)');
-  data = generateAllData(verbose, options, data);
+  data = generateAllData(verbose, 1, options, data);
 
   // Execute holders factories
   log(verbose, 'Executing holder factories (if any)');
-  data = generateHolders(verbose, options, data);
+  data = generateHolders(verbose, 1, options, data);
 
   // Execute client factories
   log(verbose, 'Executing client cache factories (if any)');
-  data = generateClientCache(verbose, options, data);
+  data = generateClientCache(verbose, 1, options, data);
 
   // Execute recipient factories
   log(verbose, 'Executing register cache factories (if any)');
-  data = generateRegisterCache(verbose, options, data);
+  data = generateRegisterCache(verbose, 1, options, data);
 
   // Save the generated data to the destination file
   log(verbose, `Outputting generated data to '${dst}'`);
@@ -51,53 +52,205 @@ export const generateData = (options: Options, dst: string, verbose: boolean): n
 // Data generation functions
 // ----------------------------------------------------------------------------
 
-function generateAllData(verbose: boolean, options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
+function generateAllData(verbose: boolean, indent: number, options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
   let result = data;
   let factories: Factory[] = []
 
   // Create the factories
   if (options.factories?.allDataFactory) {
-    log(verbose, `Creating global factories`, 1)
+    log(verbose, `Creating global factories`, indent)
     factories = createFactories(1, options.general, options.factories?.allDataFactory);
   }
 
   if (factories.length > 0) {
-    log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, 1)
+    log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
 
     // If we have factories execute each one of them
     for (const factory of factories) {
-      log(verbose, `Running factory '${factory.id}'`, 1)
+      log(verbose, `Running factory '${factory.id}'`, indent)
       if (factory.canCreateFullData()) {
         const newData = factory.generateFullData(JSON.parse(JSON.stringify(result)));
         if (newData) result = newData;
 
-        log(verbose, `Factory complete`, 2)
+        log(verbose, `Factory complete`, indent+1)
       } else {
-        log(verbose, `Factory does not support full data generation`, 2)
+        log(verbose, `Factory does not support full data generation`, indent+1)
       }
     }
   } else {
-    log(verbose, 'No global factories to execute', 1)
+    log(verbose, 'No global factories to execute', indent)
   }
 
   return result;
 }
 
-function generateHolders(verbose: boolean, options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
+function generateHolders(verbose: boolean, indent: number, options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
   let result = data;
-  //XXXX
+
+  log(verbose, 'Executing multiple holder factories (if Any)', indent);
+  result = generateMultipleHolders(verbose, indent+1, options, result);
+
+  log(verbose, 'Executing detailed holder factories (if Any)', indent);
+  if (options.factories?.holders && options.factories?.holders.length > 0) {
+    for (let i = 0; i < options.factories?.holders.length; i++) {
+
+      log(verbose, `Executing detailed holder set ${i+1}`, indent+1);
+      const newData = generateDetailedHolders(verbose, indent+2, options, options.factories?.holders[i], result);
+
+      if (newData && newData.length > 0) {
+        if (!result.holders) result.holders = [];
+        result.holders.push(...newData);
+      }
+    }
+  }
+
   return result;
 }
 
-function generateClientCache(verbose: boolean, options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
+function generateMultipleHolders(verbose: boolean, indent: number, options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
   let result = data;
-  //XXXX
+  let factories: Factory[] = []
+
+  // Create the factories
+  if (options.factories?.holdersFactory) {
+    log(verbose, `Creating multiple holder factories`, indent)
+    factories = createFactories(1, options.general, options.factories?.holdersFactory);
+  }
+
+  if (factories.length > 0) {
+    log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
+
+    // If we have factories execute each one of them
+    for (const factory of factories) {
+      log(verbose, `Running factory '${factory.id}'`, indent)
+      if (factory.canCreateHolders()) {
+        const newData = factory.generateHolders();
+        if (newData) {
+          if (!data.holders) data.holders = [];
+          data.holders.push(...newData);
+        }
+
+        log(verbose, `Factory complete - ${newData ? newData.length : 0} holders created`, indent+1)
+      } else {
+        log(verbose, `Factory does not support multiple holder generation`, indent+1)
+      }
+    }
+  } else {
+    log(verbose, 'No multiple holder factories to execute', indent+1)
+  }
+
   return result;
 }
 
-function generateRegisterCache(verbose: boolean, options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
+function generateDetailedHolders(verbose: boolean, indent: number, options: Options, holderOptions: any, data: schema.ConsumerDataRightTestDataJSONSchema): schema.HolderWrapper[] {
   let result = data;
-  //XXXX
+  let factories: Factory[] = [];
+  let holders: schema.HolderWrapper[] = [];
+
+  // Create the holder factories
+  if (holderOptions.holderFactory) {
+    log(verbose, `Creating detailed holder factories`, indent)
+    const count = Helper.isPositiveInteger(holderOptions.count) ? holderOptions.count : 1;
+    factories = createFactories(count, options.general, holderOptions.holderFactory);
+  }
+
+  // Create the holders required
+  if (factories.length > 0) {
+    log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
+
+    // If we have factories execute each one of them
+    for (const factory of factories) {
+      log(verbose, `Running factory '${factory.id}'`, indent)
+      if (factory.canCreateHolder()) {
+        const holder = factory.generateHolder();
+
+        log(verbose, `Factory complete - ${holder ? 1 : 0} created`, indent+1)
+
+        if (holder) {
+          holders.push(holder);
+
+          // Create the detail inside the created holder
+          //XXXX
+
+        }
+      } else {
+        log(verbose, `Factory does not support holder generation`, indent+1)
+      }
+    }
+  } else {
+    log(verbose, 'No detailed holder factories to execute', indent)
+  }
+
+  return holders;
+}
+
+function generateClientCache(verbose: boolean, indent: number, options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
+  let result = data;
+  let factories: Factory[] = []
+
+  // Create the factories
+  if (options.factories?.clientCacheFactory) {
+    log(verbose, `Creating client cache factories`, indent)
+    factories = createFactories(1, options.general, options.factories?.clientCacheFactory);
+  }
+
+  if (factories.length > 0) {
+    log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
+
+    // If we have factories execute each one of them
+    for (const factory of factories) {
+      log(verbose, `Running factory '${factory.id}'`, indent)
+      if (factory.canCreateClients()) {
+        const newData = factory.generateClients();
+        if (newData) {
+          if (!data.clientCache) data.clientCache = [];
+          data.clientCache.push(...newData);
+        }
+
+        log(verbose, `Factory complete - ${newData ? newData.length : 0} created`, indent+1)
+      } else {
+        log(verbose, `Factory does not support client cache generation`, indent+1)
+      }
+    }
+  } else {
+    log(verbose, 'No client cache factories to execute', indent)
+  }
+
+  return result;
+}
+
+function generateRegisterCache(verbose: boolean, indent: number, options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
+  let result = data;
+  let factories: Factory[] = []
+
+  // Create the factories
+  if (options.factories?.registerCacheFactory) {
+    log(verbose, `Creating register cache factories`, indent)
+    factories = createFactories(1, options.general, options.factories?.registerCacheFactory);
+  }
+
+  if (factories.length > 0) {
+    log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
+
+    // If we have factories execute each one of them
+    for (const factory of factories) {
+      log(verbose, `Running factory '${factory.id}'`, indent)
+      if (factory.canCreateRecipients()) {
+        const newData = factory.generateRecipients();
+        if (newData) {
+          if (!data.registerCache) data.registerCache = [];
+          data.registerCache.push(...newData);
+        }
+
+        log(verbose, `Factory complete - ${newData ? newData.length : 0} created`, indent+1)
+      } else {
+        log(verbose, `Factory does not support register cache generation`, indent+1)
+      }
+    }
+  } else {
+    log(verbose, 'No register cache factories to execute', indent)
+  }
+
   return result;
 }
 

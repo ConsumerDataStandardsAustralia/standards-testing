@@ -49,15 +49,14 @@ export interface Options {
         unauthenticated?: {
           unauthenticatedFactory?: OptionsFactory,
           banking?: {
-            productFactory?: OptionsFactory
+            productsFactory?: OptionsFactory
           },
           energy?: {
-            planFactory?: OptionsFactory
+            plansFactory?: OptionsFactory
           },
           admin?: {
-            adminFactory?: OptionsFactory,
             statusFactory?: OptionsFactory,
-            outageFactory?: OptionsFactory
+            outagesFactory?: OptionsFactory
           }
         },
         authenticated?: {
@@ -86,7 +85,7 @@ export interface Options {
                 count?: OptionsItemCount;
                 accountFactory?: OptionsFactory,
                 balanceFactory?: OptionsFactory,
-                invoiceFactory?: OptionsFactory,
+                invoicesFactory?: OptionsFactory,
                 transactionsFactory?: OptionsFactory,
                 concessionsFactory?: OptionsFactory,
                 paymentScheduleFactory?: OptionsFactory
