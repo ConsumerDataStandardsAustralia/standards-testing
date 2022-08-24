@@ -102,7 +102,7 @@ Last updated 25/08/2022 see the <a href="https://github.com/ConsumerDataStandard
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Execute Test|[T.AAA.001](#testcase-t.aaa.001)|
+|1|Execute Test|[T.CAC.001: Get Customer](#testcase-t.cac.001)|
 
 
 <a id="scenario-s.cac.036"></a>
@@ -112,11 +112,11 @@ Last updated 25/08/2022 see the <a href="https://github.com/ConsumerDataStandard
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Execute Test|[T.AAA.002](#testcase-t.aaa.002)|
-|2|Execute Test|[T.AAA.003](#testcase-t.aaa.003)|
-|3|Execute Test|[T.AAA.004](#testcase-t.aaa.004)|
-|4|Execute Test|[T.AAA.005](#testcase-t.aaa.005)|
-|5|Execute Test|[T.AAA.006](#testcase-t.aaa.006)|
+|1|Execute Test|[T.CAC.002: Get Customer - invalid version value](#testcase-t.cac.002)|
+|2|Execute Test|[T.CAC.003: Get Customer - invalid version format](#testcase-t.cac.003)|
+|3|Execute Test|[T.CAC.004: Get Customer - unsupported version without x-min-v included](#testcase-t.cac.004)|
+|4|Execute Test|[T.CAC.005: Get Customer - unsupported version when x-min-v is included](#testcase-t.cac.005)|
+|5|Execute Test|[T.CAC.006: Get Customer - invalid minimum version value](#testcase-t.cac.006)|
 
 
 <a id="scenario-s.cac.037"></a>
@@ -126,7 +126,7 @@ Last updated 25/08/2022 see the <a href="https://github.com/ConsumerDataStandard
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Execute Test|[T.AAA.007](#testcase-t.aaa.007)|
+|1|Execute Test|[T.CAC.007: Get Customer - invalid FAPI Interaction ID format ](#testcase-t.cac.007)|
 
 
 <a id="scenario-s.cac.038"></a>
@@ -136,11 +136,11 @@ Last updated 25/08/2022 see the <a href="https://github.com/ConsumerDataStandard
 
 |Action No.|Action Type|Detail|
 |-|-|-|
-|1|Execute Test|[T.AAA.008](#testcase-t.aaa.008)|
-|2|Execute Test|[T.AAA.009](#testcase-t.aaa.009)|
-|3|Execute Test|[T.AAA.010](#testcase-t.aaa.010)|
-|4|Execute Test|[T.AAA.011](#testcase-t.aaa.011)|
-|5|Execute Test|[T.AAA.012](#testcase-t.aaa.012)|
+|1|Execute Test|[T.CAC.008: Get Customer - missing FAPI Auth Date](#testcase-t.cac.008)|
+|2|Execute Test|[T.CAC.009: Get Customer -  invalid FAPI Auth Date](#testcase-t.cac.009)|
+|3|Execute Test|[T.CAC.010: Get Customer - missing FAPI Customer IP Address](#testcase-t.cac.010)|
+|4|Execute Test|[T.CAC.011: Get Customer - invalid FAPI Customer IP Address](#testcase-t.cac.011)|
+|5|Execute Test|[T.CAC.012: Get Customer - missing CDS Client Header](#testcase-t.cac.012)|
 
 
 <a id="scenario-s.cac.039"></a>
@@ -12657,48 +12657,6 @@ Critical (Test Fails)
 |Given|the request is a POST request</br>AND the request body is not in a valid JSON format, i.e. it is malformed|
 |When|a response is returned|
 |Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 400</br> the response body has ErrorListReponse object</br> error code is "Field/Invalid"</br></div><div class="predicate outer">)</div>|
-
-
-<a id="assertion-a.caa.001"></a>
-## A.CAA.001: Validate schema - GetStatus
-
-### References:
-
-* [https://consumerdatastandardsaustralia.github.io/standards/#tocSresponsecommondiscoverystatus](https://consumerdatastandardsaustralia.github.io/standards/#tocSresponsecommondiscoverystatus)
-
-
-### Severity:
-
-Critical (Test Fails)
-
-### Assertion Logic:
-
-|||
-|-|-|
-|Given|a request is made to obtain a health check status for the implementation |
-|When|a response is returned|
-|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the ResponseCommonDiscoveryStatus schema</br></div><div class="predicate outer">)</div>|
-
-
-<a id="assertion-a.caa.002"></a>
-## A.CAA.002: Validate schema - GetOutage
-
-### References:
-
-* [https://consumerdatastandardsaustralia.github.io/standards/#tocSresponsediscoveryoutageslist](https://consumerdatastandardsaustralia.github.io/standards/#tocSresponsediscoveryoutageslist)
-
-
-### Severity:
-
-Critical (Test Fails)
-
-### Assertion Logic:
-
-|||
-|-|-|
-|Given|a request is made to obtain a list of scheduled outages|
-|When|a response is returned|
-|Then|<div class="predicate outer">AND (</div><div class="predicate inner" style="margin-left:2em">the response has a status of 200</br> the response body complies with the ResponseDiscoveryOutageList schema</br></div><div class="predicate outer">)</div>|
 
 
 <a id="assertion-a.cac.001"></a>

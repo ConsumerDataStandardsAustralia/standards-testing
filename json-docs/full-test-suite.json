@@ -866,50 +866,6 @@
       ],
       "negative": false
     },
-    "A.CAA.001": {
-      "id": "A.CAA.001",
-      "title": "Validate schema - GetStatus",
-      "given": [
-        "a request is made to obtain a health check status for the implementation "
-      ],
-      "when": [
-        "a response is returned"
-      ],
-      "then": {
-        "and": [
-          "the response has a status of 200",
-          " the response body complies with the ResponseCommonDiscoveryStatus schema"
-        ]
-      },
-      "references": [
-        {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSresponsecommondiscoverystatus"
-        }
-      ],
-      "negative": false
-    },
-    "A.CAA.002": {
-      "id": "A.CAA.002",
-      "title": "Validate schema - GetOutage",
-      "given": [
-        "a request is made to obtain a list of scheduled outages"
-      ],
-      "when": [
-        "a response is returned"
-      ],
-      "then": {
-        "and": [
-          "the response has a status of 200",
-          " the response body complies with the ResponseDiscoveryOutageList schema"
-        ]
-      },
-      "references": [
-        {
-          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSresponsediscoveryoutageslist"
-        }
-      ],
-      "negative": false
-    },
     "A.CAC.001": {
       "id": "A.CAC.001",
       "title": "Validate schema - ResponseCommonCustomer",
@@ -9951,7 +9907,7 @@
       "sequence": [
         {
           "type": "TEST",
-          "testCase": "T.AAA.001"
+          "testCase": "T.CAC.001"
         }
       ]
     },
@@ -9964,23 +9920,23 @@
       "sequence": [
         {
           "type": "TEST",
-          "testCase": "T.AAA.002"
+          "testCase": "T.CAC.002"
         },
         {
           "type": "TEST",
-          "testCase": "T.AAA.003"
+          "testCase": "T.CAC.003"
         },
         {
           "type": "TEST",
-          "testCase": "T.AAA.004"
+          "testCase": "T.CAC.004"
         },
         {
           "type": "TEST",
-          "testCase": "T.AAA.005"
+          "testCase": "T.CAC.005"
         },
         {
           "type": "TEST",
-          "testCase": "T.AAA.006"
+          "testCase": "T.CAC.006"
         }
       ]
     },
@@ -9993,7 +9949,7 @@
       "sequence": [
         {
           "type": "TEST",
-          "testCase": "T.AAA.007"
+          "testCase": "T.CAC.007"
         }
       ]
     },
@@ -10006,23 +9962,23 @@
       "sequence": [
         {
           "type": "TEST",
-          "testCase": "T.AAA.008"
+          "testCase": "T.CAC.008"
         },
         {
           "type": "TEST",
-          "testCase": "T.AAA.009"
+          "testCase": "T.CAC.009"
         },
         {
           "type": "TEST",
-          "testCase": "T.AAA.010"
+          "testCase": "T.CAC.010"
         },
         {
           "type": "TEST",
-          "testCase": "T.AAA.011"
+          "testCase": "T.CAC.011"
         },
         {
           "type": "TEST",
-          "testCase": "T.AAA.012"
+          "testCase": "T.CAC.012"
         }
       ]
     },

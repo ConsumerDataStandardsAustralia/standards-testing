@@ -7,23 +7,23 @@
   "sequence": [
     {
       "type": "TEST",
-      "testCase": "T.AAA.008"
+      "testCase": "T.CAC.008"
     },
     {
       "type": "TEST",
-      "testCase": "T.AAA.009"
+      "testCase": "T.CAC.009"
     },
     {
       "type": "TEST",
-      "testCase": "T.AAA.010"
+      "testCase": "T.CAC.010"
     },
     {
       "type": "TEST",
-      "testCase": "T.AAA.011"
+      "testCase": "T.CAC.011"
     },
     {
       "type": "TEST",
-      "testCase": "T.AAA.012"
+      "testCase": "T.CAC.012"
     }
   ]
 }
