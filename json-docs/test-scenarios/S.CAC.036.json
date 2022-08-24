@@ -1,0 +1,29 @@
+{
+  "id": "S.CAC.036",
+  "title": "Get status Negative v1",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.AAA.002"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.AAA.003"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.AAA.004"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.AAA.005"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.AAA.006"
+    }
+  ]
+}

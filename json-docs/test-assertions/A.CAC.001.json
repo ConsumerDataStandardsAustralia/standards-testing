@@ -1,0 +1,22 @@
+{
+  "id": "A.CAC.001",
+  "title": "Validate schema - ResponseCommonCustomer",
+  "given": [
+    "the request to call the API is formatted correctly"
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 200",
+      " the response body complies with the ResponseCommonCustomer schema"
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSresponsecommoncustomer"
+    }
+  ],
+  "negative": false
+}

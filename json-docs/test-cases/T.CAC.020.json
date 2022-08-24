@@ -1,0 +1,24 @@
+{
+  "id": "T.CAC.020",
+  "title": "Get Customer Detail - invalid FAPI Interaction ID format ",
+  "description": "Ensure the endpoint returns FAPI Interaction ID errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-fapi-interaction-id> format is invalid "
+  ],
+  "purpose": "Test API where FAPI Interaction ID format is invalid",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /common/customer/detail"
+    }
+  ],
+  "assertions": [
+    "A.CFI.003"
+  ]
+}

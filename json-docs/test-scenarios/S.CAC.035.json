@@ -1,0 +1,13 @@
+{
+  "id": "S.CAC.035",
+  "title": "Get status v1",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.AAA.001"
+    }
+  ]
+}

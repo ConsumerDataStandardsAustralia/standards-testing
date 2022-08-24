@@ -1,0 +1,26 @@
+{
+  "id": "T.CAC.024",
+  "title": "Get Customer Detail - invalid FAPI Customer IP Address",
+  "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-fapi-customer-ip-address>  format is invalid"
+  ],
+  "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /common/customer/detail"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.CFC.003"
+  ]
+}

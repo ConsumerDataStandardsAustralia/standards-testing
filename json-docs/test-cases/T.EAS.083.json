@@ -1,0 +1,27 @@
+{
+  "id": "T.EAS.083",
+  "title": "DH call to SDH: Get DER For Specific Service Points - invalid minimum version format",
+  "description": "Ensure that the endpoint returns version compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points-sr"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "<x-min-v> is included",
+    "AND <x-min-v> is not an integer"
+  ],
+  "purpose": "Test invalid format for minimum version",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "POST /secondary/energy/electricity/servicepoints/der"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.CVM.002"
+  ]
+}

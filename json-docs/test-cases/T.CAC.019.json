@@ -1,0 +1,26 @@
+{
+  "id": "T.CAC.019",
+  "title": "Get Customer Detail - invalid minimum version value",
+  "description": "Ensure the endpoint returns version compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-min-v> is a not a positive integer"
+  ],
+  "purpose": "Test API with invalid minimum version value",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /common/customer/detail"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.CVM.002"
+  ]
+}

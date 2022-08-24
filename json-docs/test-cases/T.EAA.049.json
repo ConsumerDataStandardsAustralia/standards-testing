@@ -16,7 +16,7 @@
   "steps": [
     {
       "type": "ACTION",
-      "action": "GET /energy/accounts/{accountId}/payment-schedule"
+      "action": "GET /energy/accounts/{accountId}/concessions"
     }
   ],
   "assertions": [
