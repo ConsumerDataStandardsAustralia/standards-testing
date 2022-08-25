@@ -1,5 +1,5 @@
 {
-  "id": "S.CAC.036",
+  "id": "S.CAA.036",
   "title": "Get status Negative v1",
   "purpose": "",
   "description": "",
@@ -7,23 +7,23 @@
   "sequence": [
     {
       "type": "TEST",
-      "testCase": "T.CAC.002"
+      "testCase": "T.CAA.002"
     },
     {
       "type": "TEST",
-      "testCase": "T.CAC.003"
+      "testCase": "T.CAA.003"
     },
     {
       "type": "TEST",
-      "testCase": "T.CAC.004"
+      "testCase": "T.CAA.004"
     },
     {
       "type": "TEST",
-      "testCase": "T.CAC.005"
+      "testCase": "T.CAA.005"
     },
     {
       "type": "TEST",
-      "testCase": "T.CAC.006"
+      "testCase": "T.CAA.006"
     }
   ]
 }

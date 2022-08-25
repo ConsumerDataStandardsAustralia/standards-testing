@@ -1,13 +1,13 @@
 {
-  "id": "S.CAC.037",
-  "title": "Get outages v1",
+  "id": "S.CAA.035",
+  "title": "Get status v1",
   "purpose": "",
   "description": "",
   "references": [],
   "sequence": [
     {
       "type": "TEST",
-      "testCase": "T.CAC.007"
+      "testCase": "T.CAA.001"
     }
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "id": "T.CAA.002",
+  "title": "Get Status - invalid version value",
+  "description": "Ensure that the endpoint returns version compatibility errors ",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-status"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-v> version is not a valid number"
+  ],
+  "purpose": "Test API with invalid version value",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /discovery/status"
+    }
+  ],
+  "assertions": [
+    "A.CVN.002"
+  ]
+}

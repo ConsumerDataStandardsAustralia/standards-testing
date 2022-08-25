@@ -1,5 +1,5 @@
 {
-  "id": "S.CAC.038",
+  "id": "S.CAA.038",
   "title": "Get outages Negative v1",
   "purpose": "",
   "description": "",
@@ -7,23 +7,23 @@
   "sequence": [
     {
       "type": "TEST",
-      "testCase": "T.CAC.008"
+      "testCase": "T.CAA.008"
     },
     {
       "type": "TEST",
-      "testCase": "T.CAC.009"
+      "testCase": "T.CAA.009"
     },
     {
       "type": "TEST",
-      "testCase": "T.CAC.010"
+      "testCase": "T.CAA.010"
     },
     {
       "type": "TEST",
-      "testCase": "T.CAC.011"
+      "testCase": "T.CAA.011"
     },
     {
       "type": "TEST",
-      "testCase": "T.CAC.012"
+      "testCase": "T.CAA.012"
     }
   ]
 }

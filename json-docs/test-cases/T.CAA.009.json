@@ -1,0 +1,24 @@
+{
+  "id": "T.CAA.009",
+  "title": "Get Outages - invalid version format",
+  "description": "Ensure that the endpoint returns version compatibility errors ",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-outages"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The <x-v> format is not valid"
+  ],
+  "purpose": "Test API with invalid version format",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /discovery/outages"
+    }
+  ],
+  "assertions": [
+    "A.CVN.003"
+  ]
+}

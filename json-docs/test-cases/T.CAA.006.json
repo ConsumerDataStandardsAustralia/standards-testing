@@ -1,0 +1,25 @@
+{
+  "id": "T.CAA.006",
+  "title": "Get Status - invalid minimum version format",
+  "description": "Ensure that the endpoint returns version compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-status"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "<x-min-v> is included",
+    "AND <x-min-v> is not an integer"
+  ],
+  "purpose": "Test invalid format for minimum version",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /discovery/status"
+    }
+  ],
+  "assertions": [
+    "A.CVM.002"
+  ]
+}
