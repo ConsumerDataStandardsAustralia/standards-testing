@@ -83,73 +83,79 @@
       ],
 			"properties": {
         "unauthenticated": {
-					"type": "object",
-					"description": "Unauthenticated data for a single data holder",
-					"additionalProperties": false,
-					"properties": {
-            "banking": {
-              "type": "object",
-    					"description": "Unauthenticated banking data",
-    					"additionalProperties": false,
-              "properties": {
-                "products": {
-                  "type": "array",
-    							"description": "An array of banking products",
-                  "items": {
-                    "$ref": "#/$defs/bankProduct"
-                  }
-                }
-              }
-            },
-            "energy": {
-              "type": "object",
-    					"description": "Unauthenticated energy data",
-    					"additionalProperties": false,
-              "properties": {
-                "plans": {
-                  "type": "array",
-    							"description": "An array of energy plans",
-                  "items": {
-                    "$ref": "#/$defs/energyPlan"
-                  }
-                }
-              }
-            },
-            "admin": {
-              "type": "object",
-    					"description": "Current system status",
-    					"additionalProperties": false,
-              "properties": {
-                "status": {
-                  "$ref": "#/$defs/adminStatus"
-                },
-                "outages": {
-                  "type": "array",
-    							"description": "An array of planned outages",
-                  "items": {
-                    "$ref": "#/$defs/adminOutage"
-                  }
-                }
-              }
-            }
-					}
+          "$ref": "#/$defs/unauthenticated"
         },
 				"authenticated": {
-					"type": "object",
-					"description": "Authenticated data for a single data holder",
-					"additionalProperties": false,
-					"properties": {
-						"customers": {
-							"type": "array",
-							"description": "An array of customers and their data",
-              "items": {
-                "$ref": "#/$defs/customerWrapper"
-              }
-						}
-					}
+          "$ref": "#/$defs/authenticated"
 				}
       }
     },
+    "unauthenticated": {
+			"type": "object",
+			"description": "Unauthenticated data for a single data holder",
+			"additionalProperties": false,
+			"properties": {
+        "banking": {
+          "type": "object",
+					"description": "Unauthenticated banking data",
+					"additionalProperties": false,
+          "properties": {
+            "products": {
+              "type": "array",
+							"description": "An array of banking products",
+              "items": {
+                "$ref": "#/$defs/bankProduct"
+              }
+            }
+          }
+        },
+        "energy": {
+          "type": "object",
+					"description": "Unauthenticated energy data",
+					"additionalProperties": false,
+          "properties": {
+            "plans": {
+              "type": "array",
+							"description": "An array of energy plans",
+              "items": {
+                "$ref": "#/$defs/energyPlan"
+              }
+            }
+          }
+        },
+        "admin": {
+          "type": "object",
+					"description": "Current system status",
+					"additionalProperties": false,
+          "properties": {
+            "status": {
+              "$ref": "#/$defs/adminStatus"
+            },
+            "outages": {
+              "type": "array",
+							"description": "An array of planned outages",
+              "items": {
+                "$ref": "#/$defs/adminOutage"
+              }
+            }
+          }
+        }
+			}
+    },
+		"authenticated": {
+			"type": "object",
+			"description": "Authenticated data for a single data holder",
+			"additionalProperties": false,
+			"properties": {
+				"customers": {
+					"type": "array",
+					"description": "An array of customers and their data",
+          "items": {
+            "$ref": "#/$defs/customerWrapper"
+          }
+				}
+			}
+		},
 		"client": {
 			"type": "object",
 			"description": "A previously registered client aligned to the current version of the data standards"
@@ -180,8 +186,7 @@
       "additionalProperties": false,
       "required": [
         "customerId",
-        "customer",
-        "banking"
+        "customer"
       ],
       "properties": {
         "customerId": {

@@ -166,12 +166,25 @@ function generateDetailedHolders(verbose: boolean, indent: number, options: Opti
 
         log(verbose, `Factory complete - ${holder ? 1 : 0} created`, indent+1)
 
-        if (holder) {
+        if (holder && holder.holder) {
           holders.push(holder);
 
           // Create the detail inside the created holder
-          //XXXX
+          if (holderOptions.unauthenticated) {
+            log(verbose, `Executing unauthenticated factories for holder`, indent+1);
+            const newData = generateUnauthenticatedData(verbose, indent+2, options, holderOptions.unauthenticated, holder);
+            if (newData) holder.holder.unauthenticated = newData;
+          } else {
+            log(verbose, `No unauthenticated factories configured`, indent+1)
+          }
 
+          if (holderOptions.authenticated) {
+            log(verbose, `Executing authenticated factories for holder`, indent+1);
+            const newData = generateAuthenticatedData(verbose, indent+2, options, holderOptions.authenticated, holder);
+            if (newData) holder.holder.authenticated = newData;
+          } else {
+            log(verbose, `No authenticated factories configured`, indent+1)
+          }
         }
       } else {
         log(verbose, `Factory does not support holder generation`, indent+1)
@@ -182,6 +195,133 @@ function generateDetailedHolders(verbose: boolean, indent: number, options: Opti
   }
 
   return holders;
+}
+
+function generateUnauthenticatedData(verbose: boolean, indent: number, options: Options, unauthOptions: any, holder: schema.HolderWrapper): schema.Unauthenticated {
+  let result: schema.Unauthenticated = {};
+  let factories: Factory[] = [];
+
+  // Banking products
+  if (unauthOptions.banking?.productsFactory) {
+    log(verbose, `Creating banking products factories`, indent)
+    factories = createFactories(1, options.general, unauthOptions.banking?.productsFactory);
+
+    if (factories.length > 0) {
+      log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
+
+      // If we have factories execute each one of them
+      for (const factory of factories) {
+        log(verbose, `Running factory '${factory.id}'`, indent)
+        if (factory.canCreateBankProducts()) {
+          const newData = factory.generateBankProducts();
+          if (newData) {
+            if (!result.banking) result.banking = {};
+            if (!result.banking.products) result.banking.products = [];
+            result.banking.products.push(...newData);
+          }
+
+          log(verbose, `Factory complete - ${newData ? newData.length : 0} created`, indent+1)
+        } else {
+          log(verbose, `Factory does not support bank product generation`, indent+1)
+        }
+      }
+    } else {
+      log(verbose, 'No bank product factories to execute', indent)
+    }
+  }
+
+  // Energy plans
+  if (unauthOptions.energy?.plansFactory) {
+    log(verbose, `Creating energy plans factories`, indent)
+    factories = createFactories(1, options.general, unauthOptions.energy?.plansFactory);
+
+    if (factories.length > 0) {
+      log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
+
+      // If we have factories execute each one of them
+      for (const factory of factories) {
+        log(verbose, `Running factory '${factory.id}'`, indent)
+        if (factory.canCreateEnergyPlans()) {
+          const newData = factory.generateEnergyPlans();
+          if (newData) {
+            if (!result.energy) result.energy = {};
+            if (!result.energy.plans) result.energy.plans = [];
+            result.energy.plans.push(...newData);
+          }
+
+          log(verbose, `Factory complete - ${newData ? newData.length : 0} created`, indent+1)
+        } else {
+          log(verbose, `Factory does not support energy plans generation`, indent+1)
+        }
+      }
+    } else {
+      log(verbose, 'No energy plan factories to execute', indent)
+    }
+  }
+
+  // Admin Status
+  if (unauthOptions.admin?.statusFactory) {
+    log(verbose, `Creating status factories`, indent)
+    factories = createFactories(1, options.general, unauthOptions.admin?.statusFactory);
+
+    if (factories.length > 0) {
+      log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
+
+      // If we have factories execute each one of them
+      for (const factory of factories) {
+        log(verbose, `Running factory '${factory.id}'`, indent)
+        if (factory.canCreateStatus()) {
+          const newData = factory.generateStatus();
+          if (newData) {
+            if (!result.admin) result.admin = {};
+            result.admin.status = newData;
+          }
+
+          log(verbose, `Factory complete`, indent+1)
+        } else {
+          log(verbose, `Factory does not support status generation`, indent+1)
+        }
+      }
+    } else {
+      log(verbose, 'No status factories to execute', indent)
+    }
+  }
+
+  // Admin Outages
+  if (unauthOptions.admin?.outagesFactory) {
+    log(verbose, `Creating outages factories`, indent)
+    factories = createFactories(1, options.general, unauthOptions.admin?.outagesFactory);
+
+    if (factories.length > 0) {
+      log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
+
+      // If we have factories execute each one of them
+      for (const factory of factories) {
+        log(verbose, `Running factory '${factory.id}'`, indent)
+        if (factory.canCreateOutages()) {
+          const newData = factory.generateOutages();
+          if (newData) {
+            if (!result.admin) result.admin = {};
+            if (!result.admin.outages) result.admin.outages = [];
+            result.admin.outages.push(...newData);
+          }
+
+          log(verbose, `Factory complete - ${newData ? newData.length : 0} created`, indent+1)
+        } else {
+          log(verbose, `Factory does not support outages generation`, indent+1)
+        }
+      }
+    } else {
+      log(verbose, 'No outages factories to execute', indent)
+    }
+  }
+
+  return result;
+}
+
+function generateAuthenticatedData(verbose: boolean, indent: number, options: Options, unauthOptions: any, holder: schema.HolderWrapper): schema.Authenticated {
+  //XXXX
+  return {};
 }
 
 function generateClientCache(verbose: boolean, indent: number, options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {

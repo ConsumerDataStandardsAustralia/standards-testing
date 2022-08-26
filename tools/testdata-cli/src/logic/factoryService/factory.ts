@@ -62,9 +62,6 @@ export abstract class Factory {
 
 
   // Banking
-  public canCreateBankProduct(): boolean { return false; };
-  public generateBankProduct(): schema.BankProduct | undefined { return }
-
   public canCreateBankProducts(): boolean { return false; };
   public generateBankProducts(): schema.BankProduct[] | undefined { return }
 
@@ -94,9 +91,6 @@ export abstract class Factory {
 
 
   // Energy
-  public canCreateEnergyPlan(): boolean { return false; };
-  public generateEnergyPlan(): schema.EnergyPlan | undefined { return }
-
   public canCreateEnergyPlans(): boolean { return false; };
   public generateEnergyPlans(): schema.EnergyPlan[] | undefined { return }
 

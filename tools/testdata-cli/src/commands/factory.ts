@@ -40,7 +40,6 @@ export const handler = (argv: Arguments<Options>): void => {
       if (factory.canCreateOutages()) output +='    create a set of holder planned outages\n';
       if (factory.canCreateCustomer()) output +='    create a customer\n';
       if (factory.canCreateCustomers()) output +='    create a set of customers\n';
-      if (factory.canCreateBankProduct()) output +='    create a bank product\n';
       if (factory.canCreateBankProducts()) output +='    create a set of bank products\n';
       if (factory.canCreateBankAccount()) output +='    create a bank account\n';
       if (factory.canCreateBankAccounts()) output +='    create a set of bank accounts\n';
@@ -50,7 +49,6 @@ export const handler = (argv: Arguments<Options>): void => {
       if (factory.canCreateBankDirectDebits()) output +='    create a set of direct debits authorisations\n';
       if (factory.canCreateBankPayees()) output +='    create a set of banking payees\n';
       if (factory.canCreateBankScheduledPayments()) output +='    create a set of banking scheduled payments\n';
-      if (factory.canCreateEnergyPlan()) output +='    create an energy plan\n';
       if (factory.canCreateEnergyPlans()) output +='    create a set of energy plans\n';
       if (factory.canCreateEnergyServicePoint()) output +='    create an energy service point (NMI)\n';
       if (factory.canCreateEnergyServicePoints()) output +='    create a set of energy service points\n';

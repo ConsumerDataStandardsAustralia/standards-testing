@@ -18,7 +18,7 @@ export class Helper {
     return newId();
   }
 
-  public static randomDateInThePast(): string {
+  public static randomDateTimeInThePast(): string {
     // Random number of milliseconds in the past two years
     const inc = Math.random() * 1000 * 60 * 60 * 24 * 365 * 2;
 
@@ -26,4 +26,11 @@ export class Helper {
     return new Date(Date.now() - inc).toISOString();
   }
 
+  public static randomDateTimeInTheFuture(): string {
+    // Random number of milliseconds in the past two years
+    const inc = Math.random() * 1000 * 60 * 60 * 24 * 365 * 2;
+
+    // Create an ISO string of that date
+    return new Date(Date.now() + inc).toISOString();
+  }
 }

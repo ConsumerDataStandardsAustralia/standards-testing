@@ -54,47 +54,40 @@ export interface HolderWrapper {
  * Data for a single data holder
  */
 export interface Holder {
+  unauthenticated: Unauthenticated;
+  authenticated: Authenticated;
+}
+/**
+ * Unauthenticated data for a single data holder
+ */
+export interface Unauthenticated {
   /**
-   * Unauthenticated data for a single data holder
+   * Unauthenticated banking data
    */
-  unauthenticated: {
+  banking?: {
     /**
-     * Unauthenticated banking data
+     * An array of banking products
      */
-    banking?: {
-      /**
-       * An array of banking products
-       */
-      products?: BankProduct[];
-    };
-    /**
-     * Unauthenticated energy data
-     */
-    energy?: {
-      /**
-       * An array of energy plans
-       */
-      plans?: EnergyPlan[];
-    };
-    /**
-     * Current system status
-     */
-    admin?: {
-      status?: AdminStatus;
-      /**
-       * An array of planned outages
-       */
-      outages?: AdminOutage[];
-    };
+    products?: BankProduct[];
   };
   /**
-   * Authenticated data for a single data holder
+   * Unauthenticated energy data
    */
-  authenticated: {
+  energy?: {
     /**
-     * An array of customers and their data
+     * An array of energy plans
      */
-    customers?: CustomerWrapper[];
+    plans?: EnergyPlan[];
+  };
+  /**
+   * Current system status
+   */
+  admin?: {
+    status?: AdminStatus;
+    /**
+     * An array of planned outages
+     */
+    outages?: AdminOutage[];
   };
 }
 /**
@@ -122,6 +115,15 @@ export interface AdminOutage {
   [k: string]: unknown;
 }
 /**
+ * Authenticated data for a single data holder
+ */
+export interface Authenticated {
+  /**
+   * An array of customers and their data
+   */
+  customers?: CustomerWrapper[];
+}
+/**
  * A wrapper for a single customer to contain all of the data related to the customer
  */
 export interface CustomerWrapper {
@@ -133,7 +135,7 @@ export interface CustomerWrapper {
   /**
    * Banking data for this customer
    */
-  banking: {
+  banking?: {
     /**
      * An array of accounts and their data
      */
