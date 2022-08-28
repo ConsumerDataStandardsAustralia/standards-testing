@@ -319,10 +319,218 @@ function generateUnauthenticatedData(verbose: boolean, indent: number, options: 
   return result;
 }
 
-function generateAuthenticatedData(verbose: boolean, indent: number, options: Options, unauthOptions: any, holder: schema.HolderWrapper): schema.Authenticated {
-  //XXXX
-  return {};
+function generateAuthenticatedData(verbose: boolean, indent: number, options: Options, authOptions: any, holder: schema.HolderWrapper): schema.Authenticated {
+  let result: schema.Authenticated = {};
+
+  log(verbose, 'Executing multiple customer factories (if Any)', indent);
+  const newCustomers = generateMultipleCustomers(verbose, indent+1, options, authOptions, holder);
+  if (newCustomers && newCustomers.length > 0) {
+    if (!result.customers) result.customers = [];
+    result.customers.push(...newCustomers);
+  }
+
+  log(verbose, 'Executing detailed customer factories (if Any)', indent);
+  if (authOptions.customers && authOptions.customers.length > 0) {
+    for (let i = 0; i < authOptions.customers.length; i++) {
+
+      log(verbose, `Executing detailed customer set ${i+1}`, indent+1);
+      const newData = generateDetailedCustomers(verbose, indent+2, options, authOptions.customers[i], holder);
+
+      if (newData && newData.length > 0) {
+        if (!result.customers) result.customers = [];
+        result.customers.push(...newData);
+      }
+    }
+  }
+
+  return result;
 }
+
+function generateMultipleCustomers(verbose: boolean, indent: number, options: Options, authOptions: any, holder: schema.HolderWrapper): schema.CustomerWrapper[] | undefined {
+  let result: schema.CustomerWrapper[] | undefined;
+  let factories: Factory[] = []
+
+  // Create the factories
+  if (authOptions.customersFactory) {
+    log(verbose, `Creating multiple customer factories`, indent)
+    factories = createFactories(1, options.general, authOptions.customersFactory);
+  }
+
+  if (factories.length > 0) {
+    log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
+
+    // If we have factories execute each one of them
+    for (const factory of factories) {
+      log(verbose, `Running factory '${factory.id}'`, indent)
+      if (factory.canCreateCustomers()) {
+        const newData = factory.generateCustomers(holder);
+        if (newData) {
+          if (!result) result = [];
+          result.push(...newData);
+        }
+
+        log(verbose, `Factory complete - ${newData ? newData.length : 0} customers created`, indent+1)
+      } else {
+        log(verbose, `Factory does not support multiple customer generation`, indent+1)
+      }
+    }
+  } else {
+    log(verbose, 'No multiple customer factories to execute', indent+1)
+  }
+
+  return result;
+}
+
+function generateDetailedCustomers(verbose: boolean, indent: number, options: Options, customerOptions: any, holder: schema.HolderWrapper): schema.CustomerWrapper[] {
+  let result: schema.CustomerWrapper[] = [];
+  let factories: Factory[] = []
+
+  // Create the customer factories
+  if (customerOptions.customerFactory) {
+    log(verbose, `Creating detailed customer factories`, indent)
+    const count = Helper.isPositiveInteger(customerOptions.count) ? customerOptions.count : 1;
+    factories = createFactories(count, options.general, customerOptions.customerFactory);
+  }
+
+  // Create the customers required
+  if (factories.length > 0) {
+    log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
+
+    // If we have factories execute each one of them
+    for (const factory of factories) {
+      log(verbose, `Running factory '${factory.id}'`, indent)
+      if (factory.canCreateCustomer()) {
+        const customer = factory.generateCustomer(holder);
+
+        log(verbose, `Factory complete - ${customer ? 1 : 0} created`, indent+1)
+
+        if (customer && customer.customer) {
+          result.push(customer);
+
+          // Create the detail inside the created customer
+          if (customerOptions.banking) {
+            log(verbose, `Executing banking factories for customer`, indent+1);
+            const newData = generateCustomerBankingData(verbose, indent+2, options, customerOptions.banking, customer);
+            if (newData) customer.customer.banking = newData;
+          } else {
+            log(verbose, `No customer banking factories configured`, indent+1)
+          }
+
+          if (customerOptions.energy) {
+            log(verbose, `Executing energy factories for customer`, indent+1);
+            const newData = generateCustomerEnergyData(verbose, indent+2, options, customerOptions.energy, customer);
+            if (newData) customer.customer.banking = newData;
+          } else {
+            log(verbose, `No customer energy factories configured`, indent+1)
+          }
+        }
+      } else {
+        log(verbose, `Factory does not support customer generation`, indent+1)
+      }
+    }
+  } else {
+    log(verbose, 'No detailed customer factories to execute', indent)
+  }
+
+  return result;
+}
+
+function generateCustomerBankingData(verbose: boolean, indent: number, options: Options, bankingOptions: any, customer: schema.CustomerWrapper): any {
+  let result: any = {};
+  let factories: Factory[] = [];
+
+  // Banking accounts
+  //XXXX
+
+  if (result.accounts) {
+    // Banking Direct Debits
+    if (bankingOptions.directDebitsFactory) {
+      log(verbose, `Creating banking direct debits factories`, indent)
+      factories = createFactories(1, options.general, bankingOptions.directDebitsFactory);
+
+      if (factories.length > 0) {
+        log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
+
+        // If we have factories execute each one of them
+        for (const factory of factories) {
+          log(verbose, `Running factory '${factory.id}'`, indent)
+          if (factory.canCreateBankDirectDebits()) {
+            const newData = factory.generateBankDirectDebits(result.accounts);
+            if (newData) {
+              if (!result.directDebits) result.directDebits = [];
+              result.directDebits.push(...newData);
+            }
+
+            log(verbose, `Factory complete - ${newData ? newData.length : 0} created`, indent+1)
+          } else {
+            log(verbose, `Factory does not support bank direct debit generation`, indent+1)
+          }
+        }
+      } else {
+        log(verbose, 'No bank direct debit factories to execute', indent)
+      }
+    }
+
+    // Banking Payees
+    if (bankingOptions.payeesFactory) {
+      log(verbose, `Creating banking payees factories`, indent)
+      factories = createFactories(1, options.general, bankingOptions.payeesFactory);
+
+      if (factories.length > 0) {
+        log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
+
+        // If we have factories execute each one of them
+        for (const factory of factories) {
+          log(verbose, `Running factory '${factory.id}'`, indent)
+          if (factory.canCreateBankPayees()) {
+            const newData = factory.generateBankPayees(result.accounts);
+            if (newData) {
+              if (!result.payees) result.payees = [];
+              result.payees.push(...newData);
+            }
+
+            log(verbose, `Factory complete - ${newData ? newData.length : 0} created`, indent+1)
+          } else {
+            log(verbose, `Factory does not support bank payees generation`, indent+1)
+          }
+        }
+      } else {
+        log(verbose, 'No bank payees factories to execute', indent)
+      }
+    }
+
+    // Banking Scheduled Payments
+    if (bankingOptions.scheduledPaymentsFactory) {
+      log(verbose, `Creating banking scheduled payments factories`, indent)
+      factories = createFactories(1, options.general, bankingOptions.scheduledPaymentsFactory);
+
+      if (factories.length > 0) {
+        log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, indent)
+
+        // If we have factories execute each one of them
+        for (const factory of factories) {
+          log(verbose, `Running factory '${factory.id}'`, indent)
+          if (factory.canCreateBankScheduledPayments()) {
+            const newData = factory.generateScheduledPayments(result.accounts);
+            if (newData) {
+              if (!result.payments) result.payments = [];
+              result.payments.push(...newData);
+            }
+
+            log(verbose, `Factory complete - ${newData ? newData.length : 0} created`, indent+1)
+          } else {
+            log(verbose, `Factory does not support bank scheduled payments generation`, indent+1)
+          }
+        }
+      } else {
+        log(verbose, 'No bank scheduled payments factories to execute', indent)
+      }
+    }
+  }
+
+  return result;
+}
+
 
 function generateClientCache(verbose: boolean, indent: number, options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
   let result = data;

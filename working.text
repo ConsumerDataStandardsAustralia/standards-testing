@@ -1,13 +1,10 @@
 
 
-        authenticated?: {
-          customersFactory?: OptionsFactory,
-          customers?: {
-            count?: OptionsItemCount;
-            customerFactory?: OptionsFactory,
 
             banking?: {
-              bankingFactory?: OptionsFactory,
+              directDebitsFactory?: OptionsFactory,
+              payeesFactory?: OptionsFactory,
+              paymentSchedulesFactory?: OptionsFactory
               accountsFactory?: OptionsFactory,
               accounts?: {
                 count?: OptionsItemCount;
@@ -15,12 +12,8 @@
                 balanceFactory?: OptionsFactory,
                 transactionsFactory?: OptionsFactory,
               },
-              directDebitsFactory?: OptionsFactory,
-              payeesFactory?: OptionsFactory,
-              paymentSchedulesFactory?: OptionsFactory
             },
             energy?: {
-              energyFactory?: OptionsFactory,
               accountsFactory?: OptionsFactory,
               accounts?: {
                 count?: OptionsItemCount;

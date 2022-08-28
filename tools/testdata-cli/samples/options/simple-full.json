@@ -38,113 +38,115 @@
 			},
 
 			"authenticated": {
-				"customers": {
-					"count": 5,
+				"customers": [
+          {
+  					"count": 5,
 
-					"customerFactory": {
-						"id": "simple-full"
-					},
+  					"customerFactory": {
+  						"id": "simple-full"
+  					},
 
-					"banking": {
-						"accounts": {
-							"count": 5,
+  					"banking": {
+  						"accounts": {
+  							"count": 5,
 
-							"accountFactory": {
-								"id": "simple-full"
-							},
+  							"accountFactory": {
+  								"id": "simple-full"
+  							},
 
-							"balanceFactory": {
-								"id": "simple-full"
-							},
+  							"balanceFactory": {
+  								"id": "simple-full"
+  							},
 
-							"transactionsFactory": {
-								"id": "simple-full",
-								"options": {
-									"count": 10
-								}
-							}
-						},
-						"directDebitsFactory": {
-							"id": "simple-full",
-							"options": {
-								"count": 5
-							}
-						},
-						"payeesFactory": {
-							"id": "simple-full",
-							"options": {
-								"count": 5
-							}
-						},
-						"paymentSchedulesFactory": {
-							"id": "simple-full",
-							"options": {
-								"count": 5
-							}
-						}
-					},
+  							"transactionsFactory": {
+  								"id": "simple-full",
+  								"options": {
+  									"count": 10
+  								}
+  							}
+  						},
+  						"directDebitsFactory": {
+  							"id": "simple-full",
+  							"options": {
+  								"count": 5
+  							}
+  						},
+  						"payeesFactory": {
+  							"id": "simple-full",
+  							"options": {
+  								"count": 5
+  							}
+  						},
+  						"paymentSchedulesFactory": {
+  							"id": "simple-full",
+  							"options": {
+  								"count": 5
+  							}
+  						}
+  					},
 
-					"energy": {
-						"accounts": {
-							"count": 5,
+  					"energy": {
+  						"accounts": {
+  							"count": 5,
 
-							"accountFactory": {
-								"id": "simple-full"
-							},
+  							"accountFactory": {
+  								"id": "simple-full"
+  							},
 
-							"balanceFactory": {
-								"id": "simple-full"
-							},
+  							"balanceFactory": {
+  								"id": "simple-full"
+  							},
 
-							"invoicesFactory": {
-								"id": "simple-full",
-								"options": {
-									"count": 5
-								}
-							},
+  							"invoicesFactory": {
+  								"id": "simple-full",
+  								"options": {
+  									"count": 5
+  								}
+  							},
 
-							"transactionsFactory": {
-								"id": "simple-full",
-								"options": {
-									"count": 30
-								}
-							},
+  							"transactionsFactory": {
+  								"id": "simple-full",
+  								"options": {
+  									"count": 30
+  								}
+  							},
 
-							"concessionsFactory": {
-								"id": "simple-full",
-								"options": {
-									"count": 5
-								}
-							},
+  							"concessionsFactory": {
+  								"id": "simple-full",
+  								"options": {
+  									"count": 5
+  								}
+  							},
 
-							"paymentScheduleFactory": {
-								"id": "simple-full"
-							}
-						},
+  							"paymentScheduleFactory": {
+  								"id": "simple-full"
+  							}
+  						},
 
-						"servicePoints": {
-							"count": 5,
+  						"servicePoints": {
+  							"count": 5,
 
-							"servicePointFactory": {
-								"id": "simple-full"
-							},
+  							"servicePointFactory": {
+  								"id": "simple-full"
+  							},
 
-							"derFactory": {
-								"id": "simple-full",
-								"options": {
-									"count": 5
-								}
-							},
+  							"derFactory": {
+  								"id": "simple-full",
+  								"options": {
+  									"count": 5
+  								}
+  							},
 
-							"usageFactory": {
-								"id": "simple-full",
-								"options": {
-									"count": 30
-								}
-							}
-						}
-					}
-				}
+  							"usageFactory": {
+  								"id": "simple-full",
+  								"options": {
+  									"count": 30
+  								}
+  							}
+  						}
+  					}
+  				}
+        ]
 			}
 		}],
 
