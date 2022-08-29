@@ -484,7 +484,69 @@ This factory supports the follow option fields:
   public generateEnergyServicePoint(): schema.EnergyServicePointWrapper | undefined {
     return {
       servicePoint: {
-        //XXXX
+        servicePointId: Helper.randomId(),
+        nationalMeteringId: Helper.randomId(),
+        servicePointClassification: "SMALL",
+        servicePointStatus: "ACTIVE",
+        jurisdictionCode: "ALL",
+        isGenerator: false,
+        validFromDate: Helper.randomDateTimeInThePast(),
+        lastUpdateDateTime: Helper.randomDateTimeInThePast(),
+        consumerProfile: {
+          classification: "RESIDENTIAL",
+          threshold: "LOW"
+        },
+        distributionLossFactor: {
+          code: "DLF Code",
+          description: "DLF Description",
+          lossValue: "DLF Value"
+        },
+        relatedParticipants: [
+          {
+            party: "ACME Retailer",
+            role: "FRMP"
+          }
+        ],
+        location: {
+          addressUType: "simple",
+          simple: {
+            mailingName: "Mailing name",
+            addressLine1: "Address line 1",
+            addressLine2: "Address line 2",
+            addressLine3: "Address line 3",
+            postcode: "3999",
+            city: "Gotham",
+            state: "VIC",
+            country: "AUS"
+          }
+        },
+        meters: [
+          {
+            meterId: Helper.randomId(),
+            specifications: {
+              status: "CURRENT",
+              installationType: "BASIC",
+              manufacturer: "Manifacturer",
+              model: "Model",
+              readType: "MV1A",
+              nextScheduledReadDate: Helper.randomDateTimeInTheFuture()
+            },
+            registers: [
+              {
+                registerId: Helper.randomId(),
+                registerSuffix: Helper.randomId(),
+                averagedDailyLoad: 0,
+                registerConsumptionType: "INTERVAL",
+                networkTariffCode: "Network tariff code",
+                unitOfMeasure: "KWH",
+                timeOfDay: "ALLDAY",
+                multiplier: 0,
+                controlledLoad: false,
+                consumptionType: "ACTUAL"
+              }
+            ]
+          }
+        ]
       }
     }
   }
@@ -646,7 +708,23 @@ This factory supports the follow option fields:
 
   public canCreateEnergyTransaction(): boolean { return true; };
   public generateEnergyTransaction(account: schema.EnergyAccountWrapper): schema.EnergyTransaction | undefined {
-    return; //XXXX
+    return {
+      accountId: account.account.accountId,
+      executionDateTime: Helper.randomDateTimeInThePast(),
+      gst: "1.00",
+      transactionUType: "usage",
+      usage: {
+        servicePointId: Helper.randomId(),
+        invoiceNumber: Helper.randomId(),
+        timeOfUseType: "PEAK",
+        description: "Description",
+        startDate: Helper.randomDateTimeInThePast(),
+        endDate: Helper.randomDateTimeInThePast(),
+        measureUnit: "KWH",
+        usage: 20,
+        amount: "10.00"
+      }
+    }
   }
 
   public canCreateEnergyTransactions(): boolean { return true; };
