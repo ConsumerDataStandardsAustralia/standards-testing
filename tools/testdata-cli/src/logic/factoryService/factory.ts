@@ -115,8 +115,8 @@ export abstract class Factory {
   public canCreateEnergyBalance(): boolean { return false; };
   public generateEnergyBalance(account: schema.EnergyAccountWrapper): schema.EnergyAccountBalance | undefined { return }
 
-  public canCreateEnergyPaymentSchedule(): boolean { return false; };
-  public generateEnergyPaymentSchedule(account: schema.EnergyAccountWrapper): schema.EnergyPaymentSchedule | undefined { return }
+  public canCreateEnergyPaymentSchedules(): boolean { return false; };
+  public generateEnergyPaymentSchedules(account: schema.EnergyAccountWrapper): schema.EnergyPaymentSchedule[] | undefined { return }
 
   public canCreateEnergyConcession(): boolean { return false; };
   public generateEnergyConcession(account: schema.EnergyAccountWrapper): schema.EnergyConcession | undefined { return }

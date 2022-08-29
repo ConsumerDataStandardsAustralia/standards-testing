@@ -67,19 +67,19 @@ export interface Options {
 
               banking?: {
                 accountsFactory?: OptionsFactory,
-                accounts?: {
+                accounts?: [{
                   count?: OptionsItemCount;
                   accountFactory?: OptionsFactory,
                   balanceFactory?: OptionsFactory,
                   transactionsFactory?: OptionsFactory,
-                },
+                }],
                 directDebitsFactory?: OptionsFactory,
                 payeesFactory?: OptionsFactory,
                 scheduledPaymentsFactory?: OptionsFactory
               },
               energy?: {
                 accountsFactory?: OptionsFactory,
-                accounts?: {
+                accounts?: [{
                   count?: OptionsItemCount;
                   accountFactory?: OptionsFactory,
                   balanceFactory?: OptionsFactory,
@@ -87,14 +87,14 @@ export interface Options {
                   transactionsFactory?: OptionsFactory,
                   concessionsFactory?: OptionsFactory,
                   paymentScheduleFactory?: OptionsFactory
-                },
+                }],
                 servicePointsFactory?: OptionsFactory,
-                servicePoints?: {
+                servicePoints?: [{
                   count?: OptionsItemCount;
                   servicePointFactory?: OptionsFactory,
                   derFactory?: OptionsFactory,
                   usageFactory?: OptionsFactory,
-                }
+                }]
               }
             }
           ]

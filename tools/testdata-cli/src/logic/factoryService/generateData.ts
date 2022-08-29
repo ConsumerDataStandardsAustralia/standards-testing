@@ -430,7 +430,7 @@ function generateDetailedCustomers(options: Options, customerOptions: any, holde
           if (customerOptions.banking) {
             Helper.log(`Executing banking factories for customer`, 1);
             const newData = generateCustomerBankingData(options, customerOptions.banking, customer);
-            if (newData) customer.customer.banking = newData;
+            if (newData) customer.banking = newData;
           } else {
             Helper.log(`No customer banking factories configured`, 1)
           }
@@ -438,7 +438,7 @@ function generateDetailedCustomers(options: Options, customerOptions: any, holde
           if (customerOptions.energy) {
             Helper.log(`Executing energy factories for customer`, 1);
             const newData = generateCustomerEnergyData(options, customerOptions.energy, customer);
-            if (newData) customer.customer.banking = newData;
+            if (newData) customer.energy = newData;
           } else {
             Helper.log(`No customer energy factories configured`, 1)
           }
@@ -858,12 +858,12 @@ function generateDetailedEnergyAccounts(options: Options, accountOptions: any, c
 
           if (accountOptions.paymentScheduleFactory) {
             Helper.log(`Executing payment schedule factories for energy account`, 1);
-            account.paymentSchedule = generateSingleItem(options, accountOptions.paymentScheduleFactory,
+            account.paymentSchedule = generateArrayOfItems(options, accountOptions.paymentScheduleFactory,
               (factory) => {
-                return factory.canCreateEnergyPaymentSchedule();
+                return factory.canCreateEnergyPaymentSchedules();
               },
               (factory) => {
-                return factory.generateEnergyPaymentSchedule(account);
+                return factory.generateEnergyPaymentSchedules(account);
               })
           } else {
             Helper.log(`No energy account payment schedule factories configured`, 1)

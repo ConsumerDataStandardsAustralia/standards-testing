@@ -180,7 +180,7 @@ export interface Customer {
  */
 export interface BankAccountWrapper {
   account: BankAccount;
-  balance: BankAccountBalance;
+  balance?: BankAccountBalance;
   /**
    * An array of transactions for the account
    */
@@ -227,8 +227,11 @@ export interface BankPaymentSchedule {
  */
 export interface EnergyAccountWrapper {
   account: EnergyAccount;
-  balance: EnergyAccountBalance;
-  paymentSchedule?: EnergyPaymentSchedule;
+  balance?: EnergyAccountBalance;
+  /**
+   * An array of agreed payment schedules
+   */
+  paymentSchedule?: EnergyPaymentSchedule[];
   /**
    * An array of invoices for the account
    */

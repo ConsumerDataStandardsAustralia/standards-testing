@@ -273,8 +273,7 @@
 			"description": "A wrapper for a single bank account to contain all of the data related to the account",
       "additionalProperties": false,
       "required": [
-        "account",
-        "balance"
+        "account"
       ],
       "properties": {
         "account": {
@@ -309,8 +308,7 @@
 			"description": "A wrapper for a single eenrgy account to contain all of the data related to the account",
       "additionalProperties": false,
       "required": [
-        "account",
-        "balance"
+        "account"
       ],
       "properties": {
         "account": {
@@ -320,7 +318,11 @@
           "$ref": "#/$defs/energyAccountBalance"
         },
         "paymentSchedule": {
-          "$ref": "#/$defs/energyPaymentSchedule"
+          "type": "array",
+          "description": "An array of agreed payment schedules",
+          "items": {
+            "$ref": "#/$defs/energyPaymentSchedule"
+          }
         },
         "invoices": {
           "type": "array",

@@ -54,7 +54,7 @@ export const handler = (argv: Arguments<Options>): void => {
       if (factory.canCreateEnergyServicePoints()) output +='    create a set of energy service points\n';
       if (factory.canCreateEnergyDER()) output +='    create a set of distributed energy resources\n';
       if (factory.canCreateEnergyUsage()) output +='    create a set of electricity usage records\n';
-      if (factory.canCreateEnergyPaymentSchedule()) output +='    create an energy payment election\n';
+      if (factory.canCreateEnergyPaymentSchedules()) output +='    create an energy payment election\n';
       if (factory.canCreateEnergyConcession()) output +='    create an energy concession record\n';
       if (factory.canCreateEnergyConcessions()) output +='    create a set of energy concessions\n';
       if (factory.canCreateEnergyAccount()) output +='    create an energy account\n';
