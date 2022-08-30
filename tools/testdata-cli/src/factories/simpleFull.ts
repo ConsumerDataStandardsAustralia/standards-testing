@@ -244,7 +244,99 @@ This factory supports the follow option fields:
   // Banking
   public canCreateBankProduct(): boolean { return true; };
   public generateBankProduct(): schema.BankProduct | undefined {
-    return; //XXXX
+    return {
+      productId: Helper.randomId(),
+      effectiveFrom: Helper.randomDateTimeInThePast(),
+      effectiveTo: Helper.randomDateTimeInTheFuture(),
+      lastUpdated: Helper.randomDateTimeInThePast(),
+      productCategory: "BUSINESS_LOANS",
+      name: "Name",
+      description: "Description",
+      brand: "BRAND",
+      brandName: "Brand name",
+      applicationUri: "http://about:blank",
+      isTailored: false,
+      additionalInformation: {
+        overviewUri: "http://about:blank",
+        termsUri: "http://about:blank",
+        eligibilityUri: "http://about:blank",
+        feesAndPricingUri: "http://about:blank",
+        bundleUri: "http://about:blank"
+      },
+      cardArt: [
+        {
+          title: "Title",
+          imageUri: "http://about:blank"
+        }
+      ],
+      bundles: [
+        {
+          name: "Name",
+          description: "Description",
+          additionalInfo: "Additional info",
+          additionalInfoUri: "http://about:blank",
+          productIds: [
+            Helper.randomId()
+          ]
+        }
+      ],
+      features: [
+        {
+          featureType: "ADDITIONAL_CARDS",
+          additionalValue: "3",
+          additionalInfo: "Additional info",
+          additionalInfoUri: "http://about:blank"
+        }
+      ],
+      constraints: [
+        {
+          constraintType: "MAX_BALANCE",
+          additionalValue: "1000.00",
+          additionalInfo: "Additional info",
+          additionalInfoUri: "http://about:blank"
+        }
+      ],
+      eligibility: [
+        {
+          eligibilityType: "BUSINESS",
+          additionalInfo: "Additional info",
+          additionalInfoUri: "http://about:blank"
+        }
+      ],
+      fees: [
+        {
+          name: "Name",
+          feeType: "DEPOSIT",
+          amount: "10.00",
+          additionalInfo: "Additional info",
+          additionalInfoUri: "http://about:blank"
+        }
+      ],
+      depositRates: [
+        {
+          depositRateType: "VARIABLE",
+          rate: "0.01",
+          calculationFrequency: "P1D",
+          applicationFrequency: "P1M",
+          additionalInfo: "Additional info",
+          additionalInfoUri: "http://about:blank"
+        }
+      ],
+      lendingRates: [
+        {
+          lendingRateType: "VARIABLE",
+          rate: "0.01",
+          comparisonRate: "0.01",
+          calculationFrequency: "P1D",
+          applicationFrequency: "P1M",
+          interestPaymentDue: "IN_ADVANCE",
+          repaymentType: "INTEREST_ONLY",
+          loanPurpose: "INVESTMENT",
+          additionalInfo: "Additional info",
+          additionalInfoUri: "http://about:blank"
+        }
+      ]
+    };
   }
 
   public canCreateBankProducts(): boolean { return true; };
@@ -465,7 +557,171 @@ This factory supports the follow option fields:
   // Energy
   public canCreateEnergyPlan(): boolean { return true; };
   public generateEnergyPlan(): schema.EnergyPlan | undefined {
-    return; //XXXX
+    return {
+      planId: Helper.randomId(),
+      effectiveFrom: Helper.randomDateTimeInThePast(),
+      effectiveTo: Helper.randomDateTimeInTheFuture(),
+      lastUpdated: Helper.randomDateTimeInThePast(),
+      displayName: "Display name",
+      description: "Description",
+      type: "STANDING",
+      fuelType: "ELECTRICITY",
+      brand: "BRAND",
+      brandName: "Brand Name",
+      applicationUri: "http://about:blank",
+      additionalInformation: {
+        overviewUri: "http://about:blank",
+        termsUri: "http://about:blank",
+        eligibilityUri: "http://about:blank",
+        pricingUri: "http://about:blank",
+        bundleUri: "http://about:blank"
+      },
+      customerType: "RESIDENTIAL",
+      geography: {
+        excludedPostcodes: [
+          "3100"
+        ],
+        includedPostcodes: [
+          "3000-3999"
+        ],
+        distributors: [
+          "Distributor"
+        ]
+      },
+      meteringCharges: [
+        {
+          displayName: "Display name",
+          description: "Description",
+          minimumValue: "0",
+          maximumValue: "0",
+          period: "P1M"
+        }
+      ],
+      electricityContract: {
+        additionalFeeInformation: "Additional info",
+        pricingModel: "SINGLE_RATE",
+        timeZone: "LOCAL",
+        isFixed: true,
+        variation: "Variation",
+        onExpiryDescription: "Expiry description",
+        paymentOption: [
+          "PAPER_BILL"
+        ],
+        intrinsicGreenPower: {
+          greenPercentage: "0.1"
+        },
+        controlledLoad: [
+          {
+            displayName: "Display name",
+            rateBlockUType: "singleRate",
+            startDate: Helper.randomDateTimeInThePast(),
+            endDate: Helper.randomDateTimeInThePast(),
+            singleRate: {
+              displayName: "Display name",
+              description: "Description",
+              dailySupplyCharge: "10.00",
+              rates: [
+                {
+                  unitPrice: "10.00",
+                  measureUnit: "KWH",
+                  volume: 0
+                }
+              ]
+            }
+          }
+        ],
+        incentives: [
+          {
+            displayName: "Display name",
+            description: "Description",
+            category: "GIFT",
+            eligibility: "Eligibility"
+          }
+        ],
+        discounts: [
+          {
+            displayName: "Display name",
+            description: "Description",
+            type: "CONDITIONAL",
+            category: "PAY_ON_TIME",
+            endDate: Helper.randomDateTimeInTheFuture(),
+            methodUType: "percentOfBill",
+            percentOfBill: {
+              rate: "0.01"
+            }
+          }
+        ],
+        greenPowerCharges: [
+          {
+            displayName: "Display name",
+            description: "Description",
+            scheme: "GREENPOWER",
+            type: "FIXED_PER_DAY",
+            tiers: [
+              {
+                percentGreen: "0.1",
+                amount: "10.00"
+              },
+              {
+                percentGreen: "0.2",
+                amount: "20.00"
+              }
+            ]
+          }
+        ],
+        eligibility: [
+          {
+            type: "EXISTING_CUST",
+            information: "Information",
+            description: "Description"
+          }
+        ],
+        fees: [
+          {
+            type: "EXIT",
+            term: "FIXED",
+            amount: "10.00",
+            description: "Description"
+          }
+        ],
+        solarFeedInTariff: [
+          {
+            displayName: "Display name",
+            description: "Description",
+            scheme: "PREMIUM",
+            payerType: "GOVERNMENT",
+            tariffUType: "singleTariff",
+            singleTariff: {
+              amount: "10.00"
+            }
+          }
+        ],
+        tariffPeriod: [
+          {
+            type: "ENVIRONMENTAL",
+            displayName: "Display name",
+            startDate: Helper.randomDateTimeInThePast(),
+            endDate: Helper.randomDateTimeInThePast(),
+            dailySupplyCharges: "10.00",
+            timeZone: "LOCAL",
+            rateBlockUType: "singleRate",
+            singleRate: {
+              displayName: "Display name",
+              description: "Description",
+              generalUnitPrice: "10.00",
+              rates: [
+                {
+                  unitPrice: "10.00",
+                  measureUnit: "KWH",
+                  volume: 0
+                }
+              ],
+              period: "P1M"
+            }
+          }
+        ]
+      }
+    };
   }
 
   public canCreateEnergyPlans(): boolean { return true; };
@@ -569,7 +825,57 @@ This factory supports the follow option fields:
 
     let ret: schema.EnergyDerData[] = [];
     for (let i = 0; i < count; i++) {
-      //XXXX
+      ret.push({
+        servicePointId: servicePoint.servicePoint?.servicePointId,
+        approvedCapacity: 0,
+        availablePhasesCount: 1,
+        installedPhasesCount: 1,
+        islandableInstallation: true,
+        hasCentralProtectionControl: true,
+        protectionMode: {
+          exportLimitKva: 0,
+          underFrequencyProtection: 0,
+          underFrequencyProtectionDelay: 0,
+          overFrequencyProtection: 0,
+          overFrequencyProtectionDelay: 0,
+          underVoltageProtection: 0,
+          underVoltageProtectionDelay: 0,
+          overVoltageProtection: 0,
+          overVoltageProtectionDelay: 0,
+          sustainedOverVoltage: 0,
+          sustainedOverVoltageDelay: 0,
+          frequencyRateOfChange: 0,
+          voltageVectorShift: 0,
+          interTripScheme: "Inter trip scheme",
+          neutralVoltageDisplacement: 0
+        },
+        acConnections: [
+          {
+            connectionIdentifier: 1,
+            count: 0,
+            equipmentType: "INVERTER",
+            manufacturerName: "Manufacturer",
+            inverterSeries: "string",
+            inverterModelNumber: "Inverter model number",
+            commissioningDate: Helper.randomDateTimeInThePast(),
+            status: "ACTIVE",
+            inverterDeviceCapacity: 0,
+            derDevices: [
+              {
+                deviceIdentifier: 1,
+                count: 0,
+                manufacturer: "Manufacturer",
+                modelNumber: "Device model number",
+                status: "ACTIVE",
+                type: "FOSSIL",
+                subtype: "other",
+                nominalRatedCapacity: 0,
+                nominalStorageCapacity: 0
+              }
+            ]
+          }
+        ]
+      });
     }
     return ret;
   }
@@ -580,7 +886,21 @@ This factory supports the follow option fields:
 
     let ret: schema.EnergyUsageRead[] = [];
     for (let i = 0; i < count; i++) {
-      //XXXX
+      ret.push({
+        servicePointId: servicePoint.servicePoint?.servicePointId,
+        registerId: Helper.randomId(),
+        registerSuffix: Helper.randomId(),
+        meterId: Helper.randomId(),
+        controlledLoad: false,
+        readStartDate: Helper.randomDateTimeInThePast(),
+        readEndDate: Helper.randomDateTimeInThePast(),
+        unitOfMeasure: "kWh",
+        readUType: "basicRead",
+        basicRead: {
+          quality: "ACTUAL",
+          value: 100
+        }
+      });
     }
     return ret;
   }
@@ -589,7 +909,170 @@ This factory supports the follow option fields:
   public generateEnergyAccount(customer: schema.CustomerWrapper): schema.EnergyAccountWrapper | undefined {
     return {
       account: {
-        //XXXX
+        accountId: Helper.randomId(),
+        accountNumber: Helper.randomId(),
+        displayName: "Display name",
+        creationDate: Helper.randomDateTimeInThePast(),
+        plans: [
+          {
+            nickname: "Nick name",
+            servicePointIds: [
+              Helper.randomDateTimeInThePast()
+            ],
+            planOverview: {
+              displayName: "Display name",
+              startDate: Helper.randomDateTimeInThePast()
+            },
+            planDetail: {
+              fuelType: "ELECTRICITY",
+              isContingentPlan: false,
+              meteringCharges: [
+                {
+                  displayName: "Display name",
+                  description: "Description",
+                  minimumValue: "0",
+                  maximumValue: "0",
+                  period: "P1M"
+                }
+              ],
+              electricityContract: {
+                additionalFeeInformation: "Additional info",
+                pricingModel: "SINGLE_RATE",
+                timeZone: "LOCAL",
+                isFixed: true,
+                variation: "Variation",
+                onExpiryDescription: "Expiry description",
+                paymentOption: [
+                  "PAPER_BILL"
+                ],
+                intrinsicGreenPower: {
+                  greenPercentage: "0.1"
+                },
+                controlledLoad: [
+                  {
+                    displayName: "Display name",
+                    rateBlockUType: "singleRate",
+                    startDate: Helper.randomDateTimeInThePast(),
+                    endDate: Helper.randomDateTimeInThePast(),
+                    singleRate: {
+                      displayName: "Display name",
+                      description: "Description",
+                      dailySupplyCharge: "10.00",
+                      rates: [
+                        {
+                          unitPrice: "10.00",
+                          measureUnit: "KWH",
+                          volume: 0
+                        }
+                      ]
+                    }
+                  }
+                ],
+                incentives: [
+                  {
+                    displayName: "Display name",
+                    description: "Description",
+                    category: "GIFT",
+                    eligibility: "Eligibility"
+                  }
+                ],
+                discounts: [
+                  {
+                    displayName: "Display name",
+                    description: "Description",
+                    type: "CONDITIONAL",
+                    category: "PAY_ON_TIME",
+                    endDate: Helper.randomDateTimeInTheFuture(),
+                    methodUType: "percentOfBill",
+                    percentOfBill: {
+                      rate: "0.01"
+                    }
+                  }
+                ],
+                greenPowerCharges: [
+                  {
+                    displayName: "Display name",
+                    description: "Description",
+                    scheme: "GREENPOWER",
+                    type: "FIXED_PER_DAY",
+                    tiers: [
+                      {
+                        percentGreen: "0.1",
+                        amount: "10.00"
+                      },
+                      {
+                        percentGreen: "0.2",
+                        amount: "20.00"
+                      }
+                    ]
+                  }
+                ],
+                eligibility: [
+                  {
+                    type: "EXISTING_CUST",
+                    information: "Information",
+                    description: "Description"
+                  }
+                ],
+                fees: [
+                  {
+                    type: "EXIT",
+                    term: "FIXED",
+                    amount: "10.00",
+                    description: "Description"
+                  }
+                ],
+                solarFeedInTariff: [
+                  {
+                    displayName: "Display name",
+                    description: "Description",
+                    scheme: "PREMIUM",
+                    payerType: "GOVERNMENT",
+                    tariffUType: "singleTariff",
+                    singleTariff: {
+                      amount: "10.00"
+                    }
+                  }
+                ],
+                tariffPeriod: [
+                  {
+                    type: "ENVIRONMENTAL",
+                    displayName: "Display name",
+                    startDate: Helper.randomDateTimeInThePast(),
+                    endDate: Helper.randomDateTimeInThePast(),
+                    dailySupplyCharges: "10.00",
+                    timeZone: "LOCAL",
+                    rateBlockUType: "singleRate",
+                    singleRate: {
+                      displayName: "Display name",
+                      description: "Description",
+                      generalUnitPrice: "10.00",
+                      rates: [
+                        {
+                          unitPrice: "10.00",
+                          measureUnit: "KWH",
+                          volume: 0
+                        }
+                      ],
+                      period: "P1M"
+                    }
+                  }
+                ]
+              }
+            },
+            authorisedContacts: [
+              {
+                firstName: "First",
+                lastName: "Last",
+                middleNames: [
+                  "Middle"
+                ],
+                prefix: "Dr",
+                suffix: "OAM"
+              }
+            ]
+          }
+        ]
       }
     }
   }
