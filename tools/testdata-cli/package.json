@@ -1,6 +1,6 @@
 {
   "name": "@cds-au/testdata",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tools for the creation of manufactured test data for the Australian Consumer Data Right regime",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
