@@ -47,38 +47,57 @@ export interface Options {
 
         holderFactory?: OptionsFactory,
         unauthenticated?: {
-          unauthenticatedFactory?: OptionsFactory,
           banking?: {
-            productFactory?: OptionsFactory
+            productsFactory?: OptionsFactory
           },
           energy?: {
-            planFactory?: OptionsFactory
+            plansFactory?: OptionsFactory
           },
           admin?: {
-            adminFactory?: OptionsFactory,
             statusFactory?: OptionsFactory,
-            outageFactory?: OptionsFactory
+            outagesFactory?: OptionsFactory
           }
         },
         authenticated?: {
           customersFactory?: OptionsFactory,
-          customers?: {
-            count?: OptionsItemCount;
-            customerFactory?: OptionsFactory,
+          customers?: [
+            {
+              count?: OptionsItemCount;
+              customerFactory?: OptionsFactory,
 
-            banking?: {
-              bankingFactory?: OptionsFactory,
-              accountsFactory?: OptionsFactory,
-              accounts?: {
-                count?: OptionsItemCount;
-                accountFactory?: OptionsFactory,
-                transactionsFactory?: OptionsFactory,
+              banking?: {
+                accountsFactory?: OptionsFactory,
+                accounts?: [{
+                  count?: OptionsItemCount;
+                  accountFactory?: OptionsFactory,
+                  balanceFactory?: OptionsFactory,
+                  transactionsFactory?: OptionsFactory,
+                }],
+                directDebitsFactory?: OptionsFactory,
+                payeesFactory?: OptionsFactory,
+                scheduledPaymentsFactory?: OptionsFactory
               },
-              directDebitsFactory?: OptionsFactory,
-              payeesFactory?: OptionsFactory,
-              paymentSchedulesFactory?: OptionsFactory
+              energy?: {
+                accountsFactory?: OptionsFactory,
+                accounts?: [{
+                  count?: OptionsItemCount;
+                  accountFactory?: OptionsFactory,
+                  balanceFactory?: OptionsFactory,
+                  invoicesFactory?: OptionsFactory,
+                  transactionsFactory?: OptionsFactory,
+                  concessionsFactory?: OptionsFactory,
+                  paymentScheduleFactory?: OptionsFactory
+                }],
+                servicePointsFactory?: OptionsFactory,
+                servicePoints?: [{
+                  count?: OptionsItemCount;
+                  servicePointFactory?: OptionsFactory,
+                  derFactory?: OptionsFactory,
+                  usageFactory?: OptionsFactory,
+                }]
+              }
             }
-          }
+          ]
         }
       }
     ],

@@ -1,6 +1,6 @@
 {
   "name": "@cds-au/testdata",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tools for the creation of manufactured test data for the Australian Consumer Data Right regime",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
     "sync-schema": "rm -f ./src/schema/* && cp ../../schema/cdr-test-data-schema.json ./src/schema && node ./utils/create-schema-definitions.js",
     "build": "rm -rf ./dist/ && tsc && chmod +x ./dist/cli.js",
     "publish": "npm publish --access public",
-    "test": "node ./dist/cli.js generate samples/options/load-static.json ~/tmp/full.json"
+    "test": "node ./dist/cli.js generate samples/options/load-static.json working/full.json"
   },
   "author": "Data Standards Body",
   "license": "MIT",
@@ -27,6 +27,7 @@
     "ajv-formats": "^2.1.1",
     "better-ajv-errors": "^1.1.2",
     "json-schema-to-typescript": "^10.1.5",
+    "short-unique-id": "^4.4.4",
     "yargs": "^17.3.1"
   }
 }
