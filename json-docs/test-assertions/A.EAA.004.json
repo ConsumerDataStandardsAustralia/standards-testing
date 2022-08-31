@@ -1,0 +1,24 @@
+{
+  "id": "A.EAA.004",
+  "title": "Validate account identifier - unavailable account",
+  "given": [
+    "the {accoundId} is included",
+    "AND the requested account is temporarily unavailable. (Subsequent requests for the account may be successful.)"
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 404",
+      " the response body has ErrorListReponse object",
+      " error code is \"Authorisation/UnavailableEnergyAccount\""
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#error-404-unavailable-energy-account"
+    }
+  ],
+  "negative": false
+}

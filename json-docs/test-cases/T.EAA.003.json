@@ -1,0 +1,30 @@
+{
+  "id": "T.EAA.003",
+  "title": "Get Energy Accounts - invalid page parameters",
+  "description": "Ensure the endpoint returns pagination errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "<page> OR (<page> ",
+    "AND <page-size>) query parameters are provided"
+  ],
+  "purpose": "Test API with invalid pagination parameters",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/accounts"
+    }
+  ],
+  "assertions": [
+    "A.CPG.002",
+    "A.CPG.003",
+    "A.CPG.004",
+    "A.CPG.005",
+    "A.CFI.001",
+    "A.CFI.002"
+  ]
+}

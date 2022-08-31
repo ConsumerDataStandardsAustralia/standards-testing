@@ -1,0 +1,31 @@
+{
+  "id": "T.CAC.014",
+  "title": "Get Customer Detail",
+  "description": "Obtain detailed information on the authorised customer within the current session",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+    }
+  ],
+  "negative": true,
+  "preConditions": [
+    "The value <x-v> is set in the request header to a version supported by the DH"
+  ],
+  "purpose": "Test API with valid version",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /common/customer/detail"
+    }
+  ],
+  "assertions": [
+    "A.CVN.001",
+    "A.CVM.001",
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.CFA.001",
+    "A.CFC.001",
+    "A.CCH.001",
+    "A.CAC.002"
+  ]
+}

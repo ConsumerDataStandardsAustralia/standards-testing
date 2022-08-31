@@ -9,7 +9,7 @@
   ],
   "negative": false,
   "preConditions": [
-    "The <{servicePointId}> is set in the Path to a value that is "
+    "The {servicePointId} is set in the Path to a value that is invalid"
   ],
   "purpose": "Test API with an invalid servicePointId",
   "steps": [

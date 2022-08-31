@@ -1,0 +1,27 @@
+{
+  "id": "T.EAR.136",
+  "title": "ADR call to DH: Get Bulk Usage - invalid minimum version format",
+  "description": "Ensure that the endpoint returns version compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "<x-min-v> is included",
+    "AND <x-min-v> is not an integer"
+  ],
+  "purpose": "Test invalid format for minimum version",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/electricity/servicepoints/usage"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.CVM.002"
+  ]
+}

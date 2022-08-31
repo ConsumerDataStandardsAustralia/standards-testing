@@ -1,0 +1,26 @@
+{
+  "id": "T.EAA.044",
+  "title": "Get Concessions - invalid account id format",
+  "description": "Ensure the endpoint returns accountId compatible errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The {accountId} is set in the Path to a value that is invalid"
+  ],
+  "purpose": "Test API with an invalid accountId",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/accounts/{accountId}/concessions"
+    }
+  ],
+  "assertions": [
+    "A.CFI.001",
+    "A.CFI.002",
+    "A.EAA.003"
+  ]
+}

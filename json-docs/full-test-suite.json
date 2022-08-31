@@ -1,9 +1,9 @@
 {
-  "fileVersion": "1.0.2",
-  "standardsVersion": "1.17.0",
+  "fileVersion": "1.0.3",
+  "standardsVersion": "1.18.0",
   "title": "The CDR Test Documentation",
   "description": "This documentation has been  created by the DSB to assist participants in the development of compliant APIs",
-  "changeLogUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v1.0.2/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx",
+  "changeLogUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v1.0.3/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx",
   "githubRepoUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing",
   "assertions": {
     "A.CPG.001": {
@@ -11,7 +11,7 @@
       "title": "Validate pagination - LinksPaginated ",
       "given": [
         "the page parameter is included in a GET request",
-        "AND the page value is a number and page-size is [1,25,1000,null]"
+        "AND the page value is a number and page-size is [1..1000,null]"
       ],
       "when": [
         "a response is returned",
@@ -183,7 +183,7 @@
     },
     "A.CVN.003": {
       "id": "A.CVN.003",
-      "title": "Validate version - validate [x-v] format",
+      "title": "Validate version - invalid [x-v] format",
       "given": [
         "the version parameter is included",
         "AND the version value is not a valid number is an alpha (e.g. \"foo\")"
@@ -282,7 +282,7 @@
     },
     "A.CVM.002": {
       "id": "A.CVM.002",
-      "title": "Validate minimum version - validate <x-min-v> format",
+      "title": "Validate minimum version - invalid <x-min-v> format",
       "given": [
         "the <x-min-v> header is included ",
         "AND the <x-min-v> is a not a positive integer"
@@ -506,6 +506,7 @@
       "title": "Validate FAPI Customer IP Address - missing from header",
       "given": [
         "the API requires authentication",
+        "AND the customer is present",
         "AND the <x-fapi-customer-ip-address> is NOT present in the request header"
       ],
       "when": [
@@ -861,6 +862,236 @@
         },
         {
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#http-response-codes"
+        }
+      ],
+      "negative": false
+    },
+    "A.CAA.001": {
+      "id": "A.CAA.001",
+      "title": "Validate schema - GetStatus",
+      "given": [
+        "a request is made to obtain a health check status for the implementation "
+      ],
+      "when": [
+        "a response is returned"
+      ],
+      "then": {
+        "and": [
+          "the response has a status of 200",
+          " the response body complies with the ResponseCommonDiscoveryStatus schema"
+        ]
+      },
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSresponsecommondiscoverystatus"
+        }
+      ],
+      "negative": false
+    },
+    "A.CAA.002": {
+      "id": "A.CAA.002",
+      "title": "Validate schema - GetOutage",
+      "given": [
+        "a request is made to obtain a list of scheduled outages"
+      ],
+      "when": [
+        "a response is returned"
+      ],
+      "then": {
+        "and": [
+          "the response has a status of 200",
+          " the response body complies with the ResponseDiscoveryOutageList schema"
+        ]
+      },
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSresponsediscoveryoutageslist"
+        }
+      ],
+      "negative": false
+    },
+    "A.CAC.001": {
+      "id": "A.CAC.001",
+      "title": "Validate schema - ResponseCommonCustomer",
+      "given": [
+        "the request to call the API is formatted correctly"
+      ],
+      "when": [
+        "a response is returned"
+      ],
+      "then": {
+        "and": [
+          "the response has a status of 200",
+          " the response body complies with the ResponseCommonCustomer schema"
+        ]
+      },
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSresponsecommoncustomer"
+        }
+      ],
+      "negative": false
+    },
+    "A.CAC.002": {
+      "id": "A.CAC.002",
+      "title": "Validate schema - ResponseCommonCustomerDetailV2",
+      "given": [
+        "the request to call the API is formatted correctly"
+      ],
+      "when": [
+        "a response is returned"
+      ],
+      "then": {
+        "and": [
+          "the response has a status of 200",
+          " the response body complies with the ResponseCommonCustomerDetailV2 schema"
+        ]
+      },
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSresponsecommoncustomerdetailv2"
+        }
+      ],
+      "negative": false
+    },
+    "A.EAA.001": {
+      "id": "A.EAA.001",
+      "title": "Validate schema - EnergyAccountListResponse",
+      "given": [
+        "the request to call the API is formatted correctly by the ADR"
+      ],
+      "when": [
+        "a response is returned"
+      ],
+      "then": {
+        "and": [
+          "the response has a status of 200",
+          " the response body complies with the EnergyAccountListResponse schema"
+        ]
+      },
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyaccountlistresponse"
+        }
+      ],
+      "negative": false
+    },
+    "A.EAA.002": {
+      "id": "A.EAA.002",
+      "title": "Validate account and schema - EnergyAccountDetailResponse",
+      "given": [
+        "the {accountID} is included ",
+        "AND the {accountId} value is valid "
+      ],
+      "when": [
+        "a response is returned"
+      ],
+      "then": {
+        "and": [
+          "the response has a status of 200",
+          " the response body complies with the EnergyAccountDetailResponse schema"
+        ]
+      },
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyaccountdetailresponse"
+        },
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#energy"
+        }
+      ],
+      "negative": false
+    },
+    "A.EAA.003": {
+      "id": "A.EAA.003",
+      "title": "Validate account identifier - invalid value",
+      "given": [
+        "the {accountId} is included ",
+        "AND the requested account is permanently unavailable. (No subsequent request for the account will be successful.)"
+      ],
+      "when": [
+        "a response is returned"
+      ],
+      "then": {
+        "and": [
+          "the response has a status of 404",
+          " the response body has ErrorListReponse object",
+          " error code is \"Authorisation/InvalidEnergyAccount\""
+        ]
+      },
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#error-404-invalid-energy-account"
+        }
+      ],
+      "negative": false
+    },
+    "A.EAA.004": {
+      "id": "A.EAA.004",
+      "title": "Validate account identifier - unavailable account",
+      "given": [
+        "the {accoundId} is included",
+        "AND the requested account is temporarily unavailable. (Subsequent requests for the account may be successful.)"
+      ],
+      "when": [
+        "a response is returned"
+      ],
+      "then": {
+        "and": [
+          "the response has a status of 404",
+          " the response body has ErrorListReponse object",
+          " error code is \"Authorisation/UnavailableEnergyAccount\""
+        ]
+      },
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#error-404-unavailable-energy-account"
+        }
+      ],
+      "negative": false
+    },
+    "A.EAA.005": {
+      "id": "A.EAA.005",
+      "title": "validate account and schema - EnergyPaymentScheduleResponse",
+      "given": [
+        "the {accountID} is included ",
+        "AND the {accountId} value is valid "
+      ],
+      "when": [
+        "a response is returned"
+      ],
+      "then": {
+        "and": [
+          "the response has a status of 200",
+          " the response body complies with the EnergyPaymentScheduleResponse schema"
+        ]
+      },
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSenergypaymentscheduleresponse"
+        }
+      ],
+      "negative": false
+    },
+    "A.EAA.006": {
+      "id": "A.EAA.006",
+      "title": "validate account and schema -EnergyConcessionsResponse",
+      "given": [
+        "the {accountID} is included ",
+        "AND the {accountId} value is valid "
+      ],
+      "when": [
+        "a response is returned"
+      ],
+      "then": {
+        "and": [
+          "the response has a status of 200",
+          " the response body complies with the EnergyConcessionsResponse schema"
+        ]
+      },
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSenergyconcessionsresponse"
         }
       ],
       "negative": false
@@ -1392,6 +1623,2981 @@
     }
   },
   "testCases": {
+    "T.CAA.001": {
+      "id": "T.CAA.001",
+      "title": "Get Status with a valid version",
+      "description": "Obtain a health check status for the implementation",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-status"
+        }
+      ],
+      "negative": true,
+      "preConditions": [
+        "Value <x-v>  is set to a version supported by the DH"
+      ],
+      "purpose": "Test API with a valid version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /discovery/status"
+        }
+      ],
+      "assertions": [
+        "A.CVN.001",
+        "A.CVM.001",
+        "A.CAA.001"
+      ]
+    },
+    "T.CAA.002": {
+      "id": "T.CAA.002",
+      "title": "Get Status - invalid version value",
+      "description": "Ensure that the endpoint returns version compatibility errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-status"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> version is not a valid number"
+      ],
+      "purpose": "Test API with invalid version value",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /discovery/status"
+        }
+      ],
+      "assertions": [
+        "A.CVN.002"
+      ]
+    },
+    "T.CAA.003": {
+      "id": "T.CAA.003",
+      "title": "Get Status - invalid version format",
+      "description": "Ensure that the endpoint returns version compatibility errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-status"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> format is not valid"
+      ],
+      "purpose": "Test API with invalid version format",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /discovery/status"
+        }
+      ],
+      "assertions": [
+        "A.CVN.003"
+      ]
+    },
+    "T.CAA.004": {
+      "id": "T.CAA.004",
+      "title": "Get Status - unsupported version without <x-min-v> included",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-status"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The value <x-v> is set in the request header to a version not supported by the DH"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /discovery/status"
+        }
+      ],
+      "assertions": [
+        "A.CVN.004"
+      ]
+    },
+    "T.CAA.005": {
+      "id": "T.CAA.005",
+      "title": "Get Status - unsupported version when <x-min-v> is included",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-status"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The value <x-v> is set in the request header to a version not supported by the DH",
+        "AND the <x-min-v> is included"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /discovery/status"
+        }
+      ],
+      "assertions": [
+        "A.CVN.005"
+      ]
+    },
+    "T.CAA.006": {
+      "id": "T.CAA.006",
+      "title": "Get Status - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-status"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /discovery/status"
+        }
+      ],
+      "assertions": [
+        "A.CVM.002"
+      ]
+    },
+    "T.CAA.007": {
+      "id": "T.CAA.007",
+      "title": "Get Outages with a valid version",
+      "description": "Obtain a list of scheduled outages for the implementation",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-outages"
+        }
+      ],
+      "negative": true,
+      "preConditions": [
+        "Value <x-v> is set to a version supported by the DH"
+      ],
+      "purpose": "Test API with a valid version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /discovery/outages"
+        }
+      ],
+      "assertions": [
+        "A.CVN.001",
+        "A.CVM.001",
+        "A.CAA.002"
+      ]
+    },
+    "T.CAA.008": {
+      "id": "T.CAA.008",
+      "title": "Get Outages - invalid version value",
+      "description": "Ensure that the endpoint returns version compatibility errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-outages"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> version is not a valid number"
+      ],
+      "purpose": "Test API with invalid version value",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /discovery/outages"
+        }
+      ],
+      "assertions": [
+        "A.CVN.002"
+      ]
+    },
+    "T.CAA.009": {
+      "id": "T.CAA.009",
+      "title": "Get Outages - invalid version format",
+      "description": "Ensure that the endpoint returns version compatibility errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-outages"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> format is not valid"
+      ],
+      "purpose": "Test API with invalid version format",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /discovery/outages"
+        }
+      ],
+      "assertions": [
+        "A.CVN.003"
+      ]
+    },
+    "T.CAA.010": {
+      "id": "T.CAA.010",
+      "title": "Get Outages - unsupported version without <x-min-v> included",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-outages"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The value <x-v> is set in the request header to a version not supported by the DH"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /discovery/outages"
+        }
+      ],
+      "assertions": [
+        "A.CVN.004"
+      ]
+    },
+    "T.CAA.011": {
+      "id": "T.CAA.011",
+      "title": "Get Outages - unsupported version when <x-min-v> is included",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-outages"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The value <x-v> is set in the request header to a version not supported by the DH",
+        "AND the <x-min-v> is included"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /discovery/outages"
+        }
+      ],
+      "assertions": [
+        "A.CVN.005"
+      ]
+    },
+    "T.CAA.012": {
+      "id": "T.CAA.012",
+      "title": "Get Outages - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-outages"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /discovery/outages"
+        }
+      ],
+      "assertions": [
+        "A.CVM.002"
+      ]
+    },
+    "T.CAC.001": {
+      "id": "T.CAC.001",
+      "title": "Get Customer",
+      "description": "Obtain basic information on the customer that has authorised the current session",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer"
+        }
+      ],
+      "negative": true,
+      "preConditions": [
+        "The value <x-v> is set in the request header to a version supported by the DH"
+      ],
+      "purpose": "Test API with valid version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer"
+        }
+      ],
+      "assertions": [
+        "A.CVN.001",
+        "A.CVM.001",
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.001",
+        "A.CFC.001",
+        "A.CCH.001",
+        "A.CAC.001"
+      ]
+    },
+    "T.CAC.002": {
+      "id": "T.CAC.002",
+      "title": "Get Customer - invalid version value",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> version is not a valid number"
+      ],
+      "purpose": "Test API with invalid version value",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer"
+        }
+      ],
+      "assertions": [
+        "A.CVN.002",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.CAC.003": {
+      "id": "T.CAC.003",
+      "title": "Get Customer - invalid version format",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> format is not valid "
+      ],
+      "purpose": "Test API with invalid version format",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVN.003"
+      ]
+    },
+    "T.CAC.004": {
+      "id": "T.CAC.004",
+      "title": "Get Customer - unsupported version without x-min-v included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The value <x-v> is set in the request header to a version not supported by the DH"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVN.004"
+      ]
+    },
+    "T.CAC.005": {
+      "id": "T.CAC.005",
+      "title": "Get Customer - unsupported version when x-min-v is included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "the value <x-v> is set in the request header to a version not supported by the DH",
+        "AND the <x-min-v> is included"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVN.005"
+      ]
+    },
+    "T.CAC.006": {
+      "id": "T.CAC.006",
+      "title": "Get Customer - invalid minimum version value",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-min-v> is a not a positive integer"
+      ],
+      "purpose": "Test API with invalid minimum version value",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.CAC.007": {
+      "id": "T.CAC.007",
+      "title": "Get Customer - invalid FAPI Interaction ID format ",
+      "description": "Ensure the endpoint returns FAPI Interaction ID errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-interaction-id> format is invalid "
+      ],
+      "purpose": "Test API where FAPI Interaction ID format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer"
+        }
+      ],
+      "assertions": [
+        "A.CFI.003"
+      ]
+    },
+    "T.CAC.008": {
+      "id": "T.CAC.008",
+      "title": "Get Customer - missing FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Auth date is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.002"
+      ]
+    },
+    "T.CAC.009": {
+      "id": "T.CAC.009",
+      "title": "Get Customer -  invalid FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> format is invalid"
+      ],
+      "purpose": "Test API when FAPI Auth date is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.003"
+      ]
+    },
+    "T.CAC.010": {
+      "id": "T.CAC.010",
+      "title": "Get Customer - missing FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.002"
+      ]
+    },
+    "T.CAC.011": {
+      "id": "T.CAC.011",
+      "title": "Get Customer - invalid FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  format is invalid"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.003"
+      ]
+    },
+    "T.CAC.012": {
+      "id": "T.CAC.012",
+      "title": "Get Customer - missing CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> is not present in the header"
+      ],
+      "purpose": "Test API when CDS Client Header is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.002"
+      ]
+    },
+    "T.CAC.013": {
+      "id": "T.CAC.013",
+      "title": "Get Customer - invalid CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> format is invalid"
+      ],
+      "purpose": "Test API when CDS Client Header is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.003"
+      ]
+    },
+    "T.CAC.014": {
+      "id": "T.CAC.014",
+      "title": "Get Customer Detail",
+      "description": "Obtain detailed information on the authorised customer within the current session",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+        }
+      ],
+      "negative": true,
+      "preConditions": [
+        "The value <x-v> is set in the request header to a version supported by the DH"
+      ],
+      "purpose": "Test API with valid version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer/detail"
+        }
+      ],
+      "assertions": [
+        "A.CVN.001",
+        "A.CVM.001",
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.001",
+        "A.CFC.001",
+        "A.CCH.001",
+        "A.CAC.002"
+      ]
+    },
+    "T.CAC.015": {
+      "id": "T.CAC.015",
+      "title": "Get Customer Detail - invalid version value",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> version is not a valid number"
+      ],
+      "purpose": "Test API with invalid version value",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer/detail"
+        }
+      ],
+      "assertions": [
+        "A.CVN.002",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.CAC.016": {
+      "id": "T.CAC.016",
+      "title": "Get Customer Detail - invalid version format",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> format is not valid "
+      ],
+      "purpose": "Test API with invalid version format",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer/detail"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVN.003"
+      ]
+    },
+    "T.CAC.017": {
+      "id": "T.CAC.017",
+      "title": "Get Customer Detail - unsupported version without x-min-v included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The value <x-v> is set in the request header to a version not supported by the DH"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer/detail"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVN.004"
+      ]
+    },
+    "T.CAC.018": {
+      "id": "T.CAC.018",
+      "title": "Get Customer Detail - unsupported version when x-min-v is included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "the value <x-v> is set in the request header to a version not supported by the DH",
+        "AND the <x-min-v> is included"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer/detail"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVN.005"
+      ]
+    },
+    "T.CAC.019": {
+      "id": "T.CAC.019",
+      "title": "Get Customer Detail - invalid minimum version value",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-min-v> is a not a positive integer"
+      ],
+      "purpose": "Test API with invalid minimum version value",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer/detail"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.CAC.020": {
+      "id": "T.CAC.020",
+      "title": "Get Customer Detail - invalid FAPI Interaction ID format ",
+      "description": "Ensure the endpoint returns FAPI Interaction ID errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-interaction-id> format is invalid "
+      ],
+      "purpose": "Test API where FAPI Interaction ID format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer/detail"
+        }
+      ],
+      "assertions": [
+        "A.CFI.003"
+      ]
+    },
+    "T.CAC.021": {
+      "id": "T.CAC.021",
+      "title": "Get Customer Detail - missing FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Auth date is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer/detail"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.002"
+      ]
+    },
+    "T.CAC.022": {
+      "id": "T.CAC.022",
+      "title": "Get Customer Detail -  invalid FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> format is invalid"
+      ],
+      "purpose": "Test API when FAPI Auth date is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer/detail"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.003"
+      ]
+    },
+    "T.CAC.023": {
+      "id": "T.CAC.023",
+      "title": "Get Customer Detail - missing FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer/detail"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.002"
+      ]
+    },
+    "T.CAC.024": {
+      "id": "T.CAC.024",
+      "title": "Get Customer Detail - invalid FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  format is invalid"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer/detail"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.003"
+      ]
+    },
+    "T.CAC.025": {
+      "id": "T.CAC.025",
+      "title": "Get Customer Detail - missing CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> is not present in the header"
+      ],
+      "purpose": "Test API when CDS Client Header is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer/detail"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.002"
+      ]
+    },
+    "T.CAC.026": {
+      "id": "T.CAC.026",
+      "title": "Get Customer Detail - invalid CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-customer-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> format is invalid"
+      ],
+      "purpose": "Test API when CDS Client Header is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /common/customer/detail"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.003"
+      ]
+    },
+    "T.EAA.001": {
+      "id": "T.EAA.001",
+      "title": "Get Energy Accounts - no pagination",
+      "description": "Obtain the list of energy accounts available under the authorised consent ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": true,
+      "preConditions": [
+        "Neither <page-size> or <page> query parameters are provided"
+      ],
+      "purpose": "Test API without any pagination partameters",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CVN.001",
+        "A.CVM.001",
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.001",
+        "A.CFC.001",
+        "A.CCH.001",
+        "A.EAA.001"
+      ]
+    },
+    "T.EAA.002": {
+      "id": "T.EAA.002",
+      "title": "Get Energy Accounts - with pagination",
+      "description": "Obtain the list of energy accounts available under the authorised con",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": true,
+      "preConditions": [
+        "<page-size> and <page> query parameters are provided"
+      ],
+      "purpose": "Test API with pagination partameters",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CVN.001",
+        "A.CVM.001",
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.001",
+        "A.CFC.001",
+        "A.CCH.001",
+        "A.CPG.001",
+        "A.EAA.001"
+      ]
+    },
+    "T.EAA.003": {
+      "id": "T.EAA.003",
+      "title": "Get Energy Accounts - invalid page parameters",
+      "description": "Ensure the endpoint returns pagination errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<page> OR (<page> ",
+        "AND <page-size>) query parameters are provided"
+      ],
+      "purpose": "Test API with invalid pagination parameters",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CPG.002",
+        "A.CPG.003",
+        "A.CPG.004",
+        "A.CPG.005",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.004": {
+      "id": "T.EAA.004",
+      "title": "Get Energy Accounts - unsupported version without x-min-v included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The value <x-v> is set in the request header to a version not supported by the DH"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CVN.004",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.005": {
+      "id": "T.EAA.005",
+      "title": "Get Energy Accounts - invalid version value",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> version is not a valid number"
+      ],
+      "purpose": "Test API with invalid version value",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CVN.002",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.006": {
+      "id": "T.EAA.006",
+      "title": "Get Energy Accounts - invalid version format",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> format is not valid "
+      ],
+      "purpose": "Test API with invalid version format",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CVN.003",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.007": {
+      "id": "T.EAA.007",
+      "title": "Get Energy Accounts - unsupported version when x-min-v is included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "the value <x-v> is set in the request header to a version not supported by the DH",
+        "AND the <x-min-v> is included"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CVN.005",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.008": {
+      "id": "T.EAA.008",
+      "title": "Get Energy Accounts - invalid FAPI Interaction ID format ",
+      "description": "Ensure the endpoint returns FAPI Interaction ID errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-interaction-id> format is invalid "
+      ],
+      "purpose": "Test API where FAPI Interaction ID format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CFI.003"
+      ]
+    },
+    "T.EAA.009": {
+      "id": "T.EAA.009",
+      "title": "Get Energy Accounts - missing FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Auth date is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.002"
+      ]
+    },
+    "T.EAA.010": {
+      "id": "T.EAA.010",
+      "title": "Get Energy Accounts -  invalid FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> format is invalid"
+      ],
+      "purpose": "Test API when FAPI Auth date is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.003"
+      ]
+    },
+    "T.EAA.011": {
+      "id": "T.EAA.011",
+      "title": "Get Energy Accounts - missing FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.002"
+      ]
+    },
+    "T.EAA.012": {
+      "id": "T.EAA.012",
+      "title": "Get Energy Accounts - invalid FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  format is invalid"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.003"
+      ]
+    },
+    "T.EAA.013": {
+      "id": "T.EAA.013",
+      "title": "Get Energy Accounts - missing CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> is not present in the header"
+      ],
+      "purpose": "Test API when CDS Client Header is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.002"
+      ]
+    },
+    "T.EAA.014": {
+      "id": "T.EAA.014",
+      "title": "Get Energy Accounts - invalid CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> format is invalid"
+      ],
+      "purpose": "Test API when CDS Client Header is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.003"
+      ]
+    },
+    "T.EAA.015": {
+      "id": "T.EAA.015",
+      "title": "Get Energy Account Detail ",
+      "description": "Obtain detailed information for a specific energy account",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": true,
+      "preConditions": [
+        "The {accountId} is set in the Path ",
+        "AND value <x-v> is set in the request header to a version supported by the DH"
+      ],
+      "purpose": "Test API with valid account and version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CVN.001",
+        "A.CVM.001",
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.001",
+        "A.CFC.001",
+        "A.CCH.001",
+        "A.EAA.002"
+      ]
+    },
+    "T.EAA.016": {
+      "id": "T.EAA.016",
+      "title": "Get Energy Account Detail - invalid account id format",
+      "description": "Ensure the endpoint returns accountId compatible errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The {accountId} is set in the Path to a value that is invalid"
+      ],
+      "purpose": "Test API with an invalid accountId",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.EAA.003"
+      ]
+    },
+    "T.EAA.017": {
+      "id": "T.EAA.017",
+      "title": "Get Energy Account Detail - unavailable account id ",
+      "description": "Ensure the endpoint returns accountId compatible errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The {accountID} is set in the Path to a value that is unavailable"
+      ],
+      "purpose": "Test API with an unavailable accountId",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.EAA.004"
+      ]
+    },
+    "T.EAA.018": {
+      "id": "T.EAA.018",
+      "title": "Get Energy Account Detail - unsupported version without x-min-v included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The value <x-v> is set in the request header to a version not supported by the DH"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CVN.004",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.019": {
+      "id": "T.EAA.019",
+      "title": "Get Energy Account Detail - invalid version value",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> version is not a valid number"
+      ],
+      "purpose": "Test API with invalid version value",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CVN.002",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.020": {
+      "id": "T.EAA.020",
+      "title": "Get Energy Account Detail - invalid version format",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> format is not valid "
+      ],
+      "purpose": "Test API with invalid version format",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CVN.003",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.021": {
+      "id": "T.EAA.021",
+      "title": "Get Energy Account Detail - unsupported version when x-min-v is included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "the value <x-v> is set in the request header to a version not supported by the DH",
+        "AND the <x-min-v> is included"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CVN.005",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.022": {
+      "id": "T.EAA.022",
+      "title": "Get Energy Account Detail - invalid FAPI Interaction ID format ",
+      "description": "Ensure the endpoint returns FAPI Interaction ID errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-interaction-id> format is invalid "
+      ],
+      "purpose": "Test API where FAPI Interaction ID format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CFI.003"
+      ]
+    },
+    "T.EAA.023": {
+      "id": "T.EAA.023",
+      "title": "Get Energy Account Detail - missing FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Auth date is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.002"
+      ]
+    },
+    "T.EAA.024": {
+      "id": "T.EAA.024",
+      "title": "Get Energy Account Detail -  invalid FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> format is invalid"
+      ],
+      "purpose": "Test API when FAPI Auth date is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.003"
+      ]
+    },
+    "T.EAA.025": {
+      "id": "T.EAA.025",
+      "title": "Get Energy Account Detail - missing FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.002"
+      ]
+    },
+    "T.EAA.026": {
+      "id": "T.EAA.026",
+      "title": "Get Energy Account Detail - invalid FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  format is invalid"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.003"
+      ]
+    },
+    "T.EAA.027": {
+      "id": "T.EAA.027",
+      "title": "Get Energy Account Detail - missing CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> is not present in the header"
+      ],
+      "purpose": "Test API when CDS Client Header is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.002"
+      ]
+    },
+    "T.EAA.028": {
+      "id": "T.EAA.028",
+      "title": "Get Energy Account Detail - invalid CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> format is invalid"
+      ],
+      "purpose": "Test API when CDS Client Header is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.003"
+      ]
+    },
+    "T.EAA.029": {
+      "id": "T.EAA.029",
+      "title": "Get Agreed Payment Schedule",
+      "description": "Obtain the agreed payment schedule and details, if any, for a specific energy account",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": true,
+      "preConditions": [
+        "The {accountId} is set in the Path ",
+        "AND value <x-v> is set in the request header to a version supported by the DH"
+      ],
+      "purpose": "Test API with valid account and version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CVN.001",
+        "A.CVM.001",
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.001",
+        "A.CFC.001",
+        "A.CCH.001",
+        "A.EAA.005"
+      ]
+    },
+    "T.EAA.030": {
+      "id": "T.EAA.030",
+      "title": "Get Agreed Payment Schedule - invalid account id format",
+      "description": "Ensure the endpoint returns accountId compatible errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The {accountId} is set in the Path to a value that is invalid"
+      ],
+      "purpose": "Test API with an invalid accountId",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.EAA.003"
+      ]
+    },
+    "T.EAA.031": {
+      "id": "T.EAA.031",
+      "title": "Get Agreed Payment Schedule - unavailable account id ",
+      "description": "Ensure the endpoint returns accountId compatible errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The {accountID} is set in the Path to a value that is unavailable"
+      ],
+      "purpose": "Test API with an unavailable accountId",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.EAA.004"
+      ]
+    },
+    "T.EAA.032": {
+      "id": "T.EAA.032",
+      "title": "Get Agreed Payment Schedule - unsupported version without x-min-v included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The value <x-v> is set in the request header to a version not supported by the DH"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CVN.004",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.033": {
+      "id": "T.EAA.033",
+      "title": "Get Agreed Payment Schedule - invalid version value",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> version is not a valid number"
+      ],
+      "purpose": "Test API with invalid version value",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CVN.002",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.034": {
+      "id": "T.EAA.034",
+      "title": "Get Agreed Payment Schedule - invalid version format",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> format is not valid "
+      ],
+      "purpose": "Test API with invalid version format",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CVN.003",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.035": {
+      "id": "T.EAA.035",
+      "title": "Get Agreed Payment Schedule - unsupported version when x-min-v is included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "the value <x-v> is set in the request header to a version not supported by the DH",
+        "AND the <x-min-v> is included"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CVN.005",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.036": {
+      "id": "T.EAA.036",
+      "title": "Get Agreed Payment Schedule - invalid FAPI Interaction ID format ",
+      "description": "Ensure the endpoint returns FAPI Interaction ID errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-interaction-id> format is invalid "
+      ],
+      "purpose": "Test API where FAPI Interaction ID format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CFI.003"
+      ]
+    },
+    "T.EAA.037": {
+      "id": "T.EAA.037",
+      "title": "Get Agreed Payment Schedule - missing FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Auth date is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.002"
+      ]
+    },
+    "T.EAA.038": {
+      "id": "T.EAA.038",
+      "title": "Get Agreed Payment Schedule -  invalid FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> format is invalid"
+      ],
+      "purpose": "Test API when FAPI Auth date is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.003"
+      ]
+    },
+    "T.EAA.039": {
+      "id": "T.EAA.039",
+      "title": "Get Agreed Payment Schedule - missing FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.002"
+      ]
+    },
+    "T.EAA.040": {
+      "id": "T.EAA.040",
+      "title": "Get Agreed Payment Schedule - invalid FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  format is invalid"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.003"
+      ]
+    },
+    "T.EAA.041": {
+      "id": "T.EAA.041",
+      "title": "Get Agreed Payment Schedule - missing CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> is not present in the header"
+      ],
+      "purpose": "Test API when CDS Client Header is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.002"
+      ]
+    },
+    "T.EAA.042": {
+      "id": "T.EAA.042",
+      "title": "Get Agreed Payment Schedule - invalid CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> format is invalid"
+      ],
+      "purpose": "Test API when CDS Client Header is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.003"
+      ]
+    },
+    "T.EAA.043": {
+      "id": "T.EAA.043",
+      "title": "Get Concessions ",
+      "description": "Obtain the details of any concessions or arrangements applied to a specific energy account",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": true,
+      "preConditions": [
+        "The {accountId} is set in the Path ",
+        "AND value <x-v> is set in the request header to a version supported by the DH"
+      ],
+      "purpose": "Test API with valid account and version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CVN.001",
+        "A.CVM.001",
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.001",
+        "A.CFC.001",
+        "A.CCH.001",
+        "A.EAA.006"
+      ]
+    },
+    "T.EAA.044": {
+      "id": "T.EAA.044",
+      "title": "Get Concessions - invalid account id format",
+      "description": "Ensure the endpoint returns accountId compatible errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The {accountId} is set in the Path to a value that is invalid"
+      ],
+      "purpose": "Test API with an invalid accountId",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.EAA.003"
+      ]
+    },
+    "T.EAA.045": {
+      "id": "T.EAA.045",
+      "title": "Get Concessions - unavailable account id ",
+      "description": "Ensure the endpoint returns accountId compatible errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The {accountID} is set in the Path to a value that is unavailable"
+      ],
+      "purpose": "Test API with an unavailable accountId",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.EAA.004"
+      ]
+    },
+    "T.EAA.046": {
+      "id": "T.EAA.046",
+      "title": "Get Concessions - unsupported version without x-min-v included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The value <x-v> is set in the request header to a version not supported by the DH"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CVN.004",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.047": {
+      "id": "T.EAA.047",
+      "title": "Get Concessions - invalid version value",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> version is not a valid number"
+      ],
+      "purpose": "Test API with invalid version value",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CVN.002",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.048": {
+      "id": "T.EAA.048",
+      "title": "Get Concessions - invalid version format",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> format is not valid "
+      ],
+      "purpose": "Test API with invalid version format",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CVN.003",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.049": {
+      "id": "T.EAA.049",
+      "title": "Get Concessions - unsupported version when x-min-v is included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "the value <x-v> is set in the request header to a version not supported by the DH",
+        "AND the <x-min-v> is included"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CVN.005",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAA.050": {
+      "id": "T.EAA.050",
+      "title": "Get Concessions - invalid FAPI Interaction ID format ",
+      "description": "Ensure the endpoint returns FAPI Interaction ID errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-interaction-id> format is invalid "
+      ],
+      "purpose": "Test API where FAPI Interaction ID format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CFI.003"
+      ]
+    },
+    "T.EAA.051": {
+      "id": "T.EAA.051",
+      "title": "Get Concessions - missing FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Auth date is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.002"
+      ]
+    },
+    "T.EAA.052": {
+      "id": "T.EAA.052",
+      "title": "Get Concessions - invalid FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> format is invalid"
+      ],
+      "purpose": "Test API when FAPI Auth date is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.003"
+      ]
+    },
+    "T.EAA.053": {
+      "id": "T.EAA.053",
+      "title": "Get Concessions - missing FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.002"
+      ]
+    },
+    "T.EAA.054": {
+      "id": "T.EAA.054",
+      "title": "Get Concessions - invalid FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  format is invalid"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.003"
+      ]
+    },
+    "T.EAA.055": {
+      "id": "T.EAA.055",
+      "title": "Get Concessions - missing CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> is not present in the header"
+      ],
+      "purpose": "Test API when CDS Client Header is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.002"
+      ]
+    },
+    "T.EAA.056": {
+      "id": "T.EAA.056",
+      "title": "Get Concessions - invalid CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> format is invalid"
+      ],
+      "purpose": "Test API when CDS Client Header is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.003"
+      ]
+    },
+    "T.EAA.057": {
+      "id": "T.EAA.057",
+      "title": "Get Energy Accounts - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-accounts"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAA.058": {
+      "id": "T.EAA.058",
+      "title": "Get Energy Account Detail - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-energy-account-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAA.059": {
+      "id": "T.EAA.059",
+      "title": "Get Agreed Payment Schedule - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-agreed-payment-schedule"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/payment-schedule"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAA.060": {
+      "id": "T.EAA.060",
+      "title": "Get Concessions - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-concessions"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/concessions"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAB.002": {
+      "id": "T.EAB.002",
+      "title": "Get Balance for Energy Account - invalid account id format",
+      "description": "Ensure the endpoint returns accountId compatible errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The {accountId} is set in the Path to a value that is invalid"
+      ],
+      "purpose": "Test API with an invalid accountId",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAB.003": {
+      "id": "T.EAB.003",
+      "title": "Get Balance for Energy Account - unavailable account id ",
+      "description": "Ensure the endpoint returns accountId compatible errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The {accountID} is set in the Path to a value that is unavailable"
+      ],
+      "purpose": "Test API with an unavailable accountId",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAB.004": {
+      "id": "T.EAB.004",
+      "title": "Get Balance for Energy Account - unsupported version without x-min-v included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The value <x-v> is set in the request header to a version not supported by the DH"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CVN.004",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAB.005": {
+      "id": "T.EAB.005",
+      "title": "Get Balance for Energy Account - invalid version value",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> version is not a valid number"
+      ],
+      "purpose": "Test API with invalid version value",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CVN.002",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAB.006": {
+      "id": "T.EAB.006",
+      "title": "Get Balance for Energy Account - invalid version format",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-v> format is not valid "
+      ],
+      "purpose": "Test API with invalid version format",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CVN.003",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAB.007": {
+      "id": "T.EAB.007",
+      "title": "Get Balance for Energy Account - unsupported version when x-min-v is included",
+      "description": "Ensure the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "the value <x-v> is set in the request header to a version not supported by the DH",
+        "AND the <x-min-v> is included"
+      ],
+      "purpose": "Test API with a version that is not supported by the DH",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CVN.005",
+        "A.CFI.001",
+        "A.CFI.002"
+      ]
+    },
+    "T.EAB.008": {
+      "id": "T.EAB.008",
+      "title": "Get Energy Account Detail - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAB.009": {
+      "id": "T.EAB.009",
+      "title": "Get Balance for Energy Account - invalid FAPI Interaction ID format ",
+      "description": "Ensure the endpoint returns FAPI Interaction ID errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-interaction-id> format is invalid "
+      ],
+      "purpose": "Test API where FAPI Interaction ID format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CFI.003"
+      ]
+    },
+    "T.EAB.010": {
+      "id": "T.EAB.010",
+      "title": "Get Balance for Energy Account - missing FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Auth date is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.002"
+      ]
+    },
+    "T.EAB.011": {
+      "id": "T.EAB.011",
+      "title": "Get Balance for Energy Account -  invalid FAPI Auth Date",
+      "description": "Ensure the endpoint returns FAPI Auth date errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-auth-date> format is invalid"
+      ],
+      "purpose": "Test API when FAPI Auth date is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFA.003"
+      ]
+    },
+    "T.EAB.012": {
+      "id": "T.EAB.012",
+      "title": "Get Balance for Energy Account - missing FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  is not present in the header"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.002"
+      ]
+    },
+    "T.EAB.013": {
+      "id": "T.EAB.013",
+      "title": "Get Balance for Energy Account - invalid FAPI Customer IP Address",
+      "description": "Ensure the endpoint returns FAPI Customer IP address errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-fapi-customer-ip-address>  format is invalid"
+      ],
+      "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CFC.003"
+      ]
+    },
+    "T.EAB.014": {
+      "id": "T.EAB.014",
+      "title": "Get Balance for Energy Account - missing CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> is not present in the header"
+      ],
+      "purpose": "Test API when CDS Client Header is missing from the header",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.002"
+      ]
+    },
+    "T.EAB.015": {
+      "id": "T.EAB.015",
+      "title": "Get Balance for Energy Account - invalid CDS Client Header",
+      "description": "Ensure the endpoint returns CDS Client Header errors ",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-balance-for-energy-account"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "The <x-cds-client-header> format is invalid"
+      ],
+      "purpose": "Test API when CDS Client Header is present but the format is invalid",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/{accountId}/balance"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CCH.003"
+      ]
+    },
+    "T.EAB.016": {
+      "id": "T.EAB.016",
+      "title": "with pagination",
+      "description": "",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-balances-for-energy"
+        }
+      ],
+      "negative": true,
+      "preConditions": [],
+      "purpose": "",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/balances"
+        }
+      ],
+      "assertions": []
+    },
+    "T.EAB.017": {
+      "id": "T.EAB.017",
+      "title": "without pagination ",
+      "description": "",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-balances-for-energy"
+        }
+      ],
+      "negative": true,
+      "preConditions": [],
+      "purpose": "",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/accounts/balances"
+        }
+      ],
+      "assertions": []
+    },
     "T.EAR.001": {
       "id": "T.EAR.001",
       "title": "ADR call to DH: Get Service Points - no pagination",
@@ -1442,7 +4648,7 @@
       ],
       "negative": true,
       "preConditions": [
-        " <page-size> and<page> query parameters are provided"
+        "<page-size> and<page> query parameters are provided"
       ],
       "purpose": "Test API with pagination partameters",
       "steps": [
@@ -1617,7 +4823,7 @@
       ],
       "negative": false,
       "preConditions": [
-        "The <{servicePointId}> is set in the Path to a value that is "
+        "The {servicePointId} is set in the Path to a value that is invalid"
       ],
       "purpose": "Test API with an invalid servicePointId",
       "steps": [
@@ -5006,6 +8212,222 @@
         "A.CFI.002"
       ]
     },
+    "T.EAR.133": {
+      "id": "T.EAR.133",
+      "title": "ADR call to DH: Get Service Points - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/electricity/servicepoints"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAR.134": {
+      "id": "T.EAR.134",
+      "title": "ADR call to DH: Get Service Point Detail - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/electricity/servicepoints/{servicePointId}"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAR.135": {
+      "id": "T.EAR.135",
+      "title": "ADR call to DH: Get Usage for Service Point - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAR.136": {
+      "id": "T.EAR.136",
+      "title": "ADR call to DH: Get Bulk Usage - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/electricity/servicepoints/usage"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAR.137": {
+      "id": "T.EAR.137",
+      "title": "ADR call to DH: Get Usage For Specific Service Points - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "POST /energy/electricity/servicepoints/usage"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAR.138": {
+      "id": "T.EAR.138",
+      "title": "ADR call to DH: Get DER For Service Point - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAR.139": {
+      "id": "T.EAR.139",
+      "title": "ADR call to DH: Get Bulk DER - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /energy/electricity/servicepoints/der"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAR.140": {
+      "id": "T.EAR.140",
+      "title": "ADR call to DH: Get DER For Specific Service Points - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "POST /energy/electricity/servicepoints/der"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
     "T.EAS.001": {
       "id": "T.EAS.001",
       "title": "DH call to SDH: Get Service Points - no pagination",
@@ -7053,9 +10475,707 @@
         "A.CFI.001",
         "A.EAS.011"
       ]
+    },
+    "T.EAS.078": {
+      "id": "T.EAS.078",
+      "title": "DH call to SDH: Get Service Points - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points-sr"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "POST /secondary/energy/electricity/servicepoints"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAS.079": {
+      "id": "T.EAS.079",
+      "title": "DH call to SDH: Get Service Point Detail - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail-sr"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAS.080": {
+      "id": "T.EAS.080",
+      "title": "DH call to SDH: Get Usage for Service Point - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point-sr"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAS.081": {
+      "id": "T.EAS.081",
+      "title": "DH call to SDH: Get Usage For Specific Service Points - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points-sr"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "POST /secondary/energy/electricity/servicepoints/usage"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAS.082": {
+      "id": "T.EAS.082",
+      "title": "DH call to SDH: Get DER For Service Point - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point-sr"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
+    },
+    "T.EAS.083": {
+      "id": "T.EAS.083",
+      "title": "DH call to SDH: Get DER For Specific Service Points - invalid minimum version format",
+      "description": "Ensure that the endpoint returns version compatibility errors",
+      "references": [
+        {
+          "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points-sr"
+        }
+      ],
+      "negative": false,
+      "preConditions": [
+        "<x-min-v> is included",
+        "AND <x-min-v> is not an integer"
+      ],
+      "purpose": "Test invalid format for minimum version",
+      "steps": [
+        {
+          "type": "ACTION",
+          "action": "POST /secondary/energy/electricity/servicepoints/der"
+        }
+      ],
+      "assertions": [
+        "A.CFI.001",
+        "A.CFI.002",
+        "A.CVM.002"
+      ]
     }
   },
   "scenarios": {
+    "S.CAA.035": {
+      "id": "S.CAA.035",
+      "title": "Get status v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.CAA.001"
+        }
+      ]
+    },
+    "S.CAA.036": {
+      "id": "S.CAA.036",
+      "title": "Get status Negative v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.CAA.002"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAA.003"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAA.004"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAA.005"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAA.006"
+        }
+      ]
+    },
+    "S.CAA.037": {
+      "id": "S.CAA.037",
+      "title": "Get outages v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.CAA.007"
+        }
+      ]
+    },
+    "S.CAA.038": {
+      "id": "S.CAA.038",
+      "title": "Get outages Negative v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.CAA.008"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAA.009"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAA.010"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAA.011"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAA.012"
+        }
+      ]
+    },
+    "S.CAC.039": {
+      "id": "S.CAC.039",
+      "title": "Get customer v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.001"
+        }
+      ]
+    },
+    "S.CAC.040": {
+      "id": "S.CAC.040",
+      "title": "Get customer Negative v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.002"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.003"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.004"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.005"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.006"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.007"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.008"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.009"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.010"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.011"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.012"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.013"
+        }
+      ]
+    },
+    "S.CAC.041": {
+      "id": "S.CAC.041",
+      "title": "Get customer detail v2",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.014"
+        }
+      ]
+    },
+    "S.CAC.042": {
+      "id": "S.CAC.042",
+      "title": "Get customer detail Negative v2",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.015"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.016"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.017"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.018"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.019"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.020"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.021"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.022"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.023"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.024"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.025"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.CAC.026"
+        }
+      ]
+    },
+    "S.EAA.047": {
+      "id": "S.EAA.047",
+      "title": "Get Energy Accounts v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.001"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.002"
+        }
+      ]
+    },
+    "S.EAA.048": {
+      "id": "S.EAA.048",
+      "title": "Get Energy Accounts Negative v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.003"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.004"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.005"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.006"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.007"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.008"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.009"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.010"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.011"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.012"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.013"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.014"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.057"
+        }
+      ]
+    },
+    "S.EAA.049": {
+      "id": "S.EAA.049",
+      "title": "Get Energy Account Detail v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.015"
+        }
+      ]
+    },
+    "S.EAA.050": {
+      "id": "S.EAA.050",
+      "title": "Get Energy Account Detail Negative v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.016"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.017"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.018"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.019"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.020"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.021"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.022"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.023"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.024"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.025"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.026"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.027"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.028"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.058"
+        }
+      ]
+    },
+    "S.EAA.051": {
+      "id": "S.EAA.051",
+      "title": "Get Agreed Payment Schedule v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.029"
+        }
+      ]
+    },
+    "S.EAA.052": {
+      "id": "S.EAA.052",
+      "title": "Get Agreed Payment Schedule Negative v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.030"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.031"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.032"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.033"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.034"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.035"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.036"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.037"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.038"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.039"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.040"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.041"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.042"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.059"
+        }
+      ]
+    },
+    "S.EAA.053": {
+      "id": "S.EAA.053",
+      "title": "Get Concessions v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.043"
+        }
+      ]
+    },
+    "S.EAA.054": {
+      "id": "S.EAA.054",
+      "title": "Get Concessions Negative v1",
+      "purpose": "",
+      "description": "",
+      "references": [],
+      "sequence": [
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.044"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.045"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.046"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.047"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.048"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.049"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.050"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.051"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.052"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.053"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.054"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.055"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.056"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAA.060"
+        }
+      ]
+    },
     "S.EAR.073": {
       "id": "S.EAR.073",
       "title": "Get Service Points v1",
@@ -7143,6 +11263,10 @@
         {
           "type": "TEST",
           "testCase": "T.EAR.125"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAR.133"
         }
       ]
     },
@@ -7217,6 +11341,10 @@
         {
           "type": "TEST",
           "testCase": "T.EAR.126"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAR.134"
         }
       ]
     },
@@ -7315,6 +11443,10 @@
         {
           "type": "TEST",
           "testCase": "T.EAR.127"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAR.135"
         }
       ]
     },
@@ -7405,6 +11537,10 @@
         {
           "type": "TEST",
           "testCase": "T.EAR.128"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAR.136"
         }
       ]
     },
@@ -7503,6 +11639,10 @@
         {
           "type": "TEST",
           "testCase": "T.EAR.129"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAR.137"
         }
       ]
     },
@@ -7577,6 +11717,10 @@
         {
           "type": "TEST",
           "testCase": "T.EAR.130"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAR.138"
         }
       ]
     },
@@ -7659,6 +11803,10 @@
         {
           "type": "TEST",
           "testCase": "T.EAR.131"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAR.139"
         }
       ]
     },
@@ -7741,6 +11889,10 @@
         {
           "type": "TEST",
           "testCase": "T.EAR.132"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAR.140"
         }
       ]
     },
@@ -7819,6 +11971,10 @@
         {
           "type": "TEST",
           "testCase": "T.EAS.077"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAS.078"
         }
       ]
     },
@@ -7877,6 +12033,10 @@
         {
           "type": "TEST",
           "testCase": "T.EAS.070"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAS.079"
         }
       ]
     },
@@ -7959,6 +12119,10 @@
         {
           "type": "TEST",
           "testCase": "T.EAS.071"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAS.080"
         }
       ]
     },
@@ -8041,6 +12205,10 @@
         {
           "type": "TEST",
           "testCase": "T.EAS.072"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAS.081"
         }
       ]
     },
@@ -8099,6 +12267,10 @@
         {
           "type": "TEST",
           "testCase": "T.EAS.073"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAS.082"
         }
       ]
     },
@@ -8165,11 +12337,52 @@
         {
           "type": "TEST",
           "testCase": "T.EAS.074"
+        },
+        {
+          "type": "TEST",
+          "testCase": "T.EAS.083"
         }
       ]
     }
   },
   "suites": {
+    "SUITE.005": {
+      "id": "SUITE.005",
+      "title": "APIs - Common Admin",
+      "purpose": "",
+      "scenarios": [
+        "S.CAA.035",
+        "S.CAA.036",
+        "S.CAA.037",
+        "S.CAA.038"
+      ]
+    },
+    "SUITE.006": {
+      "id": "SUITE.006",
+      "title": "APIs - Common Customer",
+      "purpose": "",
+      "scenarios": [
+        "S.CAC.039",
+        "S.CAC.040",
+        "S.CAC.041",
+        "S.CAC.042"
+      ]
+    },
+    "SUITE.008": {
+      "id": "SUITE.008",
+      "title": "APIs - Energy Accounts",
+      "purpose": "",
+      "scenarios": [
+        "S.EAA.047",
+        "S.EAA.048",
+        "S.EAA.049",
+        "S.EAA.050",
+        "S.EAA.051",
+        "S.EAA.052",
+        "S.EAA.053",
+        "S.EAA.054"
+      ]
+    },
     "SUITE.010": {
       "id": "SUITE.010",
       "title": "APIs - Energy Standing Data, Usage and DER",

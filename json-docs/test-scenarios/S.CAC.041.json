@@ -1,0 +1,13 @@
+{
+  "id": "S.CAC.041",
+  "title": "Get customer detail v2",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.CAC.014"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "T.EAB.017",
+  "title": "without pagination ",
+  "description": "",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-balances-for-energy"
+    }
+  ],
+  "negative": true,
+  "preConditions": [],
+  "purpose": "",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /energy/accounts/balances"
+    }
+  ],
+  "assertions": []
+}
