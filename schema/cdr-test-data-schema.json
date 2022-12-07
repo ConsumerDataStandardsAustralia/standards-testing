@@ -7,7 +7,10 @@
 	"required": [
 		"fileVersion",
 		"standardsVersion",
-		"title"
+		"title",
+    "holders",
+    "clientCache",
+    "registerCache"
 	],
 	"additionalProperties": false,
 	"properties": {
@@ -140,16 +143,13 @@
 			"description": "A previously registered client aligned to the current version of the data standards"
 		},
 		"recipient": {
-      "type": "object",
-			"description": "A recipient record from the CDR Register aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/register/RegisterDataRecipient.json"
 		},
     "bankProduct": {
-			"type": "object",
-			"description": "A bank product aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingProductDetailV4.json"
 		},
     "energyPlan": {
-			"type": "object",
-			"description": "An energy plan aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/energy/EnergyPlanDetail.json"
 		},
     "adminStatus": {
 			"type": "object",
@@ -208,20 +208,16 @@
       }
     },
     "customer": {
-      "type": "object",
-			"description": "A customer record aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/common/CommonPersonDetailV2.json"
     },
     "bankDirectDebit": {
-      "type": "object",
-			"description": "A direct debit authorisation aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingDirectDebit.json"
     },
     "bankPayee": {
-      "type": "object",
-			"description": "A payee aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingPayeeDetailV2.json"
     },
     "bankPaymentSchedule": {
-      "type": "object",
-			"description": "A payment schedule aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingScheduledPayment.json"
     },
     "bankAccountWrapper": {
       "type": "object",
@@ -248,16 +244,13 @@
       }
     },
     "bankAccount": {
-      "type": "object",
-			"description": "A bank account aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingAccountDetailV2.json"
     },
     "bankAccountBalance": {
-      "type": "object",
-			"description": "A balance for a bank account aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingBalance.json"
     },
     "bankTransaction": {
-      "type": "object",
-			"description": "A bank transaction aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingTransaction.json"
     }
 	}
 }

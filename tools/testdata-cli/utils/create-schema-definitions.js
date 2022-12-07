@@ -1,9 +1,8 @@
-const jtt = require('json-schema-to-typescript')
+const jtt = require('../../../../../json-schema-to-typescript')
 const fs = require('fs')
 const path = require('path');
 
-const basePath = './src/schema/';
-
+const basePath = path.join(__dirname, '..', 'src/schema')
 const files = fs.readdirSync(basePath);
 
 files.forEach((file) => {
