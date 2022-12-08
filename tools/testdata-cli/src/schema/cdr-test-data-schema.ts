@@ -100,7 +100,7 @@ export type EnergyPlan = EnergyPlan1 &
   } & {
     [k: string]: unknown;
   });
-export interface Customer {
+export type Customer = CommonPerson & {
   /**
    * Array is mandatory but may be empty if no phone numbers are held
    */
@@ -370,6 +370,12 @@ export type BankingScheduledPaymentRecurrence = ({
   recurrenceUType: "eventBased" | "intervalSchedule" | "lastWeekDay" | "onceOff";
   [k: string]: unknown;
 };
+/**
+ * A set of data holders, and their associated data, keyed on data holder ID
+ */
+export type Holders = {
+  [k: string]: Holder;
+}[];
 
 /**
  * A JSON schema for defining test data files that can be used to seed a mock, or test, implementation of a Data Holder for the Consumer Data Right
@@ -402,15 +408,9 @@ export interface ConsumerDataRightTestDataJSONSchema {
   registerCache?: Recipient[];
 }
 /**
- * A set of data holders, and their associated data, keyed on data holder ID
- */
-export interface Holders {
-  [k: string]: Holder;
-}
-/**
  * Data for a single data holder
  *
- * This interface was referenced by `Holders`'s JSON-Schema definition
+ * This interface was referenced by `undefined`'s JSON-Schema definition
  * via the `patternProperty` "^[a-zA-Z0-9]+$".
  */
 export interface Holder {

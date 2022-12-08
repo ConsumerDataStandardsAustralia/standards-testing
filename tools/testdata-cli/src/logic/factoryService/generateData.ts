@@ -4,6 +4,7 @@ import {
 } from '.';
 import { createFactory } from '.';
 import * as schema from '../../schema/cdr-test-data-schema';
+import { Holders } from '../../schema/cdr-test-data-schema';
 import {
   Options,
   OptionsGeneral,
@@ -34,7 +35,7 @@ export const generateData = (options: Options, dst: string, verbose: boolean): n
 
   // Execute client factories
   log(verbose, 'Executing client cache factories (if any)');
-  data = generateClientCache(verbose, options, data);
+   data = generateClientCache(verbose, options, data);
 
   // Execute recipient factories
   log(verbose, 'Executing register cache factories (if any)');
@@ -85,7 +86,32 @@ function generateAllData(verbose: boolean, options: Options, data: schema.Consum
 
 function generateHolders(verbose: boolean, options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
   let result = data;
-  //XXXX
+  let factories: Factory[] = []
+
+  // Create the factories
+  if (options.factories?.holdersFactory) {
+    log(verbose, `Creating holder factories`, 1)
+    factories = createFactories(1, options.general, options.factories?.holdersFactory);
+  }
+
+  if (factories.length > 0) {
+    log(verbose, `${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`, 1)
+
+    // If we have factories execute each one of them
+    for (const factory of factories) {
+      log(verbose, `Running factory '${factory.id}'`, 1)
+      if (factory.canCreateHolders()) {
+        const newData = factory.generateHolders();
+        if (newData != undefined) result.holders = newData;
+        log(verbose, `Factory complete`, 2)
+      } else {
+        log(verbose, `Factory does not support holders data generation`, 2)
+      }
+    }
+  } else {
+    log(verbose, 'No global factories to execute', 1)
+  }
+
   return result;
 }
 

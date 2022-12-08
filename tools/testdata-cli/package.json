@@ -26,7 +26,7 @@
     "ajv": "^8.9.0",
     "ajv-formats": "^2.1.1",
     "better-ajv-errors": "^1.1.2",
-    "json-schema-to-typescript": "^10.1.5",
+    "json-schema-to-typescript": "file:../../../../json-schema-to-typescript",
     "yargs": "^17.3.1"
   }
 }

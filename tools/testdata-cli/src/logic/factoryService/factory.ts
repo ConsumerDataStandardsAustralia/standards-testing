@@ -34,7 +34,7 @@ export abstract class Factory {
   public generateHolder(): schema.Holder | undefined { return }
 
   public canCreateHolders(): boolean { return false; };
-  public generateHolders(): schema.Holders[] | undefined { return }
+  public generateHolders(): schema.Holders | undefined { return }
 
   public canCreateClients(): boolean { return false; };
   public generateClients(): schema.Client[] | undefined { return }

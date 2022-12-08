@@ -49,14 +49,17 @@
 	},
 	"$defs": {
     "holders": {
-			"type": "object",
+			"type": "array",
 			"description": "A set of data holders, and their associated data, keyed on data holder ID",
 			"additionalProperties": false,
-			"patternProperties": {
-				"^[a-zA-Z0-9]+$": {
-					"$ref": "#/$defs/holder"
-				}
-			}
+      "items": {
+        "patternProperties": {
+          "^[a-zA-Z0-9]+$": {
+            "$ref": "#/$defs/holder"
+          }
+        }
+      }
+
     },
 		"holder": {
 			"type": "object",

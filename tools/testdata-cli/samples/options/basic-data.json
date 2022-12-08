@@ -1,0 +1,7 @@
+{
+    "factories": {
+      "holdersFactory": {
+        "id": "load-holders"
+      }
+    }
+}
