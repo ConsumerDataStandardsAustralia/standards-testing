@@ -56,6 +56,10 @@
     {
       "type": "TEST",
       "testCase": "T.EAR.126"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAR.134"
     }
   ]
 }

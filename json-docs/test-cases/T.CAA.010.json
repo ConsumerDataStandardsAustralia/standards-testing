@@ -1,0 +1,24 @@
+{
+  "id": "T.CAA.010",
+  "title": "Get Outages - unsupported version without <x-min-v> included",
+  "description": "Ensure that the endpoint returns version compatibility errors",
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-outages"
+    }
+  ],
+  "negative": false,
+  "preConditions": [
+    "The value <x-v> is set in the request header to a version not supported by the DH"
+  ],
+  "purpose": "Test API with a version that is not supported by the DH",
+  "steps": [
+    {
+      "type": "ACTION",
+      "action": "GET /discovery/outages"
+    }
+  ],
+  "assertions": [
+    "A.CVN.004"
+  ]
+}

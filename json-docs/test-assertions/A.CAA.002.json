@@ -1,0 +1,22 @@
+{
+  "id": "A.CAA.002",
+  "title": "Validate schema - GetOutage",
+  "given": [
+    "a request is made to obtain a list of scheduled outages"
+  ],
+  "when": [
+    "a response is returned"
+  ],
+  "then": {
+    "and": [
+      "the response has a status of 200",
+      " the response body complies with the ResponseDiscoveryOutageList schema"
+    ]
+  },
+  "references": [
+    {
+      "uri": "https://consumerdatastandardsaustralia.github.io/standards/#tocSresponsediscoveryoutageslist"
+    }
+  ],
+  "negative": false
+}

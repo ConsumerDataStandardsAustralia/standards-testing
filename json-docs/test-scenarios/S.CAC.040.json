@@ -1,0 +1,57 @@
+{
+  "id": "S.CAC.040",
+  "title": "Get customer Negative v1",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.CAC.002"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.CAC.003"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.CAC.004"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.CAC.005"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.CAC.006"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.CAC.007"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.CAC.008"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.CAC.009"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.CAC.010"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.CAC.011"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.CAC.012"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.CAC.013"
+    }
+  ]
+}

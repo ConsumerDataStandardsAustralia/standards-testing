@@ -44,6 +44,10 @@
     {
       "type": "TEST",
       "testCase": "T.EAS.074"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAS.083"
     }
   ]
 }

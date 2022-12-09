@@ -1,0 +1,61 @@
+{
+  "id": "S.EAA.048",
+  "title": "Get Energy Accounts Negative v1",
+  "purpose": "",
+  "description": "",
+  "references": [],
+  "sequence": [
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.003"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.004"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.005"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.006"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.007"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.008"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.009"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.010"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.011"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.012"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.013"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.014"
+    },
+    {
+      "type": "TEST",
+      "testCase": "T.EAA.057"
+    }
+  ]
+}

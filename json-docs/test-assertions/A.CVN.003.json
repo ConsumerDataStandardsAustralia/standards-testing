@@ -1,6 +1,6 @@
 {
   "id": "A.CVN.003",
-  "title": "Validate version - validate [x-v] format",
+  "title": "Validate version - invalid [x-v] format",
   "given": [
     "the version parameter is included",
     "AND the version value is not a valid number is an alpha (e.g. \"foo\")"

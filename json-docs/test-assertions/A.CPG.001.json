@@ -3,7 +3,7 @@
   "title": "Validate pagination - LinksPaginated ",
   "given": [
     "the page parameter is included in a GET request",
-    "AND the page value is a number and page-size is [1,25,1000,null]"
+    "AND the page value is a number and page-size is [1..1000,null]"
   ],
   "when": [
     "a response is returned",
