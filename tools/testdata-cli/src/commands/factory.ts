@@ -14,7 +14,7 @@ type Options = {
 export const command: string = 'factory <id>';
 export const desc: string = 'Give detailed documentation for a specific factory including the purpose of the factory, the data that it generates or modifies and the options that it consumes.';
 
-export const builder: CommandBuilder<Options, Options> = (yargs) =>
+export const  builder: CommandBuilder<Options, Options> =   (yargs) =>
   yargs
     .positional('id', { type: 'string', demandOption: true });
 

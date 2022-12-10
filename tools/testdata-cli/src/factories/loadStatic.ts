@@ -2,17 +2,15 @@ import * as fs from 'fs';
 import * as schema from '../schema/cdr-test-data-schema';
 import { Factory, FactoryOptions } from '../logic/factoryService'
 
-export const factoryId: string = "general-load-static";
+const factoryId: string = "general-load-static";
 
-export class factory extends Factory {
+export class LoadStatic extends Factory {
 
   constructor(options: FactoryOptions) {
-    super(options);
+    super(options, factoryId);
   }
 
-  public get id(): string {
-    return factoryId;
-  }
+  public static id: string = factoryId;
 
   public get briefDescription(): string {
     return "Load data from a static file";

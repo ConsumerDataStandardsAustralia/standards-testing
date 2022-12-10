@@ -3,7 +3,7 @@
     "allDataFactory": {
       "id": "general-load-static",
       "options": {
-        "source": "samples/files/full.json"
+        "source": "/Users/tomasschier/code/_git/consumer-data-standards/standards-testing/tools/testdata-cli/samples/files/full.json"
       }
     }
   }

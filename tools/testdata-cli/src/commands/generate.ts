@@ -34,7 +34,7 @@ export const handler = (argv: Arguments<ArgOptions>): void => {
   }
 
   // Default the general options if not specified
-  if (!options.general) {
+  if (!options?.general) {
     options.general = {
       fileVersion: '1.0.0',
       standardsVersion: '1.18.0',

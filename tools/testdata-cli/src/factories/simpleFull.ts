@@ -1,17 +1,15 @@
 import * as schema from '../schema/cdr-test-data-schema';
 import { Factory, Helper, FactoryOptions } from '../logic/factoryService'
 
-export const factoryId: string = "simple-full";
+const factoryId: string = "simple-full";
 
-export class factory extends Factory {
+export class SimpleFull extends Factory {
 
   constructor(options: FactoryOptions) {
-    super(options);
+    super(options, factoryId);
   }
 
-  public get id(): string {
-    return factoryId;
-  }
+  public static id: string = factoryId;
 
   public get briefDescription(): string {
     return "Create simple but complete payloads for all types";
@@ -434,11 +432,11 @@ This factory supports the follow option fields:
 
   public canCreateBankTransaction(): boolean { return true; };
   public generateBankTransaction(account: schema.BankAccountWrapper): schema.BankTransaction | undefined {
-    return {
-      accountId: account.account.id,
+    let result: schema.BankTransaction = {
+      accountId: account.account.accountId,
       transactionId: Helper.randomId(),
       isDetailAvailable: true,
-      type: "TRANSFER",
+      type: "TRANSFER_INCOMING",
       status: "POSTED",
       description: "The description",
       postingDateTime: Helper.randomDateTimeInThePast(),
@@ -457,6 +455,8 @@ This factory supports the follow option fields:
         }
       }
     }
+
+    return result;
   }
 
   public canCreateBankTransactions(): boolean { return true; };
@@ -478,7 +478,7 @@ This factory supports the follow option fields:
     let ret: schema.BankDirectDebit[] = [];
     for (let i = 0; i < count; i++) {
       ret.push({
-        accountId: accounts[0].account.id,
+        accountId: accounts[0].account.accountId,
         authorisedEntity: {
           description: "Direct debit description",
           financialInstitution: "ACME Bank",

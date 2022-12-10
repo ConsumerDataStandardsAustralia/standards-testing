@@ -10,13 +10,15 @@ export interface FactoryOptions {
 
 export abstract class Factory {
   protected options: FactoryOptions;
+  protected factoryId: string;
 
-  protected constructor(options: FactoryOptions) {
+  protected constructor(options: FactoryOptions, factoryId: string) {
     this.options = options;
+    this.factoryId = factoryId;
   }
 
   // ID
-  public abstract get id(): string;
+  public get id(): string { return this.factoryId};
 
 
   // Documentation
@@ -34,7 +36,7 @@ export abstract class Factory {
   public generateHolder(): schema.HolderWrapper | undefined { return }
 
   public canCreateHolders(): boolean { return false; };
-  public generateHolders(): schema.HolderWrapper[] | undefined { return }
+  public generateHolders(): schema.Holders | undefined { return }
 
   // Client Registration
   public canCreateClients(): boolean { return false; };
