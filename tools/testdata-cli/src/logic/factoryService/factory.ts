@@ -1,3 +1,6 @@
+import { BankingBalance, BankingDirectDebit, BankingPayeeDetailV2, BankingProductV4, BankingScheduledPayment, BankingTransaction } from 'consumer-data-standards/banking';
+import { EnergyConcession, EnergyDerRecord, EnergyInvoice, EnergyPaymentSchedule, EnergyPlan, EnergyUsageRead } from 'consumer-data-standards/energy';
+import { RegisterDataRecipient } from 'consumer-data-standards/register';
 import * as schema from '../../schema/cdr-test-data-schema';
 import { OptionsGeneral } from '../options';
 
@@ -44,7 +47,7 @@ export abstract class Factory {
 
   // Register
   public canCreateRecipients(): boolean { return false; };
-  public generateRecipients(): schema.Recipient[] | undefined { return }
+  public generateRecipients(): RegisterDataRecipient[] | undefined { return }
 
 
   // Admin
@@ -65,7 +68,7 @@ export abstract class Factory {
 
   // Banking
   public canCreateBankProducts(): boolean { return false; };
-  public generateBankProducts(): schema.BankProduct[] | undefined { return }
+  public generateBankProducts(): BankingProductV4[] | undefined { return }
 
   public canCreateBankAccount(): boolean { return false; };
   public generateBankAccount(customer: schema.CustomerWrapper): schema.BankAccountWrapper | undefined { return }
@@ -74,27 +77,27 @@ export abstract class Factory {
   public generateBankAccounts(customer: schema.CustomerWrapper): schema.BankAccountWrapper[] | undefined { return }
 
   public canCreateBankBalance(): boolean { return false; };
-  public generateBankBalance(account: schema.BankAccountWrapper): schema.BankAccountBalance | undefined { return }
+  public generateBankBalance(account: schema.BankAccountWrapper): BankingBalance | undefined { return }
 
   public canCreateBankTransaction(): boolean { return false; };
-  public generateBankTransaction(account: schema.BankAccountWrapper): schema.BankTransaction | undefined { return }
+  public generateBankTransaction(account: schema.BankAccountWrapper): BankingTransaction | undefined { return }
 
   public canCreateBankTransactions(): boolean { return false; };
-  public generateBankTransactions(account: schema.BankAccountWrapper): schema.BankTransaction[] | undefined { return }
+  public generateBankTransactions(account: schema.BankAccountWrapper): BankingTransaction[] | undefined { return }
 
   public canCreateBankDirectDebits(): boolean { return false; };
-  public generateBankDirectDebits(accounts: schema.BankAccountWrapper[]): schema.BankDirectDebit[] | undefined { return }
+  public generateBankDirectDebits(accounts: schema.BankAccountWrapper[]): BankingDirectDebit[] | undefined { return }
 
   public canCreateBankPayees(): boolean { return false; };
-  public generateBankPayees(accounts: schema.BankAccountWrapper[]): schema.BankPayee[] | undefined { return }
+  public generateBankPayees(accounts: schema.BankAccountWrapper[]): BankingPayeeDetailV2[] | undefined { return }
 
   public canCreateBankScheduledPayments(): boolean { return false; };
-  public generateScheduledPayments(accounts: schema.BankAccountWrapper[]): schema.BankPaymentSchedule[] | undefined { return }
+  public generateScheduledPayments(accounts: schema.BankAccountWrapper[]): BankingScheduledPayment[] | undefined { return }
 
 
   // Energy
   public canCreateEnergyPlans(): boolean { return false; };
-  public generateEnergyPlans(): schema.EnergyPlan[] | undefined { return }
+  public generateEnergyPlans(): EnergyPlan[] | undefined { return }
 
   public canCreateEnergyServicePoint(): boolean { return false; };
   public generateEnergyServicePoint(): schema.EnergyServicePointWrapper | undefined { return }
@@ -103,10 +106,10 @@ export abstract class Factory {
   public generateEnergyServicePoints(): schema.EnergyServicePointWrapper[] | undefined { return }
 
   public canCreateEnergyDER(): boolean { return false; };
-  public generateEnergyDER(servicePoint: schema.EnergyServicePointWrapper): schema.EnergyDerData[] | undefined { return }
+  public generateEnergyDER(servicePoint: schema.EnergyServicePointWrapper): EnergyDerRecord[] | undefined { return }
 
   public canCreateEnergyUsage(): boolean { return false; };
-  public generateEnergyUsage(servicePoint: schema.EnergyServicePointWrapper): schema.EnergyUsageRead[] | undefined { return }
+  public generateEnergyUsage(servicePoint: schema.EnergyServicePointWrapper): EnergyUsageRead[] | undefined { return }
 
   public canCreateEnergyAccount(): boolean { return false; };
   public generateEnergyAccount(customer: schema.CustomerWrapper): schema.EnergyAccountWrapper | undefined { return }
@@ -118,19 +121,19 @@ export abstract class Factory {
   public generateEnergyBalance(account: schema.EnergyAccountWrapper): schema.EnergyAccountBalance | undefined { return }
 
   public canCreateEnergyPaymentSchedules(): boolean { return false; };
-  public generateEnergyPaymentSchedules(account: schema.EnergyAccountWrapper): schema.EnergyPaymentSchedule[] | undefined { return }
+  public generateEnergyPaymentSchedules(account: schema.EnergyAccountWrapper): EnergyPaymentSchedule[] | undefined { return }
 
   public canCreateEnergyConcession(): boolean { return false; };
-  public generateEnergyConcession(account: schema.EnergyAccountWrapper): schema.EnergyConcession | undefined { return }
+  public generateEnergyConcession(account: schema.EnergyAccountWrapper): EnergyConcession | undefined { return }
 
   public canCreateEnergyConcessions(): boolean { return false; };
-  public generateEnergyConcessions(account: schema.EnergyAccountWrapper): schema.EnergyConcession[] | undefined { return }
+  public generateEnergyConcessions(account: schema.EnergyAccountWrapper): EnergyConcession[] | undefined { return }
 
   public canCreateEnergyInvoice(): boolean { return false; };
-  public generateEnergyInvoice(account: schema.EnergyAccountWrapper): schema.EnergyInvoice | undefined { return }
+  public generateEnergyInvoice(account: schema.EnergyAccountWrapper): EnergyInvoice | undefined { return }
 
   public canCreateEnergyInvoices(): boolean { return false; };
-  public generateEnergyInvoices(account: schema.EnergyAccountWrapper): schema.EnergyInvoice[] | undefined { return }
+  public generateEnergyInvoices(account: schema.EnergyAccountWrapper): EnergyInvoice[] | undefined { return }
 
   public canCreateEnergyTransaction(): boolean { return false; };
   public generateEnergyTransaction(account: schema.EnergyAccountWrapper): schema.EnergyTransaction | undefined { return }

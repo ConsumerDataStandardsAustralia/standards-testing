@@ -1,6 +1,6 @@
 {
-	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "https://cds.gov.au/test-data-schema.0.0.3.json",
+	"$schema": "https://json-org/draft/2020-12/schema",
+	"$id": "https://cds.gov.au/test-data-0.0.3.json",
 	"title": "Consumer Data Right Test Data JSON Schema",
 	"description": "A JSON schema for defining test data files that can be used to seed a mock, or test, implementation of a Data Holder for the Consumer Data Right",
 	"type": "object",
@@ -161,16 +161,13 @@
 			"description": "A previously registered client aligned to the current version of the data standards"
 		},
 		"recipient": {
-      "type": "object",
-			"description": "A recipient record from the CDR Register aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/register/RegisterDataRecipient.json"
 		},
     "bankProduct": {
-			"type": "object",
-			"description": "A bank product aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/banking/BankingProductDetailV4.json"
 		},
     "energyPlan": {
-			"type": "object",
-			"description": "An energy plan aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/energy/EnergyPlanDetail.json"
 		},
     "adminStatus": {
 			"type": "object",
@@ -254,19 +251,16 @@
     },
     "customer": {
       "type": "object",
-			"description": "A customer record aligned to the current version of the data standards"
+			"description": "A customer object aligned to the current version of the data standards"
     },
     "bankDirectDebit": {
-      "type": "object",
-			"description": "A direct debit authorisation aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/banking/BankingDirectDebit.json"
     },
     "bankPayee": {
-      "type": "object",
-			"description": "A payee aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/banking/BankingPayeeDetailV2.json"
     },
     "bankPaymentSchedule": {
-      "type": "object",
-			"description": "A payment schedule aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/banking/BankingScheduledPayment.json"
     },
     "bankAccountWrapper": {
       "type": "object",
@@ -292,16 +286,13 @@
       }
     },
     "bankAccount": {
-      "type": "object",
-			"description": "A bank account aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/banking/BankingAccountDetailV2.json"
     },
     "bankAccountBalance": {
-      "type": "object",
-			"description": "A balance for a bank account aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/banking/BankingBalance.json"
     },
     "bankTransaction": {
-      "type": "object",
-			"description": "A bank transaction aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/banking/BankingTransactionDetail.json"
     },
     "energyAccountWrapper": {
       "type": "object",
@@ -348,28 +339,24 @@
       }
     },
     "energyAccount": {
-      "type": "object",
-			"description": "An energy account aligned to the current version of the data standards"
+      "%ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/energy/EnergyAccountDetailV2.json"
     },
     "energyAccountBalance": {
       "type": "object",
-			"description": "An energy account balance structure aligned to the current version of the data standards"
+			"description": "Distributed energy resources for an energy account aligned to the current version of the data standards"
     },
     "energyPaymentSchedule": {
-      "type": "object",
-			"description": "An energy payment schedule structure aligned to the current version of the data standards"
-    },
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/energy/EnergyPaymentSchedule.json"
+      },
     "energyInvoice": {
-      "type": "object",
-			"description": "An energy invoice aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/energy/EnergyInvoice.json"
     },
     "energyTransaction": {
       "type": "object",
 			"description": "An energy transaction aligned to the current version of the data standards"
     },
     "energyConcession": {
-      "type": "object",
-			"description": "An energy concession aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/energy/EnergyConcession.json"
     },
     "energyServicePointWrapper": {
       "type": "object",
@@ -396,16 +383,13 @@
       }
     },
     "energyServicePoint": {
-      "type": "object",
-			"description": "Standing data for an energy service point aligned to the current version of the data standards"
-    },
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/energy/EnergyServicePointDetail.json"
+          },
     "energyDerData": {
-      "type": "object",
-			"description": "Distributed energy resources for an energy account aligned to the current version of the data standards"
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/energy/EnergyDerRecord.json"
     },
     "energyUsageRead": {
-      "type": "object",
-			"description": "A usage read for a service point aligned to the current version of the data standards"
-    }
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/energy/EnergyUsageRead.json"
+     }
 	}
 }

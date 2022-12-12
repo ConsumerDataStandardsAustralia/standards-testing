@@ -23,6 +23,7 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
+    "@types/consumer-data-standards": "^4.0.0",
     "ajv": "^8.9.0",
     "ajv-formats": "^2.1.1",
     "better-ajv-errors": "^1.1.2",

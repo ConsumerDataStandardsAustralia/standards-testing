@@ -25,7 +25,7 @@
 //     }
 //     public canCreateHolders(): boolean { return true; };
     
-//     public generateHolders(): schema.Holders | undefined {
+//     public generateHolders(): Holders | undefined {
 
 //         let holder: Holder = {
 //             unauthenticated: {
