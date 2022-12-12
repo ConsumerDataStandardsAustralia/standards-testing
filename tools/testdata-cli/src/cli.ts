@@ -14,6 +14,7 @@ const argv = yargs
     f: 'factory',
     fs: 'factories',
     g: 'generate',
-    s: 'schema'
+    s: 'schema',
+    vd: 'validate'
   })
   .argv;
