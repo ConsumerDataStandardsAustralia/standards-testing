@@ -11,7 +11,7 @@
   "scripts": {
     "lint": "tslint -p .",
     "sync-schema": "rm -f ./src/schema/* && cp ../../schema/cdr-test-data-schema.json ./src/schema && node ./utils/create-schema-definitions.js",
-    "build": "rm -rf ./dist/ && tsc && chmod +x ./dist/cli.js",
+    "build": "rm -rf ./dist/ && tsc && chmod +x ./dist/cli.js && cp ./src/schema/* ./dist/schema/",
     "publish": "npm publish --access public",
     "test": "node ./dist/cli.js generate samples/options/load-static.json working/full.json"
   },
@@ -29,6 +29,7 @@
     "better-ajv-errors": "^1.1.2",
     "json-schema-to-typescript": "^10.1.5",
     "short-unique-id": "^4.4.4",
+    "sync-request": "^6.1.0",
     "yargs": "^17.3.1"
   }
 }
