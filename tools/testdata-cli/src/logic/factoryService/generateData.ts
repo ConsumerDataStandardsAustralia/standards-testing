@@ -4,7 +4,7 @@ import {
   Helper
 } from '.';
 import { createFactory } from '.';
-import * as schema from '../../schema/cdr-test-data-schema';
+//import * as schema from '../../schema/cdr-test-data-schema';
 import {
   Options,
   OptionsGeneral,
@@ -13,6 +13,7 @@ import {
   OptionsWeighted,
   OptionsSequence
 } from '../options';
+import { Authenticated, BankAccountWrapper, ConsumerDataRightTestDataJSONSchema, CustomerWrapper, EnergyAccountWrapper, EnergyServicePointWrapper, HolderWrapper, Unauthenticated } from '../schema/cdr-test-data-schema';
 
 export const generateData = (options: Options, dst: string, verbose: boolean): number => {
 
@@ -21,7 +22,7 @@ export const generateData = (options: Options, dst: string, verbose: boolean): n
   Helper.log('Commencing data generation');
   Helper.log(`Destination file: ${dst}`);
 
-  let data: schema.ConsumerDataRightTestDataJSONSchema = {
+  let data: ConsumerDataRightTestDataJSONSchema = {
     fileVersion: options.general?.fileVersion || '',
     standardsVersion: options.general?.standardsVersion || '',
     title: options.general?.title || '',
@@ -55,7 +56,7 @@ export const generateData = (options: Options, dst: string, verbose: boolean): n
 // Data generation functions
 // ----------------------------------------------------------------------------
 
-function generateAllData(options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
+function generateAllData(options: Options, data: ConsumerDataRightTestDataJSONSchema): ConsumerDataRightTestDataJSONSchema {
   let result = data;
 
   Helper.indentInc();
@@ -68,7 +69,7 @@ function generateAllData(options: Options, data: schema.ConsumerDataRightTestDat
       },
       (factory) => {
         return factory.generateFullData(JSON.parse(JSON.stringify(result)));
-      }) as schema.ConsumerDataRightTestDataJSONSchema;
+      }) as ConsumerDataRightTestDataJSONSchema;
   } else {
     Helper.log('No global factories configured')
   }
@@ -78,7 +79,7 @@ function generateAllData(options: Options, data: schema.ConsumerDataRightTestDat
   return result;
 }
 
-function generateHolders(options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
+function generateHolders(options: Options, data: ConsumerDataRightTestDataJSONSchema): ConsumerDataRightTestDataJSONSchema {
   let result = data;
 
   Helper.indentInc();
@@ -105,7 +106,7 @@ function generateHolders(options: Options, data: schema.ConsumerDataRightTestDat
   return result;
 }
 
-function generateMultipleHolders(options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
+function generateMultipleHolders(options: Options, data: ConsumerDataRightTestDataJSONSchema): ConsumerDataRightTestDataJSONSchema {
   let result = data;
   let factories: Factory[] = []
 
@@ -144,9 +145,9 @@ function generateMultipleHolders(options: Options, data: schema.ConsumerDataRigh
   return result;
 }
 
-function generateDetailedHolders(options: Options, holderOptions: any, data: schema.ConsumerDataRightTestDataJSONSchema): schema.HolderWrapper[] {
+function generateDetailedHolders(options: Options, holderOptions: any, data: ConsumerDataRightTestDataJSONSchema): HolderWrapper[] {
   let factories: Factory[] = [];
-  let holders: schema.HolderWrapper[] = [];
+  let holders: HolderWrapper[] = [];
 
   Helper.indentInc();
 
@@ -202,8 +203,8 @@ function generateDetailedHolders(options: Options, holderOptions: any, data: sch
   return holders;
 }
 
-function generateUnauthenticatedData(options: Options, unauthOptions: any, holder: schema.HolderWrapper): schema.Unauthenticated {
-  let result: schema.Unauthenticated = {};
+function generateUnauthenticatedData(options: Options, unauthOptions: any, holder: HolderWrapper): Unauthenticated {
+  let result: Unauthenticated = {};
   let factories: Factory[] = [];
 
   Helper.indentInc();
@@ -328,8 +329,8 @@ function generateUnauthenticatedData(options: Options, unauthOptions: any, holde
   return result;
 }
 
-function generateAuthenticatedData(options: Options, authOptions: any, holder: schema.HolderWrapper): schema.Authenticated {
-  let result: schema.Authenticated = {};
+function generateAuthenticatedData(options: Options, authOptions: any, holder: HolderWrapper): Authenticated {
+  let result: Authenticated = {};
 
   Helper.indentInc();
 
@@ -359,8 +360,8 @@ function generateAuthenticatedData(options: Options, authOptions: any, holder: s
   return result;
 }
 
-function generateMultipleCustomers(options: Options, authOptions: any, holder: schema.HolderWrapper): schema.CustomerWrapper[] | undefined {
-  let result: schema.CustomerWrapper[] | undefined;
+function generateMultipleCustomers(options: Options, authOptions: any, holder: HolderWrapper): CustomerWrapper[] | undefined {
+  let result: CustomerWrapper[] | undefined;
   let factories: Factory[] = []
 
   Helper.indentInc();
@@ -398,8 +399,8 @@ function generateMultipleCustomers(options: Options, authOptions: any, holder: s
   return result;
 }
 
-function generateDetailedCustomers(options: Options, customerOptions: any, holder: schema.HolderWrapper): schema.CustomerWrapper[] {
-  let result: schema.CustomerWrapper[] = [];
+function generateDetailedCustomers(options: Options, customerOptions: any, holder: HolderWrapper): CustomerWrapper[] {
+  let result: CustomerWrapper[] = [];
   let factories: Factory[] = []
 
   Helper.indentInc();
@@ -456,7 +457,7 @@ function generateDetailedCustomers(options: Options, customerOptions: any, holde
   return result;
 }
 
-function generateCustomerBankingData(options: Options, bankingOptions: any, customer: schema.CustomerWrapper): any {
+function generateCustomerBankingData(options: Options, bankingOptions: any, customer: CustomerWrapper): any {
   let result: any = {};
   let factories: Factory[] = [];
 
@@ -575,8 +576,8 @@ function generateCustomerBankingData(options: Options, bankingOptions: any, cust
   return result;
 }
 
-function generateMultipleBankAccounts(options: Options, bankOptions: any, customer: schema.CustomerWrapper): schema.BankAccountWrapper[] | undefined {
-  let result: schema.BankAccountWrapper[] | undefined;
+function generateMultipleBankAccounts(options: Options, bankOptions: any, customer: CustomerWrapper): BankAccountWrapper[] | undefined {
+  let result: BankAccountWrapper[] | undefined;
   let factories: Factory[] = []
 
   Helper.indentInc();
@@ -614,8 +615,8 @@ function generateMultipleBankAccounts(options: Options, bankOptions: any, custom
   return result;
 }
 
-function generateDetailedBankAccounts(options: Options, accountOptions: any, customer: schema.CustomerWrapper): schema.BankAccountWrapper[] {
-  let result: schema.BankAccountWrapper[] = [];
+function generateDetailedBankAccounts(options: Options, accountOptions: any, customer: CustomerWrapper): BankAccountWrapper[] {
+  let result: BankAccountWrapper[] = [];
   let factories: Factory[] = []
 
   Helper.indentInc();
@@ -682,7 +683,7 @@ function generateDetailedBankAccounts(options: Options, accountOptions: any, cus
   return result;
 }
 
-function generateCustomerEnergyData(options: Options, energyOptions: any, customer: schema.CustomerWrapper): any {
+function generateCustomerEnergyData(options: Options, energyOptions: any, customer: CustomerWrapper): any {
   let result: any = {};
 
   Helper.indentInc();
@@ -736,8 +737,8 @@ function generateCustomerEnergyData(options: Options, energyOptions: any, custom
   return result;
 }
 
-function generateMultipleEnergyAccounts(options: Options, energyOptions: any, customer: schema.CustomerWrapper): schema.EnergyAccountWrapper[] | undefined {
-  let result: schema.EnergyAccountWrapper[] | undefined;
+function generateMultipleEnergyAccounts(options: Options, energyOptions: any, customer: CustomerWrapper): EnergyAccountWrapper[] | undefined {
+  let result: EnergyAccountWrapper[] | undefined;
   let factories: Factory[] = []
 
   Helper.indentInc();
@@ -775,8 +776,8 @@ function generateMultipleEnergyAccounts(options: Options, energyOptions: any, cu
   return result;
 }
 
-function generateDetailedEnergyAccounts(options: Options, accountOptions: any, customer: schema.CustomerWrapper): schema.EnergyAccountWrapper[] {
-  let result: schema.EnergyAccountWrapper[] = [];
+function generateDetailedEnergyAccounts(options: Options, accountOptions: any, customer: CustomerWrapper): EnergyAccountWrapper[] {
+  let result: EnergyAccountWrapper[] = [];
   let factories: Factory[] = []
 
   Helper.indentInc();
@@ -882,8 +883,8 @@ function generateDetailedEnergyAccounts(options: Options, accountOptions: any, c
   return result;
 }
 
-function generateMultipleServicePoints(options: Options, servicePointOptions: any): schema.EnergyServicePointWrapper[] | undefined {
-  let result: schema.EnergyServicePointWrapper[] | undefined;
+function generateMultipleServicePoints(options: Options, servicePointOptions: any): EnergyServicePointWrapper[] | undefined {
+  let result: EnergyServicePointWrapper[] | undefined;
   let factories: Factory[] = []
 
   Helper.indentInc();
@@ -921,8 +922,8 @@ function generateMultipleServicePoints(options: Options, servicePointOptions: an
   return result;
 }
 
-function generateDetailedServicePoints(options: Options, servicePointOptions: any): schema.EnergyServicePointWrapper[] {
-  let result: schema.EnergyServicePointWrapper[] = [];
+function generateDetailedServicePoints(options: Options, servicePointOptions: any): EnergyServicePointWrapper[] {
+  let result: EnergyServicePointWrapper[] = [];
   let factories: Factory[] = []
 
   Helper.indentInc();
@@ -989,7 +990,7 @@ function generateDetailedServicePoints(options: Options, servicePointOptions: an
   return result;
 }
 
-function generateClientCache(options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
+function generateClientCache(options: Options, data: ConsumerDataRightTestDataJSONSchema): ConsumerDataRightTestDataJSONSchema {
   let result = data;
   let factories: Factory[] = []
 
@@ -1028,7 +1029,7 @@ function generateClientCache(options: Options, data: schema.ConsumerDataRightTes
   return result;
 }
 
-function generateRegisterCache(options: Options, data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema {
+function generateRegisterCache(options: Options, data: ConsumerDataRightTestDataJSONSchema): ConsumerDataRightTestDataJSONSchema {
   let result = data;
   let factories: Factory[] = []
 
@@ -1144,7 +1145,7 @@ function generateArrayOfItems(options: Options, factoryOptions: OptionsFactory, 
 // Output functions
 // ----------------------------------------------------------------------------
 
-function outputData(data: schema.ConsumerDataRightTestDataJSONSchema, dst: string): number {
+function outputData(data: ConsumerDataRightTestDataJSONSchema, dst: string): number {
   try {
     fs.writeFileSync(dst, JSON.stringify(data, null, 2));
   } catch (err) {

@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import * as schema from '../schema/cdr-test-data-schema';
+import { ConsumerDataRightTestDataJSONSchema } from 'src/logic/schema/cdr-test-data-schema';
 import { Factory, FactoryOptions } from '../logic/factoryService'
 
 const factoryId: string = "general-load-static";
@@ -26,8 +26,8 @@ export class LoadStatic extends Factory {
 
   public canCreateFullData(): boolean { return true; };
 
-  public generateFullData(data: schema.ConsumerDataRightTestDataJSONSchema): schema.ConsumerDataRightTestDataJSONSchema | undefined {
-    let result: schema.ConsumerDataRightTestDataJSONSchema = JSON.parse(JSON.stringify(data));
+  public generateFullData(data: ConsumerDataRightTestDataJSONSchema): ConsumerDataRightTestDataJSONSchema | undefined {
+    let result: ConsumerDataRightTestDataJSONSchema = JSON.parse(JSON.stringify(data));
 
     if (this.options?.options?.source) {
       try {
