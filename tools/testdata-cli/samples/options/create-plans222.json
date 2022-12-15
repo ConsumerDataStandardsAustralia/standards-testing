@@ -1,0 +1,10 @@
+{
+    "factories": {
+        "plansFactory": {
+            "id": "create-plans",
+            "options": {
+                "count": 3
+            }
+        }
+    }
+}

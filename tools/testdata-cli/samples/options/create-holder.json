@@ -1,0 +1,45 @@
+{
+    "factories": {
+        "allDataFactory": {
+            "id": "general-load-static",
+            "options": {
+              "source": "/Users/tomasschier/code/_git/consumer-data-standards/standards-testing/tools/testdata-cli/samples/files/basic-empty.json"
+            }
+        },
+        "holders": [
+            {
+                "holderFactory": {
+                    "id": "create-products"
+                },
+                "unauthenticated": {
+                    "banking": {
+                        "productsFactory": {
+                            "id": "create-products",
+                            "options": {
+                                "count": 3
+                            }
+                        }
+                    },
+                    "energy": {
+                        "plansFactory": {
+                            "id": "create-plans",
+                            "options": {
+                                "count": 2
+                            }
+                        }
+                    }
+                },
+                "authenticated": {
+                    "customers": [
+                        {
+                            "count": 5,
+                            "customerFactory": {
+                                "id": "create-customers"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
