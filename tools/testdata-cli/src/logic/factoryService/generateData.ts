@@ -13,7 +13,7 @@ import {
   OptionsWeighted,
   OptionsSequence
 } from '../options';
-import { Authenticated, BankAccountWrapper, ConsumerDataRightTestDataJSONSchema, CustomerWrapper, EnergyAccountWrapper, EnergyServicePointWrapper, HolderWrapper, Unauthenticated } from '../schema/cdr-test-data-schema';
+import { Authenticated, BankAccountWrapper, ConsumerDataRightTestDataJSONSchema, CustomerWrapper, EnergyAccountWrapper, EnergyServicePointWrapper, Holder, HolderWrapper, Unauthenticated } from '../schema/cdr-test-data-schema';
 
 export const generateData = (options: Options, dst: string, verbose: boolean): number => {
 
@@ -157,7 +157,6 @@ function generateDetailedHolders(options: Options, holderOptions: any, data: Con
     const count = Helper.isPositiveInteger(holderOptions.count) ? holderOptions.count : 1;
     factories = createFactories(count, options.general, holderOptions.holderFactory);
   }
-
   // Create the holders required
   if (factories.length > 0) {
     Helper.log(`${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`)
@@ -195,12 +194,44 @@ function generateDetailedHolders(options: Options, holderOptions: any, data: Con
       }
     }
   } else {
-    Helper.log('No detailed holder factories to execute')
+      Helper.log('No detailed holder factories to execute and no holder found in existing data')
   }
-
+  updateExistingDataHolders(options, holderOptions, data);
   Helper.indentDec();
-
   return holders;
+}
+
+function updateExistingDataHolders(options: Options, holderOptions: any,data: ConsumerDataRightTestDataJSONSchema){
+  data.holders?.forEach(holder => {
+    if (holder.holderId != null) {
+      if (!holder.holder) {
+        let h: Holder = {
+          unauthenticated: {},
+          authenticated: {}
+        }
+        holder.holder = h;
+    }
+    // Create the detail inside the created holder
+    if (holderOptions.unauthenticated) {
+      Helper.log(`Executing unauthenticated factories for holder`, 1);
+      const newData = generateUnauthenticatedData(options, holderOptions.unauthenticated, holder);
+      if (newData) holder.holder.unauthenticated = newData;
+    } else {
+      Helper.log(`No unauthenticated factories configured`, 1)
+    }
+
+    if (holderOptions.authenticated) {
+      Helper.log(`Executing authenticated factories for holder`, 1);
+      if (holder.holder?.authenticated == null) holder.holder.authenticated = {};
+      const newData = generateAuthenticatedData(options, holderOptions.authenticated, holder);
+      if (newData) holder.holder.authenticated = newData;
+    } else {
+      Helper.log(`No authenticated factories configured`, 1)
+    }
+    } else {
+      Helper.log('No detailed holder factories to execute and insufficient holder data found in existing data')
+    }
+  }) 
 }
 
 function generateUnauthenticatedData(options: Options, unauthOptions: any, holder: HolderWrapper): Unauthenticated {

@@ -1,7 +1,8 @@
 import { EnergyPlan } from 'consumer-data-standards/energy';
 import * as fs from 'fs';
 import { ConsumerDataRightTestDataJSONSchema, Holder, HolderWrapper } from 'src/logic/schema/cdr-test-data-schema';
-import { Factory, FactoryOptions } from '../logic/factoryService'
+import { RandomEnergy} from '../random-generators/random-energy';
+import { Factory, FactoryOptions, Helper } from '../logic/factoryService'
 
 const factoryId: string = "create-plans";
 
@@ -18,19 +19,30 @@ export class CreatePlans extends Factory {
         super(options, factoryId);
       }
 
-    public canCreateEnergyPlans(): boolean { return true; };
-    public generateEnergyPlans(): EnergyPlan[] {
-        let result: EnergyPlan[] = [];
+    public canCreateEnergyPlan(): boolean { return true; };
+    public generateEnergyPlan(): EnergyPlan {
+    let brand = RandomEnergy.Brand()
        let aPlan : EnergyPlan = {
-           brand: '',
-           brandName: '',
-           fuelType: 'ELECTRICITY',
-           lastUpdated: '',
-           planId: '',
-           type: 'STANDING'
-       }  
-       result.push(aPlan); 
-       return result;
+           brand: brand,
+           brandName: `${brand} - Brand name`,
+           fuelType: RandomEnergy.FuelType(),
+           lastUpdated: Helper.randomDateTimeInThePast(),
+           planId: Helper.randomId(),
+           type: RandomEnergy.PlanType()
+       }   
+       return aPlan;
+    }
+
+    public canCreateEnergyPlans(): boolean { return true; };
+    public generateEnergyPlans(): EnergyPlan[] | undefined {
+      let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
+        
+      let ret: EnergyPlan[] = [];
+      for (let i = 0; i < count; i++) {
+        const el = this.generateEnergyPlan();
+        if (el) ret.push(el);
+      }
+      return ret;
     }
 
 }

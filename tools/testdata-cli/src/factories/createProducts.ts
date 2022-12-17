@@ -1,6 +1,7 @@
 import { BankingProductV4 } from 'consumer-data-standards/banking';
 import * as fs from 'fs';
-import { ConsumerDataRightTestDataJSONSchema, Holder, HolderWrapper } from 'src/logic/schema/cdr-test-data-schema';
+import { ConsumerDataRightTestDataJSONSchema, Holder, HolderWrapper, Unauthenticated } from 'src/logic/schema/cdr-test-data-schema';
+import { RandomBanking } from '../random-generators/random-banking';
 import { Factory, FactoryOptions, Helper } from '../logic/factoryService'
 
 const factoryId: string = "create-products";
@@ -20,15 +21,14 @@ export class CreateProducts extends Factory {
         return "Create a number of banking products for data holders";
     }
 
-    
     public canCreateBankProduct(): boolean { return true; };
-    public generateBankProduct(): BankingProductV4 | undefined {
+    public generateBankProduct(): BankingProductV4 {
       return {
         productId: Helper.randomId(),
         effectiveFrom: Helper.randomDateTimeInThePast(),
         effectiveTo: Helper.randomDateTimeInTheFuture(),
         lastUpdated: Helper.randomDateTimeInThePast(),
-        productCategory: "BUSINESS_LOANS",
+        productCategory: RandomBanking.ProductCategory(),
         name: "Name",
         description: "Description",
         brand: "BRAND",
@@ -61,7 +61,7 @@ export class CreateProducts extends Factory {
         ],
         features: [
           {
-            featureType: "ADDITIONAL_CARDS",
+            featureType: RandomBanking.FeatureType(),
             additionalValue: "3",
             additionalInfo: "Additional info",
             additionalInfoUri: "http://about:blank"
@@ -69,7 +69,7 @@ export class CreateProducts extends Factory {
         ],
         constraints: [
           {
-            constraintType: "MAX_BALANCE",
+            constraintType: RandomBanking.ContraintType(),
             additionalValue: "1000.00",
             additionalInfo: "Additional info",
             additionalInfoUri: "http://about:blank"
@@ -120,7 +120,7 @@ export class CreateProducts extends Factory {
     public canCreateBankProducts(): boolean { return true; };
     public generateBankProducts(): BankingProductV4[] | undefined {
       let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
-  
+        
       let ret: BankingProductV4[] = [];
       for (let i = 0; i < count; i++) {
         const el = this.generateBankProduct();
