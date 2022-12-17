@@ -196,7 +196,7 @@ function generateDetailedHolders(options: Options, holderOptions: any, data: Con
   } else {
       Helper.log('No detailed holder factories to execute and no holder found in existing data')
   }
-  updateExistingDataHolders(options, holderOptions, data);
+  //updateExistingDataHolders(options, holderOptions, data);
   Helper.indentDec();
   return holders;
 }
