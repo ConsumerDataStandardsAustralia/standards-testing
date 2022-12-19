@@ -6,6 +6,7 @@ import { Factory, FactoryOptions, Helper } from '../logic/factoryService'
 
 const factoryId: string = "create-plans";
 
+
 export class CreatePlans extends Factory {
     public get briefDescription(): string {
         return "Create a bunch of plans";
@@ -21,6 +22,7 @@ export class CreatePlans extends Factory {
 
     public canCreateEnergyPlan(): boolean { return true; };
     public generateEnergyPlan(): EnergyPlan {
+
     let brand = RandomEnergy.Brand()
        let aPlan : EnergyPlan = {
            brand: brand,

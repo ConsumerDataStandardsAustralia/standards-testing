@@ -20,6 +20,18 @@ export class CreateProducts extends Factory {
     public get detailedDescription(): string {
         return "Create a number of banking products for data holders";
     }
+    
+    public canCreateHolder(): boolean { return true; };
+    public generateHolder(): HolderWrapper | undefined {
+       let result : HolderWrapper = {
+         holderId: Helper.randomId(),
+         holder : {
+            unauthenticated: {},
+            authenticated: {}
+          }
+         }      
+       return result;
+    }
 
     public canCreateBankProduct(): boolean { return true; };
     public generateBankProduct(): BankingProductV4 {

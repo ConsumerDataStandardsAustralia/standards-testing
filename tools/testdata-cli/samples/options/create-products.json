@@ -12,7 +12,11 @@
               "source": "/Users/tomasschier/code/_git/consumer-data-standards/standards-testing/tools/testdata-cli/samples/files/products-empty.json"
             }
         },
+
 		"holders": [{
+			"holderFactory": {
+				"id": "create-holder"
+			},
 			"unauthenticated": {
 				"banking": {
 					"productsFactory": {
