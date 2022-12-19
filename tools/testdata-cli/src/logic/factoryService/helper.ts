@@ -60,6 +60,16 @@ export class Helper {
     return newId();
   }
 
+  public static randomBoolean(truePercenatge: number | undefined | null):boolean {
+    // if no percentage is specified or it is greater that 1 (ie 100%), revert to 50/50
+    if (truePercenatge == null || truePercenatge > 1){
+      return  Math.random() < 0.5;
+    } else {
+       return Math.random() < truePercenatge;
+    }
+  }
+    
+
   public static randomDateTimeInThePast(): string {
     // Random number of milliseconds in the past two years
     const inc = Math.random() * 1000 * 60 * 60 * 24 * 365 * 2;

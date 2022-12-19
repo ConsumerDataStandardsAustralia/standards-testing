@@ -22,6 +22,10 @@ export enum Brand {
    ALINTA_ENERGY = "ALINTA ENERGY", ACETEWAGL = "ACETEWAGL"
 }
 
+export  enum EnergyOpenStatus {
+    "CLOSED" , "OPEN" , null
+} 
+
 export class RandomEnergy {
 
     public static GetRandomValue(enumeration: any){
@@ -44,5 +48,15 @@ export class RandomEnergy {
     
     public static Brand(): string {
         return this.GetRandomValue(Brand)
+    }
+    public static OpenStatus(): any {
+        return this.GetRandomValue(EnergyOpenStatus)
+    } 
+
+    public static GenerateNMI(): string {
+        const min = 1000000000;
+        const max = 9999999999;
+        let value =  Math.floor(Math.random() * (max - min + 1) + min);
+        return value.toString();
     } 
 }

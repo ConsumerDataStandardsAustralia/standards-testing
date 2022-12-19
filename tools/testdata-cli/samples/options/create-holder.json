@@ -35,9 +35,28 @@
                             }
                         }
                     }
-                }
+                },
 
-            }
-        ]
-    }
+                "authenticated": {
+                    "customers": [
+                    {
+                          "count": 5,
+    
+                          "customerFactory": {
+                              "id": "create-customers"
+                          },
+    
+                          "energy": {
+                              "accounts": [{
+                                  "count": 100,
+    
+                                  "accountFactory": {
+                                      "id": "create-energy-account-data"
+                                  }  
+                            }]
+                        }
+                    }
+                ]}
+            }]
+        }
 }
