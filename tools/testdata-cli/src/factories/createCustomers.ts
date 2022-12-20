@@ -46,15 +46,4 @@ export class CreateCustomers extends Factory {
       return ret;
     }
 
-    // public canCreateBankProducts(): boolean { return true; };
-    // public generateBankProducts(): BankingProductV4[] | undefined {
-    //   let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
-  
-    //   let ret: BankingProductV4[] = [];
-    //   for (let i = 0; i < count; i++) {
-    //     const el = this.generateBankProduct();
-    //     if (el) ret.push(el);
-    //   }
-    //   return ret;
-    // }
 }
