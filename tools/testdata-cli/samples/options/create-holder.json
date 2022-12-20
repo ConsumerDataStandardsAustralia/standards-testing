@@ -1,4 +1,4 @@
-{   
+{
     "general": {
         "fileVersion": "1.1.0",
         "standardsVersion": "1.20.0",
@@ -9,7 +9,7 @@
         "allDataFactory": {
             "id": "general-load-static",
             "options": {
-              "source": "/Users/tomasschier/code/_git/consumer-data-standards/standards-testing/tools/testdata-cli/samples/files/basic-empty.json"
+                "source": "/Users/tomasschier/code/_git/consumer-data-standards/standards-testing/tools/testdata-cli/samples/files/basic-empty.json"
             }
         },
         "holders": [
@@ -36,27 +36,27 @@
                         }
                     }
                 },
-
                 "authenticated": {
                     "customers": [
-                    {
-                          "count": 5,
-    
-                          "customerFactory": {
-                              "id": "create-customers"
-                          },
-    
-                          "energy": {
-                              "accounts": [{
-                                  "count": 100,
-    
-                                  "accountFactory": {
-                                      "id": "create-energy-account-data"
-                                  }  
-                            }]
+                        {
+                            "count": 5,
+                            "customerFactory": {
+                                "id": "create-customers"
+                            },
+                            "energy": {
+                                "accounts": [
+                                    {
+                                        "count": 5,
+                                        "accountFactory": {
+                                            "id": "create-energy-account-data"
+                                        }
+                                    }
+                                ]
+                            }
                         }
-                    }
-                ]}
-            }]
-        }
+                    ]
+                }
+            }
+        ]
+    }
 }

@@ -21,9 +21,8 @@ export class CreateCustomers extends Factory {
         return "A set of customers with all the details";
     }
   
-    public canCreateCustomers(): boolean { return true; };
-    public generateCustomers(): CustomerWrapper[] | undefined {
-      let result: CustomerWrapper[] = [];
+    public canCreateCustomer(): boolean { return true; };
+    public generateCustomer(): CustomerWrapper | undefined {
       let cust: Customer = {
           firstName : "Tomas"
       }
@@ -31,8 +30,20 @@ export class CreateCustomers extends Factory {
          customerId: Helper.randomId(),
          customer: cust
        }  
-       result.push(cw);    
-       return result;
+   
+       return cw;
+    }
+
+    public canCreateCustomers(): boolean { return true; };
+    public generateCustomers(): CustomerWrapper[] | undefined {
+      let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
+
+      let ret: CustomerWrapper[] = [];
+      for (let i = 0; i < count; i++) {
+        const el = this.generateCustomer();
+        if (el) ret.push(el);
+      }
+      return ret;
     }
 
     // public canCreateBankProducts(): boolean { return true; };
