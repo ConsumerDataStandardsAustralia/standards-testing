@@ -70,6 +70,25 @@ export class Helper {
   }
     
 
+  public static randomTimeInThePast(): string {
+
+    // TODO need to create a time only string
+    // Random number of milliseconds in the past two years
+    const inc = Math.random() * 1000 * 60 * 60 * 24 * 365 * 2;
+
+    // Create an ISO string of that date
+    return new Date(Date.now() - inc).toISOString();
+  }
+
+  public static randomTimeInTheFuture(): string {
+    // TODO need to create a time only string
+    // Random number of milliseconds in the past two years
+    const inc = Math.random() * 1000 * 60 * 60 * 24 * 365 * 2;
+
+    // Create an ISO string of that date
+    return new Date(Date.now() + inc).toISOString();
+  }
+
   public static randomDateTimeInThePast(): string {
     // Random number of milliseconds in the past two years
     const inc = Math.random() * 1000 * 60 * 60 * 24 * 365 * 2;

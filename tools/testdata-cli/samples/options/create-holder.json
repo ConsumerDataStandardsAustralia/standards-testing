@@ -14,7 +14,7 @@
         },
         "holders": [
             {
-                "count": 2,
+                "count": 1,
                 "holderFactory": {
                     "id": "create-holder"
                 },
@@ -39,14 +39,14 @@
                 "authenticated": {
                     "customers": [
                         {
-                            "count": 5,
+                            "count": 1,
                             "customerFactory": {
                                 "id": "create-customers"
                             },
                             "energy": {
                                 "accounts": [
                                     {
-                                        "count": 5,
+                                        "count": 1,
                                         "accountFactory": {
                                             "id": "create-energy-account-data"
                                         }

@@ -27,30 +27,47 @@ export  enum EnergyOpenStatus {
 } 
 
 export enum PricingModel {
-     "SINGLE_RATE"
-    , "SINGLE_RATE_CONT_LOAD"
-    , "TIME_OF_USE"
-    , "TIME_OF_USE_CONT_LOAD"
-    , "FLEXIBLE"
-    , "FLEXIBLE_CONT_LOAD"
-    , "QUOTA"
+    SINGLE_RATE = "SINGLE_RATE"
+    ,SINGLE_RATE_CONT_LOAD = "SINGLE_RATE_CONT_LOAD"
+    , TIME_OF_USE = "TIME_OF_USE"
+    , TIME_OF_USE_CONT_LOAD ="TIME_OF_USE_CONT_LOAD"
+    , FLEXIBLE = "FLEXIBLE"
+    , FLEXIBLE_CONT_LOAD = "FLEXIBLE_CONT_LOAD"
+    , QUOTA = "QUOTA"
 }
 
 export enum PaymentOptions {
-    'OTHER' , 'PAPER_BILL' , 'CREDIT_CARD' , 'DIRECT_DEBIT' , 'BPAY'
+    OTHER = 'OTHER' , PAPER_BILL = 'PAPER_BILL' , CREDIT_CARD = 'CREDIT_CARD' , DIRECT_DEBIT = 'DIRECT_DEBIT' , BPAY ='BPAY'
 }
 
 export enum TimeZones {
-    'AEST' , 'UTC' , 'ACST' , 'AWST' 
+    AEST = 'AEST' , UTC = 'UTC' , ACST = 'ACST' , AWST = 'AWST' 
 }
 
 export enum RateBlockUType {
-    "singleRate" , "timeOfUseRates" , "demandCharges"
+    singleRate =  "singleRate" , timeOfUseRates = "timeOfUseRates" , demandCharges = "demandCharges"
 }
 
 export enum ChargePeriod {
-    "DAY" , "MONTH" , "TARIFF_PERIOD"
+    DAY = "DAY" , MONTH = "MONTH" , TARIFF_PERIOD = "TARIFF_PERIOD"
 }
+
+export enum MeasureUnit {
+    KWH = "KWH" , KVA = "KVA" , KVAR = "KVAR" , KVARH = "KVARH" , KW = "KW" , DAYS = "DAYS" , METER = "METER" , MONTH = "MONTH"
+}
+
+export enum Days {
+ SUN = "SUN", MON = "MON", TUE = "TUE", WED = "WED", THU = "THU", FRI = "FRI", SAT = "SAT"
+}
+
+export enum TimeOfUseRateType {
+    PUBLIC_HOLIDAYS = "PUBLIC_HOLIDAYS", PEAK = "PEAK", OFF_PEAK = "OFF_PEAK", SHOULDER = "SHOULDER", SHOULDER1 = "SHOULDER1", SHOULDER2 = "SHOULDER2"
+}
+
+export enum MeasurementPeriod {
+    DAY = "DAY", MONTH = "MONTH", TARIFF_PERIOD = "TARIFF_PERIOD"
+}
+
 
 export class RandomEnergy {
 
@@ -80,7 +97,7 @@ export class RandomEnergy {
     } 
 
     public static PricingModel(): any {
-        return this.GetRandomValue(PricingModel)
+        return this.GetRandomValue(PricingModel);
     } 
 
     public static PaymentOption(): any {
@@ -108,5 +125,21 @@ export class RandomEnergy {
     } 
     public static ChargePeriod(): any {
         return this.GetRandomValue(ChargePeriod)
+    }
+    
+    public static MeasureUnit(): any {
+        return this.GetRandomValue(MeasureUnit)
+    }  
+    
+    public static Days(): any {
+        return this.GetRandomValue(Days)
     } 
+    
+    public static TimeOfUseRateType(): any {
+        return this.GetRandomValue(TimeOfUseRateType)
+    }  
+    public static MeasurementPeriod(): any {
+        return this.GetRandomValue(MeasurementPeriod)
+    }
+     
 }
