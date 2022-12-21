@@ -18,24 +18,6 @@
                 "holderFactory": {
                     "id": "create-holder"
                 },
-                "unauthenticated": {
-                    "banking": {
-                        "productsFactory": {
-                            "id": "create-products",
-                            "options": {
-                                "count": 3
-                            }
-                        }
-                    },
-                    "energy": {
-                        "plansFactory": {
-                            "id": "create-plans",
-                            "options": {
-                                "count": 3
-                            }
-                        }
-                    }
-                },
                 "authenticated": {
                     "customers": [
                         {
@@ -46,7 +28,7 @@
                             "energy": {
                                 "accounts": [
                                     {
-                                        "count": 1,
+                                        "count": 5,
                                         "accountFactory": {
                                             "id": "create-energy-account-data"
                                         }

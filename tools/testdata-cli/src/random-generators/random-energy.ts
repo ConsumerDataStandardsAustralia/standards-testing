@@ -23,7 +23,7 @@ export enum Brand {
 }
 
 export  enum EnergyOpenStatus {
-    "CLOSED" , "OPEN" , null
+    CLOSED = "CLOSED" , OPEN = "OPEN" 
 } 
 
 export enum PricingModel {
@@ -68,6 +68,30 @@ export enum MeasurementPeriod {
     DAY = "DAY", MONTH = "MONTH", TARIFF_PERIOD = "TARIFF_PERIOD"
 }
 
+export enum EnergyDiscountType {
+    CONDITIONAL = "CONDITIONAL", GUARANTEED = "GUARANTEED", OTHER = "OTHER"
+}
+
+export enum EnergyDiscountCategory {
+    PAY_ON_TIME = "PAY_ON_TIME", DIRECT_DEBIT = "DIRECT_DEBIT", GUARANTEED_DISCOUNT = "GUARANTEED_DISCOUNT", OTHER = "OTHER"
+}
+
+export enum MethodUType {
+    percentOfBill = "percentOfBill", percentOfUse = "percentOfUse", fixedAmount = "fixedAmount", percentOverThreshold = "percentOverThreshold"
+}
+
+export enum EnergyIncentiveCategory {
+    GIFT = "GIFT", ACCOUNT_CREDIT = "ACCOUNT_CREDIT", OTHER = "OTHER"
+}
+
+export enum PowerChargeType {
+    FIXED_PER_DAY = "FIXED_PER_DAY", FIXED_PER_WEEK = "FIXED_PER_WEEK", FIXED_PER_MONTH = "FIXED_PER_MONTH", 
+    FIXED_PER_UNIT = "FIXED_PER_UNIT",PERCENT_OF_USE = "PERCENT_OF_USE", PERCENT_OF_BILL = "PERCENT_OF_BILL"
+}
+
+export enum PowerScheme {
+    GREENPOWER = "GREENPOWER", OTHER = "OTHER"  
+}
 
 export class RandomEnergy {
 
@@ -141,5 +165,24 @@ export class RandomEnergy {
     public static MeasurementPeriod(): any {
         return this.GetRandomValue(MeasurementPeriod)
     }
-     
+    public static DiscountType(): any {
+        return this.GetRandomValue(EnergyDiscountType)
+    }
+    public static DiscountCategory(): any {
+        return this.GetRandomValue(EnergyDiscountCategory)
+    }
+    public static MethodUType(): any {
+        return this.GetRandomValue(MethodUType)
+    } 
+    
+    public static EnergyIncentiveCategory(): any {
+        return this.GetRandomValue(EnergyIncentiveCategory)
+    }  
+    
+    public static PowerChargeType(): any {
+        return this.GetRandomValue(PowerChargeType)
+    }       
+    public static PowerScheme(): any {
+        return this.GetRandomValue(PowerScheme)
+    }         
 }
