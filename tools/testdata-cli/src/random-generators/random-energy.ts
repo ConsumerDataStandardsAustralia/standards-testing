@@ -26,6 +26,30 @@ export  enum EnergyOpenStatus {
     CLOSED = "CLOSED" , OPEN = "OPEN" 
 } 
 
+export enum EnergyEligibilityType {
+     "EXISTING_CUST"
+    , "EXISTING_POOL"
+    , "EXISTING_SOLAR"
+    , "EXISTING_BATTERY"
+    , "EXISTING_SMART_METER"
+    , "EXISTING_BASIC_METER"
+    , "SENIOR_CARD"
+    , "SMALL_BUSINESS"
+    , "NO_SOLAR_FIT"
+    , "NEW_CUSTOMER"
+    , "ONLINE_ONLY"
+    , "REQ_EQUIP_SUPPLIER"
+    , "THIRD_PARTY_ONLY"
+    , "SPORT_CLUB_MEMBER"
+    , "ORG_MEMBER"
+    , "SPECIFIC_LOCATION"
+    , "MINIMUM_USAGE"
+    , "LOYALTY_MEMBER"
+    , "GROUP_BUY_MEMBER"
+    , "CONTINGENT_PLAN"
+    , "OTHER"
+}
+
 export enum PricingModel {
     SINGLE_RATE = "SINGLE_RATE"
     ,SINGLE_RATE_CONT_LOAD = "SINGLE_RATE_CONT_LOAD"
@@ -91,6 +115,61 @@ export enum PowerChargeType {
 
 export enum PowerScheme {
     GREENPOWER = "GREENPOWER", OTHER = "OTHER"  
+}
+
+export enum EnergyFeeType {
+     "EXIT"
+    , "ESTABLISHMENT"
+    , "LATE_PAYMENT"
+    , "DISCONNECTION"
+    , "DISCONNECT_MOVE_OUT"
+    , "DISCONNECT_NON_PAY"
+    , "RECONNECTION"
+    , "CONNECTION"
+    , "PAYMENT_PROCESSING"
+    , "CC_PROCESSING"
+    , "CHEQUE_DISHONOUR"
+    , "DD_DISHONOUR"
+    , "MEMBERSHIP"
+    , "CONTRIBUTION"
+    , "PAPER_BILL"
+    , "OTHER"
+}
+
+export enum FeeTerm {
+    "FIXED"
+    , "1_YEAR"
+    , "2_YEAR"
+    , "3_YEAR"
+    , "4_YEAR"
+    , "5_YEAR"
+    , "PERCENT_OF_BILL"
+    , "ANNUAL"
+    , "DAILY"
+    , "WEEKLY"
+    , "MONTHLY"
+    , "BIANNUAL"
+    , "VARIABLE"
+}
+
+export enum SolarScheme {
+    PREMIUM = "PREMIUM", OTHER = "OTHER"
+}
+
+export enum SolarPayerType {
+    GOVERNMENT = "GOVERNMENT", RETAILER = "RETAILER"
+}
+
+export enum SolarTariffUType {
+    singleTariff = "singleTariff", timeVaryingTariffs = "timeVaryingTariffs"
+}
+
+export enum SolarFeedType {
+    PEAK = "PEAK", OFF_PEAK = "OFF_PEAK", SHOULDER = "SHOULDER"
+}
+
+export enum SolarFeedDays {
+    SUN = "SUN", MON = "MON", TUE = "TUE", WED = "WED", THU = "THU", FRI = "FRI", SAT = "SAT", PUBLIC_HOLIDAYS = "PUBLIC_HOLIDAYS"    
 }
 
 export class RandomEnergy {
@@ -184,5 +263,29 @@ export class RandomEnergy {
     }       
     public static PowerScheme(): any {
         return this.GetRandomValue(PowerScheme)
-    }         
+    }  
+    public static EnergyEligibilityType(): any {
+        return this.GetRandomValue(EnergyEligibilityType)
+    }
+    public static EnergyFeeType(): any {
+        return this.GetRandomValue(EnergyFeeType)
+    }
+    public static FeeTerm(): any {
+        return this.GetRandomValue(FeeTerm)
+    }  
+    public static SolarScheme(): any {
+        return this.GetRandomValue(SolarScheme)
+    }  
+    public static SolarPayerType(): any {
+        return this.GetRandomValue(SolarPayerType)
+    } 
+    public static SolarTariffUType(): any {
+        return this.GetRandomValue(SolarTariffUType)
+    } 
+    public static SolarFeedType(): any {
+        return this.GetRandomValue(SolarFeedType)
+    }  
+    public static SolarFeedDays(): any {
+        return this.GetRandomValue(SolarFeedDays)
+    }                                            
 }
