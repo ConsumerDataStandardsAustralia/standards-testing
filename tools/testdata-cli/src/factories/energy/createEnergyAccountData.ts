@@ -5,7 +5,7 @@ import { Factory, FactoryOptions, Helper } from '../../logic/factoryService'
 
 const factoryId: string = "create-energy-account-data";
 
-export class CreateAccountData extends Factory {
+export class CreateEnergyAccountData extends Factory {
 
     constructor(options: FactoryOptions) {
         super(options, factoryId);
@@ -70,7 +70,8 @@ export class CreateAccountData extends Factory {
                 plan.planDetail = planDetails;
             }
             if (Math.random() > 0.5) {
-                plan.authorisedContacts = this.generateAuthorisedContacts();
+                let contactCount: number = Math.ceil(Math.random() * 3);
+                plan.authorisedContacts = this.generateAuthorisedContacts(contactCount);
             }
             energyAccount.plans.push(plan);
         }
@@ -80,8 +81,14 @@ export class CreateAccountData extends Factory {
         };
         return result;
     }
-    private generateAuthorisedContacts(): any {
-        let authorisedContacts: any = {};
+    private generateAuthorisedContacts(cnt: number): any {
+        let authorisedContacts: any[] = [];
+        for(let i = 0; i < cnt; i++) {
+            let contact: any = {
+                lastName: `Smithers ${i}`
+            }
+            authorisedContacts.push(contact)
+        }
         return authorisedContacts;
     }
 

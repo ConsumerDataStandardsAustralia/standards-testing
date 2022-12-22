@@ -28,7 +28,7 @@ import { CreatePlans} from './createPlans';
 factories[CreatePlans.id] = (options: any): Factory => { return new CreatePlans(options) }
 
 // create energy plans
-import { CreateAccountData} from './energy/createAccountData';
-factories[CreateAccountData.id] = (options: any): Factory => { return new CreateAccountData(options) }
+import { CreateEnergyAccountData} from './energy/createEnergyAccountData';
+factories[CreateEnergyAccountData.id] = (options: any): Factory => { return new CreateEnergyAccountData(options) }
 
 
