@@ -14,10 +14,10 @@ export class CreateEnergyAccountData extends Factory {
     public static id: string = factoryId;
 
     public get briefDescription(): string {
-        throw new Error('Method not implemented.');
+        return "Create a number of energy accounts for each customer of data holders";
     }
     public get detailedDescription(): string {
-        throw new Error('Method not implemented.');
+        return "Create a number of energy accounts for each customer of data holders";
     }
 
     public canCreateEnergyAccount(): boolean { return true; };
