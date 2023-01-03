@@ -172,6 +172,10 @@ export enum SolarFeedDays {
     SUN = "SUN", MON = "MON", TUE = "TUE", WED = "WED", THU = "THU", FRI = "FRI", SAT = "SAT", PUBLIC_HOLIDAYS = "PUBLIC_HOLIDAYS"    
 }
 
+export enum EneryInvoicePaymentStatus {
+    PAID = "PAID" ,  PARTIALLY_PAID = "PARTIALLY_PAID" ,  NOT_PAID = "NOT_PAID"
+}
+
 export class RandomEnergy {
 
     public static GetRandomValue(enumeration: any){
@@ -287,5 +291,9 @@ export class RandomEnergy {
     }  
     public static SolarFeedDays(): any {
         return this.GetRandomValue(SolarFeedDays)
-    }                                            
+    } 
+    
+    public static EneryInvoicePaymentStatus(): any {
+        return this.GetRandomValue(EneryInvoicePaymentStatus)
+    }      
 }
