@@ -26,3 +26,5 @@ yarn.lock
 
 # ignore yarn.lock
 working
+
+samples/output

@@ -31,4 +31,8 @@ factories[CreatePlans.id] = (options: any): Factory => { return new CreatePlans(
 import { CreateEnergyAccountData} from './energy/createEnergyAccountData';
 factories[CreateEnergyAccountData.id] = (options: any): Factory => { return new CreateEnergyAccountData(options) }
 
+// create energy invoice data
+import { CreateEnergyInvoiceData} from './energy/createEnergyInvoiceData';
+factories[CreateEnergyInvoiceData.id] = (options: any): Factory => { return new CreateEnergyInvoiceData(options) }
+
 
