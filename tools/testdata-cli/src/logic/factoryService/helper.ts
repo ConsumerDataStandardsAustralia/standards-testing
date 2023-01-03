@@ -20,7 +20,7 @@ export class Helper {
     i += Helper.helper.indent;
 
     if (i > 0) {
-      indentText = ' '.repeat(i*2);
+      indentText = ' '.repeat(i * 2);
     }
 
     console.log(indentText + message);
@@ -60,15 +60,15 @@ export class Helper {
     return newId();
   }
 
-  public static randomBoolean(truePercenatge: number | undefined | null):boolean {
+  public static randomBoolean(truePercenatge: number | undefined | null): boolean {
     // if no percentage is specified or it is greater that 1 (ie 100%), revert to 50/50
-    if (truePercenatge == null || truePercenatge > 1){
-      return  Math.random() < 0.5;
+    if (truePercenatge == null || truePercenatge > 1) {
+      return Math.random() < 0.5;
     } else {
-       return Math.random() < truePercenatge;
+      return Math.random() < truePercenatge;
     }
   }
-    
+
 
   public static randomTimeInThePast(): string {
 
@@ -103,5 +103,128 @@ export class Helper {
 
     // Create an ISO string of that date
     return new Date(Date.now() + inc).toISOString();
+  }
+
+  /**
+   * @returns a random date time string guaranteed  to be be after a day-month-year reference date
+   * @param {number} year - the year for the reference date 
+   * @param {number} month - the month for the reference date
+   * @param {number} day - the day for the reference date
+   * @param {number} minDiff - the minimum deviation in days from the reference date
+   * @param {number} maxDiff - the maximum deviation in days from the reference date
+   * 
+   * */
+  public static randomDateTimeAfter(year: number, month: number, day: number, minDiff?: number, maxDiff?: number): string {
+    let min = minDiff ? minDiff : 30;
+    let max = maxDiff ? maxDiff : 365;
+    if (min > max) {
+      min = 30;
+      max = 365;
+    }
+    // number of milliseconds in one day
+    const count = 1000 * 60 * 60 * 24;
+    let diff = count * (min + Math.floor(Math.random() * (max - min)));
+    // Create an ISO string of that date
+    return new Date(Date.UTC(year, month, day) + diff).toISOString();
+  }
+
+  /**
+ * @returns a random date time string guaranteed  to be be after a day-month-year reference date
+ * @param {string} referenceDate - the reference date as a ISO DateTime string (ie 2022-02-15T03:22:13.603Z)
+ * @param {number} minDiff - the minimum deviation in days from the reference date (default 30)
+ * @param {number} maxDiff - the maximum deviation in days from the reference date (default 365)
+ * 
+ * */
+  public static randomDateTimeAfterDateString(referenceDate: string, minDiff?: number, maxDiff?: number): string {
+
+    let year = parseInt(referenceDate.substring(0, 4));
+    let month = parseInt(referenceDate.substring(5, 7)) - 1;
+    let day = parseInt(referenceDate.substring(8, 10));
+
+    let min = minDiff ? minDiff : 30;
+    let max = maxDiff ? maxDiff : 365;
+    if (min > max) {
+      min = 30;
+      max = 365;
+    }
+    // number of milliseconds in one day
+    const count = 1000 * 60 * 60 * 24;
+    let diff = count * (min + Math.floor(Math.random() * (max - min)));
+    // Create an ISO string of that date
+    return new Date(Date.UTC(year, month, day) + diff).toISOString();
+  }
+
+  /**
+* @returns a random date time string guaranteed  to be be before a day-month-year reference date
+* @param {number} year - the year for the reference date 
+* @param {number} month - the month for the reference date
+* @param {number} day - the day for the reference date
+* @param {number} minDiff - the minimum deviation in days from the reference date
+* @param {number} maxDiff - the maximum deviation in days from the reference date
+* 
+* */
+  public static randomDateTimeBefore(year: number, month: number, day: number, minDiff?: number, maxDiff?: number): string {
+    let min = minDiff ? minDiff : 30;
+    let max = maxDiff ? maxDiff : 365;
+    if (min > max) {
+      min = 30;
+      max = 365;
+    }
+    // number of milliseconds in one day
+    const count = 1000 * 60 * 60 * 24;
+    let diff = count * (min + Math.floor(Math.random() * (max - min)));
+    // Create an ISO string of that date
+    return new Date(Date.UTC(year, month, day) - diff).toISOString();
+  }
+
+  /**
+* @returns a random date time string guaranteed  to be be after a day-month-year reference date
+* @param {string} referenceDate - the reference date as a ISO DateTime string (ie 2022-02-15T03:22:13.603Z)
+* @param {number} minDiff - the minimum deviation in days from the reference date (default 30)
+* @param {number} maxDiff - the maximum deviation in days from the reference date (default 365)
+* 
+* */
+  public static randomDateTimeBeforeDateString(referenceDate: string, minDiff?: number, maxDiff?: number): string {
+    let year = parseInt(referenceDate.substring(0, 4));
+    let month = parseInt(referenceDate.substring(5, 7)) - 1;
+    let day = parseInt(referenceDate.substring(8, 10));
+
+    let min = minDiff ? minDiff : 30;
+    let max = maxDiff ? maxDiff : 365;
+    if (min > max) {
+      min = 30;
+      max = 365;
+    }
+    // number of milliseconds in one day
+    const count = 1000 * 60 * 60 * 24;
+    let diff = count * (min + Math.floor(Math.random() * (max - min)));
+    // Create an ISO string of that date
+    return new Date(Date.UTC(year, month, day) - diff).toISOString();
+  }
+
+  /**
+   * 
+   * @param minDate 
+   * @param maxDate 
+   * @returns a random date time string guaranteed to be within minDate and maxDate
+   */
+public static generateRandomDateTimeInRange(minDate: string, maxDate: string): string {
+  let minimumDate = Date.parse(minDate);
+  let maximumDate = Date.parse(maxDate);
+  let retDate = (minimumDate + Math.floor(Math.random() * (maximumDate - minimumDate)))
+  return new Date(retDate).toISOString()
+}
+
+/**
+ * 
+ * @param min the minimum value to be returned
+ * @param max the maximum value to be returned
+ * @returns a number which lies between min and max
+ */
+  public static generateRandomDecimalInRange(min: number, max: number) : string {
+    if (min  > max) 
+      return min.toPrecision(2);
+    else 
+      return ((min + Math.random() * (max - min))).toPrecision(2);
   }
 }
