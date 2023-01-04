@@ -1,4 +1,5 @@
 import { BankingAccount, BankingBalance, BankingDirectDebit, BankingPayeeDetailV2, BankingProductV4, BankingScheduledPayment, BankingTransaction } from "consumer-data-standards/banking";
+import { CommonOrganisationDetailV2, CommonPersonDetailV2 } from "consumer-data-standards/common";
 import { EnergyAccount, EnergyAccountDetailV2, EnergyConcession, EnergyDerRecord, EnergyInvoice, EnergyPaymentSchedule, EnergyPlan, EnergyServicePoint, EnergyUsageRead } from "consumer-data-standards/energy";
 import { RegisterDataRecipient } from "consumer-data-standards/register";
 
@@ -209,7 +210,9 @@ export interface Client {
  * A customer object aligned to the current version of the data standards
  */
 export interface Customer {
-  [k: string]: unknown;
+  customerUType: "organisation" | "person",
+  person?: CommonPersonDetailV2,
+  organisation?: CommonOrganisationDetailV2
 }
 /**
  * An energy account balance structure aligned to the current version of the data standards

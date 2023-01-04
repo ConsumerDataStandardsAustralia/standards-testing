@@ -251,7 +251,12 @@
     },
     "customer": {
       "type": "object",
-			"description": "A customer object aligned to the current version of the data standards"
+			"description": "A customer object aligned to the current version of the data standards",
+      "properties": {
+        "customerUType": "string",
+        "person": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/common/CommonPersonDetailV2.json",
+        "organisation": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/common/CommonOrganisationDetailV2.json"
+      }
     },
     "bankDirectDebit": {
       "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.20.0/schemas/banking/BankingDirectDebit.json"
