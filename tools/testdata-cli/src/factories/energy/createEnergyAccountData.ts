@@ -44,12 +44,8 @@ export class CreateEnergyAccountData extends Factory {
             let plan: any = {};
             let nickname = Helper.randomBoolean(null) ? "nickname" : null;
             if (nickname) plan.nickname = nickname;
-            let spIds = [];
-            let servicePointCount = Math.ceil(Math.random() * 10);
-            for (let cnt = 0; cnt < servicePointCount; cnt++) {
-                spIds.push(RandomEnergy.GenerateNMI());
-            }
-            plan.servicePointIds = spIds;
+
+            plan.servicePoints = this.getServicePointsForAccount(customer)
             if (energyAccount?.status == OpenStatus.OPEN) {
                 // create a plan overview object
                 let planOverview = this.generatePlanOverview();
@@ -59,7 +55,6 @@ export class CreateEnergyAccountData extends Factory {
                 let fuelType = RandomEnergy.FuelType();
                 let planDetails = this.generatePlanDetails(fuelType);
                 if (fuelType == FuelType.GAS || fuelType == FuelType.DUAL) {
-
                     let gasContract = this.generateContract(PricingModel.SINGLE_RATE);
                     planDetails.gasContract = gasContract;
                 }
@@ -80,6 +75,16 @@ export class CreateEnergyAccountData extends Factory {
             account: energyAccount
         };
         return result;
+    }
+
+    private getServicePointsForAccount(customer: CustomerWrapper): string[]{
+        // TODO get the service points from the customer record
+        let spIds: string[] = [];
+        let servicePointCount = Math.ceil(Math.random() * 10);
+        for (let cnt = 0; cnt < servicePointCount; cnt++) {
+            spIds.push(RandomEnergy.GenerateNMI());
+        }
+        return spIds;
     }
     private generateAuthorisedContacts(cnt: number): any {
         let authorisedContacts: any[] = [];
