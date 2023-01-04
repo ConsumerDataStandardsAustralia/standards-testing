@@ -35,6 +35,24 @@ export class CreateEnergyInvoiceData extends Factory {
             servicePoints: this.generateServicePointArray(account)
         }
         if (Math.random() > 0.5) invoice.dueDate = Helper.randomDateTimeAfterDateString(issueDate);
+        let invoiceAmount = Helper.generateRandomDecimalInRange(10, 1000);
+        let gstAmount = (parseFloat(invoiceAmount)* 0.1).toFixed(2);
+        if (Math.random() > 0.5) {
+            invoice.invoiceAmount = invoiceAmount;
+            invoice.gstAmount = gstAmount;
+        }
+        if (Math.random() > 0.5) {
+            let minDiscount: number = parseFloat(invoiceAmount) * 0.01;
+            let maxDiscount: number = parseFloat(invoiceAmount) * 0.25;
+            let discountAomunt = Helper.generateRandomDecimalInRange(minDiscount, maxDiscount);
+            let gstAmount = (parseFloat(discountAomunt)* 0.1).toFixed(2);
+            invoice.payOnTimeDiscount = {
+                discountAmount:  discountAomunt,
+                gstAmount: gstAmount,
+                date:  ''
+            }
+        }
+
         if (this.accountHasDemandBasedCharges(account)) {
             let period: any = {};    
             period.startDate = Helper.randomDateTimeBeforeDateString(issueDate, 7, 60);
