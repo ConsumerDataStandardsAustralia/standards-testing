@@ -219,12 +219,12 @@ public static generateRandomDateTimeInRange(minDate: string, maxDate: string): s
  * 
  * @param min the minimum value to be returned
  * @param max the maximum value to be returned
- * @returns a number which lies between min and max
+ * @returns a number  which lies between min and max formatted as a string with 2 decimals
  */
   public static generateRandomDecimalInRange(min: number, max: number) : string {
     if (min  > max) 
-      return min.toPrecision(2);
+      return min.toFixed(2);
     else 
-      return ((min + Math.random() * (max - min))).toPrecision(2);
+      return ((min + Math.random() * (max - min))).toFixed(2);
   }
 }
