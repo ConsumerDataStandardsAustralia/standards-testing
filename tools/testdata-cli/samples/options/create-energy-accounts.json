@@ -23,7 +23,10 @@
                         {
                             "count": 1,
                             "customerFactory": {
-                                "id": "create-customers"
+                                "id": "create-customers",
+                                "options": {
+                                    "type": "person"
+                                }                            
                             },
                             "energy": {
                                 "accounts": [

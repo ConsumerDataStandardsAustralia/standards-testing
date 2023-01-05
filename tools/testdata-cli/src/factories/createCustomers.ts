@@ -4,14 +4,18 @@ import { ConsumerDataRightTestDataJSONSchema, Customer, CustomerWrapper, Holder,
 import { resourceLimits } from 'worker_threads';
 import { Factory, FactoryOptions, Helper } from '../logic/factoryService'
 import { faker } from '@faker-js/faker';
+import { CommonOrganisationDetailV2, CommonPersonDetailV2, CommonPhysicalAddressWithPurpose } from 'consumer-data-standards/common';
 const factoryId: string = "create-customers";
 
 export class CreateCustomers extends Factory {
 
     constructor(options: FactoryOptions) {
         super(options, factoryId);
-      }
+        this.customerType = options.options?.type;
+        faker.locale = 'en_AU';
+    }
     
+    private customerType: any; 
     public static id: string = factoryId;
 
     public get briefDescription(): string {
@@ -23,47 +27,22 @@ export class CreateCustomers extends Factory {
   
     public canCreateCustomer(): boolean { return true; };
     public generateCustomer(): CustomerWrapper | undefined {
-      let rr = faker.name.firstName;
-      faker.locale = 'en_AU';
-      let cust: Customer = {
-          firstName : faker.name.firstName(),
-          lastName: faker.name.lastName(),
-          middleNames: [faker.name.middleName()],
-          phoneNumbers: [{
-            isPreferred: true,
-            purpose: 'HOME',
-            countryCode: '+61',
-            areaCode: '2',
-            number: faker.phone.number('0#-####-####'),
-            extension: 'x34',
-            fullNumber: faker.phone.number('+61 0#-#### ####')
-          }],
-          emailAddresses: [{
-            isPreferred: true,
-            purpose: 'HOME',
-            address: faker.internet.email()
-          }
-          ],
-          physicalAddresses: [ {
-             addressUtype: 'paf',
-             simple: {
-              mailingName: 'Home address',
-              addressLine1: faker.address.street(),
-              postcode: faker.address.zipCode('####'),
-              city: faker.address.city(),
-              state: faker.address.state(),
-              country: 'AUS'
-             }
-          }         
-          ]
-          
-          
+      let cust : Customer = {
+        customerUType: this.customerType ? this.customerType : 'person'
       }
-       let cw : CustomerWrapper = {
+      if (this.customerType == 'person') {
+        let details = this.createPerson();
+        cust.person = details;
+      }
+
+      if (this.customerType == 'orgonisation') {
+        let details = this.createOrganisation();
+        cust.organisation = details;
+      }
+      let cw : CustomerWrapper = {
          customerId: Helper.randomId(),
          customer: cust
        }  
-   
        return cw;
     }
 
@@ -77,6 +56,58 @@ export class CreateCustomers extends Factory {
         if (el) ret.push(el);
       }
       return ret;
+    }
+
+    private createPerson(): CommonPersonDetailV2 {
+      let person: CommonPersonDetailV2 = {
+        firstName: faker.name.firstName(),
+        lastName: faker.name.lastName(),
+        middleNames: [faker.name.middleName()],
+        phoneNumbers: [{
+          isPreferred: true,
+          purpose: 'HOME',
+          countryCode: '+61',
+          areaCode: '2',
+          number: faker.phone.number('0#-####-####'),
+          extension: 'x34',
+          fullNumber: faker.phone.number('+61 0#-#### ####')
+        }],
+        emailAddresses: [{
+          isPreferred: true,
+          purpose: 'HOME',
+          address: faker.internet.email()
+        }
+        ],
+        physicalAddresses: []
+      }
+      let addressList: CommonPhysicalAddressWithPurpose[] = [];
+      let address: CommonPhysicalAddressWithPurpose = {
+        purpose: 'OTHER',
+        addressUType: 'paf',
+        paf: {
+          mailingName: 'Home address',
+          localityName: '',
+          addressLine1: faker.address.street(),
+          postcode: faker.address.zipCode('####'),
+          city: faker.address.city(),
+          state: faker.address.state(),
+          country: 'AUS'
+        }
+      }
+      addressList.push(address);
+      person.physicalAddresses = addressList;
+      return person;
+    }
+
+    private createOrganisation(): CommonOrganisationDetailV2 {
+      let organisation : CommonOrganisationDetailV2 = {
+        physicalAddresses: [],
+        agentLastName: '',
+        agentRole: '',
+        businessName: '',
+        organisationType: 'OTHER'
+      }
+      return organisation;
     }
 
 }

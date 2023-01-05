@@ -39,7 +39,7 @@
 
 			"authenticated": {
 				"customers": [
-          {
+          		{
   					"count": 5,
 
   					"customerFactory": {
@@ -149,7 +149,7 @@
   						}]
   					}
   				}
-        ]
+        		]
 			}
 		}],
 
