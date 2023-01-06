@@ -221,10 +221,11 @@ public static generateRandomDateTimeInRange(minDate: string, maxDate: string): s
  * @param max the maximum value to be returned
  * @returns a number  which lies between min and max formatted as a string with 2 decimals
  */
-  public static generateRandomDecimalInRange(min: number, max: number) : string {
+  public static generateRandomDecimalInRange(min: number, max: number, decimals?: number) : string {
+    let dec = decimals != undefined? decimals : 2
     if (min  > max) 
-      return min.toFixed(2);
+      return min.toFixed(dec);
     else 
-      return ((min + Math.random() * (max - min))).toFixed(2);
+      return ((min + Math.random() * (max - min))).toFixed(dec);
   }
 }

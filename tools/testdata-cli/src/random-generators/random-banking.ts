@@ -205,11 +205,25 @@ export enum DiscountEligibilityType {
 }
 
 export class RandomBanking {
-    public static GetRandomValue(enumeration: any){
+    public static GetRandomValue(enumeration: any) {
         const values = Object.keys(enumeration);
-        const enumKey = values[Math.floor(Math.random() * values.length)];
+        let interval = 1 / values.length;
+        let rv = Math.random();
+        let intervalSum = 0;
+        let found: boolean = false;
+        let idx: number = 0;
+        while (found == false) {
+            intervalSum += interval;
+            if (rv <= intervalSum || idx >= values.length - 1) {
+                found = true;
+            }
+            else {
+                idx++;
+            }
+        }
+        const enumKey = values[idx];
         return enumeration[enumKey];
-      }
+    }
 
     public static ProductCategory(): any {
         return this.GetRandomValue(ProductCategory)

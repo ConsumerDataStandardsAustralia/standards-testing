@@ -714,6 +714,15 @@ function generateDetailedBankAccounts(options: Options, accountOptions: any, cus
   return result;
 }
 
+function getServicePointsForAllAcounts(accounts: EnergyAccountWrapper[]): string[] {
+  let sp: string[] = [];
+  accounts.forEach(account => {
+    let electricitySp = account.account.plans.find(x => x.planDetail?.electricityContract)?.servicePointIds;
+    if(electricitySp != undefined) {sp.push(...electricitySp)}
+  })
+  return sp;
+}
+
 function generateCustomerEnergyData(options: Options, energyOptions: any, customer: CustomerWrapper): any {
   let result: any = {};
 
@@ -740,7 +749,7 @@ function generateCustomerEnergyData(options: Options, energyOptions: any, custom
       }
     }
   }
-
+  let spList: string[] = getServicePointsForAllAcounts(result.accounts as EnergyAccountWrapper[]);
   // Service points
   Helper.log('Executing multiple service point factories (if Any)');
   const newServicePoints = generateMultipleServicePoints(options, energyOptions);

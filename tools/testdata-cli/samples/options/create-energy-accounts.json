@@ -21,12 +21,21 @@
                 "authenticated": {
                     "customers": [
                         {
-                            "count": 1,
+                            "count": 2,
+                            "customerFactory": {
+                                "id": "create-customers",
+                                "options": {
+                                    "type": "organisation"
+                                }
+                            }
+                        },
+                        {
+                            "count": 3,
                             "customerFactory": {
                                 "id": "create-customers",
                                 "options": {
                                     "type": "person"
-                                }                            
+                                }
                             },
                             "energy": {
                                 "accounts": [
