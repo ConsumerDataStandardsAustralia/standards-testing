@@ -228,4 +228,36 @@ public static generateRandomDateTimeInRange(minDate: string, maxDate: string): s
     else 
       return ((min + Math.random() * (max - min))).toFixed(dec);
   }
+
+  /**
+   * 
+   * @param min the minimum value to be returned
+   * @param max the maximum value to be returned
+   * @returns an integer which lies between min and max (inclusive) 
+   */
+  public static generateRandomIntegerInRange(min: number, max:number): number{
+    // handle the unconventional cases
+    if (min == max) return min;
+    if (min > max) return max;
+    if (max == 0) return 0;
+    let interval = 1 / (max - min);
+    let rv = Math.random();
+    let intervalSum = 0;
+    let found: boolean = false;
+    let idx: number = 0;
+    while (found == false) {
+        intervalSum += interval;
+        if (rv <= intervalSum || idx >= (max-min)) {
+            found = true;
+            if (Math.random() > 0.5)
+              break;
+            else {
+              idx++;
+            }
+        } else {
+          idx++;
+        }
+    }
+    return min + idx;
+  }
 }
