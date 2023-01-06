@@ -1,6 +1,6 @@
 import { BankingProductV4 } from 'consumer-data-standards/banking';
-import * as fs from 'fs';
-import { ConsumerDataRightTestDataJSONSchema, Holder, HolderWrapper, Unauthenticated } from 'src/logic/schema/cdr-test-data-schema';
+
+import { HolderWrapper } from 'src/logic/schema/cdr-test-data-schema';
 import { RandomBanking } from '../random-generators/random-banking';
 import { Factory, FactoryOptions, Helper } from '../logic/factoryService'
 

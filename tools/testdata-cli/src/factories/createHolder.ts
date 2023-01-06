@@ -1,7 +1,4 @@
-import { BankingProductV4 } from 'consumer-data-standards/banking';
-import * as fs from 'fs';
-import { ConsumerDataRightTestDataJSONSchema, Holder, HolderWrapper } from 'src/logic/schema/cdr-test-data-schema';
-import { resourceLimits } from 'worker_threads';
+import { HolderWrapper } from 'src/logic/schema/cdr-test-data-schema';
 import { Factory, FactoryOptions, Helper } from '../logic/factoryService'
 
 const factoryId: string = "create-holder";

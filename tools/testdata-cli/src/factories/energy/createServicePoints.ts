@@ -1,4 +1,4 @@
-import { EnergyPlan, EnergyServicePoint} from "consumer-data-standards/energy";
+import {  EnergyServicePoint} from "consumer-data-standards/energy";
 import { EnergyServicePointWrapper } from "src/logic/schema/cdr-test-data-schema";
 import { Factory, FactoryOptions, Helper } from "../../logic/factoryService";
 

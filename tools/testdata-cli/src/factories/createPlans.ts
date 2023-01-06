@@ -1,6 +1,4 @@
 import { EnergyPlan } from 'consumer-data-standards/energy';
-import * as fs from 'fs';
-import { ConsumerDataRightTestDataJSONSchema, Holder, HolderWrapper } from 'src/logic/schema/cdr-test-data-schema';
 import { RandomEnergy} from '../random-generators/random-energy';
 import { Factory, FactoryOptions, Helper } from '../logic/factoryService'
 

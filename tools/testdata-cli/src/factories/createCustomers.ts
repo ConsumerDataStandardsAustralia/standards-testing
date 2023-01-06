@@ -1,7 +1,5 @@
-import { BankingProductV4, CommonSimpleAddress } from 'consumer-data-standards/banking';
-import * as fs from 'fs';
-import { ConsumerDataRightTestDataJSONSchema, Customer, CustomerWrapper, Holder, HolderWrapper } from 'src/logic/schema/cdr-test-data-schema';
-import { resourceLimits } from 'worker_threads';
+import { CommonSimpleAddress } from 'consumer-data-standards/banking';
+import { Customer, CustomerWrapper,  HolderWrapper } from 'src/logic/schema/cdr-test-data-schema';
 import { Factory, FactoryOptions, Helper } from '../logic/factoryService'
 import { faker } from '@faker-js/faker';
 import { CommonEmailAddress, CommonOrganisationDetailV2, CommonPAFAddress, CommonPersonDetailV2, CommonPhoneNumber, CommonPhysicalAddressWithPurpose } from 'consumer-data-standards/common';
@@ -93,18 +91,17 @@ export class CreateCustomers extends Factory {
     private createAddressList(cnt: number):CommonPhysicalAddressWithPurpose[] {
       let addressList: CommonPhysicalAddressWithPurpose[] = [];
       for(let i = 0; i < cnt; i++) {
+        let addressUType = Math.random() > 0.5 ? 'paf' : 'simple' as 'paf'| 'simple';
         let address: CommonPhysicalAddressWithPurpose = {
           purpose: RandomCommon.AddressPurpose(),
-          addressUType: 'paf',
-          paf: {
-            mailingName: 'Home address',
-            localityName: faker.address.city(),
-            addressLine1: faker.address.street(),
-            postcode: faker.address.zipCode('####'),
-            city: faker.address.cityName(),
-            state: faker.address.state(),
-            country: 'AUS'
-          }
+          addressUType: addressUType,
+
+        }
+        if (addressUType == 'paf') {
+          address.paf = this.createPafAddress();
+        }
+        if (addressUType == 'simple') {
+          address.simple = this.createCommonSimpleAddress();
         }
         addressList.push(address);
       }
@@ -155,9 +152,13 @@ export class CreateCustomers extends Factory {
 
     private createPafAddress(): CommonPAFAddress {
       let address: CommonPAFAddress = {
-        localityName: '',
-        postcode: '',
-        state: ''
+          mailingName: 'Home address',
+          localityName: faker.address.city(),
+          addressLine1: faker.address.street(),
+          postcode: faker.address.zipCode('####'),
+          city: faker.address.cityName(),
+          state: faker.address.state(),
+          country: 'AUS'
       }
       return address;
   }
