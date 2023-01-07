@@ -100,10 +100,10 @@ export abstract class Factory {
   public generateEnergyPlans(): EnergyPlan[] | undefined { return }
 
   public canCreateEnergyServicePoint(): boolean { return false; };
-  public generateEnergyServicePoint(): EnergyServicePointWrapper | undefined { return }
+  public generateEnergyServicePoint(servicePointId: string | undefined): EnergyServicePointWrapper | undefined { return }
 
   public canCreateEnergyServicePoints(): boolean { return false; };
-  public generateEnergyServicePoints(): EnergyServicePointWrapper[] | undefined { return }
+  public generateEnergyServicePoints(activeServicePoints: string[]): EnergyServicePointWrapper[] | undefined { return }
 
   public canCreateEnergyDER(): boolean { return false; };
   public generateEnergyDER(servicePoint: EnergyServicePointWrapper): EnergyDerRecord[] | undefined { return }

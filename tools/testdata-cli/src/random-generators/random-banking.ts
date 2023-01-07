@@ -15,7 +15,7 @@ export  enum ProductCategory {
 } 
 
 export  enum OpenStatus {
-    "CLOSED" , "OPEN" , null
+    CLOSED = "CLOSED" , OPEN = "OPEN" 
 } 
 
 export  enum PayeeType {

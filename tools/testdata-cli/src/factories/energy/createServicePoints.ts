@@ -1,5 +1,6 @@
 import {  EnergyServicePoint} from "consumer-data-standards/energy";
 import { EnergyServicePointWrapper } from "src/logic/schema/cdr-test-data-schema";
+import { OpenStatus, RandomEnergy, ServicePointStatus } from  '../../random-generators';
 import { Factory, FactoryOptions, Helper } from "../../logic/factoryService";
 
 const factoryId: string = "create-energy-service-points";
@@ -20,14 +21,20 @@ export class CreateEnergyServicePoints extends Factory {
     } 
 
     public canCreateEnergyServicePoint(): boolean { return true; };
-    public generateEnergyServicePoint(): EnergyServicePointWrapper | undefined { 
+    public generateEnergyServicePoint(servicePointId?: string): EnergyServicePointWrapper | undefined { 
+        let id = RandomEnergy.GenerateNMI();
+        let status = RandomEnergy.ServicePointStatus();
+        if (servicePointId != null) {
+            id = servicePointId;
+            status = ServicePointStatus.ACTIVE;
+        }
         let sp: EnergyServicePoint = {
             jurisdictionCode: "ALL",
             lastUpdateDateTime: "",
             nationalMeteringId: "",
             servicePointClassification: "EXTERNAL_PROFILE",
-            servicePointId: "",
-            servicePointStatus: "ACTIVE",
+            servicePointId: id,
+            servicePointStatus: status,
             validFromDate: ""
         }
         let spw: EnergyServicePointWrapper = {
@@ -37,13 +44,15 @@ export class CreateEnergyServicePoints extends Factory {
     }
   
     public canCreateEnergyServicePoints(): boolean { return true; };
-    public generateEnergyServicePoints(): EnergyServicePointWrapper[] | undefined { 
+    public generateEnergyServicePoints(activeServicePoints: string[]): EnergyServicePointWrapper[] | undefined { 
         let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
         let ret: EnergyServicePointWrapper[] = [];
         for (let i = 0; i < count; i++) {
-            const el = this.generateEnergyServicePoint();
-            if (el) ret.push(el);
+            activeServicePoints.forEach(sp => {
+                const el = this.generateEnergyServicePoint(sp);
+                if (el) ret.push(el);                
+            })
         }
         return ret;
     }

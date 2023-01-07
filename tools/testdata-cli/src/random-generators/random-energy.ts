@@ -176,7 +176,9 @@ export enum EneryInvoicePaymentStatus {
     PAID = "PAID", PARTIALLY_PAID = "PARTIALLY_PAID", NOT_PAID = "NOT_PAID"
 }
 
-
+export enum ServicePointStatus {
+    OFF_MARKET = "OFF_MARKET" , ACTIVE = "ACTIVE" , DE_ENERGISED = "DE_ENERGISED" , EXTINCT = "EXTINCT" , GREENFIELD = "GREENFIELD"
+}
 export class RandomEnergy {
 
     public static GetRandomValue(enumeration: any) {
@@ -310,5 +312,9 @@ export class RandomEnergy {
 
     public static EneryInvoicePaymentStatus(): any {
         return this.GetRandomValue(EneryInvoicePaymentStatus)
+    }
+
+    public static ServicePointStatus(): any {
+        return this.GetRandomValue(ServicePointStatus)
     }
 }

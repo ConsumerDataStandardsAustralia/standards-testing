@@ -1,10 +1,10 @@
 import * as fs from 'fs';
+import { OpenStatus } from '../../random-generators';
 import {
   Factory,
   Helper
 } from '.';
 import { createFactory } from '.';
-//import * as schema from '../../schema/cdr-test-data-schema';
 import {
   Options,
   OptionsGeneral,
@@ -14,6 +14,7 @@ import {
   OptionsSequence
 } from '../options';
 import { Authenticated, BankAccountWrapper, ConsumerDataRightTestDataJSONSchema, CustomerWrapper, EnergyAccountWrapper, EnergyServicePointWrapper, Holder, HolderWrapper, Unauthenticated } from '../schema/cdr-test-data-schema';
+import { EnergyPlanDetail } from 'consumer-data-standards/energy';
 
 export const generateData = (options: Options, dst: string, verbose: boolean): number => {
 
@@ -749,10 +750,20 @@ function generateCustomerEnergyData(options: Options, energyOptions: any, custom
       }
     }
   }
-  let spList: string[] = getServicePointsForAllAcounts(result.accounts as EnergyAccountWrapper[]);
+
+  // extract the service point ids from the active service points
+  let activeServicePoints: string[] = getServicePointsForAllAcounts(result.accounts as EnergyAccountWrapper[]);
+  result.accounts.forEach((acc:EnergyAccountWrapper) => {
+    if (acc.account.openStatus == OpenStatus.OPEN) {
+        acc.account.plans.forEach((p:any) => {
+          if (p?.servicePoints?.length > 0)
+            activeServicePoints.push(...p.servicePoints);
+        })
+    }
+  })
   // Service points
   Helper.log('Executing multiple service point factories (if Any)');
-  const newServicePoints = generateMultipleServicePoints(options, energyOptions);
+  const newServicePoints = generateMultipleServicePoints(options, energyOptions, activeServicePoints);
   if (newServicePoints && newServicePoints.length > 0) {
     if (!result.servicePoints) result.servicePoints = [];
     result.servicePoints.push(...newServicePoints);
@@ -763,7 +774,7 @@ function generateCustomerEnergyData(options: Options, energyOptions: any, custom
     for (let i = 0; i < energyOptions.servicePoints.length; i++) {
 
       Helper.log(`Executing detailed service point set ${i+1}`, 1);
-      const newData = generateDetailedServicePoints(options, energyOptions.servicePoints[i]);
+      const newData = generateDetailedServicePoints(options, energyOptions.servicePoints[i], activeServicePoints);
 
       if (newData && newData.length > 0) {
         if (!result.servicePoints) result.servicePoints = [];
@@ -923,7 +934,7 @@ function generateDetailedEnergyAccounts(options: Options, accountOptions: any, c
   return result;
 }
 
-function generateMultipleServicePoints(options: Options, servicePointOptions: any): EnergyServicePointWrapper[] | undefined {
+function generateMultipleServicePoints(options: Options, servicePointOptions: any, activeServicePoints: string[]): EnergyServicePointWrapper[] | undefined {
   let result: EnergyServicePointWrapper[] | undefined;
   let factories: Factory[] = []
 
@@ -942,7 +953,7 @@ function generateMultipleServicePoints(options: Options, servicePointOptions: an
     for (const factory of factories) {
       Helper.log(`Running factory '${factory.id}'`)
       if (factory.canCreateEnergyServicePoints()) {
-        const newData = factory.generateEnergyServicePoints();
+        const newData = factory.generateEnergyServicePoints(activeServicePoints);
         if (newData) {
           if (!result) result = [];
           result.push(...newData);
@@ -962,7 +973,7 @@ function generateMultipleServicePoints(options: Options, servicePointOptions: an
   return result;
 }
 
-function generateDetailedServicePoints(options: Options, servicePointOptions: any): EnergyServicePointWrapper[] {
+function generateDetailedServicePoints(options: Options, servicePointOptions: any, activeServicePoints: string[]): EnergyServicePointWrapper[] {
   let result: EnergyServicePointWrapper[] = [];
   let factories: Factory[] = []
 
@@ -978,45 +989,88 @@ function generateDetailedServicePoints(options: Options, servicePointOptions: an
   // Create the service points required
   if (factories.length > 0) {
     Helper.log(`${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`)
-
+    let cnt = 0;
     // If we have factories execute each one of them
     for (const factory of factories) {
       Helper.log(`Running factory '${factory.id}'`)
+      cnt++;
       if (factory.canCreateEnergyServicePoint()) {
-        const servicePoint = factory.generateEnergyServicePoint();
-
-        Helper.log(`Factory complete - ${servicePoint ? 1 : 0} created`, 1)
-
-        if (servicePoint && servicePoint.servicePoint) {
-          result.push(servicePoint);
-
-          // Create the detail inside the created service point
-          if (servicePointOptions.derFactory) {
-            Helper.log(`Executing DER factories for service point`, 1);
-            servicePoint.der = generateSingleItem(options, servicePointOptions.derFactory,
-              (factory) => {
-                return factory.canCreateEnergyDER();
-              },
-              (factory) => {
-                return factory.generateEnergyDER(servicePoint);
-              })
-          } else {
-            Helper.log(`No DER factories configured`, 1)
-          }
-
-          if (servicePointOptions.usageFactory) {
-            Helper.log(`Executing energy usage factories for service point`, 1);
-            servicePoint.usage = generateArrayOfItems(options, servicePointOptions.usageFactory,
-              (factory) => {
-                return factory.canCreateEnergyUsage();
-              },
-              (factory) => {
-                return factory.generateEnergyUsage(servicePoint);
-              })
-          } else {
-            Helper.log(`No energy usage factories configured`, 1)
-          }
+        let sp = undefined;
+        if (cnt <= activeServicePoints.length) {
+            sp = activeServicePoints[cnt-1]
         }
+      //  activeServicePoints.forEach(sp => {
+
+          const servicePoint = factory.generateEnergyServicePoint(sp);
+
+          Helper.log(`Factory complete - ${servicePoint ? 1 : 0} created`, 1)
+  
+          if (servicePoint && servicePoint.servicePoint) {
+            result.push(servicePoint);
+  
+            // Create the detail inside the created service point
+            if (servicePointOptions.derFactory) {
+              Helper.log(`Executing DER factories for service point`, 1);
+              servicePoint.der = generateSingleItem(options, servicePointOptions.derFactory,
+                (factory) => {
+                  return factory.canCreateEnergyDER();
+                },
+                (factory) => {
+                  return factory.generateEnergyDER(servicePoint);
+                })
+            } else {
+              Helper.log(`No DER factories configured`, 1)
+            }
+  
+            if (servicePointOptions.usageFactory) {
+              Helper.log(`Executing energy usage factories for service point`, 1);
+              servicePoint.usage = generateArrayOfItems(options, servicePointOptions.usageFactory,
+                (factory) => {
+                  return factory.canCreateEnergyUsage();
+                },
+                (factory) => {
+                  return factory.generateEnergyUsage(servicePoint);
+                })
+            } else {
+              Helper.log(`No energy usage factories configured`, 1)
+            }
+          }
+
+       // })
+        // const servicePoint = factory.generateEnergyServicePoint(activeServicePoints);
+
+        // Helper.log(`Factory complete - ${servicePoint ? 1 : 0} created`, 1)
+
+        // if (servicePoint && servicePoint.servicePoint) {
+        //   result.push(servicePoint);
+
+        //   // Create the detail inside the created service point
+        //   if (servicePointOptions.derFactory) {
+        //     Helper.log(`Executing DER factories for service point`, 1);
+        //     servicePoint.der = generateSingleItem(options, servicePointOptions.derFactory,
+        //       (factory) => {
+        //         return factory.canCreateEnergyDER();
+        //       },
+        //       (factory) => {
+        //         return factory.generateEnergyDER(servicePoint);
+        //       })
+        //   } else {
+        //     Helper.log(`No DER factories configured`, 1)
+        //   }
+
+        //   if (servicePointOptions.usageFactory) {
+        //     Helper.log(`Executing energy usage factories for service point`, 1);
+        //     servicePoint.usage = generateArrayOfItems(options, servicePointOptions.usageFactory,
+        //       (factory) => {
+        //         return factory.canCreateEnergyUsage();
+        //       },
+        //       (factory) => {
+        //         return factory.generateEnergyUsage(servicePoint);
+        //       })
+        //   } else {
+        //     Helper.log(`No energy usage factories configured`, 1)
+        //   }
+        // }
       } else {
         Helper.log(`Factory does not support service point generation`, 1)
       }

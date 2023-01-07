@@ -36,7 +36,13 @@
                                             "id": "create-energy-account-data"
                                         }
                                     }
-                                ]
+                                ],
+                                "servicePoints": [{
+                                    "count": 5,    
+                                    "servicePointFactory": {
+                                        "id": "create-energy-service-points"
+                                    }
+                            }]
                             }
                         },
                         {
