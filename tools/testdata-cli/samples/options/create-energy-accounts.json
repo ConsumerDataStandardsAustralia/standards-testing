@@ -21,16 +21,26 @@
                 "authenticated": {
                     "customers": [
                         {
-                            "count": 2,
+                            "count": 15,
                             "customerFactory": {
                                 "id": "create-customers",
                                 "options": {
                                     "type": "organisation"
                                 }
+                            },
+                            "energy": {
+                                "accounts": [
+                                    {
+                                        "count": 2,
+                                        "accountFactory": {
+                                            "id": "create-energy-account-data"
+                                        }
+                                    }
+                                ]
                             }
                         },
                         {
-                            "count": 3,
+                            "count": 100,
                             "customerFactory": {
                                 "id": "create-customers",
                                 "options": {

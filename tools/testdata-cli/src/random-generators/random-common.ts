@@ -8,6 +8,14 @@ export enum IndustryVersionCode {
     ANZSIC_1292_0_2006_V2_0 = "ANZSIC_1292.0_2006_V2.0"
 }
 
+export enum PostalDeliveryType {
+    PO_BOX = "PO_BOX", LOCKED_BAG = "LOCKED_BAG", GPO_BOX = "GPO_BOX", CARE_PO = "CARE_PO", RSD = "RSD"
+}
+
+export enum CountryCodes3 {
+    AUS = "AUS", ARG = "ARG", CHN = "CHN", FRA = "FRA", DEU ="DEU", GBR = "GBR", USA = "USA"
+}
+
 export enum AreaCode {
     NSW = "02",
     VIC = "03",
@@ -97,5 +105,13 @@ export class RandomCommon {
 
     public static AddressPurpose(): AddressPurpose {
         return this.GetRandomValue(AddressPurpose)
+    }
+
+    public static PostalDeliveryType(): PostalDeliveryType {
+        return this.GetRandomValue(PostalDeliveryType)
+    }
+
+    public static CountryCodes3(): CountryCodes3 {
+        return this.GetRandomValue(CountryCodes3)
     }
 }
