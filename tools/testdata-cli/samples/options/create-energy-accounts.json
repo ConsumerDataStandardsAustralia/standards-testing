@@ -21,7 +21,7 @@
                 "authenticated": {
                     "customers": [
                         {
-                            "count": 15,
+                            "count": 1,
                             "customerFactory": {
                                 "id": "create-customers",
                                 "options": {
@@ -31,22 +31,24 @@
                             "energy": {
                                 "accounts": [
                                     {
-                                        "count": 2,
+                                        "count": 5,
                                         "accountFactory": {
                                             "id": "create-energy-account-data"
                                         }
                                     }
                                 ],
-                                "servicePoints": [{
-                                    "count": 5,    
+                                "servicePoints": [
+                                    {
+                                    "count": 10,    
                                     "servicePointFactory": {
                                         "id": "create-energy-service-points"
+                                        }
                                     }
-                            }]
+                                ]
                             }
                         },
                         {
-                            "count": 100,
+                            "count": 1,
                             "customerFactory": {
                                 "id": "create-customers",
                                 "options": {

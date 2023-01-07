@@ -45,7 +45,6 @@ export class CreateEnergyAccountData extends Factory {
             let nickname = Helper.randomBoolean(null) ? "nickname" : null;
             if (nickname) plan.nickname = nickname;
 
-            plan.servicePoints = this.getServicePointsForAccount();
             if (energyAccount?.status == OpenStatus.OPEN) {
                 // create a plan overview object
                 let planOverview = this.generatePlanOverview();

@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { OpenStatus } from '../../random-generators';
+import { FuelType, OpenStatus } from '../../random-generators';
 import {
   Factory,
   Helper
@@ -754,7 +754,7 @@ function generateCustomerEnergyData(options: Options, energyOptions: any, custom
   // extract the service point ids from the active service points
   let activeServicePoints: string[] = getServicePointsForAllAcounts(result.accounts as EnergyAccountWrapper[]);
   result.accounts.forEach((acc:EnergyAccountWrapper) => {
-    if (acc.account.openStatus == OpenStatus.OPEN) {
+    if (acc.account.openStatus == OpenStatus.OPEN ) {
         acc.account.plans.forEach((p:any) => {
           if (p?.servicePoints?.length > 0)
             activeServicePoints.push(...p.servicePoints);
@@ -991,13 +991,16 @@ function generateDetailedServicePoints(options: Options, servicePointOptions: an
     Helper.log(`${factories.length} ${factories.length > 1 ? 'factories' : 'factory'} created`)
     let cnt = 0;
     // If we have factories execute each one of them
+    // allocate some of the service points to this factory
+    let spCount = Helper.generateRandomIntegerInRange(0, activeServicePoints.length);
+    let spArray = activeServicePoints.splice(0, Math.max(1, spCount-1));
     for (const factory of factories) {
       Helper.log(`Running factory '${factory.id}'`)
       cnt++;
       if (factory.canCreateEnergyServicePoint()) {
         let sp = undefined;
-        if (cnt <= activeServicePoints.length) {
-            sp = activeServicePoints[cnt-1]
+        if (cnt <= spArray.length) {
+            sp = spArray[cnt-1]
         }
       //  activeServicePoints.forEach(sp => {
 
