@@ -20,7 +20,7 @@ import { CreateProducts} from './createProducts';
 factories[CreateProducts.id] = (options: any): Factory => { return new CreateProducts(options) }
 
 // create banking products
-import { CreateCustomers} from './createCustomers';
+import { CreateCustomers} from './common/createCustomers';
 factories[CreateCustomers.id] = (options: any): Factory => { return new CreateCustomers(options) }
 
 // create energy plans
@@ -38,6 +38,8 @@ factories[CreateEnergyInvoiceData.id] = (options: any): Factory => { return new 
 // create energy invoice data
 import { CreateEnergyServicePoints} from './energy/createServicePoints';
 factories[CreateEnergyServicePoints.id] = (options: any): Factory => { return new CreateEnergyServicePoints(options) }
+
+export * from './common/utils';
 
 
 

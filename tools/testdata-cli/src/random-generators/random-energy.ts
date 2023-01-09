@@ -179,6 +179,81 @@ export enum EneryInvoicePaymentStatus {
 export enum ServicePointStatus {
     OFF_MARKET = "OFF_MARKET" , ACTIVE = "ACTIVE" , DE_ENERGISED = "DE_ENERGISED" , EXTINCT = "EXTINCT" , GREENFIELD = "GREENFIELD"
 }
+
+export enum ServicePointMeterStatus {
+    CURRENT = "CURRENT" , DISCONNECTED = "DISCONNECTED"
+}
+
+export enum ServicePointClassification {
+    EXTERNAL_PROFILE = "EXTERNAL_PROFILE"
+    , GENERATOR = "GENERATOR"
+    , LARGE = "LARGE"
+    , SMALL = "SMALL"
+    , WHOLESALE = "WHOLESALE"
+    , NON_CONTEST_UNMETERED_LOAD = "NON_CONTEST_UNMETERED_LOAD"
+    , NON_REGISTERED_EMBEDDED_GENERATOR = "NON_REGISTERED_EMBEDDED_GENERATOR"
+    , DISTRIBUTION_WHOLESALE = "DISTRIBUTION_WHOLESALE"
+}
+
+export enum ServicePointJurisdiction {
+    ALL = "ALL" , ACT = "ACT" , NEM = "NEM" , NSW = "NSW" ,
+    QLD = "QLD" , SA = "SA" , TAS = "TAS" , VIC = "VIC"
+}
+
+export enum ServicePointConsumerClassification {
+    BUSINESS = "BUSINESS" , RESIDENTIAL = "RESIDENTIAL"
+}
+
+export enum ServicePointThreshold {
+    LOW = "LOW", MEDIUM = "MEDIUM", HIGH = "HIGH"
+}
+
+export enum ServicePointParticipantRole {
+    FRMP = "FRMP" , LNSP = "LNSP" , DRSP = "DRSP"
+}
+
+export enum ServicePointInstallationType {
+    BASIC = "BASIC"
+    , COMMS1 = "COMMS1"
+    , COMMS2 = "COMMS2"
+    , COMMS3 = "COMMS3"
+    , COMMS4 = "COMMS4"
+    , COMMS4C = "COMMS4C"
+    , COMMS4D = "COMMS4D"
+    , MRAM = "MRAM"
+    , MRIM = "MRIM"
+    , PROF = "PROF"
+    , SAMPLE = "SAMPLE"
+    , UMCP = "UMCP"
+    , VICAMI = "VICAMI"
+    , NCOLNUML = "NCOLNUML"
+}
+
+export enum ServicePointRegisterConsumptionType {
+    INTERVAL = "INTERVAL"
+    , BASIC = "BASIC"
+    , PROFILE_DATA = "PROFILE_DATA"
+    , ACTIVE_IMPORT = "ACTIVE_IMPORT"
+    , ACTIVE = "ACTIVE"
+    , REACTIVE_IMPORT = "REACTIVE_IMPORT"
+    , REACTIVE = "REACTIVE"   
+}
+
+export enum TimeOfDay {
+    ALLDAY = "ALLDAY"
+    , INTERVAL = "INTERVAL"
+    , PEAK = "PEAK"
+    , BUSINESS = "BUSINESS"
+    , SHOULDER =  "SHOULDER"
+    , EVENING = "EVENING"
+    , OFFPEAK = "OFFPEAK"
+    , CONTROLLED = "CONTROLLED"
+    , DEMAND = "DEMAND"
+}
+export enum ServicePointConsumtionType {
+    ACTUAL = "ACTUAL", CUMULATIVE = "CUMULATIVE"
+}
+
 export class RandomEnergy {
 
     public static GetRandomValue(enumeration: any) {
@@ -317,4 +392,36 @@ export class RandomEnergy {
     public static ServicePointStatus(): any {
         return this.GetRandomValue(ServicePointStatus)
     }
+
+    public static ServicePointClassification(): any {
+        return this.GetRandomValue(ServicePointClassification)
+    }
+
+    public static ServicePointJurisdiction(): any {
+        return this.GetRandomValue(ServicePointJurisdiction)
+    }   
+    
+    public static ServicePointConsumerClassification(): ServicePointConsumerClassification {
+        return this.GetRandomValue(ServicePointConsumerClassification)
+    }   
+    
+    public static ServicePointParticipantRole(): any {
+        return this.GetRandomValue(ServicePointParticipantRole)
+    } 
+
+    public static ServicePointInstallationType(): ServicePointInstallationType {
+        return this.GetRandomValue(ServicePointInstallationType)
+    } 
+
+    public static ServicePointRegisterConsumptionType(): any {
+        return this.GetRandomValue(ServicePointRegisterConsumptionType)
+    } 
+    
+    public static TimeOfDay(): any {
+        return this.GetRandomValue(TimeOfDay)
+    } 
+    
+    public static ServicePointThreshold(): any {
+        return this.GetRandomValue(ServicePointThreshold)
+    }  
 }

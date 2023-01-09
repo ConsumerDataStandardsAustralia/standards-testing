@@ -1,6 +1,6 @@
 import { BankingAccount, BankingBalance, BankingDirectDebit, BankingPayeeDetailV2, BankingProductV4, BankingScheduledPayment, BankingTransaction } from "consumer-data-standards/banking";
 import { CommonOrganisationDetailV2, CommonPersonDetailV2 } from "consumer-data-standards/common";
-import { EnergyAccount, EnergyAccountDetailV2, EnergyConcession, EnergyDerRecord, EnergyInvoice, EnergyPaymentSchedule, EnergyPlan, EnergyServicePoint, EnergyUsageRead } from "consumer-data-standards/energy";
+import { EnergyAccount, EnergyAccountDetailV2, EnergyConcession, EnergyDerRecord, EnergyInvoice, EnergyPaymentSchedule, EnergyPlan, EnergyServicePoint, EnergyServicePointDetail, EnergyUsageRead } from "consumer-data-standards/energy";
 import { RegisterDataRecipient } from "consumer-data-standards/register";
 
  /* A JSON schema for defining test data files that can be used to seed a mock, or test, implementation of a Data Holder for the Consumer Data Right
@@ -41,7 +41,7 @@ export type Holders = HolderWrapper[];
  * An energy for a single service point (metering site) to contain all of the data related to the service point
  */
 export interface EnergyServicePointWrapper {
-  servicePoint: EnergyServicePoint;
+  servicePoint: EnergyServicePointDetail;
   der?: EnergyDerRecord;
   /**
    * An array of reads for the service point

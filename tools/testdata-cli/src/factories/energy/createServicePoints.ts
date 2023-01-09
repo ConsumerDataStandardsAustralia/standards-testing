@@ -1,7 +1,10 @@
 import {  EnergyServicePoint} from "consumer-data-standards/energy";
 import { EnergyServicePointWrapper } from "src/logic/schema/cdr-test-data-schema";
-import { OpenStatus, RandomEnergy, ServicePointStatus } from  '../../random-generators';
+import { OpenStatus, RandomCommon, RandomEnergy, ServicePointConsumerClassification, ServicePointStatus } from  '../../random-generators';
 import { Factory, FactoryOptions, Helper } from "../../logic/factoryService";
+import { EnergyServicePointDetail } from "consumer-data-standards/energy_sdh";
+import Utils from "../common/utils";
+import { faker } from "@faker-js/faker";
 
 const factoryId: string = "create-energy-service-points";
 
@@ -21,22 +24,62 @@ export class CreateEnergyServicePoints extends Factory {
     } 
 
     public canCreateEnergyServicePoint(): boolean { return true; };
-    public generateEnergyServicePoint(servicePointId?: string): EnergyServicePointWrapper | undefined { 
+    public generateEnergyServicePoint(nationalMeteringId?: string): EnergyServicePointWrapper | undefined { 
         let id = RandomEnergy.GenerateNMI();
         let status = RandomEnergy.ServicePointStatus();
-        if (servicePointId != null) {
-            id = servicePointId;
+        if (nationalMeteringId != null) {
+            id = nationalMeteringId;
             status = ServicePointStatus.ACTIVE;
         }
-        let sp: EnergyServicePoint = {
-            jurisdictionCode: "ALL",
-            lastUpdateDateTime: "",
-            nationalMeteringId: "",
-            servicePointClassification: "EXTERNAL_PROFILE",
-            servicePointId: id,
+        // randomly assign customer type
+        let customerType =  Math.random() > 0.5 ? 'person' : 'organisation';
+        
+        let updateTime = Helper.randomDateTimeInThePast();
+        let address = Utils.createCommPhysicalAddress(customerType);
+        let relatedParticipants: any[] = [];
+        let consumerProfile: any = {};
+        let sp: EnergyServicePointDetail = {
+            jurisdictionCode: RandomEnergy.ServicePointJurisdiction(),
+            lastUpdateDateTime: updateTime,
+            nationalMeteringId: id,
+            servicePointClassification: RandomEnergy.ServicePointClassification(),
+            servicePointId: Helper.randomId(),
             servicePointStatus: status,
-            validFromDate: ""
+            validFromDate: Helper.randomDateTimeBeforeDateString(updateTime),
+            distributionLossFactor: {
+                code: 'ABCFR',
+                description: "Mandatory dscription for distribution loss factor",
+                lossValue: ""
+            },
+            location: address,
+            relatedParticipants: relatedParticipants
         }
+        if (Math.random() > 0.5) {
+            consumerProfile.classification = RandomEnergy.ServicePointConsumerClassification();
+            consumerProfile.threshold = RandomEnergy.ServicePointThreshold();
+            sp.consumerProfile = consumerProfile;
+        }
+
+        sp.relatedParticipants.push({party: faker.company.name(), role: RandomEnergy.ServicePointParticipantRole()})
+        if (Math.random() > 0.75) sp.isGenerator = Math.random() > 0.25;
+        if (Math.random() > 0.5) {
+            sp.consumerProfile = {};
+            sp.consumerProfile.classification = RandomEnergy.ServicePointConsumerClassification();
+            sp.consumerProfile.threshold = RandomEnergy.ServicePointThreshold();
+        }
+        let meters: any[] = [];
+        let cnt = Helper.generateRandomIntegerInRange(0, 3);
+        for(let i = 0; i < cnt; i++){
+            let meter: any = {
+                meterId: Helper.randomId(),
+                specifications : {
+                    installationType : RandomEnergy.ServicePointInstallationType(), 
+                    status : RandomEnergy.ServicePointStatus()
+                }
+            };
+            meters.push(meter);
+        }
+        sp.meters = meters;
         let spw: EnergyServicePointWrapper = {
             servicePoint: sp
         }

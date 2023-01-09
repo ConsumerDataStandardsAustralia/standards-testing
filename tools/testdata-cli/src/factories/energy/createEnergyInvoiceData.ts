@@ -128,9 +128,7 @@ export class CreateEnergyInvoiceData extends Factory {
     private generateServicePointArray(account: EnergyAccountWrapper): string[] {
         let sp: string[] = [];
         let electricitySp = account.account.plans.find(x => x.planDetail?.electricityContract)?.servicePointIds;
-        let gasSP = account.account.plans.find(x => x.planDetail?.gasContract)?.servicePointIds;
         if(electricitySp != undefined) {sp.push(...electricitySp)}
-        if(gasSP != undefined) {sp.push(...gasSP)}
         return sp;
     }
 }
