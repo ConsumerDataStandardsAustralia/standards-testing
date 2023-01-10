@@ -254,6 +254,19 @@ export enum ServicePointConsumtionType {
     ACTUAL = "ACTUAL", CUMULATIVE = "CUMULATIVE"
 }
 
+export enum AcEquipmentType {
+    INVERTER = "INVERTER", OTHER = "OTHER"
+}
+
+export enum AcInverterStatus {
+    ACTIVE = "ACTIVE" , INACTIVE = "INACTIVE" , DECOMMISSIONED = "DECOMMISSIONED"
+}
+
+export enum DerDeviceType {
+    FOSSIL = "FOSSIL" , HYDRO = "HYDRO" , WIND = "WIND" , SOLAR_PV = "SOLAR_PV" , 
+    RENEWABLE = "RENEWABLE" , GEOTHERMAL = "GEOTHERMAL" , STORAGE = "STORAGE" , OTHER = "OTHER";
+}
+
 export class RandomEnergy {
 
     public static GetRandomValue(enumeration: any) {
@@ -424,4 +437,16 @@ export class RandomEnergy {
     public static ServicePointThreshold(): any {
         return this.GetRandomValue(ServicePointThreshold)
     }  
+
+    public static AcEquipmentType(): any {
+        return this.GetRandomValue(AcEquipmentType)
+    }  
+
+    public static AcInverterStatus(): any {
+        return this.GetRandomValue(AcInverterStatus)
+    }   
+    
+    public static DerDeviceType(): any {
+        return this.GetRandomValue(DerDeviceType)
+    }     
 }

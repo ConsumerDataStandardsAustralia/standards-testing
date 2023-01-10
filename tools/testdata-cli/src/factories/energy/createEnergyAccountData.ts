@@ -1,7 +1,8 @@
 import { EnergyAccountDetailV2, EnergyPlanContract,  EnergyPlanControlledLoad, EnergyPlanDiscounts, EnergyPlanEligibility, EnergyPlanFees, EnergyPlanGreenPowerCharges, EnergyPlanIncentives, EnergyPlanSolarFeedInTariff, EnergyPlanTariffPeriod } from 'consumer-data-standards/energy';
 import { CustomerWrapper, EnergyAccountWrapper } from 'src/logic/schema/cdr-test-data-schema';
-import { Days,  EnergyDiscountType, FeeTerm, FuelType, generateRandomDecimalInRangeFormatted, generateRandomNumericInRangeFormatted, MethodUType, OpenStatus,PricingModel, RandomEnergy, RateBlockUType, SolarTariffUType } from '../../random-generators';
+import { Days,  EnergyDiscountType, FeeTerm, FuelType, generateRandomDecimalInRangeFormatted, generateRandomNumericInRangeFormatted, MethodUType, OpenStatus,PowerChargeType,PricingModel, RandomEnergy, RateBlockUType, SolarFeedDays, SolarTariffUType } from '../../random-generators';
 import { Factory, FactoryOptions, Helper } from '../../logic/factoryService'
+import { v4 as uuidv4 } from 'uuid';
 
 const factoryId: string = "create-energy-account-data";
 
@@ -28,7 +29,7 @@ export class CreateEnergyAccountData extends Factory {
         let energyAccount: EnergyAccountDetailV2 = {
             creationDate: Helper.randomDateTimeInThePast(),
             plans: [],
-            accountId: Helper.randomId()
+            accountId: uuidv4()
         };
         let displayName = Helper.randomBoolean(null) ? "Display name" : null;
         // 80% probability that an account number exists
@@ -359,11 +360,10 @@ export class CreateEnergyAccountData extends Factory {
                     tariff.timeVaryingTariffs.timeVariations.forEach(variation => {
                         if (Math.random() > 0.5) variation.startTime = Helper.randomDateTimeInThePast();
                         if (Math.random() > 0.5) variation.endTime = Helper.randomDateTimeInTheFuture();
-                        let days: any[] = [];
+                        let days: SolarFeedDays[] = [];
                         let dayCount: number = Math.ceil(Math.random() * 5);
-                        for(let i = 0; i < dayCount; i++) days.push({});
+                        for(let i = 0; i < dayCount; i++) days.push(RandomEnergy.SolarFeedDays());                   
                         variation.days = days;
-                        variation.days.forEach(day => {day = RandomEnergy.SolarFeedDays()})
                     })
                 }
             }
@@ -376,11 +376,12 @@ export class CreateEnergyAccountData extends Factory {
 
         let result: EnergyPlanGreenPowerCharges[] = [];
         for (let i = 0; i < greenCnt; i++) {
+            let chargeType = RandomEnergy.PowerChargeType();
             let greenPowerCharges: EnergyPlanGreenPowerCharges = {
                 displayName: `Energy Green Power Charge ${i}`,
                 scheme: RandomEnergy.PowerScheme(),
                 tiers: [],
-                type: RandomEnergy.PowerChargeType()
+                type: chargeType
             }
             let rateCnt: number = Math.ceil(Math.random() * 3);
             let percCentageRates: number[] = [];
@@ -395,8 +396,15 @@ export class CreateEnergyAccountData extends Factory {
             let idx: number = 0;
             greenPowerCharges.tiers.forEach(elem => {
                 elem.percentGreen = percCentageRates[idx].toString();
-                if (Math.random() > 0.5) elem.amount = generateRandomDecimalInRangeFormatted(0.5, 2.5, 2);
-                if (Math.random() > 0.5) elem.rate = generateRandomDecimalInRangeFormatted(0.5, 2.5, 2);
+                if (Math.random() > 0.5 && 
+                    (chargeType == PowerChargeType.PERCENT_OF_BILL
+                    || chargeType == PowerChargeType.PERCENT_OF_USE)) elem.rate = generateRandomDecimalInRangeFormatted(0.5, 2.5, 2);
+                if (Math.random() > 0.5 &&
+                    (chargeType == PowerChargeType.FIXED_PER_DAY
+                     ||chargeType == PowerChargeType.FIXED_PER_WEEK
+                     ||chargeType == PowerChargeType.FIXED_PER_MONTH
+                     ||chargeType == PowerChargeType.FIXED_PER_UNIT ))
+                    elem.amount = generateRandomDecimalInRangeFormatted(0.5, 2.5, 2);
                 idx++;
             })
             result.push(greenPowerCharges);
@@ -444,11 +452,11 @@ export class CreateEnergyAccountData extends Factory {
             if (methodUType == MethodUType.fixedAmount) {
                 let fixedAmt: any = {};
                 planDiscount.fixedAmount = fixedAmt;
-                if (planDiscount.fixedAmount) planDiscount.fixedAmount.rate = generateRandomDecimalInRangeFormatted(0.3, 4.0, 2);
+                if (planDiscount.fixedAmount) planDiscount.fixedAmount.amount = generateRandomDecimalInRangeFormatted(0.3, 4.0, 2);
             }
             if (methodUType == MethodUType.percentOverThreshold) {
                 let percOver: any = {};
-                planDiscount.fixedAmount = percOver;
+                planDiscount.percentOverThreshold = percOver;
                 if (planDiscount.percentOverThreshold) planDiscount.percentOverThreshold.rate = generateRandomDecimalInRangeFormatted(0.3, 4.0, 2);
                 if (planDiscount.percentOverThreshold) planDiscount.percentOverThreshold.usageAmount = generateRandomDecimalInRangeFormatted(10, 100, 2);
             }

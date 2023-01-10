@@ -1,10 +1,11 @@
-import {  EnergyServicePoint} from "consumer-data-standards/energy";
+import {  EnergyDerRecord, EnergyServicePoint, EnergyUsageRead} from "consumer-data-standards/energy";
 import { EnergyServicePointWrapper } from "src/logic/schema/cdr-test-data-schema";
-import { OpenStatus, RandomCommon, RandomEnergy, ServicePointConsumerClassification, ServicePointStatus } from  '../../random-generators';
+import { AcEquipmentType, OpenStatus, RandomCommon, RandomEnergy, ServicePointConsumerClassification, ServicePointStatus } from  '../../random-generators';
 import { Factory, FactoryOptions, Helper } from "../../logic/factoryService";
 import { EnergyServicePointDetail } from "consumer-data-standards/energy_sdh";
 import Utils from "../common/utils";
 import { faker } from "@faker-js/faker";
+import { v4 as uuidv4 } from 'uuid';
 
 const factoryId: string = "create-energy-service-points";
 
@@ -43,7 +44,7 @@ export class CreateEnergyServicePoints extends Factory {
             lastUpdateDateTime: updateTime,
             nationalMeteringId: id,
             servicePointClassification: RandomEnergy.ServicePointClassification(),
-            servicePointId: Helper.randomId(),
+            servicePointId: uuidv4(),
             servicePointStatus: status,
             validFromDate: Helper.randomDateTimeBeforeDateString(updateTime),
             distributionLossFactor: {
@@ -80,8 +81,12 @@ export class CreateEnergyServicePoints extends Factory {
             meters.push(meter);
         }
         sp.meters = meters;
+        let der = this.generateDERData(sp.servicePointId);
+        let usage = this.generateUsage(sp.servicePointId);
         let spw: EnergyServicePointWrapper = {
-            servicePoint: sp
+            servicePoint: sp,
+            der: der,
+            usage: usage
         }
         return  spw;
     }
@@ -99,4 +104,90 @@ export class CreateEnergyServicePoints extends Factory {
         }
         return ret;
     }
+
+    private generateDERData(id: string): EnergyDerRecord {
+        let capacity = Helper.generateRandomIntegerInRange(0,1000);
+        let availablePhases = Helper.generateRandomIntegerInRange(0,3);
+        let installedPhases = Helper.generateRandomIntegerInRange(0,3);
+        let der: EnergyDerRecord = {
+            acConnections: [],
+            approvedCapacity: capacity,
+            availablePhasesCount: availablePhases,
+            installedPhasesCount: installedPhases,
+            islandableInstallation: false,
+            servicePointId: id
+        }
+        if (capacity == 0 || availablePhases == 0 || installedPhases == 0)
+            return der;
+        else {
+            let hasCentralProtectionControl = Math.random() > 0.25;
+            if (Math.random() > 0) der.hasCentralProtectionControl = hasCentralProtectionControl;
+            if (hasCentralProtectionControl) {
+                der.protectionMode = {
+                    exportLimitKva: Helper.generateRandomIntegerInRange(10,500),
+                    underFrequencyProtection: parseFloat(Helper.generateRandomDecimalInRange(48.5, 49.8, 2)),
+                    underFrequencyProtectionDelay: parseFloat(Helper.generateRandomDecimalInRange(0.05, 1.5, 2)),
+                    overFrequencyProtection: parseFloat(Helper.generateRandomDecimalInRange(50.1, 51.1, 2)),
+                    overFrequencyProtectionDelay: parseFloat(Helper.generateRandomDecimalInRange(0.05, 1.5, 2)),
+                    underVoltageProtection: parseFloat(Helper.generateRandomDecimalInRange(230, 239, 2)),
+                    underVoltageProtectionDelay: parseFloat(Helper.generateRandomDecimalInRange(0.05, 1.5, 2)),
+                    overVoltageProtection: parseFloat(Helper.generateRandomDecimalInRange(241, 250, 2)),
+                    overVoltageProtectionDelay: parseFloat(Helper.generateRandomDecimalInRange(0.05, 1.5, 2)),
+                    sustainedOverVoltage: parseFloat(Helper.generateRandomDecimalInRange(241, 250, 2)),
+                    sustainedOverVoltageDelay: parseFloat(Helper.generateRandomDecimalInRange(0.05, 1.5, 2)),
+                    voltageVectorShift: parseFloat(Helper.generateRandomDecimalInRange(25, 70, 2)),
+                    frequencyRateOfChange: parseFloat(Helper.generateRandomDecimalInRange(5, 15, 2)),
+                    neutralVoltageDisplacement: parseFloat(Helper.generateRandomDecimalInRange(241, 250, 2)),
+                    interTripScheme: 'from local substation'
+                }
+            }
+            let equipmentType: AcEquipmentType = RandomEnergy.AcEquipmentType();
+            let acConnections: any[] = [];
+            let cnt = Helper.generateRandomIntegerInRange(1,5);
+            for(let i = 0; i < cnt; i++) {
+                let ac: any = {
+                    connectionId: uuidv4(),
+                    commissioningDate: Helper.randomTimeInThePast(),
+                    connectionIdentifier: 0,
+                    count: 1,
+                    derDevices: [],
+                    status: "ACTIVE"
+                }
+                ac.equipmentType = equipmentType;
+                if (equipmentType == AcEquipmentType.INVERTER) ac.manufacturerName = faker.company.name();
+                if (equipmentType == AcEquipmentType.INVERTER) ac.series = faker.lorem.slug();
+                if (equipmentType == AcEquipmentType.INVERTER) ac.status = RandomEnergy.AcInverterStatus();
+                if (equipmentType == AcEquipmentType.INVERTER) ac.inverterDeviceCapacity = Helper.generateRandomIntegerInRange(100,10000);
+                // let derDeviceType = RandomEnergy.DerDeviceType();
+                // let derDevices: any = {
+
+                // }
+                acConnections.push(ac)
+            }
+            der.acConnections = acConnections;
+            acConnections
+            return der;
+        }
+    }
+
+    private createAcConnections(): any[] {
+        return [];
+
+    }
+
+    private generateUsage(id: string): EnergyUsageRead[] {
+        let usageList: EnergyUsageRead[] = [];
+        let cnt = Helper.generateRandomIntegerInRange(1,5);
+        for (let i = 0; i < cnt; i++) {
+            let usage: EnergyUsageRead = {
+                readStartDate: "",
+                readUType: "basicRead",
+                registerSuffix: "",
+                servicePointId: id
+            }
+            usageList.push(usage);
+        }
+        return usageList;
+    }
 }
+
