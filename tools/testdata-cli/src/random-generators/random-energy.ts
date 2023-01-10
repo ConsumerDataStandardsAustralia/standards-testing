@@ -264,7 +264,7 @@ export enum AcInverterStatus {
 
 export enum DerDeviceType {
     FOSSIL = "FOSSIL" , HYDRO = "HYDRO" , WIND = "WIND" , SOLAR_PV = "SOLAR_PV" , 
-    RENEWABLE = "RENEWABLE" , GEOTHERMAL = "GEOTHERMAL" , STORAGE = "STORAGE" , OTHER = "OTHER";
+    RENEWABLE = "RENEWABLE" , GEOTHERMAL = "GEOTHERMAL" , STORAGE = "STORAGE" , OTHER = "OTHER"
 }
 
 export class RandomEnergy {

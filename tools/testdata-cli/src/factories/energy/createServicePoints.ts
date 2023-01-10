@@ -1,6 +1,6 @@
 import {  EnergyDerRecord, EnergyServicePoint, EnergyUsageRead} from "consumer-data-standards/energy";
 import { EnergyServicePointWrapper } from "src/logic/schema/cdr-test-data-schema";
-import { AcEquipmentType, OpenStatus, RandomCommon, RandomEnergy, ServicePointConsumerClassification, ServicePointStatus } from  '../../random-generators';
+import { AcEquipmentType, DerDeviceType, OpenStatus, RandomCommon, RandomEnergy, ServicePointConsumerClassification, ServicePointStatus } from  '../../random-generators';
 import { Factory, FactoryOptions, Helper } from "../../logic/factoryService";
 import { EnergyServicePointDetail } from "consumer-data-standards/energy_sdh";
 import Utils from "../common/utils";
@@ -148,31 +148,39 @@ export class CreateEnergyServicePoints extends Factory {
                 let ac: any = {
                     connectionId: uuidv4(),
                     commissioningDate: Helper.randomTimeInThePast(),
-                    connectionIdentifier: 0,
+                    connectionIdentifier: uuidv4(),
                     count: 1,
                     derDevices: [],
-                    status: "ACTIVE"
+                    status: RandomEnergy.AcInverterStatus()
                 }
                 ac.equipmentType = equipmentType;
                 if (equipmentType == AcEquipmentType.INVERTER) ac.manufacturerName = faker.company.name();
                 if (equipmentType == AcEquipmentType.INVERTER) ac.series = faker.lorem.slug();
                 if (equipmentType == AcEquipmentType.INVERTER) ac.status = RandomEnergy.AcInverterStatus();
                 if (equipmentType == AcEquipmentType.INVERTER) ac.inverterDeviceCapacity = Helper.generateRandomIntegerInRange(100,10000);
-                // let derDeviceType = RandomEnergy.DerDeviceType();
-                // let derDevices: any = {
-
-                // }
+                let derDeviceType = RandomEnergy.DerDeviceType();
+                let derDeviceCnt = Helper.generateRandomIntegerInRange(1,5);
+                let derDevices: any[] = []
+                for(let i = 0; i < derDeviceCnt; i++) {
+                    let device: any = {};
+                    device.deviceIdentifier = uuidv4();
+                    device.count = Helper.generateRandomIntegerInRange(1,5);
+                    device.manufacturer = faker.company.name();
+                    device.modelNumber = 'ABC';
+                    device.type = derDeviceType;
+                    device.status = RandomEnergy.AcInverterStatus();
+                    device.subtype = RandomEnergy.DerDeviceType();
+                    device.nominalRatedCapacity = Helper.generateRandomIntegerInRange(10,500);
+                    if (derDeviceType == DerDeviceType.STORAGE) device.nominalStorageCapacity =  Helper.generateRandomIntegerInRange(10,1000);
+                    derDevices.push(device)
+                }
+                ac.derDevices = derDevices;
                 acConnections.push(ac)
             }
             der.acConnections = acConnections;
             acConnections
             return der;
         }
-    }
-
-    private createAcConnections(): any[] {
-        return [];
-
     }
 
     private generateUsage(id: string): EnergyUsageRead[] {
