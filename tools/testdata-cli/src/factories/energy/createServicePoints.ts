@@ -1,11 +1,12 @@
 import {  EnergyDerRecord, EnergyServicePoint, EnergyUsageRead} from "consumer-data-standards/energy";
 import { EnergyServicePointWrapper } from "src/logic/schema/cdr-test-data-schema";
-import { AcEquipmentType, DerDeviceType, OpenStatus, RandomCommon, RandomEnergy, ServicePointConsumerClassification, ServicePointStatus } from  '../../random-generators';
+import { AcEquipmentType, DerDeviceType, OpenStatus, RandomCommon, RandomEnergy, ReadUTYpe, ServicePointConsumerClassification, ServicePointStatus } from  '../../random-generators';
 import { Factory, FactoryOptions, Helper } from "../../logic/factoryService";
 import { EnergyServicePointDetail } from "consumer-data-standards/energy_sdh";
 import Utils from "../common/utils";
 import { faker } from "@faker-js/faker";
 import { v4 as uuidv4 } from 'uuid';
+import { read } from "fs";
 
 const factoryId: string = "create-energy-service-points";
 
@@ -50,7 +51,7 @@ export class CreateEnergyServicePoints extends Factory {
             distributionLossFactor: {
                 code: 'ABCFR',
                 description: "Mandatory dscription for distribution loss factor",
-                lossValue: ""
+                lossValue: Helper.generateRandomDecimalInRange(12, 25, 2)
             },
             location: address,
             relatedParticipants: relatedParticipants
@@ -185,13 +186,34 @@ export class CreateEnergyServicePoints extends Factory {
 
     private generateUsage(id: string): EnergyUsageRead[] {
         let usageList: EnergyUsageRead[] = [];
+        let readType = RandomEnergy.ReadUTYpe();
         let cnt = Helper.generateRandomIntegerInRange(1,5);
         for (let i = 0; i < cnt; i++) {
             let usage: EnergyUsageRead = {
-                readStartDate: "",
-                readUType: "basicRead",
+                readStartDate: Helper.randomDateTimeInThePast(),
+                readUType: readType,
                 registerSuffix: "",
                 servicePointId: id
+            }
+            if (readType == ReadUTYpe.basicRead){
+                usage.basicRead = {
+                    value: parseFloat(Helper.generateRandomDecimalInRange(-10, 100)),              
+                };
+                if (Math.random() > 0.5) usage.basicRead.quality = RandomEnergy.ReadQuality();
+            }
+            if (readType == ReadUTYpe.intervalRead){
+                usage.intervalRead = {
+                    aggregateValue: parseFloat(Helper.generateRandomDecimalInRange(-10, 100)),
+                }
+                usage.intervalRead.readIntervalLength = Helper.generateRandomIntegerInRange(5,120);
+
+                let cnt = Helper.generateRandomIntegerInRange(2,5);
+                let  readQualities: any[] = [];               
+                for (let i = 0; i < cnt; i++) {
+                    readQualities.push({startInterval: i+1, endInterval: i+2, quality: RandomEnergy.ReadQuality()})
+                }
+                usage.intervalRead.readQualities = readQualities;
+
             }
             usageList.push(usage);
         }

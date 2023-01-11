@@ -267,6 +267,14 @@ export enum DerDeviceType {
     RENEWABLE = "RENEWABLE" , GEOTHERMAL = "GEOTHERMAL" , STORAGE = "STORAGE" , OTHER = "OTHER"
 }
 
+export  enum ReadUTYpe {
+    basicRead = "basicRead", intervalRead = "intervalRead"
+}
+
+export enum ReadQuality {
+    ACTUAL = "ACTUAL", SUBSTITUTE = "SUBSTITUTE", FINAL_SUBSTITUTE = "FINAL_SUBSTITUTE"
+}
+
 export class RandomEnergy {
 
     public static GetRandomValue(enumeration: any) {
@@ -448,5 +456,13 @@ export class RandomEnergy {
     
     public static DerDeviceType(): any {
         return this.GetRandomValue(DerDeviceType)
+    } 
+    
+    public static ReadQuality(): any {
+        return this.GetRandomValue(ReadQuality)
+    } 
+    
+    public static ReadUTYpe(): any {
+        return this.GetRandomValue(ReadUTYpe)
     }     
 }
