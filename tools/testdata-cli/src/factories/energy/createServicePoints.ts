@@ -212,7 +212,7 @@ export class CreateEnergyServicePoints extends Factory {
                 for (let i = 0; i < cnt; i++) {
                     readQualities.push({startInterval: i+1, endInterval: i+2, quality: RandomEnergy.ReadQuality()})
                 }
-                usage.intervalRead.readQualities = readQualities;
+                //usage.intervalRead.readQualities = readQualities;
 
             }
             usageList.push(usage);

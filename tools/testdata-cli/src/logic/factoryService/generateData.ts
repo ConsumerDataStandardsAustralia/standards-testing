@@ -717,7 +717,7 @@ function generateDetailedBankAccounts(options: Options, accountOptions: any, cus
 
 function getServicePointsForAllAcounts(accounts: EnergyAccountWrapper[]): string[] {
   let sp: string[] = [];
-  accounts.forEach(account => {
+  accounts?.forEach(account => {
     let electricitySp = account.account.plans.find(x => x.planDetail?.electricityContract)?.servicePointIds;
     if(electricitySp != undefined) {sp.push(...electricitySp)}
   })
@@ -753,7 +753,7 @@ function generateCustomerEnergyData(options: Options, energyOptions: any, custom
 
   // extract the service point ids from the active service points
   let activeServicePoints: string[] = getServicePointsForAllAcounts(result.accounts as EnergyAccountWrapper[]);
-  result.accounts.forEach((acc:EnergyAccountWrapper) => {
+  result?.accounts?.forEach((acc:EnergyAccountWrapper) => {
     if (acc.account.openStatus == OpenStatus.OPEN ) {
         acc.account.plans.forEach((p:any) => {
           if (p?.servicePoints?.length > 0)

@@ -4,7 +4,6 @@ import { Factory, FactoryOptions, Helper } from '../../logic/factoryService'
 import { faker } from '@faker-js/faker';
 import { CommonEmailAddress, CommonOrganisationDetailV2, CommonPAFAddress, CommonPersonDetailV2, CommonPhoneNumber, CommonPhysicalAddressWithPurpose } from 'consumer-data-standards/common';
 import { AddressPurpose, generateRandomDecimalInRangeFormatted, OrganisationType, PostalDeliveryType, RandomCommon } from '../../random-generators';
-import { randomBytes } from 'crypto';
 import  Utils from './utils';
 
 const factoryId: string = "create-customers";
