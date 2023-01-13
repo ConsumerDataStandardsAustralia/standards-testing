@@ -106,7 +106,7 @@ export abstract class Factory {
   public generateEnergyServicePoints(activeServicePoints: string[]): EnergyServicePointWrapper[] | undefined { return }
 
   public canCreateEnergyDER(): boolean { return false; };
-  public generateEnergyDER(servicePoint: EnergyServicePointWrapper): EnergyDerRecord[] | undefined { return }
+  public generateEnergyDER(servicePoint: EnergyServicePointWrapper): EnergyDerRecord | undefined { return }
 
   public canCreateEnergyUsage(): boolean { return false; };
   public generateEnergyUsage(servicePoint: EnergyServicePointWrapper): EnergyUsageRead[] | undefined { return }

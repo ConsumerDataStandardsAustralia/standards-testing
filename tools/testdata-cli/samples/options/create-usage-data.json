@@ -1,0 +1,41 @@
+{
+    "factories": {
+        "holders": [
+            {
+                "count": 1,
+                "holderFactory": {
+                    "id": "create-holder"
+                },
+                "authenticated": {
+                    "customers": [
+                        {
+                            "count": 1,
+                            "customerFactory": {
+                                "id": "create-customers",
+                                "options": {
+                                    "type": "organisation"
+                                }
+                            },
+                            "energy": {
+                                "servicePoints": [
+                                    {
+                                        "count": 10,
+                                        "servicePointFactory": {
+                                            "id": "create-energy-service-points"
+                                        },
+                                        "usageFactory": {
+                                            "id": "create-energy-usage",
+                                            "options": {
+                                                "count": 30
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

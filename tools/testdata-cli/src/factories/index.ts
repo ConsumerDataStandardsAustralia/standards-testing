@@ -35,9 +35,17 @@ factories[CreateEnergyAccountData.id] = (options: any): Factory => { return new 
 import { CreateEnergyInvoiceData} from './energy/createEnergyInvoiceData';
 factories[CreateEnergyInvoiceData.id] = (options: any): Factory => { return new CreateEnergyInvoiceData(options) }
 
-// create energy invoice data
+// create energy service data
 import { CreateEnergyServicePoints} from './energy/createServicePoints';
 factories[CreateEnergyServicePoints.id] = (options: any): Factory => { return new CreateEnergyServicePoints(options) }
+
+// create der data
+import { CreateDerData} from './energy/createDERData';
+factories[CreateDerData.id] = (options: any): Factory => { return new CreateDerData(options) }
+
+// create energy usage data
+import { CreateEnergyUsage} from './energy/createEnergyUsage';
+factories[CreateEnergyUsage.id] = (options: any): Factory => { return new CreateEnergyUsage(options) }
 
 export * from './common/utils';
 

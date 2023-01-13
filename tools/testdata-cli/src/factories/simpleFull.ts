@@ -823,12 +823,11 @@ This factory supports the follow option fields:
   }
 
   public canCreateEnergyDER(): boolean { return true; };
-  public generateEnergyDER(servicePoint: EnergyServicePointWrapper): EnergyDerRecord[] | undefined {
+  public generateEnergyDER(servicePoint: EnergyServicePointWrapper): EnergyDerRecord | undefined {
     let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
-    let ret: EnergyDerRecord[] = [];
-    for (let i = 0; i < count; i++) {
-      ret.push({
+    let ret: any = 
+      {
         servicePointId: servicePoint.servicePoint?.servicePointId,
         approvedCapacity: 0,
         availablePhasesCount: 1,
@@ -878,7 +877,6 @@ This factory supports the follow option fields:
             ]
           }
         ]
-      });
     }
     return ret;
   }
