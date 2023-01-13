@@ -28,7 +28,7 @@
                             "energy": {
                                 "accounts": [
                                     {
-                                        "count": 250,
+                                        "count": 1,
                                         "accountFactory": {
                                             "id": "create-energy-account-data"
                                         },
