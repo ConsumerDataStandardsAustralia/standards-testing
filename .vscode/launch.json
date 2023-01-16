@@ -1,0 +1,96 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Debug Create Customer Data",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/tools/testdata-cli/dist/cli.js",
+            "args": [
+                "generate",
+                "${workspaceFolder}/tools/testdata-cli/samples/options/create-customers.json",
+                "${workspaceFolder}/tools/testdata-cli/samples/output/my-created-customers.json",
+            ],
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Debug Create Energy Account Data",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/tools/testdata-cli/dist/cli.js",
+            "args": [
+                "generate",
+                "${workspaceFolder}/tools/testdata-cli/samples/options/create-energy-accounts.json",
+                "${workspaceFolder}/tools/testdata-cli/samples/output/my-created-energy-accounts.json",
+            ],
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Debug Create Service Point Data",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/tools/testdata-cli/dist/cli.js",
+            "args": [
+                "generate",
+                "${workspaceFolder}/tools/testdata-cli/samples/options/create-service-point-data.json",
+                "${workspaceFolder}/tools/testdata-cli/samples/output/my-created-service-point-data.json",
+            ],
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        } ,
+        
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Debug Create DER Data",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/tools/testdata-cli/dist/cli.js",
+            "args": [
+                "generate",
+                "${workspaceFolder}/tools/testdata-cli/samples/options/create-der-data.json",
+                "${workspaceFolder}/tools/testdata-cli/samples/output/my-created-der-data.json",
+            ],
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        } ,
+        
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Debug Create Energy Usage Data",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/tools/testdata-cli/dist/cli.js",
+            "args": [
+                "generate",
+                "${workspaceFolder}/tools/testdata-cli/samples/options/create-usage-data.json",
+                "${workspaceFolder}/tools/testdata-cli/samples/output/my-created-usage-data.json",
+            ],
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        }           
+
+    ]
+}
