@@ -32,7 +32,8 @@
                                         "accountFactory": {
                                             "id": "create-energy-account-data",
                                             "options": {
-                                                "fuelType": "ELECTRICITY"
+                                                "fuelType": "ELECTRICITY",
+                                                "status": "OPEN"
                                             }
                                         },
                                         "invoicesFactory": {
@@ -40,18 +41,53 @@
                                             "options": {
                                                 "count": 5,
                                                 "minInvoiceAmount": 10,
-                                                "maxInvoiceAmount": 200
+                                                "maxInvoiceAmount": 10000
                                             }
                                         }
-                                    }
+                                    },
+                                    {
+                                        "count": 5,
+                                        "accountFactory": {
+                                            "id": "create-energy-account-data",
+                                            "options": {
+                                                "fuelType": "GAS",
+                                                "status": "CLOSED"
+                                            }
+                                        },
+                                        "invoicesFactory": {
+                                            "id": "create-energy-invoice-data",
+                                            "options": {
+                                                "count": 10,
+                                                "minInvoiceAmount": 25,
+                                                "maxInvoiceAmount": 75
+                                            }
+                                        }
+                                    }                                    
                                 ],
                                 "servicePoints": [
                                     {
-                                    "count": 2,    
+                                    "count": 10,    
                                     "servicePointFactory": {
                                         "id": "create-energy-service-points"
                                         }
+                                    },
+                                    {
+                                        "derFactory": {
+                                            "id": "create-der-data",
+                                            "options": {
+                                                "count": 5
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "usageFactory": {
+                                            "id": "create-energy-usage",
+                                            "options": {
+                                                "count": 30
+                                            }
+                                        }
                                     }
+      
                                 ]                                
                             }
                         }

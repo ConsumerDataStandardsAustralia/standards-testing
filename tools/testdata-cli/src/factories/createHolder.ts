@@ -17,7 +17,7 @@ export class CreateHolder extends Factory {
     public get detailedDescription(): string {
         return "A single data holde with all the details";
     }
-  
+    public canCreateHolders(): boolean { return true; };
     public canCreateHolder(): boolean { return true; };
     public generateHolder(): HolderWrapper | undefined {
        let result : HolderWrapper = {
@@ -29,4 +29,15 @@ export class CreateHolder extends Factory {
          }      
        return result;
     }
+
+    public generateHolders(): HolderWrapper[] | undefined {
+      let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
+        
+      let ret: HolderWrapper[] = [];
+      for (let i = 0; i < count; i++) {
+        const el = this.generateHolder();
+        if (el) ret.push(el);
+      }
+      return ret;
+   }
 }

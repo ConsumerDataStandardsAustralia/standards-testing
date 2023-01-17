@@ -3,6 +3,7 @@ import { CustomerWrapper, EnergyAccountWrapper } from 'src/logic/schema/cdr-test
 import { Days,  EnergyDiscountType, EnergyOpenStatus, FeeTerm, FuelType, generateRandomDecimalInRangeFormatted, generateRandomNumericInRangeFormatted, MethodUType, OpenStatus,PowerChargeType,PricingModel, RandomEnergy, RateBlockUType, SolarFeedDays, SolarTariffUType } from '../../random-generators';
 import { Factory, FactoryOptions, Helper } from '../../logic/factoryService'
 import { v4 as uuidv4 } from 'uuid';
+import { faker } from '@faker-js/faker';
 
 const factoryId: string = "create-energy-account-data";
 
@@ -139,7 +140,7 @@ Key values randomly allocated:
         let authorisedContacts: any[] = [];
         for(let i = 0; i < cnt; i++) {
             let contact: any = {
-                lastName: `Smithers ${i}`
+                lastName: faker.name.lastName()
             }
             authorisedContacts.push(contact)
         }
