@@ -9,13 +9,24 @@ export class CreateEnergyInvoiceData extends Factory {
 
     constructor(options: FactoryOptions) {
         super(options, factoryId);
+        this.minInvoiceAmount  = options?.options?.minInvoiceAount ?  options?.options?.minInvoiceAount as number : 10;
+        this.maxInvoiceAmount  = options?.options?.maxInvoiceAmount ?  options?.options?.maxInvoiceAmount as number : 1000;
     }
 
+    private minInvoiceAmount: number;
+    private maxInvoiceAmount: number;
+
     public get briefDescription(): string {
-        throw new Error("Method not implemented.");
+        return "Create a number of energy invoices for an energy account ";
     }
     public get detailedDescription(): string {
-        throw new Error("Method not implemented.");
+        let st = `This library will accept the following options:\n
+        count:\tThe number of invoices to be issued for each account
+        minInvoiceAmount:\tThe minimum amount for each invoice (default: 10)
+        maxInvoiceAmount:\tThe maximum amount for each invoice (default: 1000) \n
+Key values randomly allocated:
+        The payment status for the each invoice\n`
+        return st;
     }
 
     public static id: string = factoryId;
@@ -35,7 +46,7 @@ export class CreateEnergyInvoiceData extends Factory {
             servicePoints: this.generateServicePointArray(account)
         }
         if (Math.random() > 0.5) invoice.dueDate = Helper.randomDateTimeAfterDateString(issueDate);
-        let invoiceAmount = Helper.generateRandomDecimalInRange(10, 1000);
+        let invoiceAmount = Helper.generateRandomDecimalInRange(this.minInvoiceAmount, this.maxInvoiceAmount);
         let gstAmount = (parseFloat(invoiceAmount)* 0.1).toFixed(2);
         if (Math.random() > 0.5) {
             invoice.invoiceAmount = invoiceAmount;
@@ -49,7 +60,7 @@ export class CreateEnergyInvoiceData extends Factory {
             invoice.payOnTimeDiscount = {
                 discountAmount:  discountAomunt,
                 gstAmount: gstAmount,
-                date:  ''
+                date:  invoice.dueDate ? Helper.randomDateTimeBeforeDateString(invoice.dueDate) : Helper.randomDateTimeInThePast()
             }
         }
 
@@ -64,7 +75,7 @@ export class CreateEnergyInvoiceData extends Factory {
             invoice.gas = gasUsageCharges;
 
         }
-        if (this.accountHasElectricityContract(account)) {
+        if (this.accountHasElectricityContract(account)) {         
             let electricityUsageCharges: EnergyInvoiceElectricityUsageCharges = this.generateElectricityUsageCharges();
             invoice.electricity = electricityUsageCharges;
             invoice.accountCharges = this.generateAccountCharges();
@@ -99,28 +110,53 @@ export class CreateEnergyInvoiceData extends Factory {
 
     private generateGasUsageCharges(): EnergyInvoiceGasUsageCharges {
         let charges: EnergyInvoiceGasUsageCharges = {
-            totalGenerationCredits: "",
-            totalOnceOffCharges: "",
-            totalOnceOffDiscounts: "",
-            totalUsageCharges: ""
+            totalGenerationCredits: Helper.generateRandomDecimalInRange(100, 200),
+            totalOnceOffCharges: Helper.generateRandomDecimalInRange(100, 200),
+            totalOnceOffDiscounts: Helper.generateRandomDecimalInRange(100, 200),
+            totalUsageCharges: Helper.generateRandomDecimalInRange(100, 200)
         }
-        return charges;
+        if (Math.random()> 0.5) {
+            let otherCharges: any = {
+                amount: Helper.generateRandomDecimalInRange(100, 200),
+                description: 'Mandatory description for other charges'
+            };
+            if (Math.random()> 0.25) otherCharges.type = RandomEnergy.OtherUsageChargesType();
+            charges.otherCharges = otherCharges;
+        }
+        if (Math.random()> 0.25) {
+            let gst = parseFloat(charges.totalUsageCharges) * 0.1;
+            charges.totalGst = gst.toFixed(2)
+        }
+        return charges;  
     }
 
     private generateElectricityUsageCharges() : EnergyInvoiceElectricityUsageCharges{
         let charges: EnergyInvoiceElectricityUsageCharges = {
-            totalGenerationCredits: "",
-            totalOnceOffCharges: "",
-            totalOnceOffDiscounts: "",
-            totalUsageCharges: ""
+            totalGenerationCredits: Helper.generateRandomDecimalInRange(100, 200),
+            totalOnceOffCharges: Helper.generateRandomDecimalInRange(100, 200),
+            totalOnceOffDiscounts: Helper.generateRandomDecimalInRange(100, 200),
+            totalUsageCharges: Helper.generateRandomDecimalInRange(100, 200)
+        }
+
+        if (Math.random()> 0.5) {
+            let otherCharges: any = {
+                amount: Helper.generateRandomDecimalInRange(100, 200),
+                description: 'Mandatory description for other charges'
+            };
+            if (Math.random()> 0.25) otherCharges.type = RandomEnergy.OtherUsageChargesType();
+            charges.otherCharges = otherCharges;
+        }
+        if (Math.random()> 0.25) {
+            let gst = parseFloat(charges.totalUsageCharges) * 0.1;
+            charges.totalGst = gst.toFixed(2)
         }
         return charges;     
     }
 
     private generateAccountCharges(): EnergyInvoiceAccountCharges {
         let charges: EnergyInvoiceAccountCharges = {
-            totalCharges: "",
-            totalDiscounts: ""
+            totalCharges: Helper.generateRandomDecimalInRange(100, 200),
+            totalDiscounts: Helper.generateRandomDecimalInRange(100, 200)
         }
         return charges;
     }

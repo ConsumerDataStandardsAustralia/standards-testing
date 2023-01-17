@@ -1,5 +1,5 @@
 import { BankingBalance, BankingDirectDebit, BankingPayeeDetailV2, BankingProductV4, BankingScheduledPayment, BankingTransaction } from 'consumer-data-standards/banking';
-import { EnergyConcession, EnergyDerRecord, EnergyInvoice, EnergyPaymentSchedule, EnergyPlan, EnergyUsageRead } from 'consumer-data-standards/energy';
+import { EnergyConcession, EnergyDerRecord, EnergyInvoice, EnergyPaymentSchedule, EnergyPlan, EnergyPlanDetail, EnergyUsageRead } from 'consumer-data-standards/energy';
 import { RegisterDataRecipient } from 'consumer-data-standards/register';
 import { OptionsGeneral } from '../options';
 import { AdminOutage, AdminStatus, BankAccountWrapper, Client, ConsumerDataRightTestDataJSONSchema, CustomerWrapper, EnergyAccountBalance, EnergyAccountWrapper, EnergyServicePointWrapper, EnergyTransaction, Holders, HolderWrapper } from '../schema/cdr-test-data-schema';
@@ -97,7 +97,7 @@ export abstract class Factory {
 
   // Energy
   public canCreateEnergyPlans(): boolean { return false; };
-  public generateEnergyPlans(): EnergyPlan[] | undefined { return }
+  public generateEnergyPlans(): EnergyPlanDetail[] | undefined { return }
 
   public canCreateEnergyServicePoint(): boolean { return false; };
   public generateEnergyServicePoint(servicePointId: string | undefined): EnergyServicePointWrapper | undefined { return }

@@ -23,12 +23,14 @@ export class CreateCustomers extends Factory {
         return "Create a set  of customers";
     }
     public get detailedDescription(): string { 
-        return `A set of customers with all the details
-                This factory supports the follow option fields:
+        return `Generates set of customers with all the details
+This factory supports the follow option fields:
 
-                type     The type must be either 'person' or 'organisation'. This will determine if a 
-                         CommonPersonDetail or a CommonOrganisationDetail structue will be created.
-        `;
+  type:    The type must be either 'person' or 'organisation'. This will determine if a 
+            CommonPersonDetail or a CommonOrganisationDetail structure will be created.
+
+The names, addresses, and person details are randomised but realistic values.
+`;
     }
   
     public canCreateCustomer(): boolean { return true; };

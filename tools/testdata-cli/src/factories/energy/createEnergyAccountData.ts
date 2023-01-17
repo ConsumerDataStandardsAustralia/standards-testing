@@ -1,6 +1,6 @@
 import { EnergyAccountDetailV2, EnergyPlanContract,  EnergyPlanControlledLoad, EnergyPlanDiscounts, EnergyPlanEligibility, EnergyPlanFees, EnergyPlanGreenPowerCharges, EnergyPlanIncentives, EnergyPlanSolarFeedInTariff, EnergyPlanTariffPeriod } from 'consumer-data-standards/energy';
 import { CustomerWrapper, EnergyAccountWrapper } from 'src/logic/schema/cdr-test-data-schema';
-import { Days,  EnergyDiscountType, FeeTerm, FuelType, generateRandomDecimalInRangeFormatted, generateRandomNumericInRangeFormatted, MethodUType, OpenStatus,PowerChargeType,PricingModel, RandomEnergy, RateBlockUType, SolarFeedDays, SolarTariffUType } from '../../random-generators';
+import { Days,  EnergyDiscountType, EnergyOpenStatus, FeeTerm, FuelType, generateRandomDecimalInRangeFormatted, generateRandomNumericInRangeFormatted, MethodUType, OpenStatus,PowerChargeType,PricingModel, RandomEnergy, RateBlockUType, SolarFeedDays, SolarTariffUType } from '../../random-generators';
 import { Factory, FactoryOptions, Helper } from '../../logic/factoryService'
 import { v4 as uuidv4 } from 'uuid';
 
@@ -10,7 +10,34 @@ export class CreateEnergyAccountData extends Factory {
 
     constructor(options: FactoryOptions) {
         super(options, factoryId);
+        let optFuelType = options?.options?.fuelType ? options?.options?.fuelType: FuelType.DUAL;
+        switch (optFuelType) {
+            case FuelType.ELECTRICITY: 
+                this.fuelType = FuelType.ELECTRICITY;
+                break;
+            case FuelType.GAS: 
+                this.fuelType = FuelType.GAS;
+                break;
+            case FuelType.DUAL: 
+                this.fuelType = FuelType.DUAL;
+                break;
+            default:  this.fuelType = FuelType.DUAL;                       
+        }
+        let status = options?.options?.status ? options?.options?.status: null;
+        switch (status) {
+            case EnergyOpenStatus.OPEN: 
+                this.accountStatus = EnergyOpenStatus.OPEN;
+                break;
+            case EnergyOpenStatus.CLOSED: 
+                this.accountStatus = EnergyOpenStatus.CLOSED;
+                break;
+            default:  this.accountStatus = EnergyOpenStatus.OPEN;                     
+        }
+
     }
+
+    private fuelType: FuelType;
+    private accountStatus: EnergyOpenStatus ;
 
     public static id: string = factoryId;
 
@@ -18,7 +45,18 @@ export class CreateEnergyAccountData extends Factory {
         return "Create a number of energy accounts for each customer of data holders";
     }
     public get detailedDescription(): string {
-        return "Create a number of energy accounts for each customer of data holders";
+        let st =  
+        `This library will accept the following options
+        
+    fuelType:   This should be ELECTRICITY,GAS or DUAL
+    status:     OPEN or CLOSED (Default randomly assigned)
+    If no value is provided it will default to DUAL.
+
+Key values randomly allocated:
+
+    The number of plans for each account:                      between 1 and 3
+    The status of the account (if not as option):              OPEN or CLOSED`;
+        return st;
     }
 
     public canCreateEnergyAccount(): boolean { return true; };
@@ -36,34 +74,38 @@ export class CreateEnergyAccountData extends Factory {
         let accountNumber = Helper.randomBoolean(0.8) ? "23455-4567" : null;
         // create a number of plan object, up to 10
         let planCount = Math.ceil(Math.random() * 3);
-        let status = RandomEnergy.OpenStatus();
+        let status = this.accountStatus;
+
         if (status) energyAccount.openStatus = status;
         if (displayName) energyAccount.displayName = displayName;
         if (accountNumber) energyAccount.accountNumber = accountNumber;
-        if (energyAccount?.status == OpenStatus.OPEN || Math.random() > 0.5) energyAccount.creationDate = Helper.randomDateTimeInThePast();
+        if (energyAccount?.status == EnergyOpenStatus.OPEN || Math.random() > 0.5) energyAccount.creationDate = Helper.randomDateTimeInThePast();
         for (let cnt = 0; cnt < planCount; cnt++) {
             let plan: any = {};
             let nickname = Helper.randomBoolean(null) ? "nickname" : null;
             if (nickname) plan.nickname = nickname;
 
-            if (energyAccount?.status == OpenStatus.OPEN) {
+            if (energyAccount?.status == EnergyOpenStatus.OPEN) {
                 // create a plan overview object
                 let planOverview = this.generatePlanOverview();
                 plan.planOverview = planOverview;
             }
-            if (energyAccount?.status == OpenStatus.OPEN || energyAccount?.status == undefined || Math.random() > 0.5) {
-                let fuelType = RandomEnergy.FuelType();
-                let planDetails = this.generatePlanDetails(fuelType);
-                if (fuelType == FuelType.GAS) {
+            if (energyAccount?.status == EnergyOpenStatus.OPEN || energyAccount?.status == undefined || Math.random() > 0.5) {
+                var planFuelType : FuelType = RandomEnergy.FuelType();
+                if (this.fuelType != FuelType.DUAL) {
+                    planFuelType = this.fuelType;
+                }
+                let planDetails = this.generatePlanDetails(planFuelType);
+                if (planFuelType== FuelType.GAS) {
                     let gasContract = this.generateContract(PricingModel.SINGLE_RATE);
                     planDetails.gasContract = gasContract;
                 }
-                if (fuelType == FuelType.ELECTRICITY) {
+                if (planFuelType == FuelType.ELECTRICITY) {
                     let electricityContract = this.generateContract(RandomEnergy.PricingModel());
                     planDetails.electricityContract = electricityContract;
                     plan.servicePoints = this.getServicePointsForAccount();
                 }
-                if (fuelType == FuelType.DUAL) {
+                if (planFuelType == FuelType.DUAL) {
                     let gasContract = this.generateContract(PricingModel.SINGLE_RATE);
                     planDetails.gasContract = gasContract;
                     let electricityContract = this.generateContract(RandomEnergy.PricingModel());

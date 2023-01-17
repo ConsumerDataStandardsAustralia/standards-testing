@@ -275,6 +275,11 @@ export enum ReadQuality {
     ACTUAL = "ACTUAL", SUBSTITUTE = "SUBSTITUTE", FINAL_SUBSTITUTE = "FINAL_SUBSTITUTE"
 }
 
+export enum OtherUsageChargesType {
+    ENVIRONMENTAL = "ENVIRONMENTAL", REGULATED = "REGULATED", NETWORK = "NETWORK",
+    METERING = "METERING", RETAIL_SERVICE = "RETAIL_SERVICE", RCTI = "RCTI", OTHER = "OTHER"
+}
+
 export class RandomEnergy {
 
     public static GetRandomValue(enumeration: any) {
@@ -464,5 +469,9 @@ export class RandomEnergy {
     
     public static ReadUTYpe(): any {
         return this.GetRandomValue(ReadUTYpe)
-    }     
+    } 
+    
+    public static OtherUsageChargesType(): any {
+        return this.GetRandomValue(OtherUsageChargesType)
+    }  
 }

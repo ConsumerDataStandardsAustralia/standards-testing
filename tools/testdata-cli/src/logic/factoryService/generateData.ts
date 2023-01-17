@@ -92,7 +92,7 @@ function generateHolders(options: Options, data: ConsumerDataRightTestDataJSONSc
   if (options.factories?.holders && options.factories?.holders.length > 0) {
     for (let i = 0; i < options.factories?.holders.length; i++) {
 
-      Helper.log(`Executing detailed holder set ${i+1}`, 1);
+      Helper.log(`Executing detailed holder set ${i + 1}`, 1);
       const newData = generateDetailedHolders(options, options.factories?.holders[i], result);
 
       if (newData && newData.length > 0) {
@@ -195,14 +195,14 @@ function generateDetailedHolders(options: Options, holderOptions: any, data: Con
       }
     }
   } else {
-      Helper.log('No detailed holder factories to execute and no holder found in existing data')
+    Helper.log('No detailed holder factories to execute and no holder found in existing data')
   }
   //updateExistingDataHolders(options, holderOptions, data);
   Helper.indentDec();
   return holders;
 }
 
-function updateExistingDataHolders(options: Options, holderOptions: any,data: ConsumerDataRightTestDataJSONSchema){
+function updateExistingDataHolders(options: Options, holderOptions: any, data: ConsumerDataRightTestDataJSONSchema) {
   data.holders?.forEach(holder => {
     if (holder.holderId != null) {
       if (!holder.holder) {
@@ -211,28 +211,28 @@ function updateExistingDataHolders(options: Options, holderOptions: any,data: Co
           authenticated: {}
         }
         holder.holder = h;
-    }
-    // Create the detail inside the created holder
-    if (holderOptions.unauthenticated) {
-      Helper.log(`Executing unauthenticated factories for holder`, 1);
-      const newData = generateUnauthenticatedData(options, holderOptions.unauthenticated, holder);
-      if (newData) holder.holder.unauthenticated = newData;
-    } else {
-      Helper.log(`No unauthenticated factories configured`, 1)
-    }
+      }
+      // Create the detail inside the created holder
+      if (holderOptions.unauthenticated) {
+        Helper.log(`Executing unauthenticated factories for holder`, 1);
+        const newData = generateUnauthenticatedData(options, holderOptions.unauthenticated, holder);
+        if (newData) holder.holder.unauthenticated = newData;
+      } else {
+        Helper.log(`No unauthenticated factories configured`, 1)
+      }
 
-    if (holderOptions.authenticated) {
-      Helper.log(`Executing authenticated factories for holder`, 1);
-      if (holder.holder?.authenticated == null) holder.holder.authenticated = {};
-      const newData = generateAuthenticatedData(options, holderOptions.authenticated, holder);
-      if (newData) holder.holder.authenticated = newData;
-    } else {
-      Helper.log(`No authenticated factories configured`, 1)
-    }
+      if (holderOptions.authenticated) {
+        Helper.log(`Executing authenticated factories for holder`, 1);
+        if (holder.holder?.authenticated == null) holder.holder.authenticated = {};
+        const newData = generateAuthenticatedData(options, holderOptions.authenticated, holder);
+        if (newData) holder.holder.authenticated = newData;
+      } else {
+        Helper.log(`No authenticated factories configured`, 1)
+      }
     } else {
       Helper.log('No detailed holder factories to execute and insufficient holder data found in existing data')
     }
-  }) 
+  })
 }
 
 function generateUnauthenticatedData(options: Options, unauthOptions: any, holder: HolderWrapper): Unauthenticated {
@@ -377,7 +377,7 @@ function generateAuthenticatedData(options: Options, authOptions: any, holder: H
   if (authOptions.customers && authOptions.customers.length > 0) {
     for (let i = 0; i < authOptions.customers.length; i++) {
 
-      Helper.log(`Executing detailed customer set ${i+1}`, 1);
+      Helper.log(`Executing detailed customer set ${i + 1}`, 1);
       const newData = generateDetailedCustomers(options, authOptions.customers[i], holder);
 
       if (newData && newData.length > 0) {
@@ -507,7 +507,7 @@ function generateCustomerBankingData(options: Options, bankingOptions: any, cust
   if (bankingOptions.accounts && bankingOptions.accounts.length > 0) {
     for (let i = 0; i < bankingOptions.accounts.length; i++) {
 
-      Helper.log(`Executing detailed bank account set ${i+1}`, 1);
+      Helper.log(`Executing detailed bank account set ${i + 1}`, 1);
       const newData = generateDetailedBankAccounts(options, bankingOptions.accounts[i], customer);
 
       if (newData && newData.length > 0) {
@@ -719,7 +719,7 @@ function getServicePointsForAllAcounts(accounts: EnergyAccountWrapper[]): string
   let sp: string[] = [];
   accounts?.forEach(account => {
     let electricitySp = account.account.plans.find(x => x.planDetail?.electricityContract)?.servicePointIds;
-    if(electricitySp != undefined) {sp.push(...electricitySp)}
+    if (electricitySp != undefined) { sp.push(...electricitySp) }
   })
   return sp;
 }
@@ -741,7 +741,7 @@ function generateCustomerEnergyData(options: Options, energyOptions: any, custom
   if (energyOptions.accounts && energyOptions.accounts.length > 0) {
     for (let i = 0; i < energyOptions.accounts.length; i++) {
 
-      Helper.log(`Executing detailed energy account set ${i+1}`, 1);
+      Helper.log(`Executing detailed energy account set ${i + 1}`, 1);
       const newData = generateDetailedEnergyAccounts(options, energyOptions.accounts[i], customer);
 
       if (newData && newData.length > 0) {
@@ -753,12 +753,12 @@ function generateCustomerEnergyData(options: Options, energyOptions: any, custom
 
   // extract the service point ids from the active service points
   let activeServicePoints: string[] = getServicePointsForAllAcounts(result.accounts as EnergyAccountWrapper[]);
-  result?.accounts?.forEach((acc:EnergyAccountWrapper) => {
-    if (acc.account.openStatus == OpenStatus.OPEN ) {
-        acc.account.plans.forEach((p:any) => {
-          if (p?.servicePoints?.length > 0)
-            activeServicePoints.push(...p.servicePoints);
-        })
+  result?.accounts?.forEach((acc: EnergyAccountWrapper) => {
+    if (acc.account.openStatus == OpenStatus.OPEN) {
+      acc.account.plans.forEach((p: any) => {
+        if (p?.servicePoints?.length > 0)
+          activeServicePoints.push(...p.servicePoints);
+      })
     }
   })
   // Service points
@@ -773,7 +773,7 @@ function generateCustomerEnergyData(options: Options, energyOptions: any, custom
   if (energyOptions.servicePoints && energyOptions.servicePoints.length > 0) {
     for (let i = 0; i < energyOptions.servicePoints.length; i++) {
 
-      Helper.log(`Executing detailed service point set ${i+1}`, 1);
+      Helper.log(`Executing detailed service point set ${i + 1}`, 1);
       const newData = generateDetailedServicePoints(options, energyOptions.servicePoints[i], activeServicePoints);
 
       if (newData && newData.length > 0) {
@@ -993,87 +993,52 @@ function generateDetailedServicePoints(options: Options, servicePointOptions: an
     // If we have factories execute each one of them
     // allocate some of the service points to this factory
     let spCount = Helper.generateRandomIntegerInRange(0, activeServicePoints.length);
-    let spArray = activeServicePoints.splice(0, Math.max(1, spCount-1));
+    let spArray = activeServicePoints.splice(0, Math.max(1, spCount - 1));
+
     for (const factory of factories) {
       Helper.log(`Running factory '${factory.id}'`)
       cnt++;
       if (factory.canCreateEnergyServicePoint()) {
         let sp = undefined;
         if (cnt <= spArray.length) {
-            sp = spArray[cnt-1]
+          sp = spArray[cnt - 1]
         }
-      //  activeServicePoints.forEach(sp => {
+        const servicePoint = factory.generateEnergyServicePoint(sp);
 
-          const servicePoint = factory.generateEnergyServicePoint(sp);
+        Helper.log(`Factory complete - ${servicePoint ? 1 : 0} created`, 1)
 
-          Helper.log(`Factory complete - ${servicePoint ? 1 : 0} created`, 1)
-  
-          if (servicePoint && servicePoint.servicePoint) {
-            result.push(servicePoint);
-  
-            // Create the detail inside the created service point
-            if (servicePointOptions.derFactory) {
-              Helper.log(`Executing DER factories for service point`, 1);
-              servicePoint.der = generateSingleItem(options, servicePointOptions.derFactory,
-                (factory) => {
-                  return factory.canCreateEnergyDER();
-                },
-                (factory) => {
-                  return factory.generateEnergyDER(servicePoint);
-                })
-            } else {
-              Helper.log(`No DER factories configured`, 1)
-            }
-  
-            if (servicePointOptions.usageFactory) {
-              Helper.log(`Executing energy usage factories for service point`, 1);
-              servicePoint.usage = generateArrayOfItems(options, servicePointOptions.usageFactory,
-                (factory) => {
-                  return factory.canCreateEnergyUsage();
-                },
-                (factory) => {
-                  return factory.generateEnergyUsage(servicePoint);
-                })
-            } else {
-              Helper.log(`No energy usage factories configured`, 1)
-            }
+        if (servicePoint && servicePoint.servicePoint) {
+          result.push(servicePoint);
+
+          // Create the detail inside the created service point
+          if (servicePointOptions.derFactory) {
+            Helper.log(`Executing DER factories for service point`, 1);
+            servicePoint.der = generateSingleItem(options, servicePointOptions.derFactory,
+              (factory) => {
+                return factory.canCreateEnergyDER();
+              },
+              (factory) => {
+                return factory.generateEnergyDER(servicePoint);
+              })
+          } else {
+            Helper.log(`No DER factories configured`, 1)
           }
 
-       // })
-        // const servicePoint = factory.generateEnergyServicePoint(activeServicePoints);
+          if (servicePointOptions.usageFactory) {
+            Helper.log(`Executing energy usage factories for service point`, 1);
+            servicePoint.usage = generateArrayOfItems(options, servicePointOptions.usageFactory,
+              (factory) => {
+                return factory.canCreateEnergyUsage();
+              },
+              (factory) => {
+                return factory.generateEnergyUsage(servicePoint);
+              })
+          } else {
+            Helper.log(`No energy usage factories configured`, 1)
+          }
+        }
 
-        // Helper.log(`Factory complete - ${servicePoint ? 1 : 0} created`, 1)
 
-        // if (servicePoint && servicePoint.servicePoint) {
-        //   result.push(servicePoint);
-
-        //   // Create the detail inside the created service point
-        //   if (servicePointOptions.derFactory) {
-        //     Helper.log(`Executing DER factories for service point`, 1);
-        //     servicePoint.der = generateSingleItem(options, servicePointOptions.derFactory,
-        //       (factory) => {
-        //         return factory.canCreateEnergyDER();
-        //       },
-        //       (factory) => {
-        //         return factory.generateEnergyDER(servicePoint);
-        //       })
-        //   } else {
-        //     Helper.log(`No DER factories configured`, 1)
-        //   }
-
-        //   if (servicePointOptions.usageFactory) {
-        //     Helper.log(`Executing energy usage factories for service point`, 1);
-        //     servicePoint.usage = generateArrayOfItems(options, servicePointOptions.usageFactory,
-        //       (factory) => {
-        //         return factory.canCreateEnergyUsage();
-        //       },
-        //       (factory) => {
-        //         return factory.generateEnergyUsage(servicePoint);
-        //       })
-        //   } else {
-        //     Helper.log(`No energy usage factories configured`, 1)
-        //   }
-        // }
       } else {
         Helper.log(`Factory does not support service point generation`, 1)
       }
@@ -1165,7 +1130,7 @@ function generateRegisterCache(options: Options, data: ConsumerDataRightTestData
   return result;
 }
 
-function generateSingleItem(options: Options, factoryOptions: OptionsFactory, canFunc: (factory: Factory)=>boolean, genFunc: (factory: Factory)=>any|undefined ): any | undefined {
+function generateSingleItem(options: Options, factoryOptions: OptionsFactory, canFunc: (factory: Factory) => boolean, genFunc: (factory: Factory) => any | undefined): any | undefined {
   let result: any | undefined;
   let factories: Factory[] = [];
 
@@ -1200,7 +1165,7 @@ function generateSingleItem(options: Options, factoryOptions: OptionsFactory, ca
   return result;
 }
 
-function generateArrayOfItems(options: Options, factoryOptions: OptionsFactory, canFunc: (factory: Factory)=>boolean, genFunc: (factory: Factory)=>any[]|undefined ): any[] | undefined {
+function generateArrayOfItems(options: Options, factoryOptions: OptionsFactory, canFunc: (factory: Factory) => boolean, genFunc: (factory: Factory) => any[] | undefined): any[] | undefined {
   let result: any[] | undefined;
   let factories: Factory[] = [];
 
@@ -1265,12 +1230,12 @@ function createFactories(iterations: number, general: OptionsGeneral | undefined
   if ((options as OptionsSingleFactory).id) {
     result = createSingleFactories(iterations, general, options as OptionsSingleFactory);
 
-  // Handle OptionsWeighted
-  } else if((options as OptionsWeighted).weighted) {
+    // Handle OptionsWeighted
+  } else if ((options as OptionsWeighted).weighted) {
     result = createWeightedFactories(iterations, general, options as OptionsWeighted);
 
-  // Handle OptionsSequence
-  } else if((options as OptionsSequence).sequence) {
+    // Handle OptionsSequence
+  } else if ((options as OptionsSequence).sequence) {
     result = createSequenceFactories(iterations, general, options as OptionsSequence);
   }
 

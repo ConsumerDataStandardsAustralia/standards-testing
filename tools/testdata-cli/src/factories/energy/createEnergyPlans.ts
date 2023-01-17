@@ -1,4 +1,4 @@
-import { EnergyPlan} from "consumer-data-standards/energy";
+import { EnergyPlan, EnergyPlanDetail} from "consumer-data-standards/energy";
 import { Factory, FactoryOptions, Helper } from "../../logic/factoryService";
 
 const factoryId: string = "create-energy-plan-data";
@@ -21,12 +21,12 @@ export class CreateEnergyPlanData extends Factory {
     public canCreateEnergyPlans(): boolean {return true}
 
 
-    public generateEnergyPlans(): EnergyPlan[] | undefined  {
+    public generateEnergyPlans(): EnergyPlanDetail[] | undefined  {
         let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
-        let ret: EnergyPlan[] = [];
+        let ret: EnergyPlanDetail[] = [];
         for (let i = 0; i < count; i++) {
-            const plan: EnergyPlan = {
+            const plan: EnergyPlanDetail = {
                 brand: "",
                 brandName: "",
                 fuelType: "ELECTRICITY",

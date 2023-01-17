@@ -21,7 +21,7 @@
                 "authenticated": {
                     "customers": [
                         {
-                            "count": 5,
+                            "count": 10,
                             "customerFactory": {
                                 "id": "create-customers"
                             },
@@ -32,8 +32,7 @@
                                         "accountFactory": {
                                             "id": "create-energy-account-data",
                                             "options": {
-                                                "fuelType": "ELECTRICITY",
-                                                "status": "OPEN"
+                                                "fuelType": "ELECTRICITY"
                                             }
                                         },
                                         "invoicesFactory": {
@@ -41,14 +40,14 @@
                                             "options": {
                                                 "count": 5,
                                                 "minInvoiceAmount": 10,
-                                                "maxInvoiceAmount": 10000
+                                                "maxInvoiceAmount": 200
                                             }
                                         }
                                     }
                                 ],
                                 "servicePoints": [
                                     {
-                                    "count": 10,    
+                                    "count": 2,    
                                     "servicePointFactory": {
                                         "id": "create-energy-service-points"
                                         }

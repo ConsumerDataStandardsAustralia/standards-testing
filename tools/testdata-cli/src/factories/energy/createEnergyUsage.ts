@@ -52,12 +52,16 @@ export class CreateEnergyUsage extends Factory {
                 }
                 usage.intervalRead.readIntervalLength = Helper.generateRandomIntegerInRange(5,120);
 
-                let cnt = Helper.generateRandomIntegerInRange(2,5);
-                let  readQualities: any[] = [];               
-                for (let i = 0; i < cnt; i++) {
-                    readQualities.push({startInterval: i+1, endInterval: i+2, quality: RandomEnergy.ReadQuality()})
-                }
-                //usage.intervalRead.readQualities = readQualities;
+                //let cnt = Helper.generateRandomIntegerInRange(2,5);
+                let start = Helper.generateRandomIntegerInRange(10, 100);
+                let end = Helper.generateRandomIntegerInRange(101, 200);
+                let  readQualities: any = {
+                    startInterval: start, endInterval: end, quality: RandomEnergy.ReadQuality()
+                };               
+                // for (let i = 0; i < cnt; i++) {
+                //     readQualities.push({startInterval: i+1, endInterval: i+2, quality: RandomEnergy.ReadQuality()})
+                // }
+                usage.intervalRead.readQualities = readQualities;
 
             }
             usageList.push(usage);
