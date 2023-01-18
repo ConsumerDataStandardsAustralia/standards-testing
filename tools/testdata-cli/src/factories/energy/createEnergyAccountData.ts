@@ -237,7 +237,7 @@ Key values randomly allocated:
                         for (let i = 0; i < timeOfUseDayCnt; i++) timeOfUse.push({});
                         entry.timeOfUse = timeOfUse;
                         entry.timeOfUse.forEach(element => {
-                            element.days = [Days.SUN, Days.MON, Days.THU];
+                            element.days = this.getRandomDays(3);
                             element.startTime = Helper.randomDateTimeInThePast();
                             element.endTime = Helper.randomDateTimeInTheFuture();
                             timeOfUse.push(element);
@@ -262,7 +262,7 @@ Key values randomly allocated:
                     if (Math.random() > 0.5) element.measureUnit = RandomEnergy.MeasureUnit();
                     element.startTime = '00:43:00.12345Z';
                     element.endTime = '15:43:00.12345Z';
-                    if (Math.random() > 0.5) element.days = [Days.THU, Days.SUN, Days.WED];
+                    if (Math.random() > 0.5) element.days = this.getRandomDays(3);
                     if (Math.random() > 0.5) element.minDemand = generateRandomDecimalInRangeFormatted(0.5, 1.5, 2);
                     if (Math.random() > 0.5) element.maxDemand = generateRandomDecimalInRangeFormatted(3.5, 8.8, 2);
                     element.measurementPeriod = RandomEnergy.MeasurementPeriod();
@@ -326,7 +326,8 @@ Key values randomly allocated:
                     for (let i = 0; i < timeOfUseDayCnt; i++) timeOfUse.push({});
                     elem.timeOfUse = timeOfUse;
                     elem.timeOfUse.forEach(x => {
-                        if (Math.random() > 0.5) x.days = [Days.SUN, Days.MON, Days.THU];
+                        let l = Object.keys(Days).length; 
+                        if (Math.random() > 0.5) x.days = this.getRandomDays(3);
                         x.startTime = Helper.randomDateTimeInThePast();
                         x.endTime = Helper.randomDateTimeInTheFuture();
                         if (Math.random() > 0.5) x.additionalInfoUri = 'http://moreinfo';
@@ -340,6 +341,17 @@ Key values randomly allocated:
             result.push(controlledLoad);
         }
         return result;
+    }
+
+    private getRandomDays(cnt: number): Days[] {
+        let days: Days[] = [];
+        let l = Math.min(Object.values(Days).length, 7)
+        do {
+            let day = Object.values(Days)[Helper.generateRandomIntegerInRange(0,l-1)];
+            if (days.indexOf(day) == -1)
+                days.push(day);
+        } while(days.length< cnt)
+        return days;
     }
 
     private generatePlanEligibility(cnt: number): EnergyPlanEligibility[] {
