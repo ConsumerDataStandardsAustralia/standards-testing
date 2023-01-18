@@ -90,7 +90,41 @@
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
+        } ,          
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Debug Create Invoice Data",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/tools/testdata-cli/dist/cli.js",
+            "args": [
+                "generate",
+                "${workspaceFolder}/tools/testdata-cli/samples/options/create-energy-invoices.json",
+                "${workspaceFolder}/tools/testdata-cli/samples/output/my-created-energy-invoices.json",
+            ],
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
         }           
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Debug Combined Data",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/tools/testdata-cli/dist/cli.js",
+            "args": [
+                "generate",
+                "${workspaceFolder}/tools/testdata-cli/samples/options/create-combined.json",
+                "${workspaceFolder}/tools/testdata-cli/samples/output/my-created-combined.json",
+            ],
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        }   
 
     ]
 }
