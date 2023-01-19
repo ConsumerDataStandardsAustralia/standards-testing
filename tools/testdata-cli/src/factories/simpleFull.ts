@@ -1,7 +1,4 @@
 import { Factory, Helper, FactoryOptions } from '../logic/factoryService'
-import { RegisterDataRecipient } from 'consumer-data-standards/register';
-import { BankingBalance, BankingDirectDebit, BankingPayeeDetailV2, BankingProductV4, BankingScheduledPayment, BankingTransaction } from 'consumer-data-standards/banking';
-import { EnergyConcession, EnergyDerRecord, EnergyInvoice, EnergyPaymentSchedule, EnergyPlan, EnergyUsageRead } from 'consumer-data-standards/energy';
 import { AdminOutage, AdminStatus, BankAccountWrapper, Client, CustomerWrapper, EnergyAccountWrapper, EnergyServicePointWrapper, EnergyTransaction, HolderWrapper } from 'src/logic/schema/cdr-test-data-schema';
 
 const factoryId: string = "simple-full";
@@ -109,10 +106,10 @@ This factory supports the follow option fields:
 
   // Register
   public canCreateRecipients(): boolean { return true; };
-  public generateRecipients(): RegisterDataRecipient[] | undefined {
+  public generateRecipients(): any[] | undefined {
     let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
-    let ret: RegisterDataRecipient[] = [];
+    let ret: any[] = [];
     for (let i = 0; i < count; i++) {
       ret.push ({
         legalEntityId: Helper.randomId(),
@@ -244,7 +241,7 @@ This factory supports the follow option fields:
 
   // Banking
   public canCreateBankProduct(): boolean { return true; };
-  public generateBankProduct(): BankingProductV4 | undefined {
+  public generateBankProduct(): any | undefined {
     return {
       productId: Helper.randomId(),
       effectiveFrom: Helper.randomDateTimeInThePast(),
@@ -341,10 +338,10 @@ This factory supports the follow option fields:
   }
 
   public canCreateBankProducts(): boolean { return true; };
-  public generateBankProducts(): BankingProductV4[] | undefined {
+  public generateBankProducts(): any[] | undefined {
     let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
-    let ret: BankingProductV4[] = [];
+    let ret: any[] = [];
     for (let i = 0; i < count; i++) {
       const el = this.generateBankProduct();
       if (el) ret.push(el);
@@ -425,7 +422,7 @@ This factory supports the follow option fields:
   }
 
   public canCreateBankBalance(): boolean { return true; };
-  public generateBankBalance(account: BankAccountWrapper): BankingBalance | undefined {
+  public generateBankBalance(account: BankAccountWrapper): any | undefined {
     return {
       accountId: account.account.accountId,
       currentBalance: "100.00",
@@ -434,8 +431,8 @@ This factory supports the follow option fields:
   }
 
   public canCreateBankTransaction(): boolean { return true; };
-  public generateBankTransaction(account: BankAccountWrapper): BankingTransaction | undefined {
-    let result: BankingTransaction = {
+  public generateBankTransaction(account: BankAccountWrapper): any | undefined {
+    let result: any = {
       accountId: account.account.accountId,
       transactionId: Helper.randomId(),
       isDetailAvailable: true,
@@ -463,10 +460,10 @@ This factory supports the follow option fields:
   }
 
   public canCreateBankTransactions(): boolean { return true; };
-  public generateBankTransactions(account: BankAccountWrapper): BankingTransaction[] | undefined {
+  public generateBankTransactions(account: BankAccountWrapper): any[] | undefined {
     let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
-    let ret: BankingTransaction[] = [];
+    let ret: any[] = [];
     for (let i = 0; i < count; i++) {
       const el = this.generateBankTransaction(account);
       if (el) ret.push(el);
@@ -475,10 +472,10 @@ This factory supports the follow option fields:
   }
 
   public canCreateBankDirectDebits(): boolean { return true; };
-  public generateBankDirectDebits(accounts: BankAccountWrapper[]): BankingDirectDebit[] | undefined {
+  public generateBankDirectDebits(accounts: BankAccountWrapper[]): any[] | undefined {
     let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
-    let ret: BankingDirectDebit[] = [];
+    let ret: any[] = [];
     for (let i = 0; i < count; i++) {
       ret.push({
         accountId: accounts[0].account.accountId,
@@ -496,10 +493,10 @@ This factory supports the follow option fields:
   }
 
   public canCreateBankPayees(): boolean { return true; };
-  public generateBankPayees(accounts: BankAccountWrapper[]): BankingPayeeDetailV2[] | undefined {
+  public generateBankPayees(accounts: BankAccountWrapper[]): any[] | undefined {
     let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
-    let ret: BankingPayeeDetailV2[] = [];
+    let ret: any[] = [];
     for (let i = 0; i < count; i++) {
       ret.push({
         payeeId: Helper.randomId(),
@@ -520,10 +517,10 @@ This factory supports the follow option fields:
   }
 
   public canCreateBankScheduledPayments(): boolean { return true; };
-  public generateScheduledPayments(accounts: BankAccountWrapper[]): BankingScheduledPayment[] | undefined {
+  public generateScheduledPayments(accounts: BankAccountWrapper[]): any[] | undefined {
     let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
-    let ret: BankingScheduledPayment[] = [];
+    let ret: any[] = [];
     for (let i = 0; i < count; i++) {
       const dt = Helper.randomDateTimeInTheFuture();
       ret.push({
@@ -559,7 +556,7 @@ This factory supports the follow option fields:
 
   // Energy
   public canCreateEnergyPlan(): boolean { return true; };
-  public generateEnergyPlan(): EnergyPlan | undefined {
+  public generateEnergyPlan(): any | undefined {
     return {
       planId: Helper.randomId(),
       effectiveFrom: Helper.randomDateTimeInThePast(),
@@ -728,10 +725,10 @@ This factory supports the follow option fields:
   }
 
   public canCreateEnergyPlans(): boolean { return true; };
-  public generateEnergyPlans(): EnergyPlan[] | undefined {
+  public generateEnergyPlans(): any[] | undefined {
     let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
-    let ret: EnergyPlan[] = [];
+    let ret: any[] = [];
     for (let i = 0; i < count; i++) {
       const el = this.generateEnergyPlan();
       if (el) ret.push(el);
@@ -823,7 +820,7 @@ This factory supports the follow option fields:
   }
 
   public canCreateEnergyDER(): boolean { return true; };
-  public generateEnergyDER(servicePoint: EnergyServicePointWrapper): EnergyDerRecord | undefined {
+  public generateEnergyDER(servicePoint: EnergyServicePointWrapper): any | undefined {
     let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
     let ret: any = 
@@ -882,10 +879,10 @@ This factory supports the follow option fields:
   }
 
   public canCreateEnergyUsage(): boolean { return true; };
-  public generateEnergyUsage(servicePoint: EnergyServicePointWrapper): EnergyUsageRead[] | undefined {
+  public generateEnergyUsage(servicePoint: EnergyServicePointWrapper): any[] | undefined {
     let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
-    let ret: EnergyUsageRead[] = [];
+    let ret: any[] = [];
     for (let i = 0; i < count; i++) {
       ret.push({
         servicePointId: servicePoint.servicePoint?.servicePointId,
@@ -1099,10 +1096,10 @@ This factory supports the follow option fields:
   // }
 
   public canCreateEnergyPaymentSchedules(): boolean { return true; };
-  public generateEnergyPaymentSchedules(account: EnergyAccountWrapper): EnergyPaymentSchedule[] | undefined {
+  public generateEnergyPaymentSchedules(account: EnergyAccountWrapper): any[] | undefined {
     let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
-    let ret: EnergyPaymentSchedule[] = [];
+    let ret: any[] = [];
     for (let i = 0; i < count; i++) {
       ret.push({
         amount: "100.00",
@@ -1116,7 +1113,7 @@ This factory supports the follow option fields:
   }
 
   public canCreateEnergyConcession(): boolean { return true; };
-  public generateEnergyConcession(account: EnergyAccountWrapper): EnergyConcession | undefined {
+  public generateEnergyConcession(account: EnergyAccountWrapper): any | undefined {
     return {
       type: "FIXED_AMOUNT",
       displayName: "Display name",
@@ -1129,10 +1126,10 @@ This factory supports the follow option fields:
   }
 
   public canCreateEnergyConcessions(): boolean { return true; };
-  public generateEnergyConcessions(account: EnergyAccountWrapper): EnergyConcession[] | undefined {
+  public generateEnergyConcessions(account: EnergyAccountWrapper): any[] | undefined {
     let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
-    let ret: EnergyConcession[] = [];
+    let ret: any[] = [];
     for (let i = 0; i < count; i++) {
       const el = this.generateEnergyConcession(account);
       if (el) ret.push(el);
@@ -1141,7 +1138,7 @@ This factory supports the follow option fields:
   }
 
   public canCreateEnergyInvoice(): boolean { return true; };
-  public generateEnergyInvoice(account: EnergyAccountWrapper): EnergyInvoice | undefined {
+  public generateEnergyInvoice(account: EnergyAccountWrapper): any | undefined {
     return {
       accountId: account.account.accountId,
       invoiceNumber: Helper.randomId(),
@@ -1179,10 +1176,10 @@ This factory supports the follow option fields:
   }
 
   public canCreateEnergyInvoices(): boolean { return true; };
-  public generateEnergyInvoices(account: EnergyAccountWrapper): EnergyInvoice[] | undefined {
+  public generateEnergyInvoices(account: EnergyAccountWrapper): any[] | undefined {
     let count = Helper.isPositiveInteger(this.options.options?.count) ? (this.options.options?.count as number) : 1;
 
-    let ret: EnergyInvoice[] = [];
+    let ret: any[] = [];
     for (let i = 0; i < count; i++) {
       const el = this.generateEnergyInvoice(account);
       if (el) ret.push(el);

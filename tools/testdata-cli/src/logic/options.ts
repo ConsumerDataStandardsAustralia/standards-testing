@@ -32,6 +32,7 @@ export interface OptionsGeneral {
   standardsVersion?: string,
   title?: string,
   description?: string,
+  writeIndividual?: boolean 
 }
 
 export interface Options {

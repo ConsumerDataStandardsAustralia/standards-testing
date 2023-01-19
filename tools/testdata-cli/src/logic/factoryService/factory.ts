@@ -1,6 +1,4 @@
-import { BankingBalance, BankingDirectDebit, BankingPayeeDetailV2, BankingProductV4, BankingScheduledPayment, BankingTransaction } from 'consumer-data-standards/banking';
-import { EnergyConcession, EnergyDerRecord, EnergyInvoice, EnergyPaymentSchedule, EnergyPlan, EnergyPlanDetail, EnergyUsageRead } from 'consumer-data-standards/energy';
-import { RegisterDataRecipient } from 'consumer-data-standards/register';
+
 import { OptionsGeneral } from '../options';
 import { AdminOutage, AdminStatus, BankAccountWrapper, Client, ConsumerDataRightTestDataJSONSchema, CustomerWrapper, EnergyAccountBalance, EnergyAccountWrapper, EnergyServicePointWrapper, EnergyTransaction, Holders, HolderWrapper } from '../schema/cdr-test-data-schema';
 
@@ -47,7 +45,7 @@ export abstract class Factory {
 
   // Register
   public canCreateRecipients(): boolean { return false; };
-  public generateRecipients(): RegisterDataRecipient[] | undefined { return }
+  public generateRecipients(): any[] | undefined { return }
 
 
   // Admin
@@ -68,7 +66,7 @@ export abstract class Factory {
 
   // Banking
   public canCreateBankProducts(): boolean { return false; };
-  public generateBankProducts(): BankingProductV4[] | undefined { return }
+  public generateBankProducts(): any[] | undefined { return }
 
   public canCreateBankAccount(): boolean { return false; };
   public generateBankAccount(customer: CustomerWrapper): BankAccountWrapper | undefined { return }
@@ -77,27 +75,27 @@ export abstract class Factory {
   public generateBankAccounts(customer: CustomerWrapper): BankAccountWrapper[] | undefined { return }
 
   public canCreateBankBalance(): boolean { return false; };
-  public generateBankBalance(account: BankAccountWrapper): BankingBalance | undefined { return }
+  public generateBankBalance(account: BankAccountWrapper): any | undefined { return }
 
   public canCreateBankTransaction(): boolean { return false; };
-  public generateBankTransaction(account: BankAccountWrapper): BankingTransaction | undefined { return }
+  public generateBankTransaction(account: BankAccountWrapper): any | undefined { return }
 
   public canCreateBankTransactions(): boolean { return false; };
-  public generateBankTransactions(account: BankAccountWrapper): BankingTransaction[] | undefined { return }
+  public generateBankTransactions(account: BankAccountWrapper): any[] | undefined { return }
 
   public canCreateBankDirectDebits(): boolean { return false; };
-  public generateBankDirectDebits(accounts: BankAccountWrapper[]): BankingDirectDebit[] | undefined { return }
+  public generateBankDirectDebits(accounts: BankAccountWrapper[]): any[] | undefined { return }
 
   public canCreateBankPayees(): boolean { return false; };
-  public generateBankPayees(accounts: BankAccountWrapper[]): BankingPayeeDetailV2[] | undefined { return }
+  public generateBankPayees(accounts: BankAccountWrapper[]): any[] | undefined { return }
 
   public canCreateBankScheduledPayments(): boolean { return false; };
-  public generateScheduledPayments(accounts: BankAccountWrapper[]): BankingScheduledPayment[] | undefined { return }
+  public generateScheduledPayments(accounts: BankAccountWrapper[]): any[] | undefined { return }
 
 
   // Energy
   public canCreateEnergyPlans(): boolean { return false; };
-  public generateEnergyPlans(): EnergyPlanDetail[] | undefined { return }
+  public generateEnergyPlans(): any[] | undefined { return }
 
   public canCreateEnergyServicePoint(): boolean { return false; };
   public generateEnergyServicePoint(servicePointId: string | undefined): EnergyServicePointWrapper | undefined { return }
@@ -106,10 +104,10 @@ export abstract class Factory {
   public generateEnergyServicePoints(activeServicePoints: string[]): EnergyServicePointWrapper[] | undefined { return }
 
   public canCreateEnergyDER(): boolean { return false; };
-  public generateEnergyDER(servicePoint: EnergyServicePointWrapper): EnergyDerRecord | undefined { return }
+  public generateEnergyDER(servicePoint: EnergyServicePointWrapper): any | undefined { return }
 
   public canCreateEnergyUsage(): boolean { return false; };
-  public generateEnergyUsage(servicePoint: EnergyServicePointWrapper): EnergyUsageRead[] | undefined { return }
+  public generateEnergyUsage(servicePoint: EnergyServicePointWrapper): any[] | undefined { return }
 
   public canCreateEnergyAccount(): boolean { return false; };
   public generateEnergyAccount(customer: CustomerWrapper): EnergyAccountWrapper | undefined { return }
@@ -121,19 +119,19 @@ export abstract class Factory {
   public generateEnergyBalance(account: EnergyAccountWrapper): EnergyAccountBalance | undefined { return }
 
   public canCreateEnergyPaymentSchedules(): boolean { return false; };
-  public generateEnergyPaymentSchedules(account: EnergyAccountWrapper): EnergyPaymentSchedule[] | undefined { return }
+  public generateEnergyPaymentSchedules(account: EnergyAccountWrapper): any[] | undefined { return }
 
   public canCreateEnergyConcession(): boolean { return false; };
-  public generateEnergyConcession(account: EnergyAccountWrapper): EnergyConcession | undefined { return }
+  public generateEnergyConcession(account: EnergyAccountWrapper): any | undefined { return }
 
   public canCreateEnergyConcessions(): boolean { return false; };
-  public generateEnergyConcessions(account: EnergyAccountWrapper): EnergyConcession[] | undefined { return }
+  public generateEnergyConcessions(account: EnergyAccountWrapper): any[] | undefined { return }
 
   public canCreateEnergyInvoice(): boolean { return false; };
-  public generateEnergyInvoice(account: EnergyAccountWrapper): EnergyInvoice | undefined { return }
+  public generateEnergyInvoice(account: EnergyAccountWrapper): any | undefined { return }
 
   public canCreateEnergyInvoices(): boolean { return false; };
-  public generateEnergyInvoices(account: EnergyAccountWrapper): EnergyInvoice[] | undefined { return }
+  public generateEnergyInvoices(account: EnergyAccountWrapper): any[] | undefined { return }
 
   public canCreateEnergyTransaction(): boolean { return false; };
   public generateEnergyTransaction(account: EnergyAccountWrapper): EnergyTransaction | undefined { return }

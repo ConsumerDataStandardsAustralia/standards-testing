@@ -47,6 +47,10 @@ factories[CreateDerData.id] = (options: any): Factory => { return new CreateDerD
 import { CreateEnergyUsage} from './energy/createEnergyUsage';
 factories[CreateEnergyUsage.id] = (options: any): Factory => { return new CreateEnergyUsage(options) }
 
+// create invaliddata
+import { CreateInvalidCustomers} from './common/createInvalidCustomers';
+factories[CreateInvalidCustomers.id] = (options: any): Factory => { return new CreateInvalidCustomers(options) }
+
 export * from './common/utils';
 
 
