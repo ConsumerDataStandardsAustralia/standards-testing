@@ -24,6 +24,12 @@
                                     "type": "person"
                                 }
                             }
+                        },
+                        {
+                            "count": 2,
+                            "customerFactory": {
+                                "id": "create-invalid-customers"
+                            }
                         }
                     ]
                 }

@@ -48,8 +48,11 @@ import { CreateEnergyUsage} from './energy/createEnergyUsage';
 factories[CreateEnergyUsage.id] = (options: any): Factory => { return new CreateEnergyUsage(options) }
 
 // create invaliddata
-import { CreateInvalidCustomers} from './common/createInvalidCustomers';
+import { CreateInvalidCustomers} from './invalid-factories/createInvalidCustomers';
 factories[CreateInvalidCustomers.id] = (options: any): Factory => { return new CreateInvalidCustomers(options) }
+
+import { CreateInvalidEnergyAccountData } from './invalid-factories/createInvalidEnergyAccountData';
+factories[CreateInvalidEnergyAccountData.id] = (options: any): Factory => { return new CreateInvalidEnergyAccountData(options)}
 
 export * from './common/utils';
 
