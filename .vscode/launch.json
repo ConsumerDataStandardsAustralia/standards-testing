@@ -141,7 +141,24 @@
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
-        }     
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Debug UC2",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/tools/testdata-cli/dist/cli.js",
+            "args": [
+                "generate",
+                "${workspaceFolder}/tools/testdata-cli/samples/options/uc2-create-authenticated.json",
+                "${workspaceFolder}/tools/testdata-cli/samples/output/uc2-generated.json",
+            ],
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        }      
 
     ]
 }
