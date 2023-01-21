@@ -107,7 +107,7 @@
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
-        }           
+        } ,          
         {
             "type": "pwa-node",
             "request": "launch",
@@ -124,7 +124,24 @@
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
-        }   
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Debug UC1",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/tools/testdata-cli/dist/cli.js",
+            "args": [
+                "generate",
+                "${workspaceFolder}/tools/testdata-cli/samples/options/uc1-create-full.json",
+                "${workspaceFolder}/tools/testdata-cli/samples/output/uc1-generated.json",
+            ],
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        }     
 
     ]
 }

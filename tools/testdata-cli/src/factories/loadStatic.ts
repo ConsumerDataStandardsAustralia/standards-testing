@@ -39,6 +39,10 @@ export class LoadStatic extends Factory {
         const dataText = fs.readFileSync(this.options.options.source as string).toString();
         const newData = JSON.parse(dataText);
 
+        if (newData.fileVersion) result.fileVersion  = newData.fileVersion;
+        if (newData.standardsVersion) result.fileVersion = newData.fileVersion;
+        if (newData.title) result.title = newData.title;
+        if (newData.description) result.description = newData.description;
         if (newData.holders) result.holders = newData.holders;
         if (newData.clientCache) result.clientCache = newData.clientCache;
         if (newData.registerCache) result.registerCache = newData.registerCache;

@@ -12,10 +12,11 @@ export class CreateInvalidEnergyAccountData extends Factory {
     public static id: string = factoryId;
 
     public get briefDescription(): string {
-        return "Create a single  data holders";
+        return "Create some invalid energy account data";
     }
     public get detailedDescription(): string {
-        return "A single data holde with all the details";
+        return `Generates energy account data NOT compliant with the technical standard
+        This factory does noit have any options`
     }
     public canCreateEnergyAccounts(): boolean { return true; };
     public canCreateEnergyAccount(): boolean { return true; };
@@ -24,7 +25,8 @@ export class CreateInvalidEnergyAccountData extends Factory {
        let energyAccount : any = {
             accountId: Helper.randomId(),
             accountBalance: Helper.generateRandomDecimalInRange(100,200),
-            dueDate: Helper.randomDateTimeInTheFuture()
+            dueDate: Helper.randomDateTimeInTheFuture(),
+            invoiceAmount: Helper.generateRandomDecimalInRange(10, 500)
          } 
          let wrapper: EnergyAccountWrapper = {
             account : energyAccount

@@ -12,7 +12,6 @@ export class CreateInvalidCustomers extends Factory {
         faker.locale = 'en_AU';
     }
     
-    private customerType: any; 
     public static id: string = factoryId;
 
     public get briefDescription(): string {
