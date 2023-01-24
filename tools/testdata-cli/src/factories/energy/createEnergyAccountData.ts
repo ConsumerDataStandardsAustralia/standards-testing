@@ -80,18 +80,18 @@ Key values randomly allocated:
         if (status) energyAccount.openStatus = status;
         if (displayName) energyAccount.displayName = displayName;
         if (accountNumber) energyAccount.accountNumber = accountNumber;
-        if (energyAccount?.status == EnergyOpenStatus.OPEN || Math.random() > 0.5) energyAccount.creationDate = Helper.randomDateTimeInThePast();
+        if (energyAccount?.openStatus == EnergyOpenStatus.OPEN || Math.random() > 0.5) energyAccount.creationDate = Helper.randomDateTimeInThePast();
         for (let cnt = 0; cnt < planCount; cnt++) {
             let plan: any = {};
             let nickname = Helper.randomBoolean(null) ? "nickname" : null;
             if (nickname) plan.nickname = nickname;
 
-            if (energyAccount?.status == EnergyOpenStatus.OPEN) {
+            if (energyAccount?.openStatus == EnergyOpenStatus.OPEN) {
                 // create a plan overview object
                 let planOverview = this.generatePlanOverview();
                 plan.planOverview = planOverview;
             }
-            if (energyAccount?.status == EnergyOpenStatus.OPEN || energyAccount?.status == undefined || Math.random() > 0.5) {
+            if (energyAccount?.openStatus == EnergyOpenStatus.OPEN || energyAccount?.openStatus == undefined || Math.random() > 0.5) {
                 var planFuelType : FuelType = RandomEnergy.FuelType();
                 if (this.fuelType != FuelType.DUAL) {
                     planFuelType = this.fuelType;
@@ -104,14 +104,14 @@ Key values randomly allocated:
                 if (planFuelType == FuelType.ELECTRICITY) {
                     let electricityContract = this.generateContract(RandomEnergy.PricingModel());
                     planDetails.electricityContract = electricityContract;
-                    plan.servicePoints = this.getServicePointsForAccount();
+                    plan.servicePointsIds = this.getServicePointsForAccount();
                 }
                 if (planFuelType == FuelType.DUAL) {
                     let gasContract = this.generateContract(PricingModel.SINGLE_RATE);
                     planDetails.gasContract = gasContract;
                     let electricityContract = this.generateContract(RandomEnergy.PricingModel());
                     planDetails.electricityContract = electricityContract;
-                    plan.servicePoints = this.getServicePointsForAccount();
+                    plan.servicePointsIds = this.getServicePointsForAccount();
                 }
                 plan.planDetail = planDetails;
             }
@@ -523,7 +523,8 @@ Key values randomly allocated:
     private generatePlanOverview(): any {
         // create a plan overview object
         let planOverview: any = {};
-        planOverview['endDate'] = Helper.randomDateTimeInTheFuture();
+        planOverview['startDate'] = Helper.randomDateTimeInThePast();
+        if (Math.random() > 0.2) planOverview['endDate'] = Helper.randomDateTimeInTheFuture();
         let planOverviewName = Helper.randomBoolean(null) ? "Display name" : null;
         if (planOverviewName) planOverview['displayName'] = planOverviewName;
         return planOverview;
@@ -535,11 +536,13 @@ Key values randomly allocated:
         if (fuelType != FuelType.DUAL) planDetails['isContingentPlan'] = Helper.randomBoolean(null);
         let includeCharges = Helper.randomBoolean(0.95);
         if (includeCharges) {
-            let meteringCharges: any = {};
-            meteringCharges['displayName'] = 'Metering Display Name';
-            meteringCharges['minimumValue'] = Math.ceil(Math.random() * 100).toString();
-            meteringCharges['period'] = 'P3Y6M4DT12H30M5S';
-            meteringCharges['maximumValue'] = 999999;
+            let meteringCharges: any[] = [];
+            let charge: any = {};
+            charge['displayName'] = 'Metering Display Name';
+            charge['minimumValue'] = Math.ceil(Math.random() * 100).toString();
+            charge['period'] = 'P3Y6M4DT12H30M5S';
+            charge['maximumValue'] = 999999;
+            meteringCharges.push(charge);
             planDetails['meteringCharges'] = meteringCharges;
         }
         return planDetails;
