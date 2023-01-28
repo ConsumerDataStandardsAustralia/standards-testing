@@ -9,7 +9,7 @@
                 "authenticated": {
                     "customers": [
                         {
-                            "count": 10000,
+                            "count": 1,
                             "customerFactory": {
                                 "id": "create-customers",
                                 "options": {
@@ -28,7 +28,7 @@
                             }
                         },
                         {
-                            "count": 15000,
+                            "count": 1,
                             "customerFactory": {
                                 "id": "create-customers",
                                 "options": {
