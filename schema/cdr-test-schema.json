@@ -39,7 +39,7 @@
     },
     "assertions": {
       "type": "object",
-      "description": "A set of assertions named with the ID of the assertion in format 'A.XXX.000' where XXX is category and 000 is the unique identifier",
+      "description": "A set of assertions named with the ID of the assertion in format 'A.XXX.0000' where XXX is category and 0000 is the unique identifier",
       "additionalProperties": false,
       "patternProperties": {
         "^A\\.[A-Z]{3}\\.[0-9]{4}$": {
@@ -49,7 +49,7 @@
     },
     "testCases": {
       "type": "object",
-      "description": "A set of test cases named with the ID of the test case in format 'T.XXX.000' where XXX is category and 000 is the unique identifier",
+      "description": "A set of test cases named with the ID of the test case in format 'T.XXX.0000' where XXX is category and 0000 is the unique identifier",
       "additionalProperties": false,
       "patternProperties": {
         "^T\\.[A-Z]{3}\\.[0-9]{4}$": {
@@ -59,7 +59,7 @@
     },
     "scenarios": {
       "type": "object",
-      "description": "A set of test scenarios that link together multiple test cases in sequence. Named with the ID of the scenarion in format 'S.XXX.000' where XXX is category and 000 is the unique identifier",
+      "description": "A set of test scenarios that link together multiple test cases in sequence. Named with the ID of the scenarion in format 'S.XXX.0000' where XXX is category and 0000 is the unique identifier",
       "additionalProperties": false,
       "patternProperties": {
         "^S\\.[A-Z]{3}\\.[0-9]{4}$": {
@@ -69,7 +69,7 @@
     },
     "suites": {
       "type": "object",
-      "description": "A suite of test scenarios used to bundle all of the tests for a specific domain.  Each suite is named using the format 'SUITE.TEXT' where TEXT is any name using a sequence of letters and digits that describes the suite",
+      "description": "A suite of test scenarios used to bundle all of the tests for a specific domain.  Each suite is named using the format 'SUITE.XXX' where XXX is category that describes the suite",
       "additionalProperties": false,
       "patternProperties": {
         "^SUITE\\.[A-Z]{3}$": {
@@ -134,7 +134,10 @@
         },
         "when": {
           "type": "array",
-          "description": "An array of 'given' statements describing the context"
+          "description": "An array of 'when' statements describing the context of the assertion",
+          "items": {
+            "type": "string"
+          }
         },
         "then": {
           "$ref": "#/$defs/assertionPredicate"

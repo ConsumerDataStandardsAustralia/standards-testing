@@ -35,7 +35,7 @@ export type TestCaseStep =
       /**
        * The condition that must be met for the step to be complete
        */
-      condition?: string;
+      condition: string;
       [k: string]: unknown;
     }
   | {
@@ -122,25 +122,25 @@ export interface ConsumerDataRightTestCaseJSONSchema {
    */
   changeLogUrl?: string;
   /**
-   * A set of assertions named with the ID of the assertion in format 'A.XXX.000' where XXX is category and 000 is the unique identifier
+   * A set of assertions named with the ID of the assertion in format 'A.XXX.0000' where XXX is category and 0000 is the unique identifier
    */
   assertions?: {
     [k: string]: Assertion;
   };
   /**
-   * A set of test cases named with the ID of the test case in format 'T.XXX.000' where XXX is category and 000 is the unique identifier
+   * A set of test cases named with the ID of the test case in format 'T.XXX.0000' where XXX is category and 0000 is the unique identifier
    */
   testCases?: {
     [k: string]: TestCase;
   };
   /**
-   * A set of test scenarios that link together multiple test cases in sequence. Named with the ID of the scenarion in format 'S.XXX.000' where XXX is category and 000 is the unique identifier
+   * A set of test scenarios that link together multiple test cases in sequence. Named with the ID of the scenarion in format 'S.XXX.0000' where XXX is category and 0000 is the unique identifier
    */
   scenarios?: {
     [k: string]: Scenario;
   };
   /**
-   * A suite of test scenarios used to bundle all of the tests for a specific domain.  Each suite is named using the format 'SUITE.TEXT' where TEXT is any name using a sequence of letters and digits that describes the suite
+   * A suite of test scenarios used to bundle all of the tests for a specific domain.  Each suite is named using the format 'SUITE.XXX' where XXX is category that describes the suite
    */
   suites?: {
     [k: string]: Suite;
@@ -150,7 +150,7 @@ export interface ConsumerDataRightTestCaseJSONSchema {
  * A single atomic test assertion
  *
  * This interface was referenced by `undefined`'s JSON-Schema definition
- * via the `patternProperty` "^A\.[A-Z]{3}\.[0-9]{3}$".
+ * via the `patternProperty` "^A\.[A-Z]{3}\.[0-9]{4}$".
  */
 export interface Assertion {
   /**
@@ -182,9 +182,9 @@ export interface Assertion {
    */
   given: string[];
   /**
-   * An array of 'given' statements describing the context
+   * An array of 'when' statements describing the context of the assertion
    */
-  when: unknown[];
+  when: string[];
   then: AssertionPredicate;
 }
 /**
@@ -204,7 +204,7 @@ export interface Reference {
  * A test case defined using Behaviour Driven Development principles
  *
  * This interface was referenced by `undefined`'s JSON-Schema definition
- * via the `patternProperty` "^T\.[A-Z]{3}\.[0-9]{3}$".
+ * via the `patternProperty` "^T\.[A-Z]{3}\.[0-9]{4}$".
  */
 export interface TestCase {
   /**
@@ -248,7 +248,7 @@ export interface TestCase {
  * A test scenario made up of a sequence of test cases and additonal actions to prepare for the tests
  *
  * This interface was referenced by `undefined`'s JSON-Schema definition
- * via the `patternProperty` "^S\.[A-Z]{3}\.[0-9]{3}$".
+ * via the `patternProperty` "^S\.[A-Z]{3}\.[0-9]{4}$".
  */
 export interface Scenario {
   /**
@@ -280,7 +280,7 @@ export interface Scenario {
  * A suite of test scenarios that are bundled to achieve a specific testing purpose
  *
  * This interface was referenced by `undefined`'s JSON-Schema definition
- * via the `patternProperty` "^SUITE\.[a-zA-Z0-9]+$".
+ * via the `patternProperty` "^SUITE\.[A-Z]{3}$".
  */
 export interface Suite {
   /**
