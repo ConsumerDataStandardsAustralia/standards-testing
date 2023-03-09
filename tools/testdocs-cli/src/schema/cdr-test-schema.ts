@@ -98,6 +98,10 @@ export type ScenarioAction =
  */
 export interface ConsumerDataRightTestCaseJSONSchema {
   /**
+   * The schema to which this file conforms.
+   */
+  schema: string;
+  /**
    * The version of the file formatted using semver (without extensions)
    */
   fileVersion: string;

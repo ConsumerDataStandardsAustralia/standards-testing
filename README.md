@@ -2,7 +2,7 @@
 
 ## About the CDR Test Documentation
 
-The CDR Test Documentation is a repository of Test Cases and Assertions that describe the way the standards can be tested.  These are logically grouped into Suites and Scenarios, for each Sector and API, to validate an API against the Consumer Data Standards.
+The CDR Test Documentation is a repository of Test Cases and Assertions that describe the way the standards can be tested. These are logically grouped into Suites and Scenarios, for each Sector and API, to validate an API against the Consumer Data Standards.
 
 The Standards, and this Test Documentation, are maintained by the Data Standards Body (DSB), with the Data Standards Chair as the decision maker. The Data Standards Body is an independent body administered by the [Treasury](https://www.directory.gov.au/portfolios/treasury/data-standards-body). The work of standards development is conducted in consultation with the [Australian Competition and Consumer Commission (ACCC)](https://www.accc.gov.au/focus-areas/consumer-data-right-cdr-0) as co-regulator of the Consumer Data Right, along with the [Office of the Australian Information Commissioner (OAIC)](https://www.oaic.gov.au/consumer-data-right/about-the-consumer-data-right/).
 
@@ -10,12 +10,12 @@ The CDR Test Documentation is available at [https://consumerdatastandardsaustral
 
 ## Repository Structure
 
-| Folder | Description |
-| --- | ----------- |
-| docs | Contains the published html document available [here](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/) |
-| json-docs | The definitions for Suites, Scenarios, Test Case and Assertions which form the basis of the published documentation |
-| tools | The toolset used to generate the published documentation html and markdown files. This toolset is published as an npm package available [here](https://www.npmjs.com/package/@cds-au/testdocs). |
-| schema | The json schema definition against which the Suites, Scenarios, Test Cases and Assertions are validated |
+| Folder    | Description                                                                                                                                                                                     |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| docs      | Contains the published html document available [here](https://consumerdatastandardsaustralia.github.io/standards-testing/latest/)                                                               |
+| json-docs | The definitions for Suites, Scenarios, Test Case and Assertions which form the basis of the published documentation                                                                             |
+| tools     | The toolset used to generate the published documentation html and markdown files. This toolset is published as an npm package available [here](https://www.npmjs.com/package/@cds-au/testdocs). |
+| schema    | The json schema definition against which the Suites, Scenarios, Test Cases and Assertions are validated                                                                                         |
 
 ## What it is designed to do?
 
@@ -25,10 +25,10 @@ The aim is to provide the community with a resource they can use to create their
 
 This repository:
 
- - Cannot be used for test execution;
- - Is not an automated testing framework;
- - Does not replace the Standards. The obligation remains on CDR participants to apply the published standards; and
- - Does not replace ACCC’s CTS or participant tooling capability.
+- Cannot be used for test execution;
+- Is not an automated testing framework;
+- Does not replace the Standards. The obligation remains on CDR participants to apply the published standards; and
+- Does not replace ACCC’s CTS or participant tooling capability.
 
 ## Getting Started – How to use it?
 
@@ -44,93 +44,78 @@ The references listed for each test case and assertion should be read in conjunc
 
 ## Getting Started – How it is structured?
 
--   CDS sector specific APIs (Banking, Energy, Common and Admin) have been logically grouped into Suites.  Each Suite is made up of a number of Scenarios where each API has a positive and negative scenario.
-	- positive scenarios, e.g. 'Get Billing for Account v1', are intended to generate a response with a 200 ok status code and a valid schema.
-	- negative scenarios, e.g. 'Get Billing for Account Negative v1' are intended to generate a response with an error status code.
+- CDS sector specific APIs (Banking, Energy, Common and Admin) have been logically grouped into Suites. Each Suite is made up of a number of Scenarios where each API has a positive and negative scenario.
 
-- ‘Scenario’ in this context implies a group of test cases to validate a single API.  A Scenario is not a complete end to end sequence of API calls that might be needed to test a single use case.
+  - positive scenarios, e.g. 'Get Billing for Account v1', are intended to generate a response with a 200 ok status code and a valid schema.
+  - negative scenarios, e.g. 'Get Billing for Account Negative v1' are intended to generate a response with an error status code.
 
--   Each Scenario has a series of Test Cases attached to it. 
--   Each Test Case links to a series of Assertions which are either specific to the Suite or Common to many Suites.
+- ‘Scenario’ in this context implies a group of test cases to validate a single API. A Scenario is not a complete end to end sequence of API calls that might be needed to test a single use case.
+
+- Each Scenario has a series of Test Cases attached to it.
+- Each Test Case links to a series of Assertions which are either specific to the Suite or are Global across many Suites.
 
 ## Coverage
 
-Our intention is to write test cases for all resource APIs for Banking and Energy in addition to Common and Admin.  Energy is the current priority given approaching obligation dates.
+Our intention is to write test cases for all resource APIs for Banking and Energy in addition to Common and Admin. Energy is the current priority given approaching obligation dates.
 
-The resource APIs have been grouped into 11 suites.  Each comprises specific test cases for positive and negative scenarios, as shown below.
+The resource APIs have been grouped into 11 suites. Each comprises specific test cases for positive and negative scenarios, as shown below:
 
-![image](https://user-images.githubusercontent.com/52149325/169204296-38994343-a47a-49d9-951a-ff938b649d4d.png)
-
+| #   | Sector  | ID  | Title                                         |
+| --- | ------- | --- | --------------------------------------------- |
+| 1   | Banking | BAA | APIs - Banking PRD                            |
+| 2   | Banking | BAB | APIs - Banking Accounts                       |
+| 3   | Banking | BAC | APIs - Banking Transactions                   |
+| 4   | Banking | BAD | APIs - Banking Scheduled Payments and Payees  |
+| 5   | Admin   | CAA | APIs - Common Admin                           |
+| 6   | Common  | CAC | APIs - Common Customer                        |
+| 7   | Energy  | EAA | APIs - Energy Accounts                        |
+| 8   | Energy  | EAB | APIs - Energy Tariffs                         |
+| 9   | Energy  | EAC | APIs - Energy Invoices and Billing            |
+| 10  | Energy  | EAR | APIs - Energy Standing Data, Usage and DER    |
+| 11  | Energy  | EAS | APIs - Energy Standing Data, Usage and DER SR |
 
 Information Security and CDR Register behaviour is currently handled in the [FAPI Conformance Suite](https://openid.net/certification/fapi_op_testing/) and the Consumer Data Right Conformance Test Suite for [Data Holders](https://www.cdr.gov.au/for-providers/conformance-test-suite-data-holders) and [Data Recipients](https://www.cdr.gov.au/for-providers/conformance-test-suite-data-recipients).
 
-The DSB anticipates this documentation, in time, will also reference DSBs postman collection to validate schemas.  Details of the postman collection are available here: [ConsumerDataStandardsAustralia/dsb-schema-tools (github.com)](https://github.com/ConsumerDataStandardsAustralia/dsb-schema-tools).
+The DSB anticipates this documentation, in time, will also reference DSBs postman collection to validate schemas. Details of the postman collection are available here: [ConsumerDataStandardsAustralia/dsb-schema-tools (github.com)](https://github.com/ConsumerDataStandardsAustralia/dsb-schema-tools).
 
 ## Numbering convention
 
 The tests are organised by Suite, Scenario, Test Case and Assertion.
--   One Suite can have many Scenarios
--   One Scenario can have many Test Cases
--   One Test Case can have many Assertions
--   Common Assertions can belong to many Test Cases
 
-Assertions are expressed using the Behaviour Driven Development (BDD) methodology, in the format “GIVEN...WHEN...THEN..."
+- One Suite can have many Scenarios
+- One Scenario can have many Test Cases
+- One Test Case can have many Assertions
+- Scenarios, Test Cases and Assertions are scoped to the Suite to which they belong,
+  except for Global Assertions which are globally scoped and can be present across different Suites.
 
-Each Suite, Scenario, Test Case and Assertion has a unique identifier in the format a.aaa.nnn, where ‘a’ represents an alpha character and 'n' represents a numeric character.
+Assertions are expressed using the Behaviour Driven Development (BDD) methodology, in the format 'GIVEN...WHEN...THEN...'
 
-Each **Scenario**, **Test Case** and **Assertion** in a **Suite** starts with the same initial three alpha combination. The numeric designation commences at 001.  New test cases and assertions are appended to the existing list and the number is incremented. Related test cases and assertions may not appear in numeric sequence.
+Each Suite has a unique identifier in the format: 'Suite.aaa', where 'a' represents an alpha character.
+Each Scenario, Test Case and Assertion scoped to that suite, inherits the alpha characters of that Suite.
+Global Assertions have their own set of alpha characters in the format of 'Zaa', where Z is constant, and which begin with the letter 'Z'.
 
-The numbering convention is as follows.
+Each Suite has a unique identifier in the format 'SUITE.aaa', where 'a' represents an alpha character, with the three alpha characters all together representing the Suite designation,
+Each Scenario has a unique identifier in the format 'S.aaa.nnnn', where 'aaa' representing the Suite designation to which the Scenario belongs, with 'nnnn' representing
+an incremental numeric identifier for that Scenario within the Suite.
+In a similiar fashiong, 'T.aaa.nnnn' for Test Cases, and 'A.aaa.nnnn' for Assertions.
 
-**Suite**: SUITE-nnn[+ **Name** for written documentation when needed]
-**Scenario**: S.aaa.nnn
-**Test Case**: T.aaa.nnn
-**Assertion**: A.aaa.nnn
+For convenience, we have elected to assign - where possible - the first alpha character of the Suite designation to infer the logical grouping of that Suite, usually by sector.
+For example, 'B' for Banking, 'E' for Energy, 'T' for Telecommunication, 'C' for Common APIs and so on.
 
-Scenario, Test Case and Assertion alpha character codes
-
-|Alpha position | 1: Sector | 2: Type | 3: Subtype |
-|---------------|-----------|---------|------------|
-|Meaning of alpha character | A: Admin <br> B: Banking <br> C: Common <br> D: DCR <br>  E: Energy <br> R: Register <br> T: Telecommunication |  A: API <br> U: UX |  Unique character to distinguish subtype:<br>B: Balance<br> P: Product<br>R: unique subtype ID<br>S: unique subtype ID|
-
-
-	
-Example: T.EAR.002: Test Case for Energy API subtype R number 2
-
-For Common Assertions the three alpha characters are used as follows:
-* Position 1 is always C for Common
-* Position 2 and 3 are an abbreviation of the assertion subject, e.g. Page Size ‘CPS’
-
-
-|Alpha code | Name | Field |
-|---|---|---|
-|CAI | Arrangement Id | cds-arrangement-id |
-|CBD  | Body | body |
-|CCH	|Client Headers	|x-cds-client-headers |
-|CFA	|FAPI Authorisation Date 	|x-fapi-auth-date |
-|CFC	|FAPI Customer IP Address	|x-fapi-customer-ip-address |
-|CFI	|FAPI Interaction Identifier	|x-fapi-interaction-id |
-|CND	|Newest Date	|newest-date |
-|COD	|Oldest Date	|oldest-date |
-|CPG	|Page	|page |
-|CPS	|Page Size	|page-size |
-|CSP	|Service Point	|servicePointId |
-|CVM	|Minimum Version 	|x-min-v |
-|CVN 	|Version Number	|x-v |
-
+Global Assertions - which can belong to any Suite - do not have a Suite designation and instead are identified as 'A.ZAA.nnnn', with 'nnnn' representing an incremental
+identifier for that Global Assertion within the full set of Global Assertions.
 
 ## Contributing and providing feedback
 
-The CDR Test Documentation is a concept we’d like to test with the community.  We welcome your feedback.  We have developed this based on our interpretation of earlier feedback received from the community to clarify ambiguity in the standards and to assist with implementation.
+The CDR Test Documentation is a concept we’d like to test with the community. We welcome your feedback. We have developed this based on our interpretation of earlier feedback received from the community to clarify ambiguity in the standards and to assist with implementation.
 
 To provide feedback you need to raise an ‘issue’ or a ‘pull request’ on this repository in the same way you would on the DSB standards. We welcome feedback on:
 
- 1. additional tests to clarify aspects of the standards that are not covered in this document
- 2. test cases or assertions that appear to be incorrect
- 3. suggested improvements to the user interface or to the instructions on how to use this repository.
+1.  additional tests to clarify aspects of the standards that are not covered in this document
+2.  test cases or assertions that appear to be incorrect
+3.  suggested improvements to the user interface or to the instructions on how to use this repository.
 
 The team at DSB will address issues as they are raised and add or correct test cases as needed.
-
 
 ## Disclaimer
 
@@ -152,6 +137,6 @@ We ask that all contributors to the Consumer Data Standards repositories comply 
 
 In addition, it would be appreciated if the following rules are adhered to when commenting or contributing:
 
--   Please provide a single, considered response to each proposal covering all feedback concerning the proposal.
--   For transparency, if you work at or are associated with an organisation with an interest in the standards, please indicate this in your response.
--   Please ensure you are aware of and compliant with any social media guidelines or internal processes for response set by your organisation before providing feedback.
+- Please provide a single, considered response to each proposal covering all feedback concerning the proposal.
+- For transparency, if you work at or are associated with an organisation with an interest in the standards, please indicate this in your response.
+- Please ensure you are aware of and compliant with any social media guidelines or internal processes for response set by your organisation before providing feedback.

@@ -1,16 +1,22 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://cds.gov.au/cdr-test-schema.0.0.4.json",
+  "$id": "https://cds.gov.au/cdr-test-schema.1.0.0.json",
   "title": "Consumer Data Right Test Case JSON Schema",
   "description": "A JSON schema for defining test cases to be used to document test cases for compliance with the Consumer Data Right data standards",
   "type": "object",
   "required": [
+    "schema",
     "fileVersion",
     "standardsVersion",
     "title"
   ],
   "additionalProperties": false,
   "properties": {
+    "schema": {
+      "type": "string",
+      "description": "The schema to which this file conforms.",
+      "format": "uri"
+    },
     "fileVersion": {
       "type": "string",
       "description": "The version of the file formatted using semver (without extensions)",
