@@ -2,7 +2,7 @@
 
 ## About the CDR Test Documentation
 
-The CDR Test Documentation is a repository of Test Cases and Assertions that describe the way the standards can be tested. These are logically grouped into Suites and Scenarios, for each Sector and API, to validate an API against the Consumer Data Standards.
+The CDR Test Documentation is a repository of Test Cases and Assertions that describe the way the standards can be tested. These are logically grouped into Suites and Scenarios, for each Sector's APIs, to validate an API against the Consumer Data Standards.
 
 The Standards, and this Test Documentation, are maintained by the Data Standards Body (DSB), with the Data Standards Chair as the decision maker. The Data Standards Body is an independent body administered by the [Treasury](https://www.directory.gov.au/portfolios/treasury/data-standards-body). The work of standards development is conducted in consultation with the [Australian Competition and Consumer Commission (ACCC)](https://www.accc.gov.au/focus-areas/consumer-data-right-cdr-0) as co-regulator of the Consumer Data Right, along with the [Office of the Australian Information Commissioner (OAIC)](https://www.oaic.gov.au/consumer-data-right/about-the-consumer-data-right/).
 
@@ -19,7 +19,7 @@ The CDR Test Documentation is available at [https://consumerdatastandardsaustral
 
 ## What it is designed to do?
 
-The aim is to provide the community with a resource they can use to create their own test suites to verify a CDR implementation aligns with the standards. It consolidates many references within the standards, including normative references, that apply to a single API, to help people interpret and understand the standards.
+The aim is to provide the community with a resource they can use to create their own test suites to verify a CDR implementation aligns with the standards. It consolidates many references within the standards, including normative references, that apply to a single API, to help the community interpret and understand the standards.
 
 ## What it is not designed to do?
 
@@ -52,27 +52,21 @@ The references listed for each test case and assertion should be read in conjunc
 - ‘Scenario’ in this context implies a group of test cases to validate a single API. A Scenario is not a complete end to end sequence of API calls that might be needed to test a single use case.
 
 - Each Scenario has a series of Test Cases attached to it.
-- Each Test Case links to a series of Assertions which are either specific to the Suite or are Global across many Suites.
+- Each Test Case links to a series of Assertions which are either specific to the Suite or are Global and apply to many Suites.
 
-## Coverage
+## Current Coverage
 
-Our intention is to write test cases for all resource APIs for Banking and Energy in addition to Common and Admin. Energy is the current priority given approaching obligation dates.
+Resource APIs have been grouped into the following suites. 
 
-The resource APIs have been grouped into 11 suites. Each comprises specific test cases for positive and negative scenarios, as shown below:
-
-| #   | Sector  | ID  | Title                                         |
-| --- | ------- | --- | --------------------------------------------- |
-| 1   | Banking | BAA | APIs - Banking PRD                            |
-| 2   | Banking | BAB | APIs - Banking Accounts                       |
-| 3   | Banking | BAC | APIs - Banking Transactions                   |
-| 4   | Banking | BAD | APIs - Banking Scheduled Payments and Payees  |
-| 5   | Admin   | CAA | APIs - Common Admin                           |
-| 6   | Common  | CAC | APIs - Common Customer                        |
-| 7   | Energy  | EAA | APIs - Energy Accounts                        |
-| 8   | Energy  | EAB | APIs - Energy Tariffs                         |
-| 9   | Energy  | EAC | APIs - Energy Invoices and Billing            |
-| 10  | Energy  | EAR | APIs - Energy Standing Data, Usage and DER    |
-| 11  | Energy  | EAS | APIs - Energy Standing Data, Usage and DER SR |
+| Sector  | ID  | Title                                         |
+| ------- | --- | --------------------------------------------- |
+| Common  | CAA | APIs - Common Admin                           |
+| Common  | CAC | APIs - Common Customer                        |
+| Energy  | EAA | APIs - Energy Accounts                        |
+| Energy  | EAB | APIs - Energy Tariffs                         |
+| Energy  | EAC | APIs - Energy Invoices and Billing            |
+| Energy  | EAR | APIs - Energy Standing Data, Usage and DER    |
+| Energy  | EAS | APIs - Energy Standing Data, Usage and DER SR |
 
 Information Security and CDR Register behaviour is currently handled in the [FAPI Conformance Suite](https://openid.net/certification/fapi_op_testing/) and the Consumer Data Right Conformance Test Suite for [Data Holders](https://www.cdr.gov.au/for-providers/conformance-test-suite-data-holders) and [Data Recipients](https://www.cdr.gov.au/for-providers/conformance-test-suite-data-recipients).
 
@@ -86,18 +80,17 @@ The tests are organised by Suite, Scenario, Test Case and Assertion.
 - One Scenario can have many Test Cases
 - One Test Case can have many Assertions
 - Scenarios, Test Cases and Assertions are scoped to the Suite to which they belong,
-  except for Global Assertions which are globally scoped and can be present across different Suites.
+  except for Global Assertions which are globally scoped and can be present across many Suites.
 
 Assertions are expressed using the Behaviour Driven Development (BDD) methodology, in the format 'GIVEN...WHEN...THEN...'
 
-Each Suite has a unique identifier in the format: 'Suite.aaa', where 'a' represents an alpha character.
+Each Suite has a unique identifier in the format: 'SUITE.aaa', where 'a' represents an alpha character.
 Each Scenario, Test Case and Assertion scoped to that suite, inherits the alpha characters of that Suite.
-Global Assertions have their own set of alpha characters in the format of 'Zaa', where Z is constant, and which begin with the letter 'Z'.
+Global Assertions have their own set of alpha characters in the format of 'Zaa', which begin with the letter 'Z' and remains constant.
 
-Each Suite has a unique identifier in the format 'SUITE.aaa', where 'a' represents an alpha character, with the three alpha characters all together representing the Suite designation,
-Each Scenario has a unique identifier in the format 'S.aaa.nnnn', where 'aaa' representing the Suite designation to which the Scenario belongs, with 'nnnn' representing
+Each Scenario has a unique identifier in the format 'S.aaa.nnnn', where 'aaa' represents the Suite designation to which the Scenario belongs, with 'nnnn' representing
 an incremental numeric identifier for that Scenario within the Suite.
-In a similiar fashion, 'T.aaa.nnnn' for Test Cases, and 'A.aaa.nnnn' for Assertions.
+In a similiar fashion, 'T.aaa.nnnn' for Test Cases, and 'A.aaa.nnnn' for Suite specific Assertions.
 
 For convenience, we have elected to assign - where possible - the first alpha character of the Suite designation to infer the logical grouping of that Suite, usually by sector.
 For example, 'B' for Banking, 'E' for Energy, 'T' for Telecommunication, 'C' for Common APIs and so on.
@@ -107,11 +100,11 @@ identifier for that Global Assertion within the full set of Global Assertions.
 
 ## Contributing and providing feedback
 
-The CDR Test Documentation is a concept we’d like to test with the community. We welcome your feedback. We have developed this based on our interpretation of earlier feedback received from the community to clarify ambiguity in the standards and to assist with implementation.
+We welcome your feedback on the CDR Test Documentation. It has been developed based on our interpretation of feedback received from the community to clarify ambiguity in the standards and to assist with implementation.
 
-To provide feedback you need to raise an ‘issue’ or a ‘pull request’ on this repository in the same way you would on the DSB standards. We welcome feedback on:
+To provide feedback raise an ‘issue’ or a ‘pull request’ on this repository. We welcome feedback on:
 
-1.  additional tests to clarify aspects of the standards that are not covered in this document
+1.  additional tests to clarify aspects of the standards that are not already covered 
 2.  test cases or assertions that appear to be incorrect
 3.  suggested improvements to the user interface or to the instructions on how to use this repository.
 
