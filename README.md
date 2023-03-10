@@ -97,7 +97,7 @@ Global Assertions have their own set of alpha characters in the format of 'Zaa',
 Each Suite has a unique identifier in the format 'SUITE.aaa', where 'a' represents an alpha character, with the three alpha characters all together representing the Suite designation,
 Each Scenario has a unique identifier in the format 'S.aaa.nnnn', where 'aaa' representing the Suite designation to which the Scenario belongs, with 'nnnn' representing
 an incremental numeric identifier for that Scenario within the Suite.
-In a similiar fashiong, 'T.aaa.nnnn' for Test Cases, and 'A.aaa.nnnn' for Assertions.
+In a similiar fashion, 'T.aaa.nnnn' for Test Cases, and 'A.aaa.nnnn' for Assertions.
 
 For convenience, we have elected to assign - where possible - the first alpha character of the Suite designation to infer the logical grouping of that Suite, usually by sector.
 For example, 'B' for Banking, 'E' for Energy, 'T' for Telecommunication, 'C' for Common APIs and so on.
