@@ -54,24 +54,24 @@ export function json(source: string, destination: string, config: JsonGeneratorC
   const baseSourceDirectory: string = source;
   const baseSinkDirectory: string = destination;
 
-  const testCaseDirectorySourcePath = path.join(baseSourceDirectory, '/test-cases/' );
-  const testCaseDirectorySinkPath = path.join(baseSinkDirectory, '/test-cases/' );
+  const testCaseDirectorySourcePath = path.join(baseSourceDirectory, '/test-cases/');
+  const testCaseDirectorySinkPath = path.join(baseSinkDirectory, '/test-cases/');
 
-  const assertionDirectorySourcePath = path.join(baseSourceDirectory, '/test-assertions/' );
-  const assertionDirectorySinkPath = path.join(baseSinkDirectory, 'test-assertions/' );
+  const assertionDirectorySourcePath = path.join(baseSourceDirectory, '/test-assertions/');
+  const assertionDirectorySinkPath = path.join(baseSinkDirectory, 'test-assertions/');
 
-  const scenarioDirectorySourcePath = path.join(baseSourceDirectory, '/test-scenarios/' );
-  const scenarioDirectorySinkPath = path.join(baseSinkDirectory, '/test-scenarios/' );
+  const scenarioDirectorySourcePath = path.join(baseSourceDirectory, '/test-scenarios/');
+  const scenarioDirectorySinkPath = path.join(baseSinkDirectory, '/test-scenarios/');
 
-  const suiteDirectorySourcePath = path.join(baseSourceDirectory, '/test-suites/' );
-  const suiteDirectorySinkPath = path.join(baseSinkDirectory, '/test-suites/' );
+  const suiteDirectorySourcePath = path.join(baseSourceDirectory, '/test-suites/');
+  const suiteDirectorySinkPath = path.join(baseSinkDirectory, '/test-suites/');
 
   // Check that the source path exists and is a directory
   if (!fs.existsSync(baseSourceDirectory) || !fs.lstatSync(baseSourceDirectory).isDirectory()) {
     throw 'If generate type of "json" is selected then the <source> parameter ' +
-          'must be a directory that currently exists containing the decomposed ' +
-          'CSV files that will be used to generate the test documentaiton ' +
-          'JSON file'
+    'must be a directory that currently exists containing the decomposed ' +
+    'CSV files that will be used to generate the test documentaiton ' +
+    'JSON file'
   }
 
   try {
@@ -91,6 +91,7 @@ export function json(source: string, destination: string, config: JsonGeneratorC
 
     // Initialise the master output file
     const fullOutput: ConsumerDataRightTestCaseJSONSchema = {
+      schema: config.schema,
       fileVersion: config.docVersion,
       standardsVersion: config.cdrVersion,
       title: config?.title,
@@ -156,10 +157,10 @@ export function json(source: string, destination: string, config: JsonGeneratorC
       for (const arr of records) {
         // Is this the first line of a test case
         if (arr[1] != null && arr[1]?.indexOf('T.') > -1 && arr[2]?.length > 0) {
-           if (currentTestCase) {
-             testCases.push(currentTestCase);
-           }
-           currentTestCase = [arr];
+          if (currentTestCase) {
+            testCases.push(currentTestCase);
+          }
+          currentTestCase = [arr];
         } else {
           if (currentTestCase) currentTestCase.push(arr);
         }
@@ -208,7 +209,7 @@ export function json(source: string, destination: string, config: JsonGeneratorC
 
 
 /******************* Utility function section ************************/
-function processScenario(arr:Array<string>, scenarioName: string, fileWritePath: string): Scenario | undefined {
+function processScenario(arr: Array<string>, scenarioName: string, fileWritePath: string): Scenario | undefined {
   if (scenarioName === '') return;
   let cnt = arr.length;
   if (cnt > 0) {
@@ -239,7 +240,7 @@ function processTestCase(arr: Array<Array<string>>, testCaseName: string, fileWr
   let cnt = arr.length;
   if (cnt > 0) {
     var testCase = processFirstTestLine(arr[0]);
-    for(let i = 1; i < cnt; i++) {
+    for (let i = 1; i < cnt; i++) {
       if (arr[i][0].indexOf('A.') == 0) {
         let assertions = testCase.assertions == null ? [] : testCase.assertions;
         // this is an assertion line
@@ -247,14 +248,14 @@ function processTestCase(arr: Array<Array<string>>, testCaseName: string, fileWr
         if (st.indexOf('"') == 0) {
           st = st.substring(1);
         }
-        if (st.lastIndexOf('"') == st.length-1) {
-          st = st.substring(0, st.length-1);
+        if (st.lastIndexOf('"') == st.length - 1) {
+          st = st.substring(0, st.length - 1);
         }
         assertions.push(...st.split(/\n/));
         testCase.assertions = assertions;
       }
       else {
-        processOtherTestLines(arr[i],testCase)
+        processOtherTestLines(arr[i], testCase)
       }
 
     }
@@ -275,7 +276,7 @@ function processAssertion(arr: Array<string>, assertionName: string, fileWritePa
     when: processMultiLineToArray(arr[ASSERTION_WHEN_INDEX]),
     then: predicate,
     references: processReferences(arr[ASSERTION_REFERENCE_INDEX], arr[ASSERTION_ID_INDEX]),
-    negative: arr[TEST_POLARITY_INDEX] == 'TRUE'? true: false,
+    negative: arr[TEST_POLARITY_INDEX] == 'TRUE' ? true : false,
   }
 
   var data = JSON.stringify(assertion, null, 2);
@@ -290,40 +291,40 @@ function writeDataToFile(json: string, fileWritePath: string, fileName: string) 
 }
 
 function processMultiLineToArray(multiLineInput: string): string[] {
-    var retVal : string[] = [];
-    multiLineInput = cleanStringOfDoubleQuotes(multiLineInput);
-    retVal = multiLineInput.split('\n');
-    return retVal;
+  var retVal: string[] = [];
+  multiLineInput = cleanStringOfDoubleQuotes(multiLineInput);
+  retVal = multiLineInput.split('\n');
+  return retVal;
 }
 
 function buildAssertionPredicate(predicateStr: string): AssertionPredicate {
   var arr = predicateStr.split('\n');
-  let predicate : AssertionPredicate = '';
+  let predicate: AssertionPredicate = '';
   let andPredicate: AssertionPredicate[] = [];
   let orPredicate: AssertionPredicate[] = [];
   let cnt = 0;
   arr.forEach(elem => {
-      cnt++;
-      let isAnd = elem.substring(0, 3).match(/and/i);
-      let isOr = elem.substring(0, 2).match(/or/i)
-      if (isAnd == null && isOr == null){
-          if (arr.length == 1) {
-             predicate = elem;
-          } else {
-            andPredicate.push(cleanStringOfDoubleQuotes(elem));
-          }
+    cnt++;
+    let isAnd = elem.substring(0, 3).match(/and/i);
+    let isOr = elem.substring(0, 2).match(/or/i)
+    if (isAnd == null && isOr == null) {
+      if (arr.length == 1) {
+        predicate = elem;
+      } else {
+        andPredicate.push(cleanStringOfDoubleQuotes(elem));
       }
-      if (isAnd) {
-        var st: AssertionPredicate = elem.substring(elem.toUpperCase().indexOf('AND')+ 3);
-        andPredicate.push(cleanStringOfDoubleQuotes(st));
-      }
-      if (isOr) {
-        var st: AssertionPredicate = elem.substring(elem.toUpperCase().indexOf('OR')+ 2);
-        orPredicate.push(cleanStringOfDoubleQuotes(st));
-      }
+    }
+    if (isAnd) {
+      var st: AssertionPredicate = elem.substring(elem.toUpperCase().indexOf('AND') + 3);
+      andPredicate.push(cleanStringOfDoubleQuotes(st));
+    }
+    if (isOr) {
+      var st: AssertionPredicate = elem.substring(elem.toUpperCase().indexOf('OR') + 2);
+      orPredicate.push(cleanStringOfDoubleQuotes(st));
+    }
   })
   if (andPredicate.length > 0)
-    predicate = {and: andPredicate};
+    predicate = { and: andPredicate };
   return predicate;
 }
 
@@ -332,39 +333,39 @@ function FixString(stringToFix: string): string {
   if (st.indexOf('"') == 0) {
     st = st.substring(1);
   }
-  if (st.lastIndexOf('"') == st.length-1) {
-    st = st.substring(0, st.length-1);
+  if (st.lastIndexOf('"') == st.length - 1) {
+    st = st.substring(0, st.length - 1);
   }
   return st;
 }
 
-function processOtherTestLines(line: Array<string>, testCase: TestCase){
+function processOtherTestLines(line: Array<string>, testCase: TestCase) {
   let steps = testCase.steps == null ? [] : testCase.steps;
   if (line[TEST_STEP_TYPE_INDEX] != null) {
-      let step: TestCaseStep;
-      let stepType = line[TEST_STEP_TYPE_INDEX];
-      if (stepType == "ACTION" ) {
-       step = {
-          type: "ACTION",
-          action: line[TEST_STEP_VALUE_INDEX]
-        }
-        steps.push(step);
+    let step: TestCaseStep;
+    let stepType = line[TEST_STEP_TYPE_INDEX];
+    if (stepType == "ACTION") {
+      step = {
+        type: "ACTION",
+        action: line[TEST_STEP_VALUE_INDEX]
       }
-      if (stepType == "WAIT" ) {
-        step = {
-           type: "WAIT",
-           period: parseInt(line[TEST_STEP_VALUE_INDEX])
-         }
-         steps.push(step);
-       }
+      steps.push(step);
+    }
+    if (stepType == "WAIT") {
+      step = {
+        type: "WAIT",
+        period: parseInt(line[TEST_STEP_VALUE_INDEX])
+      }
+      steps.push(step);
+    }
 
-       if (stepType == "UNTIL" ) {
-        step = {
-           type: "UNTIL",
-           condition: line[TEST_STEP_VALUE_INDEX]
-         }
-         steps.push(step);
-       }
+    if (stepType == "UNTIL") {
+      step = {
+        type: "UNTIL",
+        condition: line[TEST_STEP_VALUE_INDEX]
+      }
+      steps.push(step);
+    }
   }
   testCase.steps = steps;
 
@@ -377,16 +378,16 @@ function processFirstTestLine(header: Array<string>): TestCase {
   var tt: Array<string> = [];
   if (commonAss != null && commonAss.indexOf('A.') >= 0) {
 
-      assertions.push(...FixString(commonAss).split(/\n/));
-      
+    assertions.push(...FixString(commonAss).split(/\n/));
+
   }
   if (suiteAss != null && suiteAss.indexOf('A.') >= 0) {
     assertions.push(...FixString(suiteAss).split(/\n/));
   }
   //header[TEST_SUITE_ASSERTION_INDEX] != null  && header[TEST_SUITE_ASSERTION_INDEX].indexOf('A.') >= 0 ? assertions.push(header[TEST_SUITE_ASSERTION_INDEX]) : null;
   //header[TEST_COMMON_ASSERTION_INDEX] != null && header[TEST_COMMON_ASSERTION_INDEX].indexOf('A.') >= 0? assertions.push(header[TEST_COMMON_ASSERTION_INDEX]) : null;
-  let  cleanAssertion: string[] = [];
-  assertions.forEach(x  => {
+  let cleanAssertion: string[] = [];
+  assertions.forEach(x => {
     x = x.replace(/\n|\r/g, "");
     cleanAssertion.push(x);
   });;
@@ -395,7 +396,7 @@ function processFirstTestLine(header: Array<string>): TestCase {
     title: header[TEST_TITLE_INDEX],
     description: header[TEST_DESCRIPTION_INDEX],
     references: processReferences(header[TEST_REFERENCE_INDEX], header[TEST_ID_INDEX]),
-    negative: header[TEST_POLARITY_INDEX] == 'TRUE'? true: false,
+    negative: header[TEST_POLARITY_INDEX] == 'TRUE' ? true : false,
     preConditions: processMultiLineString(header[TEST_PRECONDITION_INDEX], header[TEST_ID_INDEX]),
     purpose: FixString(header[TEST_PURPOSE_INDEX]),
     steps: [],
@@ -407,29 +408,29 @@ function processFirstTestLine(header: Array<string>): TestCase {
 function processFirstScenarioLine(header: Array<string>): Scenario {
 
   let maxCnt = header.length;
-  var actions: ScenarioAction[]= [];
+  var actions: ScenarioAction[] = [];
   if (header[SCENARIO_SETUP_INDEX] != null && header[SCENARIO_SETUP_INDEX] != '') {
     let scenarioAction: ScenarioAction = {
-        type: "SETUP",
-        action: header[SCENARIO_SETUP_INDEX]
+      type: "SETUP",
+      action: header[SCENARIO_SETUP_INDEX]
     }
     actions.push(scenarioAction);
   }
-  if (header[SCENARIO_CLEANUP_INDEX] != null  && header[SCENARIO_CLEANUP_INDEX] != '') {
+  if (header[SCENARIO_CLEANUP_INDEX] != null && header[SCENARIO_CLEANUP_INDEX] != '') {
     let scenarioAction: ScenarioAction = {
       type: "CLEANUP",
       action: header[SCENARIO_CLEANUP_INDEX]
     }
     actions.push(scenarioAction);
   }
-  for(let i = SCENARIO_TEST_CASES; i < maxCnt; i++) {
-      if (header[i] != undefined && header[i] != '') {
-        let testAction: ScenarioAction = {
-          type: "TEST",
-          testCase: header[i]
-        }
-        actions.push(testAction);
+  for (let i = SCENARIO_TEST_CASES; i < maxCnt; i++) {
+    if (header[i] != undefined && header[i] != '') {
+      let testAction: ScenarioAction = {
+        type: "TEST",
+        testCase: header[i]
       }
+      actions.push(testAction);
+    }
   }
   let scenario: Scenario = {
     id: header[SCENARIO_ID_INDEX],
@@ -444,26 +445,26 @@ function processFirstScenarioLine(header: Array<string>): Scenario {
 
 
 function processMultiLineString(preconditions: string, id: string): Array<string> {
-  if (preconditions == null || preconditions =='')
-      return [];
+  if (preconditions == null || preconditions == '')
+    return [];
   preconditions = FixString(preconditions);
   var returnArray = new Array<string>();
-  returnArray= preconditions.split('\n');
+  returnArray = preconditions.split('\n');
   return returnArray;
 }
 
 
 function cleanStringOfDoubleQuotes(strIn: string): string {
   let idx: number = strIn.indexOf('""');
-  while (idx > -1){
+  while (idx > -1) {
     let st1 = strIn.substring(0, idx);
-    let st2 = strIn.substring(idx+1);
+    let st2 = strIn.substring(idx + 1);
     strIn = st1 + st2;
     idx = strIn.indexOf('""');
   }
   let testSt = " error code is \"InvalidPageSize\"";
   let idx2: number = testSt.indexOf('\\\"');
-  while (idx2 > -1){
+  while (idx2 > -1) {
     testSt.replace('\\\"', '')
     idx2 = testSt.indexOf('\\\"');
   }
@@ -478,42 +479,42 @@ function splitCSVButIgnoreCommasInDoublequotes(str: string) {
   var elements = str.split(delimiter);
   var newElements = [];
   for (var i = 0; i < elements.length; ++i) {
-      if (elements[i].indexOf(quotes) >= 0 && isStringBalanced(elements[i]) == false) {//the left double quotes is found
-          var indexOfRightQuotes = -1;
-          var tmp = elements[i];
-          //find the right double quotes
-          for (var j = i + 1; j < elements.length; ++j) {
-              if (elements[j].indexOf(quotes) >= 0) {
-                  indexOfRightQuotes = j;
-                  break;
-              }
-          }
-          //found the right double quotes
-          //merge all the elements between double quotes
-          if (-1 != indexOfRightQuotes) {
-              for (var j = i + 1; j <= indexOfRightQuotes; ++j) {
-                  tmp = tmp + delimiter + elements[j];
-              }
-              newElements.push(tmp);
-              i = indexOfRightQuotes;
-          }
-          else { //right double quotes is not found
-              newElements.push(elements[i]);
-          }
+    if (elements[i].indexOf(quotes) >= 0 && isStringBalanced(elements[i]) == false) {//the left double quotes is found
+      var indexOfRightQuotes = -1;
+      var tmp = elements[i];
+      //find the right double quotes
+      for (var j = i + 1; j < elements.length; ++j) {
+        if (elements[j].indexOf(quotes) >= 0) {
+          indexOfRightQuotes = j;
+          break;
+        }
       }
-      else {//no left double quotes is found
-          newElements.push(elements[i]);
+      //found the right double quotes
+      //merge all the elements between double quotes
+      if (-1 != indexOfRightQuotes) {
+        for (var j = i + 1; j <= indexOfRightQuotes; ++j) {
+          tmp = tmp + delimiter + elements[j];
+        }
+        newElements.push(tmp);
+        i = indexOfRightQuotes;
       }
+      else { //right double quotes is not found
+        newElements.push(elements[i]);
+      }
+    }
+    else {//no left double quotes is found
+      newElements.push(elements[i]);
+    }
   }
- // return elements;
- var returnedElements: string[] = [];
- newElements.forEach(element => {
+  // return elements;
+  var returnedElements: string[] = [];
+  newElements.forEach(element => {
     // let lineStr: string = '';
     if (element.indexOf('"') == 0) {
       element = element.substring(1);
     }
-    if (element.lastIndexOf('"') == element.length-1) {
-      element = element.substring(0, element.length-1);
+    if (element.lastIndexOf('"') == element.length - 1) {
+      element = element.substring(0, element.length - 1);
     }
     returnedElements.push(element);
   });
@@ -522,9 +523,9 @@ function splitCSVButIgnoreCommasInDoublequotes(str: string) {
 
 function isStringBalanced(str: string): boolean {
   if (str == '' || str.length < 2)
-     return true;
+    return true;
   var quotes = '"';
-  if (str.indexOf(quotes) == 0 && str.lastIndexOf(quotes) == str.length-1)
+  if (str.indexOf(quotes) == 0 && str.lastIndexOf(quotes) == str.length - 1)
     return true;
   else
     return false;
@@ -532,7 +533,7 @@ function isStringBalanced(str: string): boolean {
 
 function processReferences(references: string, id: string): Array<Reference> {
   if (references == null || references == '')
-      return [];
+    return [];
   var arr = references.split('\n');
   var returnArray = new Array<Reference>();
   arr.forEach(elem => {
@@ -546,16 +547,16 @@ function processReferences(references: string, id: string): Array<Reference> {
       let altIdx = ref.indexOf('alt=');
       let uriSt: string = '';
       let altSt: string = '';
-       if (uriIdx > altIdx) {
-          uriSt= ref.substring(uriIdx+4,Math.min(altIdx == -1? ref.length:altIdx, ref.length));
-          newReference.uri = uriSt;
-       }
-       else {
-          altSt= ref.substring(altIdx+4,Math.min(uriIdx == -1? ref.length:uriIdx, ref.length));
-          if (altSt !== '') {
-            newReference.alt = altSt;
-          }
-       }
+      if (uriIdx > altIdx) {
+        uriSt = ref.substring(uriIdx + 4, Math.min(altIdx == -1 ? ref.length : altIdx, ref.length));
+        newReference.uri = uriSt;
+      }
+      else {
+        altSt = ref.substring(altIdx + 4, Math.min(uriIdx == -1 ? ref.length : uriIdx, ref.length));
+        if (altSt !== '') {
+          newReference.alt = altSt;
+        }
+      }
     })
     if (newReference.uri && newReference.uri !== '') returnArray.push(newReference)
   })
