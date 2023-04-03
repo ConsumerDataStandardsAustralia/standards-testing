@@ -1,6 +1,6 @@
 {
   "schema": "https://cds.gov.au/cdr-test-schema.1.0.0.json",
-  "fileVersion": "2.0.0",
+  "fileVersion": "2.1.0",
   "standardsVersion": "1.18.0",
   "title": "The CDR Test Documentation",
   "description": "This documentation has been  created by the DSB to assist participants in the development of compliant APIs",
