@@ -30,14 +30,14 @@ None
 
 |Options|Description|
 |-|-|
-|`--version`| Output only the version of the schema that the CLI is currently using|
+|`--vonly`| Output only the version of the schema that the CLI is currently using|
 
 #### Examples
 
 `testdocs doc-schema`
 Output the current test doc schema to stdout
 
-`testdocs doc-schema --version`
+`testdocs doc-schema --vonly`
 Output the version of test doc schema to stdout
 
 ### Validate Documentation Command
@@ -67,7 +67,7 @@ Validate `doc.json` and output any validation errors to stderr
 
 #### Command
 
-`gendocs <type> <src> <dst>`
+`generate <type> <src> <dst>`
 Read in the specified source and generate output according to the type specified.  Can be used to generate human readable versions of the test documentation data in various formats.
 
 #### Arguments
@@ -96,10 +96,10 @@ Read in the specified source and generate output according to the type specified
 `testdocs gendocs -c /Users/dsb/config.json json ./csvfiles/ ./doc.json`
 Convert a folder structure containing a series of CSV files each containing different aspects of the test documentation into a single JSON file containing test documentation aligned to the test doc schema.  Note that schema compliance for the output is dependent on the validity of the data in the CSV files.
 
-`testdocs gendocs html ./doc.json ./doc.html`
+`testdocs generate html ./doc.json ./doc.html`
 Convert the documentation in `doc.json` into standalone HTML and output to `doc.html`.  All CSS and JS will be inline in the resulting HTML file.
 
-`testdocs gendocs markdown ./doc.json ./doc.md`
+`testdocs generate markdown ./doc.json ./doc.md`
 Convert the documentation in `doc.json` into Markdown and output to `doc.md`.  Note that some HTML statements will be included in the markdown so a markdown renderer that supports inline HTML is expected to be used to view the resulting output.
 
 ## Maintenance
@@ -119,6 +119,9 @@ To build the repository run the following scripts from a bash compliant command 
 `npm run build`
 
 To publish the repository to npm (needs permission)
+1. Build for release
+`npm run build-prod`
+2. Publish
 `npm publish --access public`
 
 ## Outstanding Features

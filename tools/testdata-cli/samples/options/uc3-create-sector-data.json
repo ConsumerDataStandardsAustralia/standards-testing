@@ -1,0 +1,327 @@
+{
+	"factories": {
+		"allDataFactory": {
+			"id": "general-load-static",
+			"options": {
+			  "source": "/Users/tomasschier/code/_git/consumer-data-standards/standards-testing/tools/testdata-cli/samples/files/uc3-empty.json"
+			}
+		},
+		"holders": [
+			{
+				"authenticated": {
+					"customers": [
+						{
+
+							"banking": {
+								"accounts": [
+									{
+										"count": 5,
+										"accountFactory": {
+											"id": "simple-full"
+										},
+										"balanceFactory": {
+											"id": "simple-full"
+										},
+										"transactionsFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 10
+											}
+										}
+									}
+								],
+								"directDebitsFactory": {
+									"id": "simple-full",
+									"options": {
+										"count": 5
+									}
+								},
+								"payeesFactory": {
+									"id": "simple-full",
+									"options": {
+										"count": 5
+									}
+								},
+								"paymentSchedulesFactory": {
+									"id": "simple-full",
+									"options": {
+										"count": 5
+									}
+								}
+							},
+							"energy": {
+								"accounts": [
+									{
+										"count": 5,
+										"accountFactory": {
+											"id": "create-energy-account-data",
+											"options": {
+												"fuelType": "ELECTRICITY",
+												"status": "OPEN"
+											}
+										},
+										"balanceFactory": {
+											"id": "simple-full"
+										},
+										"invoicesFactory": {
+											"id": "create-energy-invoice-data",
+											"options": {
+												"count": 5
+											}
+										},
+										"transactionsFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 30
+											}
+										},
+										"concessionsFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 5
+											}
+										},
+										"paymentScheduleFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 1
+											}
+										}
+									},
+									{
+										"count": 2,
+										"accountFactory": {
+											"id": "create-energy-account-data",
+											"options": {
+												"fuelType": "ELECTRICITY",
+												"status": "CLOSED"
+											}
+										},
+										"balanceFactory": {
+											"id": "simple-full"
+										},
+										"invoicesFactory": {
+											"id": "create-energy-invoice-data",
+											"options": {
+												"count": 5
+											}
+										},
+										"transactionsFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 30
+											}
+										},
+										"concessionsFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 5
+											}
+										},
+										"paymentScheduleFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 1
+											}
+										}
+									},
+									{
+										"count": 5,
+										"accountFactory": {
+											"id": "create-energy-account-data",
+											"options": {
+												"fuelType": "DUAL"
+											}
+										},
+										"balanceFactory": {
+											"id": "simple-full"
+										},
+										"invoicesFactory": {
+											"id": "create-energy-invoice-data",
+											"options": {
+												"count": 5
+											}
+										},
+										"transactionsFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 30
+											}
+										},
+										"concessionsFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 5
+											}
+										},
+										"paymentScheduleFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 1
+											}
+										}
+									},
+									{
+										"count": 2,
+										"accountFactory": {
+											"id": "create-energy-account-data",
+											"options": {
+												"fuelType": "GAS",
+												"status": "OPEN"
+											}
+										},
+										"balanceFactory": {
+											"id": "simple-full"
+										},
+										"invoicesFactory": {
+											"id": "create-energy-invoice-data",
+											"options": {
+												"count": 5
+											}
+										},
+										"transactionsFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 30
+											}
+										},
+										"concessionsFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 5
+											}
+										},
+										"paymentScheduleFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 1
+											}
+										}
+									}										
+								],
+								"servicePoints": [
+									{
+										"count": 5,
+										"servicePointFactory": {
+											"id": "create-energy-service-points"
+										},
+										"derFactory": {
+											"id": "create-der-data",
+											"options": {
+												"count": 5
+											}
+										},
+										"usageFactory": {
+											"id": "create-energy-usage",
+											"options": {
+												"count": 30
+											}
+										}
+									}
+								]
+							}
+						},
+						{
+							"banking": {
+								"accounts": [
+									{
+										"count": 5,
+										"accountFactory": {
+											"id": "simple-full"
+										},
+										"balanceFactory": {
+											"id": "simple-full"
+										},
+										"transactionsFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 10
+											}
+										}
+									}
+								],
+								"directDebitsFactory": {
+									"id": "simple-full",
+									"options": {
+										"count": 5
+									}
+								},
+								"payeesFactory": {
+									"id": "simple-full",
+									"options": {
+										"count": 5
+									}
+								},
+								"paymentSchedulesFactory": {
+									"id": "simple-full",
+									"options": {
+										"count": 5
+									}
+								}
+							},
+							"energy": {
+								"accounts": [
+									{
+										"count": 5,
+										"accountFactory": {
+											"id": "create-energy-account-data"
+										},
+										"balanceFactory": {
+											"id": "simple-full"
+										},
+										"invoicesFactory": {
+											"id": "create-energy-invoice-data",
+											"options": {
+												"count": 5,
+												"minInvoiceAmount": 25,
+												"maxInvoiceAmount": 1500
+											}
+										},
+										"transactionsFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 30
+											}
+										},
+										"concessionsFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 5
+											}
+										},
+										"paymentScheduleFactory": {
+											"id": "simple-full",
+											"options": {
+												"count": 1
+											}
+										}
+									}
+								],
+								"servicePoints": [
+									{
+										"count": 5,
+										"servicePointFactory": {
+											"id": "create-energy-service-points"
+										},
+										"derFactory": {
+											"id": "create-der-data",
+											"options": {
+												"count": 5
+											}
+										},
+										"usageFactory": {
+											"id": "create-energy-usage",
+											"options": {
+												"count": 30
+											}
+										}
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		]
+	}
+}
