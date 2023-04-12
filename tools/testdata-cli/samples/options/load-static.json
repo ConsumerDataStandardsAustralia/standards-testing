@@ -1,0 +1,10 @@
+{
+  "factories": {
+    "allDataFactory": {
+      "id": "general-load-static",
+      "options": {
+        "source": "/Users/tomasschier/code/_git/consumer-data-standards/standards-testing/tools/testdata-cli/samples/files/full.json"
+      }
+    }
+  }
+}

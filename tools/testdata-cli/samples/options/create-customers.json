@@ -1,0 +1,39 @@
+{
+    "factories": {
+        "holders": [
+            {
+                "holderFactory": {
+                    "id": "create-holder"
+                },
+                "authenticated": {
+                    "customers": [
+                        {
+                            "count": 5,
+                            "customerFactory": {
+                                "id": "create-customers",
+                                "options": {
+                                    "type": "organisation"
+                                }
+                            }
+                        },
+                        {
+                            "count": 5,
+                            "customerFactory": {
+                                "id": "create-customers",
+                                "options": {
+                                    "type": "person"
+                                }
+                            }
+                        },
+                        {
+                            "count": 2,
+                            "customerFactory": {
+                                "id": "create-invalid-customers"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

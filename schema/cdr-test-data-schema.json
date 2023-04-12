@@ -1,0 +1,300 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://cds.gov.au/test-data-schema.0.0.3.json",
+	"title": "Consumer Data Right Test Data JSON Schema",
+	"description": "A JSON schema for defining test data files that can be used to seed a mock, or test, implementation of a Data Holder for the Consumer Data Right",
+	"type": "object",
+	"required": [
+		"fileVersion",
+		"standardsVersion",
+		"title",
+    "holders",
+    "clientCache",
+    "registerCache"
+	],
+	"additionalProperties": false,
+	"properties": {
+		"fileVersion": {
+			"type": "string",
+			"description": "The version of the file formatted using semver (without extensions)",
+			"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
+		},
+		"standardsVersion": {
+			"type": "string",
+			"description": "The version of the CDR standards that these tests are validated for.  For formatted using semver (without extensions)",
+			"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
+		},
+		"title": {
+			"type": "string",
+			"description": "A short title of the test data file"
+		},
+		"description": {
+			"type": "string",
+			"description": "An optional description of the test data file to identify its purpose"
+		},
+		"holders": {
+      "$ref": "#/$defs/holders"
+		},
+		"clientCache": {
+      "type": "array",
+      "description": "A cache of previously registered clients",
+      "items": {
+        "$ref": "#/$defs/client"
+      }
+		},
+		"registerCache": {
+      "type": "array",
+      "description": "A cache of previously loaded recipients from the CDR Register",
+      "items": {
+        "$ref": "#/$defs/recipient"
+      }
+		}
+	},
+	"$defs": {
+    "holders": {
+      "type": "array",
+      "description": "An array of holders and their data",
+      "items": {
+        "$ref": "#/$defs/holderWrapper"
+      }
+    },
+    "holderWrapper": {
+      "type": "object",
+			"description": "A wrapper for a single holder to contain all of the data related to the holder",
+      "additionalProperties": false,
+      "required": [
+        "holderId",
+        "holder"
+      ],
+      "properties": {
+        "holderId": {
+          "type": "string",
+          "description": "The unique internal ID of the holder"
+        },
+        "holder": {
+          "$ref": "#/$defs/holder"
+        }
+      }
+    },
+		"holder": {
+			"type": "object",
+			"description": "Data for a single data holder",
+			"additionalProperties": false,
+      "required": [
+        "unauthenticated",
+        "authenticated"
+      ],
+			"properties": {
+        "unauthenticated": {
+          "$ref": "#/$defs/unauthenticated"
+        },
+				"authenticated": {
+          "$ref": "#/$defs/authenticated"
+				}
+      }
+    },
+    "unauthenticated": {
+			"type": "object",
+			"description": "Unauthenticated data for a single data holder",
+			"additionalProperties": false,
+			"properties": {
+        "banking": {
+          "type": "object",
+					"description": "Unauthenticated banking data",
+					"additionalProperties": false,
+          "properties": {
+            "products": {
+              "type": "array",
+							"description": "An array of banking products",
+              "items": {
+                "$ref": "#/$defs/bankProduct"
+              }
+            }
+          }
+        },
+        "energy": {
+          "type": "object",
+					"description": "Unauthenticated energy data",
+					"additionalProperties": false,
+          "properties": {
+            "plans": {
+              "type": "array",
+							"description": "An array of energy plans",
+              "items": {
+                "$ref": "#/$defs/energyPlan"
+              }
+            }
+          }
+        },
+        "admin": {
+          "type": "object",
+					"description": "Current system status",
+					"additionalProperties": false,
+          "properties": {
+            "status": {
+              "$ref": "#/$defs/adminStatus"
+            },
+            "outages": {
+              "type": "array",
+							"description": "An array of planned outages",
+              "items": {
+                "$ref": "#/$defs/adminOutage"
+              }
+            }
+          }
+        }
+			}
+    },
+		"authenticated": {
+			"type": "object",
+			"description": "Authenticated data for a single data holder",
+			"additionalProperties": false,
+			"properties": {
+				"customers": {
+					"type": "array",
+					"description": "An array of customers and their data",
+          "items": {
+            "$ref": "#/$defs/customerWrapper"
+          }
+				}
+			}
+		},
+		"client": {
+			"type": "object",
+			"description": "A previously registered client aligned to the current version of the data standards"
+		},
+		"recipient": {
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/register/RegisterDataRecipient.json"
+		},
+    "bankProduct": {
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingProductDetailV4.json"
+		},
+    "energyPlan": {
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/energy/EnergyPlanDetail.json"
+		},
+    "adminStatus": {
+			"type": "object",
+			"description": "A status object for the holder"
+		},
+    "adminOutage": {
+			"type": "object",
+			"description": "A planned outage object for the holder"
+		},
+    "customerWrapper": {
+      "type": "object",
+			"description": "A wrapper for a single customer to contain all of the data related to the customer",
+      "additionalProperties": false,
+      "required": [
+        "customerId",
+        "customer"
+      ],
+      "properties": {
+        "customerId": {
+          "type": "string",
+          "description": "The unique internal ID of the customer"
+        },
+        "customer": {
+          "$ref": "#/$defs/customer"
+        },
+        "banking": {
+          "type": "object",
+    			"description": "Banking data for this customer",
+          "properties": {
+            "accounts": {
+              "type": "array",
+              "description": "An array of accounts and their data",
+              "items": {
+                "$ref": "#/$defs/bankAccountWrapper"
+              }
+            },
+            "directDebits": {
+              "type": "array",
+              "description": "An array of direct debit authorisations",
+              "items": {
+                "$ref": "#/$defs/bankDirectDebit"
+              }
+            },
+            "payees": {
+              "type": "array",
+              "description": "An array of payees",
+              "items": {
+                "$ref": "#/$defs/bankPayee"
+              }
+            },
+            "payments": {
+              "type": "array",
+              "description": "An array of payment schedules",
+              "items": {
+                "$ref": "#/$defs/bankPaymentSchedule"
+              }
+            }
+          }
+        },
+        "energy": {
+          "type": "object",
+    			"description": "Energy data for this customer",
+          "properties": {
+            "accounts": {
+              "type": "array",
+              "description": "An array of accounts and their data",
+              "items": {
+                "$ref": "#/$defs/energyAccountWrapper"
+              }
+            },
+            "servicePoints": {
+              "type": "array",
+              "description": "An array of service points and their data",
+              "items": {
+                "$ref": "#/$defs/energyServicePointWrapper"
+              }
+            }
+          }
+        }
+      }
+    },
+    "customer": {
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/common/CommonPersonDetailV2.json"
+    },
+    "bankDirectDebit": {
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingDirectDebit.json"
+    },
+    "bankPayee": {
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingPayeeDetailV2.json"
+    },
+    "bankPaymentSchedule": {
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingScheduledPayment.json"
+    },
+    "bankAccountWrapper": {
+      "type": "object",
+			"description": "A wrapper for a single bank account to contain all of the data related to the account",
+      "additionalProperties": false,
+      "required": [
+        "account"
+      ],
+      "properties": {
+        "account": {
+          "$ref": "#/$defs/bankAccount"
+        },
+        "balance": {
+          "$ref": "#/$defs/bankAccountBalance"
+        },
+        "transactions": {
+          "type": "array",
+          "description": "An array of transactions for the account",
+          "items": {
+            "$ref": "#/$defs/bankTransaction"
+          }
+        }
+      }
+    },
+    "bankAccount": {
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingAccountDetailV2.json"
+    },
+    "bankAccountBalance": {
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingBalance.json"
+    },
+    "bankTransaction": {
+      "$ref": "https://raw.githubusercontent.com/ConsumerDataStandardsAustralia/dsb-schema-tools/main/1.19.0/schemas/banking/BankingTransaction.json"
+    }
+	}
+}

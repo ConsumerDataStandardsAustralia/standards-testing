@@ -11,7 +11,6 @@ working
 # Editors
 .idea
 *.iml
-.vscode
 
 # OS metadata
 .DS_Store
@@ -26,3 +25,5 @@ yarn.lock
 
 # ignore yarn.lock
 working
+
+tools/testdata-cli/samples/output
