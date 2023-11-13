@@ -1,10 +1,10 @@
 {
   "schema": "https://cds.gov.au/cdr-test-schema.1.0.0.json",
-  "fileVersion": "2.1.0",
+  "fileVersion": "2.2.0",
   "standardsVersion": "1.18.0",
   "title": "The CDR Test Documentation",
   "description": "This documentation has been  created by the DSB to assist participants in the development of compliant APIs",
-  "changeLogUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v2.1.0/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx",
+  "changeLogUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v2.2.0/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx",
   "githubRepoUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing",
   "assertions": {
     "A.CAA.0001": {
@@ -13,9 +13,7 @@
       "given": [
         "a request is made to obtain a health check status for the implementation "
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 200",
@@ -32,12 +30,8 @@
     "A.CAA.0002": {
       "id": "A.CAA.0002",
       "title": "Validate schema - GetOutage",
-      "given": [
-        "a request is made to obtain a list of scheduled outages"
-      ],
-      "when": [
-        "a response is returned"
-      ],
+      "given": ["a request is made to obtain a list of scheduled outages"],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 200",
@@ -54,12 +48,8 @@
     "A.CAC.0001": {
       "id": "A.CAC.0001",
       "title": "Validate schema - ResponseCommonCustomer",
-      "given": [
-        "the request to call the API is formatted correctly"
-      ],
-      "when": [
-        "a response is returned"
-      ],
+      "given": ["the request to call the API is formatted correctly"],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 200",
@@ -76,12 +66,8 @@
     "A.CAC.0002": {
       "id": "A.CAC.0002",
       "title": "Validate schema - ResponseCommonCustomerDetailV2",
-      "given": [
-        "the request to call the API is formatted correctly"
-      ],
-      "when": [
-        "a response is returned"
-      ],
+      "given": ["the request to call the API is formatted correctly"],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 200",
@@ -101,9 +87,7 @@
       "given": [
         "the request to call the API is formatted correctly by the ADR"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 200",
@@ -124,9 +108,7 @@
         "the {accountID} is included ",
         "AND the {accountId} value is valid "
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 200",
@@ -150,9 +132,7 @@
         "the {accountId} is included ",
         "AND the requested account is permanently unavailable. (No subsequent request for the account will be successful.)"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 404",
@@ -174,9 +154,7 @@
         "the {accoundId} is included",
         "AND the requested account is temporarily unavailable. (Subsequent requests for the account may be successful.)"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 404",
@@ -198,9 +176,7 @@
         "the {accountID} is included ",
         "AND the {accountId} value is valid "
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 200",
@@ -221,9 +197,7 @@
         "the {accountID} is included ",
         "AND the {accountId} value is valid "
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 200",
@@ -244,9 +218,7 @@
         "the {servicePointId} is included ",
         "AND the {servicePointId} value is valid "
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 200",
@@ -270,9 +242,7 @@
         "the {servicePointId} is included ",
         "AND the requested service point is permanently unavailable. (No subsequent request for the service point will be successful.)"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 404",
@@ -294,9 +264,7 @@
         "the {servicePointId} is included",
         "AND the requested service point is temporarily unavailable. (Subsequent requests for the service point may be successful.)"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 404",
@@ -314,12 +282,8 @@
     "A.EAR.0004": {
       "id": "A.EAR.0004",
       "title": "Validate schema - EnergyServicePointListReponse",
-      "given": [
-        "the request to call the API is formatted correctly"
-      ],
-      "when": [
-        "a response is returned"
-      ],
+      "given": ["the request to call the API is formatted correctly"],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code 200",
@@ -341,9 +305,7 @@
         "AND the {servicePointId} value is valid ",
         "AND the request is formatted correctly"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code of 200",
@@ -364,9 +326,7 @@
         "the request payload to call the API is formatted correctly ",
         "AND contains the mandatory fields"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code 200",
@@ -387,9 +347,7 @@
         "the {servicePointId} is included ",
         "AND the {servicePointId} value is valid "
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 200",
@@ -410,9 +368,7 @@
         "the request payload to call the API is formatted correctly ",
         "AND contains the mandatory fields"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code 200",
@@ -433,9 +389,7 @@
         "the request payload does not contain the required fields",
         "OR the request payload is NOT well formatted"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code 422",
@@ -453,12 +407,8 @@
     "A.EAR.0010": {
       "id": "A.EAR.0010",
       "title": "Validate schema - \tEnergyUsageListResponse",
-      "given": [
-        "the request to call the API is formatted correctly"
-      ],
-      "when": [
-        "a response is returned"
-      ],
+      "given": ["the request to call the API is formatted correctly"],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code 200",
@@ -475,12 +425,8 @@
     "A.EAR.0011": {
       "id": "A.EAR.0011",
       "title": "Validate schema - EnergyDerListResponse",
-      "given": [
-        "the request to call the API is formatted correctly"
-      ],
-      "when": [
-        "a response is returned"
-      ],
+      "given": ["the request to call the API is formatted correctly"],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code 200",
@@ -501,9 +447,7 @@
         "the {servicePointId} is included ",
         "AND the {servicePointId} value is valid "
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 200",
@@ -527,9 +471,7 @@
         "the {servicePointId} is included ",
         "AND the requested service point is permanently unavailable. No subsequent request for the service point will be successful."
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 404",
@@ -551,9 +493,7 @@
         "the {servicePointId} is included ",
         "AND the requested service point is temporarily unavailable. Subsequent requests for the service point may be successful."
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 404",
@@ -571,12 +511,8 @@
     "A.EAS.0004": {
       "id": "A.EAS.0004",
       "title": "Validate schema - EnergyServicePointListReponse",
-      "given": [
-        "the request to call the API is formatted correctly"
-      ],
-      "when": [
-        "a response is returned"
-      ],
+      "given": ["the request to call the API is formatted correctly"],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code 200",
@@ -598,9 +534,7 @@
         "AND the {servicePointId} value is valid ",
         "AND the request is formatted correctly"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code of 200",
@@ -621,9 +555,7 @@
         "the request payload to call the API is formatted correctly ",
         "AND contains the mandatory fields"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code 200",
@@ -644,9 +576,7 @@
         "the {servicePointId} is included ",
         "AND the {servicePointId} value is valid "
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 200",
@@ -667,9 +597,7 @@
         "the request payload to call the API is formatted correctly ",
         "AND contains the mandatory fields"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code 200",
@@ -690,9 +618,7 @@
         "the request payload does not contain the required fields",
         "OR the request payload is NOT well formatted"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code 400",
@@ -713,12 +639,8 @@
     "A.EAS.0010": {
       "id": "A.EAS.0010",
       "title": "Validate servicePointIdList - invalid servicePointId in body ",
-      "given": [
-        "the request payload contains an invalid servicePointID "
-      ],
-      "when": [
-        "a response is returned"
-      ],
+      "given": ["the request payload contains an invalid servicePointID "],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code 422",
@@ -742,9 +664,7 @@
       "given": [
         "the request payload contains a valid servicePointID that is unavailable"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status code 422",
@@ -801,9 +721,7 @@
         "AND the value for <page-size> is outside the range [1..1000]",
         "OR the <page-size> is a not a positive integer"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -826,9 +744,7 @@
         "the <page> parameter is included ",
         "AND the <page> is a not a positive integer"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -851,9 +767,7 @@
         "the <page> parameter is included",
         "AND the <page> value is greater than the number of pages available "
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 422",
@@ -876,9 +790,7 @@
         "the <page-size> parameter is included ",
         "AND the page size parameter value is not a positive integer (number)"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -926,9 +838,7 @@
         "the version parameter is included ",
         "AND the version value is not a valid number is [-1,0,1001]"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -951,9 +861,7 @@
         "the version parameter is included",
         "AND the version value is not a valid number is an alpha (e.g. \"foo\")"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -977,9 +885,7 @@
         "AND <x-min-v> is NOT included",
         "AND the request version <x-v> is not supported"
       ],
-      "when": [
-        "and a response is returned"
-      ],
+      "when": ["and a response is returned"],
       "then": {
         "and": [
           "the response has a status of 406",
@@ -1003,9 +909,7 @@
         "AND  <x-min-v>  is included",
         "AND no version between <x-v> and <x-min-v> is supported"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 406",
@@ -1054,9 +958,7 @@
         "the <x-min-v> header is included ",
         "AND the <x-min-v> is a not a positive integer"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -1079,9 +981,7 @@
         "the <x-fapi-interaction-id> is included in the header of the request",
         "AND the <x-fapi-interaction-id> is in a valid format "
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": "the Data Holder has returned the <x-fapi-interaction-id> from the request in the response header",
       "references": [
         {
@@ -1097,9 +997,7 @@
       "given": [
         "the <x-fapi-interaction-id> is NOT included in the header of the request"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": "the Data Holder has returned an <x-fapi-interaction-id> in the response header",
       "references": [
         {
@@ -1116,9 +1014,7 @@
         "the <x-fapi-interaction-id> is included ",
         "AND the <x-fapi-interaction-id> is not in a valid format "
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -1144,9 +1040,7 @@
         "the API requires authentication",
         "AND the <x-fapi-auth-date> is NOT present  in the request header"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -1176,9 +1070,7 @@
         "AND the <x-fapi-auth-date> is in the request header",
         "AND is NOT in a valid format"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -1228,9 +1120,7 @@
         "AND the customer is present",
         "AND the <x-fapi-customer-ip-address> is NOT present in the request header"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -1257,9 +1147,7 @@
         "AND the <x-fapi-customer-ip-address> is in present the request header",
         "AND is NEITHER in a valid IPv4 or IPv6 format"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -1281,12 +1169,8 @@
     "A.ZAA.0021": {
       "id": "A.ZAA.0021",
       "title": "No <x-fapi-customer-ip-address> in header (SR specific)",
-      "given": [
-        "the call is from a DH to a SDH"
-      ],
-      "when": [
-        "a response is returned"
-      ],
+      "given": ["the call is from a DH to a SDH"],
+      "when": ["a response is returned"],
       "then": "the <x-fapi-customer-ip-address> is NOT present in the response header",
       "references": [
         {
@@ -1304,9 +1188,7 @@
         "AND the <x-cds-client-headers> is mandatory",
         "AND the <x-cds-client-headers> is NOT present in the request header"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -1335,9 +1217,7 @@
         "the <x-cds-client-headers>  present the request header",
         "AND is Not Base64 encoded"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -1362,12 +1242,8 @@
     "A.ZAA.0024": {
       "id": "A.ZAA.0024",
       "title": "No <x-cds-client-header> in header (SR specific)",
-      "given": [
-        "the call is from a DH to a SDH"
-      ],
-      "when": [
-        "a response is returned"
-      ],
+      "given": ["the call is from a DH to a SDH"],
+      "when": ["a response is returned"],
       "then": "the <x-cds-client-header> is NOT present in the response header",
       "references": [
         {
@@ -1384,9 +1260,7 @@
         "the call is from a DH to a SDH",
         "AND the <x-cds-arrangement> is NOT present in the request header"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -1408,12 +1282,8 @@
     "A.ZAA.0026": {
       "id": "A.ZAA.0026",
       "title": "CDS arrangement id - present but invalid (SR specific)",
-      "given": [
-        "the call is from a DH to a SDH"
-      ],
-      "when": [
-        "a response is returned"
-      ],
+      "given": ["the call is from a DH to a SDH"],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -1455,9 +1325,7 @@
         "the <oldest-date> is included as a query parameter",
         "AND the <oldest-date> is not in a DateString valid format"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -1496,9 +1364,7 @@
         "the <newest-date> is included as a query parameter",
         "AND the <newest-date> is not in a valid DateString format"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -1521,9 +1387,7 @@
         "the request is a POST request",
         "AND the request body is not in a valid JSON format, i.e. it is malformed"
       ],
-      "when": [
-        "a response is returned"
-      ],
+      "when": ["a response is returned"],
       "then": {
         "and": [
           "the response has a status of 400",
@@ -1554,9 +1418,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        "Value <x-v>  is set to a version supported by the DH"
-      ],
+      "preConditions": ["Value <x-v>  is set to a version supported by the DH"],
       "purpose": "Test API with a valid version",
       "steps": [
         {
@@ -1564,11 +1426,7 @@
           "action": "GET /discovery/status"
         }
       ],
-      "assertions": [
-        "A.CAA.0001",
-        "A.ZAA.0006",
-        "A.ZAA.0011"
-      ]
+      "assertions": ["A.CAA.0001", "A.ZAA.0006", "A.ZAA.0011"]
     },
     "T.CAA.0002": {
       "id": "T.CAA.0002",
@@ -1580,9 +1438,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -1590,9 +1446,7 @@
           "action": "GET /discovery/status"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007"
-      ]
+      "assertions": ["A.ZAA.0007"]
     },
     "T.CAA.0003": {
       "id": "T.CAA.0003",
@@ -1604,9 +1458,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid"
-      ],
+      "preConditions": ["The <x-v> format is not valid"],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -1614,9 +1466,7 @@
           "action": "GET /discovery/status"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008"
-      ]
+      "assertions": ["A.ZAA.0008"]
     },
     "T.CAA.0004": {
       "id": "T.CAA.0004",
@@ -1638,9 +1488,7 @@
           "action": "GET /discovery/status"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009"
-      ]
+      "assertions": ["A.ZAA.0009"]
     },
     "T.CAA.0005": {
       "id": "T.CAA.0005",
@@ -1663,9 +1511,7 @@
           "action": "GET /discovery/status"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010"
-      ]
+      "assertions": ["A.ZAA.0010"]
     },
     "T.CAA.0006": {
       "id": "T.CAA.0006",
@@ -1688,9 +1534,7 @@
           "action": "GET /discovery/status"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012"
-      ]
+      "assertions": ["A.ZAA.0012"]
     },
     "T.CAA.0007": {
       "id": "T.CAA.0007",
@@ -1702,9 +1546,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        "Value <x-v> is set to a version supported by the DH"
-      ],
+      "preConditions": ["Value <x-v> is set to a version supported by the DH"],
       "purpose": "Test API with a valid version",
       "steps": [
         {
@@ -1712,11 +1554,7 @@
           "action": "GET /discovery/outages"
         }
       ],
-      "assertions": [
-        "A.CAA.0002",
-        "A.ZAA.0006",
-        "A.ZAA.0011"
-      ]
+      "assertions": ["A.CAA.0002", "A.ZAA.0006", "A.ZAA.0011"]
     },
     "T.CAA.0008": {
       "id": "T.CAA.0008",
@@ -1728,9 +1566,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -1738,9 +1574,7 @@
           "action": "GET /discovery/outages"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007"
-      ]
+      "assertions": ["A.ZAA.0007"]
     },
     "T.CAA.0009": {
       "id": "T.CAA.0009",
@@ -1752,9 +1586,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid"
-      ],
+      "preConditions": ["The <x-v> format is not valid"],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -1762,9 +1594,7 @@
           "action": "GET /discovery/outages"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008"
-      ]
+      "assertions": ["A.ZAA.0008"]
     },
     "T.CAA.0010": {
       "id": "T.CAA.0010",
@@ -1786,9 +1616,7 @@
           "action": "GET /discovery/outages"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009"
-      ]
+      "assertions": ["A.ZAA.0009"]
     },
     "T.CAA.0011": {
       "id": "T.CAA.0011",
@@ -1811,9 +1639,7 @@
           "action": "GET /discovery/outages"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010"
-      ]
+      "assertions": ["A.ZAA.0010"]
     },
     "T.CAA.0012": {
       "id": "T.CAA.0012",
@@ -1836,9 +1662,7 @@
           "action": "GET /discovery/outages"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012"
-      ]
+      "assertions": ["A.ZAA.0012"]
     },
     "T.CAC.0001": {
       "id": "T.CAC.0001",
@@ -1878,9 +1702,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -1888,11 +1710,7 @@
           "action": "GET /common/customer"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.CAC.0003": {
       "id": "T.CAC.0003",
@@ -1904,9 +1722,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -1914,11 +1730,7 @@
           "action": "GET /common/customer"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.CAC.0004": {
       "id": "T.CAC.0004",
@@ -1940,11 +1752,7 @@
           "action": "GET /common/customer"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.CAC.0005": {
       "id": "T.CAC.0005",
@@ -1967,11 +1775,7 @@
           "action": "GET /common/customer"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.CAC.0006": {
       "id": "T.CAC.0006",
@@ -1983,9 +1787,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-min-v> is a not a positive integer"
-      ],
+      "preConditions": ["The <x-min-v> is a not a positive integer"],
       "purpose": "Test API with invalid minimum version value",
       "steps": [
         {
@@ -1993,11 +1795,7 @@
           "action": "GET /common/customer"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.CAC.0007": {
       "id": "T.CAC.0007",
@@ -2009,9 +1807,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID format is invalid",
       "steps": [
         {
@@ -2019,9 +1815,7 @@
           "action": "GET /common/customer"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.CAC.0008": {
       "id": "T.CAC.0008",
@@ -2033,9 +1827,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -2043,11 +1835,7 @@
           "action": "GET /common/customer"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.CAC.0009": {
       "id": "T.CAC.0009",
@@ -2059,9 +1847,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -2069,11 +1855,7 @@
           "action": "GET /common/customer"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.CAC.0010": {
       "id": "T.CAC.0010",
@@ -2095,11 +1877,7 @@
           "action": "GET /common/customer"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.CAC.0011": {
       "id": "T.CAC.0011",
@@ -2111,9 +1889,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -2121,11 +1897,7 @@
           "action": "GET /common/customer"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.CAC.0012": {
       "id": "T.CAC.0012",
@@ -2147,11 +1919,7 @@
           "action": "GET /common/customer"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.CAC.0013": {
       "id": "T.CAC.0013",
@@ -2163,9 +1931,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -2173,11 +1939,7 @@
           "action": "GET /common/customer"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.CAC.0014": {
       "id": "T.CAC.0014",
@@ -2217,9 +1979,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -2227,11 +1987,7 @@
           "action": "GET /common/customer/detail"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.CAC.0016": {
       "id": "T.CAC.0016",
@@ -2243,9 +1999,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -2253,11 +2007,7 @@
           "action": "GET /common/customer/detail"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.CAC.0017": {
       "id": "T.CAC.0017",
@@ -2279,11 +2029,7 @@
           "action": "GET /common/customer/detail"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.CAC.0018": {
       "id": "T.CAC.0018",
@@ -2306,11 +2052,7 @@
           "action": "GET /common/customer/detail"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.CAC.0019": {
       "id": "T.CAC.0019",
@@ -2322,9 +2064,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-min-v> is a not a positive integer"
-      ],
+      "preConditions": ["The <x-min-v> is a not a positive integer"],
       "purpose": "Test API with invalid minimum version value",
       "steps": [
         {
@@ -2332,11 +2072,7 @@
           "action": "GET /common/customer/detail"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.CAC.0020": {
       "id": "T.CAC.0020",
@@ -2348,9 +2084,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID format is invalid",
       "steps": [
         {
@@ -2358,9 +2092,7 @@
           "action": "GET /common/customer/detail"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.CAC.0021": {
       "id": "T.CAC.0021",
@@ -2372,9 +2104,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -2382,11 +2112,7 @@
           "action": "GET /common/customer/detail"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.CAC.0022": {
       "id": "T.CAC.0022",
@@ -2398,9 +2124,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -2408,11 +2132,7 @@
           "action": "GET /common/customer/detail"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.CAC.0023": {
       "id": "T.CAC.0023",
@@ -2434,11 +2154,7 @@
           "action": "GET /common/customer/detail"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.CAC.0024": {
       "id": "T.CAC.0024",
@@ -2450,9 +2166,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -2460,11 +2174,7 @@
           "action": "GET /common/customer/detail"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.CAC.0025": {
       "id": "T.CAC.0025",
@@ -2486,11 +2196,7 @@
           "action": "GET /common/customer/detail"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.CAC.0026": {
       "id": "T.CAC.0026",
@@ -2502,9 +2208,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -2512,11 +2216,7 @@
           "action": "GET /common/customer/detail"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAA.0001": {
       "id": "T.EAA.0001",
@@ -2556,9 +2256,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        "<page-size> and <page> query parameters are provided"
-      ],
+      "preConditions": ["<page-size> and <page> query parameters are provided"],
       "purpose": "Test API with pagination partameters",
       "steps": [
         {
@@ -2625,11 +2323,7 @@
           "action": "GET /energy/accounts"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0005": {
       "id": "T.EAA.0005",
@@ -2641,9 +2335,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -2651,11 +2343,7 @@
           "action": "GET /energy/accounts"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0006": {
       "id": "T.EAA.0006",
@@ -2667,9 +2355,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -2677,11 +2363,7 @@
           "action": "GET /energy/accounts"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0007": {
       "id": "T.EAA.0007",
@@ -2704,11 +2386,7 @@
           "action": "GET /energy/accounts"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0008": {
       "id": "T.EAA.0008",
@@ -2720,9 +2398,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID format is invalid",
       "steps": [
         {
@@ -2730,9 +2406,7 @@
           "action": "GET /energy/accounts"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAA.0009": {
       "id": "T.EAA.0009",
@@ -2744,9 +2418,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -2754,11 +2426,7 @@
           "action": "GET /energy/accounts"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.EAA.0010": {
       "id": "T.EAA.0010",
@@ -2770,9 +2438,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -2780,11 +2446,7 @@
           "action": "GET /energy/accounts"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAA.0011": {
       "id": "T.EAA.0011",
@@ -2806,11 +2468,7 @@
           "action": "GET /energy/accounts"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAA.0012": {
       "id": "T.EAA.0012",
@@ -2822,9 +2480,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -2832,11 +2488,7 @@
           "action": "GET /energy/accounts"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAA.0013": {
       "id": "T.EAA.0013",
@@ -2858,11 +2510,7 @@
           "action": "GET /energy/accounts"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.EAA.0014": {
       "id": "T.EAA.0014",
@@ -2874,9 +2522,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -2884,11 +2530,7 @@
           "action": "GET /energy/accounts"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAA.0015": {
       "id": "T.EAA.0015",
@@ -2939,11 +2581,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.EAA.0003",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAA.0003", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0017": {
       "id": "T.EAA.0017",
@@ -2965,11 +2603,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.EAA.0004",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAA.0004", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0018": {
       "id": "T.EAA.0018",
@@ -2991,11 +2625,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0019": {
       "id": "T.EAA.0019",
@@ -3007,9 +2637,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -3017,11 +2645,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0020": {
       "id": "T.EAA.0020",
@@ -3033,9 +2657,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -3043,11 +2665,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0021": {
       "id": "T.EAA.0021",
@@ -3070,11 +2688,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0022": {
       "id": "T.EAA.0022",
@@ -3086,9 +2700,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID format is invalid",
       "steps": [
         {
@@ -3096,9 +2708,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAA.0023": {
       "id": "T.EAA.0023",
@@ -3110,9 +2720,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -3120,11 +2728,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.EAA.0024": {
       "id": "T.EAA.0024",
@@ -3136,9 +2740,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -3146,11 +2748,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAA.0025": {
       "id": "T.EAA.0025",
@@ -3172,11 +2770,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAA.0026": {
       "id": "T.EAA.0026",
@@ -3188,9 +2782,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -3198,11 +2790,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAA.0027": {
       "id": "T.EAA.0027",
@@ -3224,11 +2812,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.EAA.0028": {
       "id": "T.EAA.0028",
@@ -3240,9 +2824,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -3250,11 +2832,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAA.0029": {
       "id": "T.EAA.0029",
@@ -3305,11 +2883,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.EAA.0003",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAA.0003", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0031": {
       "id": "T.EAA.0031",
@@ -3331,11 +2905,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.EAA.0004",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAA.0004", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0032": {
       "id": "T.EAA.0032",
@@ -3357,11 +2927,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0033": {
       "id": "T.EAA.0033",
@@ -3373,9 +2939,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -3383,11 +2947,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0034": {
       "id": "T.EAA.0034",
@@ -3399,9 +2959,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -3409,11 +2967,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0035": {
       "id": "T.EAA.0035",
@@ -3436,11 +2990,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0036": {
       "id": "T.EAA.0036",
@@ -3452,9 +3002,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID format is invalid",
       "steps": [
         {
@@ -3462,9 +3010,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAA.0037": {
       "id": "T.EAA.0037",
@@ -3476,9 +3022,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -3486,11 +3030,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.EAA.0038": {
       "id": "T.EAA.0038",
@@ -3502,9 +3042,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -3512,11 +3050,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAA.0039": {
       "id": "T.EAA.0039",
@@ -3538,11 +3072,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAA.0040": {
       "id": "T.EAA.0040",
@@ -3554,9 +3084,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -3564,11 +3092,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAA.0041": {
       "id": "T.EAA.0041",
@@ -3590,11 +3114,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.EAA.0042": {
       "id": "T.EAA.0042",
@@ -3606,9 +3126,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -3616,11 +3134,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAA.0043": {
       "id": "T.EAA.0043",
@@ -3671,11 +3185,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.EAA.0003",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAA.0003", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0045": {
       "id": "T.EAA.0045",
@@ -3697,11 +3207,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.EAA.0004",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAA.0004", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0046": {
       "id": "T.EAA.0046",
@@ -3723,11 +3229,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0047": {
       "id": "T.EAA.0047",
@@ -3739,9 +3241,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -3749,11 +3249,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0048": {
       "id": "T.EAA.0048",
@@ -3765,9 +3261,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -3775,11 +3269,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0049": {
       "id": "T.EAA.0049",
@@ -3802,11 +3292,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0050": {
       "id": "T.EAA.0050",
@@ -3818,9 +3304,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID format is invalid",
       "steps": [
         {
@@ -3828,9 +3312,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAA.0051": {
       "id": "T.EAA.0051",
@@ -3842,9 +3324,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -3852,11 +3332,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.EAA.0052": {
       "id": "T.EAA.0052",
@@ -3868,9 +3344,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -3878,11 +3352,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAA.0053": {
       "id": "T.EAA.0053",
@@ -3904,11 +3374,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAA.0054": {
       "id": "T.EAA.0054",
@@ -3920,9 +3386,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -3930,11 +3394,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAA.0055": {
       "id": "T.EAA.0055",
@@ -3956,11 +3416,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.EAA.0056": {
       "id": "T.EAA.0056",
@@ -3972,9 +3428,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -3982,11 +3436,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAA.0057": {
       "id": "T.EAA.0057",
@@ -4009,11 +3459,7 @@
           "action": "GET /energy/accounts"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0058": {
       "id": "T.EAA.0058",
@@ -4036,11 +3482,7 @@
           "action": "GET /energy/accounts/{accountId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0059": {
       "id": "T.EAA.0059",
@@ -4063,11 +3505,7 @@
           "action": "GET /energy/accounts/{accountId}/payment-schedule"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAA.0060": {
       "id": "T.EAA.0060",
@@ -4090,11 +3528,7 @@
           "action": "GET /energy/accounts/{accountId}/concessions"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAB.0002": {
       "id": "T.EAB.0002",
@@ -4116,10 +3550,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAB.0003": {
       "id": "T.EAB.0003",
@@ -4141,10 +3572,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAB.0004": {
       "id": "T.EAB.0004",
@@ -4166,11 +3594,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAB.0005": {
       "id": "T.EAB.0005",
@@ -4182,9 +3606,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -4192,11 +3614,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAB.0006": {
       "id": "T.EAB.0006",
@@ -4208,9 +3626,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -4218,11 +3634,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAB.0007": {
       "id": "T.EAB.0007",
@@ -4245,11 +3657,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAB.0008": {
       "id": "T.EAB.0008",
@@ -4272,11 +3680,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAB.0009": {
       "id": "T.EAB.0009",
@@ -4288,9 +3692,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID format is invalid",
       "steps": [
         {
@@ -4298,9 +3700,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAB.0010": {
       "id": "T.EAB.0010",
@@ -4312,9 +3712,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -4322,11 +3720,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.EAB.0011": {
       "id": "T.EAB.0011",
@@ -4338,9 +3732,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -4348,11 +3740,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAB.0012": {
       "id": "T.EAB.0012",
@@ -4374,11 +3762,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAB.0013": {
       "id": "T.EAB.0013",
@@ -4390,9 +3774,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -4400,11 +3782,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAB.0014": {
       "id": "T.EAB.0014",
@@ -4426,11 +3804,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.EAB.0015": {
       "id": "T.EAB.0015",
@@ -4442,9 +3816,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -4452,11 +3824,7 @@
           "action": "GET /energy/accounts/{accountId}/balance"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAB.0016": {
       "id": "T.EAB.0016",
@@ -4544,9 +3912,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        "<page-size> and<page> query parameters are provided"
-      ],
+      "preConditions": ["<page-size> and<page> query parameters are provided"],
       "purpose": "Test API with pagination partameters",
       "steps": [
         {
@@ -4583,11 +3949,7 @@
           "action": "GET /energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0004": {
       "id": "T.EAR.0004",
@@ -4629,9 +3991,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID format is invalid",
       "steps": [
         {
@@ -4639,9 +3999,7 @@
           "action": "GET /energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAR.0006": {
       "id": "T.EAR.0006",
@@ -4697,11 +4055,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0008": {
       "id": "T.EAR.0008",
@@ -4723,11 +4077,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.EAR.0002",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAR.0002", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0009": {
       "id": "T.EAR.0009",
@@ -4749,11 +4099,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.EAR.0003",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAR.0003", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0010": {
       "id": "T.EAR.0010",
@@ -4765,9 +4111,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID fomat is invalid",
       "steps": [
         {
@@ -4775,9 +4119,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAR.0011": {
       "id": "T.EAR.0011",
@@ -4821,9 +4163,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        " <page-size> and<page> query parameters are provided"
-      ],
+      "preConditions": [" <page-size> and<page> query parameters are provided"],
       "purpose": "Test API with pagination partameters",
       "steps": [
         {
@@ -4860,11 +4200,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0014": {
       "id": "T.EAR.0014",
@@ -4979,11 +4315,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.EAR.0002",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAR.0002", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0018": {
       "id": "T.EAR.0018",
@@ -5005,11 +4337,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.EAR.0003",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAR.0003", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0019": {
       "id": "T.EAR.0019",
@@ -5031,11 +4359,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0028"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0028"]
     },
     "T.EAR.0020": {
       "id": "T.EAR.0020",
@@ -5057,11 +4381,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0030"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0030"]
     },
     "T.EAR.0021": {
       "id": "T.EAR.0021",
@@ -5073,9 +4393,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID fomat is invalid",
       "steps": [
         {
@@ -5083,9 +4401,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAR.0022": {
       "id": "T.EAR.0022",
@@ -5129,9 +4445,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        " <page-size> and<page> query parameters are provided"
-      ],
+      "preConditions": [" <page-size> and<page> query parameters are provided"],
       "purpose": "Test API with pagination partameters",
       "steps": [
         {
@@ -5168,11 +4482,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0025": {
       "id": "T.EAR.0025",
@@ -5214,9 +4524,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        " <oldest-date> query parameters is provided"
-      ],
+      "preConditions": [" <oldest-date> query parameters is provided"],
       "purpose": "Test API with oldest date parameter",
       "steps": [
         {
@@ -5243,9 +4551,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        "<newest-date> query parameter is provided"
-      ],
+      "preConditions": ["<newest-date> query parameter is provided"],
       "purpose": "Test API without any pagination partameters",
       "steps": [
         {
@@ -5282,11 +4588,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0028"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0028"]
     },
     "T.EAR.0029": {
       "id": "T.EAR.0029",
@@ -5308,11 +4610,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0030"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0030"]
     },
     "T.EAR.0030": {
       "id": "T.EAR.0030",
@@ -5324,9 +4622,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID fomat is invalid",
       "steps": [
         {
@@ -5334,9 +4630,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAR.0031": {
       "id": "T.EAR.0031",
@@ -5359,11 +4653,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.EAR.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAR.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0032": {
       "id": "T.EAR.0032",
@@ -5375,9 +4665,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The body is incorrectly formatted"
-      ],
+      "preConditions": ["The body is incorrectly formatted"],
       "purpose": "Test API with a malformed body",
       "steps": [
         {
@@ -5385,11 +4673,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0031"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0031"]
     },
     "T.EAR.0033": {
       "id": "T.EAR.0033",
@@ -5445,11 +4729,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0035": {
       "id": "T.EAR.0035",
@@ -5471,11 +4751,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.EAR.0002",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAR.0002", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0036": {
       "id": "T.EAR.0036",
@@ -5497,11 +4773,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.EAR.0003",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAR.0003", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0037": {
       "id": "T.EAR.0037",
@@ -5513,9 +4785,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID fomat is invalid",
       "steps": [
         {
@@ -5523,9 +4793,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAR.0038": {
       "id": "T.EAR.0038",
@@ -5569,9 +4837,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        " <page-size> and<page> query parameters are provided"
-      ],
+      "preConditions": [" <page-size> and<page> query parameters are provided"],
       "purpose": "Test API with pagination partameters",
       "steps": [
         {
@@ -5609,11 +4875,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0041": {
       "id": "T.EAR.0041",
@@ -5666,11 +4928,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.EAR.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.EAR.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0043": {
       "id": "T.EAR.0043",
@@ -5682,9 +4940,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The body is incorrectly formatted"
-      ],
+      "preConditions": ["The body is incorrectly formatted"],
       "purpose": "Test API with a malformed body",
       "steps": [
         {
@@ -5692,11 +4948,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0031"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0031"]
     },
     "T.EAR.0044": {
       "id": "T.EAR.0044",
@@ -5708,9 +4960,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID fomat is invalid",
       "steps": [
         {
@@ -5718,9 +4968,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAR.0045": {
       "id": "T.EAR.0045",
@@ -5764,9 +5012,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        " <page-size> and<page> query parameters are provided"
-      ],
+      "preConditions": [" <page-size> and<page> query parameters are provided"],
       "purpose": "Test API with pagination partameters",
       "steps": [
         {
@@ -5803,11 +5049,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0048": {
       "id": "T.EAR.0048",
@@ -5849,9 +5091,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        " <oldest-date> query parameters is provided"
-      ],
+      "preConditions": [" <oldest-date> query parameters is provided"],
       "purpose": "Test API with oldest date parameter",
       "steps": [
         {
@@ -5878,9 +5118,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        "<newest-date> query parameter is provided"
-      ],
+      "preConditions": ["<newest-date> query parameter is provided"],
       "purpose": "Test API without any pagination partameters",
       "steps": [
         {
@@ -5917,11 +5155,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0028"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0028"]
     },
     "T.EAR.0052": {
       "id": "T.EAR.0052",
@@ -5943,11 +5177,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0030"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0030"]
     },
     "T.EAR.0053": {
       "id": "T.EAR.0053",
@@ -5959,9 +5189,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID fomat is invalid",
       "steps": [
         {
@@ -5969,9 +5197,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAR.0054": {
       "id": "T.EAR.0054",
@@ -5983,9 +5209,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -5993,11 +5217,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.EAR.0055": {
       "id": "T.EAR.0055",
@@ -6009,9 +5229,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -6019,11 +5237,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAR.0056": {
       "id": "T.EAR.0056",
@@ -6045,11 +5259,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAR.0057": {
       "id": "T.EAR.0057",
@@ -6061,9 +5271,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -6071,11 +5279,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAR.0058": {
       "id": "T.EAR.0058",
@@ -6097,11 +5301,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.EAR.0059": {
       "id": "T.EAR.0059",
@@ -6113,9 +5313,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -6123,11 +5321,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAR.0060": {
       "id": "T.EAR.0060",
@@ -6171,9 +5365,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        " <page-size> and<page> query parameters are provided"
-      ],
+      "preConditions": [" <page-size> and<page> query parameters are provided"],
       "purpose": "Test API with pagination partameters",
       "steps": [
         {
@@ -6210,11 +5402,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0063": {
       "id": "T.EAR.0063",
@@ -6256,9 +5444,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -6266,11 +5452,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.EAR.0065": {
       "id": "T.EAR.0065",
@@ -6282,9 +5464,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -6292,11 +5472,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAR.0066": {
       "id": "T.EAR.0066",
@@ -6318,11 +5494,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAR.0067": {
       "id": "T.EAR.0067",
@@ -6334,9 +5506,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -6344,11 +5514,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAR.0068": {
       "id": "T.EAR.0068",
@@ -6370,11 +5536,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.EAR.0069": {
       "id": "T.EAR.0069",
@@ -6386,9 +5548,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -6396,11 +5556,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAR.0070": {
       "id": "T.EAR.0070",
@@ -6412,9 +5568,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -6422,11 +5576,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAR.0071": {
       "id": "T.EAR.0071",
@@ -6448,11 +5598,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAR.0072": {
       "id": "T.EAR.0072",
@@ -6464,9 +5610,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -6474,11 +5618,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAR.0073": {
       "id": "T.EAR.0073",
@@ -6490,9 +5630,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -6500,11 +5638,7 @@
           "action": "GET /energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.EAR.0074": {
       "id": "T.EAR.0074",
@@ -6516,9 +5650,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -6526,11 +5658,7 @@
           "action": "GET /energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAR.0075": {
       "id": "T.EAR.0075",
@@ -6552,11 +5680,7 @@
           "action": "GET /energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAR.0076": {
       "id": "T.EAR.0076",
@@ -6568,9 +5692,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -6578,11 +5700,7 @@
           "action": "GET /energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAR.0077": {
       "id": "T.EAR.0077",
@@ -6604,11 +5722,7 @@
           "action": "GET /energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.EAR.0078": {
       "id": "T.EAR.0078",
@@ -6620,9 +5734,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -6630,11 +5742,7 @@
           "action": "GET /energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAR.0079": {
       "id": "T.EAR.0079",
@@ -6646,9 +5754,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -6656,11 +5762,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.EAR.0080": {
       "id": "T.EAR.0080",
@@ -6672,9 +5774,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -6682,11 +5782,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAR.0081": {
       "id": "T.EAR.0081",
@@ -6708,11 +5804,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAR.0082": {
       "id": "T.EAR.0082",
@@ -6724,9 +5816,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -6734,11 +5824,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAR.0083": {
       "id": "T.EAR.0083",
@@ -6760,11 +5846,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.EAR.0084": {
       "id": "T.EAR.0084",
@@ -6776,9 +5858,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -6786,11 +5866,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAR.0085": {
       "id": "T.EAR.0085",
@@ -6802,9 +5878,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -6812,11 +5886,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.EAR.0086": {
       "id": "T.EAR.0086",
@@ -6828,9 +5898,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -6838,11 +5906,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAR.0087": {
       "id": "T.EAR.0087",
@@ -6864,11 +5928,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAR.0088": {
       "id": "T.EAR.0088",
@@ -6880,9 +5940,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -6890,11 +5948,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAR.0089": {
       "id": "T.EAR.0089",
@@ -6916,11 +5970,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.EAR.0090": {
       "id": "T.EAR.0090",
@@ -6932,9 +5982,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -6942,11 +5990,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAR.0091": {
       "id": "T.EAR.0091",
@@ -6958,9 +6002,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -6968,11 +6010,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.EAR.0092": {
       "id": "T.EAR.0092",
@@ -6984,9 +6022,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -6994,11 +6030,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAR.0093": {
       "id": "T.EAR.0093",
@@ -7020,11 +6052,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAR.0094": {
       "id": "T.EAR.0094",
@@ -7036,9 +6064,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -7046,11 +6072,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAR.0095": {
       "id": "T.EAR.0095",
@@ -7072,11 +6094,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.EAR.0096": {
       "id": "T.EAR.0096",
@@ -7088,9 +6106,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -7098,11 +6114,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAR.0097": {
       "id": "T.EAR.0097",
@@ -7114,9 +6126,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -7124,11 +6134,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.EAR.0098": {
       "id": "T.EAR.0098",
@@ -7140,9 +6146,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -7150,11 +6154,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAR.0099": {
       "id": "T.EAR.0099",
@@ -7176,11 +6176,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAR.0100": {
       "id": "T.EAR.0100",
@@ -7192,9 +6188,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -7202,11 +6196,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAR.0101": {
       "id": "T.EAR.0101",
@@ -7228,11 +6218,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.EAR.0102": {
       "id": "T.EAR.0102",
@@ -7244,9 +6230,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -7254,11 +6238,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAR.0103": {
       "id": "T.EAR.0103",
@@ -7270,9 +6250,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> is not present in the header"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> is not present in the header"],
       "purpose": "Test API when FAPI Auth date is missing from the header",
       "steps": [
         {
@@ -7280,11 +6258,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0016"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0016"]
     },
     "T.EAR.0104": {
       "id": "T.EAR.0104",
@@ -7296,9 +6270,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-auth-date> format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-auth-date> format is invalid"],
       "purpose": "Test API when FAPI Auth date is present but the format is invalid",
       "steps": [
         {
@@ -7306,11 +6278,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0017"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0017"]
     },
     "T.EAR.0105": {
       "id": "T.EAR.0105",
@@ -7332,11 +6300,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0019"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0019"]
     },
     "T.EAR.0106": {
       "id": "T.EAR.0106",
@@ -7348,9 +6312,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-customer-ip-address>  format is invalid"
-      ],
+      "preConditions": ["The <x-fapi-customer-ip-address>  format is invalid"],
       "purpose": "Test API when FAPI Customer IP Address is present but the format is invalid",
       "steps": [
         {
@@ -7358,11 +6320,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0020"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0020"]
     },
     "T.EAR.0107": {
       "id": "T.EAR.0107",
@@ -7384,11 +6342,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0022"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0022"]
     },
     "T.EAR.0108": {
       "id": "T.EAR.0108",
@@ -7400,9 +6354,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-client-header> format is invalid"
-      ],
+      "preConditions": ["The <x-cds-client-header> format is invalid"],
       "purpose": "Test API when CDS Client Header is present but the format is invalid",
       "steps": [
         {
@@ -7410,11 +6362,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0014",
-        "A.ZAA.0023"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0014", "A.ZAA.0023"]
     },
     "T.EAR.0109": {
       "id": "T.EAR.0109",
@@ -7430,9 +6378,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -7440,11 +6386,7 @@
           "action": "GET /energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0110": {
       "id": "T.EAR.0110",
@@ -7456,9 +6398,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -7466,11 +6406,7 @@
           "action": "GET /energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0111": {
       "id": "T.EAR.0111",
@@ -7482,9 +6418,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -7492,11 +6426,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0112": {
       "id": "T.EAR.0112",
@@ -7508,9 +6438,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -7518,11 +6446,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0113": {
       "id": "T.EAR.0113",
@@ -7534,9 +6458,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -7544,11 +6466,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0114": {
       "id": "T.EAR.0114",
@@ -7560,9 +6478,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -7570,11 +6486,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0115": {
       "id": "T.EAR.0115",
@@ -7586,9 +6498,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -7596,11 +6506,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0116": {
       "id": "T.EAR.0116",
@@ -7612,9 +6518,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -7622,11 +6526,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0117": {
       "id": "T.EAR.0117",
@@ -7638,9 +6538,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -7648,11 +6546,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0118": {
       "id": "T.EAR.0118",
@@ -7664,9 +6558,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -7674,11 +6566,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0119": {
       "id": "T.EAR.0119",
@@ -7690,9 +6578,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -7700,11 +6586,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0120": {
       "id": "T.EAR.0120",
@@ -7716,9 +6598,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -7726,11 +6606,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0121": {
       "id": "T.EAR.0121",
@@ -7742,9 +6618,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -7752,11 +6626,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0122": {
       "id": "T.EAR.0122",
@@ -7768,9 +6638,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -7778,11 +6646,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0123": {
       "id": "T.EAR.0123",
@@ -7794,9 +6658,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -7804,11 +6666,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0124": {
       "id": "T.EAR.0124",
@@ -7820,9 +6678,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -7830,11 +6686,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0125": {
       "id": "T.EAR.0125",
@@ -7857,11 +6709,7 @@
           "action": "GET /energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0126": {
       "id": "T.EAR.0126",
@@ -7884,11 +6732,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0127": {
       "id": "T.EAR.0127",
@@ -7911,11 +6755,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0128": {
       "id": "T.EAR.0128",
@@ -7938,11 +6778,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0129": {
       "id": "T.EAR.0129",
@@ -7965,11 +6801,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0130": {
       "id": "T.EAR.0130",
@@ -7992,11 +6824,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0131": {
       "id": "T.EAR.0131",
@@ -8019,11 +6847,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0132": {
       "id": "T.EAR.0132",
@@ -8046,11 +6870,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0133": {
       "id": "T.EAR.0133",
@@ -8073,11 +6893,7 @@
           "action": "GET /energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0134": {
       "id": "T.EAR.0134",
@@ -8100,11 +6916,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0135": {
       "id": "T.EAR.0135",
@@ -8127,11 +6939,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0136": {
       "id": "T.EAR.0136",
@@ -8154,11 +6962,7 @@
           "action": "GET /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0137": {
       "id": "T.EAR.0137",
@@ -8181,11 +6985,7 @@
           "action": "POST /energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0138": {
       "id": "T.EAR.0138",
@@ -8208,11 +7008,7 @@
           "action": "GET /energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0139": {
       "id": "T.EAR.0139",
@@ -8235,11 +7031,7 @@
           "action": "GET /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAR.0140": {
       "id": "T.EAR.0140",
@@ -8262,11 +7054,7 @@
           "action": "POST /energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAS.0001": {
       "id": "T.EAS.0001",
@@ -8308,9 +7096,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        " <page-size> and<page> query parameters are provided"
-      ],
+      "preConditions": [" <page-size> and<page> query parameters are provided"],
       "purpose": "Test API with pagination partameters",
       "steps": [
         {
@@ -8350,10 +7136,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013"]
     },
     "T.EAS.0004": {
       "id": "T.EAS.0004",
@@ -8436,10 +7219,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013"]
     },
     "T.EAS.0007": {
       "id": "T.EAS.0007",
@@ -8461,10 +7241,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.EAS.0002",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.EAS.0002", "A.ZAA.0013"]
     },
     "T.EAS.0008": {
       "id": "T.EAS.0008",
@@ -8486,10 +7263,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.EAS.0003",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.EAS.0003", "A.ZAA.0013"]
     },
     "T.EAS.0009": {
       "id": "T.EAS.0009",
@@ -8531,9 +7305,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        " <page-size> and<page> query parameters are provided"
-      ],
+      "preConditions": [" <page-size> and<page> query parameters are provided"],
       "purpose": "Test API with pagination partameters",
       "steps": [
         {
@@ -8573,10 +7345,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013"]
     },
     "T.EAS.0012": {
       "id": "T.EAS.0012",
@@ -8694,10 +7463,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.EAS.0002",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.EAS.0002", "A.ZAA.0013"]
     },
     "T.EAS.0016": {
       "id": "T.EAS.0016",
@@ -8719,10 +7485,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.EAS.0003",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.EAS.0003", "A.ZAA.0013"]
     },
     "T.EAS.0017": {
       "id": "T.EAS.0017",
@@ -8744,10 +7507,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0028"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0028"]
     },
     "T.EAS.0018": {
       "id": "T.EAS.0018",
@@ -8769,10 +7529,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0030"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0030"]
     },
     "T.EAS.0019": {
       "id": "T.EAS.0019",
@@ -8814,9 +7571,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        " <page-size> and<page> query parameters are provided"
-      ],
+      "preConditions": [" <page-size> and<page> query parameters are provided"],
       "purpose": "Test API with pagination partameters",
       "steps": [
         {
@@ -8856,10 +7611,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013"]
     },
     "T.EAS.0022": {
       "id": "T.EAS.0022",
@@ -8900,9 +7652,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        " <oldest-date> query parameters is provided"
-      ],
+      "preConditions": [" <oldest-date> query parameters is provided"],
       "purpose": "Test API with oldest date parameter",
       "steps": [
         {
@@ -8931,9 +7681,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        "<newest-date> query parameter is provided"
-      ],
+      "preConditions": ["<newest-date> query parameter is provided"],
       "purpose": "Test API without any pagination partameters",
       "steps": [
         {
@@ -8972,10 +7720,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0028"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0028"]
     },
     "T.EAS.0026": {
       "id": "T.EAS.0026",
@@ -8997,10 +7742,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0030"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0030"]
     },
     "T.EAS.0027": {
       "id": "T.EAS.0027",
@@ -9054,10 +7796,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013"]
     },
     "T.EAS.0029": {
       "id": "T.EAS.0029",
@@ -9079,10 +7818,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.EAS.0002",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.EAS.0002", "A.ZAA.0013"]
     },
     "T.EAS.0030": {
       "id": "T.EAS.0030",
@@ -9104,10 +7840,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.EAS.0003",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.EAS.0003", "A.ZAA.0013"]
     },
     "T.EAS.0031": {
       "id": "T.EAS.0031",
@@ -9149,9 +7882,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        " <page-size> and<page> query parameters are provided"
-      ],
+      "preConditions": [" <page-size> and<page> query parameters are provided"],
       "purpose": "Test API with pagination partameters",
       "steps": [
         {
@@ -9191,10 +7922,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0009",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0009", "A.ZAA.0013"]
     },
     "T.EAS.0034": {
       "id": "T.EAS.0034",
@@ -9246,10 +7974,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.EAS.0009",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.EAS.0009", "A.ZAA.0013"]
     },
     "T.EAS.0036": {
       "id": "T.EAS.0036",
@@ -9261,9 +7986,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The body is incorrectly formatted"
-      ],
+      "preConditions": ["The body is incorrectly formatted"],
       "purpose": "Test API with a malformed body",
       "steps": [
         {
@@ -9271,10 +7994,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0031"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0031"]
     },
     "T.EAS.0037": {
       "id": "T.EAS.0037",
@@ -9297,10 +8017,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.EAS.0009",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.EAS.0009", "A.ZAA.0013"]
     },
     "T.EAS.0038": {
       "id": "T.EAS.0038",
@@ -9312,9 +8029,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The body is incorrectly formatted"
-      ],
+      "preConditions": ["The body is incorrectly formatted"],
       "purpose": "Test API with a malformed body",
       "steps": [
         {
@@ -9322,10 +8037,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0031"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0031"]
     },
     "T.EAS.0039": {
       "id": "T.EAS.0039",
@@ -9337,9 +8049,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID format is invalid",
       "steps": [
         {
@@ -9347,9 +8057,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAS.0040": {
       "id": "T.EAS.0040",
@@ -9361,9 +8069,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID fomat is invalid",
       "steps": [
         {
@@ -9371,9 +8077,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAS.0041": {
       "id": "T.EAS.0041",
@@ -9385,9 +8089,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID fomat is invalid",
       "steps": [
         {
@@ -9395,9 +8097,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAS.0042": {
       "id": "T.EAS.0042",
@@ -9409,9 +8109,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID fomat is invalid",
       "steps": [
         {
@@ -9419,9 +8117,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAS.0043": {
       "id": "T.EAS.0043",
@@ -9433,9 +8129,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID fomat is invalid",
       "steps": [
         {
@@ -9443,9 +8137,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAS.0044": {
       "id": "T.EAS.0044",
@@ -9457,9 +8149,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-fapi-interaction-id> format is invalid "
-      ],
+      "preConditions": ["The <x-fapi-interaction-id> format is invalid "],
       "purpose": "Test API where FAPI Interaction ID fomat is invalid",
       "steps": [
         {
@@ -9467,9 +8157,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0015"
-      ]
+      "assertions": ["A.ZAA.0015"]
     },
     "T.EAS.0045": {
       "id": "T.EAS.0045",
@@ -9481,9 +8169,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-arrangement> is missing "
-      ],
+      "preConditions": ["The <x-cds-arrangement> is missing "],
       "purpose": "Test API to ensure the arrangement ID is included ",
       "steps": [
         {
@@ -9491,10 +8177,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0025"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0025"]
     },
     "T.EAS.0046": {
       "id": "T.EAS.0046",
@@ -9506,9 +8189,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-arrangement> is present but invalid"
-      ],
+      "preConditions": ["The <x-cds-arrangement> is present but invalid"],
       "purpose": "Test API to ensure the arrangement ID is valid",
       "steps": [
         {
@@ -9516,10 +8197,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0026"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0026"]
     },
     "T.EAS.0047": {
       "id": "T.EAS.0047",
@@ -9531,9 +8209,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-arrangement> is missing "
-      ],
+      "preConditions": ["The <x-cds-arrangement> is missing "],
       "purpose": "Test API to ensure the arrangement ID is included ",
       "steps": [
         {
@@ -9541,10 +8217,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0025"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0025"]
     },
     "T.EAS.0048": {
       "id": "T.EAS.0048",
@@ -9556,9 +8229,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-arrangement> is present but invalid"
-      ],
+      "preConditions": ["The <x-cds-arrangement> is present but invalid"],
       "purpose": "Test API to ensure the arrangement ID is valid",
       "steps": [
         {
@@ -9566,10 +8237,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0026"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0026"]
     },
     "T.EAS.0049": {
       "id": "T.EAS.0049",
@@ -9581,9 +8249,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-arrangement> is missing "
-      ],
+      "preConditions": ["The <x-cds-arrangement> is missing "],
       "purpose": "Test API to ensure the arrangement ID is included ",
       "steps": [
         {
@@ -9591,10 +8257,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0025"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0025"]
     },
     "T.EAS.0050": {
       "id": "T.EAS.0050",
@@ -9606,9 +8269,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-arrangement> is present but invalid"
-      ],
+      "preConditions": ["The <x-cds-arrangement> is present but invalid"],
       "purpose": "Test API to ensure the arrangement ID is valid",
       "steps": [
         {
@@ -9616,10 +8277,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0026"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0026"]
     },
     "T.EAS.0051": {
       "id": "T.EAS.0051",
@@ -9631,9 +8289,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-arrangement> is missing "
-      ],
+      "preConditions": ["The <x-cds-arrangement> is missing "],
       "purpose": "Test API to ensure the arrangement ID is included ",
       "steps": [
         {
@@ -9641,10 +8297,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0025"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0025"]
     },
     "T.EAS.0052": {
       "id": "T.EAS.0052",
@@ -9656,9 +8309,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-arrangement> is present but invalid"
-      ],
+      "preConditions": ["The <x-cds-arrangement> is present but invalid"],
       "purpose": "Test API to ensure the arrangement ID is valid",
       "steps": [
         {
@@ -9666,10 +8317,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0026"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0026"]
     },
     "T.EAS.0053": {
       "id": "T.EAS.0053",
@@ -9681,9 +8329,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-arrangement> is missing "
-      ],
+      "preConditions": ["The <x-cds-arrangement> is missing "],
       "purpose": "Test API to ensure the arrangement ID is included ",
       "steps": [
         {
@@ -9691,10 +8337,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0025"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0025"]
     },
     "T.EAS.0054": {
       "id": "T.EAS.0054",
@@ -9706,9 +8349,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-arrangement> is present but invalid"
-      ],
+      "preConditions": ["The <x-cds-arrangement> is present but invalid"],
       "purpose": "Test API to ensure the arrangement ID is valid",
       "steps": [
         {
@@ -9716,10 +8357,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0026"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0026"]
     },
     "T.EAS.0055": {
       "id": "T.EAS.0055",
@@ -9731,9 +8369,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-arrangement> is missing "
-      ],
+      "preConditions": ["The <x-cds-arrangement> is missing "],
       "purpose": "Test API to ensure the arrangement ID is included ",
       "steps": [
         {
@@ -9741,10 +8377,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0025"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0025"]
     },
     "T.EAS.0056": {
       "id": "T.EAS.0056",
@@ -9756,9 +8389,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-cds-arrangement> is present but invalid"
-      ],
+      "preConditions": ["The <x-cds-arrangement> is present but invalid"],
       "purpose": "Test API to ensure the arrangement ID is valid",
       "steps": [
         {
@@ -9766,10 +8397,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0013",
-        "A.ZAA.0026"
-      ]
+      "assertions": ["A.ZAA.0013", "A.ZAA.0026"]
     },
     "T.EAS.0057": {
       "id": "T.EAS.0057",
@@ -9781,9 +8409,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -9791,10 +8417,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013"]
     },
     "T.EAS.0058": {
       "id": "T.EAS.0058",
@@ -9806,9 +8429,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -9816,10 +8437,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013"]
     },
     "T.EAS.0059": {
       "id": "T.EAS.0059",
@@ -9831,9 +8449,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -9841,10 +8457,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013"]
     },
     "T.EAS.0060": {
       "id": "T.EAS.0060",
@@ -9856,9 +8469,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -9866,10 +8477,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013"]
     },
     "T.EAS.0061": {
       "id": "T.EAS.0061",
@@ -9881,9 +8489,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -9891,10 +8497,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013"]
     },
     "T.EAS.0062": {
       "id": "T.EAS.0062",
@@ -9906,9 +8509,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -9916,10 +8517,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013"]
     },
     "T.EAS.0063": {
       "id": "T.EAS.0063",
@@ -9931,9 +8529,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -9941,10 +8537,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013"]
     },
     "T.EAS.0064": {
       "id": "T.EAS.0064",
@@ -9956,9 +8549,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -9966,10 +8557,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013"]
     },
     "T.EAS.0065": {
       "id": "T.EAS.0065",
@@ -9981,9 +8569,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -9991,10 +8577,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013"]
     },
     "T.EAS.0066": {
       "id": "T.EAS.0066",
@@ -10006,9 +8589,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -10016,10 +8597,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013"]
     },
     "T.EAS.0067": {
       "id": "T.EAS.0067",
@@ -10031,9 +8609,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> version is not a valid number"
-      ],
+      "preConditions": ["The <x-v> version is not a valid number"],
       "purpose": "Test API with invalid version value",
       "steps": [
         {
@@ -10041,10 +8617,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0007",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0007", "A.ZAA.0013"]
     },
     "T.EAS.0068": {
       "id": "T.EAS.0068",
@@ -10056,9 +8629,7 @@
         }
       ],
       "negative": false,
-      "preConditions": [
-        "The <x-v> format is not valid "
-      ],
+      "preConditions": ["The <x-v> format is not valid "],
       "purpose": "Test API with invalid version format",
       "steps": [
         {
@@ -10066,10 +8637,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0008",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0008", "A.ZAA.0013"]
     },
     "T.EAS.0069": {
       "id": "T.EAS.0069",
@@ -10092,10 +8660,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013"]
     },
     "T.EAS.0070": {
       "id": "T.EAS.0070",
@@ -10118,10 +8683,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013"]
     },
     "T.EAS.0071": {
       "id": "T.EAS.0071",
@@ -10144,10 +8706,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013"]
     },
     "T.EAS.0072": {
       "id": "T.EAS.0072",
@@ -10170,10 +8729,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013"]
     },
     "T.EAS.0073": {
       "id": "T.EAS.0073",
@@ -10196,10 +8752,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013"]
     },
     "T.EAS.0074": {
       "id": "T.EAS.0074",
@@ -10222,10 +8775,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0010",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.ZAA.0010", "A.ZAA.0013"]
     },
     "T.EAS.0075": {
       "id": "T.EAS.0075",
@@ -10237,9 +8787,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        "The {servicePointId} in the body is missing"
-      ],
+      "preConditions": ["The {servicePointId} in the body is missing"],
       "purpose": "Test API with a missing servicePointId",
       "steps": [
         {
@@ -10247,10 +8795,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.EAS.0009",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.EAS.0009", "A.ZAA.0013"]
     },
     "T.EAS.0076": {
       "id": "T.EAS.0076",
@@ -10262,9 +8807,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        "The {servicePointId} in the body is invalid"
-      ],
+      "preConditions": ["The {servicePointId} in the body is invalid"],
       "purpose": "Test API with an invalid servicePointId ",
       "steps": [
         {
@@ -10272,10 +8815,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.EAS.0010",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.EAS.0010", "A.ZAA.0013"]
     },
     "T.EAS.0077": {
       "id": "T.EAS.0077",
@@ -10287,9 +8827,7 @@
         }
       ],
       "negative": true,
-      "preConditions": [
-        "The {servicePointId} in the body is unavailable"
-      ],
+      "preConditions": ["The {servicePointId} in the body is unavailable"],
       "purpose": "Test API with an unavailable servicePointId",
       "steps": [
         {
@@ -10297,10 +8835,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.EAS.0011",
-        "A.ZAA.0013"
-      ]
+      "assertions": ["A.EAS.0011", "A.ZAA.0013"]
     },
     "T.EAS.0078": {
       "id": "T.EAS.0078",
@@ -10323,11 +8858,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAS.0079": {
       "id": "T.EAS.0079",
@@ -10350,11 +8881,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAS.0080": {
       "id": "T.EAS.0080",
@@ -10377,11 +8904,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAS.0081": {
       "id": "T.EAS.0081",
@@ -10404,11 +8927,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/usage"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAS.0082": {
       "id": "T.EAS.0082",
@@ -10431,11 +8950,7 @@
           "action": "GET /secondary/energy/electricity/servicepoints/{servicePointId}/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     },
     "T.EAS.0083": {
       "id": "T.EAS.0083",
@@ -10458,11 +8973,7 @@
           "action": "POST /secondary/energy/electricity/servicepoints/der"
         }
       ],
-      "assertions": [
-        "A.ZAA.0012",
-        "A.ZAA.0013",
-        "A.ZAA.0014"
-      ]
+      "assertions": ["A.ZAA.0012", "A.ZAA.0013", "A.ZAA.0014"]
     }
   },
   "scenarios": {
@@ -12176,23 +10687,13 @@
       "id": "SUITE.CAA",
       "title": "APIs - Common Admin",
       "purpose": "",
-      "scenarios": [
-        "S.CAA.0035",
-        "S.CAA.0036",
-        "S.CAA.0037",
-        "S.CAA.0038"
-      ]
+      "scenarios": ["S.CAA.0035", "S.CAA.0036", "S.CAA.0037", "S.CAA.0038"]
     },
     "SUITE.CAC": {
       "id": "SUITE.CAC",
       "title": "APIs - Common Customer",
       "purpose": "",
-      "scenarios": [
-        "S.CAC.0039",
-        "S.CAC.0040",
-        "S.CAC.0041",
-        "S.CAC.0042"
-      ]
+      "scenarios": ["S.CAC.0039", "S.CAC.0040", "S.CAC.0041", "S.CAC.0042"]
     },
     "SUITE.EAA": {
       "id": "SUITE.EAA",
