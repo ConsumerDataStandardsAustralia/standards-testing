@@ -2,13 +2,13 @@
 
 # The CDR Test Documentation
 
-File version: 2.2.0
+File version: 2.3.0
 
 This documentation has been created by the DSB to assist participants in the development of compliant APIs
 
 For more details see the CDS <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing">standards-testing repository</a> for details
 
-Last updated 21/03/2023 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v2.2.0/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx">change log</a> for details
+Last updated 21/03/2023 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v2.3.0/CDR%20Test%20Documentation%20CHANGE%20LOG.json">change log</a> for details
 
 <a id="suites"></a>
 

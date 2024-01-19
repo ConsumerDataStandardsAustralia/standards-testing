@@ -50,7 +50,7 @@ const ASSERTION_SEVERITY_INDEX: number = 6;
 const ASSERTION_POLARITY_INDEX: number = 7;
 const ASSERTION_REFERENCE_INDEX: number = 8;
 
-export function json(source: string, destination: string, config: JsonGeneratorConfig, stdout?: Writable, stderr?: Writable): number {
+export function json (source: string, destination: string, config: JsonGeneratorConfig, stdout?: Writable, stderr?: Writable): number {
   const baseSourceDirectory: string = source;
   const baseSinkDirectory: string = destination;
 
@@ -96,7 +96,7 @@ export function json(source: string, destination: string, config: JsonGeneratorC
       standardsVersion: config.cdrVersion,
       title: config?.title,
       description: config?.description,
-      changeLogUrl: config?.changeLogUrl ? config?.changeLogUrl : 'https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/main/CDR%20Test%20Documentation%20CHANGE%20LOG.xlsx',
+      changeLogUrl: config?.changeLogUrl ? config?.changeLogUrl : 'https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/main/CDR%20Test%20Documentation%20CHANGE%20LOG.json',
       githubRepoUrl: config?.githubRepoUrl ? config?.githubRepoUrl : 'https://github.com/ConsumerDataStandardsAustralia/standards-testing',
       assertions: {},
       testCases: {},
@@ -209,7 +209,7 @@ export function json(source: string, destination: string, config: JsonGeneratorC
 
 
 /******************* Utility function section ************************/
-function processScenario(arr: Array<string>, scenarioName: string, fileWritePath: string): Scenario | undefined {
+function processScenario (arr: Array<string>, scenarioName: string, fileWritePath: string): Scenario | undefined {
   if (scenarioName === '') return;
   let cnt = arr.length;
   if (cnt > 0) {
@@ -221,7 +221,7 @@ function processScenario(arr: Array<string>, scenarioName: string, fileWritePath
   return;
 }
 
-function processSuite(arr: Array<string>, suiteName: string, fileWritePath: string): Suite | undefined {
+function processSuite (arr: Array<string>, suiteName: string, fileWritePath: string): Suite | undefined {
   if (suiteName === '') return;
 
   const suite: Suite = {
@@ -235,7 +235,7 @@ function processSuite(arr: Array<string>, suiteName: string, fileWritePath: stri
   return suite;
 }
 
-function processTestCase(arr: Array<Array<string>>, testCaseName: string, fileWritePath: string): TestCase | undefined {
+function processTestCase (arr: Array<Array<string>>, testCaseName: string, fileWritePath: string): TestCase | undefined {
   if (testCaseName === '') return;
   let cnt = arr.length;
   if (cnt > 0) {
@@ -266,7 +266,7 @@ function processTestCase(arr: Array<Array<string>>, testCaseName: string, fileWr
   return;
 }
 
-function processAssertion(arr: Array<string>, assertionName: string, fileWritePath: string): Assertion | undefined {
+function processAssertion (arr: Array<string>, assertionName: string, fileWritePath: string): Assertion | undefined {
   if (assertionName == '') return;
   let predicate = buildAssertionPredicate(arr[ASSERTION_THEN_INDEX]);
   let assertion: Assertion = {
@@ -284,20 +284,20 @@ function processAssertion(arr: Array<string>, assertionName: string, fileWritePa
   return assertion;
 }
 
-function writeDataToFile(json: string, fileWritePath: string, fileName: string) {
+function writeDataToFile (json: string, fileWritePath: string, fileName: string) {
   fs.mkdirSync(fileWritePath, { recursive: true });
   var fileName = path.join(fileWritePath, fileName + '.json');
   fs.writeFileSync(fileName, json);
 }
 
-function processMultiLineToArray(multiLineInput: string): string[] {
+function processMultiLineToArray (multiLineInput: string): string[] {
   var retVal: string[] = [];
   multiLineInput = cleanStringOfDoubleQuotes(multiLineInput);
   retVal = multiLineInput.split('\n');
   return retVal;
 }
 
-function buildAssertionPredicate(predicateStr: string): AssertionPredicate {
+function buildAssertionPredicate (predicateStr: string): AssertionPredicate {
   var arr = predicateStr.split('\n');
   let predicate: AssertionPredicate = '';
   let andPredicate: AssertionPredicate[] = [];
@@ -328,7 +328,7 @@ function buildAssertionPredicate(predicateStr: string): AssertionPredicate {
   return predicate;
 }
 
-function FixString(stringToFix: string): string {
+function FixString (stringToFix: string): string {
   let st = stringToFix;
   if (st.indexOf('"') == 0) {
     st = st.substring(1);
@@ -339,7 +339,7 @@ function FixString(stringToFix: string): string {
   return st;
 }
 
-function processOtherTestLines(line: Array<string>, testCase: TestCase) {
+function processOtherTestLines (line: Array<string>, testCase: TestCase) {
   let steps = testCase.steps == null ? [] : testCase.steps;
   if (line[TEST_STEP_TYPE_INDEX] != null) {
     let step: TestCaseStep;
@@ -371,7 +371,7 @@ function processOtherTestLines(line: Array<string>, testCase: TestCase) {
 
 }
 
-function processFirstTestLine(header: Array<string>): TestCase {
+function processFirstTestLine (header: Array<string>): TestCase {
   let assertions: string[] = [];
   let commonAss: string = header[TEST_COMMON_ASSERTION_INDEX];
   let suiteAss: string = header[TEST_SUITE_ASSERTION_INDEX];
@@ -405,7 +405,7 @@ function processFirstTestLine(header: Array<string>): TestCase {
   return testCase;
 }
 
-function processFirstScenarioLine(header: Array<string>): Scenario {
+function processFirstScenarioLine (header: Array<string>): Scenario {
 
   let maxCnt = header.length;
   var actions: ScenarioAction[] = [];
@@ -444,7 +444,7 @@ function processFirstScenarioLine(header: Array<string>): Scenario {
 }
 
 
-function processMultiLineString(preconditions: string, id: string): Array<string> {
+function processMultiLineString (preconditions: string, id: string): Array<string> {
   if (preconditions == null || preconditions == '')
     return [];
   preconditions = FixString(preconditions);
@@ -454,7 +454,7 @@ function processMultiLineString(preconditions: string, id: string): Array<string
 }
 
 
-function cleanStringOfDoubleQuotes(strIn: string): string {
+function cleanStringOfDoubleQuotes (strIn: string): string {
   let idx: number = strIn.indexOf('""');
   while (idx > -1) {
     let st1 = strIn.substring(0, idx);
@@ -471,7 +471,7 @@ function cleanStringOfDoubleQuotes(strIn: string): string {
   return strIn;
 }
 
-function splitCSVButIgnoreCommasInDoublequotes(str: string) {
+function splitCSVButIgnoreCommasInDoublequotes (str: string) {
   //split the str first
   //then merge the elments between two double quotes
   var delimiter = ',';
@@ -521,7 +521,7 @@ function splitCSVButIgnoreCommasInDoublequotes(str: string) {
   return returnedElements;
 }
 
-function isStringBalanced(str: string): boolean {
+function isStringBalanced (str: string): boolean {
   if (str == '' || str.length < 2)
     return true;
   var quotes = '"';
@@ -531,7 +531,7 @@ function isStringBalanced(str: string): boolean {
     return false;
 }
 
-function processReferences(references: string, id: string): Array<Reference> {
+function processReferences (references: string, id: string): Array<Reference> {
   if (references == null || references == '')
     return [];
   var arr = references.split('\n');
