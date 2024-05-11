@@ -2,7 +2,7 @@ const jtt = require('json-schema-to-typescript')
 const fs = require('fs')
 const path = require('path');
 
-const basePath = './src/schema/';
+const basePath = './src/schemas/';
 
 const files = fs.readdirSync(basePath);
 

@@ -2,6 +2,5 @@
 export * from './logic/validate';
 export {
   markdown as markdownDocGenerator,
-  html as htmlDocGenerator,
-  json as jsonDocGeneratot
+  html as htmlDocGenerator
 } from './logic/docgenerators';

@@ -3,7 +3,7 @@ import { Writable } from 'stream';
 import Ajv2020 from 'ajv/dist/2020';
 import betterAjvErrors from 'better-ajv-errors';
 import addFormats from 'ajv-formats';
-import { testDocSchema } from '../schema';
+import { testDocSchema } from '../schemas';
 
 export function validateTestDocSchema(filename: string, verbose?: boolean, stdout?: Writable, stderr?: Writable): boolean {
   const cdr_test_schema = testDocSchema();

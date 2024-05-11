@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cds.gov.au/cdr-test-changelog-schema.1.0.0.json",
+  "title": "CDR Test Documentation Changelog Schema",
+  "description": "A JSON schema for defining the changelog for test documentation",
+  "type": "object",
+  "required": ["schema", "fileVersion", "title", "changes"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "type": "string",
+      "description": "The schema to which this file conforms.",
+      "format": "uri"
+    },
+    "fileVersion": {
+      "type": "string",
+      "description": "The version of the file formatted using semver (without extensions)",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
+    },
+    "githubRepoUrl": {
+      "type": "string",
+      "description": "An optional url for the public GitHub repository"
+    },
+    "title": {
+      "type": "string",
+      "description": "A short title of the changelog file"
+    },
+    "description": {
+      "type": "string",
+      "description": "An optional description of the changelog file"
+    },
+    "changes": {
+      "type": "object",
+      "description": "A list of all the changes in the changelog",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[a-zA-Z0-9_-]{21}$": {
+          "$ref": "#/$defs/change"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "change": {
+      "type": "object",
+      "description": "A single change in the changelog",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "date",
+        "version",
+        "identifier",
+        "field",
+        "changeDescription",
+        "issueId"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "A unique identifier for the change"
+        },
+        "date": {
+          "type": "string",
+          "description": "A date when the change had occured"
+        },
+        "identifier": {
+          "type": "string",
+          "description": "An identifier for the Suite/Scenario/TestCase/Assertion where the change had occured"
+        },
+        "version": {
+          "type": "string",
+          "description": "The API version"
+        },
+        "field": {
+          "type": "string",
+          "description": "A semicolumn concatenated list of the identifier fields where the change had occured"
+        },
+        "changeDescription": {
+          "type": "string",
+          "description": "A description of the change"
+        },
+        "issueId": {
+          "type": "string",
+          "description": "The GitHub issue # which mandate this change"
+        }
+      }
+    }
+  }
+}
