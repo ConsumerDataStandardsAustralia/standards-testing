@@ -1,26 +1,27 @@
 import { Arguments, CommandBuilder } from 'yargs';
-import * as schema from '../schemas/cdr-test-doc-schema.json';
+import testdoc_schema from '../schemas/cdr-test-doc-schema.json';
+import changelog_schema from '../schemas/cdr-test-changelog-schema.json';
 
 type Options = {
-  version: boolean | undefined;
+  type: string;
 };
 
-export const command: string = 'schema';
-export const desc: string = 'Print out the testdocs schema currently in use (or it\'s version if --vonly is specified)';
+export const command: string = 'schema <type>';
+export const desc: string = 'Prints out the testdoc or changelog schema currently in use.';
 
 export const builder: CommandBuilder<Options, Options> = (yargs) =>
   yargs
-    .options({
-      vonly: { type: 'boolean', describe: 'Only print the version number of the schema in use' },
-    })
-
+    .positional('type', { choices: ['testdoc', 'changelog'], demandOption: true })
+    
 export const handler = (argv: Arguments<Options>): void => {
-  const { vonly } = argv;
+  const { type } = argv;
 
-  if (vonly) {
-    process.stdout.write(`${schema.properties.fileVersion}\n`);
-  } else {
-     process.stdout.write(`${JSON.stringify(schema, null, 4)}\n`);
+  console.log(type)
+  switch (type) {
+    case 'testdoc': 
+      process.stdout.write(`${JSON.stringify(testdoc_schema, null, 4)}\n`);
+    case 'changelog': 
+      process.stdout.write(`${JSON.stringify(changelog_schema, null, 4)}\n`);
   }
 
   process.exit(0);
