@@ -3,11 +3,12 @@ import { Writable } from 'stream';
 import Ajv2020 from 'ajv/dist/2020';
 import betterAjvErrors from 'better-ajv-errors';
 import addFormats from 'ajv-formats';
-import { testDocSchema } from '../schemas';
+import { changeLogSchema, testDocSchema } from '../schemas';
 
-export function validateTestDocSchema(filename: string, verbose?: boolean, stdout?: Writable, stderr?: Writable): boolean {
-  const cdr_test_schema = testDocSchema();
-
+export function validateSchema(type: string, filename: string, verbose?: boolean, stdout?: Writable, stderr?: Writable): boolean {
+  
+  const schema = type == 'testdoc' ? testDocSchema() : changeLogSchema();
+  
   if (verbose) stdout?.write(`Validating "${filename}"\n`);
 
   // Read in the file specified
@@ -36,21 +37,21 @@ export function validateTestDocSchema(filename: string, verbose?: boolean, stdou
   try {
     const ajv = new Ajv2020();
     addFormats(ajv);
-    if (verbose) stdout?.write(`    Compiling schema\n`);
-    validate = ajv.compile(cdr_test_schema as any);
+    if (verbose) stdout?.write(`    Compiling ${type} schema\n`);
+    validate = ajv.compile(schema as any);
   } catch (err) {
-    stderr?.write(`Failed to compile schema\n`)
+    stderr?.write(`Failed to compile ${type} schema\n`)
     stderr?.write((err as any).toString() + '\n');
     return false;
   }
 
-  // Validete the input file and report errors or success
-  if (verbose) stdout?.write(`    Validating against testdocs schema\n`);
+  // Validate the input file and report errors or success
+  if (verbose) stdout?.write(`    Validating against ${type} schema\n`);
   if (validate(data)) {
     stdout?.write(`"${filename}" validated successfully\n`);
   } else {
     stderr?.write(`"${filename}" validation failed:\n`)
-    const output = betterAjvErrors(cdr_test_schema, data, validate.errors, {indent: 4});
+    const output = betterAjvErrors(schema, data, validate.errors, {indent: 4});
     stderr?.write(output + '\n');
     return false;
   }
