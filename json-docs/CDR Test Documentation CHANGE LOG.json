@@ -1,6 +1,6 @@
 {
   "schema": "https://cds.gov.au/cdr-test-changelog-schema.1.0.0.json",
-  "fileVersion": "1.0.0",
+  "fileVersion": "2.4.0",
   "title": "The CDR Test Documentation Changelog",
   "description": "This documentation has been created by the DSB to assist in tracking changes to the CDR Test Documentation",
   "githubRepoUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing",
