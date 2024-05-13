@@ -15,32 +15,32 @@ To install the testdocs command line tool (`testdocs`) you need to have npm inst
 
 This will make the CLI available globally.
 
-### Documentation Schema Command
+### Schema Command Documentation
 
 #### Command
 
-`doc-schema`
-Print out the testdocs schema currently in use to stdout.  This will be the full JSON schema file and allows for the schema to be reused in your own tools or workflow.
+`schema`
+Print out either the testdocs or changelog schema currently in use to stdout.  This will be the full JSON schema file and allows for the schema to be reused in your own tools or workflow.
 
 #### Arguments
 
-None
+|Argument|Description|
+|-|-|
+|`<type>`| The type of the output to generate. Can be `testdoc` or `changelog`.|
 
 #### Options
 
-|Options|Description|
-|-|-|
-|`--vonly`| Output only the version of the schema that the CLI is currently using|
+None
 
 #### Examples
 
-`testdocs doc-schema`
-Output the current test doc schema to stdout
+`testdocs schema testdoc`
+Outputs the current testdoc schema to stdout
 
-`testdocs doc-schema --vonly`
-Output the version of test doc schema to stdout
+`testdocs schema changelog`
+Outputs the current changelog schema to stdout
 
-### Validate Documentation Command
+### Validate Command Documentation
 
 #### Command
 
@@ -51,19 +51,21 @@ Validate that the JSON file specified is a valid JSON file and also fully compli
 
 |Argument|Description|
 |-|-|
+|`<type>`    | The type of the schema against which to validate the JSON file. Can be `testdoc` or `changelog`.|
 |`<filename>`| The path to the file (expected to be a valid JSON file) to be validated.|
 
 #### Options
 
-None
+|Options|Description|
+|-|-|
+|`--verbose`| For verbose output of the validation process.
 
 #### Examples
 
-`testdocs validate doc.json`
+`testdocs validate testdoc doc.json`
 Validate `doc.json` and output any validation errors to stderr
 
-
-### Document Generation Command
+### Document Generation Command Documentation
 
 #### Command
 
@@ -74,27 +76,15 @@ Read in the specified source and generate output according to the type specified
 
 |Argument|Description|
 |-|-|
-|`<type>`| The type of the output to generate.  Can be `json`, `html` or `markdown`.  Note that the `json` mode converts a series of CSV files exported from Excel into JSON and is temporary until an editor capability is available.|
-|`<src>`| The source file or path to read in and generate the output from.  For `html` and `markdown` the `<src>` is expected to be a single JSON file containing test documentation compliant with the current schema.  For `json` the `<src>` is expected to be a path containing a series of CSV files that represent an export of the the test documentation from an Excel workbook.|
+|`<type>`| The type of the output to generate.  Can be `html` or `markdown`.|
+|`<src>`| The source file or path to read in and generate the output from.  For `html` and `markdown` the `<src>` is expected to be a single JSON file containing test documentation compliant with the current schema.|
 |`<dst>`| The destination file for the generated output.  The type will align to the type specified in the `<type>` argument. |
 
 #### Options
-|Options|Description|
-|-|-|
-|`--cfg or -c`| For *json* file generation the path to a configuration file (json) should  be provided to capture a description, document version, and CDR version.
 
-```json
-{
-    "description": "The CDR Test Documentation",
-    "docVersion": "1.0.0",
-    "cdrVersion": "1.16.0"
-}
-```
+None
 
 #### Examples
-
-`testdocs gendocs -c /Users/dsb/config.json json ./csvfiles/ ./doc.json`
-Convert a folder structure containing a series of CSV files each containing different aspects of the test documentation into a single JSON file containing test documentation aligned to the test doc schema.  Note that schema compliance for the output is dependent on the validity of the data in the CSV files.
 
 `testdocs generate html ./doc.json ./doc.html`
 Convert the documentation in `doc.json` into standalone HTML and output to `doc.html`.  All CSS and JS will be inline in the resulting HTML file.
@@ -123,13 +113,3 @@ To publish the repository to npm (needs permission)
 `npm run build-prod`
 2. Publish
 `npm publish --access public`
-
-## Outstanding Features
-
-The following are a list of features that are intended but yet to be added to this capability (contributions welcome):
-
-* Standalone browser based editor for modifying schema compliant Documentation
-* Addition of test data generation (possibly a separate CLI)
-* Refactor so that the core libraries are in a separate module for reuse
-* Add additional options to output generation to allow for insertion of additional content (eg. CSS, JS)
-* Unit testing to support contributions
