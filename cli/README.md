@@ -122,7 +122,7 @@ Convert the documentation in `doc.json` into Markdown and output to `doc.md`.  N
 
 ## Reporting Issues
 
-Encountered an issue? We're here to help. Please visit our [issue reporting guidelines](https://www.notion.so/Issue-Reporting-Guidelines-71a329a0658c4b69a232eab95822509b?pvs=21) for submitting an issue.
+Encountered an issue? We're here to help. Please visit our [issue reporting guidelines](https://d61cds.notion.site/Issue-Reporting-Guidelines-71a329a0658c4b69a232eab95822509b?pvs=4) for submitting an issue.
 
 ## Stay Updated
 

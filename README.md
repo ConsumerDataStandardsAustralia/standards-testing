@@ -106,7 +106,7 @@ To provide feedback, please raise an ‘issue’ on this repository. We welcome 
 2. test cases or assertions that appear to be incorrect
 3. suggested improvements to the user interface or to the instructions on how to use this repository.
 
-Please visit our [issue reporting guidelines](https://www.notion.so/Issue-Reporting-Guidelines-71a329a0658c4b69a232eab95822509b?pvs=21) for submitting an issue.
+Please visit our [issue reporting guidelines](https://d61cds.notion.site/Issue-Reporting-Guidelines-71a329a0658c4b69a232eab95822509b?pvs=4) for submitting an issue.
 
 ## Stay Updated
 
