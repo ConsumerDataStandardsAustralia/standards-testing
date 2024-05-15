@@ -1,10 +1,10 @@
 {
   "schema": "https://cds.gov.au/cdr-test-schema.1.0.0.json",
-  "fileVersion": "2.3.0",
-  "standardsVersion": "1.18.0",
+  "fileVersion": "2.4.0",
+  "standardsVersion": "1.30.0",
   "title": "The CDR Test Documentation",
   "description": "This documentation has been  created by the DSB to assist participants in the development of compliant APIs",
-  "changeLogUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v2.3.0/CDR%20Test%20Documentation%20CHANGE%20LOG.json",
+  "changeLogUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v2.4.0/json-docs/CDR%20Test%20Documentation%20CHANGE%20LOG.json",
   "githubRepoUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing",
   "assertions": {
     "A.CAA.0001": {

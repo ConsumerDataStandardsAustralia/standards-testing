@@ -1,0 +1,1350 @@
+{
+  "schema": "https://cds.gov.au/cdr-test-changelog-schema.1.0.0.json",
+  "fileVersion": "2.4.0",
+  "title": "The CDR Test Documentation Changelog",
+  "description": "This documentation has been created by the DSB to assist in tracking changes to the CDR Test Documentation",
+  "githubRepoUrl": "https://github.com/ConsumerDataStandardsAustralia/standards-testing",
+  "changes": {
+    "8wWeUvk5jr4DmvY1Pkfql": {
+      "id": "8wWeUvk5jr4DmvY1Pkfql",
+      "date": "19/05/22",
+      "version": "1.0.0",
+      "identifier": "N/A",
+      "field": "All",
+      "changeDescription": "Initial draft of CDR Test Documentation covering Scenarios, Test Cases and Assertions for Energy Standing Data, Usage and DER in Suite.010 for Data Recipient calls to Data Holders and Suite.011 for Data Holder calls to the Secondary Data Holder",
+      "issueId": "N/A"
+    },
+    "OmkwLdWP6BH4sMo2vsQ5F": {
+      "id": "OmkwLdWP6BH4sMo2vsQ5F",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAS.003",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "9IAlanj7pBPPFegc_X9y9": {
+      "id": "9IAlanj7pBPPFegc_X9y9",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAS.006",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "6q9t8F4XukTAYz52LD-o0": {
+      "id": "6q9t8F4XukTAYz52LD-o0",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAS.011",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "tbUFnpISOo6l9vH7FmPXJ": {
+      "id": "tbUFnpISOo6l9vH7FmPXJ",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAS.021",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "D2vS2YwmCGEC4lZqZsj75": {
+      "id": "D2vS2YwmCGEC4lZqZsj75",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAS.028",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "y52JXiDXBmh0ILJVa3HNb": {
+      "id": "y52JXiDXBmh0ILJVa3HNb",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAS.033",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "WYHyF5pHL2tjyQe8qBYpb": {
+      "id": "WYHyF5pHL2tjyQe8qBYpb",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAS.069",
+      "field": "Title; PreConditions",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "pU5wlYi68WELNdYCCbhe0": {
+      "id": "pU5wlYi68WELNdYCCbhe0",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAS.070",
+      "field": "Title; PreConditions",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "wMqmzyntncwko8TqzKTrB": {
+      "id": "wMqmzyntncwko8TqzKTrB",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAS.071",
+      "field": "Title; PreConditions",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "29ZsAUlzBpliKIW2ms_3d": {
+      "id": "29ZsAUlzBpliKIW2ms_3d",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAS.072",
+      "field": "Title; PreConditions",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "frYX7NK20WMUo6D8V5HXu": {
+      "id": "frYX7NK20WMUo6D8V5HXu",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAS.073",
+      "field": "Title; PreConditions",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "LcTcRTzHv_57cOSFVOr6u": {
+      "id": "LcTcRTzHv_57cOSFVOr6u",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAS.074",
+      "field": "Title; PreConditions",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "4UAuOVNHswKJocO7wZxXe": {
+      "id": "4UAuOVNHswKJocO7wZxXe",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.003",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "lJYNL3BipyGhHHozy2Fk6": {
+      "id": "lJYNL3BipyGhHHozy2Fk6",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.007",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "OVX0iYvLeaWguPyHbh25m": {
+      "id": "OVX0iYvLeaWguPyHbh25m",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.013",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "t8wnOQDhlCWzeIFQpwwA7": {
+      "id": "t8wnOQDhlCWzeIFQpwwA7",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.024",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "LgBP0L8jkeY4msGMn7BEk": {
+      "id": "LgBP0L8jkeY4msGMn7BEk",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.034",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "_mIO09daWZ5-XSi4dpaie": {
+      "id": "_mIO09daWZ5-XSi4dpaie",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.040",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "vY7qpnbBO_t5k_Y2IEpIT": {
+      "id": "vY7qpnbBO_t5k_Y2IEpIT",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.047",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "3psnLt-WXASF9YMnyF-ZT": {
+      "id": "3psnLt-WXASF9YMnyF-ZT",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.062",
+      "field": "Title",
+      "changeDescription": "x-v-min corrected to x-min-v ",
+      "issueId": "20"
+    },
+    "IlFQRqED5w_j2D-e0gija": {
+      "id": "IlFQRqED5w_j2D-e0gija",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.125",
+      "field": "Title; PreConditions",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "MV2R3NgDCZVJr620ZjaKf": {
+      "id": "MV2R3NgDCZVJr620ZjaKf",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.126",
+      "field": "Title; PreConditions",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "4bFpuPvkxqkOIBQ05gHkr": {
+      "id": "4bFpuPvkxqkOIBQ05gHkr",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.128",
+      "field": "Title; PreConditions",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "aSBLyVRLKj05XG7rDWwlc": {
+      "id": "aSBLyVRLKj05XG7rDWwlc",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.129",
+      "field": "Title; PreConditions",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "GWL_tiMOuumItY_5pXs8_": {
+      "id": "GWL_tiMOuumItY_5pXs8_",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.130",
+      "field": "Title; PreConditions",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "6PSHno_Q8a7ewQwYXEWkt": {
+      "id": "6PSHno_Q8a7ewQwYXEWkt",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.131",
+      "field": "Title; PreConditions",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "NHdOd7-yHELaD3S1j_WGI": {
+      "id": "NHdOd7-yHELaD3S1j_WGI",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.132",
+      "field": "Title; PreConditions",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "0L2S2SUgu-hLefST9BIxV": {
+      "id": "0L2S2SUgu-hLefST9BIxV",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "A.CVN.004",
+      "field": "Title; Given Change",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "xjnKqZVFtCTx9_LUal-nW": {
+      "id": "xjnKqZVFtCTx9_LUal-nW",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "A.CVN.005",
+      "field": "Title; Given Change",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "-fdGmworFl0pNLLKCyBi3": {
+      "id": "-fdGmworFl0pNLLKCyBi3",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "A.CVM.001",
+      "field": "Title; Given; When; Then",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "2FNRd8dtChEZrkrcPDTDI": {
+      "id": "2FNRd8dtChEZrkrcPDTDI",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "A.CVM.002",
+      "field": "Title; Given",
+      "changeDescription": "x-v-min corrected to x-min-v",
+      "issueId": "20"
+    },
+    "stvbkFwcD2Bp2uWf4QCe9": {
+      "id": "stvbkFwcD2Bp2uWf4QCe9",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.073",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Service Points changed to Get Service Points v1",
+      "issueId": "22"
+    },
+    "5xM7yIdY5ZWCFw7TzzuHp": {
+      "id": "5xM7yIdY5ZWCFw7TzzuHp",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.074",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Service Points Negative changed to Get Service Points Negative v1",
+      "issueId": "22"
+    },
+    "guhxFJF6q5FECaclgH06l": {
+      "id": "guhxFJF6q5FECaclgH06l",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.075",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Service Point Detail changed to Get Service Point Detail v1",
+      "issueId": "22"
+    },
+    "6CwcqpaO4crCjT6xoD8Nx": {
+      "id": "6CwcqpaO4crCjT6xoD8Nx",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.076",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Service Point Detail Negative changed to Get Service Point Detail Negative v1",
+      "issueId": "22"
+    },
+    "z2RL51VfSUfZxTjHFZ0Le": {
+      "id": "z2RL51VfSUfZxTjHFZ0Le",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.077",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Usage For Service Point changed to Get Usage For Service Point v1",
+      "issueId": "22"
+    },
+    "SLnbzB9t2KsSt0EVMAnbe": {
+      "id": "SLnbzB9t2KsSt0EVMAnbe",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.078",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Usage For Service Point Negative changed to Get Usage For Service Point Negative v1",
+      "issueId": "22"
+    },
+    "4ndsAEzudni17XqJnYgkg": {
+      "id": "4ndsAEzudni17XqJnYgkg",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.079",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Bulk Usage changed to Get Bulk Usage v1",
+      "issueId": "22"
+    },
+    "fC0LHWBD0wfy1xjNO9B5s": {
+      "id": "fC0LHWBD0wfy1xjNO9B5s",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.080",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Bulk Usage Negative changed to Get Bulk Usage Negative v1",
+      "issueId": "22"
+    },
+    "HwPuwurJsX5Ti2nG_Y1xe": {
+      "id": "HwPuwurJsX5Ti2nG_Y1xe",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.081",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Usage For Specific Service Points changed to Get Usage For Specific Service Points v1",
+      "issueId": "22"
+    },
+    "Xh8DY9xEjeoo5SCu4JWLi": {
+      "id": "Xh8DY9xEjeoo5SCu4JWLi",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.082",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Usage For Specific Service Points Negative changed to Get Usage For Specific Service Points Negative v1",
+      "issueId": "22"
+    },
+    "buHXz0SAWbQwy9L2gK61q": {
+      "id": "buHXz0SAWbQwy9L2gK61q",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.083",
+      "field": "Test Scenarios",
+      "changeDescription": "Get DER for Service Point changed to Get DER for Service Point v1",
+      "issueId": "22"
+    },
+    "AixvmxJUrIeq9Y1kWCdb3": {
+      "id": "AixvmxJUrIeq9Y1kWCdb3",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.084",
+      "field": "Test Scenarios",
+      "changeDescription": "Get DER for Service Point Negative changed to Get DER for Service Point Negative v1",
+      "issueId": "22"
+    },
+    "s0YLImleO1QVOIBUGWDB3": {
+      "id": "s0YLImleO1QVOIBUGWDB3",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.085",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Bulk DER changed to Get Bulk DER v1",
+      "issueId": "22"
+    },
+    "Wko_7-l7nAbJ34LV3i--F": {
+      "id": "Wko_7-l7nAbJ34LV3i--F",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.086",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Bulk DER Negative changed to Get Bulk DER Negative v1",
+      "issueId": "22"
+    },
+    "seb3bWzSxpJxJ3UBkS_3k": {
+      "id": "seb3bWzSxpJxJ3UBkS_3k",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.087",
+      "field": "Test Scenarios",
+      "changeDescription": "Get DER For Specific Service Points changed to Get DER For Specific Service Points v1",
+      "issueId": "22"
+    },
+    "EORiREPZ4jANdffO-cX4q": {
+      "id": "EORiREPZ4jANdffO-cX4q",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAR.088",
+      "field": "Test Scenarios",
+      "changeDescription": "Get DER For Specific Service Points Negative changed to Get DER For Specific Service Points Negative v1",
+      "issueId": "22"
+    },
+    "CjIhnL4nWlpov8r9hr7Bz": {
+      "id": "CjIhnL4nWlpov8r9hr7Bz",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAS.089",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Service Points SR changed to Get Service Points SR v1",
+      "issueId": "22"
+    },
+    "Yk41bAx_W4qo0xM7SCmpV": {
+      "id": "Yk41bAx_W4qo0xM7SCmpV",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAS.090",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Service Points Negative SR changed to Get Service Points Negative SR v1",
+      "issueId": "22"
+    },
+    "bbgPRJeO88JtiXZMr_Gpf": {
+      "id": "bbgPRJeO88JtiXZMr_Gpf",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAS.091",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Service Point Detail SR changed to Get Service Point Detail SR v1",
+      "issueId": "22"
+    },
+    "n4MPSmjl3d3mvrsfx23Ka": {
+      "id": "n4MPSmjl3d3mvrsfx23Ka",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAS.092",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Service Point Detail Negative SR changed to Get Service Point Detail Negative SR v1",
+      "issueId": "22"
+    },
+    "mEci9jYEYP0pNcPekjT1U": {
+      "id": "mEci9jYEYP0pNcPekjT1U",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAS.093",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Usage For Service Point SR changed to Get Usage For Service Point SR v1",
+      "issueId": "22"
+    },
+    "gkMh1nwMUQGKYdiLO-2Ax": {
+      "id": "gkMh1nwMUQGKYdiLO-2Ax",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAS.094",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Usage For Service Point Negative SR changed to Get Usage For Service Point Negative SR v1",
+      "issueId": "22"
+    },
+    "bbwZoSnb_Cw9imySv757l": {
+      "id": "bbwZoSnb_Cw9imySv757l",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAS.095",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Usage For Specific Service Points SR changed to Get Usage For Specific Service Points SR v1",
+      "issueId": "22"
+    },
+    "T9_bVEqX90IUl7N_BzNVR": {
+      "id": "T9_bVEqX90IUl7N_BzNVR",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAS.096",
+      "field": "Test Scenarios",
+      "changeDescription": "Get Usage For Specific Service Points Negative SR changed to Get Usage For Specific Service Points Negative SR v1",
+      "issueId": "22"
+    },
+    "qsUJGEatYTBCKbxYQ_YgS": {
+      "id": "qsUJGEatYTBCKbxYQ_YgS",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAS.097",
+      "field": "Test Scenarios",
+      "changeDescription": "Get DER for Service Point SR changed to Get DER for Service Point SR v1",
+      "issueId": "22"
+    },
+    "Othh_3i1DuieEY75VHRlt": {
+      "id": "Othh_3i1DuieEY75VHRlt",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAS.098",
+      "field": "Test Scenarios",
+      "changeDescription": "Get DER for Service Point Negative SR changed to Get DER for Service Point Negative SR v1",
+      "issueId": "22"
+    },
+    "TkR3uzzS6xkUyBr8QRjp4": {
+      "id": "TkR3uzzS6xkUyBr8QRjp4",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAS.099",
+      "field": "Test Scenarios",
+      "changeDescription": "Get DER For Specific Service Points SR changed to Get DER For Specific Service Points SR v1",
+      "issueId": "22"
+    },
+    "o6hm5QSi4999otDeXk39u": {
+      "id": "o6hm5QSi4999otDeXk39u",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "S.EAS.100",
+      "field": "Test Scenarios",
+      "changeDescription": "Get DER For Specific Service Points Negative SR changed to Get DER For Specific Service Points Negative SR v1",
+      "issueId": "22"
+    },
+    "Ed4D1EzCPCELJZo58c5f1": {
+      "id": "Ed4D1EzCPCELJZo58c5f1",
+      "date": "3/06/22",
+      "version": "1.0.1",
+      "identifier": "N/A",
+      "field": "Change Log",
+      "changeDescription": "Introduced Change Control to Log the details of changes to the documentation over time and make the file available from within the CDR  Test Documentation",
+      "issueId": "23"
+    },
+    "5z2NVkLlsycYjaoKtjpQj": {
+      "id": "5z2NVkLlsycYjaoKtjpQj",
+      "date": "7/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.002",
+      "field": "End State Assertions",
+      "changeDescription": "A.CPG.001 added  ",
+      "issueId": "24"
+    },
+    "S6rOrV0Yqm7-h6pcVtaPt": {
+      "id": "S6rOrV0Yqm7-h6pcVtaPt",
+      "date": "7/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.012",
+      "field": "End State Assertions",
+      "changeDescription": "A.CPG.001 added  ",
+      "issueId": "24"
+    },
+    "GWMlYxwfiy7wOwCNsyZdn": {
+      "id": "GWMlYxwfiy7wOwCNsyZdn",
+      "date": "7/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.023",
+      "field": "End State Assertions",
+      "changeDescription": "A.CPG.001 added  ",
+      "issueId": "24"
+    },
+    "bWnrQhSt7ta5YE4ZWCPvj": {
+      "id": "bWnrQhSt7ta5YE4ZWCPvj",
+      "date": "7/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.039",
+      "field": "End State Assertions",
+      "changeDescription": "A.CPG.001 added  ",
+      "issueId": "24"
+    },
+    "E6XrbL3hzdKQKFQ20Q3TP": {
+      "id": "E6XrbL3hzdKQKFQ20Q3TP",
+      "date": "7/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.045",
+      "field": "End State Assertions",
+      "changeDescription": "A.CPG.001 added  ",
+      "issueId": "24"
+    },
+    "FdtS06AzJzzMa_JHDzI-e": {
+      "id": "FdtS06AzJzzMa_JHDzI-e",
+      "date": "7/06/22",
+      "version": "1.0.1",
+      "identifier": "T.EAR.061",
+      "field": "End State Assertions",
+      "changeDescription": "A.CFC.001 added  ",
+      "issueId": "25"
+    },
+    "ClcIdrAyga1x3kqj6dGeP": {
+      "id": "ClcIdrAyga1x3kqj6dGeP",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "T.EAR.001",
+      "field": "References",
+      "changeDescription": "Added link to Postman examples ",
+      "issueId": "21"
+    },
+    "LeTVku-D9kgrBn9U-nMEz": {
+      "id": "LeTVku-D9kgrBn9U-nMEz",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "T.EAR.002",
+      "field": "References",
+      "changeDescription": "Added link to Postman examples ",
+      "issueId": "21"
+    },
+    "SBwp8laoZiefblf5t0c6A": {
+      "id": "SBwp8laoZiefblf5t0c6A",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "T.EAR.023",
+      "field": "References",
+      "changeDescription": "Added link to Postman examples ",
+      "issueId": "21"
+    },
+    "NsgkEsUtvbGhlbvooZ16Z": {
+      "id": "NsgkEsUtvbGhlbvooZ16Z",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "T.EAR.033",
+      "field": "References",
+      "changeDescription": "Added link to Postman examples ",
+      "issueId": "21"
+    },
+    "ZGVbZOyFGmDT8yuC4Il5f": {
+      "id": "ZGVbZOyFGmDT8yuC4Il5f",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "T.EAR.045",
+      "field": "References",
+      "changeDescription": "Added link to Postman examples ",
+      "issueId": "21"
+    },
+    "Zvc2IYbjqe5ABmcKLHKMf": {
+      "id": "Zvc2IYbjqe5ABmcKLHKMf",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "T.EAR.109",
+      "field": "References",
+      "changeDescription": "Added link to Postman examples ",
+      "issueId": "21"
+    },
+    "lfNtLMwBUxNHT7LX6iIwA": {
+      "id": "lfNtLMwBUxNHT7LX6iIwA",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "T.EAR.061",
+      "field": "References",
+      "changeDescription": "Added link to Postman examples ",
+      "issueId": "N/A"
+    },
+    "jU6JFuDTU963Og-fsrAfh": {
+      "id": "jU6JFuDTU963Og-fsrAfh",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "T.EAR.039",
+      "field": "References",
+      "changeDescription": "Added link to Postman examples ",
+      "issueId": "N/A"
+    },
+    "reKf3LlBM0jegPYqQIaJT": {
+      "id": "reKf3LlBM0jegPYqQIaJT",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAR.001",
+      "field": "Given; When ",
+      "changeDescription": "Changed the {servicePointId} is included in the ADR to DH request \nto \nthe {servicePointId} is included AND the {servicePointId} value is valid \nChanged the {servicePointId} value is valid \nto\na response is returned",
+      "issueId": "26"
+    },
+    "TLoG_7OwOyJOCWDLYmt1w": {
+      "id": "TLoG_7OwOyJOCWDLYmt1w",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAR.002",
+      "field": "Given; When ",
+      "changeDescription": "Changed the {servicePointId} is included in the ADR to DH request url\nto\nthe {servicePointId} is included AND the requested service point is permanently unavailable. (No subsequent request for the service point will be successful.)\nChanged The requested service point is permanently unavailable. (No subsequent request for the service point will be successful.) \nto \na response is returned",
+      "issueId": "26"
+    },
+    "iABAyT6Q0WmGOg9yjd1PY": {
+      "id": "iABAyT6Q0WmGOg9yjd1PY",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAR.003",
+      "field": "Given; When ",
+      "changeDescription": "Changed the {servicePointId} is included in the ADR to DH request url\nto\nthe {servicePointId} is included AND the requested service point is temporarily unavailable. (Subsequent requests for the service point may be successful.)\nChanged The requested service point is temporarily unavailable. (Subsequent requests for the service point may be successful.) \nto \na response is returned",
+      "issueId": "26"
+    },
+    "_z4cS96ApbcswIDwLQdCd": {
+      "id": "_z4cS96ApbcswIDwLQdCd",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAR.004",
+      "field": "Given; When ",
+      "changeDescription": "Deleted by the ADR \nChanged the DH receives the request\nto\na response is returned",
+      "issueId": "26"
+    },
+    "sskGyLdvbSRuiTnt8lDM8": {
+      "id": "sskGyLdvbSRuiTnt8lDM8",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAR.005",
+      "field": "Given; When ",
+      "changeDescription": "Deleted in the ADR to DH request AND added AND the {servicePointId} value is valid AND the request is formated correctly\nChanged the {servicePointId} value is valid AND the request is formated correctly\nto\na response is returned",
+      "issueId": "26"
+    },
+    "iIBzAOPkaCOyLoGTjCVnh": {
+      "id": "iIBzAOPkaCOyLoGTjCVnh",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAR.006",
+      "field": "When ",
+      "changeDescription": "Changed the DH receives the request AND interprets the Body\nto \na response is returned",
+      "issueId": "26"
+    },
+    "mBF-Oj616njuI6DXbdJVk": {
+      "id": "mBF-Oj616njuI6DXbdJVk",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAR.007",
+      "field": "Given; When ",
+      "changeDescription": "Deleted in the ADR to DH request AND added AND the {servicePointId} value is valid \nChanged the {servicePointId} value is valid \nto\na response is returned",
+      "issueId": "26"
+    },
+    "sbfWKT2ULPHlrWaJ3uM53": {
+      "id": "sbfWKT2ULPHlrWaJ3uM53",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAR.008",
+      "field": "When ",
+      "changeDescription": "Changed the DH receives the request AND interprets the Body\nto \na response is returned",
+      "issueId": "26"
+    },
+    "xiCPvycCa9Sr2D9TlKz_i": {
+      "id": "xiCPvycCa9Sr2D9TlKz_i",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAR.009",
+      "field": "When ",
+      "changeDescription": "Changed the DH receives the request AND interprets the Body\nto \na response is returned",
+      "issueId": "26"
+    },
+    "FqG4neDgQ3ysc3jCNhvkj": {
+      "id": "FqG4neDgQ3ysc3jCNhvkj",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAR.010",
+      "field": "Given; When ",
+      "changeDescription": "Deleted by the ADR\nChanged the DH receives the request \nto \na response is returned",
+      "issueId": "26"
+    },
+    "WJCIKBNFRvnrNBlYErEDq": {
+      "id": "WJCIKBNFRvnrNBlYErEDq",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAR.011",
+      "field": "Given; When ",
+      "changeDescription": "Deleted by the ADR\nChanged the DH receives the request \nto \na response is returned",
+      "issueId": "26"
+    },
+    "AhJCTbhpBnqDHE47aGf_W": {
+      "id": "AhJCTbhpBnqDHE47aGf_W",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAS.001",
+      "field": "Given; When ",
+      "changeDescription": "Changed the {servicePointId} is included in the DH to SDH request \nto \nthe {servicePointId} is included AND the {servicePointId} value is valid \nChanged the {servicePointId} value is valid \nto\na response is returned",
+      "issueId": "26"
+    },
+    "NhZjPVAEjPMtxBFsBdoKt": {
+      "id": "NhZjPVAEjPMtxBFsBdoKt",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAS.002",
+      "field": "Given; When ",
+      "changeDescription": "Changed the {servicePointId} is included in the DH to SDH request \nto\nthe {servicePointId} is included AND the requested service point is permanently unavailable. (No subsequent request for the service point will be successful.)\nChanged The requested service point is permanently unavailable. (No subsequent request for the service point will be successful.) \nto \na response is returned",
+      "issueId": "26"
+    },
+    "3zKagKKuyGnPy7edPtRg9": {
+      "id": "3zKagKKuyGnPy7edPtRg9",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAS.003",
+      "field": "Given; When ",
+      "changeDescription": "Changed the {servicePointId} is included in the DH to SDH request \nto\nthe {servicePointId} is included AND the requested service point is temporarily unavailable. (Subsequent requests for the service point may be successful.)\nChanged The requested service point is temporarily unavailable.  (Subsequent requests for the service point may be successful.)\nto \na response is returned",
+      "issueId": "26"
+    },
+    "j-HEjhnqGh2LXakDi4DgH": {
+      "id": "j-HEjhnqGh2LXakDi4DgH",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAS.004",
+      "field": "Given; When ",
+      "changeDescription": "Deleted by the DH \nChanged the SDH receives the request\nto\na response is returned",
+      "issueId": "26"
+    },
+    "zZOkV2B8qutMUy8IKPaIY": {
+      "id": "zZOkV2B8qutMUy8IKPaIY",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAS.005",
+      "field": "Given; When ",
+      "changeDescription": "Deleted in the DH to SDH request \nChanged the {servicePointId} value is valid AND the request is formated correctly\nto\na response is returned",
+      "issueId": "26"
+    },
+    "OpVarK6bWV0jV1WhMfSfQ": {
+      "id": "OpVarK6bWV0jV1WhMfSfQ",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAS.006",
+      "field": "When ",
+      "changeDescription": "Changed the SDH receives the request and interprets the Body\nto \na response is returned",
+      "issueId": "26"
+    },
+    "Cosx0r_vM_k98jvp2D5WB": {
+      "id": "Cosx0r_vM_k98jvp2D5WB",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAS.007",
+      "field": "Given; When ",
+      "changeDescription": "Added AND the {servicePointId} value is valid \nChanged the {servicePointId} value is valid \nto \nresponse is returned",
+      "issueId": "26"
+    },
+    "5aXZfYuUeZ4AhbhZNqqI_": {
+      "id": "5aXZfYuUeZ4AhbhZNqqI_",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAS.008",
+      "field": "When",
+      "changeDescription": "Changed the SDH receives the request and interprets the Body\nto\nresponse is returned",
+      "issueId": "26"
+    },
+    "0fIivQRVaLbepeBYwtwka": {
+      "id": "0fIivQRVaLbepeBYwtwka",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAS.009",
+      "field": "When",
+      "changeDescription": "Changed the SDH receives the request and interprets the Body\nto\nresponse is returned",
+      "issueId": "26"
+    },
+    "uUFaxCOIocmZ-uV1LngPn": {
+      "id": "uUFaxCOIocmZ-uV1LngPn",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAS.010",
+      "field": "When",
+      "changeDescription": "Changed the SDH receives the request and interprets the Body\nto\nresponse is returned",
+      "issueId": "26"
+    },
+    "a0jKvIostdRKaX6CT9uEg": {
+      "id": "a0jKvIostdRKaX6CT9uEg",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.EAS.011",
+      "field": "When",
+      "changeDescription": "Changed the SDH receives the request and interprets the Body\nto\nresponse is returned",
+      "issueId": "26"
+    },
+    "FFTitmNzcc2dH8kc3UQOy": {
+      "id": "FFTitmNzcc2dH8kc3UQOy",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CPG.001",
+      "field": "Given; When; Then",
+      "changeDescription": "Deleted in a GET Request AND Added AND the page value is a number and page-size is [1,25,1000,null]\nChanged to the page value is a number and page-size is [1,25,1000,null]\nto \na response is returned\nAND the response has a status of 200\nDeleted AND the response has a status of 200",
+      "issueId": "26"
+    },
+    "7kVC6AEMvFZh4SUoaY3Mm": {
+      "id": "7kVC6AEMvFZh4SUoaY3Mm",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CPG.002",
+      "field": "Given; When ",
+      "changeDescription": "Deleted in a GET Request AND Added the the value for <page-size> is outside the range [1..1000]\nOR the <page-size> is a not a positive integer\nChanged the value for <page-size> is outside the range [1..1000]\nOR the <page-size> is a not a positive integer\nto \na response is returned",
+      "issueId": "26"
+    },
+    "CYT1mhi0S4SuLPlMP5R4S": {
+      "id": "CYT1mhi0S4SuLPlMP5R4S",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CPG.003",
+      "field": "Given; When ",
+      "changeDescription": "Deleted in a GET request AND added AND the <page> is a not a positive integer\nChanged the <page> is a not a positive integer\nto \na response is returned",
+      "issueId": "26"
+    },
+    "S2G3cxPVN-nKuvsM3Ifim": {
+      "id": "S2G3cxPVN-nKuvsM3Ifim",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CPG.004",
+      "field": "Given; When ",
+      "changeDescription": "Deleted in a GET request AND added AND the <page> value is greater than the number of pages available \nChanged the <page> value is greater than the number of pages available \nto \na response is returned",
+      "issueId": "26"
+    },
+    "MaG_gcsHHf21OxQfVkkEs": {
+      "id": "MaG_gcsHHf21OxQfVkkEs",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CPG.005",
+      "field": "Given; When ",
+      "changeDescription": "Deleted in a GET request AND added AND the page size parameter value is not a positive integer (number)\nChanged the page size parameter value is not a positive integer (number)\nto \na response is returned",
+      "issueId": "26"
+    },
+    "0HlncbmoOc_fQvbDjfsEJ": {
+      "id": "0HlncbmoOc_fQvbDjfsEJ",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CVN.001",
+      "field": "Given; When; Then ",
+      "changeDescription": "Deleted in a GET request AND added AND the value for the <x-v> is a positive integer\nChanged the value for the <x-v> is a positive integer\nto \na response is returned AND the response has a status of 200\nDeleted the response has a status of 200",
+      "issueId": "26"
+    },
+    "19GI2qi5X0jD48B9NOM00": {
+      "id": "19GI2qi5X0jD48B9NOM00",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CVN.002",
+      "field": "Given; When ",
+      "changeDescription": "Deleted in a GET request AND added AND the version value is not a valid number is [-1,0,1001]\nChanged the version value is not a valid number is [-1,0,1001]\nto \na response is returned",
+      "issueId": "26"
+    },
+    "XaslZQRkYUA48cHFj32X5": {
+      "id": "XaslZQRkYUA48cHFj32X5",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CVN.003",
+      "field": "Given; When ",
+      "changeDescription": "Deleted in a GET request AND added AND the verison value is not a valid number is an alpha (e.g. \"foo\")\nChanged the verison value is not a valid number is an alpha (e.g. \"foo\")\nto \na response is returned",
+      "issueId": "26"
+    },
+    "Roi8ZXrZjtoLBZi3H6v1R": {
+      "id": "Roi8ZXrZjtoLBZi3H6v1R",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CVN.004",
+      "field": "Given; When ",
+      "changeDescription": "Added AND the request version <x-v> is not supported\nChanged the request version <x-v> is not supported\nto \na response is returned",
+      "issueId": "26"
+    },
+    "mnbgH_5a0zIkm0-Ix1AFx": {
+      "id": "mnbgH_5a0zIkm0-Ix1AFx",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CVN.005",
+      "field": "Given; When ",
+      "changeDescription": "Added AND no version between <x-v> and <x-min-v> is supported\nChanged no version between <x-v> and <x-min-v> is supported\nto  \na response is returned",
+      "issueId": "26"
+    },
+    "MVU0cb1GV39WUZcstPj7E": {
+      "id": "MVU0cb1GV39WUZcstPj7E",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CVM.001",
+      "field": "Given; When ",
+      "changeDescription": "Deleted in a get request AND added the value for the <x-min-v>  is a positive integer\nChanged the value for the <x-min-v>  is a positive integer\nto\na response is returned AND the response has a status of 200",
+      "issueId": "26"
+    },
+    "Kdv0qj8D8ZfAn3ZrJvVOe": {
+      "id": "Kdv0qj8D8ZfAn3ZrJvVOe",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CVM.002",
+      "field": "Given; When ",
+      "changeDescription": "Deleted in a get request AND Added AND the <x-min-v> is a not a positive integer\nChanged the <x-min-v> is a not a positive integer\nto \na response is returned",
+      "issueId": "26"
+    },
+    "IoxvEfRANWDTj76GvWSJ_": {
+      "id": "IoxvEfRANWDTj76GvWSJ_",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CFI.001",
+      "field": "Given; When ",
+      "changeDescription": "Added AND the <x-fapi-interaction-id> is in a valid format \nChanged the <x-fapi-interaction-id> is in a valid format \nto \nA response is returned\nDeleted AND",
+      "issueId": "26"
+    },
+    "gY0CDwVbpIEuNzjcX7WY5": {
+      "id": "gY0CDwVbpIEuNzjcX7WY5",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CFI.003",
+      "field": "Given; When ",
+      "changeDescription": "Deleted in the GET request AND Added AND the <x-fapi-interaction-id> is not in a valid format \nChanged the <x-fapi-interaction-id> is not in a valid format \nto \na response is returned",
+      "issueId": "26"
+    },
+    "jr1WZCu_9ynmTk4ACMnRa": {
+      "id": "jr1WZCu_9ynmTk4ACMnRa",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CFA.001",
+      "field": "Given; When ",
+      "changeDescription": "Changed the called API is a resource call and does require authentication\nto \nthe API requires authentication\nChanged the <x-fapi-auth-date> is present in the request header\nAND is in a valid format\nto \na response is returned \nAND the response has a status of 200\nChanged the response has a status of 200 \nto\n<x-fapi-auth-date> is present in the request header\nAND is in a valid format",
+      "issueId": "26"
+    },
+    "piuOfJXH0g4chAsUOyLJo": {
+      "id": "piuOfJXH0g4chAsUOyLJo",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CFA.002",
+      "field": "Given; When ",
+      "changeDescription": "Changed the called API is a resource call and does require authentication\nto \nthe API requires authentication AND the <x-fapi-auth-date> is NOT present  in the request header\nChanged the <x-fapi-auth-date> is NOT present  in the request header\nto \na response is returned \nAdded AND the response body has ErrorListReponse object",
+      "issueId": "26"
+    },
+    "HLU3D2Z5QHGAtFanW41MU": {
+      "id": "HLU3D2Z5QHGAtFanW41MU",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CFA.003",
+      "field": "Given; When ",
+      "changeDescription": "Changed the called API is a resource call and does require authentication\nto \nthe API requires authentication AND the <x-fapi-auth-date> is in the request header AND is NOT in a valid format\nChanged the <x-fapi-auth-date> is  in the request header\nAND is NOT in a valid format\nto\na response is returned",
+      "issueId": "26"
+    },
+    "xTuTno_vQfF2NYbG0wWuo": {
+      "id": "xTuTno_vQfF2NYbG0wWuo",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CFA.004",
+      "field": "Given; When ",
+      "changeDescription": "Added the API requires authentication AND\nAdded AND the response has a status of 200",
+      "issueId": "26"
+    },
+    "kMZXhXG7QZLF2VJqsJCfK": {
+      "id": "kMZXhXG7QZLF2VJqsJCfK",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CFC.001",
+      "field": "Given; When; Then",
+      "changeDescription": "Deleted called\nChanged the <x-fapi-customer-ip-address> is present in the request header AND is in a valid IPv4 or IPv6 format\nto \na response is returned\nAND the response has a status of 200\nChanged the response has a status of 200\nto \nthe <x-fapi-customer-ip-address> is present in the request header\nAND is in a valid IPv4 or IPv6 format",
+      "issueId": "26"
+    },
+    "1CpemzQagh5dtj0xG5MJa": {
+      "id": "1CpemzQagh5dtj0xG5MJa",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CFC.002",
+      "field": "Given; When ",
+      "changeDescription": "Deleted called AND Added AND the <x-fapi-customer-ip-address> is NOT present in the request header\nChanged the <x-fapi-customer-ip-address> is NOT present in the request header\nto \na response is returned",
+      "issueId": "26"
+    },
+    "6mCyWQSztJ7NJNSvXCQBL": {
+      "id": "6mCyWQSztJ7NJNSvXCQBL",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CFC.003",
+      "field": "Given; When ",
+      "changeDescription": "Deleted called AND Added AND \"the <x-fapi-customer-ip-address> is in present the request header\nAND is NEITHER in a valid IPv4 or IPv6 format\"\nChanged AND the <x-fapi-customer-ip-address> in present the request header AND is NEITHER  in a valid IPv4 or IPv6 format\nto \na response is returned",
+      "issueId": "26"
+    },
+    "D4G--Lh7QZwk0lALht31z": {
+      "id": "D4G--Lh7QZwk0lALht31z",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CCH.001",
+      "field": "Given; When; Then ",
+      "changeDescription": "Deleted called\nChanged the <x-cds-client-headers> is present in the request header AND is Base64 encoded\nto \na response is returned AND the response has a status of 200\nChanged the response has a status of 200 \nto \nthe <x-cds-client-headers> is present in the request header AND is Base64 encoded",
+      "issueId": "26"
+    },
+    "y3jZISfDqbSgCRZVGl4FO": {
+      "id": "y3jZISfDqbSgCRZVGl4FO",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CCH.002",
+      "field": "Given; When ",
+      "changeDescription": "Changed the called API requires authentication AND the call is an attended, ie customer present, call\nto \nthe API requires authentication AND the <x-cds-client-headers> is mandatory AND the <x-cds-client-headers> is NOT present in the request header\nChanged the <x-cds-client-headers> is NOT present in the request header\nto \na response is returned",
+      "issueId": "26"
+    },
+    "aRGbqleCCjXXzEyHOH6kO": {
+      "id": "aRGbqleCCjXXzEyHOH6kO",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CCH.003",
+      "field": "Given; When ",
+      "changeDescription": "Changed the called API requires authentication AND the call is an attended, ie customer present, call\nto \nthe <x-cds-client-headers>  present the request header AND is Not Base64 encoded\nChanged the <x-cds-client-headers>  present the request header\nAND is Not Base64 encoded \nto \na response is returned ",
+      "issueId": "26"
+    },
+    "P4WRl2LXtSoUQrEc3bGTH": {
+      "id": "P4WRl2LXtSoUQrEc3bGTH",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CAI.001",
+      "field": "When; Then ",
+      "changeDescription": "Changed the <x-cds-arrangement> is present in the request header AND is in a valid format\nto \na response is returned AND the response has a status of 200\nChanged the response has a status of 200\nto \nthe <x-cds-arrangement> is present in the request header AND is in a valid format",
+      "issueId": "26"
+    },
+    "vLOFJESlCBiXcp6R9jZom": {
+      "id": "vLOFJESlCBiXcp6R9jZom",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CAI.002",
+      "field": "Given; When ",
+      "changeDescription": "Added the <x-cds-arrangement> is NOT present in the request header\nChanged the <x-cds-arrangement> is NOT present in the request header\nto  \na response is returned",
+      "issueId": "26"
+    },
+    "kQesR6JutInL92B1nJABG": {
+      "id": "kQesR6JutInL92B1nJABG",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CAI.003",
+      "field": "Given; When ",
+      "changeDescription": "Added the <x-cds-arrangement> is present in the request header AND is NOT in a valid format\nChanged the <x-cds-arrangement> is present in the request header AND is NOT in a valid format\nto \na response is returned",
+      "issueId": "26"
+    },
+    "oyST0GMqIcY_cA98fqqE4": {
+      "id": "oyST0GMqIcY_cA98fqqE4",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.COD.001",
+      "field": "Given; When; Then",
+      "changeDescription": "Added AND the <oldest-date> is in a valid DateString format\nChanged the <oldest-date> is in a valid DateString format\nto  \na response is returned AND the response has a status of 200\nDeleted AND the response has a status of 200",
+      "issueId": "26"
+    },
+    "3CaK0QlB6bBvO4HgIYgKC": {
+      "id": "3CaK0QlB6bBvO4HgIYgKC",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.COD.002",
+      "field": "Given; When ",
+      "changeDescription": "Added AND the <oldest-date> is not in a DateString valid format\nChanged the <oldest-date> is not in a DateString valid format\nto \na response is returned",
+      "issueId": "26"
+    },
+    "H7I3hOQDqJOLsOvGraL0l": {
+      "id": "H7I3hOQDqJOLsOvGraL0l",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CND.001",
+      "field": "Given; When; Then ",
+      "changeDescription": "Added AND the <newest-date> is in a valid DateString format\nChanged the <newest-date> is in a valid DateString format\nto\na response is returned AND the response has a status of 200\nDeleted the response has a status of 200 AND",
+      "issueId": "26"
+    },
+    "lAeqhq6FkxxYt85-iv49G": {
+      "id": "lAeqhq6FkxxYt85-iv49G",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CND.002",
+      "field": "Given; When ",
+      "changeDescription": "Added AND the <newest-date> is not in a valid DateString format\nChanged the <newest-date> is not in a valid DateString format\nto \na response is returned",
+      "issueId": "26"
+    },
+    "vZpHIncWMWeby3jPvi3gP": {
+      "id": "vZpHIncWMWeby3jPvi3gP",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "A.CBD.001",
+      "field": "Given; When ",
+      "changeDescription": "Added AND the request body is not in a valid JSON format, ie it is malformed\nChanged the request body is not in a valid JSON format, ie it is malformed \nto \na response is returned",
+      "issueId": "26"
+    },
+    "fYZ1mn6O2ak90qD0D1WaG": {
+      "id": "fYZ1mn6O2ak90qD0D1WaG",
+      "date": "12/07/22",
+      "version": "1.0.2",
+      "identifier": "ASSERTIONS",
+      "field": "Given; When; Then",
+      "changeDescription": "Corrected various spellings of 'Response' and typos on 'Interaction', 'Version', 'i.e.', 'formatted' and 'correctly' throughout.",
+      "issueId": "N/A"
+    },
+    "xGnrSvdOFBwBPIz5kYaw1": {
+      "id": "xGnrSvdOFBwBPIz5kYaw1",
+      "date": "4/08/22",
+      "version": "1.0.3",
+      "identifier": "T.EAR.008",
+      "field": "PreCondition",
+      "changeDescription": "Added 'invalid' to incomplete sentence and removed <> from servicePointId",
+      "issueId": "38"
+    },
+    "5M7btheFUawLrxNjSyTW0": {
+      "id": "5M7btheFUawLrxNjSyTW0",
+      "date": "5/08/22",
+      "version": "1.0.3",
+      "identifier": "A.EAA.001-006",
+      "field": "All",
+      "changeDescription": "Added Suite.008 Assertions",
+      "issueId": "33"
+    },
+    "cTy5Gc0OhkxYF3paic3kX": {
+      "id": "cTy5Gc0OhkxYF3paic3kX",
+      "date": "5/08/22",
+      "version": "1.0.3",
+      "identifier": "T.EAA.001-056",
+      "field": "All",
+      "changeDescription": "Added Suite.008 Test Cases",
+      "issueId": "33"
+    },
+    "Y__upbYwk01InBUyoB8jD": {
+      "id": "Y__upbYwk01InBUyoB8jD",
+      "date": "5/08/22",
+      "version": "1.0.3",
+      "identifier": "S.EAA.047-054",
+      "field": "Test Cases",
+      "changeDescription": "Added Test Case references to Scenarios",
+      "issueId": "33"
+    },
+    "d0NioiQofm0SXO_9L7UYs": {
+      "id": "d0NioiQofm0SXO_9L7UYs",
+      "date": "10/08/22",
+      "version": "1.0.3",
+      "identifier": "A.CVN.003",
+      "field": "Title",
+      "changeDescription": "Changed the second mention of 'validate' to 'invalid'",
+      "issueId": "48"
+    },
+    "fvqgF30whAPje41MjC6ih": {
+      "id": "fvqgF30whAPje41MjC6ih",
+      "date": "10/08/22",
+      "version": "1.0.3",
+      "identifier": "A.CVN.002",
+      "field": "Title ",
+      "changeDescription": "Changed the second mention of 'validate' to 'invalid'",
+      "issueId": "48"
+    },
+    "WO5cB4QWsvDSyE1Tejjm3": {
+      "id": "WO5cB4QWsvDSyE1Tejjm3",
+      "date": "10/08/22",
+      "version": "1.0.3",
+      "identifier": "A.CAA.001-002",
+      "field": "All",
+      "changeDescription": "Added Suite.005 Assertions",
+      "issueId": "35"
+    },
+    "Z9uC1shF69bQad58hw5rD": {
+      "id": "Z9uC1shF69bQad58hw5rD",
+      "date": "10/08/22",
+      "version": "1.0.3",
+      "identifier": "T.CAA.001-012",
+      "field": "All",
+      "changeDescription": "Added Suite.005 Test Cases",
+      "issueId": "35"
+    },
+    "vQjvZ9RlcwJItW0mlXGVl": {
+      "id": "vQjvZ9RlcwJItW0mlXGVl",
+      "date": "10/08/22",
+      "version": "1.0.3",
+      "identifier": "S.CAA.035-038",
+      "field": "Test Cases",
+      "changeDescription": "Added T.CAA.001-012 Test Case references to Suite.005 Scenarios",
+      "issueId": "35"
+    },
+    "G9qZDJp0VVL19TuT9SipI": {
+      "id": "G9qZDJp0VVL19TuT9SipI",
+      "date": "15/08/22",
+      "version": "1.0.3",
+      "identifier": "T.EAR.133-140",
+      "field": "All",
+      "changeDescription": "Added test cases to cover an invalid minimum version in A.CVM.002 for Suite.010",
+      "issueId": "49"
+    },
+    "bVgqGS-IoZZviUHQBSZ8Y": {
+      "id": "bVgqGS-IoZZviUHQBSZ8Y",
+      "date": "15/08/22",
+      "version": "1.0.3",
+      "identifier": "T.EAS.078-083",
+      "field": "All",
+      "changeDescription": "Added test cases to cover an invalid minimum version in A.CVM.002 for Suite.011",
+      "issueId": "49"
+    },
+    "nUYouBpBGf-Tl5yNoaQVf": {
+      "id": "nUYouBpBGf-Tl5yNoaQVf",
+      "date": "15/08/22",
+      "version": "1.0.3",
+      "identifier": "S.EAR.073-088",
+      "field": "Test Cases",
+      "changeDescription": "Added T.EAR.133-140 Test Case refrences to Suite.010 Scenarios",
+      "issueId": "49"
+    },
+    "Yj6DF4kxt6tyq_IneYfPU": {
+      "id": "Yj6DF4kxt6tyq_IneYfPU",
+      "date": "15/08/22",
+      "version": "1.0.3",
+      "identifier": "S.EAS.089-100",
+      "field": "Test Cases",
+      "changeDescription": "Added T.EAS.078-083 Test Case refrences to Suite.011 Scenarios",
+      "issueId": "49"
+    },
+    "Y4snrZwOKnkd9yWzpuv7P": {
+      "id": "Y4snrZwOKnkd9yWzpuv7P",
+      "date": "15/08/22",
+      "version": "1.0.3",
+      "identifier": "A.CPG.001",
+      "field": "Given",
+      "changeDescription": "Changed [1,25,1000,null] to [1..1000,null] ",
+      "issueId": "50"
+    },
+    "JJLJAyRANTEPe00ocnN_t": {
+      "id": "JJLJAyRANTEPe00ocnN_t",
+      "date": "22/08/22",
+      "version": "1.0.3",
+      "identifier": "A.CAC.001-002",
+      "field": "All",
+      "changeDescription": "Added Suite.006 Assertions",
+      "issueId": "36"
+    },
+    "uMrQ89M9TOAqtX7Vzktqp": {
+      "id": "uMrQ89M9TOAqtX7Vzktqp",
+      "date": "22/08/22",
+      "version": "1.0.3",
+      "identifier": "T.CAC.001-026",
+      "field": "All",
+      "changeDescription": "Added Suite.006 Test Cases",
+      "issueId": "36"
+    },
+    "uI0uue_AzyH8Okvy5s6fZ": {
+      "id": "uI0uue_AzyH8Okvy5s6fZ",
+      "date": "22/08/22",
+      "version": "1.0.3",
+      "identifier": "S.CAC.039-042",
+      "field": "Test Cases",
+      "changeDescription": "Added T.CAC.001-026 Test Case references to Suite.006 Scenarios",
+      "issueId": "36"
+    },
+    "V-dxzKJ5OHCbp9lh1PotV": {
+      "id": "V-dxzKJ5OHCbp9lh1PotV",
+      "date": "24/08/22",
+      "version": "1.0.3",
+      "identifier": "A.CFC.002",
+      "field": "Given ",
+      "changeDescription": "Added \"AND the customer is present\"",
+      "issueId": "N/A"
+    },
+    "G0Euf4Fyl62PkxbOcTQnB": {
+      "id": "G0Euf4Fyl62PkxbOcTQnB",
+      "date": "24/02/23",
+      "version": "1.0.4",
+      "identifier": "N/A",
+      "field": "N/A",
+      "changeDescription": "Added 'Information' message to Introduction section advising of the forthcoming change to Identifiers.  Numbers increasing from 3 characters to 4 and reallocation of alpha characters for some identifiers.  More details along with a mapping from old to new identifiers will be provided in v2.0.0 when the related issue is resolved.",
+      "issueId": "57"
+    }
+  }
+}

@@ -26,4 +26,4 @@ yarn.lock
 # ignore yarn.lock
 working
 
-tools/testdata-cli/samples/output
+cli/samples/output
