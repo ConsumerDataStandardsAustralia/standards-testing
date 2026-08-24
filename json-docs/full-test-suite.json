@@ -3875,7 +3875,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62",
+          "uri": "https://www.postman.com/dsb/workspace/CDR-TESTS/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62",
           "alt": "Postman Example"
         }
       ],
@@ -3907,7 +3907,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62",
+          "uri": "https://www.postman.com/dsb/workspace/CDR-TESTS/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62",
           "alt": "Postman Example"
         }
       ],
@@ -4010,7 +4010,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-f9fc2c7c-db2b-444d-9340-a317884f3bdc",
+          "uri": "https://www.postman.com/dsb/workspace/CDR-TESTS/request/8286723-f9fc2c7c-db2b-444d-9340-a317884f3bdc",
           "alt": "Postman Example"
         }
       ],
@@ -4158,7 +4158,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-8365f6ba-ed9b-4e43-87a1-a54d9d49b8e1",
+          "uri": "https://www.postman.com/dsb/workspace/CDR-TESTS/request/8286723-8365f6ba-ed9b-4e43-87a1-a54d9d49b8e1",
           "alt": "Postman Example"
         }
       ],
@@ -4440,7 +4440,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-e9c11ed2-1fe4-448b-b474-b233c27d5767",
+          "uri": "https://www.postman.com/dsb/workspace/CDR-TESTS/request/8286723-e9c11ed2-1fe4-448b-b474-b233c27d5767",
           "alt": "Postman Example"
         }
       ],
@@ -4684,7 +4684,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c008a5a9-00a7-4144-85a0-6832e23f837a",
+          "uri": "https://www.postman.com/dsb/workspace/CDR-TESTS/request/8286723-c008a5a9-00a7-4144-85a0-6832e23f837a",
           "alt": "Postman Example"
         }
       ],
@@ -4832,7 +4832,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-3d96d13a-360d-4930-a46c-6cb0c2450a86",
+          "uri": "https://www.postman.com/dsb/workspace/CDR-TESTS/request/8286723-3d96d13a-360d-4930-a46c-6cb0c2450a86",
           "alt": "Postman Example"
         }
       ],
@@ -4979,7 +4979,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-c4624ec7-7ef3-4dbd-b1a1-c1d63a020346",
+          "uri": "https://www.postman.com/dsb/workspace/CDR-TESTS/request/8286723-c4624ec7-7ef3-4dbd-b1a1-c1d63a020346",
           "alt": "Postman Example"
         }
       ],
@@ -5360,7 +5360,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-1aee91c2-9186-47d1-b15c-1996c49b3259",
+          "uri": "https://www.postman.com/dsb/workspace/CDR-TESTS/request/8286723-1aee91c2-9186-47d1-b15c-1996c49b3259",
           "alt": "Postman Example"
         }
       ],
@@ -6373,7 +6373,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
         },
         {
-          "uri": "https://www.postman.com/winter-shadow-541400/workspace/dsb-schema-tests/request/8286723-7db0a312-af47-452a-8a44-d4002b3c71e8",
+          "uri": "https://www.postman.com/dsb/workspace/CDR-TESTS/request/8286723-7db0a312-af47-452a-8a44-d4002b3c71e8",
           "alt": "Postman Example"
         }
       ],
