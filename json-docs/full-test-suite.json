@@ -3875,7 +3875,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
         },
         {
-          "uri": "https://www.postman.com/data-standards-body/workspace/CDR-TESTS",
+          "uri": "https://www.postman.com/data-standards-body/workspace/cdr-tests",
           "alt": "Postman Example"
         }
       ],
@@ -3907,7 +3907,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
         },
         {
-          "uri": "https://www.postman.com/data-standards-body/workspace/CDR-TESTS",
+          "uri": "https://www.postman.com/data-standards-body/workspace/cdr-tests",
           "alt": "Postman Example"
         }
       ],
@@ -4010,7 +4010,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail"
         },
         {
-          "uri": "https://www.postman.com/data-standards-body/workspace/CDR-TESTS",
+          "uri": "https://www.postman.com/data-standards-body/workspace/cdr-tests",
           "alt": "Postman Example"
         }
       ],
@@ -4158,7 +4158,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point"
         },
         {
-          "uri": "https://www.postman.com/data-standards-body/workspace/CDR-TESTS",
+          "uri": "https://www.postman.com/data-standards-body/workspace/cdr-tests",
           "alt": "Postman Example"
         }
       ],
@@ -4440,7 +4440,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points"
         },
         {
-          "uri": "https://www.postman.com/data-standards-body/workspace/CDR-TESTS",
+          "uri": "https://www.postman.com/data-standards-body/workspace/cdr-tests",
           "alt": "Postman Example"
         }
       ],
@@ -4684,7 +4684,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point"
         },
         {
-          "uri": "https://www.postman.com/data-standards-body/workspace/CDR-TESTS",
+          "uri": "https://www.postman.com/data-standards-body/workspace/cdr-tests",
           "alt": "Postman Example"
         }
       ],
@@ -4832,7 +4832,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points"
         },
         {
-          "uri": "https://www.postman.com/data-standards-body/workspace/CDR-TESTS",
+          "uri": "https://www.postman.com/data-standards-body/workspace/cdr-tests",
           "alt": "Postman Example"
         }
       ],
@@ -4979,7 +4979,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage"
         },
         {
-          "uri": "https://www.postman.com/data-standards-body/workspace/CDR-TESTS",
+          "uri": "https://www.postman.com/data-standards-body/workspace/cdr-tests",
           "alt": "Postman Example"
         }
       ],
@@ -5360,7 +5360,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der"
         },
         {
-          "uri": "https://www.postman.com/data-standards-body/workspace/CDR-TESTS",
+          "uri": "https://www.postman.com/data-standards-body/workspace/cdr-tests",
           "alt": "Postman Example"
         }
       ],
@@ -6373,7 +6373,7 @@
           "uri": "https://consumerdatastandardsaustralia.github.io/standards/#get-service-points"
         },
         {
-          "uri": "https://www.postman.com/data-standards-body/workspace/CDR-TESTS",
+          "uri": "https://www.postman.com/data-standards-body/workspace/cdr-tests",
           "alt": "Postman Example"
         }
       ],

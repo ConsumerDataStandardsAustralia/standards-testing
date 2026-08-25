@@ -8,7 +8,7 @@ This documentation has been  created by the DSB to assist participants in the de
 
 For more details see the CDS <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing">standards-testing repository</a> for details
 
-Last updated 13/05/2024 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v2.4.0/json-docs/CDR%20Test%20Documentation%20CHANGE%20LOG.json">change log</a> for details
+Last updated 25/08/2026 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v2.4.0/json-docs/CDR%20Test%20Documentation%20CHANGE%20LOG.json">change log</a> for details
 
 <a id="suites"></a>
 # Test Suites
@@ -4835,7 +4835,7 @@ Test API without any pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
-* [Postman Example](https://www.postman.com/data-standards-body/workspace/CDR-TESTS/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62)
+* [Postman Example](https://www.postman.com/data-standards-body/workspace/cdr-tests)
 
 
 ### Execution Pre-conditions:
@@ -4873,7 +4873,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
-* [Postman Example](https://www.postman.com/data-standards-body/workspace/CDR-TESTS/request/8286723-a8d4f7d2-e72e-4eb1-9d83-28ea616a2c62)
+* [Postman Example](https://www.postman.com/data-standards-body/workspace/cdr-tests)
 
 
 ### Execution Pre-conditions:
@@ -5019,7 +5019,7 @@ Test API with a vaild service point and version
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail](https://consumerdatastandardsaustralia.github.io/standards/#get-service-point-detail)
-* [Postman Example](https://www.postman.com/data-standards-body/workspace/CDR-TESTS/request/8286723-f9fc2c7c-db2b-444d-9340-a317884f3bdc)
+* [Postman Example](https://www.postman.com/data-standards-body/workspace/cdr-tests)
 
 
 ### Execution Pre-conditions:
@@ -5234,7 +5234,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point](https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-service-point)
-* [Postman Example](https://www.postman.com/data-standards-body/workspace/CDR-TESTS/request/8286723-8365f6ba-ed9b-4e43-87a1-a54d9d49b8e1)
+* [Postman Example](https://www.postman.com/data-standards-body/workspace/cdr-tests)
 
 
 ### Execution Pre-conditions:
@@ -5636,7 +5636,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-usage-for-specific-service-points)
-* [Postman Example](https://www.postman.com/data-standards-body/workspace/CDR-TESTS/request/8286723-e9c11ed2-1fe4-448b-b474-b233c27d5767)
+* [Postman Example](https://www.postman.com/data-standards-body/workspace/cdr-tests)
 
 
 ### Execution Pre-conditions:
@@ -5999,7 +5999,7 @@ Test API with a vaild service point and version
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point](https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-service-point)
-* [Postman Example](https://www.postman.com/data-standards-body/workspace/CDR-TESTS/request/8286723-c008a5a9-00a7-4144-85a0-6832e23f837a)
+* [Postman Example](https://www.postman.com/data-standards-body/workspace/cdr-tests)
 
 
 ### Execution Pre-conditions:
@@ -6214,7 +6214,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-der-for-specific-service-points)
-* [Postman Example](https://www.postman.com/data-standards-body/workspace/CDR-TESTS/request/8286723-3d96d13a-360d-4930-a46c-6cb0c2450a86)
+* [Postman Example](https://www.postman.com/data-standards-body/workspace/cdr-tests)
 
 
 ### Execution Pre-conditions:
@@ -6432,7 +6432,7 @@ Test API without any pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage](https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-usage)
-* [Postman Example](https://www.postman.com/data-standards-body/workspace/CDR-TESTS/request/8286723-c4624ec7-7ef3-4dbd-b1a1-c1d63a020346)
+* [Postman Example](https://www.postman.com/data-standards-body/workspace/cdr-tests)
 
 
 ### Execution Pre-conditions:
@@ -7008,7 +7008,7 @@ Test API with pagination partameters
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der](https://consumerdatastandardsaustralia.github.io/standards/#get-bulk-der)
-* [Postman Example](https://www.postman.com/data-standards-body/workspace/CDR-TESTS/request/8286723-1aee91c2-9186-47d1-b15c-1996c49b3259)
+* [Postman Example](https://www.postman.com/data-standards-body/workspace/cdr-tests)
 
 
 ### Execution Pre-conditions:
@@ -8696,7 +8696,7 @@ Test API with invalid version value
 ### References:
 
 * [https://consumerdatastandardsaustralia.github.io/standards/#get-service-points](https://consumerdatastandardsaustralia.github.io/standards/#get-service-points)
-* [Postman Example](https://www.postman.com/data-standards-body/workspace/CDR-TESTS/request/8286723-7db0a312-af47-452a-8a44-d4002b3c71e8)
+* [Postman Example](https://www.postman.com/data-standards-body/workspace/cdr-tests)
 
 
 ### Execution Pre-conditions:
