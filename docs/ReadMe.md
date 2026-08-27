@@ -8,7 +8,7 @@ This documentation has been  created by the DSB to assist participants in the de
 
 For more details see the CDS <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing">standards-testing repository</a> for details
 
-Last updated 25/08/2026 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v2.4.0/json-docs/CDR%20Test%20Documentation%20CHANGE%20LOG.json">change log</a> for details
+Last updated 27/08/2026 see the <a href="https://github.com/ConsumerDataStandardsAustralia/standards-testing/raw/v2.4.0/json-docs/CDR%20Test%20Documentation%20CHANGE%20LOG.json">change log</a> for details
 
 <a id="suites"></a>
 # Test Suites
