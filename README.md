@@ -30,6 +30,21 @@ The CDR API Test Documentation is available online in a user-friendly HTML forma
 | json-docs | Contains the JSON files, including: <br/>- the Definitions JSON file (contains definitions for Suites, Scenarios, Test Case and Assertions which form the basis of the published documentation) and<br/>- the Changelog JSON file (contains the changelog detailing what has been changed in the definitions JSON across each release version)
 | schemas   | The json schema definition against which the Suites, Scenarios, Test Cases and Assertions are validated 
 
+## Generating the Test Documentation
+One-time: build the CLI
+
+1. cd cli
+2. npm ci
+3. npm run sync-schema
+4. npm run build
+5. cd ..
+
+Each time the JSON changes(run from the repo root)
+1. npm run validate
+2. npm run generate
+
+Copy the generated docs in branch gh-pages -> latest (if change of version then create a folder and add them there as well)
+
 ## Using the CDR Test Documentation
 
 This documentation can be used in many ways. You can follow the scenarios listed for each Suite that applies to your sector. You can search for key words to identify tests that clarify the standards.
